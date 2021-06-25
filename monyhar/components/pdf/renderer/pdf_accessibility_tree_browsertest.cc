@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ const PP_PrivateAccessibilityTextRunInfo kThirdRunMultiLine = {
 const PP_PrivateAccessibilityTextRunInfo kFourthRunMultiLine = {
     6, PP_MakeFloatRectFromXYWH(26.0f, 189.0f, 84.0f, 13.0f)};
 
-const char kChromiumTestUrl[] = "www.cs.monyhar.org";
+const char kMonyharTestUrl[] = "www.cs.monyhar.org";
 
 void CompareRect(const PP_Rect& expected_rect, const PP_Rect& actual_rect) {
   EXPECT_EQ(expected_rect.point.x, actual_rect.point.x);
@@ -284,7 +284,7 @@ TEST_F(PdfAccessibilityTreeTest, TestPdfAccessibilityTreeCreation) {
   {
     ppapi::PdfAccessibilityLinkInfo link;
     link.bounds = PP_MakeFloatRectFromXYWH(1.0f, 1.0f, 5.0f, 6.0f);
-    link.url = kChromiumTestUrl;
+    link.url = kMonyharTestUrl;
     link.text_run_index = 0;
     link.text_run_count = 1;
     link.index_in_page = 0;
@@ -353,7 +353,7 @@ TEST_F(PdfAccessibilityTreeTest, TestPdfAccessibilityTreeCreation) {
 
   ui::AXNode* link_node = paragraph_node->children()[0];
   ASSERT_TRUE(link_node);
-  EXPECT_EQ(kChromiumTestUrl,
+  EXPECT_EQ(kMonyharTestUrl,
             link_node->GetStringAttribute(ax::mojom::StringAttribute::kUrl));
   EXPECT_EQ(ax::mojom::Role::kLink, link_node->data().role);
   EXPECT_EQ(gfx::RectF(1.0f, 1.0f, 5.0f, 6.0f),
@@ -400,7 +400,7 @@ TEST_F(PdfAccessibilityTreeTest, TestOverlappingAnnots) {
   {
     ppapi::PdfAccessibilityLinkInfo link;
     link.bounds = PP_MakeFloatRectFromXYWH(1.0f, 1.0f, 5.0f, 6.0f);
-    link.url = kChromiumTestUrl;
+    link.url = kMonyharTestUrl;
     link.text_run_index = 0;
     link.text_run_count = 3;
     link.index_in_page = 0;
@@ -410,7 +410,7 @@ TEST_F(PdfAccessibilityTreeTest, TestOverlappingAnnots) {
   {
     ppapi::PdfAccessibilityLinkInfo link;
     link.bounds = PP_MakeFloatRectFromXYWH(1.0f, 2.0f, 5.0f, 6.0f);
-    link.url = kChromiumTestUrl;
+    link.url = kMonyharTestUrl;
     link.text_run_index = 1;
     link.text_run_count = 2;
     link.index_in_page = 1;
@@ -462,7 +462,7 @@ TEST_F(PdfAccessibilityTreeTest, TestOverlappingAnnots) {
 
   ui::AXNode* link_node = child_nodes[0];
   ASSERT_TRUE(link_node);
-  EXPECT_EQ(kChromiumTestUrl,
+  EXPECT_EQ(kMonyharTestUrl,
             link_node->GetStringAttribute(ax::mojom::StringAttribute::kUrl));
   EXPECT_EQ(ax::mojom::Role::kLink, link_node->data().role);
   EXPECT_EQ(gfx::RectF(1.0f, 1.0f, 5.0f, 6.0f),
@@ -471,7 +471,7 @@ TEST_F(PdfAccessibilityTreeTest, TestOverlappingAnnots) {
 
   link_node = child_nodes[1];
   ASSERT_TRUE(link_node);
-  EXPECT_EQ(kChromiumTestUrl,
+  EXPECT_EQ(kMonyharTestUrl,
             link_node->GetStringAttribute(ax::mojom::StringAttribute::kUrl));
   EXPECT_EQ(ax::mojom::Role::kLink, link_node->data().role);
   EXPECT_EQ(gfx::RectF(1.0f, 2.0f, 5.0f, 6.0f),
@@ -1369,7 +1369,7 @@ TEST_F(PdfAccessibilityTreeTest, TestPreviousNextOnLine) {
   {
     ppapi::PdfAccessibilityLinkInfo link;
     link.bounds = PP_MakeFloatRectFromXYWH(0.0f, 0.0f, 0.0f, 0.0f);
-    link.url = kChromiumTestUrl;
+    link.url = kMonyharTestUrl;
     link.text_run_index = 2;
     link.text_run_count = 2;
     link.index_in_page = 0;
@@ -1455,7 +1455,7 @@ TEST_F(PdfAccessibilityTreeTest, TestPreviousNextOnLine) {
 
   ui::AXNode* link_node = paragraph_node->children()[1];
   ASSERT_TRUE(link_node);
-  EXPECT_EQ(kChromiumTestUrl,
+  EXPECT_EQ(kMonyharTestUrl,
             link_node->GetStringAttribute(ax::mojom::StringAttribute::kUrl));
   EXPECT_EQ(ax::mojom::Role::kLink, link_node->data().role);
   ASSERT_EQ(1u, link_node->children().size());
@@ -1878,7 +1878,7 @@ TEST_F(PdfAccessibilityTreeTest, TestClickActionDataConversion) {
 
   {
     ppapi::PdfAccessibilityLinkInfo link;
-    link.url = kChromiumTestUrl;
+    link.url = kMonyharTestUrl;
     link.text_run_index = 0;
     link.text_run_count = 1;
     link.bounds = {{0, 0}, {10, 10}};
@@ -1888,7 +1888,7 @@ TEST_F(PdfAccessibilityTreeTest, TestClickActionDataConversion) {
 
   {
     ppapi::PdfAccessibilityLinkInfo link;
-    link.url = kChromiumTestUrl;
+    link.url = kMonyharTestUrl;
     link.text_run_index = 1;
     link.text_run_count = 1;
     link.bounds = {{10, 10}, {10, 10}};

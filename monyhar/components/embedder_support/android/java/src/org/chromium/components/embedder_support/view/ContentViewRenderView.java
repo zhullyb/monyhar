@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -89,7 +89,7 @@ public class ContentViewRenderView extends FrameLayout {
 
                 // On pre-M Android, layers start in the hidden state until a relayout happens.
                 // There is a bug that manifests itself when entering overlay mode on pre-M
-                // devices, where a relayout never happens. This bug is out of Chromium's
+                // devices, where a relayout never happens. This bug is out of Monyhar's
                 // control, but can be worked around by forcibly re-setting the visibility of
                 // the surface view. Otherwise, the screen stays black, and some tests fail.
                 getSurfaceView().setVisibility(getSurfaceView().getVisibility());

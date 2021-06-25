@@ -1,4 +1,4 @@
-// Copyright (c) 2015 The Chromium Authors. All rights reserved.
+// Copyright (c) 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -45,7 +45,7 @@ bool ShouldHonorPolicies() {
     return true;
 
   // IsDeviceRegisteredWithManagementNew is only available after 10.13.4.
-  // Eventually switch to it when that is the minimum OS required by Chromium.
+  // Eventually switch to it when that is the minimum OS required by Monyhar.
   if (@available(macOS 10.13.4, *)) {
     base::MacDeviceManagementStateNew mdm_state =
         base::IsDeviceRegisteredWithManagementNew();

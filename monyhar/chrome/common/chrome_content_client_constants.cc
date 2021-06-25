@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,9 +20,9 @@ const char ChromeContentClient::kPDFExtensionPluginName[] = "Chrome PDF Viewer";
 const char ChromeContentClient::kPDFInternalPluginName[] = "Chrome PDF Plugin";
 #else
 const char ChromeContentClient::kPDFExtensionPluginName[] =
-    "Chromium PDF Viewer";
+    "Monyhar PDF Viewer";
 const char ChromeContentClient::kPDFInternalPluginName[] =
-    "Chromium PDF Plugin";
+    "Monyhar PDF Plugin";
 #endif
 
 const base::FilePath::CharType ChromeContentClient::kPDFPluginPath[] =

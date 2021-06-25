@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -196,7 +196,7 @@ void AccessibilityTreeFormatterMac::AddProperties(
     const NSRect& root_rect,
     const LineIndexer* line_indexer,
     base::Value* dict) const {
-  // Chromium special attributes.
+  // Monyhar special attributes.
   dict->SetPath(kLocalPositionDictAttr, PopulateLocalPosition(node, root_rect));
 
   // Dump all attributes if match-all filter is specified.

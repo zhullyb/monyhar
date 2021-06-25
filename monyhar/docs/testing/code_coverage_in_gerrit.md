@@ -4,10 +4,10 @@ Tests are critical because they find bugs and regressions, enforce better
 designs and make code easier to maintain. **Code coverage helps you ensure your
 tests are thorough**.
 
-Chromium CLs can show a line-by-line breakdown of test coverage. **You can use
+Monyhar CLs can show a line-by-line breakdown of test coverage. **You can use
 it to ensure you only submit well-tested code**.
 
-To see code coverage for a Chromium CL, **trigger a CQ dry run**, and once the
+To see code coverage for a Monyhar CL, **trigger a CQ dry run**, and once the
 builds finish and code coverage data is processed successfully, **look at the
 change view to see absolute and incremental code coverage percentages**:
 
@@ -28,8 +28,8 @@ non-trivial code change, a new CQ dry run must be triggered before coverage data
 shows up again.
 
 The code coverage tool currently supports:
-* C/C++ code for [Chromium on Linux].
-* C/C++ code for [Chromium on Chromium OS].
+* C/C++ code for [Monyhar on Linux].
+* C/C++ code for [Monyhar on Monyhar OS].
 
 support for more platforms and more languages is in progress.
 
@@ -52,7 +52,7 @@ supported.
 
 ### How does it work?
 
-Please refer to [code_coverage.md] for how code coverage works in Chromium in
+Please refer to [code_coverage.md] for how code coverage works in Monyhar in
 general, and specifically, for per-CL coverage in Gerrit, the
 [clang_code_coverage_wrapper] is used to compile and instrument ONLY the source
 files that are affected by the CL for the sake of performance and a
@@ -69,5 +69,5 @@ in Gerrit.
 [code_coverage.md]: code_coverage.md
 [clang_code_coverage_wrapper]: https://monyhar.googlesource.com/monyhar/src/+/main/docs/clang_code_coverage_wrapper.md
 [monyhar-coverage Gerrit plugin]: https://monyhar.googlesource.com/infra/gerrit-plugins/code-coverage/
-[Chromium on Chromium OS]: https://monyhar.googlesource.com/monyhar/src/+/main/docs/chromeos_build_instructions.md
-[Chromium on Linux]: https://monyhar.googlesource.com/monyhar/src/+/main/docs/linux/build_instructions.md
+[Monyhar on Monyhar OS]: https://monyhar.googlesource.com/monyhar/src/+/main/docs/chromeos_build_instructions.md
+[Monyhar on Linux]: https://monyhar.googlesource.com/monyhar/src/+/main/docs/linux/build_instructions.md

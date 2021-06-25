@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -233,7 +233,7 @@ void WakeLock::ObtainPermission(
   // algorithm that essentially just calls the "request permission to use"
   // algorithm from the Permissions spec (i.e. we do not take user activation
   // into account, nor do we consider "prompt" is a valid permission state).
-  // Right now, we can do that because there is no way for Chromium's
+  // Right now, we can do that because there is no way for Monyhar's
   // permission system to get to the "prompt" state given how
   // WakeLockPermissionContext is currently implemented.
   mojom::blink::PermissionName permission_name;

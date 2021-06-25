@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ BASE_EXPORT bool PartitionTlsCreate(PartitionTlsKey* key,
 ALWAYS_INLINE void* PartitionTlsGet(PartitionTlsKey key) {
   // Accessing TLS resets the last error, which then makes |GetLastError()|
   // return something misleading. While this means that properly using
-  // |GetLastError()| is difficult, there is currently code in Chromium which
+  // |GetLastError()| is difficult, there is currently code in Monyhar which
   // expects malloc() to *not* reset it. Meaning that we either have to fix this
   // code, or pay the cost of saving/restoring it.
   //

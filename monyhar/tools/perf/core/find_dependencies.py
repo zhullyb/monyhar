@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -33,7 +33,7 @@ def FindBootstrapDependencies(base_dir):
     return []
   deps_paths = bootstrap.ListAllDepsPaths(deps_file)
   return set(os.path.realpath(os.path.join(
-      path_util.GetChromiumSrcDir(), '..', deps_path))
+      path_util.GetMonyharSrcDir(), '..', deps_path))
              for deps_path in deps_paths)
 
 
@@ -59,7 +59,7 @@ def FindPythonDependencies(module_path):
     graph = modulegraph.ModuleGraph()
     graph.run_script(module_path)
 
-    # Filter for only imports in Chromium.
+    # Filter for only imports in Monyhar.
     for node in graph.nodes():
       if not node.filename:
         continue
@@ -75,7 +75,7 @@ def FindPythonDependencies(module_path):
       # This check is done after the logging/printing above to make sure that
       # we also print out the dependency edges that include python packages
       # that are not in monyhar.
-      if not path.IsSubpath(module_path, path_util.GetChromiumSrcDir()):
+      if not path.IsSubpath(module_path, path_util.GetMonyharSrcDir()):
         continue
 
       # Exclude any dependencies which exist in the python installation.
@@ -159,7 +159,7 @@ def FindDependencies(target_paths, options):
 
 
 def ZipDependencies(target_paths, dependencies, options):
-  base_dir = os.path.dirname(os.path.realpath(path_util.GetChromiumSrcDir()))
+  base_dir = os.path.dirname(os.path.realpath(path_util.GetMonyharSrcDir()))
 
   with zipfile.ZipFile(options.zip, 'w', zipfile.ZIP_DEFLATED) as zip_file:
     # Add dependencies to archive.

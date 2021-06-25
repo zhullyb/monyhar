@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -127,16 +127,16 @@ class MediaFoundationStreamWrapper
   DemuxerStream::Type stream_type_ = DemuxerStream::Type::UNKNOWN;
 
   // Need exclusive access to some members between calls from MF threadpool
-  // thread and calling thread from Chromium media stack.
+  // thread and calling thread from Monyhar media stack.
   base::Lock lock_;
 
   // Indicates whether the stream is selected in the MF pipeline.
   bool selected_ GUARDED_BY(lock_) = false;
 
-  // Indicates whether the stream is enabled in the Chromium media pipeline.
+  // Indicates whether the stream is enabled in the Monyhar media pipeline.
   bool enabled_ GUARDED_BY(lock_) = true;
 
-  // Indicates whether the Chromium pipeline has flushed the renderer
+  // Indicates whether the Monyhar pipeline has flushed the renderer
   // (prior to a seek).
   // Since SetFlushed() can be invoked by media stack thread or MF threadpool
   // thread, |flushed_| and |post_flush_buffers_| are protected by lock.
@@ -155,7 +155,7 @@ class MediaFoundationStreamWrapper
   std::queue<Microsoft::WRL::ComPtr<IUnknown>> pending_sample_request_tokens_
       GUARDED_BY(lock_);
 
-  // If true, there is a pending a read completion from Chromium media stack.
+  // If true, there is a pending a read completion from Monyhar media stack.
   bool pending_stream_read_ = false;
 
   bool stream_ended_ = false;

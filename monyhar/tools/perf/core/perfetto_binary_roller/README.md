@@ -1,4 +1,4 @@
-<!-- Copyright 2020 The Chromium Authors. All rights reserved.
+<!-- Copyright 2020 The Monyhar Authors. All rights reserved.
      Use of this source code is governed by a BSD-style license that can be
      found in the LICENSE file.
 -->
@@ -7,7 +7,7 @@
 
 Results Processor needs some pre-built binaries from Perfetto project, e.g.,
 `trace_processor_shell` for converting proto traces and computing TBMv3 metrics.
-These binaries can be either built from Chromium checkout or downloaded from
+These binaries can be either built from Monyhar checkout or downloaded from
 the cloud. This module provides scripts for updating the binary stored in the
 cloud.
 

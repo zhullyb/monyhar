@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -473,13 +473,13 @@ void LaunchShimOnFileThread(LaunchShimUpdateBehavior update_behavior,
 }
 
 base::FilePath GetLocalizableAppShortcutsSubdirName() {
-  static const char kChromiumAppDirName[] = "Chromium Apps.localized";
+  static const char kMonyharAppDirName[] = "Monyhar Apps.localized";
   static const char kChromeAppDirName[] = "Chrome Apps.localized";
   static const char kChromeCanaryAppDirName[] = "Chrome Canary Apps.localized";
 
   switch (chrome::GetChannel()) {
     case version_info::Channel::UNKNOWN:
-      return base::FilePath(kChromiumAppDirName);
+      return base::FilePath(kMonyharAppDirName);
 
     case version_info::Channel::CANARY:
       return base::FilePath(kChromeCanaryAppDirName);

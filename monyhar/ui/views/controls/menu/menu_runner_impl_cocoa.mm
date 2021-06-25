@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -153,7 +153,7 @@ NSMutableAttributedString* MutableAttributedStringForMenuItemTitleString(
 // /!\ WARNING /!\
 //
 // Do NOT update to the "new in macOS 10.11" API of NSTextAttachment.image until
-// macOS 10.15 is the minimum required macOS for Chromium. Because menus are
+// macOS 10.15 is the minimum required macOS for Monyhar. Because menus are
 // Carbon-based, the new NSTextAttachment.image API did not function correctly
 // until then. Specifically, in macOS 10.11-10.12, images that use the new API
 // do not appear. In macOS 10.13-10.14, the flipped flag of -[NSImage

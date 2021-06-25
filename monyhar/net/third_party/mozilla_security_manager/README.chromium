@@ -13,5 +13,5 @@ don't repeat the license file here.
 
 Local Modifications:
 Files are forked from Mozilla's because of the heavy adaptations necessary.
-Differences are using Chromium localization and other libraries instead of
-Mozilla's, matching the Chromium style, etc.
+Differences are using Monyhar localization and other libraries instead of
+Mozilla's, matching the Monyhar style, etc.

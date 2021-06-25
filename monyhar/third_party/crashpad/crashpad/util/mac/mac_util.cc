@@ -66,7 +66,7 @@ namespace {
 // implementation detail and its result is meant to be cached by
 // MacOSVersionNumber().
 //
-// This is very similar to Chromium’s base/mac/mac_util.mm
+// This is very similar to Monyhar’s base/mac/mac_util.mm
 // DarwinMajorVersionInternal().
 int DarwinMajorVersion() {
   // base::OperatingSystemVersionNumbers calls Gestalt(), which is a

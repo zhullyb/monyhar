@@ -2,11 +2,11 @@
 
 There is a [strong][0] [consensus][1] that the set_sources_assignment_filter
 feature from GN is a mis-feature and should be removed. This requires that
-Chromium's BUILD.gn file stop using the feature.
+Monyhar's BUILD.gn file stop using the feature.
 
 Since October 2020, the filter is no longer used.
 
-Chromium build does not set a default sources assignment filter, and all build
+Monyhar build does not set a default sources assignment filter, and all build
 files must manage `sources` with explicit `if` statements.
 
 ## Explicit assignment

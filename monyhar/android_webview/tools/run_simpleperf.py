@@ -1,6 +1,6 @@
 #!/usr/bin/env vpython
 #
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -49,7 +49,7 @@ class StackAddressInterpreter(object):
     """Run the stack script.
 
     Args:
-      output_dir: The directory of Chromium output.
+      output_dir: The directory of Monyhar output.
       stack_input_path: The path to the stack input file.
 
     Returns:
@@ -66,7 +66,7 @@ class StackAddressInterpreter(object):
   @staticmethod
   def _ConvertAddressToFakeTraceLine(address, lib_path):
     formatted_address = '0x' + '0' * (16 - len(address)) + address
-    # Pretend that this is Chromium's stack traces output in logcat.
+    # Pretend that this is Monyhar's stack traces output in logcat.
     # Note that the date, time, pid, tid, frame number, and frame address
     # are all fake and they are irrelevant.
     return ('11-15 00:00:00.000 11111 11111 '

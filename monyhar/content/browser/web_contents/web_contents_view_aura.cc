@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1476,7 +1476,7 @@ void WebContentsViewAura::FinishOnPerformDropCallback(
       context.data->HasVirtualFilenames()) {
     // Asynchronously retrieve the actual content of any virtual files now (this
     // step is not needed for "real" files already on the file system, e.g.
-    // those dropped on Chromium from the desktop). When all content has been
+    // those dropped on Monyhar from the desktop). When all content has been
     // written to temporary files, the OnGotVirtualFilesAsTempFiles
     // callback will be invoked and the drop communicated to the renderer
     // process.

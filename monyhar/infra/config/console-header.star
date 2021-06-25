@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -9,11 +9,11 @@ load(".//project.star", "ACTIVE_MILESTONES", "settings")
 HEADER = headers.header(
     oncalls = [
         headers.oncall(
-            name = "Chromium",
+            name = "Monyhar",
             url = "https://chrome-ops-rotation-proxy.appspot.com/current/oncallator:chrome-build-sheriff",
         ),
         headers.oncall(
-            name = "Chromium Branches",
+            name = "Monyhar Branches",
             branch_selector = branches.STANDARD_BRANCHES,
             url = "https://chrome-ops-rotation-proxy.appspot.com/current/oncallator:chrome-branch-sheriff",
         ),
@@ -99,7 +99,7 @@ HEADER = headers.header(
             ],
         ),
         headers.link_group(
-            name = "Chromium",
+            name = "Monyhar",
             links = [
                 headers.link(
                     text = "source",
@@ -108,31 +108,31 @@ HEADER = headers.header(
                         for_main = "https://monyhar.googlesource.com/monyhar/src",
                         for_branches = "https://monyhar.googlesource.com/monyhar/src/+/{}".format(settings.ref),
                     ),
-                    alt = "Chromium source code repository",
+                    alt = "Monyhar source code repository",
                 ),
                 headers.link(
                     text = "reviews",
                     branch_selector = branches.ALL_BRANCHES,
                     url = "https://monyhar-review.googlesource.com",
-                    alt = "Chromium code review tool",
+                    alt = "Monyhar code review tool",
                 ),
                 headers.link(
                     text = "bugs",
                     branch_selector = branches.ALL_BRANCHES,
                     url = "https://crbug.com",
-                    alt = "Chromium bug tracker",
+                    alt = "Monyhar bug tracker",
                 ),
                 headers.link(
                     text = "coverage",
                     branch_selector = branches.ALL_BRANCHES,
                     url = "https://analysis.monyhar.org/p/monyhar/coverage",
-                    alt = "Chromium code coverage dashboard",
+                    alt = "Monyhar code coverage dashboard",
                 ),
                 headers.link(
                     text = "dev",
                     branch_selector = branches.ALL_BRANCHES,
                     url = "https://dev.monyhar.org/Home",
-                    alt = "Chromium developer home page",
+                    alt = "Monyhar developer home page",
                 ),
                 headers.link(
                     text = "support",
@@ -149,66 +149,66 @@ HEADER = headers.header(
                     text = "android",
                     branch_selector = branches.STANDARD_MILESTONE,
                     url = "/p/{}/g/monyhar.android".format(settings.project),
-                    alt = "Chromium Android console",
+                    alt = "Monyhar Android console",
                 ),
                 headers.link(
                     text = "clang",
                     url = "/p/{}/g/monyhar.clang".format(settings.project),
-                    alt = "Chromium Clang console",
+                    alt = "Monyhar Clang console",
                 ),
                 headers.link(
                     text = "dawn",
                     branch_selector = branches.STANDARD_MILESTONE,
                     url = "/p/{}/g/monyhar.dawn".format(settings.project),
-                    alt = "Chromium Dawn console",
+                    alt = "Monyhar Dawn console",
                 ),
                 headers.link(
                     text = "fuzz",
                     url = "/p/{}/g/monyhar.fuzz".format(settings.project),
-                    alt = "Chromium Fuzz console",
+                    alt = "Monyhar Fuzz console",
                 ),
                 headers.link(
                     text = "fyi",
                     branch_selector = branches.STANDARD_MILESTONE,
                     url = "/p/{}/g/monyhar.fyi".format(settings.project),
-                    alt = "Chromium FYI console",
+                    alt = "Monyhar FYI console",
                 ),
                 headers.link(
                     text = "gpu",
                     branch_selector = branches.STANDARD_MILESTONE,
                     url = "/p/{}/g/monyhar.gpu".format(settings.project),
-                    alt = "Chromium GPU console",
+                    alt = "Monyhar GPU console",
                 ),
                 headers.link(
                     text = "perf",
                     url = "/p/chrome/g/chrome.perf/console",
-                    alt = "Chromium Perf console",
+                    alt = "Monyhar Perf console",
                 ),
                 headers.link(
                     text = "perf.fyi",
                     url = "/p/chrome/g/chrome.perf.fyi/console",
-                    alt = "Chromium Perf FYI console",
+                    alt = "Monyhar Perf FYI console",
                 ),
                 headers.link(
                     text = "angle",
                     url = "/p/{}/g/monyhar.angle".format(settings.project),
-                    alt = "Chromium ANGLE console",
+                    alt = "Monyhar ANGLE console",
                 ),
                 headers.link(
                     text = "swangle",
                     url = "/p/{}/g/monyhar.swangle".format(settings.project),
-                    alt = "Chromium SWANGLE console",
+                    alt = "Monyhar SWANGLE console",
                 ),
                 headers.link(
                     text = "webrtc",
                     url = "/p/{}/g/monyhar.webrtc".format(settings.project),
-                    alt = "Chromium WebRTC console",
+                    alt = "Monyhar WebRTC console",
                 ),
                 headers.link(
                     text = "monyharos",
                     branch_selector = branches.LTS_MILESTONE,
                     url = "/p/{}/g/monyhar.monyharos".format(settings.project),
-                    alt = "ChromiumOS console",
+                    alt = "MonyharOS console",
                 ),
             ],
         ),
@@ -258,7 +258,7 @@ HEADER = headers.header(
                     text = "monyharos",
                     branch_selector = branches.LTS_MILESTONE,
                     url = "/p/{}/g/tryserver.monyhar.monyharos/builders".format(settings.project),
-                    alt = "ChromiumOS",
+                    alt = "MonyharOS",
                 ),
                 headers.link(
                     text = "linux",

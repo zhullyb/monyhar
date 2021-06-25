@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -823,7 +823,7 @@ HRESULT BluetoothLowEnergyWrapper::RegisterGattEvents(
     return HRESULT_FROM_WIN32(ERROR_OPEN_FAILED);
   // Cast to the official callback type for compatibility with the Windows
   // 10.0.10586 definition, even though it is incorrect. This cast can be
-  // removed when we mandate building Chromium with the 10.0.14393 SDK or
+  // removed when we mandate building Monyhar with the 10.0.14393 SDK or
   // higher.
   return BluetoothGATTRegisterEvent(
       file.GetPlatformFile(), event_type, event_parameter,

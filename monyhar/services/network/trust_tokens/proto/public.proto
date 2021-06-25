@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -6,7 +6,7 @@ syntax = "proto2";
 
 package network;
 
-// Mandatory boilerplate since Chromium only supports lite protobufs:
+// Mandatory boilerplate since Monyhar only supports lite protobufs:
 option optimize_for = LITE_RUNTIME;
 
 // Message TrustToken represents a signed trust token received from

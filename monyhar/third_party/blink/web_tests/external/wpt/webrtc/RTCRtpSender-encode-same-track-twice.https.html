@@ -57,7 +57,7 @@
     await pc2.setLocalDescription();
     await pc1.setRemoteDescription(pc2.localDescription);
 
-    // In Chromium, each sender instantiates a VideoStreamEncoder during
+    // In Monyhar, each sender instantiates a VideoStreamEncoder during
     // negotiation. This test reproduces https://crbug.com/webrtc/11485 where a
     // race causes a crash when multiple VideoStreamEncoders are encoding the
     // same MediaStreamTrack.

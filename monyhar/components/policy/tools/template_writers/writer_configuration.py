@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -27,39 +27,39 @@ def GetConfigurationForBuild(defines):
   if '_monyhar' in defines:
     config = {
         'build': 'monyhar',
-        'app_name': 'Chromium',
-        'frame_name': 'Chromium Frame',
-        'os_name': 'Chromium OS',
-        'webview_name': 'Chromium WebView',
+        'app_name': 'Monyhar',
+        'frame_name': 'Monyhar Frame',
+        'os_name': 'Monyhar OS',
+        'webview_name': 'Monyhar WebView',
         'win_config': {
             'win': {
                 'reg_mandatory_key_name':
-                'Software\\Policies\\Chromium',
+                'Software\\Policies\\Monyhar',
                 'reg_recommended_key_name':
-                'Software\\Policies\\Chromium\\Recommended',
+                'Software\\Policies\\Monyhar\\Recommended',
                 'mandatory_category_path': ['monyhar'],
                 'recommended_category_path': ['monyhar_recommended'],
                 'category_path_strings': {
-                    'monyhar': 'Chromium',
-                    'monyhar_recommended': 'Chromium - {doc_recommended}',
+                    'monyhar': 'Monyhar',
+                    'monyhar_recommended': 'Monyhar - {doc_recommended}',
                 },
                 'namespace':
-                'Chromium.Policies.Chromium',
+                'Monyhar.Policies.Monyhar',
             },
             'chrome_os': {
                 'reg_mandatory_key_name':
-                'Software\\Policies\\ChromiumOS',
+                'Software\\Policies\\MonyharOS',
                 'reg_recommended_key_name':
-                'Software\\Policies\\ChromiumOS\\Recommended',
+                'Software\\Policies\\MonyharOS\\Recommended',
                 'mandatory_category_path': ['monyhar_os'],
                 'recommended_category_path': ['monyhar_os_recommended'],
                 'category_path_strings': {
-                    'monyhar_os': 'Chromium OS',
+                    'monyhar_os': 'Monyhar OS',
                     'monyhar_os_recommended':
-                    'Chromium OS - {doc_recommended}',
+                    'Monyhar OS - {doc_recommended}',
                 },
                 'namespace':
-                'Chromium.Policies.ChromiumOS'
+                'Monyhar.Policies.MonyharOS'
             },
         },
         'admx_prefix': 'monyhar',

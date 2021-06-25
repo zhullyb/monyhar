@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,13 +37,13 @@ struct TagArgs;
 enum class UpdaterScope;
 
 // Returns the base directory common to all versions of the updater. For
-// instance, this function may return %localappdata%\Chromium\ChromiumUpdater
+// instance, this function may return %localappdata%\Monyhar\MonyharUpdater
 // for a user install.
 absl::optional<base::FilePath> GetBaseDirectory(UpdaterScope scope);
 
 // Returns a versioned directory under which the running version of the updater
 // stores its files and data. For instance, this function may return
-// %localappdata%\Chromium\ChromiumUpdater\1.2.3.4 for a user install.
+// %localappdata%\Monyhar\MonyharUpdater\1.2.3.4 for a user install.
 absl::optional<base::FilePath> GetVersionedDirectory(UpdaterScope scope);
 
 // Returns the parsed values from --tag command line argument. The function

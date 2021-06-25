@@ -9,4 +9,4 @@ Source: https://github.com/AOMediaCodec/libavif
 
 --[ DESCRIPTION ] ------------------
 This contains the source to the AV1 image format demuxer; used for demuxing and
-decoding .avif files in Chromium.
+decoding .avif files in Monyhar.

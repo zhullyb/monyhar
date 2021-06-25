@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,7 +34,7 @@ class GlRendererTest;
 
 // Renders desktop and cursor on the OpenGL surface. Can be created on any
 // thread but thereafter must be used and deleted on the same thread (usually
-// the display thread. Or any Chromium thread with a task runner attached to
+// the display thread. Or any Monyhar thread with a task runner attached to
 // it) unless otherwise noted.
 // The unit of all length arguments is pixel.
 class GlRenderer {

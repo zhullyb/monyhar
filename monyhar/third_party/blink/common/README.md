@@ -15,7 +15,7 @@ Code in this directory would normally use `blink` namespace.
 
 Unlike other directories in Blink, code in this directory should:
 
-* Use Chromium's common types (e.g. //base ones) rather than Blink's ones
+* Use Monyhar's common types (e.g. //base ones) rather than Blink's ones
   (e.g. WTF types)
 
-* Follow [Chromium's common coding style guide](https://monyhar.googlesource.com/monyhar/src/+/master/styleguide/c++/c++.md)
+* Follow [Monyhar's common coding style guide](https://monyhar.googlesource.com/monyhar/src/+/master/styleguide/c++/c++.md)

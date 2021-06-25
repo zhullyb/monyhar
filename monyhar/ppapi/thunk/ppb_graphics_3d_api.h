@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,7 +56,7 @@ class PPAPI_THUNK_EXPORT PPB_Graphics3D_API {
       int32_t start,
       int32_t end) = 0;
 
-  // GLESChromiumTextureMapping.
+  // GLESMonyharTextureMapping.
   virtual void* MapTexSubImage2DCHROMIUM(GLenum target,
                                          GLint level,
                                          GLint xoffset,

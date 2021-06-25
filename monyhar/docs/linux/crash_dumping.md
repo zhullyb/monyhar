@@ -114,9 +114,9 @@ the other end) and rethrows the signal to itself. It then appears to crash
 'normally' and other parts of the browser notice the abnormal termination and
 display the sad tab.
 
-## How to test Breakpad support in Chromium
+## How to test Breakpad support in Monyhar
 
-*   Build Chromium as normal.
+*   Build Monyhar as normal.
 *   Run the browser with the environment variable
     [CHROME_HEADLESS=1](https://crbug.com/19663). This enables crash dumping but
     prevents crash dumps from being uploaded and deleted.

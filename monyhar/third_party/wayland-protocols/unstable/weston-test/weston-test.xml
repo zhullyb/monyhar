@@ -34,7 +34,7 @@
 
       These requests may allow clients to do very bad things.
     </description>
-      Note from Chromium developers: Moves the surface to a specified location
+      Note from Monyhar developers: Moves the surface to a specified location
       on screen. The move_surface API must not be used as it may result in
       unexpected results as it violates layering and positioning of surface
       inside the Wayland compositor.

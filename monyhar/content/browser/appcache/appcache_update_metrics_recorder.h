@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The Chromium Authors. All rights reserved.
+// Copyright (c) 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -40,7 +40,7 @@ class CONTENT_EXPORT AppCacheUpdateMetricsRecorder {
   // IncrementExistingResourceCorruptionRecovery() keeps track of the number of
   // times we detected a corrupt resource and triggered corruption recovery.
   // This will only occur when the corruption recovery feature is enabled in
-  // a given Chromium instance.
+  // a given Monyhar instance.
   void IncrementExistingResourceCorruptionRecovery();
 
   // IncrementExistingResourceNotCorrupt() keeps track of the number of non-

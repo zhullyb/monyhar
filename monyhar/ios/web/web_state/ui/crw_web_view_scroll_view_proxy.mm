@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -489,7 +489,7 @@ static int gAnyContext = 0;
 
   // DCHECK on an attempt to remove an observer which is not registered. This
   // behavior is inconsistent with the behavior of this method in NSObject
-  // (which throws an exception in this case). But Chromium code is not allowed
+  // (which throws an exception in this case). But Monyhar code is not allowed
   // to throw exceptions.
   DCHECK_GE(i, 0) << base::SysNSStringToUTF8(
       context == &gAnyContext

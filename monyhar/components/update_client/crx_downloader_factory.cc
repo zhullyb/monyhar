@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,9 +15,9 @@
 namespace update_client {
 namespace {
 
-class CrxDownloaderFactoryChromium : public CrxDownloaderFactory {
+class CrxDownloaderFactoryMonyhar : public CrxDownloaderFactory {
  public:
-  explicit CrxDownloaderFactoryChromium(
+  explicit CrxDownloaderFactoryMonyhar(
       scoped_refptr<NetworkFetcherFactory> network_fetcher_factory)
       : network_fetcher_factory_(network_fetcher_factory) {}
 
@@ -26,12 +26,12 @@ class CrxDownloaderFactoryChromium : public CrxDownloaderFactory {
       bool background_download_enabled) const override;
 
  private:
-  ~CrxDownloaderFactoryChromium() override = default;
+  ~CrxDownloaderFactoryMonyhar() override = default;
 
   scoped_refptr<NetworkFetcherFactory> network_fetcher_factory_;
 };
 
-scoped_refptr<CrxDownloader> CrxDownloaderFactoryChromium::MakeCrxDownloader(
+scoped_refptr<CrxDownloader> CrxDownloaderFactoryMonyhar::MakeCrxDownloader(
     bool background_download_enabled) const {
   scoped_refptr<CrxDownloader> url_fetcher_downloader =
       base::MakeRefCounted<UrlFetcherDownloader>(nullptr,
@@ -51,7 +51,7 @@ scoped_refptr<CrxDownloader> CrxDownloaderFactoryChromium::MakeCrxDownloader(
 
 scoped_refptr<CrxDownloaderFactory> MakeCrxDownloaderFactory(
     scoped_refptr<NetworkFetcherFactory> network_fetcher_factory) {
-  return base::MakeRefCounted<CrxDownloaderFactoryChromium>(
+  return base::MakeRefCounted<CrxDownloaderFactoryMonyhar>(
       network_fetcher_factory);
 }
 

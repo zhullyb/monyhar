@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ class ClipboardFormatType;
 
 // Simple OSExchangeDataProvider implementation for aura-based ports with no
 // actual platform integration. So data managed by this class is exchangeable
-// only among Chromium windows and is available only while it is alive.
+// only among Monyhar windows and is available only while it is alive.
 class COMPONENT_EXPORT(UI_BASE) OSExchangeDataProviderNonBacked
     : public OSExchangeDataProvider {
  public:

@@ -21,7 +21,7 @@
 
 #define CONFIG_8BPC 1
 
-// #define CONFIG_LOG 1 -- Logging is controlled by Chromium
+// #define CONFIG_LOG 1 -- Logging is controlled by Monyhar
 
 #define ENDIANNESS_BIG 0
 

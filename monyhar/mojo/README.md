@@ -4,7 +4,7 @@
 
 ## Getting Started With Mojo
 
-To get started using Mojo in Chromium, the fastest path forward will likely be
+To get started using Mojo in Monyhar, the fastest path forward will likely be
 to read the Mojo sections of the
 [Intro to Mojo &amp; Services](/docs/mojo_and_services.md) guide.
 
@@ -48,7 +48,7 @@ Mojo support within each process by calling `mojo::core::Init()`. See
 
 This is a reasonable option when you can guarantee that all interconnected
 process binaries are linking against precisely the same revision of Mojo Core.
-This includes Chromium itself as well as any developer tools and test
+This includes Monyhar itself as well as any developer tools and test
 executables built within the tree.
 
 To support other scenarios, use dynamic linking.
@@ -121,7 +121,7 @@ supported by a language-specific bindings API:
 - [**JavaScript Bindings API**](/mojo/public/js/README.md)
 - [**Java Bindings API**](/mojo/public/java/bindings/README.md)
 
-Note that the C++ bindings see the broadest usage in Chromium and are thus
+Note that the C++ bindings see the broadest usage in Monyhar and are thus
 naturally the most feature-rich, including support for things like
 [associated interfaces](/mojo/public/cpp/bindings/README.md#Associated-Interfaces),
 [synchronous calls](/mojo/public/cpp/bindings/README.md#Synchronous-Calls), and

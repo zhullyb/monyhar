@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -176,7 +176,7 @@ bool UserSpecificRegistrySuffix::GetSuffix(std::wstring* suffix) {
 }
 
 // Returns the Windows browser client registration key for Chrome.  For example:
-// "Software\Clients\StartMenuInternet\Chromium[.user]".  Strictly speaking, we
+// "Software\Clients\StartMenuInternet\Monyhar[.user]".  Strictly speaking, we
 // should use the name of the executable (e.g., "chrome.exe"), but that ship has
 // sailed.  The cost of switching now is re-prompting users to make Chrome their
 // default browser, which isn't polite.  |suffix| is the user-specific
@@ -192,7 +192,7 @@ std::wstring GetBrowserClientKey(const std::wstring& suffix) {
 
 // Returns the Windows Default Programs capabilities key for Chrome.  For
 // example:
-// "Software\Clients\StartMenuInternet\Chromium[.user]\Capabilities".
+// "Software\Clients\StartMenuInternet\Monyhar[.user]\Capabilities".
 std::wstring GetCapabilitiesKey(const std::wstring& suffix) {
   return GetBrowserClientKey(suffix).append(L"\\Capabilities");
 }
@@ -541,7 +541,7 @@ void GetAppDefaultRegistrationEntries(
 }
 
 // This method returns a list of all the user level registry entries that are
-// needed to make Chromium the default handler for a protocol on XP.
+// needed to make Monyhar the default handler for a protocol on XP.
 void GetXPStyleUserProtocolEntries(
     const std::wstring& protocol,
     const std::wstring& chrome_icon,
@@ -577,7 +577,7 @@ void GetXPStyleUserProtocolEntries(
 }
 
 // This method returns a list of all the user level registry entries that are
-// needed to make Chromium default browser on XP. Some of these entries are
+// needed to make Monyhar default browser on XP. Some of these entries are
 // irrelevant in recent versions of Windows, but we register them anyways as
 // some legacy apps are hardcoded to lookup those values.
 void GetXPStyleDefaultBrowserUserEntries(

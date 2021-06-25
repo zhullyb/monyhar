@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -54,7 +54,7 @@ static_library("snappy") {
   ]
   public_configs = [ ":snappy_config" ]
 
-  # Chromium doesn't use automake, but we generated config.h offline for all the
+  # Monyhar doesn't use automake, but we generated config.h offline for all the
   # platforms that we build for.
   defines = [ "HAVE_CONFIG_H" ]
 }

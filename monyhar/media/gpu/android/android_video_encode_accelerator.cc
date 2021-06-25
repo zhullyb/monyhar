@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -350,7 +350,7 @@ void AndroidVideoEncodeAccelerator::QueueInput() {
   RETURN_ON_FAILURE(converted, "Failed to I420ToNV12!", kPlatformFailureError);
 
   // MediaCodec encoder assumes the presentation timestamps to be monotonically
-  // increasing at initialized framerate. But in Chromium, the video capture
+  // increasing at initialized framerate. But in Monyhar, the video capture
   // may be paused for a while or drop some frames, so the timestamp in input
   // frames won't be continious. Here we cache the timestamps of input frames,
   // mapping to the generated |presentation_timestamp_|, and will read them out

@@ -8,7 +8,7 @@ rendering pipeline.
 
 ## Overview
 
-The GPU bots run a different set of tests than the majority of the Chromium
+The GPU bots run a different set of tests than the majority of the Monyhar
 test machines. The GPU bots specifically focus on tests which exercise the
 graphics processor, and whose results are likely to vary between graphics card
 vendors.
@@ -17,7 +17,7 @@ Most of the tests on the GPU bots are run via the [Telemetry framework].
 Telemetry was originally conceived as a performance testing framework, but has
 proven valuable for correctness testing as well. Telemetry directs the browser
 to perform various operations, like page navigation and test execution, from
-external scripts written in Python. The GPU bots launch the full Chromium
+external scripts written in Python. The GPU bots launch the full Monyhar
 browser via Telemetry for the majority of the tests. Using the full browser to
 execute tests, rather than smaller test harnesses, has yielded several
 advantages: testing what is shipped, improved reliability, and improved
@@ -26,7 +26,7 @@ performance.
 [Telemetry framework]: https://github.com/catapult-project/catapult/tree/master/telemetry
 
 A subset of the tests, called "pixel tests", grab screen snapshots of the web
-page in order to validate Chromium's rendering architecture end-to-end. Where
+page in order to validate Monyhar's rendering architecture end-to-end. Where
 necessary, GPU-specific results are maintained for these tests. Some of these
 tests verify just a few pixels, using handwritten code, in order to use the
 same validation for all brands of GPUs.
@@ -90,7 +90,7 @@ showing the status of various bots in the GPU fleet.
 
 ## Using the GPU Bots
 
-Most Chromium developers interact with the GPU bots in two ways:
+Most Monyhar developers interact with the GPU bots in two ways:
 
 1.  Observing the bots on the waterfalls.
 2.  Sending try jobs to them.
@@ -107,7 +107,7 @@ git cl try
 
 Sends your job to the default set of try servers.
 
-The GPU tests are part of the default set for Chromium CLs, and are run as part
+The GPU tests are part of the default set for Monyhar CLs, and are run as part
 of the following tryservers' jobs:
 
 *   [linux-rel], formerly on the `tryserver.monyhar.linux` waterfall
@@ -136,7 +136,7 @@ Alternatively, the Gerrit UI can be used to send a patch set to these try
 servers.
 
 Three optional tryservers are also available which run additional tests. As of
-this writing, they ran longer-running tests that can't run against all Chromium
+this writing, they ran longer-running tests that can't run against all Monyhar
 CLs due to lack of hardware capacity. They are added as part of the included
 tryservers for code changes to certain sub-directories.
 
@@ -151,12 +151,12 @@ tryservers for code changes to certain sub-directories.
 
 Tryservers for the [ANGLE project] are also present on the
 [tryserver.monyhar.angle] waterfall. These are invoked from the Gerrit user
-interface. They are configured similarly to the tryservers for regular Chromium
+interface. They are configured similarly to the tryservers for regular Monyhar
 patches, and run the same tests that are run on the [monyhar.gpu.fyi]
 waterfall, in the same way (e.g., against ToT ANGLE).
 
 If you find it necessary to try patches against other sub-repositories than
-Chromium (`src/`) and ANGLE (`src/third_party/angle/`), please
+Monyhar (`src/`) and ANGLE (`src/third_party/angle/`), please
 [file a bug](http://crbug.com/new) with component Internals\>GPU\>Testing.
 
 [ANGLE project]: https://monyhar.googlesource.com/angle/angle/+/main/README.md
@@ -165,7 +165,7 @@ Chromium (`src/`) and ANGLE (`src/third_party/angle/`), please
 
 ## Running the GPU Tests Locally
 
-All of the GPU tests running on the bots can be run locally from a Chromium
+All of the GPU tests running on the bots can be run locally from a Monyhar
 build. Many of the tests are simple executables:
 
 *   `angle_unittests`
@@ -175,7 +175,7 @@ build. Many of the tests are simple executables:
 
 Some run only on the monyhar.gpu.fyi waterfall, either because there isn't
 enough machine capacity at the moment, or because they're closed-source tests
-which aren't allowed to run on the regular Chromium waterfalls:
+which aren't allowed to run on the regular Monyhar waterfalls:
 
 *   `angle_deqp_gles2_tests`
 *   `angle_deqp_gles3_tests`
@@ -354,7 +354,7 @@ Example usage:
 
 If, for some reason, the local run code is unable to determine what the git
 revision is, simply pass `--git-revision aabbccdd`. Note that `aabbccdd` must
-be replaced with an actual Chromium src revision (typically whatever revision
+be replaced with an actual Monyhar src revision (typically whatever revision
 origin/master is currently synced to) in order for the tests to work. This can
 be done automatically using:
 ``run_gpu_integration_test.py pixel --no-skia-gold-failure --local-pixel-tests
@@ -425,7 +425,7 @@ Be sure to use the correct swarming dimensions for your desired GPU e.g. "1002:6
 
 ## Moving Test Binaries from Machine to Machine
 
-To create a zip archive of your personal Chromium build plus all of
+To create a zip archive of your personal Monyhar build plus all of
 the Telemetry-based GPU tests' dependencies, which you can then move
 to another machine for testing:
 
@@ -445,14 +445,14 @@ Note: on one macOS machine, this command failed because of a broken
 that symlink allowed it to proceed.
 
 Note also: on the same macOS machine, with a component build, this
-command failed to zip up a working Chromium binary. The browser failed
+command failed to zip up a working Monyhar binary. The browser failed
 to start with the following error:
 
 `[0626/180440.571670:FATAL:chrome_main_delegate.cc(1057)] Check failed: service_manifest_data_pack_.`
 
 In a pinch, this command could be used to bundle up everything, but
 the "out" directory could be deleted from the resulting zip archive,
-and the Chromium binaries moved over to the target machine. Then the
+and the Monyhar binaries moved over to the target machine. Then the
 command line arguments `--browser=exact --browser-executable=[path]`
 can be used to launch that specific browser.
 
@@ -498,7 +498,7 @@ based, and included in the `telemetry_gpu_test_run` isolate.
 ### Adding new steps to the GPU Bots
 
 The tests that are run by the GPU bots are described by a couple of JSON files
-in the Chromium workspace:
+in the Monyhar workspace:
 
 *   [`monyhar.gpu.json`](https://monyhar.googlesource.com/monyhar/src/+/main/testing/buildbot/monyhar.gpu.json)
 *   [`monyhar.gpu.fyi.json`](https://monyhar.googlesource.com/monyhar/src/+/main/testing/buildbot/monyhar.gpu.fyi.json)
@@ -512,7 +512,7 @@ This script is documented in
 JSON files are parsed by the monyhar and monyhar_trybot recipes, and describe
 two basic types of tests:
 
-*   GTests: those which use the Googletest and Chromium's `base/test/launcher/`
+*   GTests: those which use the Googletest and Monyhar's `base/test/launcher/`
     frameworks.
 *   Isolated scripts: tests whose initial entry point is a Python script which
     follows a simple convention of command line argument parsing.
@@ -529,7 +529,7 @@ to all of the bots, because the GPU bots are a limited resource and do not
 currently have the capacity to absorb large new test suites. It is safer to get
 new tests running on the monyhar.gpu.fyi waterfall first, and expand from there
 to the monyhar.gpu waterfall (which will also make them run against every
-Chromium CL by virtue of the `linux-rel`, `mac-rel`, `win7-rel` and
+Monyhar CL by virtue of the `linux-rel`, `mac-rel`, `win7-rel` and
 `android-marshmallow-arm64-rel` tryservers' mirroring of the bots on this
 waterfall – so be careful!).
 
@@ -614,7 +614,7 @@ bots translate directly into instability of the browser experienced by
 customers. Critical bugs in subsystems like WebGL, affecting high-profile
 products like Google Maps, have escaped notice in the past because the bots
 were unreliable. After much re-work, the GPU bots are now among the most
-reliable automated test machines in the Chromium project. Let's keep them that
+reliable automated test machines in the Monyhar project. Let's keep them that
 way.
 
 Flakiness affecting the GPU tests can come in from highly unexpected sources.
@@ -641,7 +641,7 @@ Here are some examples:
     347919](http://crbug.com/347919)).
 *   context_lost test failures caused by the compositor's retry logic ([Issue
     356453](http://crbug.com/356453)).
-*   Multiple bugs in Chromium's support for lost contexts causing flakiness of
+*   Multiple bugs in Monyhar's support for lost contexts causing flakiness of
     the context_lost tests ([Issue 365904](http://crbug.com/365904)).
 *   Maps test timeouts caused by Content Security Policy changes in Blink
     ([Issue 395914](http://crbug.com/395914)).

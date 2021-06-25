@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
@@ -54,7 +54,7 @@ def _ExtractImportantEnvironment(output_of_set):
       if re.match(envvar + '=', line.lower()):
         var, setting = line.split('=', 1)
         if envvar == 'path':
-          # Our own rules and actions in Chromium rely on python being in the
+          # Our own rules and actions in Monyhar rely on python being in the
           # path. Add the path to this python here so that if it's not in the
           # path when ninja is run later, python will still be found.
           setting = os.path.dirname(sys.executable) + os.pathsep + setting

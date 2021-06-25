@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -46,7 +46,7 @@ gfx::Point ExpectedTabStripRegionOrigin(BrowserView* browser_view) {
 }
 
 // Helper function to take a printf-style format string and substitute the
-// browser name (like "Chromium" or "Google Chrome") for %s, and return the
+// browser name (like "Monyhar" or "Google Chrome") for %s, and return the
 // result as a std::u16string.
 std::u16string SubBrowserName(const char* fmt) {
   return base::UTF8ToUTF16(base::StringPrintf(

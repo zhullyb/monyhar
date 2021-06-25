@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ namespace WTF {
 //
 // WTF defines wtf_size_t as an unsigned 32 bit integer. This is to align
 // with the maximum heap allocation object size and save memory. This deviates
-// from Chromium C++ style guide which calls for interfaces to use the
+// from Monyhar C++ style guide which calls for interfaces to use the
 // stdint.h types (aka. int32_t) on the exposed interface.
 //
 // Matching the external API to match the internal API have a number of

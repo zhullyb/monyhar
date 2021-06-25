@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,8 +24,8 @@ inline bool EndsWith(const std::wstring& value, const std::wstring& ending) {
 const wchar_t kPolicyRegistryKey[] = L"SOFTWARE\\Policies\\Google\\Chrome";
 const wchar_t kUserDataDirNameSuffix[] = L"\\Google\\Chrome\\User Data";
 #else
-const wchar_t kPolicyRegistryKey[] = L"SOFTWARE\\Policies\\Chromium";
-const wchar_t kUserDataDirNameSuffix[] = L"\\Chromium\\User Data";
+const wchar_t kPolicyRegistryKey[] = L"SOFTWARE\\Policies\\Monyhar";
+const wchar_t kUserDataDirNameSuffix[] = L"\\Monyhar\\User Data";
 #endif
 
 const wchar_t kUserDataDirRegistryKey[] = L"UserDataDir";

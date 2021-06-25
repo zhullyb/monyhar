@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@
   // ui/base/cocoa/window_size_constants.h instead.
   //
   // (This is checked here because UnderlayOpenGLHostingWindow is the base of
-  // most Chromium windows, not because this is related to its functionality.)
+  // most Monyhar windows, not because this is related to its functionality.)
   DCHECK(!NSIsEmptyRect(contentRect));
   self = [super initWithContentRect:contentRect
                           styleMask:windowStyle

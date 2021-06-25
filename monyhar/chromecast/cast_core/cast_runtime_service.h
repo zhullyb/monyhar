@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -17,7 +17,7 @@ class MediaManager;
 }  // namespace receiver
 
 // This interface is to be used for building the Cast Runtime Service and act as
-// the border between shared Chromium code and the specifics of that
+// the border between shared Monyhar code and the specifics of that
 // implementation.
 //
 // NOTE: When adding a new interface to this class, first add it to all

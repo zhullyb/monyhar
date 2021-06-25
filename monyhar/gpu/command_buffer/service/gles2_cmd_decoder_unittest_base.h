@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -594,15 +594,15 @@ class GLES2DecoderTestBase : public ::testing::TestWithParam<bool>,
   static const GLuint kServiceVertexShaderId = 321;
   static const GLuint kServiceFragmentShaderId = 322;
 
-  static const GLuint kServiceCopyTextureChromiumShaderId = 701;
-  static const GLuint kServiceCopyTextureChromiumProgramId = 721;
+  static const GLuint kServiceCopyTextureMonyharShaderId = 701;
+  static const GLuint kServiceCopyTextureMonyharProgramId = 721;
 
-  static const GLuint kServiceCopyTextureChromiumTextureBufferId = 751;
-  static const GLuint kServiceCopyTextureChromiumVertexBufferId = 752;
-  static const GLuint kServiceCopyTextureChromiumFBOId = 753;
-  static const GLuint kServiceCopyTextureChromiumPositionAttrib = 761;
-  static const GLuint kServiceCopyTextureChromiumTexAttrib = 762;
-  static const GLuint kServiceCopyTextureChromiumSamplerLocation = 763;
+  static const GLuint kServiceCopyTextureMonyharTextureBufferId = 751;
+  static const GLuint kServiceCopyTextureMonyharVertexBufferId = 752;
+  static const GLuint kServiceCopyTextureMonyharFBOId = 753;
+  static const GLuint kServiceCopyTextureMonyharPositionAttrib = 761;
+  static const GLuint kServiceCopyTextureMonyharTexAttrib = 762;
+  static const GLuint kServiceCopyTextureMonyharSamplerLocation = 763;
 
   static const GLsizei kNumVertices = 100;
   static const GLsizei kNumIndices = 10;

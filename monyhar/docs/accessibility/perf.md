@@ -2,7 +2,7 @@
 
 Accessibility support can have a negative impact on performance, so it is
 important to test for regressions and to improve performance over time. This can
-be done with Chromium's performance testing framework,
+be done with Monyhar's performance testing framework,
 [Telemetry](https://monyhar.googlesource.com/catapult/+/HEAD/telemetry/README.md).
 
 The metrics for accessibility are defined in

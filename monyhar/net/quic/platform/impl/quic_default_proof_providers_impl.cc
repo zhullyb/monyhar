@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The Chromium Authors. All rights reserved.
+// Copyright (c) 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,7 +37,7 @@ DEFINE_QUIC_COMMAND_LINE_FLAG(std::string,
                               "Path to the pkcs8 private key.");
 
 using net::CertVerifier;
-using net::ProofVerifierChromium;
+using net::ProofVerifierMonyhar;
 
 namespace quic {
 
@@ -52,18 +52,18 @@ std::set<std::string> UnknownRootAllowlistForHost(std::string host) {
 
 }  // namespace
 
-class ProofVerifierChromiumWithOwnership : public net::ProofVerifierChromium {
+class ProofVerifierMonyharWithOwnership : public net::ProofVerifierMonyhar {
  public:
-  ProofVerifierChromiumWithOwnership(
+  ProofVerifierMonyharWithOwnership(
       std::unique_ptr<net::CertVerifier> cert_verifier,
       std::string host)
-      : net::ProofVerifierChromium(cert_verifier.get(),
+      : net::ProofVerifierMonyhar(cert_verifier.get(),
                                    &ct_policy_enforcer_,
                                    &transport_security_state_,
                                    /*sct_auditing_delegate=*/nullptr,
                                    UnknownRootAllowlistForHost(host),
                                    // Fine to use an empty NetworkIsolationKey
-                                   // here, since this isn't used in Chromium.
+                                   // here, since this isn't used in Monyhar.
                                    net::NetworkIsolationKey()),
         cert_verifier_(std::move(cert_verifier)) {}
 
@@ -77,14 +77,14 @@ std::unique_ptr<ProofVerifier> CreateDefaultProofVerifierImpl(
     const std::string& host) {
   std::unique_ptr<net::CertVerifier> cert_verifier =
       net::CertVerifier::CreateDefault(/*cert_net_fetcher=*/nullptr);
-  return std::make_unique<ProofVerifierChromiumWithOwnership>(
+  return std::make_unique<ProofVerifierMonyharWithOwnership>(
       std::move(cert_verifier), host);
 }
 
 std::unique_ptr<ProofSource> CreateDefaultProofSourceImpl() {
-  auto proof_source = std::make_unique<net::ProofSourceChromium>();
+  auto proof_source = std::make_unique<net::ProofSourceMonyhar>();
   proof_source->SetTicketCrypter(
-      std::make_unique<SimpleTicketCrypter>(QuicChromiumClock::GetInstance()));
+      std::make_unique<SimpleTicketCrypter>(QuicMonyharClock::GetInstance()));
   CHECK(proof_source->Initialize(
 #if defined(OS_WIN)
       base::FilePath(base::UTF8ToWide(GetQuicFlag(FLAGS_certificate_file))),

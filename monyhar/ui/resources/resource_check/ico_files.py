@@ -1,8 +1,8 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Presubmit script for Chromium browser resources.
+"""Presubmit script for Monyhar browser resources.
 
 See http://dev.monyhar.org/developers/how-tos/depottools/presubmit-scripts
 for more details about the presubmit API built into depot_tools, and see
@@ -14,7 +14,7 @@ import os
 import sys
 
 class IcoFiles(object):
-  """Verifier of ICO files for Chromium resources.
+  """Verifier of ICO files for Monyhar resources.
   """
 
   def __init__(self, input_api, output_api):
@@ -50,7 +50,7 @@ class IcoFiles(object):
         if errors:
           error_string = '\n'.join('    * ' + e for e in errors)
           results.append(self.output_api.PresubmitError(
-              '%s: This file does not meet the standards for Chromium ICO '
+              '%s: This file does not meet the standards for Monyhar ICO '
               'files.\n%s\n    Please run '
               'tools/resources/optimize-ico-files.py on this file. See '
               'chrome/app/theme/README for details.' % (path, error_string)))

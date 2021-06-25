@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -121,7 +121,7 @@ fi
 echo "Building version $version_full $revision_text"
 
 # Create a fresh debian/changelog.
-export DEBEMAIL="The Chromium Authors <monyhar-dev@monyhar.org>"
+export DEBEMAIL="The Monyhar Authors <monyhar-dev@monyhar.org>"
 rm -f debian/changelog
 debchange --create \
   --package "$PACKAGE" \

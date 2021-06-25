@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -229,7 +229,7 @@ public class PrintingControllerImpl implements PrintingController, PdfGenerator 
         mMediaSize = newAttributes.getMediaSize();
 
         mOnLayoutCallback = callback;
-        // We don't want to stack Chromium with multiple PDF generation operations before
+        // We don't want to stack Monyhar with multiple PDF generation operations before
         // completion of an ongoing one.
         if (mPrintingState == PRINTING_STATE_STARTED_FROM_ONWRITE) {
             callback.onLayoutFailed(mErrorMessage);
@@ -330,7 +330,7 @@ public class PrintingControllerImpl implements PrintingController, PdfGenerator 
                 pageRanges[i] = new PageRange(page, page);
             }
         } else {
-            // null corresponds to all pages in Chromium printing logic.
+            // null corresponds to all pages in Monyhar printing logic.
             pageRanges = new PageRange[] {new PageRange(0, pageCount - 1)};
         }
         return pageRanges;
@@ -341,7 +341,7 @@ public class PrintingControllerImpl implements PrintingController, PdfGenerator 
      */
     private static int[] convertPageRangesToIntegerArray(final PageRange[] ranges) {
         if (ranges.length == 1 && ranges[0].equals(PageRange.ALL_PAGES)) {
-            // null corresponds to all pages in Chromium printing logic.
+            // null corresponds to all pages in Monyhar printing logic.
             return null;
         }
 

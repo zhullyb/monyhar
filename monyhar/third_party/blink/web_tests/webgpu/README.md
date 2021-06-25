@@ -9,7 +9,7 @@ at different stages of implementation, and it is more useful to pin a particular
 revision of the CTS rather than use the latest version.)
 
 An autoroller (https://autoroll.skia.org/r/webgpu-cts-monyhar-autoroll) rolls the WebGPU
-CTS into Chromium regularly. Part of the roll requires regenerating a few files which the
+CTS into Monyhar regularly. Part of the roll requires regenerating a few files which the
 autoroller attempts to do.
 1. `third_party/webgpu-cts/ts_sources.txt` is a generated file which tells GN the list of Typescript
    sources that may impact compilation.
@@ -22,7 +22,7 @@ autoroller attempts to do.
 Should the autoroller fail, a manual roll is required.
 See below for step-by-step instructions on performing a roll.
 
-## How to manually roll the WebGPU CTS into Chromium
+## How to manually roll the WebGPU CTS into Monyhar
 
 1. Run `roll-dep --roll-to origin/main src/third_party/webgpu-cts/src`. This will produce a commit
    that updates DEPS.

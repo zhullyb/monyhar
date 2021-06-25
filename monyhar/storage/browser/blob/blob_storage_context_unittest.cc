@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -448,7 +448,7 @@ TEST_F(BlobStorageContextTest, AddFinishedBlob) {
 
 TEST_F(BlobStorageContextTest, AddFinishedBlob_LargeOffset) {
   // A value which does not fit in a 4-byte data type. Used to confirm that
-  // large values are supported on 32-bit Chromium builds. Regression test for:
+  // large values are supported on 32-bit Monyhar builds. Regression test for:
   // crbug.com/458122.
   const uint64_t kLargeSize = std::numeric_limits<uint64_t>::max() - 1;
 

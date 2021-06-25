@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -122,10 +122,10 @@ void WaylandPopup::HandlePopupConfigure(const gfx::Rect& bounds_dip) {
 
   // It's not enough to just set new bounds. If it is a menu window, whose
   // parent is a top level window a.k.a browser window, it can be flipped
-  // vertically along y-axis and have negative values set. Chromium cannot
+  // vertically along y-axis and have negative values set. Monyhar cannot
   // understand that and starts to position nested menu windows incorrectly. To
   // fix that, we have to bear in mind that Wayland compositor does not share
-  // global coordinates for any surfaces, and Chromium assumes the top level
+  // global coordinates for any surfaces, and Monyhar assumes the top level
   // window is always located at 0,0 origin. What is more, child windows must
   // always be positioned relative to parent window local surface coordinates.
   // Thus, if the menu window is flipped along y-axis by Wayland and its origin

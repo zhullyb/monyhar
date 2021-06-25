@@ -11,7 +11,7 @@
 ## Testing
 
 WebUSB is primarily tested in [Web Platform Tests].
-Chromium implementation details are tested in [web tests].
+Monyhar implementation details are tested in [web tests].
 
 [Web Platform Tests]: ../../../web_tests/external/wpt/webusb/
 [Web tests]: ../../../web_tests/usb/

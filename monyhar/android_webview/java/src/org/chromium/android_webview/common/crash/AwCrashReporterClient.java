@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ import org.monyhar.base.annotations.JNINamespace;
  */
 @JNINamespace("android_webview")
 public class AwCrashReporterClient {
-    // The filename prefix used by Chromium proguarding, which we use to
+    // The filename prefix used by Monyhar proguarding, which we use to
     // recognise stack frames that reference WebView.
     private static final String CHROMIUM_PREFIX = "monyhar-";
 

@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -152,9 +152,9 @@ target(_libcxx_target_type, "libc++") {
       defines += [
         # This resets the visibility to default only for the various
         # flavors of operator new and operator delete.  These symbols
-        # are weak and get overriden by Chromium-provided ones, but if
+        # are weak and get overriden by Monyhar-provided ones, but if
         # these symbols had hidden visibility, this would make the
-        # Chromium symbols hidden too because elf visibility rules
+        # Monyhar symbols hidden too because elf visibility rules
         # require that linkers use the least visible form when merging,
         # and if this is hidden, then when we merge it with tcmalloc's
         # operator new, hidden visibility would win. However, tcmalloc

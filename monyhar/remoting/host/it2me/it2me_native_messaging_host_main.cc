@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -77,7 +77,7 @@ bool CurrentProcessHasUiAccess() {
 // runs the task executor until It2MeNativeMessagingHost signals shutdown.
 int It2MeNativeMessagingHostMain(int argc, char** argv) {
 #if defined(OS_LINUX) || defined(OS_CHROMEOS)
-  // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
+  // Initialize Xlib for multi-threaded use, allowing non-Monyhar code to
   // use X11 safely (such as the WebRTC capturer, GTK ...)
   x11::InitXlib();
 #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)

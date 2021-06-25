@@ -1,6 +1,6 @@
 # Web Apps
 
-This directory holds the core of Chromium's web app system. For a quick code
+This directory holds the core of Monyhar's web app system. For a quick code
 starting point see [WebAppProvider::Start()](web_app_provider.h), this is the
 entry point where everything web app related begins.
 
@@ -123,7 +123,7 @@ For an app to become locally installed, the user must do one of the following:
 
 This was done because on non-ChromeOS devices it was considered a bad user experience to fully install all of the profile's web apps (creating platform shortcuts, etc), as this might not be expected by the user.
 
-## What makes up Chromium's implementation?
+## What makes up Monyhar's implementation?
 
 The task of turning web sites into "apps" in the user's OS environment has many parts to it. Before going into the parts, here is where they live:
 

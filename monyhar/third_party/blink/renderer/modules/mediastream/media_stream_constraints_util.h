@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,7 +27,7 @@ extern const double kMinDeviceCaptureFrameRate;
 // constraints (see https://w3c.github.io/mediacapture-main/#dfn-selectsettings)
 // The input to SelectSettings is a user-supplied constraints object, and its
 // output is a set of implementation-specific settings that are used to
-// configure other Chromium objects such as sources, tracks and sinks so that
+// configure other Monyhar objects such as sources, tracks and sinks so that
 // they work in the way indicated by the specification. VideoCaptureSettings may
 // also be used to implement other constraints-related functionality, such as
 // the getSettings() function.
@@ -163,7 +163,7 @@ class MODULES_EXPORT VideoCaptureSettings {
 // constraints (see https://w3c.github.io/mediacapture-main/#dfn-selectsettings)
 // The input to SelectSettings is a user-supplied constraints object, and its
 // output is a set of implementation-specific settings that are used to
-// configure other Chromium objects such as sources, tracks and sinks so that
+// configure other Monyhar objects such as sources, tracks and sinks so that
 // they work in the way indicated by the specification. AudioCaptureSettings may
 // also be used to implement other constraints-related functionality, such as
 // the getSettings() function.

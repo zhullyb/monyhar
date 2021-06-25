@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@ import("//build/config/sanitizers/sanitizers.gni")
 
 declare_args() {
   # Controls whether the build should use the version of Wayland
-  # library shipped with the system or Chromium third_party.
+  # library shipped with the system or Monyhar third_party.
   use_system_libwayland = is_linux && !is_chromecast && !is_chromeos_lacros &&
                           default_toolchain != "//build/toolchain/cros:target"
 
@@ -16,7 +16,7 @@ declare_args() {
   assert(host_os == "linux")
   system_wayland_scanner_path = "/usr/bin/wayland-scanner"
 
-  # This may be set by Chromium packagers who do not wish to use the bundled
+  # This may be set by Monyhar packagers who do not wish to use the bundled
   # wayland scanner.
   use_system_wayland_scanner = host_toolchain == default_toolchain && is_msan
 }

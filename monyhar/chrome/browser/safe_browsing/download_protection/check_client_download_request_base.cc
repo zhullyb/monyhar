@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -442,7 +442,7 @@ void CheckClientDownloadRequestBase::SendRequest() {
           semantics {
             sender: "Download Protection Service"
             description:
-              "Chromium checks whether a given download is likely to be "
+              "Monyhar checks whether a given download is likely to be "
               "dangerous by sending this client download request to Google's "
               "Safe Browsing servers. Safe Browsing server will respond to "
               "this request by sending back a verdict, indicating if this "
@@ -469,7 +469,7 @@ void CheckClientDownloadRequestBase::SendRequest() {
             cookies_store: "Safe Browsing cookies store"
             setting:
               "Users can enable or disable the entire Safe Browsing service in "
-              "Chromium's settings by toggling 'Protect you and your device "
+              "Monyhar's settings by toggling 'Protect you and your device "
               "from dangerous sites' under Privacy. This feature is enabled by "
               "default."
             chrome_policy {

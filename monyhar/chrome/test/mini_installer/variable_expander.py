@@ -1,4 +1,4 @@
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -71,18 +71,18 @@ class VariableExpander:
 
         The constructor initializes a variable dictionary that maps variables to
         their values. These are the only acceptable variables:
-        * $BRAND: the browser brand (e.g., "Google Chrome" or "Chromium").
-        * $CHROME_DIR: the directory of Chrome (or Chromium) from the base
+        * $BRAND: the browser brand (e.g., "Google Chrome" or "Monyhar").
+        * $CHROME_DIR: the directory of Chrome (or Monyhar) from the base
             installation directory.
-        * $CHROME_HTML_PROG_ID: 'ChromeHTML' (or 'ChromiumHTM').
-        * $CHROME_LONG_NAME: 'Google Chrome' (or 'Chromium').
+        * $CHROME_HTML_PROG_ID: 'ChromeHTML' (or 'MonyharHTM').
+        * $CHROME_LONG_NAME: 'Google Chrome' (or 'Monyhar').
         * $CHROME_LONG_NAME_BETA: 'Google Chrome Beta' if $BRAND is 'Google
         *   Chrome'.
         * $CHROME_LONG_NAME_DEV: 'Google Chrome Dev' if $BRAND is 'Google
         *   Chrome'.
         * $CHROME_LONG_NAME_SXS: 'Google Chrome SxS' if $BRAND is 'Google
         *   Chrome'.
-        * $CHROME_SHORT_NAME: 'Chrome' (or 'Chromium').
+        * $CHROME_SHORT_NAME: 'Chrome' (or 'Monyhar').
         * $CHROME_SHORT_NAME_BETA: 'ChromeBeta' if $BRAND is 'Google Chrome'.
         * $CHROME_SHORT_NAME_DEV: 'ChromeDev' if $BRAND is 'Google Chrome'.
         * $CHROME_SHORT_NAME_SXS: 'ChromeCanary' if $BRAND is 'Google Chrome'.
@@ -318,24 +318,24 @@ class VariableExpander:
                 'CHROME_ELEVATION_SERVICE_DISPLAY_NAME_SXS':
                 ('Google Chrome Canary Elevation Service'),
             })
-        elif mini_installer_product_name == 'Chromium Installer':
+        elif mini_installer_product_name == 'Monyhar Installer':
             self._variable_mapping.update({
                 'BRAND':
-                'Chromium',
+                'Monyhar',
                 'BINARIES_UPDATE_REGISTRY_SUBKEY':
-                'Software\\Chromium Binaries',
+                'Software\\Monyhar Binaries',
                 'CHROME_DIR':
-                'Chromium',
+                'Monyhar',
                 'CHROME_HTML_PROG_ID':
-                'ChromiumHTM',
+                'MonyharHTM',
                 'CHROME_LONG_NAME':
-                'Chromium',
+                'Monyhar',
                 'CHROME_SHORT_NAME':
-                'Chromium',
+                'Monyhar',
                 'CHROME_UPDATE_REGISTRY_SUBKEY':
-                'Software\\Chromium',
+                'Software\\Monyhar',
                 'CHROME_CLIENT_STATE_KEY':
-                'Software\\Chromium',
+                'Software\\Monyhar',
                 'CHROME_TOAST_ACTIVATOR_CLSID':
                 ('{635EFA6F-08D6-4EC9-BD14-8A0FDE975159}'),
                 'CHROME_ELEVATOR_CLSID':
@@ -343,9 +343,9 @@ class VariableExpander:
                 'CHROME_ELEVATOR_IID':
                 ('{B88C45B9-8825-4629-B83E-77CC67D9CEED}'),
                 'CHROME_ELEVATION_SERVICE_NAME':
-                'ChromiumElevationService',
+                'MonyharElevationService',
                 'CHROME_ELEVATION_SERVICE_DISPLAY_NAME':
-                ('Chromium Elevation Service (ChromiumElevationService)'),
+                ('Monyhar Elevation Service (MonyharElevationService)'),
             })
         else:
             raise KeyError("Unknown mini_installer product name '%s'" %

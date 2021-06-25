@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -59,7 +59,7 @@ class InputBufferFragmentSplitter;
 // by the hardware blocks.
 //
 // The threading model of this class is driven by the fact that it needs to
-// interface two fundamentally different event queues -- the one Chromium
+// interface two fundamentally different event queues -- the one Monyhar
 // provides through MessageLoop, and the one driven by the V4L2 devices which
 // is waited on with epoll().  There are three threads involved in this class:
 //

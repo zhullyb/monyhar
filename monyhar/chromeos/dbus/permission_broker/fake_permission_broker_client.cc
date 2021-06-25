@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,7 +26,7 @@ const char kOpenFailedError[] = "open_failed";
 
 FakePermissionBrokerClient* g_instance = nullptr;
 
-// So that real devices can be accessed by tests and "Chromium OS on Linux" this
+// So that real devices can be accessed by tests and "Monyhar OS on Linux" this
 // function implements a simplified version of the method implemented by the
 // permission broker by opening the path specified and returning the resulting
 // file descriptor.

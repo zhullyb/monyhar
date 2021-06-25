@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -134,7 +134,7 @@ class WebrtcTransport : public Transport,
   const std::string& transport_protocol() const { return transport_protocol_; }
 
   // Since WebRTC uses its own threads, it is difficult to control its behavior
-  // using the standard Chromium threading test classes.  For higher-level tests
+  // using the standard Monyhar threading test classes.  For higher-level tests
   // which do not want to mock out WebRTC, we provide this mechanism to allow
   // for polling faster (which should mean the teardown work completing faster)
   // or to zero out the interval and prevent hangs due to PostDelayedTask.

@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -66,7 +66,7 @@ scoped_refptr<sandbox::TargetPolicy> GetSandboxPolicy(
   CHECK_EQ(sandbox::SBOX_ALL_OK, sandbox_result);
 
 #ifdef NDEBUG
-  // Chromium ignores failures on this function but logs a warning. Do the same
+  // Monyhar ignores failures on this function but logs a warning. Do the same
   // here.
   // https://monyhar.googlesource.com/monyhar/src/+/b6a4ff86c730756a73d63cc882ef818fb7818a53/content/common/sandbox_win.cc#420
   // TODO(crbug.com/893740): SetAlternateDesktop can cause DCHECK's in unit

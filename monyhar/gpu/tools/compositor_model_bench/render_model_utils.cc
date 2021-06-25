@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -69,7 +69,7 @@ void TextureGenerator::AssignIDMapping() {
   // into an array of GL tex ID's. There's no need for this and now
   // I'm instead generating the GL tex ID's upfront and assigning
   // *those* in the remapping -- this more accurately reflects the
-  // behavior in Chromium, and it also takes out some design
+  // behavior in Monyhar, and it also takes out some design
   // complexity that came from the extra layer of indirection.
   // HOWEVER -- when I was assigning my own ID's before, I did some
   // clever tricks to make sure the assignation was idempotent.

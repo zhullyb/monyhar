@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -59,7 +59,7 @@ void RecordEvent(AOADiscoveryEvent event) {
 
 // KnownAccessories returns a global that stores the GUIDs of USB devices that
 // we have previously put into accessory mode and, if still connected, can be
-// used immediately. (GUIDs are not a USB concept, the Chromium USB layer
+// used immediately. (GUIDs are not a USB concept, the Monyhar USB layer
 // generates them to identity a specific USB connection.)
 base::flat_set<std::string>& KnownAccessories() {
   static base::NoDestructor<base::flat_set<std::string>> set;
@@ -409,7 +409,7 @@ void AndroidAccessoryDiscovery::OnConfigurationStepComplete(
   switch (step) {
     case 0:
       // Manufacturer.
-      encoded_string = VectorFromString("Chromium");
+      encoded_string = VectorFromString("Monyhar");
       break;
 
     case 1:

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1145,7 +1145,7 @@ IN_PROC_BROWSER_TEST_F(WizardControllerDeviceStateTest,
                    ->clear_forced_re_enrollment_vpd_call_count());
 }
 
-// TODO(https://crbug.com/911661) Flaky time outs on Linux Chromium OS ASan
+// TODO(https://crbug.com/911661) Flaky time outs on Linux Monyhar OS ASan
 // LSan bot.
 #if defined(ADDRESS_SANITIZER)
 #define MAYBE_ControlFlowDeviceDisabled DISABLED_ControlFlowDeviceDisabled

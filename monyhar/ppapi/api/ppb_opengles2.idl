@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -669,14 +669,14 @@ interface PPB_OpenGLES2FramebufferMultisample {
 
 
 [macro="PPB_OPENGLES2_CHROMIUMENABLEFEATURE_INTERFACE", force_struct_namespace]
-interface PPB_OpenGLES2ChromiumEnableFeature {
+interface PPB_OpenGLES2MonyharEnableFeature {
   GLboolean EnableFeatureCHROMIUM([in] PP_Resource context,
                                   [in] cstr_t feature);
 };
 
 
 [macro="PPB_OPENGLES2_CHROMIUMMAPSUB_INTERFACE", force_struct_namespace]
-interface PPB_OpenGLES2ChromiumMapSub {
+interface PPB_OpenGLES2MonyharMapSub {
   mem_t MapBufferSubDataCHROMIUM([in] PP_Resource context,
                                  [in] GLuint target,
                                  [in] GLintptr offset,

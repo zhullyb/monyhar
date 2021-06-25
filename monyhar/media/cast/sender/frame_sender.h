@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -85,7 +85,7 @@ class FrameSender {
   const scoped_refptr<CastEnvironment> cast_environment_;
 
   // Sends encoded frames over the configured transport (e.g., UDP).  In
-  // Chromium, this could be a proxy that first sends the frames from a renderer
+  // Monyhar, this could be a proxy that first sends the frames from a renderer
   // process to the browser process over IPC, with the browser process being
   // responsible for "packetizing" the frames and pushing packets into the
   // network layer.

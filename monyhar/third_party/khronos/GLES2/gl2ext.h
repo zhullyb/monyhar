@@ -87,7 +87,7 @@ GL_APICALL void GL_APIENTRY glBlendBarrierKHR (void);
 #ifndef GL_KHR_debug
 #define GL_KHR_debug 1
 typedef void (GL_APIENTRY  *GLDEBUGPROCKHR)(GLenum source,GLenum type,GLuint id,GLenum severity,GLsizei length,const GLchar *message,const void *userParam);
-/* Chromium-specific commented out GL_SAMPLER. */
+/* Monyhar-specific commented out GL_SAMPLER. */
 //#define GL_SAMPLER                        0x82E6
 #define GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR   0x8242
 #define GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR 0x8243
@@ -616,7 +616,7 @@ typedef void (GL_APIENTRYP PFNGLCOPYTEXSUBIMAGE3DOESPROC) (GLenum target, GLint 
 typedef void (GL_APIENTRYP PFNGLCOMPRESSEDTEXIMAGE3DOESPROC) (GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, const void *data);
 typedef void (GL_APIENTRYP PFNGLCOMPRESSEDTEXSUBIMAGE3DOESPROC) (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, const void *data);
 typedef void (GL_APIENTRYP PFNGLFRAMEBUFFERTEXTURE3DOESPROC) (GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLint zoffset);
-// Chromium-specific define to account for issues in gles2_conform_test
+// Monyhar-specific define to account for issues in gles2_conform_test
 // TODO (bajones): This symbol should be updated to the correct version in the
 // conformance test upstream and this hack removed. crbug.com/329708
 #define PFNGLFRAMEBUFFERTEXTURE3DOES PFNGLFRAMEBUFFERTEXTURE3DOESPROC

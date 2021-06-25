@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -217,7 +217,7 @@ void DevToolsDataSource::StartRemoteDataRequest(
         semantics {
           sender: "Developer Tools Remote Data Request From Google"
           description:
-            "This service fetches Chromium DevTools front-end files from the "
+            "This service fetches Monyhar DevTools front-end files from the "
             "cloud for the remote debugging scenario."
           trigger:
             "When user attaches to mobile phone for debugging."
@@ -252,7 +252,7 @@ void DevToolsDataSource::StartCustomDataRequest(
         semantics {
           sender: "Developer Tools Remote Data Request"
           description:
-            "This service fetches Chromium DevTools front-end files from the "
+            "This service fetches Monyhar DevTools front-end files from the "
             "cloud for the remote debugging scenario. This can only happen if "
             "a URL was passed on the commandline via flag "
             "'--custom-devtools-frontend'. This URL overrides the default "

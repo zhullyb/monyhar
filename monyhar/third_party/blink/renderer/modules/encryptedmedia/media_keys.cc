@@ -108,7 +108,7 @@ class MediaKeys::PendingAction final
 };
 
 // This class wraps the promise resolver used when setting the certificate
-// and is passed to Chromium to fullfill the promise. This implementation of
+// and is passed to Monyhar to fullfill the promise. This implementation of
 // complete() will resolve the promise with true, while completeWithError()
 // will reject the promise with an exception. completeWithSession()
 // is not expected to be called, and will reject the promise.
@@ -161,7 +161,7 @@ class SetCertificateResultPromise
 };
 
 // This class wraps the promise resolver used when getting the key status for
-// policy and is passed to Chromium to fullfill the promise.
+// policy and is passed to Monyhar to fullfill the promise.
 class GetStatusForPolicyResultPromise
     : public ContentDecryptionModuleResultPromise {
  public:
@@ -233,7 +233,7 @@ MediaKeySession* MediaKeys::createSession(ScriptState* script_state,
   // 1. If this object's persistent state allowed value is false and
   //    sessionType is not "temporary", throw a new DOMException whose name is
   //    NotSupportedError.
-  //    (Chromium ensures that only session types supported by the
+  //    (Monyhar ensures that only session types supported by the
   //    configuration are listed in supportedSessionTypes.)
   // 2. If the Key System implementation represented by this object's cdm
   //    implementation value does not support sessionType, throw a new
@@ -327,7 +327,7 @@ void MediaKeys::SetServerCertificateTask(
   // 5.3 If any of the preceding steps failed, reject promise with a
   //     new DOMException whose name is the appropriate error name.
   // 5.4 Resolve promise.
-  // (These are handled by Chromium and the CDM.)
+  // (These are handled by Monyhar and the CDM.)
 }
 
 ScriptPromise MediaKeys::getStatusForPolicy(
@@ -341,7 +341,7 @@ ScriptPromise MediaKeys::getStatusForPolicy(
     return ScriptPromise();
   }
 
-  // TODO(xhwang): Pass MediaKeysPolicy classes all the way to Chromium when
+  // TODO(xhwang): Pass MediaKeysPolicy classes all the way to Monyhar when
   // we have more than one policy to check.
   String min_hdcp_version = media_keys_policy->minHdcpVersion();
 

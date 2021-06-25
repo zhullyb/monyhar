@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,8 +26,8 @@ namespace policy {
 class SANDBOX_POLICY_EXPORT SandboxSeccompBPF {
  public:
   struct Options {
-    bool use_amd_specific_policies = false;     // For ChromiumOS.
-    bool use_intel_specific_policies = false;   // For ChromiumOS.
+    bool use_amd_specific_policies = false;     // For MonyharOS.
+    bool use_intel_specific_policies = false;   // For MonyharOS.
     bool use_nvidia_specific_policies = false;  // For Linux.
 
     // Options for GPU's PreSandboxHook.

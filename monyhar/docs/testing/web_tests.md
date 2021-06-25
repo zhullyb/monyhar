@@ -501,7 +501,7 @@ NOTE: If the test is an html file, this means it's a legacy test so you need to 
 You can use [`git bisect`](https://git-scm.com/docs/git-bisect) to find which
 commit broke (or fixed!) a web test in a fully automated way.  Unlike
 [bisect-builds.py](http://dev.monyhar.org/developers/bisect-builds-py), which
-downloads pre-built Chromium binaries, `git bisect` operates on your local
+downloads pre-built Monyhar binaries, `git bisect` operates on your local
 checkout, so it can run tests with `content_shell`.
 
 Bisecting can take several hours, but since it is fully automated you can leave
@@ -535,7 +535,7 @@ git bisect reset  # quit the bisect session
 ## Rebaselining Web Tests
 
 *** promo
-To automatically re-baseline tests across all Chromium platforms, using the
+To automatically re-baseline tests across all Monyhar platforms, using the
 buildbot results, see [How to rebaseline](./web_test_expectations.md#How-to-rebaseline).
 Alternatively, to manually run and test and rebaseline it on your workstation,
 read on.

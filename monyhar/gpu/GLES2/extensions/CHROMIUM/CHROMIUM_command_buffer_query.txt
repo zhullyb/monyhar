@@ -17,7 +17,7 @@ Dependencies
 Overview
 
     This extension provides a query mechanism that allows the client to get
-    timing information from the Chromium command buffer.
+    timing information from the Monyhar command buffer.
 
     GL_COMMANDS_ISSUED_CHROMIUM can be used to measure the time elapsed in
     microseconds between a BeginQueryEXT and an EndQueryEXT. This is the time

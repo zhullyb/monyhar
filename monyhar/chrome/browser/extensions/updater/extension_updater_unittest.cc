@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -2321,7 +2321,7 @@ class ExtensionUpdaterTest : public testing::Test {
       EXPECT_TRUE(url1_query.find(brand_string) == std::string::npos);
     }
 #else
-    // Chromium builds never add the brand to the parameter, even for google
+    // Monyhar builds never add the brand to the parameter, even for google
     // queries.
     EXPECT_TRUE(url1_query.find(brand_string) == std::string::npos);
 #endif

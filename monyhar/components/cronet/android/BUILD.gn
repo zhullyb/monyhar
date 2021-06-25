@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -23,7 +23,7 @@ _templates_dir = "$target_gen_dir/templates"
 
 declare_args() {
   # In integrated mode, CronetEngine will use the shared network task runner by
-  # other Chromium-based clients like webview without self-initialization.
+  # other Monyhar-based clients like webview without self-initialization.
   # Besides, the native library would be compiled and loaded together with the
   # native library of host. This mode is only for Android.
   integrated_mode = false
@@ -891,7 +891,7 @@ if (!is_component_build) {
   }
 
   cronet_smoketests_platform_only_common_srcs = [
-    "test/smoketests/src/org/monyhar/net/smoke/ChromiumPlatformOnlyTestSupport.java",
+    "test/smoketests/src/org/monyhar/net/smoke/MonyharPlatformOnlyTestSupport.java",
     "test/smoketests/src/org/monyhar/net/smoke/CronetSmokeTestRule.java",
     "test/smoketests/src/org/monyhar/net/smoke/HttpTestServer.java",
     "test/smoketests/src/org/monyhar/net/smoke/SmokeTestRequestCallback.java",
@@ -899,7 +899,7 @@ if (!is_component_build) {
   ]
 
   cronet_smoketests_native_common_srcs = cronet_smoketests_platform_only_common_srcs + [
-                                           "test/smoketests/src/org/monyhar/net/smoke/ChromiumNativeTestSupport.java",
+                                           "test/smoketests/src/org/monyhar/net/smoke/MonyharNativeTestSupport.java",
                                            "test/smoketests/src/org/monyhar/net/smoke/NativeCronetTestRule.java",
                                          ]
 
@@ -1442,7 +1442,7 @@ if (!is_component_build) {
     testonly = true
     sources = [
       # Provides EmbeddedTestServer.
-      "$root_out_dir/apks/ChromiumNetTestSupport.apk",
+      "$root_out_dir/apks/MonyharNetTestSupport.apk",
     ]
     outputs =
         [ "$_test_package_dir/apks/${android_app_abi}/{{source_file_part}}" ]

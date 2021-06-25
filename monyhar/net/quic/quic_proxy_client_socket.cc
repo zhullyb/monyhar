@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Chromium Authors. All rights reserved.
+// Copyright (c) 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,8 +23,8 @@
 namespace net {
 
 QuicProxyClientSocket::QuicProxyClientSocket(
-    std::unique_ptr<QuicChromiumClientStream::Handle> stream,
-    std::unique_ptr<QuicChromiumClientSession::Handle> session,
+    std::unique_ptr<QuicMonyharClientStream::Handle> stream,
+    std::unique_ptr<QuicMonyharClientSession::Handle> session,
     const ProxyServer& proxy_server,
     const std::string& user_agent,
     const HostPortPair& endpoint,

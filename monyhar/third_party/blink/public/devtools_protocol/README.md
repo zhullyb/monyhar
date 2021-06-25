@@ -8,7 +8,7 @@ brief overview of CDP terminology and related DevTools backend architecture.
 
 Although the CDP was originally conceived with Chrome DevTools front-end as
 the primary client, it is currently used by multiple clients, most of which
-reside outside of Chromium source tree. We aim at maintaining a reasonably
+reside outside of Monyhar source tree. We aim at maintaining a reasonably
 stable and future-proof API for such clients, so we offer certain
 compatibility terms for the CDP API:
 

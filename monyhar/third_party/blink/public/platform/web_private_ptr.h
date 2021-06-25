@@ -258,7 +258,7 @@ class PtrStorage : public PtrStorageImpl<T,
 //        }
 //        BLINK_EXPORT void Assign(const WebFoo&);  // Implemented in the body.
 //
-//        // Methods that are exposed to Chromium and which are specific to
+//        // Methods that are exposed to Monyhar and which are specific to
 //        // WebFoo go here.
 //        BLINK_EXPORT DoWebFooThing();
 //

@@ -51,7 +51,7 @@ flycheck provides:
     *   `company-ycmd`
     *   `flycheck-ycmd`
 1.  [More info on configuring emacs-ycmd](https://github.com/abingham/emacs-ycmd#quickstart)
-    1.  Assuming your checkout of Chromium is in `~/dev/blink`, i.e. this is the
+    1.  Assuming your checkout of Monyhar is in `~/dev/blink`, i.e. this is the
         directory in which you find the `src`folder, create a symbolic link as
         follows:
 
@@ -85,7 +85,7 @@ flycheck provides:
 ;; Replace the directory information with where you downloaded ycmd to
 (set-variable 'ycmd-server-command (list "python3" (substitute-in-file-name "$HOME/dev/ycmd/third_party/ycmd/ycmd/__main__.py")))
 
-;; Edit according to where you have your Chromium/Blink checkout
+;; Edit according to where you have your Monyhar/Blink checkout
 (add-to-list 'ycmd-extra-conf-whitelist (substitute-in-file-name "$HOME/dev/blink/.ycm_extra_conf.py"))
 
 ;; Show flycheck errors in idle-mode as well
@@ -255,7 +255,7 @@ that only git greps files with extensions we care about (or the equivalent the
 ## vc-mode and find-file performance
 
 When you first open a file under git control, vc mode kicks in and does a high
-level stat of your git repo. For huge repos, especially WebKit and Chromium,
+level stat of your git repo. For huge repos, especially WebKit and Monyhar,
 this makes opening a file take literally seconds. This snippet disables VC git
 for chrome directories:
 

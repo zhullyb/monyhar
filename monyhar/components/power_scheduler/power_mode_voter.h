@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@ namespace power_scheduler {
 
 class PowerModeArbiter;
 
-// PowerModeVoters should be instantiated at instrumentation points in Chromium
+// PowerModeVoters should be instantiated at instrumentation points in Monyhar
 // via PowerModeArbiter::GetInstance()->NewVoter("MyVoter") to vote on a
 // process's PowerMode.
 class COMPONENT_EXPORT(POWER_SCHEDULER) PowerModeVoter {

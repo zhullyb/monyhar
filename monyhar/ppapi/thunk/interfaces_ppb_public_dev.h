@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,7 +34,7 @@ PROXIED_IFACE(PPB_CHAR_SET_DEV_INTERFACE_0_4, PPB_CharSet_Dev_0_4)
 PROXIED_IFACE(PPB_CRYPTO_DEV_INTERFACE_0_1, PPB_Crypto_Dev_0_1)
 PROXIED_IFACE(PPB_DEVICEREF_DEV_INTERFACE_0_1, PPB_DeviceRef_Dev_0_1)
 PROXIED_IFACE(PPB_GLES_CHROMIUM_TEXTURE_MAPPING_DEV_INTERFACE_0_1,
-              PPB_GLESChromiumTextureMapping_Dev_0_1)
+              PPB_GLESMonyharTextureMapping_Dev_0_1)
 PROXIED_IFACE(PPB_IME_INPUT_EVENT_DEV_INTERFACE_0_1, PPB_IMEInputEvent_Dev_0_1)
 PROXIED_IFACE(PPB_TEXTINPUT_DEV_INTERFACE_0_1, PPB_TextInput_Dev_0_1)
 PROXIED_IFACE(PPB_URLUTIL_DEV_INTERFACE_0_6, PPB_URLUtil_Dev_0_6)

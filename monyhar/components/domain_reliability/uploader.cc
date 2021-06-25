@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -93,7 +93,7 @@ class DomainReliabilityUploaderImpl : public DomainReliabilityUploader,
           semantics {
             sender: "Domain Reliability"
             description:
-              "If Chromium has trouble reaching certain Google sites or "
+              "If Monyhar has trouble reaching certain Google sites or "
               "services, Domain Reliability may report the problems back to "
               "Google."
             trigger: "Failure to load certain Google sites or services."
@@ -108,7 +108,7 @@ class DomainReliabilityUploaderImpl : public DomainReliabilityUploader,
             setting:
               "Users can enable or disable Domain Reliability on desktop, via "
               "toggling 'Automatically send usage statistics and crash reports "
-              "to Google' in Chromium's settings under Privacy. On ChromeOS, "
+              "to Google' in Monyhar's settings under Privacy. On ChromeOS, "
               "the setting is named 'Automatically send diagnostic and usage "
               "data to Google'."
             policy_exception_justification: "Not implemented."

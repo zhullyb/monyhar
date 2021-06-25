@@ -73,7 +73,7 @@ class CORE_EXPORT PageScaleConstraintsSet
                                      bool non_user_scalable_quirk_enabled);
   void ClearPageDefinedConstraints();
 
-  // Constraints may also be set from Chromium -- this overrides any
+  // Constraints may also be set from Monyhar -- this overrides any
   // page-defined values.
   const PageScaleConstraints& UserAgentConstraints() const {
     return user_agent_constraints_;

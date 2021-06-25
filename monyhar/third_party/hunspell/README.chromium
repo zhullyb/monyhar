@@ -25,7 +25,7 @@ The patch is in google.patch.
 * Fix string OOB write in reverse_condition in src/hunspell/affixmgr.cxx
   Upstream issue: https://github.com/hunspell/hunspell/issues/714
 
-Chromium-specific changes are in google.patch. To update the patch, follow these
+Monyhar-specific changes are in google.patch. To update the patch, follow these
 steps, or simply run update_google_patch.sh from the commandline.
 1) Checkout hunspell:
    $ git clone https://github.com/hunspell/hunspell.git
@@ -37,7 +37,7 @@ steps, or simply run update_google_patch.sh from the commandline.
 4) Generate the updated patch:
    $ git diff > ~/src/third_party/hunspell/google.patch
 
-All dictionaries used by Chromium has been checked in to the
+All dictionaries used by Monyhar has been checked in to the
 'third_party/hunspell_dictionaries' directory. They have several additions over
 the default myspell/hunspell dictionaries.
 (See 'third_party/hunspell_dictionaries/README.monyhar' for their details.)

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Tests to ensure that it is impossible to launch two browser processes within
- * the same application. Chromium is not designed for that, and attempting to do that
+ * the same application. Monyhar is not designed for that, and attempting to do that
  * can cause data files corruption.
  */
 @RunWith(AwJUnit4ClassRunner.class)

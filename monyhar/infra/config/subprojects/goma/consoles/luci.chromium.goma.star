@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -11,21 +11,21 @@ luci.console_view(
     repo = "https://monyhar.googlesource.com/monyhar/src",
     entries = [
         luci.console_view_entry(
-            builder = "goma/Chromium Linux Goma RBE Staging (clobber)",
+            builder = "goma/Monyhar Linux Goma RBE Staging (clobber)",
             category = "rbe|rel",
             short_name = "clb",
         ),
         luci.console_view_entry(
-            builder = "goma/Chromium Linux Goma RBE Staging",
+            builder = "goma/Monyhar Linux Goma RBE Staging",
             category = "rbe|rel",
         ),
         luci.console_view_entry(
-            builder = "goma/Chromium Linux Goma RBE Staging (dbg) (clobber)",
+            builder = "goma/Monyhar Linux Goma RBE Staging (dbg) (clobber)",
             category = "rbe|debug",
             short_name = "clb",
         ),
         luci.console_view_entry(
-            builder = "goma/Chromium Linux Goma RBE Staging (dbg)",
+            builder = "goma/Monyhar Linux Goma RBE Staging (dbg)",
             category = "rbe|debug",
         ),
     ],

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -142,8 +142,8 @@ void RemoveBinariesVersionKey(const InstallerState& installer_state) {
   std::wstring path(install_static::GetClientsKeyPath(
       L"{4DC8B4CA-1BDA-483e-B5FA-D3C12E15B62D}"));
 #else
-  // Assume that non-Google is Chromium branding.
-  std::wstring path(L"Software\\Chromium Binaries");
+  // Assume that non-Google is Monyhar branding.
+  std::wstring path(L"Software\\Monyhar Binaries");
 #endif
   if (base::win::RegKey(installer_state.root_key(), path.c_str(),
                         KEY_QUERY_VALUE | KEY_WOW64_32KEY)

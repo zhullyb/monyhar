@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -131,7 +131,7 @@ enum SuccessReason {
 
 // An interface that defines the callbacks for objects that the
 // Authenticator class will call to report the success/failure of
-// authentication for Chromium OS.
+// authentication for Monyhar OS.
 class COMPONENT_EXPORT(CHROMEOS_LOGIN_AUTH) AuthStatusConsumer
     : public base::CheckedObserver {
  public:

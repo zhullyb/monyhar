@@ -1,4 +1,4 @@
-// Copyright (c) 2010 The Chromium Authors. All rights reserved.
+// Copyright (c) 2010 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -47,7 +47,7 @@ enum PrintingMode {
   kPostScript2 = 2,
   kPostScript3 = 3,
   // Values 4 and 5 are similar to `kPostScript2` and `kPostScript3`, but are
-  // not intended for use in sandboxed environments like Chromium's.
+  // not intended for use in sandboxed environments like Monyhar's.
   kEmfWithReducedRasterization = 6,
 };
 

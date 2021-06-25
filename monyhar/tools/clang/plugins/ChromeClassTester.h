@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@
 #include "clang/AST/TypeLoc.h"
 #include "clang/Frontend/CompilerInstance.h"
 
-// A class on top of ASTConsumer that forwards classes defined in Chromium
+// A class on top of ASTConsumer that forwards classes defined in Monyhar
 // headers to subclasses which implement CheckChromeClass().
 // TODO(vmpstr): Fold this class into FindBadConstructsConsumer.
 class ChromeClassTester {

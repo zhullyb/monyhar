@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -141,7 +141,7 @@ void ComputeBuiltInPlugins(std::vector<content::PepperPluginInfo>* plugins) {
   // from the Chrome Web Store to use NaCl even if the command line switch
   // isn't set.  For other uses of NaCl we check for the command line switch.
   content::PepperPluginInfo nacl;
-  // The nacl plugin is now built into the Chromium binary.
+  // The nacl plugin is now built into the Monyhar binary.
   nacl.is_internal = true;
   nacl.path = base::FilePath(ChromeContentClient::kNaClPluginFileName);
   nacl.name = nacl::kNaClPluginName;

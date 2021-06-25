@@ -334,7 +334,7 @@ class ThreadCache {
   // any flavor of malloc() call.  The aggegated amount includes all padding to
   // the smallest class that can hold the request, or to the nearest whole page
   // when a large allocation is made without using a class.  This sum is
-  // currently used for Chromium profiling, where tallies are kept of the amount
+  // currently used for Monyhar profiling, where tallies are kept of the amount
   // of memory allocated during the running of each task on each thread.
   uint32 total_bytes_allocated_;  // Total, modulo 2^32.
 

@@ -1,4 +1,4 @@
-/* Copyright (c) 2020 The Chromium Authors. All rights reserved.
+/* Copyright (c) 2020 The Monyhar Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file.
  */
@@ -1393,9 +1393,9 @@ static int32_t Pnacl_M29_PPB_NetworkProxy_GetProxyForURL(PP_Instance instance, s
 
 /* Not generating wrapper methods for PPB_OpenGLES2FramebufferMultisample_1_0 */
 
-/* Not generating wrapper methods for PPB_OpenGLES2ChromiumEnableFeature_1_0 */
+/* Not generating wrapper methods for PPB_OpenGLES2MonyharEnableFeature_1_0 */
 
-/* Not generating wrapper methods for PPB_OpenGLES2ChromiumMapSub_1_0 */
+/* Not generating wrapper methods for PPB_OpenGLES2MonyharMapSub_1_0 */
 
 /* Not generating wrapper methods for PPB_OpenGLES2Query_1_0 */
 
@@ -4096,9 +4096,9 @@ static const struct PPB_NetworkProxy_1_0 Pnacl_Wrappers_PPB_NetworkProxy_1_0 = {
 
 /* Not generating wrapper interface for PPB_OpenGLES2FramebufferMultisample_1_0 */
 
-/* Not generating wrapper interface for PPB_OpenGLES2ChromiumEnableFeature_1_0 */
+/* Not generating wrapper interface for PPB_OpenGLES2MonyharEnableFeature_1_0 */
 
-/* Not generating wrapper interface for PPB_OpenGLES2ChromiumMapSub_1_0 */
+/* Not generating wrapper interface for PPB_OpenGLES2MonyharMapSub_1_0 */
 
 /* Not generating wrapper interface for PPB_OpenGLES2Query_1_0 */
 

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,7 +56,7 @@
       assertWithMatcher:grey_nil()];
 }
 
-// Tests that opening the page info on a Chromium page displays the correct
+// Tests that opening the page info on a Monyhar page displays the correct
 // information.
 - (void)testShowPageInfoChromePage {
   [ChromeEarlGrey loadURL:GURL("chrome://version")];

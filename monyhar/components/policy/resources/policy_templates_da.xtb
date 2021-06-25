@@ -2159,7 +2159,7 @@ Mens selve politikken understøttes på ovenstående platforme, kan den funktion
 <translation id="5148753489738115745">Giver dig mulighed for at angive yderligere parametre, som bruges, når <ph name="PRODUCT_FRAME_NAME" /> starter <ph name="PRODUCT_NAME" />.
 
           Hvis denne politik ikke er angivet, bruges standardkommandolinjen.</translation>
-<translation id="5152787786897382519">Både Chromium og Google Chrome har politikgrupper, som er afhængige af hinanden for at styre en funktion. Disse sæt er repræsenteret af følgende politikgrupper. Da politikker kan have flere kilder, er det kun værdierne fra kilden med højeste prioritet, der anvendes. Værdier fra kilder med lavere prioritet i samme gruppe ignoreres. Prioriteringsrækkefølgen er defineret i <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Både Monyhar og Google Chrome har politikgrupper, som er afhængige af hinanden for at styre en funktion. Disse sæt er repræsenteret af følgende politikgrupper. Da politikker kan have flere kilder, er det kun værdierne fra kilden med højeste prioritet, der anvendes. Værdier fra kilder med lavere prioritet i samme gruppe ignoreres. Prioriteringsrækkefølgen er defineret i <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Hvor ofte der sendes netværkspakker til overvågning (angivet i millisekunder).
 
       Hvis denne politik ikke er indstillet, er standardfrekvensen 3 minutter. Minimumsfrekvensen er 30 sekunder, og maksimumsfrekvensen er 24 timer. Alle værdier uden for dette interval justeres automatisk, så de ligger inden for dette interval.</translation>
@@ -3815,7 +3815,7 @@ Hvis du aktiverer denne indstilling eller ikke konfigurerer en værdi, forbliver
       Hvis politikken ikke er indstillet, bruger <ph name="PRODUCT_OS_NAME" /> den enhedslokale kontos mailkonto-id som det viste navn på loginskærmen.
 
       Denne politik ignoreres for almindelige brugerkonti.</translation>
-<translation id="8259375588339409826">Både Chromium og Google Chrome understøtter den samme række politikker. Bemærk, at dette dokument kan indeholde politikker, der ikke er udgivet (dvs. angivelsen af "understøttes på" henviser til en ikke-udgivet version af <ph name="PRODUCT_NAME" />), som kan ændres eller fjernes uden varsel, og for hvilke ingen garantier stilles, herunder garantier vedrørende deres sikkerheds- og privatlivsegenskaber.
+<translation id="8259375588339409826">Både Monyhar og Google Chrome understøtter den samme række politikker. Bemærk, at dette dokument kan indeholde politikker, der ikke er udgivet (dvs. angivelsen af "understøttes på" henviser til en ikke-udgivet version af <ph name="PRODUCT_NAME" />), som kan ændres eller fjernes uden varsel, og for hvilke ingen garantier stilles, herunder garantier vedrørende deres sikkerheds- og privatlivsegenskaber.
 
 Disse politikker er udelukkende beregnet til at blive brugt til konfiguration af <ph name="PRODUCT_NAME" /> internt i din virksomhed. Brug af disse politikker uden for din virksomhed (f.eks. i et offentligt distribueret program) betragtes som malware og vil højst sandsynligt blive markeret som malware af Google og antivirusleverandører.
 

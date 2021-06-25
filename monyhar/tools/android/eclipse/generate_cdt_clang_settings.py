@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -121,7 +121,7 @@ def main(argv):
   compiler_path = os.path.abspath(
       'third_party/llvm-build/Release+Asserts/bin/clang')
   if not os.path.exists(compiler_path):
-    print('Please run this script from the Chromium src/ directory.')
+    print('Please run this script from the Monyhar src/ directory.')
     return
 
   include_dirs = GetClangIncludeDirectories(compiler_path)

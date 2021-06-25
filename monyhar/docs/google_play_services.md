@@ -15,7 +15,7 @@ The standard way of adding the Google Play services as a dependency to a project
 is to import it through the Android SDK manager as a Maven repository. That
 repository contains multiple versions of the library split into separate APIs
 (for example Cast, GCM, Android Pay, etc). To avoid downloading a lot of data we
-don't need to build Chrome, android checkouts of Chromium download an archive
+don't need to build Chrome, android checkouts of Monyhar download an archive
 containing only the APIs we currently need in Chrome, and in a single version.
 
 The up to date list of clients and version used can be seen in

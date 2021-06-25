@@ -71,7 +71,7 @@ class TestPaths {
   //! In Crashpad’s standalone build, this returns \a name, with the system’s
   //! extension for executables (`.exe`) appended if appropriate.
   //!
-  //! When building in Chromium, \a name is ignored, and the name of the
+  //! When building in Monyhar, \a name is ignored, and the name of the
   //! monolithic test executable (`crashpad_tests`) is returned, with the
   //! system’s extension for executables appended if appropriate.
   //!

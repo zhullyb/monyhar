@@ -184,7 +184,7 @@ In theory, if the `getUserMedia` operation is successful, the
    > where a spec doesn't state the ordering of a sequence, the ordering itself
    > can be a tracking concern. However in this case the implementation yields
    > at most one audio track after a successful `getUserMedia` invocation.
-   > Hence there's no ordering concern here at least in Chromium.
+   > Hence there's no ordering concern here at least in Monyhar.
 
 1. The operation [`MediaStreamTrack.getCapabilities`] -- which is invoked on
    the result of the prior step.

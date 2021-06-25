@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">Коренева бібліотека</translation>
 <translation id="443560535555262820">Відкрити параметри спеціальних можливостей</translation>
 <translation id="4450893287417543264">Більше не показувати</translation>
-<translation id="4512952200932940229">© The Chromium Authors 2021. Усі права захищено.</translation>
+<translation id="4512952200932940229">© The Monyhar Authors 2021. Усі права захищено.</translation>
 <translation id="4513946894732546136">Відгуки</translation>
 <translation id="4563926062592110512">Від’єднано клієнт <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Віддалені пристрої</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">Введіть PIN-код для віддаленого комп’ютера.</translation>
 <translation id="7895403300744144251">Правила безпеки віддаленого комп’ютера блокують з’єднання з вашого облікового запису.</translation>
 <translation id="7936528439960309876">Закріпити праворуч</translation>
-<translation id="7970576581263377361">Помилка автентифікації. Увійдіть в обліковий запис Chromium знову.</translation>
+<translation id="7970576581263377361">Помилка автентифікації. Увійдіть в обліковий запис Monyhar знову.</translation>
 <translation id="7981525049612125370">Віддалений сеанс закінчився.</translation>
 <translation id="8038111231936746805">(за умовчанням)</translation>
 <translation id="8041089156583427627">Надіслати відгук</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737">Надайте сервісу <ph name="PRODUCT_NAME" /> дозвіл на запис екрана</translation>
 <translation id="9213184081240281106">Недійсна конфігурація хосту.</translation>
 <translation id="981121421437150478">Офлайн</translation>
-<translation id="985602178874221306">The Chromium Authors</translation>
+<translation id="985602178874221306">The Monyhar Authors</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (востаннє онлайн: <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

@@ -1,9 +1,9 @@
--- Copyright (c) 2010 The Chromium Authors. All rights reserved.
+-- Copyright (c) 2010 The Monyhar Authors. All rights reserved.
 -- Use of this source code is governed by a BSD-style license that can be
 -- found in the LICENSE file.
 
 -- This script bookmarks the currently open tabs of a window.
-tell application "Chromium"
+tell application "Monyhar"
 	set url_list to {}
 	set title_list to {}
 	tell window 1

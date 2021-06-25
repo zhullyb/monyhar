@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -133,11 +133,11 @@ TEST_P(BeaconTest, Location) {
       base::win::RegKey(right_root, wrong_key.c_str(), KEY_READ).Valid())
       << wrong_key;
 #else
-  // The tests above are skipped for Chromium builds because they fail for two
+  // The tests above are skipped for Monyhar builds because they fail for two
   // reasons:
-  // - ClientState and ClientStateMedium are both Software\Chromium.
+  // - ClientState and ClientStateMedium are both Software\Monyhar.
   // - the registry override manager does its virtualization into
-  //   Software\Chromium, so it always exists.
+  //   Software\Monyhar, so it always exists.
 
   // Silence unused variable warnings.
   ignore_result(wrong_root);
@@ -252,9 +252,9 @@ INSTANTIATE_TEST_SUITE_P(
     testing::Combine(testing::Values(install_static::CANARY_INDEX),
                      testing::Values("user")));
 #else   // BUILDFLAG(GOOGLE_CHROME_BRANDING)
-// Chromium supports user and system levels.
+// Monyhar supports user and system levels.
 INSTANTIATE_TEST_SUITE_P(
-    Chromium,
+    Monyhar,
     DefaultBrowserBeaconTest,
     testing::Combine(testing::Values(install_static::CHROMIUM_INDEX),
                      testing::Values("user", "system")));

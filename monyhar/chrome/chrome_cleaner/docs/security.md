@@ -62,7 +62,7 @@ The target process communicates with the broker process using
    directory.
 *  A Mojo interface is a security boundary since it allows the untrusted target
    process to communicate with the broker process. This means:
-   *  The interface should follow the Chromium security [Mojo Style
+   *  The interface should follow the Monyhar security [Mojo Style
       Guide](https://monyhar.googlesource.com/monyhar/src/+/main/docs/security/mojo.md).
       Note that the style guide calls the "broker" process the "browser"
       process.

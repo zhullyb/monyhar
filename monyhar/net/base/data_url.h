@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ class NET_EXPORT DataURL {
   //
   // If the media type value doesn't match the media-type production defined in
   // RFC 7231, mime_type will be set to the default value "text/plain". We
-  // don't simply fail for this grammar violation since Chromium had been
+  // don't simply fail for this grammar violation since Monyhar had been
   // accepting such invalid values. For example, <img> element with the src
   // attribute set to a data URL with an invalid media type "image" (without a
   // slash and subtype) had been displayed. However, the value this method will

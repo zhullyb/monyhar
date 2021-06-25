@@ -62,7 +62,7 @@
 
 #ifdef FASTEST
 /* See http://crbug.com/1113596 */
-#error "FASTEST is not supported in Chromium's zlib."
+#error "FASTEST is not supported in Monyhar's zlib."
 #endif
 
 const char deflate_copyright[] =

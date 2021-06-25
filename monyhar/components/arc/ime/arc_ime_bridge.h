@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ struct CompositionText;
 namespace arc {
 
 // This interface class encapsulates the detail of IME related IPC between
-// Chromium and the ARC container.
+// Monyhar and the ARC container.
 class ArcImeBridge {
  public:
   virtual ~ArcImeBridge() {}

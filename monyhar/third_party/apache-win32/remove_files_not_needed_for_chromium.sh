@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 # This is a simple script that strips out all of the files from the
-# Apache distribution we don't actually need to run the Chromium
+# Apache distribution we don't actually need to run the Monyhar
 # layout tests.
 
 find . \! \( \

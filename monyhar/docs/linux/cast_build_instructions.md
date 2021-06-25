@@ -84,7 +84,7 @@ for their accuracy.
 ### Run the hooks
 
 Once you've run `install-build-deps` at least once, you can now run the
-Chromium-specific hooks, which will download additional binaries and other
+Monyhar-specific hooks, which will download additional binaries and other
 things you might need:
 
 ```shell
@@ -98,7 +98,7 @@ development and testing purposes.
 
 ## Setting up the build
 
-Chromium uses [Ninja](https://ninja-build.org) as its main build tool along with
+Monyhar uses [Ninja](https://ninja-build.org) as its main build tool along with
 a tool called [GN](https://gn.googlesource.com/gn/+/master/docs/quick_start.md)
 to generate `.ninja` files. You can create any number of *build directories*
 with different configurations. To create a build directory, run:
@@ -151,7 +151,7 @@ $ git rebase-update
 $ gclient sync
 ```
 
-The first command updates the primary Chromium source repository and rebases
+The first command updates the primary Monyhar source repository and rebases
 any of your local branches on top of tip-of-tree (aka the Git branch
 `origin/master`). If you don't want to use this script, you can also just use
 `git pull` or other common Git commands to update the repo.

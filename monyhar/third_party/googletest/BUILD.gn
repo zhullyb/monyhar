@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@ config("gtest_config") {
   visibility = [ ":*" ]  # gmock also shares this config.
 
   defines = [
-    # Chromium always links googletest statically, so no API qualifier is
+    # Monyhar always links googletest statically, so no API qualifier is
     # necessary. The definition in gtest-port.h at the time of this writing
     # causes crashes in content_browsertests.
     "GTEST_API_=",

@@ -60,8 +60,8 @@ async function assertNoNegotiationNeeded(t, pc) {
   assert_equals(event, undefined, "No negotiationneeded event");
 }
 
-// In Chromium, assert_equals() produces test expectations with the values
-// compared. Because ufrags are different on each run, this would make Chromium
+// In Monyhar, assert_equals() produces test expectations with the values
+// compared. Because ufrags are different on each run, this would make Monyhar
 // test expectations different on each run on tests that failed when comparing
 // ufrags. To work around this problem, assert_ufrags_equals() and
 // assert_ufrags_not_equals() should be preferred over assert_equals() and

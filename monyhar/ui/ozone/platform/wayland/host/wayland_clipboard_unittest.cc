@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -242,7 +242,7 @@ TEST_P(WaylandClipboardTest, ClipboardChangeNotifications) {
   Sync();
   EXPECT_FALSE(clipboard_->IsSelectionOwner(ClipboardBuffer::kCopyPaste));
 
-  // 2. For selection offered by Chromium.
+  // 2. For selection offered by Monyhar.
   EXPECT_CALL(clipboard_changed_callback, Run(buffer)).Times(1);
   OfferData(buffer, kSampleClipboardText, {kMimeTypeTextUtf8});
   Sync();

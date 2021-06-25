@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ class PrefRegistrySimple;
 // The namespace should also be changed to "namespace input_method {".
 
 // This file defines types and declare variables used in "Languages and
-// Input" settings in Chromium OS.
+// Input" settings in Monyhar OS.
 namespace chromeos {
 namespace language_prefs {
 

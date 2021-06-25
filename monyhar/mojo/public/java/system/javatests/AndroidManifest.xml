@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <!-- Copyright (c) 2012 The Chromium Authors. All rights reserved. Use of
+  <!-- Copyright (c) 2012 The Monyhar Authors. All rights reserved. Use of
        this source code is governed by a BSD-style license that can be found
        in the LICENSE file. -->
   <!-- package name must be unique so suffix with "tests" so package loader
@@ -20,7 +20,7 @@
         <uses-library android:name="android.test.runner" />
     </application>
 
-    <instrumentation android:name="org.monyhar.base.test.BaseChromiumAndroidJUnitRunner"
+    <instrumentation android:name="org.monyhar.base.test.BaseMonyharAndroidJUnitRunner"
         android:targetPackage="org.monyhar.mojo.tests"
         android:label="Tests for org.monyhar.mojo"/>
 

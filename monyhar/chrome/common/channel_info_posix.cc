@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,7 +27,7 @@ struct ChannelState {
 };
 
 // Returns the channel state for the browser based on branding and the
-// CHROME_VERSION_EXTRA environment variable. In unbranded (Chromium) builds,
+// CHROME_VERSION_EXTRA environment variable. In unbranded (Monyhar) builds,
 // this function unconditionally returns `channel` = UNKNOWN and
 // `is_extended_stable` = false. In branded (Google Chrome) builds, this
 // function returns `channel` = UNKNOWN and `is_extended_stable` = false for any

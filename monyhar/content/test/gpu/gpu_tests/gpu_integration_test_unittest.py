@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -37,7 +37,7 @@ from telemetry.testing import browser_test_runner
 from telemetry.testing import fakes
 from telemetry.testing import run_browser_tests
 
-path_util.AddDirToPathIfNeeded(path_util.GetChromiumSrcDir(), 'tools', 'perf')
+path_util.AddDirToPathIfNeeded(path_util.GetMonyharSrcDir(), 'tools', 'perf')
 from chrome_telemetry_build import monyhar_config
 
 # Unittest test cases are defined as public methods, so ignore complaints about
@@ -120,7 +120,7 @@ class GpuIntegrationTestUnittest(unittest.TestCase):
 
   def _RunGpuIntegrationTests(self, test_name, extra_args=None):
     extra_args = extra_args or []
-    unittest_config = monyhar_config.ChromiumConfig(
+    unittest_config = monyhar_config.MonyharConfig(
         top_level_dir=path_util.GetGpuTestDir(),
         benchmark_dirs=[
             os.path.join(path_util.GetGpuTestDir(), 'unittest_data')
@@ -445,7 +445,7 @@ class GpuIntegrationTestUnittest(unittest.TestCase):
     Args:
       test_args: A _IntegrationTestArgs instance to use.
     """
-    config = monyhar_config.ChromiumConfig(
+    config = monyhar_config.MonyharConfig(
         top_level_dir=path_util.GetGpuTestDir(),
         benchmark_dirs=[
             os.path.join(path_util.GetGpuTestDir(), 'unittest_data')
@@ -455,7 +455,7 @@ class GpuIntegrationTestUnittest(unittest.TestCase):
          tempfile_ext.NamedTemporaryDirectory() as temp_dir:
       test_results_path = os.path.join(temp_dir, 'test_results.json')
       test_state_path = os.path.join(temp_dir, 'test_state.json')
-      # We are processing ChromiumConfig instance and getting the argument
+      # We are processing MonyharConfig instance and getting the argument
       # list. Then we pass it directly to run_browser_tests.RunTests. If
       # we called browser_test_runner.Run, then it would spawn another
       # subprocess which is less efficient.

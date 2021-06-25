@@ -5,7 +5,7 @@
 ## Overview
 
 This document contains the minimum amount of information needed for a developer
-to start using Mojo effectively in Chromium, with example Mojo interface usage,
+to start using Mojo effectively in Monyhar, with example Mojo interface usage,
 service definition and hookup, and a brief overview of the Content layer's core
 services.
 
@@ -235,7 +235,7 @@ value of `4`, as defined by the browser-side implementation above.
 
 ## Services Overview &amp; Terminology
 The previous section only scratches the surface of how Mojo IPC is used in
-Chromium. While renderer-to-browser messaging is simple and possibly the most
+Monyhar. While renderer-to-browser messaging is simple and possibly the most
 prevalent usage by sheer code volume, we are incrementally decomposing the
 codebase into a set of services with a bit more granularity than the traditional
 Content browser/renderer/gpu/utility process split.
@@ -251,7 +251,7 @@ by the browser to manage an instance of the service.
 ## Example: Building a Simple Out-of-Process Service
 
 There are multiple steps typically involved to get a new service up and running
-in Chromium:
+in Monyhar:
 
 - Define the main service interface and implementation
 - Hook up the implementation in out-of-process code

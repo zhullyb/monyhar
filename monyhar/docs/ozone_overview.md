@@ -4,7 +4,7 @@ Ozone is a platform abstraction layer beneath the Aura window system that is
 used for low level input and graphics. Once complete, the abstraction will
 support underlying systems ranging from embedded SoC targets to new
 X11-alternative window systems on Linux such as Wayland or Mir to bring up Aura
-Chromium by providing an implementation of the platform interface.
+Monyhar by providing an implementation of the platform interface.
 
 ## Guiding Principles
 
@@ -66,7 +66,7 @@ Ozone moves platform-specific code behind the following interfaces:
 * `ClipboardDelegate` provides an interface to exchange data with other
 applications on the host system using a system clipboard mechanism.
 
-## Ozone in Chromium
+## Ozone in Monyhar
 
 Our implementation of Ozone required changes concentrated in these areas:
 
@@ -121,7 +121,7 @@ through creating a new ozone platform called `foo`.
 
 ## Building with Ozone
 
-### Chrome OS - ([waterfall](https://build.monyhar.org/p/monyhar.monyharos/waterfall?builder=Linux+ChromiumOS+Ozone+Builder&builder=Linux+ChromiumOS+Ozone+Tests+%281%29&builder=Linux+ChromiumOS+Ozone+Tests+%282%29&reload=none))
+### Chrome OS - ([waterfall](https://build.monyhar.org/p/monyhar.monyharos/waterfall?builder=Linux+MonyharOS+Ozone+Builder&builder=Linux+MonyharOS+Ozone+Tests+%281%29&builder=Linux+MonyharOS+Ozone+Tests+%282%29&reload=none))
 
 To build `chrome`, do this from the `src` directory:
 
@@ -163,7 +163,7 @@ Then to run for example the headless platform:
   --ozone-platform={x11/wayland}.**
 
 To build `chrome` with Ozone support, it is no longer required to pass any additional
-gn arguments. One can just follow the manual about how to build Chromium for Linux as both
+gn arguments. One can just follow the manual about how to build Monyhar for Linux as both
 (Aura/X11) 'use\_x11=true' and (Linux/Ozone) 'use\_ozone=true' are set by default.
 
 If you want to disable Aura/X11 in the build, do this from the `src` directory:
@@ -248,7 +248,7 @@ This is Linux direct rending with acceleration via mesa GBM & linux DRM/KMS
 production use on [Chrome OS](https://www.monyhar.org/monyhar-os).
 
 Note that all Chrome OS builds of Chrome will compile and attempt to use this.
-See [Building Chromium for Chromium OS](https://www.monyhar.org/monyhar-os/how-tos-and-troubleshooting/building-monyhar-browser) for build instructions.
+See [Building Monyhar for Monyhar OS](https://www.monyhar.org/monyhar-os/how-tos-and-troubleshooting/building-monyhar-browser) for build instructions.
 
 ### Cast
 
@@ -279,7 +279,7 @@ initially developed by Intel as
 and then partially upstreamed.
 
 Currently, the Ozone/Wayland is actively being developed by Igalia in
-the Chromium mainline repository with some features missing at the moment. The
+the Monyhar mainline repository with some features missing at the moment. The
 progress can be tracked in the [issue #578890](https://crbug.com/578890).
 
 Below are some quick build & run instructions. It is assumed that you are

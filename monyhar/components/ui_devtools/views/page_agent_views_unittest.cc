@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -39,7 +39,7 @@ class PageAgentViewsTest : public views::ViewsTestBase {
   bool HasSource(protocol::Array<protocol::Page::FrameResource>* resources,
                  std::string source) {
     for (const auto& resource : *resources) {
-      if (resource->getUrl() == kChromiumCodeSearchSrcURL + source)
+      if (resource->getUrl() == kMonyharCodeSearchSrcURL + source)
         return true;
     }
     return false;
@@ -155,7 +155,7 @@ TEST_F(PageAgentViewsTest, GetResourceTree) {
 
   protocol::Page::Frame* frame_object = resource_tree->getFrame();
   EXPECT_EQ(frame_object->getId(), "1");
-  EXPECT_EQ(frame_object->getUrl(), kChromiumCodeSearchURL);
+  EXPECT_EQ(frame_object->getUrl(), kMonyharCodeSearchURL);
 
   EXPECT_TRUE(VerifyResources(resource_tree->getResources()));
 }

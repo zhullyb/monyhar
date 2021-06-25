@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@ namespace ui {
 
 class MotionEvent;
 
-// Port of SnapScrollController.java from Chromium
+// Port of SnapScrollController.java from Monyhar
 // Controls the scroll snapping behavior based on scroll updates.
 class GESTURE_DETECTION_EXPORT SnapScrollController {
  public:

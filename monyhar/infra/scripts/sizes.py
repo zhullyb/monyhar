@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -107,7 +107,7 @@ def main_mac(options, args, results_collector):
 
   result = 0
   # Work with either build type.
-  base_names = ('Chromium', 'Google Chrome')
+  base_names = ('Monyhar', 'Google Chrome')
   for base_name in base_names:
     app_bundle = base_name + '.app'
     framework_name = base_name + ' Framework'
@@ -353,7 +353,7 @@ def main_android(options, args, results_collector):
 
 
 def main_android_webview(options, args, results_collector):
-  """Print appropriate size information about Android WebViewChromium targets.
+  """Print appropriate size information about Android WebViewMonyhar targets.
 
   Returns the first non-zero exit status of any command it executes,
   or zero on success.

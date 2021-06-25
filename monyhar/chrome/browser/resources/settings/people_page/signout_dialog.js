@@ -1,10 +1,10 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 /**
  * @fileoverview 'settings-signout-dialog' is a dialog that allows the
- * user to turn off sync and sign out of Chromium.
+ * user to turn off sync and sign out of Monyhar.
  */
 import {Polymer, html} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 

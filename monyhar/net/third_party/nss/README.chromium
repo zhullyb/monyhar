@@ -13,5 +13,5 @@ The snapshot was updated to the hg tag: NSS_3_23_RTM
 
 Local Modifications:
 Files are forked from Mozilla's because of the heavy adaptations necessary.
-Differences are using Chromium libraries instead of Mozilla's, matching the
-Chromium style, and returning the certificate chain built.
+Differences are using Monyhar libraries instead of Mozilla's, matching the
+Monyhar style, and returning the certificate chain built.

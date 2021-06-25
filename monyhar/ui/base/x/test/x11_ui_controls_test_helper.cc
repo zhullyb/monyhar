@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ X11UIControlsTestHelper::X11UIControlsTestHelper()
     : connection_(x11::Connection::Get()),
       x_root_window_(ui::GetX11RootWindow()),
       x_window_(
-          x11::CreateDummyWindow("Chromium X11UIControlsTestHelper Window")) {}
+          x11::CreateDummyWindow("Monyhar X11UIControlsTestHelper Window")) {}
 
 X11UIControlsTestHelper::~X11UIControlsTestHelper() {
   connection_->DestroyWindow({x_window_});

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1251,7 +1251,7 @@ public class SingleWebsiteSettings extends SiteSettingsPreferenceFragment
         int buttonResId = mHideNonPermissionPreferences ? R.string.reset : titleResId;
         // Handle the Clear & Reset preference click by showing a confirmation.
         mConfirmationDialog =
-                new AlertDialog.Builder(getContext(), R.style.Theme_Chromium_AlertDialog)
+                new AlertDialog.Builder(getContext(), R.style.Theme_Monyhar_AlertDialog)
                         .setTitle(titleResId)
                         .setMessage(confirmationResId)
                         .setPositiveButton(buttonResId,

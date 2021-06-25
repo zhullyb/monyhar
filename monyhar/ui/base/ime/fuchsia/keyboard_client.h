@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -50,7 +50,7 @@ class COMPONENT_EXPORT(UI_BASE_IME_FUCHSIA) KeyboardClient
 
   fidl::Binding<fuchsia::ui::input3::KeyboardListener> binding_;
 
-  // Dispatches events into Chromium once they have been converted to
+  // Dispatches events into Monyhar once they have been converted to
   // ui::KeyEvents.
   InputEventSink* event_sink_;
 

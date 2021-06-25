@@ -21,7 +21,7 @@ There are several flavors of logging you can turn on.
 
 ## Network Traces
 
-http://wiki.wireshark.org/SSL describes how to decode SSL traffic. Chromium SSL
+http://wiki.wireshark.org/SSL describes how to decode SSL traffic. Monyhar SSL
 unit tests that use `net/base/ssl_test_util.cc` to set up their servers always
 use port 9443 with `net/data/ssl/certificates/ok_cert.pem`, and port 9666 with
 `net/data/ssl/certificates/expired_cert.pem` This makes it easy to configure

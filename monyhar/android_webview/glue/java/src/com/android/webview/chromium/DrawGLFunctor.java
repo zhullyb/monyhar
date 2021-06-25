@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -86,13 +86,13 @@ class DrawGLFunctor implements AwContents.NativeDrawGLFunctor {
         mNativeDrawGLFunctor = 0;
     }
 
-    public static void setChromiumAwDrawGLFunction(long functionPointer) {
-        nativeSetChromiumAwDrawGLFunction(functionPointer);
+    public static void setMonyharAwDrawGLFunction(long functionPointer) {
+        nativeSetMonyharAwDrawGLFunction(functionPointer);
     }
 
     // The Android framework performs manual JNI registration on these methods,
     // so the method signatures cannot change without updating the framework.
     private static native long nativeCreateGLFunctor(long viewContext);
     private static native void nativeDestroyGLFunctor(long functor);
-    private static native void nativeSetChromiumAwDrawGLFunction(long functionPointer);
+    private static native void nativeSetMonyharAwDrawGLFunction(long functionPointer);
 }

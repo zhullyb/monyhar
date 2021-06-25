@@ -19,7 +19,7 @@
           "text": "-enable-pretty-printing"
         },
         {
-          "description": "Load Chromium gdb configuration",
+          "description": "Load Monyhar gdb configuration",
           "text": "-interpreter-exec console \"source -v ${workspaceRoot}/tools/gdb/gdbinit\""
         },
         {

@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -160,10 +160,10 @@ NSString* kGoogleServicesSyncErrorImage = @"google_services_sync_error";
 // Preference value for the "Safe Browsing" feature.
 @property(nonatomic, strong, readonly)
     PrefBackedBoolean* safeBrowsingPreference;
-// Preference value for the "Help improve Chromium's features" feature.
+// Preference value for the "Help improve Monyhar's features" feature.
 @property(nonatomic, strong, readonly)
     PrefBackedBoolean* sendDataUsagePreference;
-// Preference value for the "Help improve Chromium's features" for Wifi-Only.
+// Preference value for the "Help improve Monyhar's features" for Wifi-Only.
 // TODO(crbug.com/872101): Needs to create the UI to change from Wifi-Only to
 // always
 @property(nonatomic, strong, readonly)

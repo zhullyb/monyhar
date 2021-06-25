@@ -1,4 +1,4 @@
-# Migrating Chromium to Python3
+# Migrating Monyhar to Python3
 
 This page describes the current status and how to migrate code.
 
@@ -36,7 +36,7 @@ This document will not attempt to replicate the general information in
 the [Python.org Porting HOWTO](https://docs.python.org/3/howto/pyporting.html)
 or the many, many other guides on the Internet.
 
-However, here are a few notes that may be helpful in a Chromium context:
+However, here are a few notes that may be helpful in a Monyhar context:
 
 * Most of our Python code is pretty straightforward and moves easily
   from Python2 to Python3, so don't stress out about this!

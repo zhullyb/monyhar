@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,7 +11,7 @@ class ComponentInspector;
 
 namespace cr_fuchsia {
 
-// Publish the Chromium version via the Inspect API. The lifetime of
+// Publish the Monyhar version via the Inspect API. The lifetime of
 // |inspector| has to be the same as the component it belongs to.
 void PublishVersionInfoToInspect(sys::ComponentInspector* inspector);
 

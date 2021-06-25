@@ -23,7 +23,7 @@ extends this execution time limit to 10 minutes.
 For these older platforms, we can leverage the GcmNetworkManager API provided by
 Google Play services to implement a suitable replacement for the JobScheduler
 API. The `background_task_scheduler` component provides a new framework for use
-within Chromium to schedule and execute background jobs using the frameworks
+within Monyhar to schedule and execute background jobs using the frameworks
 available on a given version of Android. The public API of the framework is
 similar to that of the Android `JobScheduler`, but it is backed by either the
 system `JobScheduler` API or by GcmNetworkManager. What service is used to back

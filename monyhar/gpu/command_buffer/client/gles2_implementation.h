@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -410,7 +410,7 @@ class GLES2_IMPL_EXPORT GLES2Implementation : public GLES2Interface,
   void SendErrorMessage(std::string message, int32_t id);
   void CallDeferredErrorCallbacks();
 
-  bool IsChromiumFramebufferMultisampleAvailable();
+  bool IsMonyharFramebufferMultisampleAvailable();
 
   bool IsExtensionAvailableHelper(
       const char* extension, ExtensionStatus* status);

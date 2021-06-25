@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -551,7 +551,7 @@ void ExtensionDownloader::CreateManifestLoader() {
             "a user triggers an extension update flow."
           data:
             "The extension id, version and install source (the cause of the "
-            "update flow). The client's OS, architecture, language, Chromium "
+            "update flow). The client's OS, architecture, language, Monyhar "
             "version, channel and a flag stating whether the request "
             "originated in the foreground or the background. Authentication is "
             "used only for non-Chrome-Web-Store update_urls."

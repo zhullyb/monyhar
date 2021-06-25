@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -22,8 +22,8 @@ android_library("support_lib_glue_java") {
     "java/src/org/monyhar/support_lib_glue/SupportLibWebMessagePortAdapter.java",
     "java/src/org/monyhar/support_lib_glue/SupportLibWebResourceRequest.java",
     "java/src/org/monyhar/support_lib_glue/SupportLibWebSettingsAdapter.java",
-    "java/src/org/monyhar/support_lib_glue/SupportLibWebViewChromium.java",
-    "java/src/org/monyhar/support_lib_glue/SupportLibWebViewChromiumFactory.java",
+    "java/src/org/monyhar/support_lib_glue/SupportLibWebViewMonyhar.java",
+    "java/src/org/monyhar/support_lib_glue/SupportLibWebViewMonyharFactory.java",
     "java/src/org/monyhar/support_lib_glue/SupportLibWebViewRendererAdapter.java",
     "java/src/org/monyhar/support_lib_glue/SupportLibWebViewRendererClientAdapter.java",
     "java/src/org/monyhar/support_lib_glue/SupportLibWebkitToCompatConverterAdapter.java",

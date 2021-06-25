@@ -9,12 +9,12 @@ visual properties) based on a predefined function and changing input values.
 Currently the main clients of cc/animation are Blink and ui/, targeting
 composited layers, but the code is intended to be agnostic of the client it is
 supporting. Aspirationally we could eventually merge cc/animation and Blink
-animation and have only a single animation system for all of Chromium.
+animation and have only a single animation system for all of Monyhar.
 
 This document covers two main topics. The first section explains how
 cc/animation actually works: how animations are ticked, what animation curves
 are, what the ownership model is, etc. Later sections document how other parts
-of Chromium interact with cc/animation, most prominently Blink and ui/.
+of Monyhar interact with cc/animation, most prominently Blink and ui/.
 
 ## cc/animation terminology
 
@@ -127,7 +127,7 @@ below), but do not participate in the ticking process in any way.
 ### Main/Impl Threads
 
 One part of cc/animation that is not client agnostic is its support for the
-[Chromium compositor thread](https://codesearch.monyhar.org/monyhar/src/cc/README.md).
+[Monyhar compositor thread](https://codesearch.monyhar.org/monyhar/src/cc/README.md).
 Most of the cc/animation classes have a `PushPropertiesTo` method, in which they
 synchronize necessary state from the main thread to the impl thread. It is
 feasible that such support could be abstracted if necessary, but so far it has
@@ -271,13 +271,13 @@ The Compositor Property Trees talk [slides](https://goo.gl/U4wXpW)
 includes discussion on compositor animations.
 
 The Project Heaviside [design document](https://goo.gl/pWaWyv)
-and [slides](https://goo.gl/iFpk4R) provide history on the Chromium
+and [slides](https://goo.gl/iFpk4R) provide history on the Monyhar
 and Blink animation system. The slides in particular include helpful
 software architecture diagrams.
 
 Smooth scrolling is implemented via animations. See also references to
 "scroll offset" animations in the cc code
-base. [Smooth Scrolling in Chromium](https://goo.gl/XXwAwk) provides
+base. [Smooth Scrolling in Monyhar](https://goo.gl/XXwAwk) provides
 an overview of smooth scrolling. There is further class header
 documentation in
 Blink's

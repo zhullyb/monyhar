@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,59 +13,59 @@
 #error "This file requires ARC support."
 #endif
 
-ChromiumBrandedImageProvider::ChromiumBrandedImageProvider() {}
+MonyharBrandedImageProvider::MonyharBrandedImageProvider() {}
 
-ChromiumBrandedImageProvider::~ChromiumBrandedImageProvider() {}
+MonyharBrandedImageProvider::~MonyharBrandedImageProvider() {}
 
-UIImage* ChromiumBrandedImageProvider::GetAccountsListActivityControlsImage() {
+UIImage* MonyharBrandedImageProvider::GetAccountsListActivityControlsImage() {
   ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
   return rb.GetNativeImageNamed(IDR_IOS_SETTINGS_INFO_24).ToUIImage();
 }
 
 UIImage*
-ChromiumBrandedImageProvider::GetClearBrowsingDataAccountActivityImage() {
+MonyharBrandedImageProvider::GetClearBrowsingDataAccountActivityImage() {
   ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
   return rb.GetNativeImageNamed(IDR_IOS_SETTINGS_INFO_24).ToUIImage();
 }
 
-UIImage* ChromiumBrandedImageProvider::GetClearBrowsingDataSiteDataImage() {
-  ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
-  return rb.GetNativeImageNamed(IDR_IOS_SETTINGS_INFO_24).ToUIImage();
-}
-
-UIImage*
-ChromiumBrandedImageProvider::GetSigninConfirmationSyncSettingsImage() {
+UIImage* MonyharBrandedImageProvider::GetClearBrowsingDataSiteDataImage() {
   ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
   return rb.GetNativeImageNamed(IDR_IOS_SETTINGS_INFO_24).ToUIImage();
 }
 
 UIImage*
-ChromiumBrandedImageProvider::GetSigninConfirmationPersonalizeServicesImage() {
+MonyharBrandedImageProvider::GetSigninConfirmationSyncSettingsImage() {
   ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
   return rb.GetNativeImageNamed(IDR_IOS_SETTINGS_INFO_24).ToUIImage();
 }
 
-UIImage* ChromiumBrandedImageProvider::GetWhatsNewIconImage(WhatsNewIcon type) {
+UIImage*
+MonyharBrandedImageProvider::GetSigninConfirmationPersonalizeServicesImage() {
+  ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
+  return rb.GetNativeImageNamed(IDR_IOS_SETTINGS_INFO_24).ToUIImage();
+}
+
+UIImage* MonyharBrandedImageProvider::GetWhatsNewIconImage(WhatsNewIcon type) {
   ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
   return rb.GetNativeImageNamed(IDR_IOS_PROMO_INFO).ToUIImage();
 }
 
-UIImage* ChromiumBrandedImageProvider::GetDownloadGoogleDriveImage() {
+UIImage* MonyharBrandedImageProvider::GetDownloadGoogleDriveImage() {
   return [UIImage imageNamed:@"download_drivium"];
 }
 
-UIImage* ChromiumBrandedImageProvider::GetStaySafePromoImage() {
+UIImage* MonyharBrandedImageProvider::GetStaySafePromoImage() {
   return [UIImage imageNamed:@"monyhar_stay_safe"];
 }
 
-UIImage* ChromiumBrandedImageProvider::GetMadeForIOSPromoImage() {
+UIImage* MonyharBrandedImageProvider::GetMadeForIOSPromoImage() {
   return [UIImage imageNamed:@"monyhar_ios_made"];
 }
 
-UIImage* ChromiumBrandedImageProvider::GetMadeForIPadOSPromoImage() {
+UIImage* MonyharBrandedImageProvider::GetMadeForIPadOSPromoImage() {
   return [UIImage imageNamed:@"monyhar_ipados_made"];
 }
 
-UIImage* ChromiumBrandedImageProvider::GetNonModalPromoImage() {
+UIImage* MonyharBrandedImageProvider::GetNonModalPromoImage() {
   return [UIImage imageNamed:@"monyhar_non_default_promo"];
 }

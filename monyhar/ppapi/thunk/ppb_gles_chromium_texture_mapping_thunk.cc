@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -38,7 +38,7 @@ void UnmapTexSubImage2DCHROMIUM(PP_Resource context, const void* mem) {
     enter.object()->UnmapTexSubImage2DCHROMIUM(mem);
 }
 
-const PPB_GLESChromiumTextureMapping_Dev
+const PPB_GLESMonyharTextureMapping_Dev
 g_ppb_gles_monyhar_texture_mapping_thunk = {
   &MapTexSubImage2DCHROMIUM,
   &UnmapTexSubImage2DCHROMIUM
@@ -46,8 +46,8 @@ g_ppb_gles_monyhar_texture_mapping_thunk = {
 
 }  // namespace
 
-const PPB_GLESChromiumTextureMapping_Dev_0_1*
-GetPPB_GLESChromiumTextureMapping_Dev_0_1_Thunk() {
+const PPB_GLESMonyharTextureMapping_Dev_0_1*
+GetPPB_GLESMonyharTextureMapping_Dev_0_1_Thunk() {
   return &g_ppb_gles_monyhar_texture_mapping_thunk;
 }
 

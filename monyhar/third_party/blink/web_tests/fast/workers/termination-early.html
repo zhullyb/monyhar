@@ -9,8 +9,8 @@ function test()
     worker = new Worker("resources/worker-common.js");
 
     // The setTimeout is generally a bad idea in tests, but this one is here because the test is trying to call terminate() in the time
-    // window after loading the worker's script (and creation of worker process in case of Chromium) but before the initial script is executed.
-    // The crash happened when JS engine in worker is initialized, so the timeout here is approximate. JS initialization in Chromium case
+    // window after loading the worker's script (and creation of worker process in case of Monyhar) but before the initial script is executed.
+    // The crash happened when JS engine in worker is initialized, so the timeout here is approximate. JS initialization in Monyhar case
     // is quite long for the process-wide instance of V8, especially in debug builds - so this test hits the crash quite often.
     // The test is inherently flakey because of it but on a 'false positive' side, meaning if the timeout is not enough the test is SUCCESS
     // so there are no annoying failures.
@@ -31,6 +31,6 @@ function continueTest() {
 </script>
 <body onload=test()>
 <p>This test terminates a worker at the moment before WorkerThread::workerThread starts execute the initial script. This stage includes initialization of the script engine, and V8 may crash if terminated during initialization. Test succeeds if it does not hang or crash (if worker thread is running in the separate process, that process could hang or crash).</p>
-<p>This test reproduces crash specific to v8 and multi-process Chromium architecture. In case of JSC, the test is just another opportunity to exercise the Worker code.</p>
+<p>This test reproduces crash specific to v8 and multi-process Monyhar architecture. In case of JSC, the test is just another opportunity to exercise the Worker code.</p>
 <pre id="result"></pre>
 </body>

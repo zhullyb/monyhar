@@ -1,4 +1,4 @@
-// Copyright (c) 2020 The Chromium Authors. All rights reserved.
+// Copyright (c) 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ namespace net {
 // - via OnDefaultNetworkUpdated if NetworkHandle is supported on the platform;
 // - via OnIPAddressChanged otherwise.
 class NET_EXPORT_PRIVATE QuicConnectivityMonitor
-    : public QuicChromiumClientSession::ConnectivityObserver {
+    : public QuicMonyharClientSession::ConnectivityObserver {
  public:
   explicit QuicConnectivityMonitor(
       NetworkChangeNotifier::NetworkHandle default_network);
@@ -56,33 +56,33 @@ class NET_EXPORT_PRIVATE QuicConnectivityMonitor
   void OnIPAddressChanged();
 
   // Called when |session| is marked as going away due to IP address change.
-  void OnSessionGoingAwayOnIPAddressChange(QuicChromiumClientSession* session);
+  void OnSessionGoingAwayOnIPAddressChange(QuicMonyharClientSession* session);
 
-  // QuicChromiumClientSession::ConnectivityObserver implementation.
+  // QuicMonyharClientSession::ConnectivityObserver implementation.
   void OnSessionPathDegrading(
-      QuicChromiumClientSession* session,
+      QuicMonyharClientSession* session,
       NetworkChangeNotifier::NetworkHandle network) override;
 
   void OnSessionResumedPostPathDegrading(
-      QuicChromiumClientSession* session,
+      QuicMonyharClientSession* session,
       NetworkChangeNotifier::NetworkHandle network) override;
 
   void OnSessionEncounteringWriteError(
-      QuicChromiumClientSession* session,
+      QuicMonyharClientSession* session,
       NetworkChangeNotifier::NetworkHandle network,
       int error_code) override;
 
   void OnSessionClosedAfterHandshake(
-      QuicChromiumClientSession* session,
+      QuicMonyharClientSession* session,
       NetworkChangeNotifier::NetworkHandle network,
       quic::ConnectionCloseSource source,
       quic::QuicErrorCode error_code) override;
 
   void OnSessionRegistered(
-      QuicChromiumClientSession* session,
+      QuicMonyharClientSession* session,
       NetworkChangeNotifier::NetworkHandle network) override;
 
-  void OnSessionRemoved(QuicChromiumClientSession* session) override;
+  void OnSessionRemoved(QuicMonyharClientSession* session) override;
 
  private:
   // Size chosen per net.QuicSession.WriteError histogram.
@@ -96,9 +96,9 @@ class NET_EXPORT_PRIVATE QuicConnectivityMonitor
   // NetworkChangeNotifier::kInvalidNetworkHandle.
   NetworkChangeNotifier::NetworkHandle default_network_;
   // Sessions that are currently degrading on the |default_network_|.
-  std::set<QuicChromiumClientSession*> degrading_sessions_;
+  std::set<QuicMonyharClientSession*> degrading_sessions_;
   // Sessions that are currently active on the |default_network_|.
-  std::set<QuicChromiumClientSession*> active_sessions_;
+  std::set<QuicMonyharClientSession*> active_sessions_;
 
   // Number of sessions that have been active or created during the period of
   // a speculative connectivity failure.

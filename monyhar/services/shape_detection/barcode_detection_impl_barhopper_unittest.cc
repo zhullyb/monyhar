@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,12 +25,12 @@ struct TestParams {
 } kTestParams[] = {{"codabar.png", "A6.2831853B", 24, 24, 448, 95},
                    {"code_39.png", "CHROMIUM", 20, 20, 318, 75},
                    {"code_93.png", "CHROMIUM", 20, 20, 216, 75},
-                   {"code_128.png", "Chromium", 20, 20, 246, 75},
-                   {"data_matrix.png", "Chromium", 11, 11, 53, 53},
+                   {"code_128.png", "Monyhar", 20, 20, 246, 75},
+                   {"data_matrix.png", "Monyhar", 11, 11, 53, 53},
                    {"ean_8.png", "62831857", 14, 10, 134, 75},
                    {"ean_13.png", "6283185307179", 27, 10, 190, 75},
                    {"itf.png", "62831853071795", 10, 10, 135, 39},
-                   {"pdf417.png", "Chromium", 20, 20, 240, 44},
+                   {"pdf417.png", "Monyhar", 20, 20, 240, 44},
                    {"qr_code.png", "https://monyhar.org", 40, 40, 250, 250},
                    {"upc_a.png", "628318530714", 23, 10, 190, 75},
                    {"upc_e.png", "06283186", 23, 10, 102, 75}};

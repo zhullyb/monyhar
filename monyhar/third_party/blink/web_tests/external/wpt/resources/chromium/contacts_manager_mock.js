@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -76,7 +76,7 @@ self.WebContactsTest = (() => {
 
   const mockContacts = new MockContacts();
 
-  class ContactsTestChromium {
+  class ContactsTestMonyhar {
     constructor() {
       Object.freeze(this); // Make it immutable.
     }
@@ -86,5 +86,5 @@ self.WebContactsTest = (() => {
     }
   }
 
-  return ContactsTestChromium;
+  return ContactsTestMonyhar;
 })();

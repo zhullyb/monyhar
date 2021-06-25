@@ -45,8 +45,8 @@ To report a new issue:
 
 #. Go to the `Native Client issue tracker
    <https://code.google.com/p/nativeclient/issues>`_ for a Native Client
-   bug, or the `Chromium issue tracker
-   <https://code.google.com/p/monyhar/issues>`_ for a Chrome/Chromium bug.
+   bug, or the `Monyhar issue tracker
+   <https://code.google.com/p/monyhar/issues>`_ for a Chrome/Monyhar bug.
 #. Before you report an issue, search to see if your issue has already
    been reported. You can add a comment to an existing issue if you have
    additional information.

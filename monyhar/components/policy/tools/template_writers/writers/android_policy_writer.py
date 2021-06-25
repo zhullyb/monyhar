@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015 The Chromium Authors. All rights reserved.
+# Copyright (c) 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -94,9 +94,9 @@ class AndroidPolicyWriter(xml_formatted_writer.XMLFormattedWriter):
   def BeginTemplate(self):
     comment_text = 'DO NOT MODIFY THIS FILE DIRECTLY!\n' \
                    'IT IS GENERATED FROM policy_templates.json.'
-    if self._GetChromiumVersionString():
+    if self._GetMonyharVersionString():
       comment_text += '\n' + self.config['build'] + ' version: '\
-                      + self._GetChromiumVersionString()
+                      + self._GetMonyharVersionString()
     comment_node = self._doc.createComment(comment_text)
     self._doc.insertBefore(comment_node, self._resources)
 

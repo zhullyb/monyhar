@@ -90,8 +90,8 @@ extern const MIDL_STUBLESS_PROXY_INFO IElevator_ProxyInfo;
 extern const MIDL_STUB_DESC Object_StubDesc;
 
 
-extern const MIDL_SERVER_INFO IElevatorChromium_ServerInfo;
-extern const MIDL_STUBLESS_PROXY_INFO IElevatorChromium_ProxyInfo;
+extern const MIDL_SERVER_INFO IElevatorMonyhar_ServerInfo;
+extern const MIDL_STUBLESS_PROXY_INFO IElevatorMonyhar_ProxyInfo;
 
 
 extern const MIDL_STUB_DESC Object_StubDesc;
@@ -273,41 +273,41 @@ const CInterfaceStubVtbl _IElevatorStubVtbl =
 };
 
 
-/* Object interface: IElevatorChromium, ver. 0.0,
+/* Object interface: IElevatorMonyhar, ver. 0.0,
    GUID={0xB88C45B9,0x8825,0x4629,{0xB8,0x3E,0x77,0xCC,0x67,0xD9,0xCE,0xED}} */
 
 #pragma code_seg(".orpc")
-static const unsigned short IElevatorChromium_FormatStringOffsetTable[] =
+static const unsigned short IElevatorMonyhar_FormatStringOffsetTable[] =
     {
     0,
     0
     };
 
-static const MIDL_STUBLESS_PROXY_INFO IElevatorChromium_ProxyInfo =
+static const MIDL_STUBLESS_PROXY_INFO IElevatorMonyhar_ProxyInfo =
     {
     &Object_StubDesc,
     elevation_service_idl__MIDL_ProcFormatString.Format,
-    &IElevatorChromium_FormatStringOffsetTable[-3],
+    &IElevatorMonyhar_FormatStringOffsetTable[-3],
     0,
     0,
     0
     };
 
 
-static const MIDL_SERVER_INFO IElevatorChromium_ServerInfo = 
+static const MIDL_SERVER_INFO IElevatorMonyhar_ServerInfo = 
     {
     &Object_StubDesc,
     0,
     elevation_service_idl__MIDL_ProcFormatString.Format,
-    &IElevatorChromium_FormatStringOffsetTable[-3],
+    &IElevatorMonyhar_FormatStringOffsetTable[-3],
     0,
     0,
     0,
     0};
-CINTERFACE_PROXY_VTABLE(4) _IElevatorChromiumProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(4) _IElevatorMonyharProxyVtbl = 
 {
     0,
-    &IID_IElevatorChromium,
+    &IID_IElevatorMonyhar,
     IUnknown_QueryInterface_Proxy,
     IUnknown_AddRef_Proxy,
     IUnknown_Release_Proxy ,
@@ -315,17 +315,17 @@ CINTERFACE_PROXY_VTABLE(4) _IElevatorChromiumProxyVtbl =
 };
 
 
-static const PRPC_STUB_FUNCTION IElevatorChromium_table[] =
+static const PRPC_STUB_FUNCTION IElevatorMonyhar_table[] =
 {
     NdrStubCall2
 };
 
-CInterfaceStubVtbl _IElevatorChromiumStubVtbl =
+CInterfaceStubVtbl _IElevatorMonyharStubVtbl =
 {
-    &IID_IElevatorChromium,
-    &IElevatorChromium_ServerInfo,
+    &IID_IElevatorMonyhar,
+    &IElevatorMonyhar_ServerInfo,
     4,
-    &IElevatorChromium_table[-3],
+    &IElevatorMonyhar_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };
 
@@ -587,7 +587,7 @@ const CInterfaceProxyVtbl * const _elevation_service_idl_ProxyVtblList[] =
     ( CInterfaceProxyVtbl *) &_IElevatorProxyVtbl,
     ( CInterfaceProxyVtbl *) &_IElevatorChromeBetaProxyVtbl,
     ( CInterfaceProxyVtbl *) &_IElevatorChromeDevProxyVtbl,
-    ( CInterfaceProxyVtbl *) &_IElevatorChromiumProxyVtbl,
+    ( CInterfaceProxyVtbl *) &_IElevatorMonyharProxyVtbl,
     ( CInterfaceProxyVtbl *) &_IElevatorChromeProxyVtbl,
     0
 };
@@ -598,7 +598,7 @@ const CInterfaceStubVtbl * const _elevation_service_idl_StubVtblList[] =
     ( CInterfaceStubVtbl *) &_IElevatorStubVtbl,
     ( CInterfaceStubVtbl *) &_IElevatorChromeBetaStubVtbl,
     ( CInterfaceStubVtbl *) &_IElevatorChromeDevStubVtbl,
-    ( CInterfaceStubVtbl *) &_IElevatorChromiumStubVtbl,
+    ( CInterfaceStubVtbl *) &_IElevatorMonyharStubVtbl,
     ( CInterfaceStubVtbl *) &_IElevatorChromeStubVtbl,
     0
 };
@@ -609,7 +609,7 @@ PCInterfaceName const _elevation_service_idl_InterfaceNamesList[] =
     "IElevator",
     "IElevatorChromeBeta",
     "IElevatorChromeDev",
-    "IElevatorChromium",
+    "IElevatorMonyhar",
     "IElevatorChrome",
     0
 };

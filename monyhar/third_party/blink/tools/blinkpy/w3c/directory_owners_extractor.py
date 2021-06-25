@@ -1,7 +1,7 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-"""A limited finder & parser for Chromium OWNERS and DIR_METADATA files.
+"""A limited finder & parser for Monyhar OWNERS and DIR_METADATA files.
 
 This module is intended to be used within web_tests/external and is
 informative only. For authoritative uses, please rely on `git cl owners`.

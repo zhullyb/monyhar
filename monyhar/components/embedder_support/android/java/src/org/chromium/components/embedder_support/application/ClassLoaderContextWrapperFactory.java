@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 
 /**
- * This class allows us to wrap the application context so that a Chromium implementation loaded
+ * This class allows us to wrap the application context so that a Monyhar implementation loaded
  * from a separate APK can correctly reference both org.monyhar.* and application classes which is
  * necessary to properly inflate UI.
  */
@@ -79,7 +79,7 @@ public class ClassLoaderContextWrapperFactory {
             return new ClassLoader() {
                 @Override
                 protected Class<?> findClass(String name) throws ClassNotFoundException {
-                    // First look in the Chromium class loader.
+                    // First look in the Monyhar class loader.
                     try {
                         return monyharCl.loadClass(name);
                     } catch (ClassNotFoundException e) {

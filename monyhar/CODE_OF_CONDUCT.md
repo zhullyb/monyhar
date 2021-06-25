@@ -1,17 +1,17 @@
-# Chromium Code of Conduct
+# Monyhar Code of Conduct
 
-Google and the Chromium team are committed to preserving and fostering a
+Google and the Monyhar team are committed to preserving and fostering a
 diverse, welcoming community. Below is our community code of conduct, which
 applies to our repos and organizations, issue trackers, mailing lists,
-blog content, and any other Chromium-supported communication group, as
+blog content, and any other Monyhar-supported communication group, as
 well as any private communication initiated in the context of these
 spaces. This code of conduct must be followed by everyone contributing to
-the Chromium project, regardless of affiliation or position.
+the Monyhar project, regardless of affiliation or position.
 
 Simply put, community discussions should be
 
  * respectful and kind;
- * about Chromium;
+ * about Monyhar;
  * about features and code, not the individuals involved.
 
 ## Be respectful and constructive.
@@ -19,7 +19,7 @@ Simply put, community discussions should be
 Treat everyone with respect. Build on each other's ideas. Each of us has the
 right to enjoy our experience and participate without fear of harassment,
 discrimination, or condescension, whether blatant or subtle. Remember that
-Chromium is a geographically distributed team and that you may not be
+Monyhar is a geographically distributed team and that you may not be
 communicating with someone in their primary language. We all get frustrated
 when working on hard problems, but we cannot allow that frustration to turn
 into personal attacks.
@@ -41,7 +41,7 @@ cases where a public response is deemed necessary, the identities of victims
 and reporters will remain confidential unless those individuals instruct us
 otherwise.
 
-While all reports will be taken seriously, the Chromium community managers may
+While all reports will be taken seriously, the Monyhar community managers may
 not act on complaints that they feel are not violations of this code of
 conduct.
 
@@ -61,15 +61,15 @@ conduct.
 ## Consequences for failing to comply with this policy
 
 Consequences for failing to comply with this policy may include, at the sole
-discretion of the Chromium community managers:
+discretion of the Monyhar community managers:
 
  * a request for an apology;
  * a private or public warning or reprimand;
- * a temporary ban from the mailing list, blog, Chromium repository or
-   organization, or other Chromium-supported communication group, including
+ * a temporary ban from the mailing list, blog, Monyhar repository or
+   organization, or other Monyhar-supported communication group, including
    loss of committer status;
  * a permanent ban from any of the above, or from all current and future
-   Chromium-supported or Google-supported communities, including loss of
+   Monyhar-supported or Google-supported communities, including loss of
    committer status.
 
 Participants warned to stop any harassing behavior are expected to comply

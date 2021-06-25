@@ -1,13 +1,13 @@
 # Updating Clang format binaries
 
 Instructions on how to update the [clang-format binaries](clang_format.md) that
-come with a checkout of Chromium.
+come with a checkout of Monyhar.
 
 ## Prerequisites
 
 You'll need a Windows machine, a Linux machine, and a Mac; all capable of
 building clang-format. You'll also need permissions to upload to the appropriate
-google storage bucket. Chromium infrastructure team members have this, and
+google storage bucket. Monyhar infrastructure team members have this, and
 others can be granted the permission based on need. Talk to ncarter or hinoka
 about getting access.
 
@@ -71,7 +71,7 @@ MACOSX_DEPLOYMENT_TARGET=10.9 cmake -G Ninja \
     ../llvm/
 
 # On Linux, do the following:
-# Note the relative paths that point to your local Chromium checkout.
+# Note the relative paths that point to your local Monyhar checkout.
 # TODO(thakis): Remove DLLVM_ENABLE_Z3_SOLVER in the next roll. At the pinned
 # revision, Z3 detection does not work with a sysroot, but at LLVM trunk it's
 # already fixed.
@@ -122,7 +122,7 @@ to upload, you'll need write permission to the bucket -- see the prerequisites.
 
 There are some auxiliary scripts that ought to be kept updated in lockstep with
 the clang-format binary. These get copied into
-`buildtools/clang_format/script` in your Chromium checkout.
+`buildtools/clang_format/script` in your Monyhar checkout.
 
 The `README.monyhar` file ought to be updated with version and date info.
 

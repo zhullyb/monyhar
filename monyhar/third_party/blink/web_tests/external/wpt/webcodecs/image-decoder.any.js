@@ -12,7 +12,7 @@ function testFourColorsDecode(filename, mimeType, options = {}) {
   });
 }
 
-// Note: Requiring all data to do YUV decoding is a Chromium limitation, other
+// Note: Requiring all data to do YUV decoding is a Monyhar limitation, other
 // implementations may support YUV decode with partial ReadableStream data.
 function testFourColorsYuvDecode(filename, mimeType, options = {}) {
   var decoder = null;

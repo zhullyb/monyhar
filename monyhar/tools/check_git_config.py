@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -7,7 +7,7 @@
 credentials are configured correctly. It also verifies that gclient solution is
 configured to use git checkout.
 
-It will be added as gclient hook shortly before Chromium switches to git and
+It will be added as gclient hook shortly before Monyhar switches to git and
 removed after the switch.
 
 When running as hook in *.corp.google.com network it will also report status

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -14,7 +14,7 @@ re-run gn, and then run this script.
 
 Since Chrome's clang disables the rewriter, to run this you will need to
 build ToT clang with `-DCLANG_ENABLE_ARCMT` and (temporarily) add the following
-to your Chromium build args:
+to your Monyhar build args:
 clang_base_path = /path/to/clang
 clang_use_chrome_plugins = false
 """

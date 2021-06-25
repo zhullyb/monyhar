@@ -14,4 +14,4 @@ XR—platforms and devices.
 
 Local Modifications:
 No modifications to upstream files. BUILD.gn contains all of the configurations
-needed to build the OpenXR loader in Chromium.
+needed to build the OpenXR loader in Monyhar.

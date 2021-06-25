@@ -72,7 +72,7 @@ host_ip =「<ph name="HOST_IP_ADDRESS_AND_PORT" />」版本=「<ph name="CHANNEL
 <translation id="4405930547258349619">核心資料庫</translation>
 <translation id="443560535555262820">開啟無障礙功能偏好設定</translation>
 <translation id="4450893287417543264">不要再顯示</translation>
-<translation id="4512952200932940229">版權所有 2021 Chromium 作者。保留所有權利。</translation>
+<translation id="4512952200932940229">版權所有 2021 Monyhar 作者。保留所有權利。</translation>
 <translation id="4513946894732546136">意見反映</translation>
 <translation id="4563926062592110512">已中斷連線至用戶端：<ph name="CLIENT_USERNAME" />。</translation>
 <translation id="4635770493235256822">遠端裝置</translation>
@@ -147,7 +147,7 @@ host_ip =「<ph name="HOST_IP_ADDRESS_AND_PORT" />」版本=「<ph name="CHANNEL
 <translation id="7868137160098754906">請為遠端電腦輸入您的 PIN。</translation>
 <translation id="7895403300744144251">遠端電腦的安全政策不允許從您的帳戶連線。</translation>
 <translation id="7936528439960309876">靠右固定</translation>
-<translation id="7970576581263377361">驗證失敗，請重新登入 Chromium。</translation>
+<translation id="7970576581263377361">驗證失敗，請重新登入 Monyhar。</translation>
 <translation id="7981525049612125370">遠端工作階段已逾時。</translation>
 <translation id="8038111231936746805">(預設)</translation>
 <translation id="8041089156583427627">提供意見</translation>
@@ -181,6 +181,6 @@ host_ip =「<ph name="HOST_IP_ADDRESS_AND_PORT" />」版本=「<ph name="CHANNEL
 <translation id="9187628920394877737">將「畫面錄影功能」權限授予「<ph name="PRODUCT_NAME" />」</translation>
 <translation id="9213184081240281106">主機設定無效。</translation>
 <translation id="981121421437150478">離線</translation>
-<translation id="985602178874221306">The Chromium Authors</translation>
+<translation id="985602178874221306">The Monyhar Authors</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (上次上網日期： <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

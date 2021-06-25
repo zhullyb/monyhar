@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -292,7 +292,7 @@
         },
       },
       'V8 Blink Linux Debug': {
-        # This builder compiles Chromium in release mode, but V8 in debug.
+        # This builder compiles Monyhar in release mode, but V8 in debug.
         # TODO(machenbach): Change name and out directory of this builder to
         # something less confusing.
         'args': [
@@ -566,14 +566,14 @@
           'shards': 30, # https://crbug.com/1103330
         },
       },
-      'Linux Chromium OS ASan LSan Tests (1)': {
+      'Linux Monyhar OS ASan LSan Tests (1)': {
         # These are very slow on the ASAN trybot for some reason.
         # crbug.com/794372
         'swarming': {
           'shards': 31,
         },
       },
-      'Linux ChromiumOS MSan Tests': {
+      'Linux MonyharOS MSan Tests': {
         # These are very slow on the Chrome OS MSAN trybot for some reason.
         # crbug.com/865455
         'swarming': {
@@ -1069,7 +1069,7 @@
           'shards': 5,
         },
       },
-      'Linux Chromium OS ASan LSan Tests (1)': {
+      'Linux Monyhar OS ASan LSan Tests (1)': {
         # These are very slow on the ASAN trybot for some reason.
         # crbug.com/794372
         'swarming': {
@@ -1171,12 +1171,12 @@
           '--test-launcher-filter-file=../../testing/buildbot/filters/android.marshmallow_tablet_tester.content_browsertests.filter',
         ],
       },
-      'WebRTC Chromium FYI Android Tests (dbg) (L Nexus5)': {
+      'WebRTC Monyhar FYI Android Tests (dbg) (L Nexus5)': {
         'args': [
           '--test-launcher-filter-file=../../testing/buildbot/filters/monyhar.webrtc.fyi.android.tests.dbg.content_browsertests.filter',
         ],
       },
-      'WebRTC Chromium FYI Android Tests (dbg) (M Nexus5X)': {
+      'WebRTC Monyhar FYI Android Tests (dbg) (M Nexus5X)': {
         'args': [
           '--test-launcher-filter-file=../../testing/buildbot/filters/monyhar.webrtc.fyi.android.tests.dbg.content_browsertests.filter',
         ],
@@ -1339,7 +1339,7 @@
           'shards': 2,
         },
       },
-      'Linux ChromiumOS MSan Tests': {
+      'Linux MonyharOS MSan Tests': {
         # These are very slow on the Chrome OS MSAN trybot for some reason.
         # crbug.com/865455
         'swarming': {
@@ -1482,7 +1482,7 @@
     'remove_from': [
       'ToTLinuxASan',  # https://crbug.com/831667
       'Linux ASan LSan Tests (1)',  # https://crbug.com/831667
-      'Linux Chromium OS ASan LSan Tests (1)',  # https://crbug.com/831667
+      'Linux Monyhar OS ASan LSan Tests (1)',  # https://crbug.com/831667
     ],
   },
   'gl_tests_passthrough': {
@@ -1599,7 +1599,7 @@
     'remove_from': [
       # Can't run on MSAN because gl_unittests_ozone uses the hardware driver,
       # which isn't instrumented.
-      'Linux ChromiumOS MSan Tests',
+      'Linux MonyharOS MSan Tests',
     ],
   },
   'gpu_process_launch_tests': {
@@ -1695,7 +1695,7 @@
           'shards': 6,
         },
       },
-      'Linux ChromiumOS MSan Tests': {
+      'Linux MonyharOS MSan Tests': {
         # These are very slow on the Chrome OS MSAN trybot for some reason.
         # crbug.com/865455
         'swarming': {
@@ -2102,14 +2102,14 @@
           'shards': 16,
         },
       },
-      'Linux Chromium OS ASan LSan Tests (1)': {
+      'Linux Monyhar OS ASan LSan Tests (1)': {
         # These are very slow on the ASAN trybot for some reason.
         # crbug.com/794372
         'swarming': {
           'shards': 8,
         }
       },
-      'Linux ChromiumOS MSan Tests': {
+      'Linux MonyharOS MSan Tests': {
         # These are very slow on the Chrome OS MSAN trybot for some reason.
         # crbug.com/865455
         'swarming': {
@@ -2523,7 +2523,7 @@
       'ToTLinuxMSan',  # https://crbug.com/831676
       # The face and barcode detection tests fail on the Mac Pros.
       'Mac Pro FYI Release (AMD)',
-      'Linux ChromiumOS MSan Tests',  # https://crbug.com/831676
+      'Linux MonyharOS MSan Tests',  # https://crbug.com/831676
       'Linux MSan Tests',  # https://crbug.com/831676
     ],
     'replacements': {
@@ -2807,14 +2807,14 @@
           'shards': 4,
         },
       },
-      'Linux Chromium OS ASan LSan Tests (1)': {
+      'Linux Monyhar OS ASan LSan Tests (1)': {
         # These are slow on the ASAN trybot for some reason.
         # crbug.com/794372
         'swarming': {
           'shards': 2,
         },
       },
-      'Linux ChromiumOS MSan Tests': {
+      'Linux MonyharOS MSan Tests': {
         # These are very slow on the Chrome OS MSAN trybot for some reason.
         # crbug.com/865455
         'swarming': {

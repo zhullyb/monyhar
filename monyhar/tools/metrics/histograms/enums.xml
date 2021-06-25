@@ -1,5 +1,5 @@
 <!--
-Copyright 2017 The Chromium Authors. All rights reserved.
+Copyright 2017 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -11581,7 +11581,7 @@ In case of new special images, values 3 to 9 can be used. -->
   <int value="21" label="touchExplore"/>
 </enum>
 
-<enum name="ChromiumAndroidLinkerBrowserState">
+<enum name="MonyharAndroidLinkerBrowserState">
   <obsolete>
     Deprecated as of 06/2019.
   </obsolete>
@@ -11590,7 +11590,7 @@ In case of new special images, values 3 to 9 can be used. -->
   <int value="2" label="Low memory, Fixed Address Load Failure"/>
 </enum>
 
-<enum name="ChromiumAndroidLinkerRendererState">
+<enum name="MonyharAndroidLinkerRendererState">
   <obsolete>
     Deprecated as of 06/2019.
   </obsolete>
@@ -38641,7 +38641,7 @@ Called by update_gpu_driver_bug_workaround_entries.py.-->
 <enum name="GPUsetIsAcceleratedCompositingActive">
   <summary>
     Combinations of input parameter active and previous active state set in
-    third_party/WebKit/WebKit/monyhar/src/ChromiumBridge.cpp
+    third_party/WebKit/WebKit/monyhar/src/MonyharBridge.cpp
   </summary>
   <int value="0" label="inactive, was inactive"/>
   <int value="1" label="inactive, was active"/>
@@ -40984,7 +40984,7 @@ Called by update_gpu_driver_bug_workaround_entries.py.-->
     Mappings for input method IDs of first-party Chrome OS IME extension ONLY
     (i.e. extension with ID "jkghodnilhceideoidjikpgommlajknk" and defined in
     google_xkb_manifest.json [1]), although InputMethod.ID2 histogram is
-    recorded for open-source Chromium OS and third-party IME extensions as well.
+    recorded for open-source Monyhar OS and third-party IME extensions as well.
     [1] https://source.monyhar.org/monyhar/monyhar/src/+/main:chrome/browser/resources/chromeos/input_method/google_xkb_manifest.json?q=google_xkb_manifest.json
   -->
 
@@ -46695,7 +46695,7 @@ from previous Chrome versions.
   <int value="-758048639" label="InfiniteSessionRestore:enabled"/>
   <int value="-757946835"
       label="OmniboxUIExperimentShowSuggestionFavicons:enabled"/>
-  <int value="-757379927" label="Canvas2DImageChromium:enabled"/>
+  <int value="-757379927" label="Canvas2DImageMonyhar:enabled"/>
   <int value="-757282194" label="EnableFilesystemInIncognito:enabled"/>
   <int value="-752321357" label="AutofillEnableGoogleIssuedCard:enabled"/>
   <int value="-750175757" label="ClientLoFi:enabled"/>
@@ -46773,7 +46773,7 @@ from previous Chrome versions.
   <int value="-697887799"
       label="AutofillSaveCardDialogUnlabeledExpirationDate:disabled"/>
   <int value="-697751423" label="disable-quickoffice-component-app"/>
-  <int value="-696693295" label="Canvas2DImageChromium:disabled"/>
+  <int value="-696693295" label="Canvas2DImageMonyhar:disabled"/>
   <int value="-696225611" label="UseSerialBusEnumerator:disabled"/>
   <int value="-695687521" label="double-buffer-compositing"/>
   <int value="-694622753" label="VizHitTest:disabled"/>
@@ -59918,7 +59918,7 @@ Called by update_net_trust_anchors.py.-->
   <int value="8" label="FTP"/>
   <int value="9" label="HFS family"/>
   <int value="10" label="HFS read-only disk image">
-    An HFS read-only disk image, likely the original Chromium distribution disk
+    An HFS read-only disk image, likely the original Monyhar distribution disk
     image.
   </int>
   <int value="11" label="FAT12/16/32"/>
@@ -62559,7 +62559,7 @@ Called by update_net_trust_anchors.py.-->
   <int value="856177441" label="PPB_VarArray;1.0"/>
   <int value="857934187" label="PPB_Ext_Socket(Dev);0.1"/>
   <int value="866907383" label="PPB_View;1.2"/>
-  <int value="883046945" label="PPB_OpenGLES2ChromiumMapSub;1.0"/>
+  <int value="883046945" label="PPB_OpenGLES2MonyharMapSub;1.0"/>
   <int value="890225106" label="PPB_FileChooserTrusted;0.6"/>
   <int value="893629850" label="PPB_VarArrayBuffer;1.0"/>
   <int value="897332014" label="PPB_Zoom(Dev);0.2"/>
@@ -62597,7 +62597,7 @@ Called by update_net_trust_anchors.py.-->
   <int value="1155638369" label="PPB_WheelInputEvent;1.0"/>
   <int value="1158760765" label="PPB_PlatformVerification_Private;0.3"/>
   <int value="1161845861" label="PPB_NetAddress_Private;1.0"/>
-  <int value="1173327824" label="PPB_OpenGLES2ChromiumEnableFeature;1.0"/>
+  <int value="1173327824" label="PPB_OpenGLES2MonyharEnableFeature;1.0"/>
   <int value="1188712923" label="PPB_Talk_Private;2.0"/>
   <int value="1218354710" label="PPB_VideoFrame;0.1"/>
   <int value="1260990020" label="PPB_Ext_Socket(Dev);0.2"/>
@@ -62621,7 +62621,7 @@ Called by update_net_trust_anchors.py.-->
   <int value="1423820530" label="PPB_ContentDecryptor_Private;0.14"/>
   <int value="1437724812" label="PPB_AudioConfig;1.0"/>
   <int value="1443771913" label="PPB_NetAddress;1.0"/>
-  <int value="1502481774" label="PPB_OpenGLES2ChromiumMapSub(Dev);1.0"/>
+  <int value="1502481774" label="PPB_OpenGLES2MonyharMapSub(Dev);1.0"/>
   <int value="1504691399" label="PPB_Flash;13.0"/>
   <int value="1505595424" label="PPB_Crypto(Dev);0.1"/>
   <int value="1508192415" label="PPB_VarDictionary;1.0"/>
@@ -62662,7 +62662,7 @@ Called by update_net_trust_anchors.py.-->
   <int value="1981643755" label="PPB_FileMapping;0.1"/>
   <int value="1990584694" label="PPB_VpnProvider;0.1"/>
   <int value="1994108724" label="PPB_Flash_File_FileRef;2"/>
-  <int value="1997668256" label="PPB_GLESChromiumTextureMapping(Dev);0.1"/>
+  <int value="1997668256" label="PPB_GLESMonyharTextureMapping(Dev);0.1"/>
   <int value="1998274350" label="PPB_Font(Dev);0.6"/>
   <int value="2001322203" label="PPB_Messaging;1.1"/>
   <int value="2003778556" label="PPB_MouseInputEvent;1.1"/>
@@ -86554,7 +86554,7 @@ Called by update_scheduler_enums.py.-->
   <int value="0" label="Shortcut CLSID is Stable"/>
   <int value="1" label="Shortcut CLSID is Beta"/>
   <int value="2" label="Shortcut CLSID is Dev"/>
-  <int value="3" label="Shortcut CLSID is Chromium"/>
+  <int value="3" label="Shortcut CLSID is Monyhar"/>
   <int value="4" label="Shortcut CLSID is Null"/>
   <int value="5" label="Shortcut CLSID is Unknown"/>
 </enum>

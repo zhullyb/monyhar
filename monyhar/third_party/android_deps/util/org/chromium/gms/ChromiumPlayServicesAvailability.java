@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 package org.monyhar.gms;
@@ -9,7 +9,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
 // Refer to go/doubledown-play-services#new-apis for more detail.
-public final class ChromiumPlayServicesAvailability {
+public final class MonyharPlayServicesAvailability {
     /**
      * The minimum GMS version we're requesting. isGooglePlayServicesAvailable will fail if the
      * found version on the devices is lower than this number. This number should never be updated;

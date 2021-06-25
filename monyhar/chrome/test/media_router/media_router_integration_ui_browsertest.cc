@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@
 
 namespace media_router {
 
-// TODO(https://crbug.com/822231): Flaky in Chromium waterfall.
+// TODO(https://crbug.com/822231): Flaky in Monyhar waterfall.
 IN_PROC_BROWSER_TEST_F(MediaRouterIntegrationBrowserTest, MANUAL_Dialog_Basic) {
   OpenTestPage(FILE_PATH_LITERAL("basic_test.html"));
   test_ui_->ShowDialog();
@@ -36,7 +36,7 @@ IN_PROC_BROWSER_TEST_F(MediaRouterIntegrationBrowserTest, MANUAL_Dialog_Basic) {
   test_ui_->HideDialog();
 }
 
-// TODO(https://crbug.com/822231): Flaky in Chromium waterfall.
+// TODO(https://crbug.com/822231): Flaky in Monyhar waterfall.
 IN_PROC_BROWSER_TEST_F(MediaRouterIntegrationBrowserTest,
                        MANUAL_Dialog_RouteCreationTimedOut) {
   // The hardcoded timeout route creation timeout for the UI.

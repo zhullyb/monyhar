@@ -6,7 +6,7 @@ of C++ header files, scripts, and GN build files. We consider all other files
 in Blink to be implementation details, which are subject to change at any time
 without notice.
 
-The primary consumer of this API is Chromium's Content layer. If you are
+The primary consumer of this API is Monyhar's Content layer. If you are
 interested in using Blink, please consider interfacing with Blink via the
 Content layer rather than interfacing directly with this API.
 
@@ -14,8 +14,8 @@ Compatibility
 -------------
 
 The API does not support binary compatibility. Instead, the API is intended to
-insulate the rest of the Chromium project from internal changes to Blink.  Over
-time, the API is likely to evolve in source-incompatible ways as Chromium's and
+insulate the rest of the Monyhar project from internal changes to Blink.  Over
+time, the API is likely to evolve in source-incompatible ways as Monyhar's and
 Blink's needs change.
 
 Organization
@@ -57,7 +57,7 @@ As mentioned above, conceptually public/platform/ and public/web/ should be
 used as follows:
 
   - public/platform/ is implemented by the underlying functionalities and used by Blink
-  - public/web/ is implemented by Blink and used by Chromium
+  - public/web/ is implemented by Blink and used by Monyhar
 
 In reality, however, they are sometimes abused. Due to the dependency constraint
 (public/web/ => controller/ => modules/ => core/ => platform/ => public/platform/),

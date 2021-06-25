@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Chromium Authors. All rights reserved.
+// Copyright (c) 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ GetNetTrustAnchorHistogramIdForSPKI(const HashValue& spki_hash);
 
 // Returns true if the CA identified by |spki_hash| is known as a Legacy CA,
 // which means that they are known as a well-known root, but are not trusted
-// on the ChromiumOS or Android platforms. This indicates a CA that either has
+// on the MonyharOS or Android platforms. This indicates a CA that either has
 // been removed from public trust (generally, voluntarily) or has not (or not
 // yet) undergone a public review and discussion for broad public trust.
 NET_EXPORT bool IsLegacyPubliclyTrustedCA(const HashValue& spki_hash);

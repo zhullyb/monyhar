@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -128,9 +128,9 @@ class PListWriter(xml_formatted_writer.XMLFormattedWriter):
   def BeginTemplate(self):
     self._plist.attributes['version'] = '1'
     dict = self.AddElement(self._plist, 'dict')
-    if self._GetChromiumVersionString() is not None:
+    if self._GetMonyharVersionString() is not None:
       self.AddComment(self._plist, self.config['build'] + ' version: ' + \
-          self._GetChromiumVersionString())
+          self._GetMonyharVersionString())
     app_name = plist_helper.GetPlistFriendlyName(self.config['app_name'])
     self._AddStringKeyValuePair(dict, 'pfm_name', app_name)
     self._AddStringKeyValuePair(dict, 'pfm_description', '')

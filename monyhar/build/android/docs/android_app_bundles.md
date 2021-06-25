@@ -1,6 +1,6 @@
 # Introduction
 
-This document describes how the Chromium build system supports Android app
+This document describes how the Monyhar build system supports Android app
 bundles.
 
 [TOC]

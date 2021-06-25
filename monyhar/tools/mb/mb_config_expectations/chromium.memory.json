@@ -23,7 +23,7 @@
       "use_thin_lto": true
     }
   },
-  "Linux Chromium OS ASan LSan Builder": {
+  "Linux Monyhar OS ASan LSan Builder": {
     "gn_args": {
       "dcheck_always_on": true,
       "is_asan": true,
@@ -35,7 +35,7 @@
       "use_goma": true
     }
   },
-  "Linux ChromiumOS MSan Builder": {
+  "Linux MonyharOS MSan Builder": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,

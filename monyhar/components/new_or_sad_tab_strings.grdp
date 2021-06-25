@@ -87,8 +87,8 @@
         </message>
       </if>
       <if expr="not _google_chrome">
-        <message name="IDS_SAD_TAB_RELOAD_RESTART_BROWSER" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to restart Chromium." formatter_data="android_java">
-          Restart Chromium
+        <message name="IDS_SAD_TAB_RELOAD_RESTART_BROWSER" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to restart Monyhar." formatter_data="android_java">
+          Restart Monyhar
         </message>
       </if>
       <if expr="is_win or is_linux or is_macosx or chromeos">

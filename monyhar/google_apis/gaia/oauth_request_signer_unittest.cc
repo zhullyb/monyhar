@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -82,7 +82,7 @@ TEST(OAuthRequestSignerTest, SignGet1) {
   OAuthRequestSigner::Parameters parameters;
   parameters["scope"] = "https://accounts.google.com/OAuthLogin";
   parameters["oauth_nonce"] = "2oiE_aHdk5qRTz0L9C8Lq0g";
-  parameters["xaouth_display_name"] = "Chromium";
+  parameters["xaouth_display_name"] = "Monyhar";
   parameters["oauth_timestamp"] = "1308152953";
   std::string signed_text;
   ASSERT_TRUE(OAuthRequestSigner::SignURL(
@@ -104,7 +104,7 @@ TEST(OAuthRequestSignerTest, SignGet1) {
             "&oauth_token=4%2FVGY0MsQadcmO8VnCv9gnhoEooq1v"
             "&oauth_version=1.0"
             "&scope=https%3A%2F%2Faccounts.google.com%2FOAuthLogin"
-            "&xaouth_display_name=Chromium",
+            "&xaouth_display_name=Monyhar",
             signed_text);
 }
 
@@ -139,7 +139,7 @@ TEST(OAuthRequestSignerTest, ParseAndSignGet1) {
   GURL request_url("https://www.google.com/accounts/o8/GetOAuthToken"
                    "?scope=https://accounts.google.com/OAuthLogin"
                    "&oauth_nonce=2oiE_aHdk5qRTz0L9C8Lq0g"
-                   "&xaouth_display_name=Chromium"
+                   "&xaouth_display_name=Monyhar"
                    "&oauth_timestamp=1308152953");
   std::string signed_text;
   ASSERT_TRUE(OAuthRequestSigner::ParseAndSign(
@@ -160,7 +160,7 @@ TEST(OAuthRequestSignerTest, ParseAndSignGet1) {
             "&oauth_token=4%2FCcC-hgdj1TNnWaX8NTQ76YDXCBEK"
             "&oauth_version=1.0"
             "&scope=https%3A%2F%2Faccounts.google.com%2FOAuthLogin"
-            "&xaouth_display_name=Chromium",
+            "&xaouth_display_name=Monyhar",
             signed_text);
 }
 
@@ -194,7 +194,7 @@ TEST(OAuthRequestSignerTest, SignPost1) {
   OAuthRequestSigner::Parameters parameters;
   parameters["scope"] = "https://accounts.google.com/OAuthLogin";
   parameters["oauth_nonce"] = "2oiE_aHdk5qRTz0L9C8Lq0g";
-  parameters["xaouth_display_name"] = "Chromium";
+  parameters["xaouth_display_name"] = "Monyhar";
   parameters["oauth_timestamp"] = "1308152953";
   std::string signed_text;
   ASSERT_TRUE(OAuthRequestSigner::SignURL(
@@ -215,7 +215,7 @@ TEST(OAuthRequestSignerTest, SignPost1) {
             "&oauth_token=4%2FX8x0r7bHif_VNCLjUMutxGkzo13d"
             "&oauth_version=1.0"
             "&scope=https%3A%2F%2Faccounts.google.com%2FOAuthLogin"
-            "&xaouth_display_name=Chromium",
+            "&xaouth_display_name=Monyhar",
             signed_text);
 }
 
@@ -249,7 +249,7 @@ TEST(OAuthRequestSignerTest, ParseAndSignPost1) {
   GURL request_url("https://www.google.com/accounts/o8/GetOAuthToken"
                    "?scope=https://accounts.google.com/OAuthLogin"
                    "&oauth_nonce=2oiE_aHdk5qRTz0L9C8Lq0g"
-                   "&xaouth_display_name=Chromium"
+                   "&xaouth_display_name=Monyhar"
                    "&oauth_timestamp=1308152953");
   std::string signed_text;
   ASSERT_TRUE(OAuthRequestSigner::ParseAndSign(
@@ -269,7 +269,7 @@ TEST(OAuthRequestSignerTest, ParseAndSignPost1) {
             "&oauth_token=4%2FX8x0r7bHif_VNCLjUMutxGkzo13d"
             "&oauth_version=1.0"
             "&scope=https%3A%2F%2Faccounts.google.com%2FOAuthLogin"
-            "&xaouth_display_name=Chromium",
+            "&xaouth_display_name=Monyhar",
             signed_text);
 }
 
@@ -302,7 +302,7 @@ TEST(OAuthRequestSignerTest, SignAuthHeader) {
   OAuthRequestSigner::Parameters parameters;
   parameters["scope"] = "https://accounts.google.com/OAuthLogin";
   parameters["oauth_nonce"] = "2oiE_aHdk5qRTz0L9C8Lq0g";
-  parameters["xaouth_display_name"] = "Chromium";
+  parameters["xaouth_display_name"] = "Monyhar";
   parameters["oauth_timestamp"] = "1308152953";
   std::string signed_text;
   ASSERT_TRUE(OAuthRequestSigner::SignAuthHeader(
@@ -324,6 +324,6 @@ TEST(OAuthRequestSignerTest, SignAuthHeader) {
             "oauth_token=\"4%2FVGY0MsQadcmO8VnCv9gnhoEooq1v\", "
             "oauth_version=\"1.0\", "
             "scope=\"https%3A%2F%2Faccounts.google.com%2FOAuthLogin\", "
-            "xaouth_display_name=\"Chromium\"",
+            "xaouth_display_name=\"Monyhar\"",
             signed_text);
 }

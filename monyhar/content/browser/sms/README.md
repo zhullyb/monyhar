@@ -17,7 +17,7 @@ This is implemented in [third_party/blink/renderer/modules/credentialmanager](ht
 * The Android related tests are located in [chrome/android/javatests/src/org/monyhar/chrome/browser/sms/](https://cs.monyhar.org/monyhar/src/chrome/android/javatests/src/org/monyhar/chrome/browser/sms/).
 * Web platform tests are located in [third_party/blink/web_tests/http/tests/credentialmanager/](https://cs.monyhar.org/monyhar/src/third_party/blink/web_tests/http/tests/credentialmanager/)
 
-For how to run these tests, refer to Chromium documentation [Running tests locally](https://www.monyhar.org/developers/testing/running-tests), [Android Test Instructions](https://monyhar.googlesource.com/monyhar/src/+/main/docs/testing/android_test_instructions.md)
+For how to run these tests, refer to Monyhar documentation [Running tests locally](https://www.monyhar.org/developers/testing/running-tests), [Android Test Instructions](https://monyhar.googlesource.com/monyhar/src/+/main/docs/testing/android_test_instructions.md)
 
 For testing this API locally, refer to [How to use the Web OTP API](https://github.com/WICG/WebOTP/blob/master/HOWTO.md)
 

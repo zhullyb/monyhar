@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -31,16 +31,16 @@ class UDPClientSocket;
 // the monyhar epoll server.
 class QuicClientMessageLooplNetworkHelper
     : public quic::QuicClientBase::NetworkHelper,
-      public QuicChromiumPacketReader::Visitor {
+      public QuicMonyharPacketReader::Visitor {
  public:
   // Create a quic client, which will have events managed by an externally owned
   // EpollServer.
-  QuicClientMessageLooplNetworkHelper(quic::QuicChromiumClock* clock,
+  QuicClientMessageLooplNetworkHelper(quic::QuicMonyharClock* clock,
                                       quic::QuicClientBase* client);
 
   ~QuicClientMessageLooplNetworkHelper() override;
 
-  // QuicChromiumPacketReader::Visitor
+  // QuicMonyharPacketReader::Visitor
   bool OnReadError(int result, const DatagramClientSocket* socket) override;
   bool OnPacket(const quic::QuicReceivedPacket& packet,
                 const quic::QuicSocketAddress& local_address,
@@ -64,11 +64,11 @@ class QuicClientMessageLooplNetworkHelper
   // UDP socket connected to the server.
   std::unique_ptr<UDPClientSocket> socket_;
 
-  std::unique_ptr<QuicChromiumPacketReader> packet_reader_;
+  std::unique_ptr<QuicMonyharPacketReader> packet_reader_;
 
   bool packet_reader_started_;
 
-  quic::QuicChromiumClock* clock_;
+  quic::QuicMonyharClock* clock_;
   quic::QuicClientBase* client_;
 
   DISALLOW_COPY_AND_ASSIGN(QuicClientMessageLooplNetworkHelper);

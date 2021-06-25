@@ -31,7 +31,7 @@ Read more about schemas [here](/chrome/common/extensions/api/schemas.md).
 
 ### Features
 Extension feature files control access to different APIs, and can restrict APIs
-(or specific methods) to different types of extensions, Chromium release
+(or specific methods) to different types of extensions, Monyhar release
 channels, or even to specific extension IDs, as well as specify required
 permissions.
 
@@ -40,7 +40,7 @@ Read more about the features files
 
 ### API Functions
 Extension functions are called by the extension in order to perform some action
-in the Chromium browser.  For instance, the `chrome.tabs.create()` API function
+in the Monyhar browser.  For instance, the `chrome.tabs.create()` API function
 is called by an extension to create a tab, and is implemented in C++ by the
 `TabsCreateFunction`, and instance of the `ExtensionFunction` class.  Generally,
 each API function will map to an instance of the `ExtensionFunction` class.
@@ -101,7 +101,7 @@ channel before it's ready or when it is likely to experience churn.
 Now, it's time to actually write the code to implement the API!
 
 #### Approaches
-As a general practice in Chromium, it's good to develop CLs that represent a
+As a general practice in Monyhar, it's good to develop CLs that represent a
 full logical unit, complete with tests.  This does not have to mean it has to
 be entirely complete - it may not even be reachable in production code.
 However, it should be clear to reviewers what the functionality is, and that it
@@ -121,7 +121,7 @@ In this case, the logical unit is the new function or event, complete with tests
 
 For exceptionally large or complex APIs, even this may be too large of a first
 step, and smaller CLs may be required before even creating the API entry (for
-instance, a new API function may require changes elsewhere in Chromium to
+instance, a new API function may require changes elsewhere in Monyhar to
 enable a new behavior).
 
 This approach makes it easy for reviewers to review the CL in a reasonable

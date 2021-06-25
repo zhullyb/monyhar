@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -42,7 +42,7 @@ sys.path.remove(depot_tools_path)
 INTERNAL_TRANSLATION_EXPECTATIONS_PATH = os.path.join(
     'clank', 'tools', 'translation_expectations.pyl')
 
-# Translation expectations file for the Chromium repo.
+# Translation expectations file for the Monyhar repo.
 TRANSLATION_EXPECTATIONS_PATH = os.path.join('tools', 'gritsettings',
                                              'translation_expectations.pyl')
 

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -465,7 +465,7 @@ TEST_F(TabsApiUnitTest, TabsUpdate) {
   scoped_refptr<const Extension> extension =
       ExtensionBuilder("UpdateTest").Build();
   const GURL kExampleCom("http://example.com");
-  const GURL kChromiumOrg("https://monyhar.org");
+  const GURL kMonyharOrg("https://monyhar.org");
 
   // Add a web contents to the browser.
   std::unique_ptr<content::WebContents> contents(
@@ -487,13 +487,13 @@ TEST_F(TabsApiUnitTest, TabsUpdate) {
   function->set_extension(extension);
   static constexpr char kFormatArgs[] = R"([%d, {"url": "%s"}])";
   const std::string args =
-      base::StringPrintf(kFormatArgs, tab_id, kChromiumOrg.spec().c_str());
+      base::StringPrintf(kFormatArgs, tab_id, kMonyharOrg.spec().c_str());
   ASSERT_TRUE(extension_function_test_utils::RunFunction(
       function.get(), args, browser(), api_test_utils::NONE));
   content::NavigationController& controller =
       browser()->tab_strip_model()->GetActiveWebContents()->GetController();
   content::RenderFrameHostTester::CommitPendingLoad(&controller);
-  EXPECT_EQ(kChromiumOrg, raw_contents->GetLastCommittedURL());
+  EXPECT_EQ(kMonyharOrg, raw_contents->GetLastCommittedURL());
 
   // Clean up.
   browser()->tab_strip_model()->CloseAllTabs();

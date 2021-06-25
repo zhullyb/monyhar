@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -50,7 +50,7 @@ const tests = [
     [['file-name', 'document_info.pdf'],
      ['file-size', '714 B'],
      ['title', 'Sample PDF Document Info'],
-     ['author', 'Chromium Authors'],
+     ['author', 'Monyhar Authors'],
      ['subject', 'Testing'],
      ['keywords', 'testing,monyhar,pdfium,document,info'],
      ['created', '2/5/20, 7:39:12 AM'],

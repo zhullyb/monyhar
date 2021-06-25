@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -19,7 +19,7 @@ class TestAlerts(unittest.TestCase):
                 'timestamp': '2009-02-13T23:31:30.000',
                 'testsuite': 'loading.mobile',
                 'test': 'timeToFirstInteractive/Google',
-                'master': 'ChromiumPerf',
+                'master': 'MonyharPerf',
                 'bot': 'android-nexus5',
                 'start_revision': 12345,
                 'end_revision': 12543,
@@ -35,7 +35,7 @@ class TestAlerts(unittest.TestCase):
                 'timestamp': '2009-02-13T23:31:30.000',
                 'testsuite': 'loading.mobile',
                 'test': 'timeToFirstInteractive/Wikipedia',
-                'master': 'ChromiumPerf',
+                'master': 'MonyharPerf',
                 'bot': 'android-nexus5',
                 'start_revision': 12345,
                 'end_revision': 12543,
@@ -54,7 +54,7 @@ class TestAlerts(unittest.TestCase):
     alert = alerts.loc['abc123']
     self.assertEqual(alert['timestamp'], datetime.datetime(
         year=2009, month=2, day=13, hour=23, minute=31, second=30))
-    self.assertEqual(alert['bot'], 'ChromiumPerf/android-nexus5')
+    self.assertEqual(alert['bot'], 'MonyharPerf/android-nexus5')
     self.assertEqual(alert['test_suite'], 'loading.mobile')
     self.assertEqual(alert['test_case'], 'Google')
     self.assertEqual(alert['measurement'], 'timeToFirstInteractive')
@@ -75,7 +75,7 @@ class TestAlerts(unittest.TestCase):
                 'timestamp': '2009-02-13T23:31:30.000',
                 'testsuite': 'loading.mobile',
                 'test': 'timeToFirstInteractive',
-                'master': 'ChromiumPerf',
+                'master': 'MonyharPerf',
                 'bot': 'android-nexus5',
                 'start_revision': 12345,
                 'end_revision': 12543,

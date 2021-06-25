@@ -31,7 +31,7 @@
 // 2013-04-10 - Add wrapper method to apply a patch to files directly.
 //                --Joshua Pawlicki <waffles@monyhar.org>
 
-// Copyright (c) 2009 The Chromium Authors. All rights reserved.
+// Copyright (c) 2009 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 

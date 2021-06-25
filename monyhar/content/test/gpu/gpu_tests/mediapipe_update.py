@@ -1,4 +1,4 @@
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -12,12 +12,12 @@ import zipfile
 import filecmp
 
 
-def GetChromiumSrcDir():
+def GetMonyharSrcDir():
   return os.path.abspath(
       os.path.join(os.path.dirname(__file__), '..', '..', '..', '..'))
 
 
-_TEST_ROOT = os.path.join(GetChromiumSrcDir(), 'content', 'test', 'data', 'gpu')
+_TEST_ROOT = os.path.join(GetMonyharSrcDir(), 'content', 'test', 'data', 'gpu')
 
 
 def main():

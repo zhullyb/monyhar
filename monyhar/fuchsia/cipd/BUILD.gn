@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -223,7 +223,7 @@ group("test_packages_for_deps") {
 cipd_archive("tests") {
   _manifest_path = "${target_gen_dir}/test_manifest.json"
   package_basename = "tests"
-  description = "Prebuilt Chromium tests for Fuchsia."
+  description = "Prebuilt Monyhar tests for Fuchsia."
   testonly = true
 
   deps = [ ":test_packages_for_deps" ]
@@ -286,7 +286,7 @@ fuchsia_cipd_package(_debug_symbols_archive_name) {
   package_root = _debug_symbols_outdir
   package_definition_name = "${target_name}.yaml"
   package_definition_dir = "${target_gen_dir}/${target_name}"
-  description = "Debugging symbols for prebuilt binaries from Chromium."
+  description = "Debugging symbols for prebuilt binaries from Monyhar."
   use_absolute_root_path = true
 
   directories = [ "." ]

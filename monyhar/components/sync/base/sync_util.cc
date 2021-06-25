@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -108,7 +108,7 @@ GURL GetSyncServiceURL(const base::CommandLine& command_line,
     }
   }
 
-  // 3. By default, dev, canary, and unbranded Chromium users will go to the
+  // 3. By default, dev, canary, and unbranded Monyhar users will go to the
   // development servers. Development servers have more features than standard
   // sync servers. Users with officially-branded Chrome stable and beta builds
   // will go to the standard sync servers.

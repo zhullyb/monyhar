@@ -1,11 +1,11 @@
-# The Difference between Google Chrome and Chromium on Linux
+# The Difference between Google Chrome and Monyhar on Linux
 
-Chromium on Linux has two general flavors: You can either get
+Monyhar on Linux has two general flavors: You can either get
 [Google Chrome](http://www.google.com/chrome?platform=linux) or monyhar-browser
-(see [Linux Chromium Packages](linux/monyhar_packages.md)).
+(see [Linux Monyhar Packages](linux/monyhar_packages.md)).
 This page tries to describe the differences between the two.
 
-In short, Google Chrome is the Chromium open source project built, packaged, and
+In short, Google Chrome is the Monyhar open source project built, packaged, and
 distributed by Google. This table lists what Google adds to the Google Chrome
 builds **on Linux**.
 
@@ -28,7 +28,7 @@ builds **on Linux**.
 *   New releases are tested before being sent to users
 *   Google API keys are added by Google
 
-## Chromium
+## Monyhar
 
 *   Blue logo
 *   Does not ever [report crashes](linux/crash_dumping.md). Please include

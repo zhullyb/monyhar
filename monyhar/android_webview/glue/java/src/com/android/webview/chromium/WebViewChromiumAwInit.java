@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,7 +33,7 @@ import org.monyhar.android_webview.AwTracingController;
 import org.monyhar.android_webview.HttpAuthDatabase;
 import org.monyhar.android_webview.ProductConfig;
 import org.monyhar.android_webview.R;
-import org.monyhar.android_webview.WebViewChromiumRunQueue;
+import org.monyhar.android_webview.WebViewMonyharRunQueue;
 import org.monyhar.android_webview.common.AwResource;
 import org.monyhar.android_webview.common.AwSwitches;
 import org.monyhar.android_webview.gfx.AwDrawFnImpl;
@@ -57,12 +57,12 @@ import org.monyhar.net.NetworkChangeNotifier;
 import org.monyhar.ui.base.ResourceBundle;
 
 /**
- * Class controlling the Chromium initialization for WebView.
+ * Class controlling the Monyhar initialization for WebView.
  * We hold on to most static objects used by WebView here.
  * This class is shared between the webkit glue layer and the support library glue layer.
  */
-public class WebViewChromiumAwInit {
-    private static final String TAG = "WebViewChromiumAwInit";
+public class WebViewMonyharAwInit {
+    private static final String TAG = "WebViewMonyharAwInit";
 
     private static final String HTTP_AUTH_DATABASE_FILE = "http_auth.db";
 
@@ -96,7 +96,7 @@ public class WebViewChromiumAwInit {
     // Read/write protected by mLock
     private int mInitState;
 
-    private final WebViewChromiumFactoryProvider mFactory;
+    private final WebViewMonyharFactoryProvider mFactory;
 
     // These values are persisted to logs. Entries should not be renumbered and
     // numeric values should never be reused.
@@ -111,10 +111,10 @@ public class WebViewChromiumAwInit {
     private boolean mIsInitializedFromUIThread;
     private boolean mIsPostedFromBackgroundThread;
 
-    WebViewChromiumAwInit(WebViewChromiumFactoryProvider factory) {
+    WebViewMonyharAwInit(WebViewMonyharFactoryProvider factory) {
         mFactory = factory;
         // Do not make calls into 'factory' in this ctor - this ctor is called from the
-        // WebViewChromiumFactoryProvider ctor, so 'factory' is not properly initialized yet.
+        // WebViewMonyharFactoryProvider ctor, so 'factory' is not properly initialized yet.
         TraceEvent.maybeEnableEarlyTracing(
                 TraceEvent.ATRACE_TAG_WEBVIEW, /*readCommandLine=*/false);
     }
@@ -122,7 +122,7 @@ public class WebViewChromiumAwInit {
     public AwTracingController getAwTracingController() {
         synchronized (mLock) {
             if (mAwTracingController == null) {
-                ensureChromiumStartedLocked(true);
+                ensureMonyharStartedLocked(true);
             }
         }
         return mAwTracingController;
@@ -131,7 +131,7 @@ public class WebViewChromiumAwInit {
     public AwProxyController getAwProxyController() {
         synchronized (mLock) {
             if (mAwProxyController == null) {
-                ensureChromiumStartedLocked(true);
+                ensureMonyharStartedLocked(true);
             }
         }
         return mAwProxyController;
@@ -143,10 +143,10 @@ public class WebViewChromiumAwInit {
     // lives in the ui/ layer. See ui/base/ui_base_paths.h
     private static final int DIR_RESOURCE_PAKS_ANDROID = 3003;
 
-    protected void startChromiumLocked() {
+    protected void startMonyharLocked() {
         long startTime = SystemClock.uptimeMillis();
         try (ScopedSysTraceEvent event =
-                        ScopedSysTraceEvent.scoped("WebViewChromiumAwInit.startChromiumLocked")) {
+                        ScopedSysTraceEvent.scoped("WebViewMonyharAwInit.startMonyharLocked")) {
             assert Thread.holdsLock(mLock) && ThreadUtils.runningOnUiThread();
 
             // The post-condition of this method is everything is ready, so notify now to cover all
@@ -170,7 +170,7 @@ public class WebViewChromiumAwInit {
 
             final Context context = ContextUtils.getApplicationContext();
 
-            JNIUtils.setClassLoader(WebViewChromiumAwInit.class.getClassLoader());
+            JNIUtils.setClassLoader(WebViewMonyharAwInit.class.getClassLoader());
 
             ResourceBundle.setAvailablePakLocales(AwLocaleConfig.getWebViewSupportedPakLocales());
 
@@ -180,7 +180,7 @@ public class WebViewChromiumAwInit {
             // NOTE: Any reference to Java resources will cause a crash.
 
             try (ScopedSysTraceEvent e =
-                            ScopedSysTraceEvent.scoped("WebViewChromiumAwInit.LibraryLoader")) {
+                            ScopedSysTraceEvent.scoped("WebViewMonyharAwInit.LibraryLoader")) {
                 LibraryLoader.getInstance().ensureInitialized();
             }
 
@@ -218,7 +218,7 @@ public class WebViewChromiumAwInit {
                     context.getApplicationInfo().targetSdkVersion);
 
             try (ScopedSysTraceEvent e = ScopedSysTraceEvent.scoped(
-                         "WebViewChromiumAwInit.initThreadUnsafeSingletons")) {
+                         "WebViewMonyharAwInit.initThreadUnsafeSingletons")) {
                 // Initialize thread-unsafe singletons.
                 AwBrowserContext awBrowserContext = getBrowserContextOnUiThread();
                 mGeolocationPermissions = new GeolocationPermissionsAdapter(
@@ -237,7 +237,7 @@ public class WebViewChromiumAwInit {
             }
         }
         RecordHistogram.recordTimesHistogram(
-                "Android.WebView.Startup.CreationTime.StartChromiumLocked",
+                "Android.WebView.Startup.CreationTime.StartMonyharLocked",
                 SystemClock.uptimeMillis() - startTime);
     }
 
@@ -247,7 +247,7 @@ public class WebViewChromiumAwInit {
      */
     public void setUpResourcesOnBackgroundThread(int packageId, Context context) {
         try (ScopedSysTraceEvent e = ScopedSysTraceEvent.scoped(
-                     "WebViewChromiumAwInit.setUpResourcesOnBackgroundThread")) {
+                     "WebViewMonyharAwInit.setUpResourcesOnBackgroundThread")) {
             assert mSetUpResourcesThread == null : "This method shouldn't be called twice.";
 
             // Make sure that ResourceProvider is initialized before starting the browser process.
@@ -264,7 +264,7 @@ public class WebViewChromiumAwInit {
 
     private void waitUntilSetUpResources() {
         try (ScopedSysTraceEvent e = ScopedSysTraceEvent.scoped(
-                     "WebViewChromiumAwInit.waitUntilSetUpResources")) {
+                     "WebViewMonyharAwInit.waitUntilSetUpResources")) {
             mSetUpResourcesThread.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -273,7 +273,7 @@ public class WebViewChromiumAwInit {
 
     private void setUpResources(int packageId, Context context) {
         try (ScopedSysTraceEvent e =
-                        ScopedSysTraceEvent.scoped("WebViewChromiumAwInit.setUpResources")) {
+                        ScopedSysTraceEvent.scoped("WebViewMonyharAwInit.setUpResources")) {
             R.onResourcesLoaded(packageId);
 
             AwResource.setResources(context.getResources());
@@ -287,13 +287,13 @@ public class WebViewChromiumAwInit {
 
     void startYourEngines(boolean fromThreadSafeFunction) {
         synchronized (mLock) {
-            ensureChromiumStartedLocked(fromThreadSafeFunction);
+            ensureMonyharStartedLocked(fromThreadSafeFunction);
         }
     }
 
     // This method is not private only because the downstream subclass needs to access it,
     // it shouldn't be accessed from anywhere else.
-    /* package */ void ensureChromiumStartedLocked(boolean fromThreadSafeFunction) {
+    /* package */ void ensureMonyharStartedLocked(boolean fromThreadSafeFunction) {
         assert Thread.holdsLock(mLock);
 
         if (mInitState == INIT_FINISHED) { // Early-out for the common case.
@@ -301,11 +301,11 @@ public class WebViewChromiumAwInit {
         }
 
         if (mInitState == INIT_NOT_STARTED) {
-            // If we're the first thread to enter ensureChromiumStartedLocked, we need to determine
+            // If we're the first thread to enter ensureMonyharStartedLocked, we need to determine
             // which thread will be the UI thread; declare init has started so that no other thread
             // will try to do this.
             mInitState = INIT_STARTED;
-            setChromiumUiThreadLocked(fromThreadSafeFunction);
+            setMonyharUiThreadLocked(fromThreadSafeFunction);
         }
 
         if (ThreadUtils.runningOnUiThread()) {
@@ -313,7 +313,7 @@ public class WebViewChromiumAwInit {
             // already a task posted to the UI thread from another thread to do it, it will just
             // no-op when it runs.
             mIsInitializedFromUIThread = true;
-            startChromiumLocked();
+            startMonyharLocked();
             return;
         }
 
@@ -325,7 +325,7 @@ public class WebViewChromiumAwInit {
             @Override
             public void run() {
                 synchronized (mLock) {
-                    startChromiumLocked();
+                    startMonyharLocked();
                 }
             }
         });
@@ -341,7 +341,7 @@ public class WebViewChromiumAwInit {
         }
     }
 
-    private void setChromiumUiThreadLocked(boolean fromThreadSafeFunction) {
+    private void setMonyharUiThreadLocked(boolean fromThreadSafeFunction) {
         // If we're being started from a function that's allowed to be called on any thread,
         // then we can't just assume the current thread is the UI thread; instead we assume the
         // process's main looper will be the UI thread, because that's the case for almost all
@@ -352,7 +352,7 @@ public class WebViewChromiumAwInit {
         // looper or not.
         Looper looper = fromThreadSafeFunction ? Looper.getMainLooper() : Looper.myLooper();
         Log.v(TAG,
-                "Binding Chromium to "
+                "Binding Monyhar to "
                         + (Looper.getMainLooper().equals(looper) ? "main" : "background")
                         + " looper " + looper);
         ThreadUtils.setUiThread(looper);
@@ -360,11 +360,11 @@ public class WebViewChromiumAwInit {
 
     private void initPlatSupportLibrary() {
         try (ScopedSysTraceEvent e = ScopedSysTraceEvent.scoped(
-                     "WebViewChromiumAwInit.initPlatSupportLibrary")) {
+                     "WebViewMonyharAwInit.initPlatSupportLibrary")) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 AwDrawFnImpl.setDrawFnFunctionTable(DrawFunctor.getDrawFnFunctionTable());
             }
-            DrawGLFunctor.setChromiumAwDrawGLFunction(AwContents.getAwDrawGLFunction());
+            DrawGLFunctor.setMonyharAwDrawGLFunction(AwContents.getAwDrawGLFunction());
             AwContents.setAwDrawSWFunctionTable(GraphicsUtils.getDrawSWFunctionTable());
             AwContents.setAwDrawGLFunctionTable(GraphicsUtils.getDrawGLFunctionTable());
         }
@@ -372,7 +372,7 @@ public class WebViewChromiumAwInit {
 
     private void doNetworkInitializations(Context applicationContext) {
         try (ScopedSysTraceEvent e = ScopedSysTraceEvent.scoped(
-                     "WebViewChromiumAwInit.doNetworkInitializations")) {
+                     "WebViewMonyharAwInit.doNetworkInitializations")) {
             if (applicationContext.checkPermission(
                         Manifest.permission.ACCESS_NETWORK_STATE, Process.myPid(), Process.myUid())
                     == PackageManager.PERMISSION_GRANTED) {
@@ -424,7 +424,7 @@ public class WebViewChromiumAwInit {
                 // TODO: Optimization potential: most these methods only need the native library
                 // loaded and initialized, not the entire browser process started.
                 // See also http://b/7009882
-                ensureChromiumStartedLocked(true);
+                ensureMonyharStartedLocked(true);
             }
         }
         return mSharedStatics;
@@ -433,7 +433,7 @@ public class WebViewChromiumAwInit {
     public GeolocationPermissions getGeolocationPermissions() {
         synchronized (mLock) {
             if (mGeolocationPermissions == null) {
-                ensureChromiumStartedLocked(true);
+                ensureMonyharStartedLocked(true);
             }
         }
         return mGeolocationPermissions;
@@ -451,7 +451,7 @@ public class WebViewChromiumAwInit {
     public AwServiceWorkerController getServiceWorkerController() {
         synchronized (mLock) {
             if (mServiceWorkerController == null) {
-                ensureChromiumStartedLocked(true);
+                ensureMonyharStartedLocked(true);
             }
         }
         return mServiceWorkerController;
@@ -459,7 +459,7 @@ public class WebViewChromiumAwInit {
 
     public android.webkit.WebIconDatabase getWebIconDatabase() {
         synchronized (mLock) {
-            ensureChromiumStartedLocked(true);
+            ensureMonyharStartedLocked(true);
             if (mWebIconDatabase == null) {
                 mWebIconDatabase = new WebIconDatabaseAdapter();
             }
@@ -470,7 +470,7 @@ public class WebViewChromiumAwInit {
     public WebStorage getWebStorage() {
         synchronized (mLock) {
             if (mWebStorage == null) {
-                ensureChromiumStartedLocked(true);
+                ensureMonyharStartedLocked(true);
             }
         }
         return mWebStorage;
@@ -478,7 +478,7 @@ public class WebViewChromiumAwInit {
 
     public WebViewDatabase getWebViewDatabase(final Context context) {
         synchronized (mLock) {
-            ensureChromiumStartedLocked(true);
+            ensureMonyharStartedLocked(true);
             if (mWebViewDatabase == null) {
                 mWebViewDatabase = new WebViewDatabaseAdapter(
                         mFactory, HttpAuthDatabase.newInstance(context, HTTP_AUTH_DATABASE_FILE));
@@ -499,7 +499,7 @@ public class WebViewChromiumAwInit {
 
     private void finishVariationsInitLocked() {
         try (ScopedSysTraceEvent e = ScopedSysTraceEvent.scoped(
-                     "WebViewChromiumAwInit.finishVariationsInitLocked")) {
+                     "WebViewMonyharAwInit.finishVariationsInitLocked")) {
             assert Thread.holdsLock(mLock);
             if (mSeedLoader == null) {
                 Log.e(TAG, "finishVariationsInitLocked() called before startVariationsInit()");
@@ -523,7 +523,7 @@ public class WebViewChromiumAwInit {
         });
     }
 
-    public WebViewChromiumRunQueue getRunQueue() {
+    public WebViewMonyharRunQueue getRunQueue() {
         return mFactory.getRunQueue();
     }
 }

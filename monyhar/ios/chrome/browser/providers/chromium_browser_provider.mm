@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,87 +24,87 @@
 #error "This file requires ARC support."
 #endif
 
-ChromiumBrowserProvider::ChromiumBrowserProvider()
+MonyharBrowserProvider::MonyharBrowserProvider()
     : app_distribution_provider_(std::make_unique<AppDistributionProvider>()),
-      branded_image_provider_(std::make_unique<ChromiumBrandedImageProvider>()),
+      branded_image_provider_(std::make_unique<MonyharBrandedImageProvider>()),
       signin_error_provider_(std::make_unique<ios::SigninErrorProvider>()),
       signin_resources_provider_(
-          std::make_unique<ChromiumSigninResourcesProvider>()),
+          std::make_unique<MonyharSigninResourcesProvider>()),
       user_feedback_provider_(std::make_unique<UserFeedbackProvider>()),
-      voice_search_provider_(std::make_unique<ChromiumVoiceSearchProvider>()),
-      spotlight_provider_(std::make_unique<ChromiumSpotlightProvider>()),
+      voice_search_provider_(std::make_unique<MonyharVoiceSearchProvider>()),
+      spotlight_provider_(std::make_unique<MonyharSpotlightProvider>()),
       fullscreen_provider_(std::make_unique<FullscreenProvider>()),
       overrides_provider_(std::make_unique<OverridesProvider>()),
       discover_feed_provider_(std::make_unique<DiscoverFeedProvider>()),
-      text_zoom_provider_(std::make_unique<ChromiumTextZoomProvider>()) {}
+      text_zoom_provider_(std::make_unique<MonyharTextZoomProvider>()) {}
 
-ChromiumBrowserProvider::~ChromiumBrowserProvider() {}
+MonyharBrowserProvider::~MonyharBrowserProvider() {}
 
-ios::SigninErrorProvider* ChromiumBrowserProvider::GetSigninErrorProvider() {
+ios::SigninErrorProvider* MonyharBrowserProvider::GetSigninErrorProvider() {
   return signin_error_provider_.get();
 }
 
 ios::SigninResourcesProvider*
-ChromiumBrowserProvider::GetSigninResourcesProvider() {
+MonyharBrowserProvider::GetSigninResourcesProvider() {
   return signin_resources_provider_.get();
 }
 
-void ChromiumBrowserProvider::SetChromeIdentityServiceForTesting(
+void MonyharBrowserProvider::SetChromeIdentityServiceForTesting(
     std::unique_ptr<ios::ChromeIdentityService> service) {
   chrome_identity_service_ = std::move(service);
 }
 
 ios::ChromeIdentityService*
-ChromiumBrowserProvider::GetChromeIdentityService() {
+MonyharBrowserProvider::GetChromeIdentityService() {
   if (!chrome_identity_service_) {
     chrome_identity_service_ = std::make_unique<ios::ChromeIdentityService>();
   }
   return chrome_identity_service_.get();
 }
 
-UITextField* ChromiumBrowserProvider::CreateStyledTextField() const {
+UITextField* MonyharBrowserProvider::CreateStyledTextField() const {
   return [[UITextField alloc] initWithFrame:CGRectZero];
 }
 
-VoiceSearchProvider* ChromiumBrowserProvider::GetVoiceSearchProvider() const {
+VoiceSearchProvider* MonyharBrowserProvider::GetVoiceSearchProvider() const {
   return voice_search_provider_.get();
 }
 
-id<LogoVendor> ChromiumBrowserProvider::CreateLogoVendor(
+id<LogoVendor> MonyharBrowserProvider::CreateLogoVendor(
     Browser* browser,
     web::WebState* web_state) const {
-  return [[ChromiumLogoController alloc] init];
+  return [[MonyharLogoController alloc] init];
 }
 
-UserFeedbackProvider* ChromiumBrowserProvider::GetUserFeedbackProvider() const {
+UserFeedbackProvider* MonyharBrowserProvider::GetUserFeedbackProvider() const {
   return user_feedback_provider_.get();
 }
 
-AppDistributionProvider* ChromiumBrowserProvider::GetAppDistributionProvider()
+AppDistributionProvider* MonyharBrowserProvider::GetAppDistributionProvider()
     const {
   return app_distribution_provider_.get();
 }
 
-BrandedImageProvider* ChromiumBrowserProvider::GetBrandedImageProvider() const {
+BrandedImageProvider* MonyharBrowserProvider::GetBrandedImageProvider() const {
   return branded_image_provider_.get();
 }
 
-SpotlightProvider* ChromiumBrowserProvider::GetSpotlightProvider() const {
+SpotlightProvider* MonyharBrowserProvider::GetSpotlightProvider() const {
   return spotlight_provider_.get();
 }
 
-FullscreenProvider* ChromiumBrowserProvider::GetFullscreenProvider() const {
+FullscreenProvider* MonyharBrowserProvider::GetFullscreenProvider() const {
   return fullscreen_provider_.get();
 }
 
-OverridesProvider* ChromiumBrowserProvider::GetOverridesProvider() const {
+OverridesProvider* MonyharBrowserProvider::GetOverridesProvider() const {
   return overrides_provider_.get();
 }
 
-DiscoverFeedProvider* ChromiumBrowserProvider::GetDiscoverFeedProvider() const {
+DiscoverFeedProvider* MonyharBrowserProvider::GetDiscoverFeedProvider() const {
   return discover_feed_provider_.get();
 }
 
-TextZoomProvider* ChromiumBrowserProvider::GetTextZoomProvider() const {
+TextZoomProvider* MonyharBrowserProvider::GetTextZoomProvider() const {
   return text_zoom_provider_.get();
 }

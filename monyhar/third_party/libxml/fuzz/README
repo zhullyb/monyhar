@@ -14,7 +14,7 @@ $ libxml_xml_read_memory_fuzzer -use_value_profile=1 -max_len=65536 -rss_limit_m
 $ cp xml_min1/* xml_min2/* seed_corpus/
 ```
 
-This corpus gives a good code coverage for the existing XML fuzzers in Chromium.
+This corpus gives a good code coverage for the existing XML fuzzers in Monyhar.
 See //testing/libfuzzer/README.md for more information about fuzzing.
 
 # Dictionary

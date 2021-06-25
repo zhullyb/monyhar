@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -88,7 +88,7 @@ class COMPONENT_EXPORT(UI_BASE_IME_CHROMEOS) InputMethodUtil {
   //    xkb:us::eng -> _comp_ime_...xkb:us::eng
   //  - VPD well formatted id to extension based input method id, e.g.
   //    m17n:vi_telex -> _comp_ime_...vkd_vi_telex
-  //  - ChromiumOS input method ID to ChromeOS one, or vice versa, e.g.
+  //  - MonyharOS input method ID to ChromeOS one, or vice versa, e.g.
   //    _comp_ime_xxxxxx...xkb:us::eng -> _comp_ime_yyyyyy...xkb:us::eng
   std::string MigrateInputMethod(const std::string& input_method_id);
 

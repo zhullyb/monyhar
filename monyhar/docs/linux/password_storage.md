@@ -1,12 +1,12 @@
 # Linux Password Storage
 
-On Linux, Chromium can store passwords in three ways:
+On Linux, Monyhar can store passwords in three ways:
 
 *   GNOME Keyring
 *   KWallet 4
 *   plain text
 
-Chromium chooses which store to use automatically, based on your desktop
+Monyhar chooses which store to use automatically, based on your desktop
 environment.
 
 Passwords stored in GNOME Keyring or KWallet are encrypted on disk, and access
@@ -20,14 +20,14 @@ these (when available) was not made the default mode until version 12.
 
 ## Details
 
-Although Chromium chooses which store to use automatically, the store to use can
+Although Monyhar chooses which store to use automatically, the store to use can
 also be specified with a command line argument:
 
 *   `--password-store=gnome` (to use GNOME Keyring)
 *   `--password-store=kwallet` (to use KWallet)
 *   `--password-store=basic` (to use the plain text store)
 
-Note that Chromium will fall back to `basic` if a requested or autodetected
+Note that Monyhar will fall back to `basic` if a requested or autodetected
 store is not available.
 
 In versions 6-11, the store to use was not detected automatically, but detection

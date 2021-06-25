@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -103,7 +103,7 @@ const std::vector<base::FilePath> GetTestFiles() {
 // Test fixture for verifying Autofill heuristics. Each input is an HTML
 // file that contains one or more forms. The corresponding output file lists the
 // heuristically detected type for each field.
-// This is based on FormStructureBrowserTest from the Chromium Project.
+// This is based on FormStructureBrowserTest from the Monyhar Project.
 // TODO(crbug.com/245246): Unify the tests.
 class FormStructureBrowserTest
     : public ChromeWebTest,

@@ -1,7 +1,7 @@
 # Render Tests
 
 Render tests are the way of performing pixel diff/image comparison tests in
-Chromium's Android instrumentation tests. They are backed by the Skia team's
+Monyhar's Android instrumentation tests. They are backed by the Skia team's
 Gold image diffing service, which means that baselines (golden images) are
 stored outside of the repo. Image triage (approval/rejection) is handled via the
 Gold web UI, located [here](https://chrome-gold.skia.org/). The UI can also be

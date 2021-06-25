@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -131,7 +131,7 @@ void PasswordExpiryNotification::Show(Profile* profile,
       message_center::NotifierType::SYSTEM_COMPONENT, kNotificationId);
 
   // Leaving this empty means the notification is attributed to the system -
-  // ie "Chromium OS" or similar.
+  // ie "Monyhar OS" or similar.
   static const base::NoDestructor<std::u16string> kEmptyDisplaySource;
 
   // No origin URL is needed since the notification comes from the system.

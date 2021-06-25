@@ -34,7 +34,7 @@ extern "C" {
 **   https://github.com/KhronosGroup/OpenGL-Registry
 */
 
-/* Chromium-specific GLES2 declarations */
+/* Monyhar-specific GLES2 declarations */
 #include <GLES2/gl2monyhar.h>
 
 #include <GLES2/gl2platform.h>

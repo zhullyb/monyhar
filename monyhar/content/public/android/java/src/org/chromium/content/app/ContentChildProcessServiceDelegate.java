@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -80,7 +80,7 @@ public class ContentChildProcessServiceDelegate implements ChildProcessServiceDe
     @Override
     public void preloadNativeLibrary(String packageName) {
         // This function can be called before command line is set. That is fine because
-        // preloading explicitly doesn't run any Chromium code, see NativeLibraryPreloader
+        // preloading explicitly doesn't run any Monyhar code, see NativeLibraryPreloader
         // for more info.
         LibraryLoader.getInstance().preloadNowOverridePackageName(packageName);
     }

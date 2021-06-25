@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -675,7 +675,7 @@ bool GPUQueue::CopyContentFromGPU(StaticBitmapImage* image,
 
   WGPUCopyTextureForBrowserOptions options = {};
 
-  // In Chromium, all the GPU-based GL textures have
+  // In Monyhar, all the GPU-based GL textures have
   // opposite y-coordinates, so we need to correct them
   // in CopyTextureForBrowser().
   if (image->CurrentFrameOrientation().Orientation() ==

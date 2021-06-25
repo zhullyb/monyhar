@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -36,16 +36,16 @@ const quic::QuicSocketAddress newPeerAddress =
     ToQuicSocketAddress(newIpEndPoint);
 }  // anonymous namespace
 
-class MockQuicChromiumClientSession
+class MockQuicMonyharClientSession
     : public QuicConnectivityProbingManager::Delegate,
-      public QuicChromiumPacketReader::Visitor {
+      public QuicMonyharPacketReader::Visitor {
  public:
-  MockQuicChromiumClientSession()
+  MockQuicMonyharClientSession()
       : probed_network_(NetworkChangeNotifier::kInvalidNetworkHandle),
         is_successfully_probed_(false) {}
-  ~MockQuicChromiumClientSession() override {}
+  ~MockQuicMonyharClientSession() override {}
 
-  // QuicChromiumPacketReader::Visitor interface.
+  // QuicMonyharPacketReader::Visitor interface.
   MOCK_METHOD(bool,
               OnReadError,
               (int result, const DatagramClientSocket* socket),
@@ -66,7 +66,7 @@ class MockQuicChromiumClientSession
 
   MOCK_METHOD(bool,
               OnSendConnectivityProbingPacket,
-              (QuicChromiumPacketWriter * writer,
+              (QuicMonyharPacketWriter * writer,
                const quic::QuicSocketAddress& peer_address),
               (override));
 
@@ -75,8 +75,8 @@ class MockQuicChromiumClientSession
       const quic::QuicSocketAddress& peer_address,
       const quic::QuicSocketAddress& self_address,
       std::unique_ptr<DatagramClientSocket> socket,
-      std::unique_ptr<QuicChromiumPacketWriter> writer,
-      std::unique_ptr<QuicChromiumPacketReader> reader) override {
+      std::unique_ptr<QuicMonyharPacketWriter> writer,
+      std::unique_ptr<QuicMonyharPacketReader> reader) override {
     is_successfully_probed_ = true;
     probed_network_ = network;
     probed_peer_address_ = peer_address;
@@ -101,7 +101,7 @@ class MockQuicChromiumClientSession
   quic::QuicSocketAddress probed_self_address_;
   bool is_successfully_probed_;
 
-  DISALLOW_COPY_AND_ASSIGN(MockQuicChromiumClientSession);
+  DISALLOW_COPY_AND_ASSIGN(MockQuicMonyharClientSession);
 };
 
 class QuicConnectivityProbingManagerTest : public ::testing::Test {
@@ -123,9 +123,9 @@ class QuicConnectivityProbingManagerTest : public ::testing::Test {
     socket_->GetLocalAddress(&self_address);
     self_address_ = ToQuicSocketAddress(self_address);
     // Create packet writer and reader for probing.
-    writer_ = std::make_unique<QuicChromiumPacketWriter>(
+    writer_ = std::make_unique<QuicMonyharPacketWriter>(
         socket_.get(), test_task_runner_.get());
-    reader_ = std::make_unique<QuicChromiumPacketReader>(
+    reader_ = std::make_unique<QuicMonyharPacketReader>(
         socket_.get(), &clock_, &session_, kQuicYieldAfterPacketsRead,
         quic::QuicTime::Delta::FromMilliseconds(
             kQuicYieldAfterDurationMilliseconds),
@@ -136,15 +136,15 @@ class QuicConnectivityProbingManagerTest : public ::testing::Test {
   // All tests will run inside the scope of |test_task_runner_|.
   scoped_refptr<base::TestMockTimeTaskRunner> test_task_runner_;
   base::TestMockTimeTaskRunner::ScopedContext test_task_runner_context_;
-  MockQuicChromiumClientSession session_;
+  MockQuicMonyharClientSession session_;
   QuicConnectivityProbingManager probing_manager_;
 
   std::unique_ptr<MockRead> default_read_;
   std::unique_ptr<SequencedSocketData> socket_data_;
 
   std::unique_ptr<DatagramClientSocket> socket_;
-  std::unique_ptr<QuicChromiumPacketWriter> writer_;
-  std::unique_ptr<QuicChromiumPacketReader> reader_;
+  std::unique_ptr<QuicMonyharPacketWriter> writer_;
+  std::unique_ptr<QuicMonyharPacketReader> reader_;
   quic::QuicSocketAddress self_address_;
 
   quic::MockClock clock_;
@@ -543,7 +543,7 @@ TEST_F(QuicConnectivityProbingManagerTest, ProbingWriterError) {
 
   EXPECT_CALL(session_, OnSendConnectivityProbingPacket(_, testPeerAddress))
       .WillOnce(Return(true));
-  QuicChromiumPacketWriter* writer_ptr = writer_.get();
+  QuicMonyharPacketWriter* writer_ptr = writer_.get();
   probing_manager_.StartProbing(
       testNetworkHandle, testPeerAddress, std::move(socket_),
       std::move(writer_), std::move(reader_),
@@ -635,7 +635,7 @@ TEST_F(QuicConnectivityProbingManagerTest, ProbeServerPreferredAddressFailed) {
 
   EXPECT_CALL(session_, OnSendConnectivityProbingPacket(_, testPeerAddress))
       .WillOnce(Return(true));
-  QuicChromiumPacketWriter* writer_ptr = writer_.get();
+  QuicMonyharPacketWriter* writer_ptr = writer_.get();
   // A probe for server preferred address is usually initiated with an
   // invalid network handle passed in.
   probing_manager_.StartProbing(

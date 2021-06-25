@@ -125,7 +125,7 @@ You can run the shell directly as a simple browser:
 out/Default/content_shell
 ```
 
-This allows you see how your changes look in Chromium. You can inspect the page
+This allows you see how your changes look in Monyhar. You can inspect the page
 by right clicking and selecting 'Inspect Element'.
 
 You can also use `--remote-debugging-port`

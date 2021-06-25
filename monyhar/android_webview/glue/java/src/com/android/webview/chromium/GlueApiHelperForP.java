@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,11 +25,11 @@ public final class GlueApiHelperForP {
 
     /**
      * See {@link
-     * TracingControllerAdapter#TracingControllerAdapter(WebViewChromiumFactoryProvider,
+     * TracingControllerAdapter#TracingControllerAdapter(WebViewMonyharFactoryProvider,
      * AwTracingController)}, which was added in P.
      */
     public static TracingController createTracingControllerAdapter(
-            WebViewChromiumFactoryProvider provider, WebViewChromiumAwInit awInit) {
+            WebViewMonyharFactoryProvider provider, WebViewMonyharAwInit awInit) {
         return new TracingControllerAdapter(new SharedTracingControllerAdapter(
                 awInit.getRunQueue(), awInit.getAwTracingController()));
     }

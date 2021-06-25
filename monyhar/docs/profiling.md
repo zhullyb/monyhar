@@ -251,15 +251,15 @@ for instructions on how to go about this.
 
 Many of the profiling tools expect you to provide the PID of the process to profile. If the tool used does not support finding the application by name or you would like to run the command for many processes it can be useful to use `pgrep` to find the PIDs.
 
-Find the PID for Chromium (browser process):
+Find the PID for Monyhar (browser process):
     
-    $ pgrep -X Chromium
-Find the PID for all child processes of Chromium:
+    $ pgrep -X Monyhar
+Find the PID for all child processes of Monyhar:
     
     $ pgrep -P $CHROMIUM_PID
-Combine commands to run tool for Chromium and all and all it's children:
+Combine commands to run tool for Monyhar and all and all it's children:
     
-    $ cat <(pgrep -x Chromium) <(pgrep -P $(pgrep -x Chromium)) | xargs $MY_TOOL --pid
+    $ cat <(pgrep -x Monyhar) <(pgrep -P $(pgrep -x Monyhar)) | xargs $MY_TOOL --pid
 
 ## Checkout setup
 

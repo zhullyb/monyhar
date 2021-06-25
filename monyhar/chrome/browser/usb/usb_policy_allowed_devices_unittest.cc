@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -260,7 +260,7 @@ TEST_F(UsbPolicyAllowedDevicesTest, IsDeviceAllowed) {
   const auto kGoogleOrigin = url::Origin::Create(GURL("https://google.com"));
   const auto kYoutubeOrigin =
       url::Origin::Create(GURL("https://www.youtube.com"));
-  const auto kChromiumOrigin =
+  const auto kMonyharOrigin =
       url::Origin::Create(GURL("https://monyhar.org"));
 
   auto specific_device_info = device_manager_.CreateAndAddDevice(
@@ -290,11 +290,11 @@ TEST_F(UsbPolicyAllowedDevicesTest, IsDeviceAllowed) {
 
   // Check that any device is allowed for https://monyhar.org.
   EXPECT_TRUE(usb_policy_allowed_devices->IsDeviceAllowed(
-      kChromiumOrigin, *specific_device_info));
-  EXPECT_TRUE(usb_policy_allowed_devices->IsDeviceAllowed(kChromiumOrigin,
+      kMonyharOrigin, *specific_device_info));
+  EXPECT_TRUE(usb_policy_allowed_devices->IsDeviceAllowed(kMonyharOrigin,
                                                           *vendor_device_info));
   EXPECT_TRUE(usb_policy_allowed_devices->IsDeviceAllowed(
-      kChromiumOrigin, *unrelated_device_info));
+      kMonyharOrigin, *unrelated_device_info));
 }
 
 TEST_F(UsbPolicyAllowedDevicesTest, IsDeviceAllowedForUrlsNotInPref) {

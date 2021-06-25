@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@
 //
 // The names given in the table here directly match the DOM Level 3 value,
 // and for the most part the corresponding enum identifier is generated from
-// the name by converting W3C's CamelCaseStyle to Chromium's C_MACRO_STYLE.
+// the name by converting W3C's CamelCaseStyle to Monyhar's C_MACRO_STYLE.
 //
 // NOTE: Some uses of this data expect that encodings remain fixed,
 // so existing key values should not be changed.

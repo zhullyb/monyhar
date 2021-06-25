@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -7,10 +7,10 @@
 """Generates the list of expired flags as a C++ source file.
 
 This program generates a data structure representing the set of flags that
-expired before or as of the current Chromium milestone. Specifically, it reads
+expired before or as of the current Monyhar milestone. Specifically, it reads
 the flag metadata JSON file and emits a structure mapping flag internal names to
 expiration milestones. This data structure is then linked into the built
-Chromium, to be used to decide whether to show or hide a given flag in the flags
+Monyhar, to be used to decide whether to show or hide a given flag in the flags
 UI.
 
 This program can be run with no arguments to run its own unit tests.
@@ -27,7 +27,7 @@ ROOT_PATH = os.path.join(os.path.dirname(__file__), '..', '..')
 
 
 def get_monyhar_version():
-  """Parses the Chromium version out of //chrome/VERSION."""
+  """Parses the Monyhar version out of //chrome/VERSION."""
   with open(os.path.join(ROOT_PATH, 'chrome', 'VERSION'),
             encoding='utf-8') as f:
     for line in f.readlines():
@@ -44,14 +44,14 @@ def gen_file_header(prog_name, meta_name):
   * A copyright message on the first line
   * A reference to this program (prog_name)
   * A reference to the input metadata file
-  >>> 'The Chromium Authors' in gen_file_header('foo', 'bar')
+  >>> 'The Monyhar Authors' in gen_file_header('foo', 'bar')
   True
   >>> '/progname' in gen_file_header('/progname', '/dataname')
   True
   >>> '/dataname' in gen_file_header('/progname', '/dataname')
   True
   """
-  return """// Copyright 2019 The Chromium Authors. All rights reserved.
+  return """// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 

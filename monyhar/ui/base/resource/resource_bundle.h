@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -51,7 +51,7 @@ class COMPONENT_EXPORT(UI_BASE) ResourceBundle {
   static const int kLargeFontDelta = 8;
 
   // The constant added during the compression to the front of Brotli-compressed
-  // resources in Chromium. Compression occurs at tools/grit/grit/node/base.py.
+  // resources in Monyhar. Compression occurs at tools/grit/grit/node/base.py.
   static constexpr uint8_t kBrotliConst[] = {0x1e, 0x9b};
   static const size_t kBrotliHeaderSize = 8;
 

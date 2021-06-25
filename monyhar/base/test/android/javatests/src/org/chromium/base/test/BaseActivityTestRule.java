@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ import org.monyhar.base.Log;
 import org.monyhar.base.test.util.ApplicationTestUtils;
 
 /**
- * A replacement for ActivityTestRule, designed for use in Chromium. This implementation supports
+ * A replacement for ActivityTestRule, designed for use in Monyhar. This implementation supports
  * launching the target activity through a launcher or redirect from another Activity.
  *
  * @param <T> The type of Activity this Rule will use.

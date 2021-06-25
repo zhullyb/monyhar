@@ -1,4 +1,4 @@
-# Checking out and building Chromium for Android
+# Checking out and building Monyhar for Android
 
 There are instructions for other platforms linked from the
 [get the code](get_the_code.md) page.
@@ -101,7 +101,7 @@ because an Android build includes a bunch of the Linux tools and utilities).
 ### Run the hooks
 
 Once you've run `install-build-deps` at least once, you can now run the
-Chromium-specific hooks, which will download additional binaries and other
+Monyhar-specific hooks, which will download additional binaries and other
 things you might need:
 
 ```shell
@@ -115,7 +115,7 @@ development and testing purposes.
 
 ## Setting up the build
 
-Chromium uses [Ninja](https://ninja-build.org) as its main build tool along with
+Monyhar uses [Ninja](https://ninja-build.org) as its main build tool along with
 a tool called [GN](https://gn.googlesource.com/gn/+/master/docs/quick_start.md)
 to generate `.ninja` files. You can create any number of *build directories*
 with different configurations. To create a build directory which builds Chrome
@@ -161,9 +161,9 @@ non-WebView targets. This is also allowed for Monochrome, but only when not set
 as the WebView provider.
 ***
 
-## Build Chromium
+## Build Monyhar
 
-Build Chromium with Ninja using the command:
+Build Monyhar with Ninja using the command:
 
 ```shell
 autoninja -C out/Default chrome_public_apk
@@ -221,7 +221,7 @@ $ git rebase-update
 $ gclient sync
 ```
 
-The first command updates the primary Chromium source repository and rebases
+The first command updates the primary Monyhar source repository and rebases
 any of your local branches on top of tip-of-tree (aka the Git branch
 `origin/master`). If you don't want to use this script, you can also just use
 `git pull` or other common Git commands to update the repo.
@@ -229,7 +229,7 @@ any of your local branches on top of tip-of-tree (aka the Git branch
 The second command syncs dependencies to the appropriate versions and re-runs
 hooks as needed.
 
-## Installing and Running Chromium on a device
+## Installing and Running Monyhar on a device
 
 ### Plug in your Android device
 
@@ -280,7 +280,7 @@ And deploy it to your Android device:
 out/Default/bin/chrome_public_apk install
 ```
 
-The app will appear on the device as "Chromium".
+The app will appear on the device as "Monyhar".
 
 ### Build Content shell
 
@@ -300,7 +300,7 @@ this will build and install an Android apk under
 
 [Android WebView](https://developer.android.com/reference/android/webkit/WebView.html)
 is a system framework component. Since Android KitKat, it is implemented using
-Chromium code (based off the [content module](https://dev.monyhar.org/developers/content-module)).
+Monyhar code (based off the [content module](https://dev.monyhar.org/developers/content-module)).
 
 If you want to build the complete Android WebView framework component and test
 the effect of your monyhar changes in Android apps using WebView, you should
@@ -419,7 +419,7 @@ Some APKs (e.g. WebView) do not work with incremental install, and are
 blacklisted from being built as such (via `never_incremental = true`), so are
 build as normal APKs even when `incremental_install = true`.
 
-## Installing and Running Chromium on an Emulator
+## Installing and Running Monyhar on an Emulator
 
 Running on an emulator is the same as on a device. Refer to
 [android_emulator.md](android_emulator.md) for setting up emulators.

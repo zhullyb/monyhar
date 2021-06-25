@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -64,9 +64,9 @@ class PListStringsWriter(template_writer.TemplateWriter):
 
   def BeginTemplate(self):
     app_name = plist_helper.GetPlistFriendlyName(self.config['app_name'])
-    if self._GetChromiumVersionString() is not None:
+    if self._GetMonyharVersionString() is not None:
       self.WriteComment(self.config['build'] + ''' version: ''' + \
-          self._GetChromiumVersionString())
+          self._GetMonyharVersionString())
     self._AddToStringTable(app_name, self.config['app_name'],
                            self.messages['mac_chrome_preferences']['text'])
 

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -47,7 +47,7 @@ class JniRuntimeDelegate : public ChromotingClientRuntime::Delegate {
   JniRuntimeDelegate();
 
   // Forces a DisconnectFromHost() in case there is any active or failed
-  // connection, then proceeds to tear down the Chromium dependencies on which
+  // connection, then proceeds to tear down the Monyhar dependencies on which
   // all sessions depended. Because destruction only occurs at application exit
   // after all connections have terminated, it is safe to make unretained
   // cross-thread calls on the class.

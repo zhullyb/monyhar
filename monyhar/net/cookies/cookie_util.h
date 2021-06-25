@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -132,7 +132,7 @@ using ParsedRequestCookies = std::vector<ParsedRequestCookie>;
 // following the cookie-string schema of RFC 6265, section 4.2.1, and returns
 // cookie name/value pairs. If cookie values are presented in double quotes,
 // these will appear in |parsed_cookies| as well. Assumes that the cookie
-// header is written by Chromium and therefore well-formed.
+// header is written by Monyhar and therefore well-formed.
 NET_EXPORT void ParseRequestCookieLine(const std::string& header_value,
                                        ParsedRequestCookies* parsed_cookies);
 

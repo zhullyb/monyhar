@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -298,7 +298,7 @@ AddIconStatus AddIcon(NSString* installed_path, NSString* dmg_app_path) {
       NSArray* other_browser_app_names =
           [NSArray arrayWithObjects:
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-                       @"Chromium.app",  // Unbranded Google Chrome
+                       @"Monyhar.app",  // Unbranded Google Chrome
 #else
                        @"Google Chrome.app", @"Google Chrome Canary.app",
 #endif

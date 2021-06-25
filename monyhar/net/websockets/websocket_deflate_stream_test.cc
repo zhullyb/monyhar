@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -281,7 +281,7 @@ class WebSocketDeflateStreamWithClientWindowBitsTest
   // Add a frame which will be compressed to a smaller size if the window
   // size is large enough.
   void AddCompressibleFrameString() {
-    const std::string word = "Chromium";
+    const std::string word = "Monyhar";
     const std::string payload = word + std::string(256, 'a') + word;
     AppendTo(&frames_, WebSocketFrameHeader::kOpCodeText, kFinal, payload);
     predictor_->AddFramesToBeInput(frames_);

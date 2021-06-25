@@ -1,4 +1,4 @@
-# Chromium Sensor Backend Modernization on Windows
+# Monyhar Sensor Backend Modernization on Windows
 
 ## 1. Summary
 
@@ -9,19 +9,19 @@ Windows has two sets of sensor APIs:
 - [Windows.Devices.Sensors WinRT API](https://docs.microsoft.com/en-us/uwp/api/windows.devices.sensors):
   The WinRT sensor API on Windows.
 
-The Chromium sensor backend on Windows is forked, systems running
+The Monyhar sensor backend on Windows is forked, systems running
 Windows 19H1 or later will use the WinRT based stack while older
 systems will use the ISensor stack. This document outlines both
 of those implementations:
 
 1. Summary
-2. General Chromium Sensor Backend Model
-3. ISensor Chromium Sensor Backend Model on Windows
-4. Windows.Devices.Sensors Chromium Sensor Backend Model on Windows
+2. General Monyhar Sensor Backend Model
+3. ISensor Monyhar Sensor Backend Model on Windows
+4. Windows.Devices.Sensors Monyhar Sensor Backend Model on Windows
 
-## 2. General Chromium Sensor Backend Model
+## 2. General Monyhar Sensor Backend Model
 
-For context, the Chromium sensor backend is abstracted into these
+For context, the Monyhar sensor backend is abstracted into these
 interfaces:
 
 - SensorProvider – Sensor factory class responsible for discovering
@@ -35,12 +35,12 @@ These interfaces are ultimately what the
 [W3C sensor interface](https://www.w3.org/TR/generic-sensor/)
 communicates with - each platform has its own implementation.
 
-## 3. ISensor Chromium Sensor Backend Model on Windows
+## 3. ISensor Monyhar Sensor Backend Model on Windows
 
-The following diagram shows the ISensor based Chromium backend
+The following diagram shows the ISensor based Monyhar backend
 implementation on Windows:
 
-![Current Chromium Sensor Backend](monyhar_sensor_backend_windows_isensor.png)
+![Current Monyhar Sensor Backend](monyhar_sensor_backend_windows_isensor.png)
 
 The implementation contains three main classes:
 
@@ -58,7 +58,7 @@ The implementation contains three main classes:
 
 The following diagram shows the typical usage flow:
 
-![Current Chromium Sensor Backend Flow](monyhar_sensor_backend_windows_isensor_flow.png)
+![Current Monyhar Sensor Backend Flow](monyhar_sensor_backend_windows_isensor_flow.png)
 
 Support for the SensorTypes defined by the Mojo interface
 on Windows is summarized below:
@@ -87,7 +87,7 @@ The "Sensor GUID" column specifies the names of the sensor type GUIDs
 used to provide data for a SensorType. Any SensorType not mentioned by
 this table are not supported on Windows.
 
-## 4. Windows.Devices.Sensors Chromium Sensor Backend Model on Windows
+## 4. Windows.Devices.Sensors Monyhar Sensor Backend Model on Windows
 
 The overall sensor backend design on Windows remains the same
 (as detailed in section 3). The classes which take a direct dependency

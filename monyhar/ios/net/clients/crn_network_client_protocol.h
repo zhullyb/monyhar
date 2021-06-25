@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@ class URLRequest;
 }  // namespace net
 
 // CRNNetworkClientProtocol provides an interface for delegate classes that
-// receive calls about data loading from the Chromium network stack.
+// receive calls about data loading from the Monyhar network stack.
 // Many methods in this protocol correspond to the NSURLProtocol methods, and
 // are called by the HttpProtocolHandlerCore when events occur in the network
 // stack. A class that implements this protocol can respond by proxying the call

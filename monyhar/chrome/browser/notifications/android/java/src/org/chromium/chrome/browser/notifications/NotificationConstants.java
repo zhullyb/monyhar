@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ public class NotificationConstants {
 
     /**
      * Names of the Intent extras used for Intents related to notifications. These intents are set
-     * and owned by Chromium.
+     * and owned by Monyhar.
      *
      * When adding a new extra, as well as setting it on the intent in NotificationPlatformBridge,
      * it *must* also be set in {@link NotificationJobService#getJobExtrasFromIntent(Intent)}

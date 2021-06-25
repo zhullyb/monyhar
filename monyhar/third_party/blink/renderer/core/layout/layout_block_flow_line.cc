@@ -559,7 +559,7 @@ static inline void SetLogicalWidthForTextRun(
 
 #if defined(OS_MAC)
   // FIXME: Having any font feature settings enabled can lead to selection gaps
-  // on Chromium-mac. https://bugs.webkit.org/show_bug.cgi?id=113418
+  // on Monyhar-mac. https://bugs.webkit.org/show_bug.cgi?id=113418
   bool can_use_cached_word_measurements =
       font.CanShapeWordByWord() &&
       !font.GetFontDescription().FeatureSettings() && layout_text.Is8Bit();

@@ -102,7 +102,7 @@ report-specific information. From there, select a report and go to the
 
 ## Dealing with DEPS
 
-Not all targets in the Chromium source tree are permitted to depend on the
+Not all targets in the Monyhar source tree are permitted to depend on the
 `//components/crash/core/common:crash_key` target due to DEPS file
 `include_rules`.
 

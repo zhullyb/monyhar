@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ constexpr uint8_t kColorG = 127u;
 constexpr uint8_t kColorB = 63u;
 
 // Common pixel formats that we want to test. This is partially based on
-// VideoCaptureDeviceAVFoundation::FourCCToChromiumPixelFormat but we do not
+// VideoCaptureDeviceAVFoundation::FourCCToMonyharPixelFormat but we do not
 // include MJPEG because compressed formats are not supported by the
 // PixelBufferPool. In addition to the formats supported for capturing, we also
 // test I420, which all captured formats are normally converted to in software

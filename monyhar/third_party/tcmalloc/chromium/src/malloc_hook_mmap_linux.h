@@ -62,7 +62,7 @@ static inline void* do_mmap64(void *start, size_t length,
                               int prot, int flags,
                               int fd, __off64_t offset) __THROW {
   // The original gperftools uses sys_mmap() here.  But, it is not allowed by
-  // Chromium's sandbox.
+  // Monyhar's sandbox.
   return (void*)syscall(SYS_mmap, start, length, prot, flags, fd, offset);
 }
 
@@ -192,7 +192,7 @@ extern "C" int munmap(void* start, size_t length) __THROW {
   int result;
   if (!MallocHook::InvokeMunmapReplacement(start, length, &result)) {
     // The original gperftools uses sys_munmap() here.  But, it is not allowed
-    // by Chromium's sandbox.
+    // by Monyhar's sandbox.
     result = syscall(SYS_munmap, start, length);
   }
   return result;
@@ -205,7 +205,7 @@ extern "C" void* mremap(void* old_addr, size_t old_size, size_t new_size,
   void *new_address = va_arg(ap, void *);
   va_end(ap);
   // The original gperftools uses sys_mremap() here.  But, it is not allowed by
-  // Chromium's sandbox.
+  // Monyhar's sandbox.
   void* result = (void*)syscall(SYS_mremap, old_addr, old_size, new_size, flags,
                                 new_address);
   MallocHook::InvokeMremapHook(result, old_addr, old_size, new_size, flags,

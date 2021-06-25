@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -26,9 +26,9 @@ if (is_apple) {
 
 declare_args() {
   # Default to warnings as errors for default workflow, where we catch
-  # warnings with known toolchains. Allow overriding this e.g. for Chromium
+  # warnings with known toolchains. Allow overriding this e.g. for Monyhar
   # builds on Linux that could use a different version of the compiler.
-  # With GCC, warnings in no-Chromium code are always not treated as errors.
+  # With GCC, warnings in no-Monyhar code are always not treated as errors.
   treat_warnings_as_errors = true
 
   # How many symbols to include in the build. This affects the performance of

@@ -1,6 +1,6 @@
 # Mapping of spec concepts to code
 
-Blink is Chromium's implementation of the open web platform. This document
+Blink is Monyhar's implementation of the open web platform. This document
 attempts to map terms and concepts found in the specification of the open web
 platform to classes and files found in Blink's source tree.
 

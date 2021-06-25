@@ -66,9 +66,9 @@ decisions on the web. Include `url/origin.h`.
 This code was originally a separate library that was designed to be embedded
 into both Chrome (which uses STL) and WebKit (which didn't use any STL at the
 time). As a result, the parsing, canonicalization, and utility code could
-not use STL, or any other common code in Chromium like base.
+not use STL, or any other common code in Monyhar like base.
 
-When WebKit was forked into the Chromium repo and renamed Blink, this
+When WebKit was forked into the Monyhar repo and renamed Blink, this
 restriction has been relaxed somewhat. Blink still provides its own URL object
 using its own string type, so the insulation that the Utility layer provides is
 still useful. But some STL strings and calls to base functions have gradually

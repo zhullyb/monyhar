@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -32,7 +32,7 @@ class AppMenuControllerTest;
 // This class needs to be C++, not ObjC, since it derives from
 // BookmarkModelObserver.
 //
-// Most Chromium Cocoa menu items are static from a nib (e.g. New
+// Most Monyhar Cocoa menu items are static from a nib (e.g. New
 // Tab), but may be enabled/disabled under certain circumstances
 // (e.g. Cut and Paste).  In addition, most Cocoa menu items have
 // firstResponder: as a target.  Unusually, bookmark menu items are

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -109,7 +109,7 @@ static const char* kBadFlags[] = {
 #endif  // OS_MAC
 
     // These flags control Blink feature state, which is not supported and is
-    // intended only for use by Chromium developers.
+    // intended only for use by Monyhar developers.
     switches::kDisableBlinkFeatures,
     switches::kEnableBlinkFeatures,
 
@@ -138,7 +138,7 @@ static const char* kBadFlags[] = {
     data_reduction_proxy::switches::kEnableDataReductionProxy,
 
     // GPU sanboxing isn't implemented for the Web GPU API yet meaning it would
-    // be possible to read GPU data for other Chromium processes.
+    // be possible to read GPU data for other Monyhar processes.
     switches::kEnableUnsafeWebGPU,
     switches::kEnableUnsafeWebGPUService,
 

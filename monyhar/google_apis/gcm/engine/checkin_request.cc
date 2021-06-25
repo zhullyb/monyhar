@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -162,19 +162,19 @@ void CheckinRequest::Start() {
         semantics {
           sender: "GCM Driver"
           description:
-            "Chromium interacts with Google Cloud Messaging to receive push "
+            "Monyhar interacts with Google Cloud Messaging to receive push "
             "messages for various browser features, as well as on behalf of "
             "websites and extensions. The check-in periodically verifies the "
             "client's validity with Google servers, and receive updates to "
             "configuration regarding interacting with Google services."
           trigger:
             "Immediately after a feature creates the first Google Cloud "
-            "Messaging registration. By default, Chromium will check in with "
+            "Messaging registration. By default, Monyhar will check in with "
             "Google Cloud Messaging every two days. Google can adjust this "
             "interval when it deems necessary."
           data:
             "The profile-bound Android ID and associated secret and account "
-            "tokens. A structure containing the Chromium version, channel, and "
+            "tokens. A structure containing the Monyhar version, channel, and "
             "platform of the host operating system."
           destination: GOOGLE_OWNED_SERVICE
         }

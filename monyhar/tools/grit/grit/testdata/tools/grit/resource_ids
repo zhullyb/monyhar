@@ -1,9 +1,9 @@
-# Copyright (c) 2011 The Chromium Authors. All rights reserved.
+# Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
 # This file is used to assign starting resource ids for resources and strings
-# used by Chromium.  This is done to ensure that resource ids are unique
+# used by Monyhar.  This is done to ensure that resource ids are unique
 # across all the grd files.  If you are adding a new grd file, please add
 # a new entry to this file.
 #
@@ -91,8 +91,8 @@
     "META": {"join": 4},
     "messages": [9500],
   },
-  # Chromium strings and Google Chrome strings must start at the same id.
-  # We only use one file depending on whether we're building Chromium or
+  # Monyhar strings and Google Chrome strings must start at the same id.
+  # We only use one file depending on whether we're building Monyhar or
   # Google Chrome.
   "chrome/app/monyhar_strings.grd": {
     "messages": [10000],

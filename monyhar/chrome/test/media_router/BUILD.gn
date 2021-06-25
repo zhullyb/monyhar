@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -76,7 +76,7 @@ copy("browser_test_resources") {
   ]
 }
 
-# Run separately from the Chromium waterfall with the external component
+# Run separately from the Monyhar waterfall with the external component
 # extension.  See README.md
 if (enable_downstream_media_tests) {
   group("media_router_e2e_tests") {

@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -136,7 +136,7 @@ class CONTENT_EXPORT PictureInPictureWindowControllerImpl
   void OnLeavingPictureInPicture(bool should_pause_video);
 
   // Internal method to set the states after the window was closed, whether via
-  // the system or Chromium.
+  // the system or Monyhar.
   void CloseInternal(bool should_pause_video);
 
   // Creates a new window if the previous one was destroyed. It can happen

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ class TaskRunner {
   };
 
   // This class is intended for use with base callback type. A template has been
-  // used to avoid introducing a hard dependency on Chromium base. It is used to
+  // used to avoid introducing a hard dependency on Monyhar base. It is used to
   // convert a monyhar-style callback to a Task as defined above.
   template <typename T>
   class CallbackTask : public Task {

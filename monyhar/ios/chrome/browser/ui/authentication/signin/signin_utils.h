@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -21,7 +21,7 @@ bool ShouldPresentUserSigninUpgrade(ChromeBrowserState* browser_state,
                                     const base::Version& current_version);
 
 // Records in user defaults:
-//   + the Chromium current version.
+//   + the Monyhar current version.
 //   + increases the sign-in promo display count.
 //   + Gaia ids list.
 // Separated out into a discrete function to allow overriding when testing.

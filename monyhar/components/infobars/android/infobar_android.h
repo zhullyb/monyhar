@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,7 +27,7 @@ class InfoBarAndroid : public InfoBar {
     ACTION_TRANSLATE_SHOW_ORIGINAL = 4,
   };
 
-  // A function that maps from Chromium IDs to Drawable IDs.
+  // A function that maps from Monyhar IDs to Drawable IDs.
   using ResourceIdMapper = base::RepeatingCallback<int(int)>;
 
   explicit InfoBarAndroid(std::unique_ptr<InfoBarDelegate> delegate);

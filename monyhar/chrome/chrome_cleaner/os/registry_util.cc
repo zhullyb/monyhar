@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -133,11 +133,11 @@ const wchar_t kChromePoliciesWhitelistKeyPathDeprecated[] =
 const wchar_t kChromePoliciesAllowlistKeyPath[] =
     L"software\\policies\\google\\chrome\\ExtensionInstallAllowlist";
 
-const wchar_t kChromiumPoliciesForcelistKeyPath[] =
+const wchar_t kMonyharPoliciesForcelistKeyPath[] =
     L"software\\policies\\monyhar\\ExtensionInstallForcelist";
-const wchar_t kChromiumPoliciesWhitelistKeyPathDeprecated[] =
+const wchar_t kMonyharPoliciesWhitelistKeyPathDeprecated[] =
     L"software\\policies\\monyhar\\ExtensionInstallWhitelist";
-const wchar_t kChromiumPoliciesAllowlistKeyPath[] =
+const wchar_t kMonyharPoliciesAllowlistKeyPath[] =
     L"software\\policies\\monyhar\\ExtensionInstallAllowlist";
 
 std::wstring RegistryValueTypeToString(DWORD value_type) {

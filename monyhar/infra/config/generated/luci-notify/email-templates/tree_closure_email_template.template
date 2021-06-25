@@ -1,4 +1,4 @@
-[Chromium tree closure] Builder "{{ .Build.Builder | formatBuilderID }}"
+[Monyhar tree closure] Builder "{{ .Build.Builder | formatBuilderID }}"
 
 Builder "{{ .Build.Builder | formatBuilderID }}" failed at {{ .Build.EndTime | time }} on step(s) {{ stepNames .MatchingFailedSteps }}.
 

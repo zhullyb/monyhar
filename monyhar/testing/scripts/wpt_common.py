@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -96,7 +96,7 @@ class BaseWptScriptAdapter(common.BaseIsolatedScriptArgsAdapter):
 
         # Wptrunner test names exclude the 'external/wpt' directories, but add
         # them back in at this point to reflect the actual location of tests in
-        # Chromium.
+        # Monyhar.
         output_json['tests'] = {'external': {'wpt': output_json['tests']}}
 
         results_dir = os.path.dirname(self.wpt_output)
@@ -259,7 +259,7 @@ class BaseWptScriptAdapter(common.BaseIsolatedScriptArgsAdapter):
               there is no expected output for this test.
         """
         # When looking into the WPT manifest, we omit "external/wpt" from the
-        # test name, since that part of the path is only in Chromium.
+        # test name, since that part of the path is only in Monyhar.
         wpt_test_name = test_name.replace(
             os.path.join("external", "wpt", ""), "")
         test_file_subpath = self.wpt_manifest.file_path_for_test_url(
@@ -385,7 +385,7 @@ class BaseWptScriptAdapter(common.BaseIsolatedScriptArgsAdapter):
             file_suffix = test_failures.FILENAME_SUFFIX_EXPECTED
             # When comparing the test name to the image URL, we omit
             # "external/wpt" from the test name, since that part of the path is
-            # only in Chromium.
+            # only in Monyhar.
             wpt_test_name = test_name.replace(
                 os.path.join("external", "wpt", ""), "")
             if wpt_test_name == url:

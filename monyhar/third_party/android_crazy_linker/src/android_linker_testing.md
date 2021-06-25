@@ -5,7 +5,7 @@ versions where dynamic linking is not as advanced. It provides
 `android_dlopen_ext` functionality, RELRO sharing, compressed relocations, etc.
 
 These instructions assume
-[Building Chromium for Android](android_build_instructions.md) as a
+[Building Monyhar for Android](android_build_instructions.md) as a
 prerequisite.
 
 ## Code Locations

@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,7 +7,7 @@
 
 // cryptuiapi.h includes wincrypt.h which defines macros which conflict with
 // OpenSSL's types. This header includes cryptuiapi.h and then wincrypt_shim.h
-// which undefines the OpenSSL macros which conflict. Any Chromium headers
+// which undefines the OpenSSL macros which conflict. Any Monyhar headers
 // which want to include cryptuiapi should instead include this header.
 
 #include <cryptuiapi.h>

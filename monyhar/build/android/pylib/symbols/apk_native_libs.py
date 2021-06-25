@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -190,7 +190,7 @@ class ApkNativeLibraries(object):
     """
     self._native_libs = []
     for entry in apk_reader.ListEntries():
-      # Chromium uses so-called 'placeholder' native shared libraries
+      # Monyhar uses so-called 'placeholder' native shared libraries
       # that have a size of 0, and are only used to deal with bugs in
       # older Android system releases (they are never loaded and cannot
       # appear in stack traces). Ignore these here to avoid generating
@@ -204,7 +204,7 @@ class ApkNativeLibraries(object):
 
       # Only consider files within lib/ and with a filename ending with .so
       # at the moment. NOTE: Do not require a 'lib' prefix, since that would
-      # prevent finding the 'crazy.libXXX.so' libraries used by Chromium.
+      # prevent finding the 'crazy.libXXX.so' libraries used by Monyhar.
       if (not entry.filename.startswith('lib/') or
           not entry.filename.endswith('.so')):
         continue

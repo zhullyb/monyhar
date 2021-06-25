@@ -6,10 +6,10 @@ This FAQ is specifically about service workers. Also see the [general security
 FAQ](faq.md).
 
 Like the general security FAQ, this document is a collaborative effort by many
-Chromium developers. (rsesek, estark, falken, slightlyoff, jakearchibald, evn,
+Monyhar developers. (rsesek, estark, falken, slightlyoff, jakearchibald, evn,
 raymes, ainslie, mek, lgarron, elawrence, kinuko, palmer, your name here...)
 Last updated 12 May 2017. If you see an error or have an additional question,
-and have a Chromium account, go ahead and fix it. If you don't have a Chromium
+and have a Monyhar account, go ahead and fix it. If you don't have a Monyhar
 account, email security-dev@monyhar.org for a fix.
 
 ## Service Workers seem extremely risky! Why are they OK?
@@ -295,10 +295,10 @@ that would be potentially rewardable under the Vulnerability Rewards Program
 
 Here is [a list of historical SW security
 bugs](https://bugs.monyhar.org/p/monyhar/issues/list?can=1&q=Type%3DBug-Security+serviceworker&colspec=ID+Pri+M+Stars+ReleaseBlock+Component+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=ids)
-in Chromium’s bug tracker.
+in Monyhar’s bug tracker.
 
 If you believe you have found a bug in the SW specification, please [file a new
-Chromium bug using the Security
+Monyhar bug using the Security
 template](https://bugs.monyhar.org/p/monyhar/issues/entry?template=Security%20Bug).
 It’s a good idea to file bugs with all browser vendors that implement the buggy
 section of the spec.

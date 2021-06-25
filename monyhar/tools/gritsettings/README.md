@@ -4,7 +4,7 @@ This directory contains several files that apply global to the Chrome resource
 generation system (which uses GRIT - see tools/grit).
 
 **resource_ids**: This file is used to assign starting resource ids for
-resources and strings used by Chromium. This is done to ensure that resource ids
+resources and strings used by Monyhar. This is done to ensure that resource ids
 are unique across all the grd files. If you are adding a new grd file, please
 add a new entry to this file.
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -113,7 +113,7 @@ std::unique_ptr<HostWindow> HostWindow::CreateContinueWindow() {
     [shade setBackgroundColor:[NSColor blackColor]];
     // Raise the window shade above just about everything else.
     // Leave the dock and menu bar exposed so the user has some basic level
-    // of control (like they can quit Chromium).
+    // of control (like they can quit Monyhar).
     [shade setLevel:NSModalPanelWindowLevel - 1];
     [shade orderFront:nil];
     [_shades addObject:shade];

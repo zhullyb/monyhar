@@ -599,7 +599,7 @@ class FakeChooser {
   }
 }
 
-async function initializeChromiumResources() {
+async function initializeMonyharResources() {
   content.mojom = await import(
       '/gen/content/web_test/common/fake_bluetooth_chooser.mojom.m.js');
   bluetooth.mojom = await import(

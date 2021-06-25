@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """This script helps to generate code coverage report.
@@ -61,7 +61,7 @@
 
   For more options, please refer to tools/code_coverage/coverage.py -h.
 
-  For an overview of how code coverage works in Chromium, please refer to
+  For an overview of how code coverage works in Monyhar, please refer to
   https://monyhar.googlesource.com/monyhar/src/+/main/docs/testing/code_coverage.md
 """
 

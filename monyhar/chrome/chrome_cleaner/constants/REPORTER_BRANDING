@@ -1,7 +1,7 @@
-COMPANY_FULLNAME=The Chromium Authors
-COMPANY_SHORTNAME=The Chromium Authors
+COMPANY_FULLNAME=The Monyhar Authors
+COMPANY_SHORTNAME=The Monyhar Authors
 PRODUCT_FULLNAME=Software Reporter Tool
 PRODUCT_SHORTNAME=Software Reporter Tool
 PRODUCT_INSTALLER_FULLNAME=Software Reporter Tool Installer
 PRODUCT_INSTALLER_SHORTNAME=Software Reporter Tool Installer
-COPYRIGHT=Copyright 2021 The Chromium Authors. All rights reserved.
+COPYRIGHT=Copyright 2021 The Monyhar Authors. All rights reserved.

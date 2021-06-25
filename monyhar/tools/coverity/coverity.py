@@ -1,10 +1,10 @@
 #!/usr/bin/env python
-# Copyright (c) 2011 The Chromium Authors. All rights reserved.
+# Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 """
-Runs Coverity Prevent on a build of Chromium.
+Runs Coverity Prevent on a build of Monyhar.
 
 This script should be run in a Visual Studio Command Prompt, so that the
 INCLUDE, LIB, and PATH environment variables are set properly for Visual
@@ -69,7 +69,7 @@ COVERITY_REMOTE = 'chromecoverity-linux1'
 
 COVERITY_PORT = '5467'
 
-COVERITY_PRODUCT = 'Chromium'
+COVERITY_PRODUCT = 'Monyhar'
 
 COVERITY_TARGET = 'Windows'
 

@@ -1,7 +1,7 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-// Much of this file has been adapted from Chromium (net/http/http_util.cc) and
+// Much of this file has been adapted from Monyhar (net/http/http_util.cc) and
 // Breakpad (common/linux/http_upload.cc).
 // See http://www.ietf.org/rfc/rfc2388.txt for a description of the
 // multipart/form-data HTTP message type implemented in this file.

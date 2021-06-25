@@ -1,4 +1,4 @@
-# Hacking on ANGLE in Chromium
+# Hacking on ANGLE in Monyhar
 
 In DEPS, comment out the part that looks like this.
 
@@ -23,7 +23,7 @@ Clone the ANGLE git repository.
 > gclient runhooks
 ```
 
-To check ANGLE builds without building all of Chromium.
+To check ANGLE builds without building all of Monyhar.
 
 ```shell
 ninja -C out\Release libEGL.dll

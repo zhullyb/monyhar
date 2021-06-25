@@ -38,5 +38,5 @@ interface mixin Animatable {
 Element includes Animatable;
 
 // https://drafts.csswg.org/web-animations-1/#extensions-to-the-pseudoelement-interface
-// TODO(smcgruer): Uncomment once CSSPseudoElement is implemented in Chromium.
+// TODO(smcgruer): Uncomment once CSSPseudoElement is implemented in Monyhar.
 // CSSPseudoElement includes Animatable;

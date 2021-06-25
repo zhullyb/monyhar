@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -282,7 +282,7 @@ class Bindings : public proxy_resolver::ProxyResolverV8Tracing::Bindings {
 // Public methods of AwPacProcessor may be called on multiple threads.
 // ProxyResolverV8TracingFactory/ProxyResolverV8Tracing
 // expects its public interface to always be called on the same thread with
-// Chromium task runner so it can post it back to that thread
+// Monyhar task runner so it can post it back to that thread
 // with the result of the queries.
 //
 // Job and its subclasses wrap queries from public methods of AwPacProcessor,

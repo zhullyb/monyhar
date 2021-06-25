@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -250,7 +250,7 @@ OutputPresenterFuchsia::AllocateImages(gfx::ColorSpace color_space,
   // the ImagePipe.
   fuchsia::sysmem::BufferCollectionTokenSyncPtr collection_token;
   sysmem_allocator_->AllocateSharedCollection(collection_token.NewRequest());
-  collection_token->SetName(100u, "ChromiumPrimaryPlaneOutput");
+  collection_token->SetName(100u, "MonyharPrimaryPlaneOutput");
   collection_token->SetDebugClientInfo("vulkan", 0u);
 
   fuchsia::sysmem::BufferCollectionTokenSyncPtr token_for_scenic;

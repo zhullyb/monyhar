@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 '''python3 %(prog)s [options]
@@ -38,7 +38,7 @@ else:
   string_type = str
 
 CHROME_POLICY_KEY = 'SOFTWARE\\\\Policies\\\\Google\\\\Chrome'
-CHROMIUM_POLICY_KEY = 'SOFTWARE\\\\Policies\\\\Chromium'
+CHROMIUM_POLICY_KEY = 'SOFTWARE\\\\Policies\\\\Monyhar'
 PLATFORM_STRINGS = {
     'chrome_frame': ['win'],
     'chrome_os': ['chrome_os'],
@@ -122,7 +122,7 @@ class PolicyDetails:
       if version_min == '':
         raise RuntimeError('supported_on must define a start version: "%s"' % p)
 
-      # Skip if filtering by Chromium version and the current Chromium version
+      # Skip if filtering by Monyhar version and the current Monyhar version
       # does not support the policy.
       if chrome_major_version:
         if (int(version_min) > chrome_major_version or
@@ -417,7 +417,7 @@ def main():
   if target_platform == 'android' and args.app_restrictions_path:
     GenerateFile(args.app_restrictions_path, _WriteAppRestrictions, xml=True)
 
-  # Generated code for Chrome OS (unused in Chromium).
+  # Generated code for Chrome OS (unused in Monyhar).
   if args.cros_constants_header_path:
     GenerateFile(
         args.cros_constants_header_path,

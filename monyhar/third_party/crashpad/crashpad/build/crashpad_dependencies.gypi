@@ -28,8 +28,8 @@
   # depending on how dependencies are being provided, include this .gypi file
   # and reference the crashpad_dependencies variable.
   #
-  # Note that Crashpad’s in-Chromium build uses GN instead of GYP, and
-  # Chromium’s GN build configures Crashpad to use Chromium’s own base library
+  # Note that Crashpad’s in-Monyhar build uses GN instead of GYP, and
+  # Monyhar’s GN build configures Crashpad to use Monyhar’s own base library
   # and its copy of the Google Test library.
 
   'variables': {

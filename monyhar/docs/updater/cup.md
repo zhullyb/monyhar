@@ -23,7 +23,7 @@ public key hardcoded into the application binary. The server signs
 request-response pairs with the private key, and the client verifies using the
 public key.
 
-In Chromium, CUP keys are rotated annually. Each key pair has a corresponding
+In Monyhar, CUP keys are rotated annually. Each key pair has a corresponding
 version number. To interoperate with old clients, the server must keep all
 historical versions of the key, and be prepared to sign with any of them. The
 client should only keep a single version (whichever was most recent at compile
@@ -129,6 +129,6 @@ Previous documents describing CUP can be found at:
   * [Original Public Design](https://github.com/google/omaha/blob/master/doc/ClientUpdateProtocol.md)
   * [ECDSA Extension](https://github.com/google/omaha/blob/master/doc/ClientUpdateProtocolEcdsa.md)
 
-Chromium's implementation of CUP can be found in
+Monyhar's implementation of CUP can be found in
 [components/client\_update\_protocol](https://source.monyhar.org/monyhar/monyhar/src/+/main:components/client_update_protocol/).
 

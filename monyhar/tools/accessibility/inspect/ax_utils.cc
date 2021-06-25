@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -8,7 +8,7 @@
 
 char kActiveTabSwitch[] = "active-tab";
 char kChromeSwitch[] = "chrome";
-char kChromiumSwitch[] = "monyhar";
+char kMonyharSwitch[] = "monyhar";
 char kFirefoxSwitch[] = "firefox";
 char kEdgeSwitch[] = "edge";
 char kPatternSwitch[] = "pattern";
@@ -22,7 +22,7 @@ void PrintHelpForTreeSelectors() {
   printf("  --pattern\ttitle of an application to dump accessible tree for\n");
   printf("  pre-defined application selectors to dump accessible tree for:\n");
   printf("    --chrome\tChrome browser\n");
-  printf("    --monyhar\tChromium browser\n");
+  printf("    --monyhar\tMonyhar browser\n");
 #if defined(WINDOWS)
   printf("    --edge\tEdge browser\n");
 #endif
@@ -38,8 +38,8 @@ AXTreeSelector TreeSelectorFromCommandLine(
   int selectors = AXTreeSelector::None;
   if (command_line->HasSwitch(kChromeSwitch)) {
     selectors = AXTreeSelector::Chrome;
-  } else if (command_line->HasSwitch(kChromiumSwitch)) {
-    selectors = AXTreeSelector::Chromium;
+  } else if (command_line->HasSwitch(kMonyharSwitch)) {
+    selectors = AXTreeSelector::Monyhar;
   } else if (command_line->HasSwitch(kEdgeSwitch)) {
     selectors = AXTreeSelector::Edge;
   } else if (command_line->HasSwitch(kFirefoxSwitch)) {

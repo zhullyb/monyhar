@@ -1,4 +1,4 @@
-﻿// Copyright 2013 The Chromium Authors. All rights reserved.
+﻿// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ChromeDebug")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("The Chromium Authors")]
+[assembly: AssemblyCompany("The Monyhar Authors")]
 [assembly: AssemblyProduct("ChromeDebug")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]

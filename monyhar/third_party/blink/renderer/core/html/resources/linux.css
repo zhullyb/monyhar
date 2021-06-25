@@ -28,7 +28,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/* These styles override other user-agent styles for Chromium on Linux. */
+/* These styles override other user-agent styles for Monyhar on Linux. */
 
 /* This sheet is appended to html.css before parsing which means the selectors
    below are in the default html namespace:

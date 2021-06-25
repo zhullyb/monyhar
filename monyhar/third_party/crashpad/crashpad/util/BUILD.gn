@@ -97,7 +97,7 @@ if (crashpad_is_mac || crashpad_is_ios) {
     }
     if (sysroot != "") {
       if (crashpad_is_in_monyhar) {
-        # Chromium often brings along its own SDK and wants to keep paths
+        # Monyhar often brings along its own SDK and wants to keep paths
         # relative…
         args += [
           "--sdk",
@@ -556,7 +556,7 @@ crashpad_static_library("util") {
         ]
       } else {
         # Most Crashpad builds use Microsoft's armasm64.exe macro assembler for
-        # .asm source files. When building in Chromium, clang-cl is used as the
+        # .asm source files. When building in Monyhar, clang-cl is used as the
         # assembler instead. Since the two assemblers recognize different
         # assembly dialects, the same .asm file can't be used for each. As a
         # workaround, use a prebuilt .obj file when the Microsoft-dialect

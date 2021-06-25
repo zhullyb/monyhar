@@ -38,7 +38,7 @@ function selectNodeContents(node) {
     selectRangeWith(range => range.selectNodeContents(node));
 
     // If the selection update causes the node or an ancestor to be
-    // focused (Chromium 80+), unfocus it, to avoid any focus-related
+    // focused (Monyhar 80+), unfocus it, to avoid any focus-related
     // styling such as outlines.
     if (document.activeElement != previousActive) {
         document.activeElement.blur();
@@ -54,7 +54,7 @@ function selectNodeContents(node) {
  * @contenteditables.
  */
 function trySpellcheck(...nodes) {
-    // This is inherently a flaky test risk, but Chromium (as of 87)
+    // This is inherently a flaky test risk, but Monyhar (as of 87)
     // seems to cancel spellcheck on a node if it wasn’t the last one
     // focused for “long enough” (though immediate unfocus is ok).
     // Using requestAnimationFrame or setInterval(0) are usually not

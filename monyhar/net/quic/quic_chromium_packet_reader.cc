@@ -1,4 +1,4 @@
-// Copyright (c) 2015 The Chromium Authors. All rights reserved.
+// Copyright (c) 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ const size_t kReadBufferSize =
     static_cast<size_t>(quic::kMaxIncomingPacketSize + 1);
 }  // namespace
 
-QuicChromiumPacketReader::QuicChromiumPacketReader(
+QuicMonyharPacketReader::QuicMonyharPacketReader(
     DatagramClientSocket* socket,
     const quic::QuicClock* clock,
     Visitor* visitor,
@@ -40,9 +40,9 @@ QuicChromiumPacketReader::QuicChromiumPacketReader(
       read_buffer_(base::MakeRefCounted<IOBufferWithSize>(kReadBufferSize)),
       net_log_(net_log) {}
 
-QuicChromiumPacketReader::~QuicChromiumPacketReader() {}
+QuicMonyharPacketReader::~QuicMonyharPacketReader() {}
 
-void QuicChromiumPacketReader::StartReading() {
+void QuicMonyharPacketReader::StartReading() {
   for (;;) {
     if (read_pending_)
       return;
@@ -54,7 +54,7 @@ void QuicChromiumPacketReader::StartReading() {
     read_pending_ = true;
     int rv =
         socket_->Read(read_buffer_.get(), read_buffer_->size(),
-                      base::BindOnce(&QuicChromiumPacketReader::OnReadComplete,
+                      base::BindOnce(&QuicMonyharPacketReader::OnReadComplete,
                                      weak_factory_.GetWeakPtr()));
     UMA_HISTOGRAM_BOOLEAN("Net.QuicSession.AsyncRead", rv == ERR_IO_PENDING);
     if (rv == ERR_IO_PENDING) {
@@ -69,7 +69,7 @@ void QuicChromiumPacketReader::StartReading() {
       // Schedule the work through the message loop to 1) prevent infinite
       // recursion and 2) avoid blocking the thread for too long.
       base::ThreadTaskRunnerHandle::Get()->PostTask(
-          FROM_HERE, base::BindOnce(&QuicChromiumPacketReader::OnReadComplete,
+          FROM_HERE, base::BindOnce(&QuicMonyharPacketReader::OnReadComplete,
                                     weak_factory_.GetWeakPtr(), rv));
     } else {
       if (!ProcessReadResult(rv)) {
@@ -79,11 +79,11 @@ void QuicChromiumPacketReader::StartReading() {
   }
 }
 
-size_t QuicChromiumPacketReader::EstimateMemoryUsage() const {
+size_t QuicMonyharPacketReader::EstimateMemoryUsage() const {
   return read_buffer_->size();
 }
 
-bool QuicChromiumPacketReader::ProcessReadResult(int result) {
+bool QuicMonyharPacketReader::ProcessReadResult(int result) {
   read_pending_ = false;
   if (result <= 0 && net_log_.IsCapturing()) {
     net_log_.AddEventWithIntParams(NetLogEventType::QUIC_READ_ERROR,
@@ -116,7 +116,7 @@ bool QuicChromiumPacketReader::ProcessReadResult(int result) {
          self;
 }
 
-void QuicChromiumPacketReader::OnReadComplete(int result) {
+void QuicMonyharPacketReader::OnReadComplete(int result) {
   if (ProcessReadResult(result))
     StartReading();
 }

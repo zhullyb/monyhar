@@ -1,7 +1,7 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-"""Converts Chromium Test Expectations into WPT Metadata ini files.
+"""Converts Monyhar Test Expectations into WPT Metadata ini files.
 
 This script loads TestExpectations for any WPT test and creates the metadata
 files corresponding to the expectation. This script runs as a BUILD action rule.
@@ -395,7 +395,7 @@ class WPTMetadataBuilder(object):
         contents of the metadata file will also differ for those two cases.
 
         Args:
-            monyhar_test_name: A Chromium test name from the expectation file,
+            monyhar_test_name: A Monyhar test name from the expectation file,
                 which starts with `external/wpt`.
             test_status_bitmap: An integer containing additional data about the
                 status, such as enumerating flaky statuses, or whether a test has
@@ -423,7 +423,7 @@ class WPTMetadataBuilder(object):
         # they are 'external' and 'wpt' and these don't exist in the WPT's test
         # names.
         wpt_test_name_parts = monyhar_test_name.split("/")[2:]
-        # The WPT test name differs from the Chromium test name in that the WPT
+        # The WPT test name differs from the Monyhar test name in that the WPT
         # name omits `external/wpt`.
         wpt_test_name = "/".join(wpt_test_name_parts)
 

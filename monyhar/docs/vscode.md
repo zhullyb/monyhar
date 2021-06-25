@@ -1,7 +1,7 @@
 # Visual Studio Code Dev
 
 Visual Studio Code is a free, lightweight and powerful code editor for Windows,
-Mac and Linux, based on Electron/Chromium. It has built-in support for
+Mac and Linux, based on Electron/Monyhar. It has built-in support for
 JavaScript, TypeScript and Node.js and a rich extension ecosystem that adds
 intellisense, debugging, syntax highlighting etc. for many languages (C++,
 Python, Go, Java). It works without too much setup. Get started
@@ -15,7 +15,7 @@ Here's what works well:
 
 *   Editing code works well especially when you get used to the [keyboard
     shortcuts](https://code.visualstudio.com/docs/customization/keybindings).
-    VS Code is very responsive and can handle even big code bases like Chromium.
+    VS Code is very responsive and can handle even big code bases like Monyhar.
 *   Git integration is a blast. Built-in side-by-side view, local commit and
     even extensions for
     [history](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
@@ -41,7 +41,7 @@ Here's what works well:
 ## Updating This Page
 
 Please keep this doc up-to-date. VS Code is still in active development and
-subject to changes. This doc is checked into the Chromium git repo, so if you
+subject to changes. This doc is checked into the Monyhar git repo, so if you
 make changes, read the [documentation
 guidelines](https://monyhar.googlesource.com/monyhar/src/+/main/docs/documentation_guidelines.md)
 and [submit a change list](https://www.monyhar.org/developers/contributing-code).
@@ -55,7 +55,7 @@ page accordingly.
 ### Installation
 
 Follow the steps on https://code.visualstudio.com/docs/setup/setup-overview. To
-run it on Linux, just navigate to Chromium's `src` folder and type `code .` in a
+run it on Linux, just navigate to Monyhar's `src` folder and type `code .` in a
 terminal. The argument to `code` is the base directory of the workspace. VS
 Code does not require project or solution files. However, it does store
 workspace settings in a `.vscode` folder in your base directory.
@@ -101,7 +101,7 @@ every day:
     You need to install it manually.
 *   ***vscode-clangd*** -
     If you do not plan to use VSCode for debugging, vscode-clangd is a great
-    alternative to C/C++ IntelliSense. It knows about how to compile Chromium,
+    alternative to C/C++ IntelliSense. It knows about how to compile Monyhar,
     enabling it to provide smarter autocomplete than C/C++ IntelliSense as well
     as allowing you to jump from functions to their definitions. See
     [clangd.md](clangd.md) for setup instructions.
@@ -120,7 +120,7 @@ The following extensions might be useful for you as well:
 *   ***Git History (git log)*** -
     Git history view.
 *   ***monyhar-codesearch*** -
-    Mac and Linux only: adds ability to open the current line in [Chromium Code
+    Mac and Linux only: adds ability to open the current line in [Monyhar Code
     Search](https://cs.monyhar.org/). All other functionality is deprecated, so
     currently only of limited usefulness.
 *   ***change-case*** -
@@ -213,10 +213,10 @@ this actually add new paths to your classpath as it won't work correctly)
     used by seeing if the folder was actually added to the .classpath file you
     edited.
 
-## Setup For Chromium
+## Setup For Monyhar
 
 VS Code is configured via JSON files. This paragraph contains JSON configuration
-files that are useful for Chromium development, in particular. See [VS Code
+files that are useful for Monyhar development, in particular. See [VS Code
 documentation](https://code.visualstudio.com/docs/customization/overview) for an
 introduction to VS Code customization.
 
@@ -233,7 +233,7 @@ $ cp tools/vscode/settings.json5 .vscode/settings.json
 ```
 
 Note: these settings assume that the workspace folder (the root folder displayed
-in the Explorer tab) is Chromium's `src/` directory. If this is not the case,
+in the Explorer tab) is Monyhar's `src/` directory. If this is not the case,
 replace any references to ${workspaceFolder} with the path to your `src/`.
 
 ### Tasks
@@ -384,9 +384,9 @@ You might want to disable git status autorefresh to save battery.
 ```
 
 #### Editing in multiple Git repositories
-If you frequently work in multiple Git repositories that are part of the Chromium repository, you might find that the built-in tooling does not work as expected for files that exist below folders that are part of a `.gitignore` file checked in to Chromium.
+If you frequently work in multiple Git repositories that are part of the Monyhar repository, you might find that the built-in tooling does not work as expected for files that exist below folders that are part of a `.gitignore` file checked in to Monyhar.
 
-To work around this, you can add the directories you edit as separate `folders` entries in your workspace configuration, and ensure that the directories that are ignored in Chromium are listed **before** the Chromium `src` path.
+To work around this, you can add the directories you edit as separate `folders` entries in your workspace configuration, and ensure that the directories that are ignored in Monyhar are listed **before** the Monyhar `src` path.
 
 To edit this, go to `Settings` -> Select the `Workspace` tab, and choose to open as JSON (button in the top right), and configure `folders` like this (change paths to match your local setup and usage):
 
@@ -403,8 +403,8 @@ To edit this, go to `Settings` -> Select the `Workspace` tab, and choose to open
 }
 ```
 
-### Unable to open $File resource is not available when debugging Chromium on Linux
-Chromium [recently changed](https://docs.google.com/document/d/1OX4jY_bOCeNK7PNjVRuBQE9s6BQKS8XRNWGK8FEyh-E/edit?usp=sharing)
+### Unable to open $File resource is not available when debugging Monyhar on Linux
+Monyhar [recently changed](https://docs.google.com/document/d/1OX4jY_bOCeNK7PNjVRuBQE9s6BQKS8XRNWGK8FEyh-E/edit?usp=sharing)
 the file path to be relative to the output dir. Check
 `gn args out/$dir --list` if `strip_absolute_paths_from_debug_symbols` is true (which is the default),
 set `cwd` to the output dir. otherwise, set `cwd` to `${workspaceRoot}`.

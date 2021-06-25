@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,7 +9,7 @@
 #include "ppapi/c/ppb_opengles2.h"
 
 #define PPB_GLES_CHROMIUM_TEXTURE_MAPPING_DEV_INTERFACE_0_1 \
-    "PPB_GLESChromiumTextureMapping(Dev);0.1"
+    "PPB_GLESMonyharTextureMapping(Dev);0.1"
 #define PPB_GLES_CHROMIUM_TEXTURE_MAPPING_DEV_INTERFACE \
     PPB_GLES_CHROMIUM_TEXTURE_MAPPING_DEV_INTERFACE_0_1
 
@@ -17,12 +17,12 @@
 // PPB_OPENGLES2_CHROMIUMMAPSUB_INTERFACE instead.
 
 #define PPB_OPENGLES2_CHROMIUMMAPSUB_DEV_INTERFACE_1_0 \
-    "PPB_OpenGLES2ChromiumMapSub(Dev);1.0"
+    "PPB_OpenGLES2MonyharMapSub(Dev);1.0"
 
 // PPB_OPENGLES2_CHROMIUMMAPSUB_DEV_INTERFACE_1_0 is also deprecated.  Please
 // use PPB_OPENGLES2_CHROMIUMMAPSUB_INTERFACE instead.
 
-struct PPB_GLESChromiumTextureMapping_Dev_0_1 {
+struct PPB_GLESMonyharTextureMapping_Dev_0_1 {
   // Maps the sub-image of a texture. 'level', 'xoffset', 'yoffset', 'width',
   // 'height', 'format' and 'type' correspond to the similarly named parameters
   // of TexSubImage2D, and define the sub-image region, as well as the format of
@@ -50,7 +50,7 @@ struct PPB_GLESChromiumTextureMapping_Dev_0_1 {
   void (*UnmapTexSubImage2DCHROMIUM)(PP_Resource context, const void* mem);
 };
 
-typedef struct PPB_GLESChromiumTextureMapping_Dev_0_1
-    PPB_GLESChromiumTextureMapping_Dev;
+typedef struct PPB_GLESMonyharTextureMapping_Dev_0_1
+    PPB_GLESMonyharTextureMapping_Dev;
 
 #endif  // PPAPI_C_DEV_PPB_GLES_CHROMIUM_TEXTURE_MAPPING_DEV_H_

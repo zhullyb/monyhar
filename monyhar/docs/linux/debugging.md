@@ -1,6 +1,6 @@
 # Tips for debugging on Linux
 
-This page is for Chromium-specific debugging tips; learning how to run gdb is
+This page is for Monyhar-specific debugging tips; learning how to run gdb is
 out of scope.
 
 [TOC]
@@ -46,7 +46,7 @@ Note that you'll also probably want to use `--no-sandbox`, as explained below.
 
 #### Getting renderer subprocesses into gdb
 
-Since Chromium itself spawns the renderers, it can be tricky to grab a
+Since Monyhar itself spawns the renderers, it can be tricky to grab a
 particular with gdb. This command does the trick:
 
 ```
@@ -208,11 +208,11 @@ Note that for technical reasons plugins cannot be in-process, so
 still useful for debugging plugins (since it's only two processes instead of
 three) but you'll still need to use `--plugin-launcher` or another approach.
 
-### Printing Chromium types
+### Printing Monyhar types
 
-gdb 7 lets us use Python to write pretty-printers for Chromium types. See
+gdb 7 lets us use Python to write pretty-printers for Monyhar types. See
 [gdbinit](https://monyhar.googlesource.com/monyhar/src/+/main/docs/gdbinit.md)
-to enable pretty-printing of Chromium types.  This will import Blink
+to enable pretty-printing of Monyhar types.  This will import Blink
 pretty-printers as well.
 
 Pretty printers for std types shouldn't be necessary in gdb 7, but they're
@@ -319,12 +319,12 @@ or the appropriate caller of it.
 If rr doesn't work correctly,
 the rr developers are generally quite responsive to bug reports,
 especially ones that have enough information so that
-they don't have to build Chromium.
+they don't have to build Monyhar.
 
 See Also:
-* [The Chromium Chronicle #13: Time-Travel Debugging with RR](https://developer.chrome.com/blog/monyhar-chronicle-13/)
+* [The Monyhar Chronicle #13: Time-Travel Debugging with RR](https://developer.chrome.com/blog/monyhar-chronicle-13/)
 
-### Graphical Debugging Aid for Chromium Views
+### Graphical Debugging Aid for Monyhar Views
 
 The following link describes a tool that can be used on Linux, Windows and Mac under GDB.
 
@@ -420,7 +420,7 @@ timeout flags to a large value:
 
 ### To replicate Window Manager setup on the bots
 
-Chromium try bots and main waterfall's bots run tests under Xvfb&openbox
+Monyhar try bots and main waterfall's bots run tests under Xvfb&openbox
 combination. Xvfb is an X11 server that redirects the graphical output to the
 memory, and openbox is a simple window manager that is running on top of Xvfb.
 The behavior of openbox is markedly different when it comes to focus management
@@ -474,7 +474,7 @@ locally now - and often nearly 100% of the time.
 Default log level hides `LOG(INFO)`. Run with `--log-level=0` and
 `--enable-logging=stderr` flags.
 
-Newer versions of Chromium with VLOG may need --v=1 too. For more VLOG tips, see
+Newer versions of Monyhar with VLOG may need --v=1 too. For more VLOG tips, see
 [the monyhar-dev thread](https://groups.google.com/a/monyhar.org/group/monyhar-dev/browse_thread/thread/dcd0cd7752b35de6?pli=1).
 
 ### Seeing IPC debug messages
@@ -560,15 +560,15 @@ Google Chrome binaries don't include symbols. Googlers can read where to get
 symbols from
 [the Google-internal wiki](http://wiki/Main/ChromeOfficialBuildLinux#The_Build_Archive).
 
-### Ubuntu Chromium
+### Ubuntu Monyhar
 
 Since we don't build the Ubuntu packages (Ubuntu does) we can't get useful
-backtraces from them. Direct users to https://wiki.ubuntu.com/Chromium/Debugging
+backtraces from them. Direct users to https://wiki.ubuntu.com/Monyhar/Debugging
 
-### Fedora's Chromium
+### Fedora's Monyhar
 
 Like Ubuntu, but direct users to
-https://fedoraproject.org/wiki/TomCallaway/Chromium_Debug
+https://fedoraproject.org/wiki/TomCallaway/Monyhar_Debug
 
 ### Xlib
 

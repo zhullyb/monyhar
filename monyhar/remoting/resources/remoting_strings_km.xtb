@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">បណ្ណាល័យស្នូល</translation>
 <translation id="443560535555262820">បើក​ចំណូលចិត្ត "ភាពងាយស្រួល"</translation>
 <translation id="4450893287417543264">កុំបង្ហាញម្ដងទៀត</translation>
-<translation id="4512952200932940229">រក្សាសិទ្ធិដោយ Chromium Authors ឆ្នាំ 2021។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</translation>
+<translation id="4512952200932940229">រក្សាសិទ្ធិដោយ Monyhar Authors ឆ្នាំ 2021។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</translation>
 <translation id="4513946894732546136">មតិ</translation>
 <translation id="4563926062592110512">អតិថិជនបានផ្តាច់៖ <ph name="CLIENT_USERNAME" />។</translation>
 <translation id="4635770493235256822">ឧបករណ៍ពីចម្ងាយ</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">សូមបញ្ចូលលេខសម្គាល់របស់អ្នកសម្រាប់កុំព្យូទ័រពីចម្ងាយ។</translation>
 <translation id="7895403300744144251">គោលការណ៍សុវត្ថិភាពនៅលើកុំព្យូទ័របញ្ជាពីចម្ងាយមិនអនុញ្ញាតឲ្យមានការតភា្ជប់ពីគណនីរបស់អ្នកទេ។</translation>
 <translation id="7936528439960309876">ដាក់ធ្នើរ​ទៅ​ស្តាំ</translation>
-<translation id="7970576581263377361">ការផ្ទៀងផ្ទាត់បានបរាជ័យ។ សូមចូលទៅ Chromium ម្តងទៀត។</translation>
+<translation id="7970576581263377361">ការផ្ទៀងផ្ទាត់បានបរាជ័យ។ សូមចូលទៅ Monyhar ម្តងទៀត។</translation>
 <translation id="7981525049612125370">វេនពីចម្ងាយបានផុតកំណត់ហើយ</translation>
 <translation id="8038111231936746805">(លំនាំដើម)</translation>
 <translation id="8041089156583427627">ផ្ញើមតិ</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737">ផ្ដល់​ការអនុញ្ញាត 'ការថតអេក្រង់' ឱ្យ <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">ការកំណត់រចនាសម្ព័ន្ធម៉ាស៊ីនចែករំលែកគ្មានសុពលភាព។</translation>
 <translation id="981121421437150478">ក្រៅបណ្តាញ</translation>
-<translation id="985602178874221306">ផលិតករ Chromium</translation>
+<translation id="985602178874221306">ផលិតករ Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (ប្រើអ៊ីនធឺណិតលើកចុងក្រោយ <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

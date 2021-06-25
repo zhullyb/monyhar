@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -109,7 +109,7 @@ TEST_F(SideSwipeControllerTest, TestSwipeRecognizers) {
   EXPECT_TRUE(hasRecognizer);
 }
 
-// Tests that pages that need to use Chromium native swipe
+// Tests that pages that need to use Monyhar native swipe
 TEST_F(SideSwipeControllerTest, TestEdgeNavigationEnabled) {
   auto fake_web_state = std::make_unique<web::FakeWebState>();
   auto fake_navigation_manager = std::make_unique<web::FakeNavigationManager>();

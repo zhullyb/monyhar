@@ -1,9 +1,9 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // On Mac, shortcuts can't have command-line arguments. Instead, produce small
-// app bundles which locate the Chromium framework and load it, passing the
+// app bundles which locate the Monyhar framework and load it, passing the
 // appropriate data. This is the code for such an app bundle. It should be kept
 // minimal and do as little work as possible (with as much work done on
 // framework side as possible).

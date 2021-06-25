@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -288,7 +288,7 @@ bool GLScaler::ScaleToMultipleOutputs(GLuint src_texture,
 
   // Disable GL clipping/blending features that interfere with assumptions made
   // by the implementation. Only those known to possibly be enabled elsewhere in
-  // Chromium code are disabled here, while the remainder are sanity-DCHECK'ed.
+  // Monyhar code are disabled here, while the remainder are sanity-DCHECK'ed.
   gl->Disable(GL_SCISSOR_TEST);
   gl->Disable(GL_STENCIL_TEST);
   gl->Disable(GL_BLEND);

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,22 +20,22 @@ namespace update_client {
 
 using SendCookiesPredicate = base::RepeatingCallback<bool(const GURL& url)>;
 
-class NetworkFetcherChromiumFactory : public NetworkFetcherFactory {
+class NetworkFetcherMonyharFactory : public NetworkFetcherFactory {
  public:
-  NetworkFetcherChromiumFactory(
+  NetworkFetcherMonyharFactory(
       scoped_refptr<network::SharedURLLoaderFactory> shared_url_network_factory,
       SendCookiesPredicate cookie_predicate);
 
   std::unique_ptr<NetworkFetcher> Create() const override;
 
  protected:
-  ~NetworkFetcherChromiumFactory() override;
+  ~NetworkFetcherMonyharFactory() override;
 
  private:
   scoped_refptr<network::SharedURLLoaderFactory> shared_url_network_factory_;
   SendCookiesPredicate cookie_predicate_;
 
-  DISALLOW_COPY_AND_ASSIGN(NetworkFetcherChromiumFactory);
+  DISALLOW_COPY_AND_ASSIGN(NetworkFetcherMonyharFactory);
 };
 
 }  // namespace update_client

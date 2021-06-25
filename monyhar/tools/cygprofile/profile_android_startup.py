@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright (c) 2015 The Chromium Authors. All rights reserved.
+# Copyright (c) 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -511,7 +511,7 @@ def CreateArgumentParser():
       help='APK to profile')
   parser.add_argument(
       '--output-directory', type=os.path.realpath, required=True,
-      help='Chromium output directory (e.g. out/Release)')
+      help='Monyhar output directory (e.g. out/Release)')
   parser.add_argument(
       '--trace-directory', type=os.path.realpath,
       help='Directory in which profile traces will be stored. '

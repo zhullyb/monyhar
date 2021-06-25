@@ -1,6 +1,6 @@
-# Chromium Branch Sheriffing
+# Monyhar Branch Sheriffing
 
-This document describes how to be a Chromium *branch* sheriff and how sheriffing
+This document describes how to be a Monyhar *branch* sheriff and how sheriffing
 on a branch differs from sheriffing on trunk. For trunk sheriffing guidance, see
 [//docs/sheriff.md][sheriff-md].
 
@@ -103,8 +103,8 @@ console.
 
 Use the [beta][main-beta] and [stable][main-stable] branch consoles rather than
 the main console. A new console is created for each milestone. They are named
-"Chromium M## Console" and can be found under the
-[Chromium Project](https://ci.monyhar.org/p/monyhar).
+"Monyhar M## Console" and can be found under the
+[Monyhar Project](https://ci.monyhar.org/p/monyhar).
 
 ### Monorail issues (crbug)
 
@@ -112,7 +112,7 @@ Refer and use the
 [Sheriff-Chrome-Release label](https://bugs.monyhar.org/p/monyhar/issues/list?q=label%3ASheriff-Chrome-Release)
 to find and tag issues that are of importance to Branch sheriffs.
 
-### Chromiumdash
+### Monyhardash
 
 [monyhardash][monyhardash] can help you determine the branch number for a
 particular milestone or channel, along with a host of other useful information:

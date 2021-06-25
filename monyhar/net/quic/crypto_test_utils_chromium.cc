@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -40,14 +40,14 @@ namespace test {
 
 namespace {
 
-class TestProofVerifierChromium : public ProofVerifierChromium {
+class TestProofVerifierMonyhar : public ProofVerifierMonyhar {
  public:
-  TestProofVerifierChromium(
+  TestProofVerifierMonyhar(
       std::unique_ptr<CertVerifier> cert_verifier,
       std::unique_ptr<TransportSecurityState> transport_security_state,
       std::unique_ptr<CTPolicyEnforcer> ct_policy_enforcer,
       const std::string& cert_file)
-      : ProofVerifierChromium(cert_verifier.get(),
+      : ProofVerifierMonyhar(cert_verifier.get(),
                               ct_policy_enforcer.get(),
                               transport_security_state.get(),
                               /*sct_auditing_delegate=*/nullptr,
@@ -62,7 +62,7 @@ class TestProofVerifierChromium : public ProofVerifierChromium {
     scoped_root_.Reset({root_cert});
   }
 
-  ~TestProofVerifierChromium() override {}
+  ~TestProofVerifierMonyhar() override {}
 
   CertVerifier* cert_verifier() { return cert_verifier_.get(); }
 
@@ -82,8 +82,8 @@ namespace test {
 namespace crypto_test_utils {
 
 std::unique_ptr<quic::ProofSource> ProofSourceForTesting() {
-  std::unique_ptr<net::ProofSourceChromium> source(
-      new net::ProofSourceChromium());
+  std::unique_ptr<net::ProofSourceMonyhar> source(
+      new net::ProofSourceMonyhar());
   base::FilePath certs_dir = net::GetTestCertsDirectory();
   CHECK(source->Initialize(certs_dir.AppendASCII("quic-chain.pem"),
                            certs_dir.AppendASCII("quic-leaf-cert.key"),
@@ -102,13 +102,13 @@ std::unique_ptr<quic::ProofVerifier> ProofVerifierForTesting() {
   cert_verifier->AddResultForCertAndHost(verify_result.verified_cert.get(),
                                          "test.example.com", verify_result,
                                          net::OK);
-  return std::make_unique<net::test::TestProofVerifierChromium>(
+  return std::make_unique<net::test::TestProofVerifierMonyhar>(
       std::move(cert_verifier), std::make_unique<net::TransportSecurityState>(),
       std::make_unique<net::DefaultCTPolicyEnforcer>(), "quic-root.pem");
 }
 
 std::unique_ptr<quic::ProofVerifyContext> ProofVerifyContextForTesting() {
-  return std::make_unique<net::ProofVerifyContextChromium>(
+  return std::make_unique<net::ProofVerifyContextMonyhar>(
       /*cert_verify_flags=*/0, net::NetLogWithSource());
 }
 

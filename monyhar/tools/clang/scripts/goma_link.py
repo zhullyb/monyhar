@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-# Copyright (c) 2020 The Chromium Authors. All rights reserved.
+# Copyright (c) 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -565,7 +565,7 @@ class GomaLinkBase(object):
         ensure_dir(os.path.dirname(params.splitfile))
         # We use grep here to only codegen native objects which are actually
         # used by the native link step. Ninja 1.10 introduced a dyndep feature
-        # which allows for a more elegant implementation, but Chromium still
+        # which allows for a more elegant implementation, but Monyhar still
         # uses an older ninja version which doesn't have this feature.
         codegen_cmd = '( ! grep -qF $native %s || %s)' % (
             ninjaenc(used_obj_file), codegen_cmd)

@@ -5,7 +5,7 @@ Please add to it!
 ## About //base/util:
 
 This directory is meant to house common utilities that can be shared across the
-whole Chromium codebase. //base is similar, but due to the way //base grew over
+whole Monyhar codebase. //base is similar, but due to the way //base grew over
 time, it has not been well organized to allow for fine-grained ownership. Also,
 there is a mixture of commonly useful utility code and extremely subtle code
 with performance and security implications. The combination of the two lead to
@@ -36,8 +36,8 @@ directory.
   * Ensuring the directory is somewhat browseable.
 
 It is specifically NOT the OWNERS job to gatekeep what is a "good pattern"
-for Chromium code. Obviously they can still object, but the objection
-should be considered similar to any other Chromium dev objection.
+for Monyhar code. Obviously they can still object, but the objection
+should be considered similar to any other Monyhar dev objection.
 
 There will be cases when a utility is deemed to be more negative than
 positive after it has been landed. The //base/util/OWNERS may aide in
@@ -79,7 +79,7 @@ after some of the more obviously "utility-esque" classes are moved.
 
 ## How does this differ from //components
 Both //components and //base/util contain subdirectories that are (a) intended
-for reuse. In addition, //components imposes no global layering in Chromium, so
+for reuse. In addition, //components imposes no global layering in Monyhar, so
 a subdirectory placed in //components can be used from most-to-all layers in the
 codebase, subject to the dependencies that that subdirectory itself holds.
 

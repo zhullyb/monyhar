@@ -52,7 +52,7 @@ namespace blink {
 //    WebCallbacks<bool, void>.
 //  - If a WebType is std::unique_ptr<T>, its corresponding type parameter on
 //    WebCallbacks is std::unique_ptr<T>, because WebCallbacks must be exposed
-//    to Chromium.
+//    to Monyhar.
 //
 // When onSuccess is called with a S::WebType value, the value is passed to
 // S::take and the resolver is resolved with its return value. Ditto for

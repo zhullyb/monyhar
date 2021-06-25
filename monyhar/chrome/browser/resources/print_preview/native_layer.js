@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ export let PreviewSettings;
 
 /**
  * Enumeration of background graphics printing mode restrictions used by
- * Chromium.
+ * Monyhar.
  * This has to coincide with |printing::BackgroundGraphicsModeRestriction| as
  * defined in printing/backend/printing_restrictions.h
  * @enum {number}
@@ -97,7 +97,7 @@ export let NativeInitialSettings;
 export let CapabilitiesResponse;
 
 /**
- * An interface to the native Chromium printing system layer.
+ * An interface to the native Monyhar printing system layer.
  * @interface
  */
 export class NativeLayer {

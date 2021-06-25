@@ -3,7 +3,7 @@
 This directory contains the implementation of the [Web Bluetooth specification]
 using the Bluetooth abstraction module implemented in `//device/bluetooth`. See
 the [Bluetooth Abstraction README] for more details on the cross-platform
-implementation of Bluetooth in Chromium.
+implementation of Bluetooth in Monyhar.
 
 This service is exposed to the Web through the Blink Bluetooth module, which
 accesses the Web Bluetooth Service through Mojo IPC. For more details, see the

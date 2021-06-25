@@ -18,7 +18,7 @@ described [below](#Cookie-implementation-classes).
   [Life of a cookie](#Life-of-a-cookie) and
   [Cookie implementation classes](#Cookie-implementation-classes).
 
-* Those who wish to make use of cookies elsewhere in Chromium may refer to
+* Those who wish to make use of cookies elsewhere in Monyhar may refer to
   [Main interfaces for finding, setting, deleting, and observing cookies](#Main-interfaces-for-finding_setting_deleting_and-observing-cookies).
 ***
 

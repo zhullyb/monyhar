@@ -1,4 +1,4 @@
-This directory contains Chromium-specific test resources, including mocks for
+This directory contains Monyhar-specific test resources, including mocks for
 test-only APIs implemented with
 [MojoJS](https://monyhar.googlesource.com/monyhar/src/+/master/mojo/public/js/README.md).
 

@@ -3,7 +3,7 @@ This directory contains Dromaeo, a JavaScript and DOM performance benchmark.
 Dromaeo was developed and released by John Resig (jresig at mozilla.com)/
 
 This benchmark was slightly modified to: 
- - Enable Chromium automation.
+ - Enable Monyhar automation.
  - Avoid grabbing javascript libraries from the Web.
 
 

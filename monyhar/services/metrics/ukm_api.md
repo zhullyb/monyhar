@@ -59,7 +59,7 @@ Control of which metrics are included in the
 [History](http://go/aggregated-ukm#history-table) table (the table behind the
 main UKM dashboard) is done via the same
 [`tools/metrics/ukm/ukm.xml`](https://cs.monyhar.org/monyhar/src/tools/metrics/ukm/ukm.xml)
-file in the Chromium codebase. To have a metric aggregated, `<history>`,
+file in the Monyhar codebase. To have a metric aggregated, `<history>`,
 `<aggregation>` and `<statistics>` tags need to be added along with the type of
 statistic to be generated..
 
@@ -249,7 +249,7 @@ If the event name in the XML contains a period (`.`), it is replaced with an und
 
 ### Local Testing
 
-Build Chromium and run it with '--force-enable-metrics-reporting --metrics-upload-interval=N'. You may want some small N if you are interested in seeing behavior when UKM reports are emitted. Trigger your event locally and check chrome://ukm to make sure the data was recorded correctly.
+Build Monyhar and run it with '--force-enable-metrics-reporting --metrics-upload-interval=N'. You may want some small N if you are interested in seeing behavior when UKM reports are emitted. Trigger your event locally and check chrome://ukm to make sure the data was recorded correctly.
 
 ## Unit Testing
 

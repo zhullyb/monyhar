@@ -1,6 +1,6 @@
 #!/bin/bash -e
 #
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -236,7 +236,7 @@ function print_config_basic {
 # $3 - Optional - any additional arguments to pass through.
 function gen_rtcd_header {
   echo "Generate $LIBVPX_CONFIG_DIR/$1/*_rtcd.h files."
-  format="clang-format -i -style=Chromium"
+  format="clang-format -i -style=Monyhar"
 
   rm -rf $BASE_DIR/$TEMP_DIR/libvpx.config
   if [[ "$2" == "mipsel" || "$2" == "mips64el" || "$2" == nacl ]]; then
@@ -454,7 +454,7 @@ if [ -z $ONLY_CONFIGS ]; then
   convert_srcs_to_project_files libvpx_srcs.txt libvpx_srcs_x86
 
   # Copy vpx_version.h. The file should be the same for all platforms.
-  clang-format -i -style=Chromium vpx_version.h
+  clang-format -i -style=Monyhar vpx_version.h
   cp vpx_version.h $BASE_DIR/$LIBVPX_CONFIG_DIR
 
   echo "Generate X86_64 source list."

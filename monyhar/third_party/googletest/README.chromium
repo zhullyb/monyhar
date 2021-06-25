@@ -8,8 +8,8 @@ Security critical: no
 
 Google Test is imported as-is, to facilitate version bumping. However, the
 file/directory layout of Google Test is not yet considered stable. Therefore,
-until Google Test's layout stabilizes, Chromium code MUST NOT depend on it
-directly. Instead, Chromium code MUST:
+until Google Test's layout stabilizes, Monyhar code MUST NOT depend on it
+directly. Instead, Monyhar code MUST:
 
 * #include the headers in testing/gtest and testing/gmock
 * use //testing/gtest(:gtest_main) and //testing/gmock(:gmock_main) in BUILD.gn
@@ -23,7 +23,7 @@ This will allow us to adapt to Google Test changes with minimal disruption.
 ### What is Googletest
 
 Googletest is an open source C++ testing framework developed by Google and used
-by Chromium. See the [User Guide](https://google.github.io/googletest/).
+by Monyhar. See the [User Guide](https://google.github.io/googletest/).
 
 ### Where is Googletest
 
@@ -33,7 +33,7 @@ repository.
 
 * Development (Googler only): [google3/third\_party/googletest](http://google3/third_party/googletest/)
 * GitHub: https://github.com/google/googletest
-* Chromium mirror: https://monyhar.googlesource.com/external/github.com/google/googletest/
+* Monyhar mirror: https://monyhar.googlesource.com/external/github.com/google/googletest/
 * Locally, [third\_party/googletest/src/](https://source.monyhar.org/monyhar/monyhar/src/+/master:third_party/googletest/src/)
   is a copy of Googletest which is updated via `gclient sync` according to the
   `googletest revision` commit hash in the
@@ -63,10 +63,10 @@ git checkout commitish
   If the build is successful, this means the change does not affect your OS or
   your compiler flags differ from the trybots
 * Upload a CL with the added trybots from
-  [Testing Changes to Chromium in Chromium](#testing-changes-to-monyhar-in-monyhar)
+  [Testing Changes to Monyhar in Monyhar](#testing-changes-to-monyhar-in-monyhar)
 
 3. Make changes
-* To Chromium: create a CL including both the roll and other changes
+* To Monyhar: create a CL including both the roll and other changes
 * To Googletest:
   * Make changes to [third\_party/googletest/src/](https://source.monyhar.org/monyhar/monyhar/src/+/master:third_party/googletest/src/)
     and try building locally. If the fix is successful and you’re confident
@@ -75,13 +75,13 @@ git checkout commitish
     [third\_party/googletest/src/](https://source.monyhar.org/monyhar/monyhar/src/+/master:third_party/googletest/src/).
     See [Testing Changes to Googletest in Googletest](#testing-changes-to-googletest-in-googletest)
   * What if I need to make a change to Googletest, but I’m not confident it
-    will work with Chromium? Maybe it has to do with a tricky compiler error
+    will work with Monyhar? Maybe it has to do with a tricky compiler error
     that only affects a specific OS. See
-    [Testing Changes to Googletest in Chromium](#testing-changes-to-googletest-in-monyhar)
+    [Testing Changes to Googletest in Monyhar](#testing-changes-to-googletest-in-monyhar)
   * Once your Googletest change lands, create a roll which includes both the
     offending commit and your change
 
-### Testing Changes to Chromium in Chromium
+### Testing Changes to Monyhar in Monyhar
 
 Most changes should only require testing via the trybots,
 with the following added:
@@ -95,20 +95,20 @@ This will trigger automated testing.
 
 Googlers: See the [Googletest Developer’s Guide](http://go/gunitdev).
 
-### Testing Changes to Googletest in Chromium
+### Testing Changes to Googletest in Monyhar
 
 In most cases, testing locally with changes to
 [third\_party/googletest/src/](https://source.monyhar.org/monyhar/monyhar/src/+/master:third_party/googletest/src/)
 should be enough. But how can you make sure the changes to Googletest actually
-work in Chromium? Sometimes it’s not possible to test these changes locally
+work in Monyhar? Sometimes it’s not possible to test these changes locally
 (different compiler flags, error that only affects a specific OS, etc).
 Insert the pwnall repo:
 
 * Development: https://github.com/pwnall/googletest
-* Chromium mirror: https://monyhar.googlesource.com/external/github.com/pwnall/googletest/
+* Monyhar mirror: https://monyhar.googlesource.com/external/github.com/pwnall/googletest/
 
 The pwnall repo allows you to make speculative changes to Googletest and run
-them against the Chromium trybots. The flow is as follows:
+them against the Monyhar trybots. The flow is as follows:
 
 * Create a local remote to the pwnall repo (alternatively, clone it elsewhere):
 ```
@@ -129,23 +129,23 @@ git push pwnall master
   [DEPS file](https://source.monyhar.org/monyhar/monyhar/src/+/master:DEPS)
   with the commit hash and `/external/github.com/google/googletest.git` to
   `/external/github.com/pwnall/googletest.git`
-* Upload the CL to run the change against the Chromium trybots
+* Upload the CL to run the change against the Monyhar trybots
 
 ### Common Problems
 
-* Differences in C++ version and clang compiler flags between Chromium and Googletest
-  * Chromium is on C++14, though its dependencies,
+* Differences in C++ version and clang compiler flags between Monyhar and Googletest
+  * Monyhar is on C++14, though its dependencies,
     which may use Googletest, may be further behind
   * Look for NACL in build errors. You may need to update your GN args with
     `enable_nacl=true` to reproduce these errors locally
 * [A Googletest interface is changed](https://github.com/google/googletest/pull/2718/)
-  * Rolling past the commit will fail, since Chromium still uses the old interface
-  * Roll past the affecting commit and update uses in Chromium [in one CL](https://crrev.com/c/2709263)
+  * Rolling past the commit will fail, since Monyhar still uses the old interface
+  * Roll past the affecting commit and update uses in Monyhar [in one CL](https://crrev.com/c/2709263)
 * [A Googletest header is removed](https://github.com/google/googletest/commit/df6b75949b1efab7606ba60c0f0a0125ac95c5af)
-  * Rolling past the commit will fail, since Chromium still expects the header to exist
-  * Roll past the affecting commit and updates uses in Chromium [in one CL](https://crrev.com/c/2713029)
+  * Rolling past the commit will fail, since Monyhar still expects the header to exist
+  * Roll past the affecting commit and updates uses in Monyhar [in one CL](https://crrev.com/c/2713029)
 * [A new Googletest feature](https://github.com/google/googletest/commit/ec94d9f24c92a5090fda5567156d6dde99cdbf31)
-  requires [updating tests in Chromium](https://crbug.com/1163396#c8)
+  requires [updating tests in Monyhar](https://crbug.com/1163396#c8)
 
 ### Other Resources
 

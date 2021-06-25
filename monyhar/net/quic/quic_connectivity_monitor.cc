@@ -1,4 +1,4 @@
-// Copyright (c) 2020 The Chromium Authors. All rights reserved.
+// Copyright (c) 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -110,7 +110,7 @@ void QuicConnectivityMonitor::SetInitialDefaultNetwork(
 }
 
 void QuicConnectivityMonitor::OnSessionPathDegrading(
-    QuicChromiumClientSession* session,
+    QuicMonyharClientSession* session,
     NetworkChangeNotifier::NetworkHandle network) {
   if (network != default_network_)
     return;
@@ -134,7 +134,7 @@ void QuicConnectivityMonitor::OnSessionPathDegrading(
 }
 
 void QuicConnectivityMonitor::OnSessionResumedPostPathDegrading(
-    QuicChromiumClientSession* session,
+    QuicMonyharClientSession* session,
     NetworkChangeNotifier::NetworkHandle network) {
   if (network != default_network_)
     return;
@@ -152,7 +152,7 @@ void QuicConnectivityMonitor::OnSessionResumedPostPathDegrading(
 }
 
 void QuicConnectivityMonitor::OnSessionEncounteringWriteError(
-    QuicChromiumClientSession* session,
+    QuicMonyharClientSession* session,
     NetworkChangeNotifier::NetworkHandle network,
     int error_code) {
   if (network != default_network_)
@@ -180,7 +180,7 @@ void QuicConnectivityMonitor::OnSessionEncounteringWriteError(
 }
 
 void QuicConnectivityMonitor::OnSessionClosedAfterHandshake(
-    QuicChromiumClientSession* session,
+    QuicMonyharClientSession* session,
     NetworkChangeNotifier::NetworkHandle network,
     quic::ConnectionCloseSource source,
     quic::QuicErrorCode error_code) {
@@ -204,7 +204,7 @@ void QuicConnectivityMonitor::OnSessionClosedAfterHandshake(
 }
 
 void QuicConnectivityMonitor::OnSessionRegistered(
-    QuicChromiumClientSession* session,
+    QuicMonyharClientSession* session,
     NetworkChangeNotifier::NetworkHandle network) {
   if (network != default_network_)
     return;
@@ -217,7 +217,7 @@ void QuicConnectivityMonitor::OnSessionRegistered(
 }
 
 void QuicConnectivityMonitor::OnSessionRemoved(
-    QuicChromiumClientSession* session) {
+    QuicMonyharClientSession* session) {
   degrading_sessions_.erase(session);
   active_sessions_.erase(session);
 }
@@ -245,7 +245,7 @@ void QuicConnectivityMonitor::OnIPAddressChanged() {
 }
 
 void QuicConnectivityMonitor::OnSessionGoingAwayOnIPAddressChange(
-    QuicChromiumClientSession* session) {
+    QuicMonyharClientSession* session) {
   // This should only be called after ConnectivityMonitor gets notified via
   // OnIPAddressChanged().
   DCHECK(degrading_sessions_.empty());

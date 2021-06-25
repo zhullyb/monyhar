@@ -16,7 +16,7 @@ It is a new scheme which can be used to serve resources bundled with Chrome and 
 
 The `-untrusted` suffix indicates that the WebUI processes untrustworthy content. For example, rendering an image provided by users, parsing a PDF file, etc.
 
-The `-untrusted` suffix does not mean the web page is designed to do malicious things, or users should not trust it. Instead, the `-untrusted` suffix is to signal to us, Chromium developers, that this page will process untrustworthy content, and should be assumed to be compromised, much like an ordinary renderer process.
+The `-untrusted` suffix does not mean the web page is designed to do malicious things, or users should not trust it. Instead, the `-untrusted` suffix is to signal to us, Monyhar developers, that this page will process untrustworthy content, and should be assumed to be compromised, much like an ordinary renderer process.
 
 ## Why do we need chrome-untrusted://?
 

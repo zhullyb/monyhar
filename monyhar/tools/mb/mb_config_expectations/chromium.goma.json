@@ -1,5 +1,5 @@
 {
-  "Chromium Android ARM 32-bit Goma RBE Staging": {
+  "Monyhar Android ARM 32-bit Goma RBE Staging": {
     "gn_args": {
       "ffmpeg_branding": "Chrome",
       "is_component_build": false,
@@ -11,7 +11,7 @@
       "use_goma": true
     }
   },
-  "Chromium Android ARM 32-bit Goma RBE ToT": {
+  "Monyhar Android ARM 32-bit Goma RBE ToT": {
     "gn_args": {
       "ffmpeg_branding": "Chrome",
       "is_component_build": false,
@@ -23,7 +23,7 @@
       "use_goma": true
     }
   },
-  "Chromium Android ARM 32-bit Goma RBE ToT (ATS)": {
+  "Monyhar Android ARM 32-bit Goma RBE ToT (ATS)": {
     "gn_args": {
       "ffmpeg_branding": "Chrome",
       "is_component_build": false,
@@ -35,21 +35,21 @@
       "use_goma": true
     }
   },
-  "Chromium Linux Goma RBE Staging": {
+  "Monyhar Linux Goma RBE Staging": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
       "use_goma": true
     }
   },
-  "Chromium Linux Goma RBE Staging (clobber)": {
+  "Monyhar Linux Goma RBE Staging (clobber)": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
       "use_goma": true
     }
   },
-  "Chromium Linux Goma RBE Staging (dbg)": {
+  "Monyhar Linux Goma RBE Staging (dbg)": {
     "gn_args": {
       "is_component_build": true,
       "is_debug": true,
@@ -57,7 +57,7 @@
       "use_goma": true
     }
   },
-  "Chromium Linux Goma RBE Staging (dbg) (clobber)": {
+  "Monyhar Linux Goma RBE Staging (dbg) (clobber)": {
     "gn_args": {
       "is_component_build": true,
       "is_debug": true,
@@ -65,35 +65,35 @@
       "use_goma": true
     }
   },
-  "Chromium Linux Goma RBE ToT": {
+  "Monyhar Linux Goma RBE ToT": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
       "use_goma": true
     }
   },
-  "Chromium Linux Goma RBE ToT (ATS)": {
+  "Monyhar Linux Goma RBE ToT (ATS)": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
       "use_goma": true
     }
   },
-  "Chromium Mac Goma RBE Staging": {
+  "Monyhar Mac Goma RBE Staging": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
       "use_goma": true
     }
   },
-  "Chromium Mac Goma RBE Staging (clobber)": {
+  "Monyhar Mac Goma RBE Staging (clobber)": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
       "use_goma": true
     }
   },
-  "Chromium Mac Goma RBE Staging (dbg)": {
+  "Monyhar Mac Goma RBE Staging (dbg)": {
     "gn_args": {
       "is_component_build": true,
       "is_debug": true,
@@ -101,23 +101,14 @@
       "use_goma": true
     }
   },
-  "Chromium Mac Goma RBE ToT": {
+  "Monyhar Mac Goma RBE ToT": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
       "use_goma": true
     }
   },
-  "Chromium Win Goma RBE ATS Staging": {
-    "gn_args": {
-      "is_component_build": false,
-      "is_debug": false,
-      "symbol_level": 1,
-      "target_cpu": "x86",
-      "use_goma": true
-    }
-  },
-  "Chromium Win Goma RBE ATS Staging (clobber)": {
+  "Monyhar Win Goma RBE ATS Staging": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
@@ -126,7 +117,7 @@
       "use_goma": true
     }
   },
-  "Chromium Win Goma RBE ATS ToT": {
+  "Monyhar Win Goma RBE ATS Staging (clobber)": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
@@ -135,7 +126,7 @@
       "use_goma": true
     }
   },
-  "Chromium Win Goma RBE Staging": {
+  "Monyhar Win Goma RBE ATS ToT": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
@@ -144,7 +135,7 @@
       "use_goma": true
     }
   },
-  "Chromium Win Goma RBE Staging (clobber)": {
+  "Monyhar Win Goma RBE Staging": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
@@ -153,7 +144,7 @@
       "use_goma": true
     }
   },
-  "Chromium Win Goma RBE ToT": {
+  "Monyhar Win Goma RBE Staging (clobber)": {
     "gn_args": {
       "is_component_build": false,
       "is_debug": false,
@@ -162,7 +153,16 @@
       "use_goma": true
     }
   },
-  "Chromium iOS Goma RBE ToT": {
+  "Monyhar Win Goma RBE ToT": {
+    "gn_args": {
+      "is_component_build": false,
+      "is_debug": false,
+      "symbol_level": 1,
+      "target_cpu": "x86",
+      "use_goma": true
+    }
+  },
+  "Monyhar iOS Goma RBE ToT": {
     "gn_args": {
       "ios_code_signing_identity_description": "Apple Development",
       "ios_enable_code_signing": false,

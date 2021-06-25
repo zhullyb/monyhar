@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ namespace version_info {
 // e.g. "Chrome/a.b.c.d".
 std::string GetProductNameAndVersionForUserAgent();
 
-// Returns the product name, e.g. "Chromium" or "Google Chrome".
+// Returns the product name, e.g. "Monyhar" or "Google Chrome".
 std::string GetProductName();
 
 // Returns the version number, e.g. "6.0.490.1".

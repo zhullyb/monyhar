@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -197,7 +197,7 @@ void SetMediaKeysHandler::ClearExistingMediaKeys() {
       // 5.2.3 Stop using the CDM instance represented by the mediaKeys
       //       attribute to decrypt media data and remove the association
       //       with the media element.
-      // (All 3 steps handled as needed in Chromium.)
+      // (All 3 steps handled as needed in Monyhar.)
       SuccessCallback success_callback = WTF::Bind(
           &SetMediaKeysHandler::SetNewMediaKeys, WrapPersistent(this));
       FailureCallback failure_callback =
@@ -227,7 +227,7 @@ void SetMediaKeysHandler::SetNewMediaKeys() {
     //       (done in setFailed()).
     // 5.3.3 Queue a task to run the Attempt to Resume Playback If Necessary
     //       algorithm on the media element.
-    //       (Handled in Chromium).
+    //       (Handled in Monyhar).
     if (element_->GetWebMediaPlayer()) {
       SuccessCallback success_callback =
           WTF::Bind(&SetMediaKeysHandler::Finish, WrapPersistent(this));
@@ -457,13 +457,13 @@ void HTMLMediaElementEncryptedMedia::DidBlockPlaybackWaitingForKey() {
   is_waiting_for_key_ = true;
 
   // 4. Suspend playback.
-  //    (Already done on the Chromium side by the decryptors.)
+  //    (Already done on the Monyhar side by the decryptors.)
 }
 
 void HTMLMediaElementEncryptedMedia::DidResumePlaybackBlockedForKey() {
   DVLOG(EME_LOG_LEVEL) << __func__;
 
-  // Logic is on the Chromium side to attempt to resume playback when a new
+  // Logic is on the Monyhar side to attempt to resume playback when a new
   // key is available. However, |m_isWaitingForKey| needs to be cleared so
   // that a later waitingForKey() call can generate the event.
   is_waiting_for_key_ = false;

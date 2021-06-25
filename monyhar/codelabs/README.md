@@ -1,11 +1,11 @@
-# Chromium Codelab
+# Monyhar Codelab
 
-See the `cpp101/` directory for the Chromium C++ codelab,
+See the `cpp101/` directory for the Monyhar C++ codelab,
 including example solutions.
 
 ## Motivation
 
-The goal of this codelab is to introduce new Chromium developers to both the
+The goal of this codelab is to introduce new Monyhar developers to both the
 important design patterns and the style of code they can expect to become
 familiar with.
 

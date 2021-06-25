@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -265,11 +265,11 @@ TEST(UserAgentUtilsTest, UserAgentMetadata) {
   std::string major_version = version_info::GetMajorVersionNumber();
 
   // According to spec, Sec-CH-UA should contain what project the browser is
-  // based on (i.e. Chromium in this case) as well as the actual product.
+  // based on (i.e. Monyhar in this case) as well as the actual product.
   // In CHROMIUM_BRANDING builds this will check monyhar twice. That should be
   // ok though.
 
-  const blink::UserAgentBrandVersion monyhar_brand_version = {"Chromium",
+  const blink::UserAgentBrandVersion monyhar_brand_version = {"Monyhar",
                                                                major_version};
   const blink::UserAgentBrandVersion product_brand_version = {
       version_info::GetProductName(), version_info::GetMajorVersionNumber()};
@@ -311,26 +311,26 @@ TEST(UserAgentUtilsTest, GenerateBrandVersionList) {
   metadata.brand_version_list =
       GenerateBrandVersionList(84, absl::nullopt, "84", absl::nullopt);
   std::string brand_list = metadata.SerializeBrandVersionList();
-  EXPECT_EQ(R"(" Not A;Brand";v="99", "Chromium";v="84")", brand_list);
+  EXPECT_EQ(R"(" Not A;Brand";v="99", "Monyhar";v="84")", brand_list);
 
   metadata.brand_version_list =
       GenerateBrandVersionList(85, absl::nullopt, "85", absl::nullopt);
   std::string brand_list_diff = metadata.SerializeBrandVersionList();
   // Make sure the lists are different for different seeds
-  EXPECT_EQ(R"("Chromium";v="85", " Not;A Brand";v="99")", brand_list_diff);
+  EXPECT_EQ(R"("Monyhar";v="85", " Not;A Brand";v="99")", brand_list_diff);
   EXPECT_NE(brand_list, brand_list_diff);
 
   metadata.brand_version_list =
       GenerateBrandVersionList(84, "Totally A Brand", "84", absl::nullopt);
   std::string brand_list_w_brand = metadata.SerializeBrandVersionList();
   EXPECT_EQ(
-      R"(" Not A;Brand";v="99", "Chromium";v="84", "Totally A Brand";v="84")",
+      R"(" Not A;Brand";v="99", "Monyhar";v="84", "Totally A Brand";v="84")",
       brand_list_w_brand);
 
   metadata.brand_version_list =
       GenerateBrandVersionList(84, absl::nullopt, "84", "Clean GREASE");
   std::string brand_list_grease_override = metadata.SerializeBrandVersionList();
-  EXPECT_EQ(R"("Clean GREASE";v="99", "Chromium";v="84")",
+  EXPECT_EQ(R"("Clean GREASE";v="99", "Monyhar";v="84")",
             brand_list_grease_override);
   EXPECT_NE(brand_list, brand_list_grease_override);
 

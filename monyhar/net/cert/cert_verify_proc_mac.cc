@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -191,7 +191,7 @@ CertStatus CertStatusFromOSStatusAtLeastOS10_13(OSStatus status) {
       return CERT_STATUS_INVALID;
 
     default: {
-      // Failure was due to something Chromium doesn't define a
+      // Failure was due to something Monyhar doesn't define a
       // specific status for (such as basic constraints violation, or
       // unknown critical extension)
       OSSTATUS_LOG(WARNING, status)
@@ -280,7 +280,7 @@ CertStatus CertStatusFromOSStatusAtMostOS10_12(OSStatus status) {
       return CERT_STATUS_WEAK_KEY;
 
     default: {
-      // Failure was due to something Chromium doesn't define a
+      // Failure was due to something Monyhar doesn't define a
       // specific status for (such as basic constraints violation, or
       // unknown critical extension)
       OSSTATUS_LOG(WARNING, status)

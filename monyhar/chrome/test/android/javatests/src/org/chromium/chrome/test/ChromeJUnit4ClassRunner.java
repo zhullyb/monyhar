@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ import org.monyhar.chrome.test.util.browser.Features;
 import org.monyhar.components.policy.test.annotations.Policies;
 import org.monyhar.content_public.browser.test.ContentJUnit4ClassRunner;
 import org.monyhar.content_public.browser.test.util.TestThreadUtils;
-import org.monyhar.gms.ChromiumPlayServicesAvailability;
+import org.monyhar.gms.MonyharPlayServicesAvailability;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -152,7 +152,7 @@ public class ChromeJUnit4ClassRunner extends ContentJUnit4ClassRunner {
         protected boolean restrictionApplies(String restriction) {
             if (TextUtils.equals(
                         restriction, ChromeRestriction.RESTRICTION_TYPE_GOOGLE_PLAY_SERVICES)
-                    && (!ChromiumPlayServicesAvailability.isGooglePlayServicesAvailable(
+                    && (!MonyharPlayServicesAvailability.isGooglePlayServicesAvailable(
                             getTargetContext()))) {
                 return true;
             }

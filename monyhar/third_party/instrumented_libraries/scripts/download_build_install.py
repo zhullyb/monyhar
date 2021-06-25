@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -167,7 +167,7 @@ class InstrumentedPackageBuilder(object):
   def copy_source_archives(self):
     """Copies the downloaded source archives to the output dir.
 
-    For license compliance purposes, every Chromium build that includes
+    For license compliance purposes, every Monyhar build that includes
     instrumented libraries must include their full source code.
     """
     shutil.rmtree(self._source_archives_dir, ignore_errors=True)

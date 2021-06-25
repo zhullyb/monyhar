@@ -1,6 +1,6 @@
 # Useful URLs
 
-Chromium has a lot of different pages for a lot of different things.
+Monyhar has a lot of different pages for a lot of different things.
 This page aims to be a repository of useful links that people may find useful.
 
 ## Build Status
@@ -24,5 +24,5 @@ This page aims to be a repository of useful links that people may find useful.
 
 ## Communication
 
-* [Chromium Developers List monyhar-dev@](https://groups.google.com/a/monyhar.org/group/monyhar-dev/topics)
-* [Chromium Users List monyhar-discuss@](https://groups.google.com/a/monyhar.org/group/monyhar-discuss/topics)
+* [Monyhar Developers List monyhar-dev@](https://groups.google.com/a/monyhar.org/group/monyhar-dev/topics)
+* [Monyhar Users List monyhar-discuss@](https://groups.google.com/a/monyhar.org/group/monyhar-discuss/topics)

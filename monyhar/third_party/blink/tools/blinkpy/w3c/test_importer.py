@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Fetches a copy of the latest state of a W3C test repository and commits.
@@ -125,7 +125,7 @@ class TestImporter(object):
         self.git_cl = GitCL(
             self.host, auth_refresh_token_json=options.auth_refresh_token_json)
 
-        _log.debug('Noting the current Chromium revision.')
+        _log.debug('Noting the current Monyhar revision.')
         monyhar_revision = self.monyhar_git.latest_git_commit()
 
         # Instantiate Git after local_wpt.fetch() to make sure the path exists.
@@ -142,7 +142,7 @@ class TestImporter(object):
         self.last_wpt_revision = self._get_last_imported_wpt_revision()
         import_commit = 'wpt@%s' % self.wpt_revision
 
-        _log.info('Importing %s to Chromium %s', import_commit,
+        _log.info('Importing %s to Monyhar %s', import_commit,
                   monyhar_revision)
 
         if options.ignore_exportable_commits:
@@ -369,13 +369,13 @@ class TestImporter(object):
         return True
 
     def apply_exportable_commits_locally(self, local_wpt):
-        """Applies exportable Chromium changes to the local WPT repo.
+        """Applies exportable Monyhar changes to the local WPT repo.
 
         The purpose of this is to avoid clobbering changes that were made in
-        Chromium but not yet merged upstream. By applying these changes to the
+        Monyhar but not yet merged upstream. By applying these changes to the
         local copy of web-platform-tests before copying files over, we make
-        it so that the resulting change in Chromium doesn't undo the
-        previous Chromium change.
+        it so that the resulting change in Monyhar doesn't undo the
+        previous Monyhar change.
 
         Args:
             A LocalWPT instance for our local copy of WPT.
@@ -439,7 +439,7 @@ class TestImporter(object):
         self.monyhar_git.add_list([manifest_base_path])
 
     def _clear_out_dest_path(self):
-        """Removes all files that are synced with upstream from Chromium WPT.
+        """Removes all files that are synced with upstream from Monyhar WPT.
 
         Instead of relying on TestCopier to overwrite these files, cleaning up
         first ensures if upstream deletes some files, we also delete them.
@@ -467,10 +467,10 @@ class TestImporter(object):
                         monyhar_commit_sha,
                         import_commit_sha,
                         locally_applied_commits=None):
-        message = 'Import {}\n\nUsing wpt-import in Chromium {}.\n'.format(
+        message = 'Import {}\n\nUsing wpt-import in Monyhar {}.\n'.format(
             import_commit_sha, monyhar_commit_sha)
         if locally_applied_commits:
-            message += 'With Chromium commits locally applied on WPT:\n'
+            message += 'With Monyhar commits locally applied on WPT:\n'
             message += '\n'.join(
                 str(commit) for commit in locally_applied_commits)
         message += '\nNo-Export: true'

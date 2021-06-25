@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@ import logging
 from urllib2 import HTTPError
 
 from blinkpy.common.net.network_transaction import NetworkTimeout
-from blinkpy.w3c.monyhar_commit import ChromiumCommit
+from blinkpy.w3c.monyhar_commit import MonyharCommit
 from blinkpy.w3c.monyhar_finder import absolute_monyhar_dir
 from blinkpy.w3c.common import CHROMIUM_WPT_DIR, is_file_exportable
 
@@ -19,9 +19,9 @@ QUERY_OPTIONS = 'o=CURRENT_FILES&o=CURRENT_REVISION&o=COMMIT_FOOTERS&o=DETAILED_
 
 
 class GerritAPI(object):
-    """A utility class for the Chromium code review API.
+    """A utility class for the Monyhar code review API.
 
-    Wraps the API for Chromium's Gerrit instance at monyhar-review.googlesource.com.
+    Wraps the API for Monyhar's Gerrit instance at monyhar-review.googlesource.com.
     """
 
     def __init__(self, host, user, token):
@@ -95,7 +95,7 @@ class GerritAPI(object):
 
 
 class GerritCL(object):
-    """A data wrapper for a Chromium Gerrit CL."""
+    """A data wrapper for a Monyhar Gerrit CL."""
 
     def __init__(self, data, api):
         assert data['change_id']
@@ -198,7 +198,7 @@ class GerritCL(object):
         """Fetches the git commit for the latest revision of CL.
 
         This method fetches the commit corresponding to the latest revision of
-        CL to local Chromium repository, but does not checkout the commit to the
+        CL to local Monyhar repository, but does not checkout the commit to the
         working tree. All changes in the CL are squashed into this one commit,
         regardless of how many revisions have been uploaded.
 
@@ -206,14 +206,14 @@ class GerritCL(object):
             host: A Host object for git invocation.
 
         Returns:
-            A ChromiumCommit object (the fetched commit).
+            A MonyharCommit object (the fetched commit).
         """
         git = host.git(absolute_monyhar_dir(host))
         url = self.current_revision['fetch']['http']['url']
         ref = self.current_revision['fetch']['http']['ref']
         git.run(['fetch', url, ref])
         sha = git.run(['rev-parse', 'FETCH_HEAD']).strip()
-        return ChromiumCommit(host, sha=sha)
+        return MonyharCommit(host, sha=sha)
 
 
 class GerritError(Exception):

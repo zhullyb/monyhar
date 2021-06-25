@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -104,7 +104,7 @@ MessageCenterController::MessageCenterController() {
         std::make_unique<PhoneHubNotificationController>();
   }
 
-  // Set the system notification source display name ("Chrome OS" or "Chromium
+  // Set the system notification source display name ("Chrome OS" or "Monyhar
   // OS").
   message_center::MessageCenter::Get()->SetSystemNotificationAppName(
       l10n_util::GetStringUTF16(IDS_ASH_MESSAGE_CENTER_SYSTEM_APP_NAME));

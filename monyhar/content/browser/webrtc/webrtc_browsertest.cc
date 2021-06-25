@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -158,8 +158,8 @@ IN_PROC_BROWSER_TEST_F(MAYBE_WebRtcBrowserTest, CanForwardRemoteStream) {
 }
 
 IN_PROC_BROWSER_TEST_F(MAYBE_WebRtcBrowserTest,
-                       NoCrashWhenConnectChromiumSinkToRemoteTrack) {
-  MakeTypicalPeerConnectionCall("ConnectChromiumSinkToRemoteAudioTrack();");
+                       NoCrashWhenConnectMonyharSinkToRemoteTrack) {
+  MakeTypicalPeerConnectionCall("ConnectMonyharSinkToRemoteAudioTrack();");
 }
 
 // This test will make a complete PeerConnection-based call but remove the

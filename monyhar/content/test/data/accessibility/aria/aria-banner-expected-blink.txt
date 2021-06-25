@@ -2,5 +2,5 @@ rootWebArea
 ++genericContainer ignored
 ++++genericContainer ignored
 ++++++banner
-++++++++staticText name='Chromium Browser'
-++++++++++inlineTextBox name='Chromium Browser'
+++++++++staticText name='Monyhar Browser'
+++++++++++inlineTextBox name='Monyhar Browser'

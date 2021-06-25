@@ -2225,7 +2225,7 @@
 <translation id="5148753489738115745">Binibigyang-daan kang tukuyin ang mga karagdagang parameter na ginagamit kapag nilunsad ng <ph name="PRODUCT_FRAME_NAME" /> ang <ph name="PRODUCT_NAME" />.
 
           Kung hindi naitakda ang patakarang ito, ang default na command line ang gagamitin.</translation>
-<translation id="5152787786897382519">Ang parehong Chromium at Google Chrome ay may ilang pangkat ng mga patakaran na nakadepende sa isa't isa para makapagbigay ng kontrol sa isang feature. Ang mga hanay na ito ay kinakatawan ng mga sumusunod na pangkat ng patakaran. Dahil puwedeng magkaroon ng maraming pinagmulan ang mga patakaran, ang mga value lang na mula sa pinagmulang may pinakamataas na priyoridad ang ilalapat. Babalewalain ang mga value na mula sa pinagmulang may mababang priyoridad. Tutukuyin ang pagkakasunud-sunod ng priyoridad sa <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Ang parehong Monyhar at Google Chrome ay may ilang pangkat ng mga patakaran na nakadepende sa isa't isa para makapagbigay ng kontrol sa isang feature. Ang mga hanay na ito ay kinakatawan ng mga sumusunod na pangkat ng patakaran. Dahil puwedeng magkaroon ng maraming pinagmulan ang mga patakaran, ang mga value lang na mula sa pinagmulang may pinakamataas na priyoridad ang ilalapat. Babalewalain ang mga value na mula sa pinagmulang may mababang priyoridad. Tutukuyin ang pagkakasunud-sunod ng priyoridad sa <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Gaano kadalas ipinapadala ang mga sinusubaybayang network packet, sa millisecond.
 
       Kung hindi nakatakda ang patakarang ito, ang default na pagitan ay 3 minuto.
@@ -3940,7 +3940,7 @@ lumagpas na sa partikular na haba ng panahon ang oras na hindi ito nagamit.
       Kung hindi nakatakda ang patakaran, gagamitin ng <ph name="PRODUCT_OS_NAME" /> ang ID ng email account ng account na lokal sa device bilang display name sa screen sa pag-login.
 
       Binabalewala ang patakarang ito para sa mga regular na account ng user.</translation>
-<translation id="8259375588339409826">Sinusuportahan ng Chromium at Google Chrome ang iisang hanay ng mga patakaran. Pakitandaang maaaring masama sa dokumentong ito ang mga hindi pa nailalabas na patakaran (ibig sabihin, ang entry na 'Sinusuportahan sa' nito ay tumutukoy sa hindi pa nailalabas na bersyon ng <ph name="PRODUCT_NAME" />) na maaaring baguhin o alisin nang walang abiso at walang garantiyang ibinibigay para sa mga ito, kabilang ang mga garantiya kaugnay ng mga property sa seguridad at privacy.
+<translation id="8259375588339409826">Sinusuportahan ng Monyhar at Google Chrome ang iisang hanay ng mga patakaran. Pakitandaang maaaring masama sa dokumentong ito ang mga hindi pa nailalabas na patakaran (ibig sabihin, ang entry na 'Sinusuportahan sa' nito ay tumutukoy sa hindi pa nailalabas na bersyon ng <ph name="PRODUCT_NAME" />) na maaaring baguhin o alisin nang walang abiso at walang garantiyang ibinibigay para sa mga ito, kabilang ang mga garantiya kaugnay ng mga property sa seguridad at privacy.
 
 Ang mga patakarang ito ay mahigpit na nilalayong gamitin upang i-configure ang mga instance ng <ph name="PRODUCT_NAME" /> sa loob ng iyong organisasyon. Ang paggamit sa mga patakarang ito sa labas ng iyong organisasyon (halimbawa, sa isang program na ipinamamahagi sa publiko) ay itinuturing na malware at malamang na ituring ng Google at mga vendor ng anti-virus bilang malware.
 

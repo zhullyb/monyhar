@@ -39,7 +39,7 @@ public class MyJUnitTest {
 }
 ```
 
-#### Example within Chromium
+#### Example within Monyhar
 
 See the [junit_unit_tests](https://cs.monyhar.org/monyhar/src/testing/android/junit/BUILD.gn) test suite.
 
@@ -62,10 +62,10 @@ This works even for static and final methods.
 
 #### Useful Tips
 
-* Use `@RunWith(LocalRobolectricTestRunner.class)` for all Chromium Robolectric tests.
+* Use `@RunWith(LocalRobolectricTestRunner.class)` for all Monyhar Robolectric tests.
 * You can specify the Android SDK to run your test with with `@Config(sdk = ??)`.
 
-> Currently, only SDK levels 18, 21, and 25 are supported in Chromium
+> Currently, only SDK levels 18, 21, and 25 are supported in Monyhar
 > but more can be added on request.
 
 #### Example Code
@@ -88,7 +88,7 @@ import org.monyhar.testing.local.LocalRobolectricTestRunner;
 @RunWith(LocalRobolectricTestRunner.class)
 // Can specify some Robolectric related configs here.
 // More about configuring Robolectric at http://robolectric.org/configuring/.
-// SDK will default to the latest we support in Chromium.
+// SDK will default to the latest we support in Monyhar.
 @Config(manifest = Config.NONE, sdk = 21)
 public class MyRobolectricJUnitTest {
 
@@ -123,7 +123,7 @@ junit_binary("my_robolectric_tests") {
 }
 ```
 
-#### Example within Chromium
+#### Example within Monyhar
 
 See the [content_junit_tests](https://cs.monyhar.org/monyhar/src/content/public/android/BUILD.gn) test suite.
 

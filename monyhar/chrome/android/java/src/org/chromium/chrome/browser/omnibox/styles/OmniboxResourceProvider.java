@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -63,7 +63,7 @@ public class OmniboxResourceProvider {
         // Only wraps the context in case of incognito.
         if (omniboxTheme == OmniboxTheme.INCOGNITO) {
             return NightModeUtils.wrapContextWithNightModeConfig(
-                    context, R.style.Theme_Chromium_TabbedMode, /*nightMode=*/true);
+                    context, R.style.Theme_Monyhar_TabbedMode, /*nightMode=*/true);
         }
 
         return context;

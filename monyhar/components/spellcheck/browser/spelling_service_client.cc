@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -105,11 +105,11 @@ bool SpellingServiceClient::RequestTextCheck(
         semantics {
           sender: "Online Spellcheck"
           description:
-            "Chromium can provide smarter spell-checking, by sending the text "
+            "Monyhar can provide smarter spell-checking, by sending the text "
             "that the users type into the browser, to Google's servers. This"
             "allows users to use the same spell-checking technology used by "
             "Google products, such as Docs. If the feature is enabled, "
-            "Chromium will send the entire contents of text fields as user "
+            "Monyhar will send the entire contents of text fields as user "
             "types them to Google, along with the browser’s default language. "
             "Google returns a list of suggested spellings, which will be "
             "displayed in the context menu."
@@ -123,7 +123,7 @@ bool SpellingServiceClient::RequestTextCheck(
           cookies_allowed: NO
           setting:
             "Users can enable or disable this feature via 'Enhanced spell "
-            "check' in Chromium's settings under 'Sync and Google services'. "
+            "check' in Monyhar's settings under 'Sync and Google services'. "
             "The feature is disabled by default."
           chrome_policy {
             SpellCheckServiceEnabled {

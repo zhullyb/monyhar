@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -654,7 +654,7 @@ bool g_is_browser = false;
 
 // TODO(jperaza): This might be simplified to have both the browser and child
 // processes use CRASHPAD_SIMULATE_CRASH() if CrashpadClient allows injecting
-// the Chromium specific SandboxedHandler.
+// the Monyhar specific SandboxedHandler.
 void DumpWithoutCrashing() {
   if (g_is_browser) {
     CRASHPAD_SIMULATE_CRASH();

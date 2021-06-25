@@ -1,8 +1,8 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-apply plugin: ChromiumPlugin
+apply plugin: MonyharPlugin
 
 repositories {
     mavenCentral()
@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    // Note about the configuration names: they are defined in buildSrc/ChromiumPlugin
+    // Note about the configuration names: they are defined in buildSrc/MonyharPlugin
 
     compile "androidx.lifecycle:lifecycle-runtime:{{androidx_dependency_version}}"
     compile "androidx.lifecycle:lifecycle-common:{{androidx_dependency_version}}"

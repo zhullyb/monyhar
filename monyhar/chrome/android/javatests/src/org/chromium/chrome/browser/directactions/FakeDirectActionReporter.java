@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@ import java.util.function.Consumer;
  *
  * <p>While Direct Actions are only available since Android Q, this test avoids using any type that
  * is specific to Android Q, so can run on older versions of the API. TODO(crbug.com/973781): Once
- * Chromium is built against Android Q SDK, have the test use {@code android.app.DirectAction}
+ * Monyhar is built against Android Q SDK, have the test use {@code android.app.DirectAction}
  * directly.
  */
 @TargetApi(24) // for java.util.function.Consumer.

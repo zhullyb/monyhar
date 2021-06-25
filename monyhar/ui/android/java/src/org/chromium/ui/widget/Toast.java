@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,7 +26,7 @@ import org.monyhar.ui.R;
  * Toast wrapper, makes sure toasts are not HW accelerated on low-end devices and presented
  * correctly (i.e. use VrToast while in virtual reality).
  *
- * Can (and should) also be used for Chromium-related additions and extensions.
+ * Can (and should) also be used for Monyhar-related additions and extensions.
  */
 public class Toast {
 

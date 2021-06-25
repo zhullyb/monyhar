@@ -1,15 +1,15 @@
 /* compression_utils_portable.h
  *
- * Copyright 2019 The Chromium Authors. All rights reserved.
+ * Copyright 2019 The Monyhar Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
- * found in the Chromium source repository LICENSE file.
+ * found in the Monyhar source repository LICENSE file.
  */
 #ifndef THIRD_PARTY_ZLIB_GOOGLE_COMPRESSION_UTILS_PORTABLE_H_
 #define THIRD_PARTY_ZLIB_GOOGLE_COMPRESSION_UTILS_PORTABLE_H_
 
 #include <stdint.h>
 
-/* TODO(cavalcantii): remove support for Chromium ever building with a system
+/* TODO(cavalcantii): remove support for Monyhar ever building with a system
  * zlib.
  */
 #if defined(USE_SYSTEM_ZLIB)

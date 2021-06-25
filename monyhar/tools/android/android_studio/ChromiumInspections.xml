@@ -1,6 +1,6 @@
 <profile version="1.0">
-  <option name="myName" value="Chromium" />
-  <!-- We use asserts in Chromium. See https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/java/java.md#Asserts -->
+  <option name="myName" value="Monyhar" />
+  <!-- We use asserts in Monyhar. See https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/java/java.md#Asserts -->
   <inspection_tool class="AndroidLintAssert" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="AndroidLintRtlCompat" enabled="false" level="ERROR" enabled_by_default="false" />
 </profile>

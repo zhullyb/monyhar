@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ namespace media {
 const char kTimeUMAPrefix[] = "TimeTo.";
 
 // Used to convert a WebContentDecryptionModuleResult into a CdmPromiseTemplate
-// so that it can be passed through Chromium. When resolve(T) is called, the
+// so that it can be passed through Monyhar. When resolve(T) is called, the
 // appropriate complete...() method on WebContentDecryptionModuleResult will be
 // invoked. If reject() is called instead,
 // WebContentDecryptionModuleResult::completeWithError() is called.

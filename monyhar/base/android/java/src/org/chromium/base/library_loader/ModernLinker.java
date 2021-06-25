@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ import org.monyhar.base.metrics.RecordHistogram;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
- * Provides a concrete implementation of the Chromium Linker.
+ * Provides a concrete implementation of the Monyhar Linker.
  *
  * This Linker implementation uses the Android M and later system linker to map Chrome and call
  * |JNI_OnLoad()|.
@@ -65,7 +65,7 @@ class ModernLinker extends Linker {
                 mLocalLibInfo.mRelroFd = -1;
             }
             RecordHistogram.recordBooleanHistogram(
-                    "ChromiumAndroidLinker.RelroProvidedSuccessfully",
+                    "MonyharAndroidLinker.RelroProvidedSuccessfully",
                     mLocalLibInfo.mRelroFd != -1);
 
             // Next state is still to "provide relro", even if there is none, to indicate that
@@ -85,7 +85,7 @@ class ModernLinker extends Linker {
         }
 
         // Load the library a second time, in order to keep using lazy JNI registration. When
-        // loading the library with the Chromium linker, ART doesn't know about our library, so
+        // loading the library with the Monyhar linker, ART doesn't know about our library, so
         // cannot resolve JNI methods lazily. Loading the library a second time makes sure it
         // knows about us.
         //
@@ -110,11 +110,11 @@ class ModernLinker extends Linker {
         mRemoteLibInfo.close();
         Log.d(TAG, "Immediate RELRO availability: %b", relroAvailableImmediately);
         RecordHistogram.recordBooleanHistogram(
-                "ChromiumAndroidLinker.RelroAvailableImmediately", relroAvailableImmediately);
+                "MonyharAndroidLinker.RelroAvailableImmediately", relroAvailableImmediately);
         int status = nativeGetRelroSharingResult();
         assert status != RelroSharingStatus.NOT_ATTEMPTED;
         RecordHistogram.recordEnumeratedHistogram(
-                "ChromiumAndroidLinker.RelroSharingStatus", status, RelroSharingStatus.COUNT);
+                "MonyharAndroidLinker.RelroSharingStatus", status, RelroSharingStatus.COUNT);
     }
 
     @GuardedBy("mLock")

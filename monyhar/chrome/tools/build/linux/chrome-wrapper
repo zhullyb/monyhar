@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Copyright (c) 2011 The Chromium Authors. All rights reserved.
+# Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# Running Chromium via this script makes it possible to set Chromium as the
+# Running Monyhar via this script makes it possible to set Monyhar as the
 # default browser directly out of a compile, without needing to package it.
 
 DESKTOP="monyhar-devel"
-TITLE="Chromium"
+TITLE="Monyhar"
 
 usage() {
   echo "$0 [--gdb] [--help] [--man-page] [--] [chrome-options]"

@@ -3,7 +3,7 @@
 // These tests rely on the User Agent providing an implementation of the
 // WebXR Testing API (https://github.com/immersive-web/webxr-test-api).
 //
-// In Chromium-based browsers, this implementation is provided by a JavaScript
+// In Monyhar-based browsers, this implementation is provided by a JavaScript
 // shim in order to reduce the amount of test-only code shipped to users. To
 // enable these tests the browser must be run with these options:
 //
@@ -37,9 +37,9 @@ function xr_promise_test(name, func, properties, glContextType, glContextPropert
       document.head.appendChild(script);
       await p;
 
-      if (isChromiumBased) {
+      if (isMonyharBased) {
         // Chrome setup
-        await loadChromiumResources();
+        await loadMonyharResources();
       } else if (isWebKitBased) {
         // WebKit setup
         await setupWebKitWebXRTestAPI();
@@ -211,19 +211,19 @@ function forEachWebxrObject(callback) {
   callback(window.XRCoordinateSystemEvent, 'XRCoordinateSystemEvent');
 }
 
-// Code for loading test API in Chromium.
-async function loadChromiumResources() {
+// Code for loading test API in Monyhar.
+async function loadMonyharResources() {
   await loadScript('/resources/monyhar/webxr-test-math-helper.js');
   await import('/resources/monyhar/webxr-test.js');
   await loadScript('/resources/testdriver.js');
   await loadScript('/resources/testdriver-vendor.js');
 
-  // This infrastructure is also used by Chromium-specific internal tests that
+  // This infrastructure is also used by Monyhar-specific internal tests that
   // may need additional resources (e.g. internal API extensions), this allows
   // those tests to rely on this infrastructure while ensuring that no tests
   // make it into public WPTs that rely on APIs outside of the webxr test API.
-  if (typeof(additionalChromiumResources) !== 'undefined') {
-    for (const path of additionalChromiumResources) {
+  if (typeof(additionalMonyharResources) !== 'undefined') {
+    for (const path of additionalMonyharResources) {
       await loadScript(path);
     }
   }

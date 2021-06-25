@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -15,7 +15,7 @@ driver = test_util.create_chrome_webdriver(chrome_options=options)
 
 try:
   app = Application(backend="uia")
-  app.connect(title_re='.*Chrome|.*Chromium')
+  app.connect(title_re='.*Chrome|.*Monyhar')
   app.top_window().child_window(title="Bookmarks", control_type="ToolBar") \
       .print_control_identifiers()
   print("Bookmarkbar is found")

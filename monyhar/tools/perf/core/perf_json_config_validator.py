@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -204,12 +204,12 @@ def ValidatePerfConfigFile(file_handle, is_main_perf_waterfall):
 def main(args):
   del args  # unused
   waterfall_file = os.path.join(
-      path_util.GetChromiumSrcDir(), 'testing', 'buildbot',
+      path_util.GetMonyharSrcDir(), 'testing', 'buildbot',
       'monyhar.perf.json')
   fyi_waterfall_file = os.path.join(
-      path_util.GetChromiumSrcDir(), 'testing', 'buildbot',
+      path_util.GetMonyharSrcDir(), 'testing', 'buildbot',
       'monyhar.perf.fyi.json')
-  calibration_waterfall_file = os.path.join(path_util.GetChromiumSrcDir(),
+  calibration_waterfall_file = os.path.join(path_util.GetMonyharSrcDir(),
                                             'testing', 'buildbot',
                                             'monyhar.perf.calibration.json')
 

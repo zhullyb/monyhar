@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -273,14 +273,14 @@ AST_MATCHER(clang::FieldDecl, isInThirdPartyLocation) {
   llvm::StringRef file_path =
       GetFilePath(Finder->getASTContext().getSourceManager(), Node);
 
-  // Blink is part of the Chromium git repo, even though it contains
+  // Blink is part of the Monyhar git repo, even though it contains
   // "third_party" in its path.
   if (file_path.contains("third_party/blink/"))
     return false;
 
   // Otherwise, just check if the paths contains the "third_party" substring.
   // We don't want to rewrite content of such paths even if they are in the main
-  // Chromium git repository.
+  // Monyhar git repository.
   return file_path.contains("third_party");
 }
 

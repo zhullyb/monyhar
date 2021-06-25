@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2011 The Chromium Authors. All rights reserved.
+# Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -19,11 +19,11 @@ Here's a quick overview of what this script does:
   - Extract the list of source files listed in the PDB, i.e. all the source
     files that have been used to produce the matching binary. This list contains
     some files for which the source code is accessible (e.g. files from the
-    Chromium repo) and some from private repos (e.g. files that have been used
+    Monyhar repo) and some from private repos (e.g. files that have been used
     to build the CRT static library that we link against).
   - Iterate over the list of files from the previous step, from here there's a
     few different possibilities:
-      - This file is coming from a public Git repository (e.g. Chromium), in
+      - This file is coming from a public Git repository (e.g. Monyhar), in
         this case this script will list all the files that are contained in this
         repository and index them all at once (and then remove them from the
         file list it's iterating over).
@@ -74,7 +74,7 @@ from collections import namedtuple
 #     'base64': |boolean indicating if the files are base64 encoded|
 #   }
 #
-# Here's an example of what the entry for the Chromium repo looks like:
+# Here's an example of what the entry for the Monyhar repo looks like:
 #   {
 #     'url': 'monyhar.googlesource/+/{revision}/{file_path}?format=TEXT',
 #     'base64': True
@@ -456,7 +456,7 @@ def UpdatePDB(pdb_filename, verbose=True, build_dir=None, toolchain_dir=None,
 
   if build_dir:
     # Excluding the build directory allows skipping the generated files, for
-    # Chromium this makes the indexing ~10x faster.
+    # Monyhar this makes the indexing ~10x faster.
     build_dir = (os.path.normpath(build_dir)).lower()
     for directory, _, _ in os.walk(build_dir):
       dir_exclusion_list[directory.lower()] = True

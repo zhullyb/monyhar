@@ -30,7 +30,7 @@ If you like things neat, it's tempting to go over a code review over and over un
 
 Please don't leave the reviewee waiting for a long time, keeping in mind timezones and different working hours. If you cannot get to a review within ~24h, please leave a short comment on the CL saying so (and when you can). And if you missed that window, please be courteous if the reviewee IMs you a reminder.
 
-If you will be on vacation or otherwise OOO for more than a few days, please set your nickname in the Chromium code review tool to indicate this (e.g. adding '(OOO until <date>)'). Remember that not everyone sending you code reviews can see your calendar!
+If you will be on vacation or otherwise OOO for more than a few days, please set your nickname in the Monyhar code review tool to indicate this (e.g. adding '(OOO until <date>)'). Remember that not everyone sending you code reviews can see your calendar!
 
 #### Mention the positives
 

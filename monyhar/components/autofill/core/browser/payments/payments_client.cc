@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1443,7 +1443,7 @@ void PaymentsClient::StartRequest() {
             "(save) or receive the user's credit card info."
           trigger:
             "Requests are triggered by a user action, such as selecting a "
-            "masked server card from Chromium's credit card autofill dropdown, "
+            "masked server card from Monyhar's credit card autofill dropdown, "
             "submitting a form which has credit card information, or accepting "
             "the prompt to save a credit card to Payments servers."
           data:
@@ -1458,7 +1458,7 @@ void PaymentsClient::StartRequest() {
         policy {
           cookies_allowed: NO
           setting:
-            "Users can enable or disable this feature in Chromium settings by "
+            "Users can enable or disable this feature in Monyhar settings by "
             "toggling 'Credit cards and addresses using Google Payments', "
             "under 'Advanced sync settings...'. This feature is enabled by "
             "default."

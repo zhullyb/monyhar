@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -55,7 +55,7 @@ def _EnumerateDependencies(story_set):
           deps.add(path_name)
 
   # Return relative paths.
-  prefix_len = len(os.path.realpath(path_util.GetChromiumSrcDir())) + 1
+  prefix_len = len(os.path.realpath(path_util.GetMonyharSrcDir())) + 1
   return [dep[prefix_len:] for dep in deps if dep]
 
 
@@ -114,7 +114,7 @@ def main(args):
     perf_dir = path_util.GetPerfDir()
     benchmark_dirs=[os.path.join(perf_dir, 'benchmarks'),
                     os.path.join(perf_dir, 'contrib')]
-    config = monyhar_config.ChromiumConfig(
+    config = monyhar_config.MonyharConfig(
         top_level_dir=path_util.GetPerfDir(), benchmark_dirs=benchmark_dirs)
     benchmark = config.GetBenchmarkByName(options.benchmark_name)
     if not benchmark:

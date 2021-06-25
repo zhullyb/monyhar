@@ -75,7 +75,7 @@ class AddDeviceEventSet {
 
 /**
  * The following tests are used in the legacy BluetoothFakeAdapter test API
- * used in private Chromium web tests. The tests using the new FakeBluetooth
+ * used in private Monyhar web tests. The tests using the new FakeBluetooth
  * test API have the ability to set the next response of an operation.
  *
  * TODO(569709): Remove this variable once all tests are using the FakeBluetooth
@@ -138,7 +138,7 @@ var gatt_errors_tests = [
  * 'deadbeef-97e5-4cd7-b9f1-f5a427670c59'. The bottom 96 bits of error UUIDs
  * were generated as a type 4 (random) UUID.
  *
- * This method is only used in private Chromium web tests that are using the
+ * This method is only used in private Monyhar web tests that are using the
  * legacy BluetoothFakeAdapter test API.
  *
  * TODO(569709): Remove this variable once all tests are using the FakeBluetooth
@@ -163,7 +163,7 @@ function errorUUID(uuidAlias) {
  *   .then(requestDisconnection => requestDisconnection())
  *   .then(() => // device is now disconnected)
  *
- * This method is only used in private Chromium web tests that are using the
+ * This method is only used in private Monyhar web tests that are using the
  * legacy BluetoothFakeAdapter test API.
  *
  * TODO(569709): Remove this variable once all tests are using the FakeBluetooth

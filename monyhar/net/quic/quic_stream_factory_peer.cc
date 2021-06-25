@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -50,7 +50,7 @@ bool QuicStreamFactoryPeer::HasActiveJob(QuicStreamFactory* factory,
 }
 
 // static
-QuicChromiumClientSession* QuicStreamFactoryPeer::GetPendingSession(
+QuicMonyharClientSession* QuicStreamFactoryPeer::GetPendingSession(
     QuicStreamFactory* factory,
     const quic::QuicServerId& server_id,
     const HostPortPair& destination) {
@@ -63,7 +63,7 @@ QuicChromiumClientSession* QuicStreamFactoryPeer::GetPendingSession(
   return factory->all_sessions_.begin()->first;
 }
 
-QuicChromiumClientSession* QuicStreamFactoryPeer::GetActiveSession(
+QuicMonyharClientSession* QuicStreamFactoryPeer::GetActiveSession(
     QuicStreamFactory* factory,
     const quic::QuicServerId& server_id,
     const NetworkIsolationKey& network_isolation_key) {
@@ -90,7 +90,7 @@ bool QuicStreamFactoryPeer::HasLiveSession(
 }
 
 bool QuicStreamFactoryPeer::IsLiveSession(QuicStreamFactory* factory,
-                                          QuicChromiumClientSession* session) {
+                                          QuicMonyharClientSession* session) {
   for (auto it = factory->all_sessions_.begin();
        it != factory->all_sessions_.end(); ++it) {
     if (it->first == session)
@@ -167,7 +167,7 @@ void QuicStreamFactoryPeer::CacheDummyServerConfig(
       GetCryptoConfig(factory, network_isolation_key);
   quic::QuicCryptoClientConfig::CachedState* cached =
       crypto_config_handle->GetConfig()->LookupOrCreate(quic_server_id);
-  quic::QuicChromiumClock clock;
+  quic::QuicMonyharClock clock;
   cached->Initialize(server_config, source_address_token, certs, "", "",
                      signature, clock.WallNow(), quic::QuicWallTime::Zero());
   DCHECK(!cached->certs().empty());

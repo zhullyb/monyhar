@@ -10,7 +10,7 @@ https://github.com/google/glog/tree/130a3e10de248344cdaeda54aed4c8a5ad7cedac
 - symbolize.cc
 - symbolize.h
 
-The following files are minimal stubs created for use in Chromium:
+The following files are minimal stubs created for use in Monyhar:
 
 - config.h
 - glog/logging.h

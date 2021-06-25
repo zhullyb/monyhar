@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -38,7 +38,7 @@ String EncryptedMediaUtils::ConvertFromInitDataType(
     case media::EmeInitDataType::WEBM:
       return "webm";
     case media::EmeInitDataType::UNKNOWN:
-      // Chromium should not use Unknown, but we use it in Blink when the
+      // Monyhar should not use Unknown, but we use it in Blink when the
       // actual value has been blocked for non-same-origin or mixed content.
       return String();
   }
@@ -68,7 +68,7 @@ String EncryptedMediaUtils::ConvertFromSessionType(
     case WebEncryptedMediaSessionType::kPersistentLicense:
       return kPersistentLicense;
     case WebEncryptedMediaSessionType::kUnknown:
-      // Unexpected session type from Chromium.
+      // Unexpected session type from Monyhar.
       NOTREACHED();
       return String();
   }

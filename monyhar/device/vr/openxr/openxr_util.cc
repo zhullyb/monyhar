@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -104,7 +104,7 @@ XrResult CreateInstance(
 
   error = strcpy_s(instance_create_info.applicationInfo.engineName,
                    base::size(instance_create_info.applicationInfo.engineName),
-                   "Chromium");
+                   "Monyhar");
   DCHECK_EQ(error, 0);
 
   // engine version should be the build number of monyhar

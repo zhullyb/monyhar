@@ -27,7 +27,7 @@ $ out/fuchsia/bin/run_base_unittests -d
 
 ## Run on a device paved with Fuchsia built from source
 
-Make sure that the CPU architecture of your Chromium output directory matches
+Make sure that the CPU architecture of your Monyhar output directory matches
 the architecture of the Fuchsia output directory (x64==x64, arm64==arm64, etc.).
 
 ```bash
@@ -90,7 +90,7 @@ arguments to the test runner script:
   making it easier to attach a debugger.
 * `system-log-file=[/path/to/syslog]` to specify the file to write system logs
   to. Or `system-log-file=-` to write the system logs to stdout. By default,
-  Chromium logs are written to the system log on Fuchsia. This argument is known
+  Monyhar logs are written to the system log on Fuchsia. This argument is known
   to cause `IOError` python exceptions with a QEMU target.
 * `--gtest_repeat=[number] --gtest_break_on_failure` to run a test or test suite
   a certain number of times until it fails. This is useful to investigate flaky

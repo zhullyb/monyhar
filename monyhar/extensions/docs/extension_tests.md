@@ -3,17 +3,17 @@
 [TOC]
 
 ## Overview
-This describes testing in the Chromium extensions system, including
+This describes testing in the Monyhar extensions system, including
 common test types (and when to use each), test utilities and test suites, and
 gives examples of writing extension API tests.
 
 ## Common Test Types
 ### Unit Tests
-Unit tests in Chromium (such as the `unit_tests` and `extensions_unittests`
+Unit tests in Monyhar (such as the `unit_tests` and `extensions_unittests`
 targets) refer to tests that run in a single process.  This process may be the
 browser process (the main “Chrome” process), a renderer process (such as a
 website process or an extension process), or a utility process (such as one
-used to unpack an extension).  Unit tests in Chromium can be multi-threaded,
+used to unpack an extension).  Unit tests in Monyhar can be multi-threaded,
 but cannot span multiple processes.  Many pieces of the environment are either
 mocked or stubbed out, or simply omitted, in unit tests.
 
@@ -26,7 +26,7 @@ anything that requires both a renderer and a browser (such as an extension
 process running and the browser process handling its input).
 
 ### Browser Tests
-Browser tests in Chromium (such as the `browser_tests` and
+Browser tests in Monyhar (such as the `browser_tests` and
 `extensions_browsertests` targets) are multi-process, and instantiate a "real"
 browser.  That is, the majority of the environment is set up, and it much more
 closely resembles an environment that the Chrome browser normally operates in.
@@ -288,7 +288,7 @@ To do this, write a test extension, load it in the test, and leverage the
 chrome.test API in order to perform assertions and break the test into subtests.
 
 The advantage to this type of test is that it "really" uses the API.  The API
-is being called by an extension installed in the Chromium browser, just as it
+is being called by an extension installed in the Monyhar browser, just as it
 would be by a real-world extension.  This also exercises the extension bindings
 code and renderer-side processing, which is not exercised by (browser-side) API
 unit tests.  However, these tests are also frequently more expensive, flakier,

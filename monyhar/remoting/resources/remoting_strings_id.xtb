@@ -72,7 +72,7 @@ Jika '<ph name="SERVICE_SCRIPT_NAME" />' sudah dicentang, hapus centangnya, lalu
 <translation id="4405930547258349619">Pustaka Inti</translation>
 <translation id="443560535555262820">Buka Preferensi Accessibility</translation>
 <translation id="4450893287417543264">Jangan tampilkan lagi</translation>
-<translation id="4512952200932940229">Copyright 2021 The Chromium Authors. Semua Hak Dilindungi Undang-Undang.</translation>
+<translation id="4512952200932940229">Copyright 2021 The Monyhar Authors. Semua Hak Dilindungi Undang-Undang.</translation>
 <translation id="4513946894732546136">Masukan</translation>
 <translation id="4563926062592110512">Klien terputus: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Perangkat jarak jauh</translation>
@@ -147,7 +147,7 @@ Jika '<ph name="SERVICE_SCRIPT_NAME" />' sudah dicentang, hapus centangnya, lalu
 <translation id="7868137160098754906">Masukkan PIN komputer jarak jauh Anda.</translation>
 <translation id="7895403300744144251">Kebijakan keamanan di komputer jarak jauh tidak mengizinkan sambungan dari akun Anda.</translation>
 <translation id="7936528439960309876">Pasang ke Dok Sebelah Kanan</translation>
-<translation id="7970576581263377361">Autentikasi gagal. Login ke Chromium lagi.</translation>
+<translation id="7970576581263377361">Autentikasi gagal. Login ke Monyhar lagi.</translation>
 <translation id="7981525049612125370">Sesi jarak jauh telah berakhir.</translation>
 <translation id="8038111231936746805">(default)</translation>
 <translation id="8041089156583427627">Kirim Masukan</translation>
@@ -181,6 +181,6 @@ Jika '<ph name="SERVICE_SCRIPT_NAME" />' sudah dicentang, hapus centangnya, lalu
 <translation id="9187628920394877737">Beri izin 'Screen Recording' ke <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Konfigurasi host tidak valid.</translation>
 <translation id="981121421437150478">Offline</translation>
-<translation id="985602178874221306">Pengarang Chromium</translation>
+<translation id="985602178874221306">Pengarang Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (terakhir kali online <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

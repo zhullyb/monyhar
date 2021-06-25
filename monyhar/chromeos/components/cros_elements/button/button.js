@@ -1,5 +1,5 @@
 import { __decorate } from "../../../../third_party/material_web_components/components-monyhar/node_modules/tslib/tslib.es6.js";
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 import { Button as MwcButton } from '../../../../third_party/material_web_components/components-monyhar/node_modules/@material/mwc-button/mwc-button.js';

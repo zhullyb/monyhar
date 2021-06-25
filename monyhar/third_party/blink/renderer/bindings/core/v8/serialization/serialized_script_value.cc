@@ -111,7 +111,7 @@ scoped_refptr<SerializedScriptValue> SerializedScriptValue::Create(
 // As IndexedDB stores SSVs to disk indefinitely, we still need to keep around
 // the code needed to deserialize the old format.
 inline static bool IsByteSwappedWiredData(const uint8_t* data, size_t length) {
-  // TODO(pwnall): Return false early if we're on big-endian hardware. Chromium
+  // TODO(pwnall): Return false early if we're on big-endian hardware. Monyhar
   // doesn't currently support big-endian hardware, and there's no header
   // exposing endianness to Blink yet. ARCH_CPU_LITTLE_ENDIAN seems promising,
   // but Blink is not currently allowed to include files from build/.

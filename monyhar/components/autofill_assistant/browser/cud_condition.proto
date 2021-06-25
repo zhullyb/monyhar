@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -17,7 +17,7 @@ message RequiredDataPiece {
   optional Condition condition = 2;
 
   message Condition {
-    // The key to evaluate the condition on. This must match one of Chromium's
+    // The key to evaluate the condition on. This must match one of Monyhar's
     // field_types.h or our own additions AutofillAssistantCustomField.
     optional int32 key = 1;
 

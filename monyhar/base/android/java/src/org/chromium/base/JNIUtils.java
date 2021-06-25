@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ public class JNIUtils {
     private static ClassLoader sJniClassLoader;
 
     /**
-     * This returns a ClassLoader that is capable of loading Chromium Java code. Such a ClassLoader
+     * This returns a ClassLoader that is capable of loading Monyhar Java code. Such a ClassLoader
      * is needed for the few cases where the JNI mechanism is unable to automatically determine the
      * appropriate ClassLoader instance.
      */

@@ -192,7 +192,7 @@ This could fail for an even wider variety of reasons than already listed. Please
 
 ### I couldn't **build** the APK
 
-Try building Chromium. If that doesn't work, please reach out to [the monyhar
+Try building Monyhar. If that doesn't work, please reach out to [the monyhar
 team](https://groups.google.com/a/monyhar.org/forum/#!forum/monyhar-dev) for
 general guidance. If `system_webview_apk` is the only troublesome target, please
 reach out to the WebView team (see previous section).

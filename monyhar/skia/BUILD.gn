@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -331,7 +331,7 @@ component("skia") {
   }
 
   # The *_public variables should be added to 'public' not 'sources'.
-  # However, Skia does not export enough *_public variables to make Chromium
+  # However, Skia does not export enough *_public variables to make Monyhar
   # 'gn check' clean. Until that can be done add the *_public variables to
   # 'sources' so that the buildbot 'analyze' step is aware of their existence.
   sources += skia_core_public
@@ -858,7 +858,7 @@ if (is_apple) {
 
     sources = [
       "$root_out_dir/test_fonts/Ahem.ttf",
-      "ext/data/test_fonts/ChromiumAATTest.ttf",
+      "ext/data/test_fonts/MonyharAATTest.ttf",
     ]
 
     outputs = [ "{{bundle_resources_dir}}/{{source_file_part}}" ]

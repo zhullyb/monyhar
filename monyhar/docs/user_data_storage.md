@@ -1,13 +1,13 @@
 # User Data Storage
 
-This document explains the Chromium policies for files in the `User Data`
+This document explains the Monyhar policies for files in the `User Data`
 directory.
 
 [TOC]
 
 ## Backward Compatibility
 
-Due to the nature of frequent updates, Chromium must always support loading data
+Due to the nature of frequent updates, Monyhar must always support loading data
 from files written by previous versions. A good rule of thumb is to leave
 migration code in place for *at least* one year (approximately 9 milestones with
 the current 6-week release cadence). It is not uncommon for clients to update
@@ -16,7 +16,7 @@ migration code -- if the complexity is low, keep it indefinitely.
 
 ## Version Downgrade Processing
 
-In cases where Chromium is run against a `User Data` directory written by a
+In cases where Monyhar is run against a `User Data` directory written by a
 newer version, the browser may run to the extent possible with the following
 behaviors:
 

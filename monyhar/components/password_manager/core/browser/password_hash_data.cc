@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -76,7 +76,7 @@ uint64_t CalculatePasswordHash(const base::StringPiece16& text,
                                  kBytesFromHash);
 
   // EVP_PBE_scrypt can only fail due to memory allocation error (which aborts
-  // Chromium) or invalid parameters. In case of a failure a hash could leak
+  // Monyhar) or invalid parameters. In case of a failure a hash could leak
   // information from the stack, so using CHECK is better than DCHECK.
   CHECK(scrypt_ok);
 

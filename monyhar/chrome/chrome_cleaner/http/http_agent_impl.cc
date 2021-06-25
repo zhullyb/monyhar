@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -503,7 +503,7 @@ std::wstring GetWinHttpVersion() {
   return L"?";
 }
 
-// Adapted from Chromium content/common/user_agent.cc
+// Adapted from Monyhar content/common/user_agent.cc
 void GetOSAndCPU(UserAgent* user_agent) {
   int32_t os_major_version = 0;
   int32_t os_minor_version = 0;

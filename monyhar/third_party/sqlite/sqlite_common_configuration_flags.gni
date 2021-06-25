@@ -1,5 +1,5 @@
 # Compile-time options passed to SQLite when compiling and building
-# the Chromium amalgamations.
+# the Monyhar amalgamations.
 sqlite_common_configuration_flags = [
   "SQLITE_ENABLE_FTS3",
 

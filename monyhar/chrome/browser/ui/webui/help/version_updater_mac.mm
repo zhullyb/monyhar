@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -77,7 +77,7 @@ int GetDownloadProgress(int64_t downloaded_bytes, int64_t total_bytes) {
          base::ClampToRange(double{downloaded_bytes} / total_bytes, 0.0, 1.0);
 }
 
-void UpdateStatusFromChromiumUpdater(
+void UpdateStatusFromMonyharUpdater(
     VersionUpdater::StatusCallback status_callback,
     updater::UpdateService::UpdateState update_state) {
   VersionUpdater::Status status = VersionUpdater::Status::CHECKING;
@@ -142,7 +142,7 @@ void VersionUpdaterMac::CheckForUpdate(StatusCallback status_callback,
     update_client_ = BrowserUpdaterClient::Create();
 
   update_client_->CheckForUpdate(base::BindRepeating(
-      &UpdateStatusFromChromiumUpdater, std::move(status_callback)));
+      &UpdateStatusFromMonyharUpdater, std::move(status_callback)));
   return;
 #else
   status_callback_ = std::move(status_callback);

@@ -29,8 +29,8 @@ Internet Explorer 10: PASSED
 Internet Explorer 9: PASSED
 Internet Explorer 8: PASSED
 Internet Explorer 7: PASSED
-Microsoft Edge (Chromium) — Windows: PASSED
-Microsoft Edge (Chromium) — Mac: PASSED
+Microsoft Edge (Monyhar) — Windows: PASSED
+Microsoft Edge (Monyhar) — Mac: PASSED
 Microsoft Edge — iPhone: PASSED
 Microsoft Edge — iPad: PASSED
 Microsoft Edge — Android Mobile: PASSED

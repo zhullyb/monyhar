@@ -11,7 +11,7 @@ Background
 We update our toolchain (the C/C++/Objective-C compiler `clang`, the linker
 `lld`, and a small assortment of helper binaries) every 2-4 weeks.
 
-This toolchain is used to build Chromium for **7+ platforms** (Android,
+This toolchain is used to build Monyhar for **7+ platforms** (Android,
 Chromecast, Chrome OS, Fuchsia, iOS, Linux, macOS, Windows) targeting
 **4+ CPUs** (arm, arm64, x86, x64) in **6+ build modes** (debug (component
 non-optimized), release (static build optimized), official build (very
@@ -29,7 +29,7 @@ work with the new toolchain. We use all default CQ bots, and a long list of
 opt-in trybots.
 
 The toolchain team has established contacts to most platform owners in
-Chromium, so that we can ask for help quickly when needed.
+Monyhar, so that we can ask for help quickly when needed.
 
 
 Toolchain guarantees
@@ -37,7 +37,7 @@ Toolchain guarantees
 
 For configurations that have a bot on the [monyhar.clang waterfall](
 https://ci.monyhar.org/p/monyhar/g/monyhar.clang/console) (which
-is where all the bots are that test Chromium with trunk clang/llvm)
+is where all the bots are that test Monyhar with trunk clang/llvm)
 and that are either part of the default CQ or that have an opt-in bot
 that's [used on clang rolls](https://cs.monyhar.org/monyhar/src/tools/clang/scripts/upload_revision.py?q=upload_revi&sq=package:monyhar&g=0&l=33),
 we guarantee that we won't land a toolchain update that breaks that
@@ -81,7 +81,7 @@ that we can act on the quickest:
 - Link to the CL with the toolchain update that broke you.
 - Link to a specific build showing the breakage, ideally the first instance
   of the breakage.
-- If reproducing your problem requires more than a regular Chromium checkout
+- If reproducing your problem requires more than a regular Monyhar checkout
   and replicating what the bot you linked to does, or if you can't link to a
   build: Provide commands on how to reproduce your problem, targeted at someone
   who knows the monyhar build well but doesn't know your feature / platform

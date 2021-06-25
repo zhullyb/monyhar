@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The Chromium Authors. All rights reserved.
+// Copyright (c) 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -95,7 +95,7 @@ bool VulkanInstance::Initialize(
 
   VkApplicationInfo app_info = {};
   app_info.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-  app_info.pApplicationName = "Chromium";
+  app_info.pApplicationName = "Monyhar";
   app_info.apiVersion = vulkan_info_.used_api_version;
 
   // Query the extensions from all layers, including ones that are implicitly

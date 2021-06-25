@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -2537,7 +2537,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.BrowserLoadTime" units="ms"
+<histogram name="MonyharAndroidLinker.BrowserLoadTime" units="ms"
     expires_after="M99">
   <owner>rsesek@monyhar.org</owner>
   <summary>
@@ -2546,7 +2546,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.RelroAvailableImmediately"
+<histogram name="MonyharAndroidLinker.RelroAvailableImmediately"
     enum="BooleanRelroAvailableImmediately" expires_after="2021-07-07">
   <owner>lizeb@monyhar.org</owner>
   <owner>pasko@monyhar.org</owner>
@@ -2557,15 +2557,15 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.RelroProvidedSuccessfully"
+<histogram name="MonyharAndroidLinker.RelroProvidedSuccessfully"
     enum="BooleanSuccess" expires_after="2021-07-07">
   <owner>lizeb@monyhar.org</owner>
   <owner>pasko@monyhar.org</owner>
   <summary>
-    Recorded when the native library is loaded by the Chromium linker, and an
+    Recorded when the native library is loaded by the Monyhar linker, and an
     attempt to spawn a shared RELRO region is made. Indicates whether the
     attempt was a success. If the number of samples from
-    &quot;ChromiumAndroidLinker.RelroAvailableImmediately&quot; where the
+    &quot;MonyharAndroidLinker.RelroAvailableImmediately&quot; where the
     availability was not immediate is large compared to the counts of successful
     RELRO spawns, it would indicate potential startup performance improvements
     when starting child process(es) during early browser startup phases.
@@ -2573,7 +2573,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.RelroSharingStatus"
+<histogram name="MonyharAndroidLinker.RelroSharingStatus"
     enum="RelroSharingStatus" expires_after="2021-05-06">
   <owner>lizeb@monyhar.org</owner>
   <owner>pasko@monyhar.org</owner>
@@ -2584,7 +2584,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.RendererLoadTime" units="ms"
+<histogram name="MonyharAndroidLinker.RendererLoadTime" units="ms"
     expires_after="M99">
   <owner>rsesek@monyhar.org</owner>
   <summary>
@@ -8521,11 +8521,11 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>perrier@monyhar.org</owner>
   <owner>chrome-language@google.com</owner>
   <summary>
-    The availability status of Android system languages for use as the Chromium
-    UI language. If the Chromium UI language is overridden, it must be
+    The availability status of Android system languages for use as the Monyhar
+    UI language. If the Monyhar UI language is overridden, it must be
     avaliable. The default language is the one used by the JVM for localization.
     This will be different from the top Android language if the top Android
-    language is not available for localization in Chromium. For more info, see
+    language is not available for localization in Monyhar. For more info, see
     the Android documentation on LocaleList.getDefault().
 
     This histogram is recorded during onForgroundStart() for Android.
@@ -8537,7 +8537,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>perrier@monyhar.org</owner>
   <owner>chrome-language@google.com</owner>
   <summary>
-    The status of the current Chromium UI. It is correct when the UI matches
+    The status of the current Monyhar UI. It is correct when the UI matches
     what the JVM default language is set to.
 
     This histogram is recorded during onForgroundStart() for Android.
@@ -8549,9 +8549,9 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>perrier@monyhar.org</owner>
   <owner>chrome-language@google.com</owner>
   <summary>
-    The status of the current Chromium UI when the UI language is not
+    The status of the current Monyhar UI when the UI language is not
     overridden. The UI language is correct when it matches the default Android
-    system language. If no Android language is available as the Chromium
+    system language. If no Android language is available as the Monyhar
     language, then the UI is by definition incorrect.
 
     This histogram is recorded during onForgroundStart() for Android.
@@ -8563,7 +8563,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>perrier@monyhar.org</owner>
   <owner>chrome-language@google.com</owner>
   <summary>
-    The status of the current Chromium UI when the UI language is overridden.
+    The status of the current Monyhar UI when the UI language is overridden.
     The UI language is correct when it matches the override UI value set as the
     default locale. The Native UI language can be different from the Java UI
     language if Play Store daily hygiene has not run since an override language
@@ -8938,7 +8938,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     expires_after="M95">
   <owner>dmurph@monyhar.org</owner>
   <owner>pwnall@monyhar.org</owner>
-  <summary>Methods where leveldb's Chromium environment has IO errors.</summary>
+  <summary>Methods where leveldb's Monyhar environment has IO errors.</summary>
 </histogram>
 
 <histogram name="LevelDBEnv.MissingFiles" units="files" expires_after="M95">
@@ -11668,10 +11668,10 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     before the page becomes interactive.
 
     Most things that affect user-perceived page load time on iOS are within
-    WebKit, not within Chromium/Chrome code. To assess whether a change in this
+    WebKit, not within Monyhar/Chrome code. To assess whether a change in this
     metric is caused by a WebKit change, split by OS version. WebKit changes
     always come with an OS version change. Obviously, aside from WebKit and
-    Chromium changes, this metric can move due to exogenous factors such as
+    Monyhar changes, this metric can move due to exogenous factors such as
     changes in what type of web page people are looking at or changes in the
     implementation of popular websites.
 
@@ -11714,10 +11714,10 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     before the page becomes interactive.
 
     Most things that affect user-perceived page load time on iOS are within
-    WebKit, not within Chromium/Chrome code. To assess whether a change in this
+    WebKit, not within Monyhar/Chrome code. To assess whether a change in this
     metric is caused by a WebKit change, split by OS version. WebKit changes
     always come with an OS version change. Obviously, aside from WebKit and
-    Chromium changes, this metric can move due to exogenous factors such as
+    Monyhar changes, this metric can move due to exogenous factors such as
     changes in what type of web page people are looking at or changes in the
     implementation of popular websites.
 
@@ -11768,10 +11768,10 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     before the page becomes interactive.
 
     Most things that affect user-perceived page load time on iOS are within
-    WebKit, not within Chromium/Chrome code. To assess whether a change in this
+    WebKit, not within Monyhar/Chrome code. To assess whether a change in this
     metric is caused by a WebKit change, split by OS version. WebKit changes
     always come with an OS version change. Obviously, aside from WebKit and
-    Chromium changes, this metric can move due to exogenous factors such as
+    Monyhar changes, this metric can move due to exogenous factors such as
     changes in what type of web page people are looking at or changes in the
     implementation of popular websites.
   </summary>
@@ -11815,10 +11815,10 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     before the page becomes interactive.
 
     Most things that affect user-perceived page load time on iOS are within
-    WebKit, not within Chromium/Chrome code. To assess whether a change in this
+    WebKit, not within Monyhar/Chrome code. To assess whether a change in this
     metric is caused by a WebKit change, split by OS version. WebKit changes
     always come with an OS version change. Obviously, aside from WebKit and
-    Chromium changes, this metric can move due to exogenous factors such as
+    Monyhar changes, this metric can move due to exogenous factors such as
     changes in what type of web page people are looking at or changes in the
     implementation of popular websites.
   </summary>
@@ -17232,7 +17232,7 @@ should be kept until we use this API.  -->
   <summary>
     Recorded when a touch event excludes an active touch (a touch-id/dwId that
     previously generated a TOUCHEVENTF_DOWN, and has not since generated a
-    TOUCHEVENTF_UP). Chromium generates a simulated event to maintain
+    TOUCHEVENTF_UP). Monyhar generates a simulated event to maintain
     consistency/correctness. Only recorded on Windows.
 
     This workaround will be removed once usage drops off. See
@@ -19458,7 +19458,7 @@ regressions. -->
     expires_after="2022-01-31">
   <owner>ntfschr@monyhar.org</owner>
   <owner>src/android_webview/OWNERS</owner>
-  <summary>Records calls to WebView APIs in WebViewChromium.</summary>
+  <summary>Records calls to WebView APIs in WebViewMonyhar.</summary>
 </histogram>
 
 <histogram name="Welcome.SignInPromptResult" enum="WelcomeSignInPromptOutcome"

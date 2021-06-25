@@ -1,8 +1,8 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Presubmit script for Chromium JS resources.
+"""Presubmit script for Monyhar JS resources.
 
 See chrome/browser/PRESUBMIT.py
 """
@@ -91,7 +91,7 @@ class JSChecker(object):
     return start * " " + length * "^"
 
   def RunChecks(self):
-    """Check for violations of the Chromium JavaScript style guide. See
+    """Check for violations of the Monyhar JavaScript style guide. See
        https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/web/web.md#JavaScript
     """
     results = []

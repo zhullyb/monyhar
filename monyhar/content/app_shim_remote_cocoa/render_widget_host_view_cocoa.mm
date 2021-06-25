@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1653,12 +1653,12 @@ void ExtractUnderlines(NSAttributedString* string,
 //     [WebHTMLView insertText] ->
 //     Editor::insertText()
 //
-// Unfortunately, it is hard for Chromium to use this implementation because
+// Unfortunately, it is hard for Monyhar to use this implementation because
 // it causes key-typing jank.
 // RenderWidgetHostViewMac is running in a browser process. On the other
 // hand, Editor and EventHandler are running in a renderer process.
 // So, if we used this implementation, a NSKeyDown event is dispatched to
-// the following functions of Chromium.
+// the following functions of Monyhar.
 //
 // [RenderWidgetHostViewMac keyEvent] (browser) ->
 //     |Sync IPC (KeyDown)| (*1) ->

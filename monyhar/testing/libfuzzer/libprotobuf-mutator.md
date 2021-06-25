@@ -1,11 +1,11 @@
-# Getting Started with libprotobuf-mutator (LPM) in Chromium
+# Getting Started with libprotobuf-mutator (LPM) in Monyhar
 
 *** note
 **Note:** Writing grammar fuzzers with libprotobuf-mutator requires greater
 effort than writing fuzzers with libFuzzer alone. If you run into problems, send
 an email to [fuzzing@monyhar.org] for help.
 
-**Prerequisites:** Knowledge of [libFuzzer in Chromium] and basic understanding
+**Prerequisites:** Knowledge of [libFuzzer in Monyhar] and basic understanding
 of [Protocol Buffers].
 ***
 
@@ -89,8 +89,8 @@ if (use_libfuzzer) {
 }
 ```
 
-There's one more step however. Because Chromium doesn't want to ship to users
-the full protobuf library, all `.proto` files in Chromium that are used in
+There's one more step however. Because Monyhar doesn't want to ship to users
+the full protobuf library, all `.proto` files in Monyhar that are used in
 production contain this line: `option optimize_for = LITE_RUNTIME` But this
 line is incompatible with libprotobuf-mutator. Thus, we need to modify the
 `proto_library` build target so that builds when fuzzing are compatible with
@@ -107,7 +107,7 @@ fuzzable_proto_library("my_proto") {
 ```
 
 And with that we have completed writing a libprotobuf-mutator fuzz target for
-Chromium code that accepts protobufs.
+Monyhar code that accepts protobufs.
 
 
 ## Write a grammar-based fuzzer with libprotobuf-mutator
@@ -359,7 +359,7 @@ fuzzer).
   bottleneck in your fuzzer, you may want to consider using the binary format.
   This will probably not be the case.
 
-[libfuzzer in Chromium]: getting_started.md
+[libfuzzer in Monyhar]: getting_started.md
 [Protocol Buffers]: https://developers.google.com/protocol-buffers/docs/cpptutorial
 [fuzzing@monyhar.org]: mailto:fuzzing@monyhar.org
 [this]: https://github.com/google/libprotobuf-mutator/tree/master/examples/libfuzzer/libfuzzer_example.cc

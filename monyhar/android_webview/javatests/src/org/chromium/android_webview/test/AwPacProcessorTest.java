@@ -1,11 +1,11 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 package org.monyhar.android_webview.test;
 import androidx.test.filters.SmallTest;
 
-import com.android.webview.monyhar.WebViewChromiumFactoryProvider;
+import com.android.webview.monyhar.WebViewMonyharFactoryProvider;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,7 +35,7 @@ public class AwPacProcessorTest {
 
     @Before
     public void setUp() {
-        JNIUtils.setClassLoader(WebViewChromiumFactoryProvider.class.getClassLoader());
+        JNIUtils.setClassLoader(WebViewMonyharFactoryProvider.class.getClassLoader());
         LibraryLoader.getInstance().ensureInitialized();
 
         mProcessor = AwPacProcessor.getInstance();

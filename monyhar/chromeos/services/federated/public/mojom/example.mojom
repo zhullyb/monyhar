@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -8,12 +8,12 @@
 // /tensorflow/core/example/example.proto in the TensorFlow code.
 
 // NOTE: This mojom should exist in two places and must be kept in sync:
-//       Chromium:  src/chromeos/services/federated/public/mojom/
+//       Monyhar:  src/chromeos/services/federated/public/mojom/
 //       Chrome OS: src/platform2/federated/mojom/
-//       Note: Other repos downstream of Chromium might also use this mojom.
+//       Note: Other repos downstream of Monyhar might also use this mojom.
 // Example: A backwards-compatible mojom change (and corresponding
 // implementation change) can be made in Chrome OS first, then replicated to the
-// clients (Chromium, other downstream repos) later.
+// clients (Monyhar, other downstream repos) later.
 // TODO(alanlxl): config a sync tool for federated mojo files.
 
 module chromeos.federated.mojom;

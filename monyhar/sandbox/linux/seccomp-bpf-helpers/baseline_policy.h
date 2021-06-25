@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,8 +19,8 @@ namespace sandbox {
 // have a clear semantics and is mostly "implementation-defined".
 //
 // This class implements the Policy interface with a "baseline"
-// policy for use within Chromium.
-// The "baseline" policy is somewhat arbitrary. All Chromium policies are an
+// policy for use within Monyhar.
+// The "baseline" policy is somewhat arbitrary. All Monyhar policies are an
 // alteration of it, and it represents a reasonable common ground to run most
 // code in a sandboxed environment.
 // A baseline policy is only valid for the process for which this object was

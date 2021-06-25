@@ -1,4 +1,4 @@
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -23,7 +23,7 @@ from telemetry.timeline import model as model_module
 from telemetry.timeline import tracing_config
 
 
-BLINK_PERF_BASE_DIR = os.path.join(path_util.GetChromiumSrcDir(),
+BLINK_PERF_BASE_DIR = os.path.join(path_util.GetMonyharSrcDir(),
                                    'third_party', 'blink', 'perf_tests')
 SKIPPED_FILE = os.path.join(BLINK_PERF_BASE_DIR, 'Skipped')
 

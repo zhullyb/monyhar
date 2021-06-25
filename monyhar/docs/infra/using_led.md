@@ -2,7 +2,7 @@
 
 LED is an infrastructure tool used to manually trigger builds on any builder
 running on LUCI. It's designed to help debug build failures or experiment with
-new builder changes. This doc describes how to use it with Chromium's builders.
+new builder changes. This doc describes how to use it with Monyhar's builders.
 
 [TOC]
 
@@ -47,7 +47,7 @@ present in the URL of the builder page, and is very likely "monyhar/ci".)
 3. Checkout the [tools/build][3] repo (if not already present) and navigate to
 the [monyhar][8] and/or [monyhar_tests][9] recipe modules. These, along with
 the other recipe_modules located in tools/build, are how the majority of a
-Chromium builder's recipe is defined.
+Monyhar builder's recipe is defined.
 4. Make the desired recipe change. (Consider running local recipe unittests
 before proceeding by running `recipes.py test train` via the [recipes.py][10]
 script.

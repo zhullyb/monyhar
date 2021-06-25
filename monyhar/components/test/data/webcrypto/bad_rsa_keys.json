@@ -135,7 +135,7 @@
   //
   // According to JWA, such keys are valid, but applications SHOULD
   // include all the parameters when sending, and recipients MAY
-  // accept them, but are not required to. Chromium's WebCrypto does
+  // accept them, but are not required to. Monyhar's WebCrypto does
   // not allow such degenerate keys.
   {
     "key_format": "jwk",

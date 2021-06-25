@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -65,7 +65,7 @@ static NSString* const kPrivacyPolicyUrl =
 }
 
 #ifndef NDEBUG
-// Used by Chromium debug build to authenticate.
+// Used by Monyhar debug build to authenticate.
 // TODO(yuweih): This interface is deprecated in iOS 10 and needs some cleanups.
 - (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url {
   DCHECK([RemotingService.instance.authentication

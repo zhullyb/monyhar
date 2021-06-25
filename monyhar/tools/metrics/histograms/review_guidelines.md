@@ -2,7 +2,7 @@
 
 [TOC]
 
-This covers how to review metrics code in the Chromium codebase.
+This covers how to review metrics code in the Monyhar codebase.
 
 ## UMA Histograms
 

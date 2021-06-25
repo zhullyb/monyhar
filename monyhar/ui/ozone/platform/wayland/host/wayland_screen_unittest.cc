@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -585,7 +585,7 @@ TEST_P(WaylandScreenTest, GetCursorScreenPoint) {
 
   // The cursor screen point must be converted to the top-level window
   // coordinates as long as Wayland doesn't provide global coordinates of
-  // surfaces and Chromium assumes those windows are always located at origin
+  // surfaces and Monyhar assumes those windows are always located at origin
   // (0,0). For more information, check the comment in
   // WaylandWindow::UpdateCursorPositionFromEvent.
   EXPECT_EQ(gfx::Point(1912, 1071), platform_screen_->GetCursorScreenPoint());

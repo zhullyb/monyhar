@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@
 // This file defines an interface that is used by the code in
 // components/nacl/renderer/plugin/.  It is defined as a PPAPI PPB_*
 // interface for historical reasons: The code in plugin/ used to live
-// outside the Chromium repo.
+// outside the Monyhar repo.
 //
 // In the future, we may integrate the code in nacl/renderer/plugin/ more
 // closely with nacl/renderer/.  This could include having plugin/ call the
@@ -212,7 +212,7 @@ namespace nacl {
 // There is not really a good name for this set of interfaces because the
 // grouping exists only for historical reasons.  It used to be a PPAPI
 // PPB_* interface (PPB_NaCl_Private) because the code in plugin/ used to
-// live outside the Chromium repo and used to be built as a separate
+// live outside the Monyhar repo and used to be built as a separate
 // DSO/DLL.  Since that's no longer the case, there is now no strong
 // distinction between renderer/ and renderer/plugin/.
 class PPBNaClPrivate {

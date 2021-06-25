@@ -1,7 +1,7 @@
 {
   "name": "layout-test-tidy",
   "version": "0.0.6",
-  "description": "Chromium/Blink layout test clean up tool",
+  "description": "Monyhar/Blink layout test clean up tool",
   "devDependencies": {
     "clang-format": "^1.0.49",
     "jsdom": "^10.0.0",

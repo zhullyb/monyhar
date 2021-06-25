@@ -1,6 +1,6 @@
 # Generic Sensors, //content part
 
-This directory contains part of the [Generic Sensors API](https://w3c.github.io/sensors) implementation in Chromium. See the [Blink README.md](/third_party/blink/renderer/modules/sensor/README.md) and the [services README.md](/services/device/generic_sensor/README.md) for more information about the architecture.
+This directory contains part of the [Generic Sensors API](https://w3c.github.io/sensors) implementation in Monyhar. See the [Blink README.md](/third_party/blink/renderer/modules/sensor/README.md) and the [services README.md](/services/device/generic_sensor/README.md) for more information about the architecture.
 
 From a spec perspective, the code in `SensorProviderProxyImpl` implements the following steps together with Blink:
 

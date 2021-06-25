@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -40,7 +40,7 @@ def RunGeneratingTests():
 def main():
   if not os.path.exists("ENG_REVIEW_OWNERS"):
     sys.stderr.write(
-        "Please run run_all_tests.py from the root dir of Chromium")
+        "Please run run_all_tests.py from the root dir of Monyhar")
     return -1
 
   if not os.path.exists(

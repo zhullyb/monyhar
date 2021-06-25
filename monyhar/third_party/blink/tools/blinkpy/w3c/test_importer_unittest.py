@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -15,7 +15,7 @@ from blinkpy.common.path_finder import RELATIVE_WEB_TESTS
 from blinkpy.common.system.executive_mock import MockCall
 from blinkpy.common.system.executive_mock import MockExecutive
 from blinkpy.common.system.log_testing import LoggingTestCase
-from blinkpy.w3c.monyhar_commit_mock import MockChromiumCommit
+from blinkpy.w3c.monyhar_commit_mock import MockMonyharCommit
 from blinkpy.w3c.local_wpt import LocalWPT
 from blinkpy.w3c.local_wpt_mock import MockLocalWPT
 from blinkpy.w3c.test_importer import TestImporter, ROTATIONS_URL, SHERIFF_EMAIL_FALLBACK, RUBBER_STAMPER_BOT
@@ -319,7 +319,7 @@ class TestImporterTest(LoggingTestCase):
         importer = self._get_test_importer(
             host, wpt_github=MockWPTGitHub(pull_requests=[]))
         importer.wpt_git = MockGit(cwd='/tmp/wpt', executive=host.executive)
-        fake_commit = MockChromiumCommit(
+        fake_commit = MockMonyharCommit(
             host,
             subject='My fake commit',
             patch=('Fake patch contents...\n'
@@ -368,7 +368,7 @@ class TestImporterTest(LoggingTestCase):
         host = self.mock_host()
         wpt_github = MockWPTGitHub(pull_requests=[])
         importer = self._get_test_importer(host, wpt_github=wpt_github)
-        commit = MockChromiumCommit(host, subject='My fake commit')
+        commit = MockMonyharCommit(host, subject='My fake commit')
         importer.exportable_but_not_exported_commits = lambda _: [commit]
         # Failure to apply patch.
         local_wpt = MockLocalWPT(apply_patch=['Failed'])
@@ -410,7 +410,7 @@ class TestImporterTest(LoggingTestCase):
         importer = self._get_test_importer(self.mock_host())
         self.assertEqual(
             importer._commit_message('aaaa', '1111'), 'Import 1111\n\n'
-            'Using wpt-import in Chromium aaaa.\n\n'
+            'Using wpt-import in Monyhar aaaa.\n\n'
             'No-Export: true')
 
     def test_cl_description_with_empty_environ(self):

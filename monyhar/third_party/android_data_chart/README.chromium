@@ -9,5 +9,5 @@ This is a modified copy of the data usage chart UI widget from Android's
 Settings app. The widget shows a graph of data usage and data savings over time.
 
 Local Modifications:
-The code has been modified rather extensively to tweak the UI to Chromium's
+The code has been modified rather extensively to tweak the UI to Monyhar's
 needs.

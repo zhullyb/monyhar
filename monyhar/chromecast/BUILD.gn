@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -383,7 +383,7 @@ cast_test_group("cast_tests") {
       # TODO(mbjorge): net_unittests do not complete when run with sanitizers,
       # (in particular, TSAN and UBSAN), resulting in build machines getting stuck
       # for many hours. Disable them for now, since these are getting run on
-      # Chromium bots anyway. (internal b/31279943)
+      # Monyhar bots anyway. (internal b/31279943)
       gtest_excludes = [ "*" ]
     } else if (target_os == "linux" && !is_cast_desktop_build) {
       # Run net_unittests first to avoid random failures due to slow python startup

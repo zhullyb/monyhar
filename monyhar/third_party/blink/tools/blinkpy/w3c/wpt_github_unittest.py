@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -7,7 +7,7 @@ import json
 import unittest
 
 from blinkpy.common.host_mock import MockHost
-from blinkpy.w3c.monyhar_commit_mock import MockChromiumCommit
+from blinkpy.w3c.monyhar_commit_mock import MockMonyharCommit
 from blinkpy.w3c.common import EXPORT_PR_LABEL
 from blinkpy.w3c.wpt_github import MAX_PR_HISTORY_WINDOW, GitHubError, MergeError, PullRequest, WPTGitHub
 
@@ -405,7 +405,7 @@ class WPTGitHubTest(unittest.TestCase):
         self.wpt_github.all_pull_requests = lambda: [
             PullRequest('PR1', 1, 'body\nChange-Id: I00c0ffee', 'open', []),
             PullRequest('PR2', 2, 'body\nChange-Id: I00decade', 'open', []), ]
-        monyhar_commit = MockChromiumCommit(
+        monyhar_commit = MockMonyharCommit(
             MockHost(),
             change_id='I00decade',
             position='refs/heads/master@{#10}')
@@ -423,7 +423,7 @@ class WPTGitHubTest(unittest.TestCase):
                 'body\nChange-Id: I00decade\nCr-Commit-Position: refs/heads/master@{#33}',
                 'open', []),
         ]
-        monyhar_commit = MockChromiumCommit(
+        monyhar_commit = MockMonyharCommit(
             MockHost(),
             change_id='I00decade',
             position='refs/heads/master@{#10}')
@@ -437,14 +437,14 @@ class WPTGitHubTest(unittest.TestCase):
                         'open', []),
         ]
 
-        monyhar_commit = MockChromiumCommit(
+        monyhar_commit = MockMonyharCommit(
             MockHost(),
             change_id='I00c0ffee',
             position='refs/heads/master@{#10}')
         pull_request = self.wpt_github.pr_for_monyhar_commit(monyhar_commit)
         self.assertEqual(pull_request.number, 1)
 
-        monyhar_commit = MockChromiumCommit(
+        monyhar_commit = MockMonyharCommit(
             MockHost(),
             change_id='I00decade',
             position='refs/heads/master@{#33}')

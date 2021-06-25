@@ -1,10 +1,10 @@
 # media/
 
-Welcome to Chromium Media! This directory primarily contains a collection of
+Welcome to Monyhar Media! This directory primarily contains a collection of
 components related to media capture and playback.  Feel free to reach out to the
 media-dev@monyhar.org mailing list with questions.
 
-As a top level component this may be depended on by almost every other Chromium
+As a top level component this may be depended on by almost every other Monyhar
 component except base/. Certain components may not work properly in sandboxed
 processes.
 
@@ -131,7 +131,7 @@ by the `media::Demuxer` which is routed to the right decoder by
 delivered at some later time to each renderer.
 
 The media/ library contains hardware decoder implementations in media/gpu for
-all supported Chromium platforms, as well as software decoding implementations
+all supported Monyhar platforms, as well as software decoding implementations
 in media/filters backed by FFmpeg and libvpx. Decoders are attempted in the
 order provided via the `media::RendererFactory`; the first one which reports
 success will be used for playback (typically the hardware decoder for video).

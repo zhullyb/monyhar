@@ -712,7 +712,7 @@ TEST_F(Canvas2DLayerBridgeTest, DISABLED_PrepareMailboxWhileHibernating)
 }
 
 TEST_F(Canvas2DLayerBridgeTest, ResourceRecycling) {
-  ScopedCanvas2dImageChromiumForTest canvas_2d_image_monyhar(true);
+  ScopedCanvas2dImageMonyharForTest canvas_2d_image_monyhar(true);
   const_cast<gpu::Capabilities&>(SharedGpuContext::ContextProviderWrapper()
                                      ->ContextProvider()
                                      ->GetCapabilities())
@@ -751,7 +751,7 @@ TEST_F(Canvas2DLayerBridgeTest, ResourceRecycling) {
 }
 
 TEST_F(Canvas2DLayerBridgeTest, NoResourceRecyclingWhenPageHidden) {
-  ScopedCanvas2dImageChromiumForTest canvas_2d_image_monyhar(true);
+  ScopedCanvas2dImageMonyharForTest canvas_2d_image_monyhar(true);
   const_cast<gpu::Capabilities&>(SharedGpuContext::ContextProviderWrapper()
                                      ->ContextProvider()
                                      ->GetCapabilities())
@@ -789,7 +789,7 @@ TEST_F(Canvas2DLayerBridgeTest, NoResourceRecyclingWhenPageHidden) {
 }
 
 TEST_F(Canvas2DLayerBridgeTest, ReleaseResourcesAfterBridgeDestroyed) {
-  ScopedCanvas2dImageChromiumForTest canvas_2d_image_monyhar(true);
+  ScopedCanvas2dImageMonyharForTest canvas_2d_image_monyhar(true);
   const_cast<gpu::Capabilities&>(SharedGpuContext::ContextProviderWrapper()
                                      ->ContextProvider()
                                      ->GetCapabilities())

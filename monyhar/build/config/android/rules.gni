@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -518,7 +518,7 @@ if (enable_java_templates) {
   #
   # FooSwitches.java.tmpl
   #
-  # // Copyright {YEAR} The Chromium Authors. All rights reserved.
+  # // Copyright {YEAR} The Monyhar Authors. All rights reserved.
   # // Use of this source code is governed by a BSD-style license that can be
   # // found in the LICENSE file.
   #
@@ -591,7 +591,7 @@ if (enable_java_templates) {
   #
   # FooFeatures.java.tmpl
   #
-  # // Copyright $YEAR The Chromium Authors. All rights reserved.
+  # // Copyright $YEAR The Monyhar Authors. All rights reserved.
   # // Use of this source code is governed by a BSD-style license that can be
   # // found in the LICENSE file.
   #
@@ -687,7 +687,7 @@ if (enable_java_templates) {
   #     libraries to write.
   #   version_number: (Optional) String of expected version of 'main' native
   #     library.
-  #   enable_monyhar_linker: (Optional) Whether to use the Chromium linker.
+  #   enable_monyhar_linker: (Optional) Whether to use the Monyhar linker.
   #   load_library_from_apk: (Optional) Whether libraries should be loaded from
   #     the APK without uncompressing.
   #   use_final_fields: True to use final fields. When false, all other
@@ -2044,7 +2044,7 @@ if (enable_java_templates) {
   #     the apk for the secondary ABI (optional).
   #   generate_buildconfig_java: If defined and false, skip generating the
   #     BuildConfig java class describing the build configuration. The default
-  #     is true when building with Chromium for non-test APKs.
+  #     is true when building with Monyhar for non-test APKs.
   #   generate_final_jni: If defined and false, skip generating the
   #     GEN_JNI srcjar.
   #   jni_registration_header: If specified, causes the
@@ -4443,7 +4443,7 @@ if (enable_java_templates) {
   #    command_line_flags_file: Optional. If provided, named of the on-device
   #      file that will be used to store command-line arguments. The default
   #      is 'command_line_flags_file', but this is typically redefined to
-  #      something more specific for certain bundles (e.g. the Chromium based
+  #      something more specific for certain bundles (e.g. the Monyhar based
   #      APKs use 'chrome-command-line', the WebView one uses
   #      'webview-command-line').
   #
@@ -5122,7 +5122,7 @@ if (enable_java_templates) {
 # org.monyhar.chrome.browser.ChromeLocalizationUtils.
 #
 # Variables:
-#    ui_locales: List of Chromium locale names to generate resources for.
+#    ui_locales: List of Monyhar locale names to generate resources for.
 #
 template("generate_ui_locale_resources") {
   _generating_target_name = "${target_name}__generate"

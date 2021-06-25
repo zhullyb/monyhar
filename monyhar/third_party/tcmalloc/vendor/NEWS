@@ -502,7 +502,7 @@ Here are notable changes since 2.2.1:
   files is now fixed (patch by Ricardo M. Correia)
 
 * (issue-654) pprof now handles "split text segments" feature of
-  Chromium for Android. (patch by simonb)
+  Monyhar for Android. (patch by simonb)
 
 * (issue-655) potential deadlock on windows caused by early call to
   getenv in malloc initialization code was fixed (bug reported and fix

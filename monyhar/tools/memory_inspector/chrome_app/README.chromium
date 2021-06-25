@@ -1,6 +1,6 @@
 This directory contains the source code of the Memory Inspector Chrome App. The
 app runs the Memory Inspector inside PNaCl and can therefore be easily
-distributed without the Chromium tree. It uses several files from the naclports
+distributed without the Monyhar tree. It uses several files from the naclports
 python package. Note that it requires the ADB daemon to be running on the host
 machine (run 'adb start-server').
 

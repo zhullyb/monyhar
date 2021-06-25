@@ -15,4 +15,4 @@ Local modifications:
 - This only includes the lib/, templates/, crdtp/ directories, scripts, build
   and the LICENSE files.
 - DEPS files to allow dependencies on base and gtest, for test_platform.{h,cc}
-- Chromium specific files in crdtp/monyhar.
+- Monyhar specific files in crdtp/monyhar.

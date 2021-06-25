@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -23,7 +23,7 @@ def main():
   telemetry_test_config = os.path.join(
       path_util.GetTelemetryDir(), 'telemetry',
       'telemetry_unittest_deps.json')
-  project_config = monyhar_config.ChromiumConfig(
+  project_config = monyhar_config.MonyharConfig(
       top_level_dir=path_util.GetTelemetryDir(),
       client_configs=[monyhar_config.CLIENT_CONFIG_PATH, telemetry_test_config]
   )

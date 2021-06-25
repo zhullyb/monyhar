@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1632,7 +1632,7 @@ public class ImeTest {
     @MediumTest
     @Feature({"TextInput"})
     public void testSetSelectionCommitTextOrder() throws Exception {
-        final ChromiumBaseInputConnection connection = mRule.getConnection();
+        final MonyharBaseInputConnection connection = mRule.getConnection();
         mRule.runBlockingOnImeThread(new Callable<Void>() {
             @Override
             public Void call() {
@@ -1656,7 +1656,7 @@ public class ImeTest {
     @MediumTest
     @Feature({"TextInput"})
     public void testUiThreadAccess() throws Exception {
-        final ChromiumBaseInputConnection connection = mRule.getConnection();
+        final MonyharBaseInputConnection connection = mRule.getConnection();
         TestThreadUtils.runOnUiThreadBlocking(() -> {
             // We allow UI thread access for most functions, except for
             // beginBatchEdit(), endBatchEdit(), and get* methods().

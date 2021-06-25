@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -58,14 +58,14 @@ class TestDashboardApi(unittest.TestCase):
     response = dashboard_service.Timeseries2(
         test_suite='loading.mobile',
         measurement='timeToFirstContenrfulPaint',
-        bot='ChromiumPerf:androd-go-perf',
+        bot='MonyharPerf:androd-go-perf',
         columns='revision,avg')
     self.assertEqual(response, 'OK')
     self.mock_request.assert_called_once_with(
         dashboard_service.SERVICE_URL + '/api/timeseries2',
         params={'test_suite': 'loading.mobile',
                 'measurement': 'timeToFirstContenrfulPaint',
-                'bot': 'ChromiumPerf:androd-go-perf',
+                'bot': 'MonyharPerf:androd-go-perf',
                 'columns': 'revision,avg'},
         method='POST', use_auth=True, accept='json')
 
@@ -75,7 +75,7 @@ class TestDashboardApi(unittest.TestCase):
       dashboard_service.Timeseries2(
           test_suite='loading.mobile',
           measurement='timeToFirstContenrfulPaint',
-          bot='ChromiumPerf:androd-go-perf',
+          bot='MonyharPerf:androd-go-perf',
           columns='revision,avg')
 
   def testTimeseries2_missingArgsRaisesTypeError(self):

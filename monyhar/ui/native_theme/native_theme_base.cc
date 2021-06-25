@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -155,7 +155,7 @@ gfx::Size NativeThemeBase::GetPartSize(Part part,
     case kSliderTrack:
       return gfx::Size();  // No default size.
     case kSliderThumb:
-      // These sizes match the sizes in Chromium Win.
+      // These sizes match the sizes in Monyhar Win.
       return gfx::Size(kSliderThumbSize, kSliderThumbSize);
     case kTabPanelBackground:
       NOTIMPLEMENTED();

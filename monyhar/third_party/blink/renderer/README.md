@@ -86,11 +86,11 @@ All of the above applies to `bindings/modules` and `modules/`.
 
 ### `extensions/`
 
-The `extensions/` directory contains embedder-specific, not-web-exposed APIs (e.g., not-web-exposed APIs for Chromium OS etc).
+The `extensions/` directory contains embedder-specific, not-web-exposed APIs (e.g., not-web-exposed APIs for Monyhar OS etc).
 The directory is useful to implement embedder-specific, not-web-exposed APIs
 using Blink technologies for web-exposed APIs like WebIDL, V8 bindings and Oilpan.
 
-Remember that you should not implement web-exposed APIs in `extensions/`. Web-exposed APIs should go through the standardization process and be implemented in `core/` or `modules/`. Also, per [the Chromium contributor guideline](https://monyhar.googlesource.com/monyhar/src/+/main/docs/contributing.md#code-guidelines), code that is not used by Chromium should not be added to `extensions/`.
+Remember that you should not implement web-exposed APIs in `extensions/`. Web-exposed APIs should go through the standardization process and be implemented in `core/` or `modules/`. Also, per [the Monyhar contributor guideline](https://monyhar.googlesource.com/monyhar/src/+/main/docs/contributing.md#code-guidelines), code that is not used by Monyhar should not be added to `extensions/`.
 
 In terms of dependencies, `extensions/` can depend on `modules/`, `core/` and `platform/`, but not vice versa.
 
@@ -143,14 +143,14 @@ Member variables of the following types are strongly discouraged in Blink:
 
 The types above could only be used at the boundary to interoperate
 with `//base`, `//services`, `//third_party/blink/common` and other
-Chromium-side or third-party code. It is also allowed to use local variables
+Monyhar-side or third-party code. It is also allowed to use local variables
 of these types when convenient, as long as the result is not stored
 in a member variable.
 For example, calling an utility function on an `std::string` which came
 from `//net` and then converting to `WTF::String` to store in a field
 is allowed.
 
-We try to share as much code between Chromium and Blink as possible,
+We try to share as much code between Monyhar and Blink as possible,
 so the number of these types should go down. However, some types
 really need to be optimized for Blink's workload (e.g., `Vector`,
 `HashTable`, `AtomicString`).

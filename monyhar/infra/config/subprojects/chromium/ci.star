@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -365,7 +365,7 @@ consoles.console_view(
         "ToT SwiftShader": "*os*",
         "ToT SwiftShader|Windows": "*cpu*",
         "ToT SwiftShader|Linux": "*cpu*",
-        "Chromium": "*os*",
+        "Monyhar": "*os*",
     },
 )
 
@@ -1167,7 +1167,7 @@ ci.angle_thin_tester(
 ci.angle_linux_builder(
     name = "android-angle-monyhar-arm64-builder",
     console_view_entry = consoles.console_view_entry(
-        category = "Android|Builder|Chromium",
+        category = "Android|Builder|Monyhar",
         short_name = "arm64",
     ),
 )
@@ -1175,7 +1175,7 @@ ci.angle_linux_builder(
 ci.angle_thin_tester(
     name = "android-angle-monyhar-arm64-nexus5x",
     console_view_entry = consoles.console_view_entry(
-        category = "Android|Nexus5X|Chromium",
+        category = "Android|Nexus5X|Monyhar",
         short_name = "arm64",
     ),
     triggered_by = ["android-angle-monyhar-arm64-builder"],
@@ -1218,7 +1218,7 @@ ci.angle_thin_tester(
 ci.angle_linux_builder(
     name = "linux-angle-monyhar-builder",
     console_view_entry = consoles.console_view_entry(
-        category = "Linux|Builder|Chromium",
+        category = "Linux|Builder|Monyhar",
         short_name = "x64",
     ),
 )
@@ -1226,7 +1226,7 @@ ci.angle_linux_builder(
 ci.angle_thin_tester(
     name = "linux-angle-monyhar-intel",
     console_view_entry = consoles.console_view_entry(
-        category = "Linux|Intel|Chromium",
+        category = "Linux|Intel|Monyhar",
         short_name = "x64",
     ),
     triggered_by = ["linux-angle-monyhar-builder"],
@@ -1235,7 +1235,7 @@ ci.angle_thin_tester(
 ci.angle_thin_tester(
     name = "linux-angle-monyhar-nvidia",
     console_view_entry = consoles.console_view_entry(
-        category = "Linux|NVIDIA|Chromium",
+        category = "Linux|NVIDIA|Monyhar",
         short_name = "x64",
     ),
     triggered_by = ["linux-angle-monyhar-builder"],
@@ -1279,7 +1279,7 @@ ci.angle_thin_tester(
 ci.angle_mac_builder(
     name = "mac-angle-monyhar-builder",
     console_view_entry = consoles.console_view_entry(
-        category = "Mac|Builder|Chromium",
+        category = "Mac|Builder|Monyhar",
         short_name = "x64",
     ),
 )
@@ -1287,7 +1287,7 @@ ci.angle_mac_builder(
 ci.angle_thin_tester(
     name = "mac-angle-monyhar-amd",
     console_view_entry = consoles.console_view_entry(
-        category = "Mac|AMD|Chromium",
+        category = "Mac|AMD|Monyhar",
         short_name = "x64",
     ),
     triggered_by = ["mac-angle-monyhar-builder"],
@@ -1296,7 +1296,7 @@ ci.angle_thin_tester(
 ci.angle_thin_tester(
     name = "mac-angle-monyhar-intel",
     console_view_entry = consoles.console_view_entry(
-        category = "Mac|Intel|Chromium",
+        category = "Mac|Intel|Monyhar",
         short_name = "x64",
     ),
     triggered_by = ["mac-angle-monyhar-builder"],
@@ -1323,7 +1323,7 @@ ci.angle_thin_tester(
 ci.angle_windows_builder(
     name = "win-angle-monyhar-x64-builder",
     console_view_entry = consoles.console_view_entry(
-        category = "Windows|Builder|Chromium",
+        category = "Windows|Builder|Monyhar",
         short_name = "x64",
     ),
 )
@@ -1331,7 +1331,7 @@ ci.angle_windows_builder(
 ci.angle_thin_tester(
     name = "win10-angle-monyhar-x64-intel",
     console_view_entry = consoles.console_view_entry(
-        category = "Windows|Intel|Chromium",
+        category = "Windows|Intel|Monyhar",
         short_name = "x64",
     ),
     triggered_by = ["win-angle-monyhar-x64-builder"],
@@ -1340,7 +1340,7 @@ ci.angle_thin_tester(
 ci.angle_thin_tester(
     name = "win10-angle-monyhar-x64-nvidia",
     console_view_entry = consoles.console_view_entry(
-        category = "Windows|NVIDIA|Chromium",
+        category = "Windows|NVIDIA|Monyhar",
         short_name = "x64",
     ),
     triggered_by = ["win-angle-monyhar-x64-builder"],
@@ -1349,7 +1349,7 @@ ci.angle_thin_tester(
 ci.angle_windows_builder(
     name = "win-angle-monyhar-x86-builder",
     console_view_entry = consoles.console_view_entry(
-        category = "Windows|Builder|Chromium",
+        category = "Windows|Builder|Monyhar",
         short_name = "x86",
     ),
 )
@@ -1357,7 +1357,7 @@ ci.angle_windows_builder(
 ci.angle_thin_tester(
     name = "win7-angle-monyhar-x86-amd",
     console_view_entry = consoles.console_view_entry(
-        category = "Windows|Win7-AMD|Chromium",
+        category = "Windows|Win7-AMD|Monyhar",
         short_name = "x86",
     ),
     triggered_by = ["win-angle-monyhar-x86-builder"],
@@ -1696,7 +1696,7 @@ ci.monyharos_builder(
 )
 
 ci.monyharos_builder(
-    name = "Linux ChromiumOS Full",
+    name = "Linux MonyharOS Full",
     console_view_entry = consoles.console_view_entry(
         category = "default",
         short_name = "ful",
@@ -2725,7 +2725,7 @@ ci.fuzz_builder(
 )
 
 ci.fuzz_builder(
-    name = "ChromiumOS ASAN Release",
+    name = "MonyharOS ASAN Release",
     console_view_entry = consoles.console_view_entry(
         category = "cros asan",
     ),
@@ -5790,7 +5790,7 @@ ci.memory_builder(
 )
 
 ci.memory_builder(
-    name = "Linux Chromium OS ASan LSan Builder",
+    name = "Linux Monyhar OS ASan LSan Builder",
     console_view_entry = consoles.console_view_entry(
         category = "cros|asan",
         short_name = "bld",
@@ -5802,17 +5802,17 @@ ci.memory_builder(
 )
 
 ci.memory_builder(
-    name = "Linux Chromium OS ASan LSan Tests (1)",
+    name = "Linux Monyhar OS ASan LSan Tests (1)",
     console_view_entry = consoles.console_view_entry(
         category = "cros|asan",
         short_name = "tst",
     ),
-    triggered_by = ["Linux Chromium OS ASan LSan Builder"],
+    triggered_by = ["Linux Monyhar OS ASan LSan Builder"],
     main_console_view = "main",
 )
 
 ci.memory_builder(
-    name = "Linux ChromiumOS MSan Builder",
+    name = "Linux MonyharOS MSan Builder",
     console_view_entry = consoles.console_view_entry(
         category = "cros|msan",
         short_name = "bld",
@@ -5821,12 +5821,12 @@ ci.memory_builder(
 )
 
 ci.memory_builder(
-    name = "Linux ChromiumOS MSan Tests",
+    name = "Linux MonyharOS MSan Tests",
     console_view_entry = consoles.console_view_entry(
         category = "cros|msan",
         short_name = "tst",
     ),
-    triggered_by = ["Linux ChromiumOS MSan Builder"],
+    triggered_by = ["Linux MonyharOS MSan Builder"],
     main_console_view = "main",
 )
 
@@ -5978,7 +5978,7 @@ ci.mojo_builder(
 )
 
 ci.mojo_builder(
-    name = "Mojo ChromiumOS",
+    name = "Mojo MonyharOS",
     console_view_entry = consoles.console_view_entry(
         short_name = "cr",
     ),
@@ -6012,7 +6012,7 @@ ci.mojo_builder(
 ci.swangle_linux_builder(
     name = "linux-swangle-monyhar-x64",
     console_view_entry = consoles.console_view_entry(
-        category = "Chromium|Linux",
+        category = "Monyhar|Linux",
         short_name = "x64",
     ),
     pinned = False,
@@ -6046,7 +6046,7 @@ ci.swangle_linux_builder(
 ci.swangle_mac_builder(
     name = "mac-swangle-monyhar-x64",
     console_view_entry = consoles.console_view_entry(
-        category = "Chromium|Mac",
+        category = "Monyhar|Mac",
         short_name = "x64",
     ),
     pinned = False,
@@ -6055,7 +6055,7 @@ ci.swangle_mac_builder(
 ci.swangle_windows_builder(
     name = "win-swangle-monyhar-x86",
     console_view_entry = consoles.console_view_entry(
-        category = "Chromium|Windows",
+        category = "Monyhar|Windows",
         short_name = "x86",
     ),
     pinned = False,

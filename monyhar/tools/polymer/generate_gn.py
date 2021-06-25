@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -13,7 +13,7 @@ import sys
 _COMPILE_JS = '//third_party/closure_compiler/compile_js.gni'
 _POLYMERS = ['polymer.html', 'polymer-mini.html', 'polymer-micro.html']
 _COMPILED_RESOURCES_TEMPLATE = '''
-# Copyright %d The Chromium Authors. All rights reserved.
+# Copyright %d The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #

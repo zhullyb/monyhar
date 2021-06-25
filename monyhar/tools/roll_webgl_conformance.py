@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -264,7 +264,7 @@ class AutoRoller(object):
 
     self._RunCommand(['git', 'checkout', '-b', ROLL_BRANCH_NAME])
 
-    # Modify Chromium's DEPS file.
+    # Modify Monyhar's DEPS file.
 
     # Parse current hashes.
     deps_filename = os.path.join(self._monyhar_src, 'DEPS')

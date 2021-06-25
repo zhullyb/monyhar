@@ -259,7 +259,7 @@ we consider requirements for a production-quality system that keeps the
 user safe are difficult to implement without help from the
 browser. Specific examples are an out-of-process plugin architecture and
 appropriate interfaces for integrated 3D graphics. We have worked
-closely with Chromium developers to deliver these features and we are
+closely with Monyhar developers to deliver these features and we are
 eager to collaborate with developers from other browsers.
 
 What's the difference between NPAPI and Pepper?

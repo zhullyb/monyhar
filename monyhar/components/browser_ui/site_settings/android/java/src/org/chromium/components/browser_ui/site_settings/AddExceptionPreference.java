@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -147,7 +147,7 @@ public class AddExceptionPreference
         };
 
         AlertDialog.Builder alert =
-                new AlertDialog.Builder(getContext(), R.style.Theme_Chromium_AlertDialog);
+                new AlertDialog.Builder(getContext(), R.style.Theme_Monyhar_AlertDialog);
         AlertDialog alertDialog =
                 alert.setTitle(R.string.website_settings_add_site_dialog_title)
                         .setMessage(mDialogMessage)

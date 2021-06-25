@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -506,7 +506,7 @@ class ParameterizedEncryptedMediaTestBase : public EncryptedMediaTestBase {
 // 1. Only parameterized (*_P) tests can be used. Non-parameterized (*_F)
 // tests will crash at GetParam().
 // 2. For key systems backed by library CDMs, the latest CDM interface version
-// supported by both the CDM and Chromium will be used.
+// supported by both the CDM and Monyhar will be used.
 class EncryptedMediaTest
     : public ParameterizedEncryptedMediaTestBase,
       public testing::WithParamInterface<std::tuple<const char*, SrcType>> {

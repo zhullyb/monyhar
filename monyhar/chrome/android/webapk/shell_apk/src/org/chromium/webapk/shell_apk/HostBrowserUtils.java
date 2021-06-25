@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ public class HostBrowserUtils {
 
     private static final int MINIMUM_REQUIRED_INTENT_HELPER_VERSION = 2;
 
-    // Lowest version of Chromium which supports ShellAPK showing the splash screen.
+    // Lowest version of Monyhar which supports ShellAPK showing the splash screen.
     public static final int MINIMUM_REQUIRED_CHROMIUM_VERSION_NEW_SPLASH = 78;
 
     private static final String VERSION_NAME_DEVELOPER_BUILD = "Developer Build";
@@ -116,7 +116,7 @@ public class HostBrowserUtils {
     }
 
     /** Queries the given host browser's major version. */
-    public static int queryHostBrowserMajorChromiumVersion(
+    public static int queryHostBrowserMajorMonyharVersion(
             Context context, String hostBrowserPackageName) {
         if (!doesBrowserSupportWebApks(hostBrowserPackageName)) {
             return -1;
@@ -148,20 +148,20 @@ public class HostBrowserUtils {
     /** Returns whether a WebAPK should be launched as a tab. See crbug.com/772398. */
     public static boolean shouldLaunchInTab(HostBrowserLauncherParams params) {
         String hostBrowserPackageName = params.getHostBrowserPackageName();
-        int hostBrowserMajorChromiumVersion = params.getHostBrowserMajorChromiumVersion();
+        int hostBrowserMajorMonyharVersion = params.getHostBrowserMajorMonyharVersion();
         if (!doesBrowserSupportWebApks(hostBrowserPackageName)) {
             return true;
         }
 
         if (TextUtils.equals(hostBrowserPackageName, ARC_INTENT_HELPER_BROWSER)) {
-            return hostBrowserMajorChromiumVersion < MINIMUM_REQUIRED_INTENT_HELPER_VERSION;
+            return hostBrowserMajorMonyharVersion < MINIMUM_REQUIRED_INTENT_HELPER_VERSION;
         }
 
         if (TextUtils.equals(hostBrowserPackageName, ARC_WEBAPK_BROWSER)) {
             return false;
         }
 
-        return hostBrowserMajorChromiumVersion < MINIMUM_REQUIRED_CHROME_VERSION;
+        return hostBrowserMajorMonyharVersion < MINIMUM_REQUIRED_CHROME_VERSION;
     }
 
     /**
@@ -172,7 +172,7 @@ public class HostBrowserUtils {
         return params.isNewStyleWebApk()
                 && !params.getHostBrowserPackageName().equals(ARC_INTENT_HELPER_BROWSER)
                 && !params.getHostBrowserPackageName().equals(ARC_WEBAPK_BROWSER)
-                && params.getHostBrowserMajorChromiumVersion()
+                && params.getHostBrowserMajorMonyharVersion()
                 >= MINIMUM_REQUIRED_CHROMIUM_VERSION_NEW_SPLASH
                 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N;
     }

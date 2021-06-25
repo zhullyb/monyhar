@@ -2228,7 +2228,7 @@ Vrednost pravilnika mora vedno biti navedena v sekundah. Vrednosti so navzdol om
 <translation id="5148753489738115745">Določite lahko dodatne parametre, ki so uporabljeni, ko <ph name="PRODUCT_FRAME_NAME" /> zažene <ph name="PRODUCT_NAME" />.
 
           Če ta pravilnik ni nastavljen, je uporabljena privzeta ukazna vrstica.</translation>
-<translation id="5152787786897382519">Chromium in Google Chrome imata nekatere skupine pravilnikov, ki skupaj nadzirajo funkcijo. Te nabore predstavljajo naslednje skupine pravilnikov. Ker imajo pravilniki lahko več virov, se uporabijo samo vrednosti iz vira z največjo prednostjo. Vrednosti iz vira z manjšo prednostjo v isti skupini so prezrte. Vrstni red prednosti je določen na <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Monyhar in Google Chrome imata nekatere skupine pravilnikov, ki skupaj nadzirajo funkcijo. Te nabore predstavljajo naslednje skupine pravilnikov. Ker imajo pravilniki lahko več virov, se uporabijo samo vrednosti iz vira z največjo prednostjo. Vrednosti iz vira z manjšo prednostjo v isti skupini so prezrte. Vrstni red prednosti je določen na <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Kako pogosto se pošiljajo omrežni paketi za spremljanje (v milisekundah).
 
       Če ta pravilnik ni nastavljen, je privzeti interval 3 minute.
@@ -3947,7 +3947,7 @@ URL-ji, ki uporabljajo sheme s tega seznama, se ne bodo naložili in dostop do n
       Če ta pravilnik ni nastavljen, bo <ph name="PRODUCT_OS_NAME" /> za prikazno ime na zaslonu za prijavo uporabil ID e-poštnega računa lokalnega računa za prijavo.
 
       Ta pravilnik ne velja za običajne uporabniške račune.</translation>
-<translation id="8259375588339409826">Chromium in Google Chrome podpirata isto skupino pravilnikov. Upoštevajte, da so lahko v tem dokumentu neobjavljeni pravilniki (vnos »Podprto na datum« se nanaša na še neobjavljeno različico brskalnika <ph name="PRODUCT_NAME" />), ki jih lahko spremenimo ali odstranimo brez predhodnega obvestila in za katere ne zagotavljamo nobenega jamstva, kakor tudi ne jamčimo za njihove lastnosti z vidika varnosti in zasebnosti.
+<translation id="8259375588339409826">Monyhar in Google Chrome podpirata isto skupino pravilnikov. Upoštevajte, da so lahko v tem dokumentu neobjavljeni pravilniki (vnos »Podprto na datum« se nanaša na še neobjavljeno različico brskalnika <ph name="PRODUCT_NAME" />), ki jih lahko spremenimo ali odstranimo brez predhodnega obvestila in za katere ne zagotavljamo nobenega jamstva, kakor tudi ne jamčimo za njihove lastnosti z vidika varnosti in zasebnosti.
 
 Ti pravilniki so namenjeni izključno uporabi za konfiguriranje primerkov brskalnika <ph name="PRODUCT_NAME" /> znotraj vaše organizacije. Uporaba teh pravilnikov zunaj organizacije (na primer v programu, ki se javno distribuira) se obravnava kot zlonamerna programska oprema ter jo bodo Google in ponudniki protivirusnih programov najverjetneje označili kot tako.
 

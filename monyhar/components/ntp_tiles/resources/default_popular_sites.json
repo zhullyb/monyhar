@@ -1,12 +1,12 @@
 [
     {
         "large_icon_url": "https://www.monyhar.org/_/rsrc/1484148948583/apple-touch-icon.png",
-        "title": "The Chromium Projects `",
+        "title": "The Monyhar Projects `",
         "url": "https://www.monyhar.org/"
     },
     {
         "favicon_url": "https://codereview.monyhar.org/static/favicon.ico",
-        "title": "Chromium Code Reviews",
+        "title": "Monyhar Code Reviews",
         "url": "https://codereview.monyhar.org/"
     },
     {
@@ -26,16 +26,16 @@
     },
     {
         "large_icon_url": "https://assets-cdn.github.com/pinned-octocat.svg",
-        "title": "Github Page of the Chromium Project",
+        "title": "Github Page of the Monyhar Project",
         "url": "https://github.com/monyhar/"
     },
     {
-        "large_icon_url": "https://cdn2.iconfinder.com/data/icons/minimalism/512/Chromium.png",
+        "large_icon_url": "https://cdn2.iconfinder.com/data/icons/minimalism/512/Monyhar.png",
         "title": "Chrome Flags",
         "url": "chrome://flags"
     },
     {
-        "large_icon_url": "https://cdn2.iconfinder.com/data/icons/minimalism/512/Chromium.png",
+        "large_icon_url": "https://cdn2.iconfinder.com/data/icons/minimalism/512/Monyhar.png",
         "title": "Chrome Version",
         "url": "chrome://version/"
     }

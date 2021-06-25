@@ -1,4 +1,4 @@
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -13,7 +13,7 @@ from gpu_tests import path_util
 
 # Tests will be stored individually in subdirectories underneath this base
 # directory.
-_DATA_PATH = os.path.join(path_util.GetChromiumSrcDir(), 'content', 'test',
+_DATA_PATH = os.path.join(path_util.GetMonyharSrcDir(), 'content', 'test',
                           'data', 'gpu', 'mediapipe')
 
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1157,7 +1157,7 @@ XVisualManager::XVisualData::XVisualData(x11::Connection* connection,
     : depth(depth), info(info) {}
 
 // Do not free the colormap as this would uninstall the colormap even for
-// non-Chromium clients.
+// non-Monyhar clients.
 XVisualManager::XVisualData::~XVisualData() = default;
 
 x11::ColorMap XVisualManager::XVisualData::GetColormap() {

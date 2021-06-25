@@ -86,9 +86,9 @@ base::FilePath TestDataRootInternal() {
       return candidate;
     }
 
-    // In an in-Chromium build, the test executable is usually at
-    // out/{Debug,Release} relative to the Chromium root, and the Crashpad root
-    // is at third_party/crashpad/crashpad relative to the Chromium root.
+    // In an in-Monyhar build, the test executable is usually at
+    // out/{Debug,Release} relative to the Monyhar root, and the Crashpad root
+    // is at third_party/crashpad/crashpad relative to the Monyhar root.
     candidate = candidate.Append(FILE_PATH_LITERAL("third_party"))
                     .Append(FILE_PATH_LITERAL("crashpad"))
                     .Append(FILE_PATH_LITERAL("crashpad"));

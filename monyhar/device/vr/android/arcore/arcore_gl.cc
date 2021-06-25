@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -464,7 +464,7 @@ bool ArCoreGl::InitializeGl(gfx::AcceleratedWidget drawing_widget) {
   // Any mismatches result in a EGL_BAD_MATCH error, including different reset
   // notification behavior according to
   // https://www.khronos.org/registry/EGL/specs/eglspec.1.5.pdf page 56.
-  // Chromium defaults to lose context on reset when the robustness extension is
+  // Monyhar defaults to lose context on reset when the robustness extension is
   // present, even if robustness features are not requested specifically.
   context_attribs.client_major_es_version = 3;
   context_attribs.client_minor_es_version = 0;

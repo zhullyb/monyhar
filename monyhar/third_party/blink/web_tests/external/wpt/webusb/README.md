@@ -6,7 +6,7 @@ provided by browsers under test.
 In this test suite `resources/usb-helpers.js` detects and triggers
 the API to be loaded as needed.
 
-The Chromium implementation is provided by
+The Monyhar implementation is provided by
 `../resources/monyhar/webusb-test.js`.
 
 [WebUSB Testing API]: https://wicg.github.io/webusb/test/

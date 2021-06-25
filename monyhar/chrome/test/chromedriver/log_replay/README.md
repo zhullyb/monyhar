@@ -73,7 +73,7 @@ may as well replay the client side as well as the DevTools side.
 The C++ unit tests for devtools_log_reader.cc are integrated into the
 chromedriver_unittests target. Python unit tests for the client-replay are
 standalone in the file client_replay_unittest.py but are integrated into the
-Chromium CQ.
+Monyhar CQ.
 
 #### End-to-end tests
 client_replay_tests.py runs the end-to-end tests for both the client side and

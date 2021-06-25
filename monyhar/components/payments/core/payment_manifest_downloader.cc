@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -332,7 +332,7 @@ void PaymentManifestDownloader::InitiateDownload(
         semantics {
           sender: "Web Payments"
           description:
-            "Chromium downloads manifest files for web payments API to help "
+            "Monyhar downloads manifest files for web payments API to help "
             "users make secure and convenient payments on the web."
           trigger:
             "A user that has a payment app visits a website that uses the web "

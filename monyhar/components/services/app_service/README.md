@@ -310,7 +310,7 @@ further image processing effects such as desaturation to gray.
       // grayed out), this would result in a different timeline even though the
       // app's version is unchanged.
       uint64 timeline;
-      // If non-zero, the compressed icon is compiled into the Chromium binary
+      // If non-zero, the compressed icon is compiled into the Monyhar binary
       // as a statically available, int-keyed resource.
       int32 resource_id;
       // A bitmask of icon post-processing effects, such as desaturation to

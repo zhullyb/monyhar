@@ -72,7 +72,7 @@ Jika '<ph name="SERVICE_SCRIPT_NAME" />' telah pun ditandai, nyahtandai dan tand
 <translation id="4405930547258349619">Pustaka Teras</translation>
 <translation id="443560535555262820">Buka Pilihan Kebolehaksesan</translation>
 <translation id="4450893287417543264">Jangan tunjukkan lagi</translation>
-<translation id="4512952200932940229">Hak cipta 2021 The Chromium Authors. Hak Cipta Terpelihara.</translation>
+<translation id="4512952200932940229">Hak cipta 2021 The Monyhar Authors. Hak Cipta Terpelihara.</translation>
 <translation id="4513946894732546136">Maklum balas</translation>
 <translation id="4563926062592110512">Klien diputuskan sambungan: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Peranti jauh</translation>
@@ -147,7 +147,7 @@ Jika '<ph name="SERVICE_SCRIPT_NAME" />' telah pun ditandai, nyahtandai dan tand
 <translation id="7868137160098754906">Sila masukkan PIN anda untuk komputer jauh.</translation>
 <translation id="7895403300744144251">Dasar keselamatan pada komputer jauh tidak membenarkan sambungan daripada akaun anda.</translation>
 <translation id="7936528439960309876">Dokkan di Kanan</translation>
-<translation id="7970576581263377361">Pengesahan gagal. Sila log masuk ke Chromium sekali lagi.</translation>
+<translation id="7970576581263377361">Pengesahan gagal. Sila log masuk ke Monyhar sekali lagi.</translation>
 <translation id="7981525049612125370">Sesi jauh telah tamat tempoh.</translation>
 <translation id="8038111231936746805">(lalai)</translation>
 <translation id="8041089156583427627">Hantar Maklum Balas</translation>
@@ -181,6 +181,6 @@ Jika '<ph name="SERVICE_SCRIPT_NAME" />' telah pun ditandai, nyahtandai dan tand
 <translation id="9187628920394877737">Berikan kebenaran 'Perakaman Skrin' kepada <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Konfigurasi hos tidak sah.</translation>
 <translation id="981121421437150478">Luar talian</translation>
-<translation id="985602178874221306">Pengarang Chromium</translation>
+<translation id="985602178874221306">Pengarang Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (kali terakhir dalam talian <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

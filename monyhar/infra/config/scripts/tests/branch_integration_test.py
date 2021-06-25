@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython3
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Integration test for branch.py"""
@@ -50,7 +50,7 @@ class BranchIntegrationTest(unittest.TestCase):
         textwrap.dedent("""\
         {
             "project": "monyhar-mXX",
-            "project_title": "Chromium MXX",
+            "project_title": "Monyhar MXX",
             "is_main": false,
             "is_lts_branch": false,
             "ref": "refs/branch-heads/YYYY",
@@ -72,7 +72,7 @@ class BranchIntegrationTest(unittest.TestCase):
     with open(self._settings_json, 'w') as f:
       settings = {
           "project": "monyhar-mXX",
-          "project_title": "Chromium MXX",
+          "project_title": "Monyhar MXX",
           "is_main": True,
           "is_lts_branch": False,
           "ref": "refs/branch-heads/YYYY"
@@ -91,7 +91,7 @@ class BranchIntegrationTest(unittest.TestCase):
         textwrap.dedent("""\
             {
                 "project": "monyhar-mXX",
-                "project_title": "Chromium MXX",
+                "project_title": "Monyhar MXX",
                 "is_main": false,
                 "is_lts_branch": true,
                 "ref": "refs/branch-heads/YYYY"

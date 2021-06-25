@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -49,7 +49,7 @@ class MODULES_EXPORT FederatedCredential final : public Credential {
   const KURL& iconURL() const { return icon_url_; }
   const String& protocol() const {
     // TODO(mkwst): This is a stub, as we don't yet have any support on the
-    // Chromium-side.
+    // Monyhar-side.
     return g_empty_string;
   }
 

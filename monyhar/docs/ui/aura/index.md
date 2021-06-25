@@ -1,6 +1,6 @@
 # Aura
 
-Aura abstracts the Window Manager away from Chromium on Windows, Linux, and
+Aura abstracts the Window Manager away from Monyhar on Windows, Linux, and
 Chrome OS.
 
 # Main Documentation

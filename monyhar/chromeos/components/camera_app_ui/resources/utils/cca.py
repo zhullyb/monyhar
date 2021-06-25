@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -85,7 +85,7 @@ def deploy(args):
     ]
     # Since there is a constraint in grit.py which will replace ${root_gen_dir}
     # in .grd file only if the script is executed in the parent directory of
-    # ${root_gen_dir}, execute the script in Chromium root as a workaround.
+    # ${root_gen_dir}, execute the script in Monyhar root as a workaround.
     run(build_pak_cmd, get_monyhar_root())
 
     with tempfile.TemporaryDirectory() as tmp_dir:

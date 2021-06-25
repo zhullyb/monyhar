@@ -15,7 +15,7 @@ unpublised paper:
 Colin Percival, Naive differences of executable code, http://www.daemonology.net/bsdiff/, 2003.
 
 The copy on this directory so extensively modified that the binary format is
-incompatible with the original and it cannot be compiled outside the Chromium
+incompatible with the original and it cannot be compiled outside the Monyhar
 source tree or the Courgette project.
 
 List of changes made to original code:

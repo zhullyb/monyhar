@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -47,9 +47,9 @@ void ErrorCallback(leveldb::Status* status_out, leveldb::Status status) {
 }
 
 // The leveldb::Env used by the Indexed DB backend.
-class LevelDBEnv : public leveldb_env::ChromiumEnv {
+class LevelDBEnv : public leveldb_env::MonyharEnv {
  public:
-  LevelDBEnv() : ChromiumEnv("LevelDBEnv.SessionStorageMetadataTest") {}
+  LevelDBEnv() : MonyharEnv("LevelDBEnv.SessionStorageMetadataTest") {}
 };
 
 class SessionStorageMetadataTest : public testing::Test {

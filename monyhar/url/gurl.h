@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -246,7 +246,7 @@ class COMPONENT_EXPORT(URL) GURL {
   // some other cryptographic protocol (e.g. QUIC) for security.
   //
   // This function is a not a complete test of whether or not an origin's code
-  // is minimally trustworthy. For that, see Chromium's |IsOriginSecure| for a
+  // is minimally trustworthy. For that, see Monyhar's |IsOriginSecure| for a
   // higher-level and more complete semantics. See that function's documentation
   // for more detail.
   bool SchemeIsCryptographic() const;

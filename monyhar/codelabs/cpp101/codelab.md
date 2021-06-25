@@ -1,11 +1,11 @@
-# C++ in Chromium 101 - Codelab
+# C++ in Monyhar 101 - Codelab
 
 This tutorial will guide you through the creation of various example C++
-applications, highlighting important Chromium C++ concepts.
+applications, highlighting important Monyhar C++ concepts.
 This tutorial assumes robust knowledge of C++ (the language) but does not
-assume you know how to write an application specific to Chromium's style and
+assume you know how to write an application specific to Monyhar's style and
 architecture. This tutorial does assume that you know how to check files out
-of Chromium's repository.
+of Monyhar's repository.
 
 As always, consider the following resources as of primary importance:
 
@@ -20,7 +20,7 @@ though you should feel free to peruse them when necessary.
 This tutorial will cover information across all of those guides.
 
 Exercise solutions are available in the `codelabs/cpp101/` directory of the
-Chromium source code. Build all of the example solutions with
+Monyhar source code. Build all of the example solutions with
 `autoninja -C out/Default codelabs`. You are encouraged to create a new
 `base/cpp101/` directory locally if you want to try implementing these
 exercises yourself.
@@ -29,7 +29,7 @@ exercises yourself.
 
 This exercise demonstrates the use of the [ninja](https://ninja-build.org/)
 build system to build a simple C++ binary and demonstrates how typical C++
-builds are organized within Chromium.
+builds are organized within Monyhar.
 
 Create a new target in `base/BUILD.gn` for a new executable
 named `codelab_hello_world`. Then write the classic "Hello, world!" program in
@@ -52,14 +52,14 @@ Hello, world!
 [Git Tips](https://monyhar.googlesource.com/monyhar/src.git/+/main/docs/git_tips.md)
 and [Git Cookbook](https://monyhar.googlesource.com/monyhar/src.git/+/main/docs/git_cookbook.md)
 
-[Life of a Chromium Developer](https://docs.google.com/a/google.com/presentation/d/1abnqM9j6zFodPHA38JG1061rG2iGj_GABxEDgZsdbJg/)
+[Life of a Monyhar Developer](https://docs.google.com/a/google.com/presentation/d/1abnqM9j6zFodPHA38JG1061rG2iGj_GABxEDgZsdbJg/)
 
 ## Part 1: Using command-line arguments
 
 We will augment our `codelab_hello_world` binary to parse command-line flags and
 use those values to print messages to the user.
 
-Command-line arguments within Chromium are processed by the
+Command-line arguments within Monyhar are processed by the
 `CommandLine::Init()` function, which takes command line flags from the
 [argc and argv](https://crasseux.com/books/ctutorial/argc-and-argv.html)
 (argument count & vector) variables of the main() method. A typical invocation
@@ -71,7 +71,7 @@ int main(int argc, char** argv) {
   return 0;
 }
 ```
-Flags are not explicitly defined in Chromium. Instead, we
+Flags are not explicitly defined in Monyhar. Instead, we
 use `GetSwitchValueASCII()` and friends to retrieve values passed in.
 
 ### Important include files
@@ -93,7 +93,7 @@ C++, unlike other languages such as Python, Javascript, or Lisp, has only
 rudimentary support for [callbacks](https://en.wikipedia.org/wiki/Callbacks)
 and no support for
 [partial application](https://en.wikipedia.org/wiki/Partial_application).
-However, Chromium has the `base::OnceCallback<Sig>` and
+However, Monyhar has the `base::OnceCallback<Sig>` and
  `base::RepeatingCallback<Sig>`class, whose instances can be freely passed
 around, returned, and generally be treated as first-class values.
 base::OnceCallback<Sig> is the move-only, single-call variant,
@@ -192,13 +192,13 @@ and uses your function to print out the first `n` Fibonacci numbers.
 
 ## Part 3: Threads and task runners
 
-Chromium has a number of abstractions for sequencing and threading.
+Monyhar has a number of abstractions for sequencing and threading.
 [Threading and Tasks in Chrome](https://monyhar.googlesource.com/monyhar/src/+/main/docs/threading_and_tasks.md)
 is a must-read and go-to reference for anything related to tasks, thread pools,
 task runners, and more.
 
 Sequenced execution (on virtual threads) is strongly preferred to
-single-threaded execution (on physical threads). Chromium's abstraction for
+single-threaded execution (on physical threads). Monyhar's abstraction for
 asynchronously running posted tasks is `base::TaskRunner`. Task runners allow
 you to write code that posts tasks without depending on what exactly will run
 those tasks.
@@ -223,7 +223,7 @@ There are a number of ways to post tasks to a thread pool or task runner.
   first call as argument to the second call.
 
 Normally you wouldn't have to worry about setting up a threading environment and
-keeping it running, since that is automatically done by Chromium's thread
+keeping it running, since that is automatically done by Monyhar's thread
 classes. However, since the main thread doesn't automatically start off with
 `TaskEnvironment`, there's a bit of extra setup involved. This setup code is
 available in the exercise solution files.
@@ -265,7 +265,7 @@ as long as the factoring task is executing.
 
 ## Part 4: Mojo
 
-Mojo is Chromium's abstraction of IPC. Mojo allows for developers to easily
+Mojo is Monyhar's abstraction of IPC. Mojo allows for developers to easily
 connect interface clients and implementations across arbitrary intra- and
 inter-process boundaries. See the
 [Intro to Mojo and Services](https://monyhar.googlesource.com/monyhar/src.git/+/main/docs/mojo_and_services.md)

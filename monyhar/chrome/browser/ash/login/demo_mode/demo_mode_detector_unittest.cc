@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -166,7 +166,7 @@ TEST_F(DemoModeDetectorTest, DemoModeWillNotLaunchWhenDisabledBySwitch) {
 // CHROMEOS_RELEASE_TRACK values.
 TEST_F(DemoModeDetectorTest, DemoModeWillNotLaunchWhenTestimageInLsbRelease) {
   std::string lsb_release =
-      "CHROMEOS_RELEASE_NAME=Chromium OS\n"
+      "CHROMEOS_RELEASE_NAME=Monyhar OS\n"
       "CHROMEOS_RELEASE_TRACK=testimage\n";
 
   base::Time release_time;

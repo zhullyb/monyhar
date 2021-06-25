@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,18 +22,18 @@ namespace mojo {
 namespace test {
 
 // Implementation of types with IPC::ParamTraits for consumers in the greater
-// Chromium tree.
+// Monyhar tree.
 
-enum class PickledEnumChromium { VALUE_0, VALUE_1, VALUE_2 };
+enum class PickledEnumMonyhar { VALUE_0, VALUE_1, VALUE_2 };
 
-class PickledStructChromium {
+class PickledStructMonyhar {
  public:
-  PickledStructChromium();
-  PickledStructChromium(int foo, int bar);
-  PickledStructChromium(PickledStructChromium&& other) = default;
-  ~PickledStructChromium();
+  PickledStructMonyhar();
+  PickledStructMonyhar(int foo, int bar);
+  PickledStructMonyhar(PickledStructMonyhar&& other) = default;
+  ~PickledStructMonyhar();
 
-  PickledStructChromium& operator=(PickledStructChromium&& other) = default;
+  PickledStructMonyhar& operator=(PickledStructMonyhar&& other) = default;
 
   int foo() const { return foo_; }
   void set_foo(int foo) { foo_ = foo; }
@@ -50,10 +50,10 @@ class PickledStructChromium {
   int bar_ = 0;
   int baz_ = 0;
 
-  DISALLOW_COPY_AND_ASSIGN(PickledStructChromium);
+  DISALLOW_COPY_AND_ASSIGN(PickledStructMonyhar);
 };
 
-bool operator==(const PickledStructChromium& a, const PickledStructChromium& b);
+bool operator==(const PickledStructMonyhar& a, const PickledStructMonyhar& b);
 
 }  // namespace test
 }  // namespace mojo
@@ -61,8 +61,8 @@ bool operator==(const PickledStructChromium& a, const PickledStructChromium& b);
 namespace IPC {
 
 template <>
-struct ParamTraits<mojo::test::PickledStructChromium> {
-  using param_type = mojo::test::PickledStructChromium;
+struct ParamTraits<mojo::test::PickledStructMonyhar> {
+  using param_type = mojo::test::PickledStructMonyhar;
 
   static void Write(base::Pickle* m, const param_type& p);
   static bool Read(const base::Pickle* m,
@@ -73,7 +73,7 @@ struct ParamTraits<mojo::test::PickledStructChromium> {
 
 }  // namespace IPC
 
-IPC_ENUM_TRAITS_MAX_VALUE(mojo::test::PickledEnumChromium,
-                          mojo::test::PickledEnumChromium::VALUE_2)
+IPC_ENUM_TRAITS_MAX_VALUE(mojo::test::PickledEnumMonyhar,
+                          mojo::test::PickledEnumMonyhar::VALUE_2)
 
 #endif  // MOJO_PUBLIC_CPP_BINDINGS_TESTS_PICKLED_TYPES_CHROMIUM_H_

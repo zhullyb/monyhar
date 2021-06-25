@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -695,7 +695,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exit_code) {
   // web security by setting the kWebKitWebSecurityEnabled pref directly.
   //
   // Note that this is done in ChromeMainDelegate::BasicStartupComplete()
-  // because this is the earliest callback. Many places in Chromium gate
+  // because this is the earliest callback. Many places in Monyhar gate
   // security features around kDisableWebSecurity, and it is unreasonable to
   // expect them all to properly also check for kUserDataDir.
   if (command_line.HasSwitch(switches::kDisableWebSecurity)) {

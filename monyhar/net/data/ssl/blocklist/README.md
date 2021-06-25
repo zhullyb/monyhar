@@ -1,7 +1,7 @@
 # Certificate Blocklist
 
 This directory contains a number of certificates and public keys which are
-considered blocked within Chromium-based products.
+considered blocked within Monyhar-based products.
 
 When applicable, additional information and the full certificate or key
 are included.

@@ -23,7 +23,7 @@ version every 6 weeks to make sure you stay safe while using apps on your phone.
 
 ## What’s the relationship between WebView and Chrome?
 
-WebView is built on top of the open source Chromium project, but it doesn’t
+WebView is built on top of the open source Monyhar project, but it doesn’t
 share any data with Google Chrome.
 
 In Android 7, 8, and 9 (Nougat/Oreo/Pie), WebView is built into Chrome. Because

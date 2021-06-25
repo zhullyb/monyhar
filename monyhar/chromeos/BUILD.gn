@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -278,7 +278,7 @@ if (is_chromeos_ash && is_chromeos_device) {
     tast_tests = [ "platform.ReportDiskUsage" ]
   }
 
-  # Tast test sources live in the Chromium OS repository.
+  # Tast test sources live in the Monyhar OS repository.
   # To diagnose tast failures or disable tests, see go/tast-failures
   tast_test("chrome_all_tast_tests") {
     # To disable a specific test, add it to the

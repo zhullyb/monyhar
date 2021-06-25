@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -48,99 +48,99 @@ defaults.triggered_by.set(["webrtc-gitiles-trigger-master"])
 # Builders are defined in lexicographic order by name
 
 builder(
-    name = "WebRTC Chromium FYI Android Builder",
+    name = "WebRTC Monyhar FYI Android Builder",
     goma_backend = goma.backend.RBE_PROD,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Android Builder (dbg)",
+    name = "WebRTC Monyhar FYI Android Builder (dbg)",
     goma_backend = goma.backend.RBE_PROD,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Android Builder ARM64 (dbg)",
+    name = "WebRTC Monyhar FYI Android Builder ARM64 (dbg)",
     goma_backend = goma.backend.RBE_PROD,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Android Tests (dbg) (L Nexus5)",
-    triggered_by = ["WebRTC Chromium FYI Android Builder (dbg)"],
+    name = "WebRTC Monyhar FYI Android Tests (dbg) (L Nexus5)",
+    triggered_by = ["WebRTC Monyhar FYI Android Builder (dbg)"],
 )
 
 builder(
-    name = "WebRTC Chromium FYI Android Tests (dbg) (M Nexus5X)",
-    triggered_by = ["WebRTC Chromium FYI Android Builder ARM64 (dbg)"],
+    name = "WebRTC Monyhar FYI Android Tests (dbg) (M Nexus5X)",
+    triggered_by = ["WebRTC Monyhar FYI Android Builder ARM64 (dbg)"],
 )
 
 builder(
-    name = "WebRTC Chromium FYI Linux Builder",
+    name = "WebRTC Monyhar FYI Linux Builder",
     goma_backend = goma.backend.RBE_PROD,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Linux Builder (dbg)",
+    name = "WebRTC Monyhar FYI Linux Builder (dbg)",
     goma_backend = goma.backend.RBE_PROD,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Linux Tester",
-    triggered_by = ["WebRTC Chromium FYI Linux Builder"],
+    name = "WebRTC Monyhar FYI Linux Tester",
+    triggered_by = ["WebRTC Monyhar FYI Linux Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium FYI Mac Builder",
+    name = "WebRTC Monyhar FYI Mac Builder",
     cores = 8,
     goma_backend = goma.backend.RBE_PROD,
     os = os.MAC_ANY,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Mac Builder (dbg)",
+    name = "WebRTC Monyhar FYI Mac Builder (dbg)",
     cores = 8,
     goma_backend = goma.backend.RBE_PROD,
     os = os.MAC_ANY,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Mac Tester",
+    name = "WebRTC Monyhar FYI Mac Tester",
     os = os.MAC_ANY,
-    triggered_by = ["WebRTC Chromium FYI Mac Builder"],
+    triggered_by = ["WebRTC Monyhar FYI Mac Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium FYI Win Builder",
+    name = "WebRTC Monyhar FYI Win Builder",
     goma_backend = goma.backend.RBE_PROD,
     goma_enable_ats = True,
     os = os.WINDOWS_DEFAULT,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Win Builder (dbg)",
+    name = "WebRTC Monyhar FYI Win Builder (dbg)",
     goma_backend = goma.backend.RBE_PROD,
     goma_enable_ats = True,
     os = os.WINDOWS_DEFAULT,
 )
 
 builder(
-    name = "WebRTC Chromium FYI Win10 Tester",
+    name = "WebRTC Monyhar FYI Win10 Tester",
     os = os.WINDOWS_DEFAULT,
-    triggered_by = ["WebRTC Chromium FYI Win Builder"],
+    triggered_by = ["WebRTC Monyhar FYI Win Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium FYI Win7 Tester",
+    name = "WebRTC Monyhar FYI Win7 Tester",
     os = os.WINDOWS_7,
-    triggered_by = ["WebRTC Chromium FYI Win Builder"],
+    triggered_by = ["WebRTC Monyhar FYI Win Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium FYI Win8 Tester",
+    name = "WebRTC Monyhar FYI Win8 Tester",
     os = os.WINDOWS_8_1,
-    triggered_by = ["WebRTC Chromium FYI Win Builder"],
+    triggered_by = ["WebRTC Monyhar FYI Win Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium FYI ios-device",
+    name = "WebRTC Monyhar FYI ios-device",
     executable = "recipe:webrtc/monyhar_ios",
     goma_backend = goma.backend.RBE_PROD,
     os = os.MAC_ANY,
@@ -148,7 +148,7 @@ builder(
 )
 
 builder(
-    name = "WebRTC Chromium FYI ios-simulator",
+    name = "WebRTC Monyhar FYI ios-simulator",
     executable = "recipe:webrtc/monyhar_ios",
     goma_backend = goma.backend.RBE_PROD,
     os = os.MAC_ANY,

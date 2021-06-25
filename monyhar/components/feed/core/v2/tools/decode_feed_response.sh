@@ -1,10 +1,10 @@
 #!/bin/bash
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
 # Converts a Feed HTTP response from binary to text using proto definitions from
-# Chromium.
+# Monyhar.
 #
 # Usage: curl 'some url' | feed_response_to_textproto.sh
 

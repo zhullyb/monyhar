@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -210,7 +210,7 @@ void WebEngineContentRendererClient::AddSupportedKeySystems(
         media::EncryptionScheme::kCenc, media::EncryptionScheme::kCbcs};
 
     // Fuchsia always decrypts audio into clear buffers and return them back to
-    // Chromium. Hardware secured decoders are only available for supported
+    // Monyhar. Hardware secured decoders are only available for supported
     // video codecs.
     // TODO(crbug.com/1013412): Replace these hardcoded values with a query to
     // the fuchsia.mediacodec FIDL service.
@@ -248,7 +248,7 @@ bool WebEngineContentRendererClient::IsSupportedVideoType(
   return IsSupportedHardwareVideoCodec(type);
 }
 
-// TODO(crbug.com/1067435): Look into the ChromiumContentRendererClient version
+// TODO(crbug.com/1067435): Look into the MonyharContentRendererClient version
 // of this method and how it may apply here.
 bool WebEngineContentRendererClient::DeferMediaLoad(
     content::RenderFrame* render_frame,

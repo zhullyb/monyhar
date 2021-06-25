@@ -23,7 +23,7 @@
 [Service Worker specification]: https://w3c.github.io/ServiceWorker/
 [MDN documentation]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 
-This document describes Chromium's implementation of [service
+This document describes Monyhar's implementation of [service
 workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API).
 
 [TOC]
@@ -99,7 +99,7 @@ rules.
    window or web worker intercepts these requests.
 
 The rest of this document explains how service workers are implemented in
-Chromium.
+Monyhar.
 
 ## Class overview
 
@@ -220,7 +220,7 @@ service worker.
 
 ### Mojo
 
-[Mojo](/mojo/README.md) is Chromium's IPC system and plays a important role in
+[Mojo](/mojo/README.md) is Monyhar's IPC system and plays a important role in
 service worker architecture. This section describes the main Mojo interfaces for
 service workers, and which message pipes they are on.
 

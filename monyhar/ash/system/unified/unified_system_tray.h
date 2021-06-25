@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,7 +37,7 @@ class UnifiedSystemTrayModel;
 class UnifiedMessageCenterBubble;
 class CameraMicTrayItemView;
 
-// The UnifiedSystemTray is the system menu of Chromium OS, which is a clickable
+// The UnifiedSystemTray is the system menu of Monyhar OS, which is a clickable
 // rounded rectangle typically located on the bottom right corner of the screen,
 // (called the Status Area). The system tray shows multiple icons on it to
 // indicate system status (e.g. time, power, etc.).

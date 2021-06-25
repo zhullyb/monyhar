@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -51,7 +51,7 @@ class NaClBrowserDelegate {
   // the user data directory. On failure, it is not changed.
   virtual bool GetUserDirectory(base::FilePath* user_dir) = 0;
   // Returns the version as a string. This string is used to invalidate
-  // validator cache entries when Chromium is upgraded
+  // validator cache entries when Monyhar is upgraded
   virtual std::string GetVersionString() const = 0;
   // Returns a HostFactory that hides the details of its embedder.
   virtual ppapi::host::HostFactory* CreatePpapiHostFactory(

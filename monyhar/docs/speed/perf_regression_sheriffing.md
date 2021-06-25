@@ -27,7 +27,7 @@ NOTE: If the list of issues that need attention is empty, please jump ahead to
 [Follow up on Performance Regressions](#Follow-up-on-Performance-Regressions).
 
 Issues in the list will include automatically filed and bisected regressions
-that are supported by the Chromium Perf Sheriff rotation. For each of the
+that are supported by the Monyhar Perf Sheriff rotation. For each of the
 issues:
 
 1. Determine the cause of the failure:

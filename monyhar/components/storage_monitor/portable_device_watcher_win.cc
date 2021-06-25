@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -33,7 +33,7 @@ namespace storage_monitor {
 namespace {
 
 // Name of the client application that communicates with the MTP device.
-const wchar_t kClientName[] = L"Chromium";
+const wchar_t kClientName[] = L"Monyhar";
 
 // Returns true if |data| represents a class of portable devices.
 bool IsPortableDeviceStructure(LPARAM data) {

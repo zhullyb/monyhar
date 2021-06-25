@@ -1,13 +1,13 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This file declares constants that describe specifics of a Chromium-based
+// This file declares constants that describe specifics of a Monyhar-based
 // browser's branding and modes of installation.
 //
 // A browser's brand comprises all identifying markings that distinguish it from
-// a browser produced by another party. Chromium has remnants of both the
-// Chromium and Google Chrome brands.
+// a browser produced by another party. Monyhar has remnants of both the
+// Monyhar and Google Chrome brands.
 //
 // Each brand defines one primary install mode for the browser. A brand may
 // additionally define one or more secondary install modes (e.g., Google
@@ -65,8 +65,8 @@ extern const InstallConstants kInstallModes[];
 
 // The following convenience functions behave conditionally on whether or not
 // the brand uses Chrome's integration with Google Update. For brands that do
-// not (e.g., Chromium), they return something like "Software\Chromium" or
-// "Software\Chromium Binaries". Otherwise, for brands that do integrate with
+// not (e.g., Monyhar), they return something like "Software\Monyhar" or
+// "Software\Monyhar Binaries". Otherwise, for brands that do integrate with
 // Google Update, they return something like
 // "Software\Google\Update\ClientState{Medium}\<guid>" where "<guid>" is either
 // |mode|'s appguid.

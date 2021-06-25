@@ -79,7 +79,7 @@ def get_script_interp(script_path, cygwin_path=None):
 
     It also fixes command path.  When Cygwin Python is used, e.g. in WebKit,
     it could run "/usr/bin/perl -wT hello.pl".
-    When Win32 Python is used, e.g. in Chromium, it couldn't.  So, fix
+    When Win32 Python is used, e.g. in Monyhar, it couldn't.  So, fix
     "/usr/bin/perl" to "<cygwin_path>\perl.exe".
 
     Args:

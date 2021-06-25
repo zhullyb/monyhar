@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ import org.monyhar.components.embedder_support.util.WebResourceResponseInfo;
 import org.monyhar.net.test.util.TestWebServer;
 
 /**
- * Tests for CookieManager/Chromium startup ordering weirdness.
+ * Tests for CookieManager/Monyhar startup ordering weirdness.
  *
  * This tests various cases around ordering of calls to CookieManager at startup, and thus is
  * separate from the normal CookieManager tests so it can control call ordering carefully.
@@ -67,21 +67,21 @@ public class CookieManagerStartupTest {
     }
 
     /**
-     * Called when a test wants to initiate normal Chromium process startup, after
+     * Called when a test wants to initiate normal Monyhar process startup, after
      * doing any CookieManager calls that are supposed to happen before the UI thread
      * is committed.
      */
-    private void startChromium() {
+    private void startMonyhar() {
         ThreadUtils.setUiThread(Looper.getMainLooper());
-        startChromiumWithClient(new TestAwContentsClient());
+        startMonyharWithClient(new TestAwContentsClient());
     }
 
     /**
-     * Called when a test wants to initiate normal Chromium process startup, after
+     * Called when a test wants to initiate normal Monyhar process startup, after
      * doing any CookieManager calls that are supposed to happen before the UI thread
      * is committed.
      */
-    private void startChromiumWithClient(TestAwContentsClient contentsClient) {
+    private void startMonyharWithClient(TestAwContentsClient contentsClient) {
         mActivityTestRule.createAwBrowserContext();
         mActivityTestRule.startBrowserProcess();
         mContentsClient = contentsClient;
@@ -100,7 +100,7 @@ public class CookieManagerStartupTest {
             String path = "/cookie_test.html";
             String url = webServer.setResponse(path, CommonResources.ABOUT_HTML, null);
 
-            // Verify that we can use AwCookieManager successfully before having started Chromium.
+            // Verify that we can use AwCookieManager successfully before having started Monyhar.
             AwCookieManager cookieManager = new AwCookieManager();
             Assert.assertNotNull(cookieManager);
 
@@ -112,9 +112,9 @@ public class CookieManagerStartupTest {
 
             cookieManager.setCookie(url, "count=41");
 
-            // Now start Chromium to cause the switch from the temporary cookie store to the real
+            // Now start Monyhar to cause the switch from the temporary cookie store to the real
             // Mojo store.
-            startChromium();
+            startMonyhar();
             mActivityTestRule.loadUrlSync(
                     mAwContents, mContentsClient.getOnPageFinishedHelper(), url);
             mActivityTestRule.executeJavaScriptAndWaitForResult(mAwContents, mContentsClient,
@@ -166,7 +166,7 @@ public class CookieManagerStartupTest {
                 return null;
             }
         };
-        startChromiumWithClient(contentsClient);
+        startMonyharWithClient(contentsClient);
         mActivityTestRule.loadUrlSync(mAwContents, contentsClient.getOnPageFinishedHelper(), url);
     }
 }

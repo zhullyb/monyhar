@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ import java.net.URL;
 
 /**
  * This class  is responsible for doing network operations, and is to be used by WebView nonembedded
- * processes where Chromium's network service can't be used to do network operations.
+ * processes where Monyhar's network service can't be used to do network operations.
  */
 @JNINamespace("android_webview")
 public class NetworkFetcherTask {

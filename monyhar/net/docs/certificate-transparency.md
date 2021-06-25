@@ -329,7 +329,7 @@ they lack either the audits or compliance with industry best practice and root
 store requirements. Enterprises should only enable this policy if no other
 option meets their needs.
 
-## Certificate Transparency for Chrome/Chromium developers
+## Certificate Transparency for Chrome/Monyhar developers
 
 ### //net Interfaces
 
@@ -355,7 +355,7 @@ for embedder-specific overrides via the
 
 ### Supporting Certificate Transparency for Embedders
 
-While Chromium has implemented support for Certificate Transparency for a
+While Monyhar has implemented support for Certificate Transparency for a
 number of years, it would not block connections unless there was a known
 security issue. For example, certificates that were intended to be EV, but
 were not disclosed properly, simply would have their EV status removed, while
@@ -367,14 +367,14 @@ disclosed as a condition of being trusted, the risks to the CA and CT
 ecosystem significantly increase if embedders implement CT without the ability
 for reliable, rapid updates, keeping track with ongoing development in the
 main tree and reliably delivering security updates on the same cadence as
-Chromium branches and Google Chrome releases.
+Monyhar branches and Google Chrome releases.
 
 For this reason, the CT implementation is undergoing a refactoring to reduce
-those risks through code and implementation. As a result, Chromium embedders
+those risks through code and implementation. As a result, Monyhar embedders
 will **NOT** have CT enforcement enabled by default, and are **NOT** encouraged
 to manually enable it at this time.
 
-Distributors of products that embed Chromium sources are encouraged to
+Distributors of products that embed Monyhar sources are encouraged to
 participate in the
 [ct-policy@monyhar.org](https://groups.google.com/a/monyhar.org/forum/#!forum/ct-policy)
 discussion group, which involves a variety of stakeholders in the CT ecosystem

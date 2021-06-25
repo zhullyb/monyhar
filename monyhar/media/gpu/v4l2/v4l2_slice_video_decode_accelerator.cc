@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -317,7 +317,7 @@ bool V4L2SliceVideoDecodeAccelerator::Initialize(const Config& config,
              video_profile_ <= VP9PROFILE_MAX) {
     if (supports_requests_) {
       decoder_ = std::make_unique<VP9Decoder>(
-          std::make_unique<V4L2ChromiumVP9Accelerator>(this, device_.get()),
+          std::make_unique<V4L2MonyharVP9Accelerator>(this, device_.get()),
           video_profile_);
     } else {
       decoder_ = std::make_unique<VP9Decoder>(

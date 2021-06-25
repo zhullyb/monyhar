@@ -143,8 +143,8 @@ def _import_android_packages_if_necessary():
 _log = logging.getLogger(__name__)
 
 # The root directory for test resources, which has the same structure as the
-# source root directory of Chromium.
-# This path is defined in Chromium's base/test/test_support_android.cc.
+# source root directory of Monyhar.
+# This path is defined in Monyhar's base/test/test_support_android.cc.
 DEVICE_SOURCE_ROOT_DIR = '/data/local/tmp/'
 
 # The web tests directory on device, which has two usages:
@@ -561,7 +561,7 @@ class AndroidPort(base.Port):
         return exit_codes.OK_EXIT_STATUS
 
     def requires_http_server(self):
-        """Chromium Android runs tests on devices, and uses the HTTP server to
+        """Monyhar Android runs tests on devices, and uses the HTTP server to
         serve the actual web tests to the test driver.
         """
         return True
@@ -573,7 +573,7 @@ class AndroidPort(base.Port):
                                                    number_of_drivers)
 
     def create_driver(self, worker_number, no_timeout=False):
-        return ChromiumAndroidDriver(
+        return MonyharAndroidDriver(
             self,
             worker_number,
             driver_details=self._driver_details,
@@ -614,7 +614,7 @@ class AndroidPort(base.Port):
         return self._local_port._shut_down_http_server(pid)
 
     def _driver_class(self):
-        return ChromiumAndroidDriver
+        return MonyharAndroidDriver
 
     # Local private methods.
 
@@ -773,14 +773,14 @@ http://crbug.com/165250 discusses making these pre-built binaries externally ava
             ' '.join([perfhost_display_patch] + perfhost_report_command))
 
 
-class ChromiumAndroidDriver(driver.Driver):
+class MonyharAndroidDriver(driver.Driver):
     def __init__(self,
                  port,
                  worker_number,
                  driver_details,
                  android_devices,
                  no_timeout=False):
-        super(ChromiumAndroidDriver, self).__init__(port, worker_number,
+        super(MonyharAndroidDriver, self).__init__(port, worker_number,
                                                     no_timeout)
         self._write_stdin_process = None
         self._read_stdout_process = None
@@ -820,7 +820,7 @@ class ChromiumAndroidDriver(driver.Driver):
     def __del__(self):
         self._teardown_performance()
         self._clean_up_cmd_line()
-        super(ChromiumAndroidDriver, self).__del__()
+        super(MonyharAndroidDriver, self).__del__()
 
     def _update_kallsyms_cache(self, output_dir):
         kallsyms_name = '%s-kallsyms' % self._device.serial
@@ -957,7 +957,7 @@ class ChromiumAndroidDriver(driver.Driver):
                     self._port.host.filesystem.basename(crash),
                     self._device.serial, stack_str)
 
-        return super(ChromiumAndroidDriver, self)._get_crash_log(
+        return super(MonyharAndroidDriver, self)._get_crash_log(
             stdout, stderr, newer_than)
 
     def cmd_line(self, per_test_args):
@@ -991,7 +991,7 @@ class ChromiumAndroidDriver(driver.Driver):
             self.stop()
         self._current_android_cmd_line = new_cmd_line
 
-        super(ChromiumAndroidDriver, self).start(per_test_args, deadline)
+        super(MonyharAndroidDriver, self).start(per_test_args, deadline)
 
     def _start(self, per_test_args):
         if not self._android_devices.is_device_prepared(self._device.serial):
@@ -1015,7 +1015,7 @@ class ChromiumAndroidDriver(driver.Driver):
         )
 
     def _start_once(self, per_test_args):
-        super(ChromiumAndroidDriver, self)._start(
+        super(MonyharAndroidDriver, self)._start(
             per_test_args, wait_for_ready=False)
 
         self._device.adb.Logcat(clear=True)
@@ -1174,7 +1174,7 @@ class ChromiumAndroidDriver(driver.Driver):
         forwarder.Forwarder.KillDevice(self._device)
         forwarder.Forwarder.KillHost()
 
-        super(ChromiumAndroidDriver, self).stop()
+        super(MonyharAndroidDriver, self).stop()
 
         self._clean_up_cmd_line()
 
@@ -1221,7 +1221,7 @@ class ChromiumAndroidDriver(driver.Driver):
         self._created_cmd_line = False
 
     def _command_from_driver_input(self, driver_input):
-        command = super(ChromiumAndroidDriver,
+        command = super(MonyharAndroidDriver,
                         self)._command_from_driver_input(driver_input)
         if command.startswith('/'):
             command = 'http://127.0.0.1:8000' + WEB_TESTS_PATH_PREFIX + \

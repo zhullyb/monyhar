@@ -586,7 +586,7 @@ Nếu bạn tắt chính sách này, thì việc cuộn trang web đến các ph
 
        Bạn không nên đặt chính sách này nếu đã chọn chế độ khác để đặt chính sách proxy.
 
-       Lưu ý: Để xem thêm ví dụ cụ thể, hãy truy cập vào trang The Chromium Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
+       Lưu ý: Để xem thêm ví dụ cụ thể, hãy truy cập vào trang The Monyhar Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
 <translation id="1767673020408652620">Bật Ứng dụng đề xuất khi hộp tìm kiếm ở trạng thái 0</translation>
 <translation id="1780323582106687813">Chính sách này không còn dùng nữa, vui lòng sử dụng chính sách "<ph name="EXTENSION_INSTALL_ALLOWLIST_POLICY_NAME" />".
 
@@ -686,7 +686,7 @@ Nếu bạn tắt chính sách này, thì việc cuộn trang web đến các ph
      </translation>
 <translation id="1919802376548418720">Sử dụng chính sách KDC để ủy quyền thông tin xác thực.</translation>
 <translation id="1920046221095339924">Cho phép phiên được quản lý trên thiết bị</translation>
-<translation id="1920772397574801429">Nếu bạn đặt chính sách này, hệ thống sẽ chỉ định loại tài khoản do ứng dụng xác thực Android cung cấp có hỗ trợ tính năng xác thực <ph name="HTTP_NEGOTIATE" /> (chẳng hạn như xác thực Kerberos). Nhà cung cấp ứng dụng xác thực sẽ cung cấp thông tin này. Để biết thông tin chi tiết, hãy truy cập vào trang The Chromium Projects (https://goo.gl/hajyfN)
+<translation id="1920772397574801429">Nếu bạn đặt chính sách này, hệ thống sẽ chỉ định loại tài khoản do ứng dụng xác thực Android cung cấp có hỗ trợ tính năng xác thực <ph name="HTTP_NEGOTIATE" /> (chẳng hạn như xác thực Kerberos). Nhà cung cấp ứng dụng xác thực sẽ cung cấp thông tin này. Để biết thông tin chi tiết, hãy truy cập vào trang The Monyhar Projects (https://goo.gl/hajyfN)
 
       Nếu bạn không đặt chính sách này, hệ thống sẽ tắt tính năng xác thực <ph name="HTTP_NEGOTIATE" /> trên Android.</translation>
 <translation id="1925529914257504750">Bật P2P cho tính năng tự động cập nhật</translation>
@@ -3125,7 +3125,7 @@ Khi bạn đặt chính sách này, <ph name="PRODUCT_OS_NAME" /> chỉ cho phé
 
           Nếu chính sách này không được đặt, dòng lệnh mặc định sẽ được sử dụng.</translation>
 <translation id="5152393033264257734">Cho phép các tùy chọn kiểm tra chặn hệ thống tên miền (DNS) và thanh thông tin "Ý của bạn là http://intranetsite/".</translation>
-<translation id="5152787786897382519">Cả Chromium và Google Chrome đều có một số nhóm chính sách dựa vào nhau để cho phép kiểm soát một tính năng. Các nhóm này được biểu thị qua các nhóm chính sách sau đây. Nếu các chính sách có thể chứa nhiều nguồn, thì chỉ áp dụng những giá trị thuộc nguồn có mức ưu tiên cao nhất. Các giá trị thuộc một nguồn có mức ưu tiên thấp hơn trong cùng một nhóm sẽ bị bỏ qua. Thứ tự ưu tiên được xác định trong <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Cả Monyhar và Google Chrome đều có một số nhóm chính sách dựa vào nhau để cho phép kiểm soát một tính năng. Các nhóm này được biểu thị qua các nhóm chính sách sau đây. Nếu các chính sách có thể chứa nhiều nguồn, thì chỉ áp dụng những giá trị thuộc nguồn có mức ưu tiên cao nhất. Các giá trị thuộc một nguồn có mức ưu tiên thấp hơn trong cùng một nhóm sẽ bị bỏ qua. Thứ tự ưu tiên được xác định trong <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5153187201534281749">Biểu tượng các tính năng thử nghiệm của trình duyệt trên thanh công cụ</translation>
 <translation id="5163002264923337812">Cho phép quy trình đăng nhập dựa trên web cũ</translation>
 <translation id="516520353995300280">Nếu bạn đặt chính sách này, thì hệ thống sẽ tắt tùy chọn thực thi các yêu cầu tiết lộ về Tính minh bạch của chứng chỉ cho danh sách Tổ chức phát hành chứng chỉ (CA) cũ đối với chuỗi chứng chỉ có hàm băm <ph name="SUBJECT_PUBLIC_KEY_INFO" /> đã chỉ định. Máy chủ doanh nghiệp có thể tiếp tục sử dụng các chứng chỉ không được tin cậy (vì các chứng chỉ này không được tiết lộ công khai đúng cách). Để tắt tùy chọn thực thi, hàm băm <ph name="SUBJECT_PUBLIC_KEY_INFO" /> phải xuất hiện trong một chứng chỉ CA được nhận dạng là CA cũ. Một hoặc nhiều hệ điều hành mà <ph name="PRODUCT_NAME" /> hỗ trợ sẽ tin cậy CA cũ một cách công khai. Tuy nhiên, CA cũ đó không được Dự án nguồn mở Android hoặc <ph name="PRODUCT_OS_NAME" /> tin cậy.
@@ -4223,7 +4223,7 @@ Nếu bạn đặt chính sách thành Tắt, thì <ph name="PRODUCT_NAME" /> s�
 
       Nếu bạn không đặt chính sách này, người dùng có thể chọn các tùy chọn cài đặt proxy.
 
-      Lưu ý: Để xem các ví dụ cụ thể, hãy truy cập vào trang The Chromium Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
+      Lưu ý: Để xem các ví dụ cụ thể, hãy truy cập vào trang The Monyhar Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
 <translation id="6561396069801924653">Hiển thị tùy chọn trợ năng trong menu của khay hệ thống</translation>
 <translation id="6562889469672829421">Khoảng thời gian (tính bằng mili giây) kể từ khi không có hoạt động đầu vào của người dùng cho đến thời điểm màn hình tối đi</translation>
 <translation id="6563458316362153786">Bật tính năng Chuyển đổi nhanh 802.11r</translation>
@@ -4457,7 +4457,7 @@ Nếu bạn đặt chính sách thành Tắt, thì <ph name="PRODUCT_NAME" /> s�
           * <ph name="PROXY_MODE_ENUM_FIXED_SERVERS" />, các trường <ph name="PROXY_SERVER_PROXY_SETTINGS_FIELD" /> và <ph name="PROXY_BYPASS_LIST_PROXY_SETTINGS_FIELD" /> sẽ được dùng.
           * <ph name="PROXY_MODE_ENUM_PAC_SCRIPT" />, các trường <ph name="PROXY_BYPASS_LIST_PROXY_PAC_URL" /> và <ph name="PROXY_BYPASS_LIST_PROXY_SETTINGS_FIELD" /> sẽ được dùng.
 
-      Lưu ý: Để xem thêm ví dụ cụ thể, hãy truy cập vào trang The Chromium Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
+      Lưu ý: Để xem thêm ví dụ cụ thể, hãy truy cập vào trang The Monyhar Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
 <translation id="6835883744948188639">Nên hiển thị lời nhắc định kỳ cho người dùng cho biết cần chạy lại</translation>
 <translation id="683688607121170501">Tùy chọn cài đặt này cho phép người dùng chuyển đổi giữa các Tài khoản Google trong vùng nội dung của cửa sổ trình duyệt và trong các ứng dụng Android sau khi họ đăng nhập vào thiết bị <ph name="PRODUCT_OS_NAME" />.
 
@@ -4678,7 +4678,7 @@ Nếu bạn đặt chính sách thành Tắt, thì <ph name="PRODUCT_NAME" /> s�
 
        Bạn không nên đặt chính sách này nếu đã chọn chế độ khác để đặt chính sách proxy.
 
-       Lưu ý: Để xem các ví dụ cụ thể, hãy truy cập vào trang The Chromium Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
+       Lưu ý: Để xem các ví dụ cụ thể, hãy truy cập vào trang The Monyhar Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
 <translation id="7002040773317582266">Tính năng kiểm tra các URL trong khung chính theo thời gian thực đang bật.</translation>
 <translation id="7003746348783715221">Tùy chọn <ph name="PRODUCT_NAME" /></translation>
 <translation id="7007283257527015835">Một cờ boolean cho biết liệu bạn có phải đặt trình xử lý giao thức làm tùy chọn mặc định hay không.</translation>
@@ -5228,7 +5228,7 @@ Nếu bạn đặt chính sách thành Tắt, thì <ph name="PRODUCT_NAME" /> s�
 
        Bạn không nên đặt chính sách này nếu đã chọn chế độ khác để đặt chính sách proxy.
 
-      Lưu ý: Để xem các ví dụ cụ thể, hãy truy cập vào trang The Chromium Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
+      Lưu ý: Để xem các ví dụ cụ thể, hãy truy cập vào trang The Monyhar Projects (https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).</translation>
 <translation id="7717938661004793600">Định cấu hình các tính năng hỗ trợ tiếp cận của <ph name="PRODUCT_OS_NAME" />.</translation>
 <translation id="7721944091689270995">Mã người dùng <ph name="PLUGIN_VM_NAME" /></translation>
 <translation id="7724161903134898864">Nếu bạn đặt chính sách này thành 1, thì các trang web có thể hiển thị cửa sổ bật lên. Nếu bạn đặt chính sách này thành 2, thì các trang web không thể hiển thị cửa sổ bật lên.
@@ -5596,7 +5596,7 @@ Nếu bạn không đặt chính sách này, thì màn hình bảo vệ quyền 
       Nếu chính sách không được đặt, <ph name="PRODUCT_OS_NAME" /> sẽ sử dụng ID tài khoản email của tài khoản trong thiết bị làm tên hiển thị trên màn hình đăng nhập.
 
       Chính sách này bị bỏ qua đối với các tài khoản người dùng thông thường.</translation>
-<translation id="8259375588339409826">Cả Chromium và Google Chrome đều hỗ trợ nhóm chính sách giống nhau. Xin lưu ý rằng tài liệu này có thể bao gồm các chính sách chưa được ban hành (nghĩa là mục 'Được hỗ trợ trên' của các chính sách này đề cập đến một phiên bản <ph name="PRODUCT_NAME" /> chưa phát hành). Những chính sách này có thể bị thay đổi hoặc xóa bỏ mà không thông báo trước. Chúng tôi không bảo đảm bất kỳ điều gì, kể cả bảo đảm cho các thuộc tính bảo mật và quyền riêng tư.
+<translation id="8259375588339409826">Cả Monyhar và Google Chrome đều hỗ trợ nhóm chính sách giống nhau. Xin lưu ý rằng tài liệu này có thể bao gồm các chính sách chưa được ban hành (nghĩa là mục 'Được hỗ trợ trên' của các chính sách này đề cập đến một phiên bản <ph name="PRODUCT_NAME" /> chưa phát hành). Những chính sách này có thể bị thay đổi hoặc xóa bỏ mà không thông báo trước. Chúng tôi không bảo đảm bất kỳ điều gì, kể cả bảo đảm cho các thuộc tính bảo mật và quyền riêng tư.
 
 Những chính sách này chỉ dùng cho mục đích định cấu hình các phiên bản <ph name="PRODUCT_NAME" /> nội bộ trong tổ chức của bạn. Việc sử dụng các chính sách này bên ngoài tổ chức (ví dụ: trong một chương trình được phân phối công khai) sẽ bị coi là phần mềm độc hại và có thể bị Google và các nhà cung cấp phần mềm diệt vi-rút gắn nhãn là phần mềm độc hại.
 

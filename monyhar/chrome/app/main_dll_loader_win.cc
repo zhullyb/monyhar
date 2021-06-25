@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -215,7 +215,7 @@ void ChromeDllLoader::OnBeforeLaunch(const base::CommandLine& cmd_line,
 
 //=============================================================================
 
-class ChromiumDllLoader : public MainDllLoader {
+class MonyharDllLoader : public MainDllLoader {
  protected:
   void OnBeforeLaunch(const base::CommandLine& cmd_line,
                       const std::string& process_type,
@@ -226,6 +226,6 @@ MainDllLoader* MakeMainDllLoader() {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
   return new ChromeDllLoader();
 #else
-  return new ChromiumDllLoader();
+  return new MonyharDllLoader();
 #endif
 }

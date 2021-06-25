@@ -79,7 +79,7 @@ modified as follows:
 * The response body is replaced with an empty body.
 * The response headers are removed.
 
-> [lukasza@monyhar.org] Chromium currently retains Access-Control-\* headers
+> [lukasza@monyhar.org] Monyhar currently retains Access-Control-\* headers
 > (this helps generate better error messages for CORS).
 
 To be effective against speculative side-channel attacks, CORB blocking must
@@ -617,7 +617,7 @@ CORB has no impact on the following scenarios:
 ### Quantifying CORB impact on existing websites
 
 CORB has been enabled in optional Site Isolation modes and field trials, and
-Chromium has been instrumented to count how many CORB-eligible responses are
+Monyhar has been instrumented to count how many CORB-eligible responses are
 blocked.  (CORB-eligible responses exclude
 [navigation requests](https://fetch.spec.whatwg.org/#navigation-request) and
 downloads; see the "What kinds of requests are CORB-eligible?" section above.)

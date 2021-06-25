@@ -1,4 +1,4 @@
-// Copyright (c) 2015 The Chromium Authors. All rights reserved.
+// Copyright (c) 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -21,7 +21,7 @@ class ExecutionContext;
 using RTCCertificateCallback =
     base::OnceCallback<void(rtc::scoped_refptr<rtc::RTCCertificate>)>;
 
-// Chromium's WebRTCCertificateGenerator implementation; uses the
+// Monyhar's WebRTCCertificateGenerator implementation; uses the
 // PeerConnectionIdentityStore/SSLIdentity::Generate to generate the identity,
 // rtc::RTCCertificate and blink::RTCCertificate.
 class MODULES_EXPORT RTCCertificateGenerator {

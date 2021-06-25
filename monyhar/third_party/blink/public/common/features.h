@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -173,7 +173,7 @@ BLINK_COMMON_EXPORT extern const base::FeatureParam<std::string>
 
 BLINK_COMMON_EXPORT extern const base::Feature kDispatchBeforeUnloadOnFreeze;
 
-BLINK_COMMON_EXPORT extern const base::Feature kLowLatencyCanvas2dImageChromium;
+BLINK_COMMON_EXPORT extern const base::Feature kLowLatencyCanvas2dImageMonyhar;
 BLINK_COMMON_EXPORT extern const base::Feature kLowLatencyCanvas2dSwapChain;
 BLINK_COMMON_EXPORT extern const base::Feature kLowLatencyWebGLSwapChain;
 

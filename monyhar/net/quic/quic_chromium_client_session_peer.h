@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,30 +14,30 @@
 
 namespace net {
 
-class QuicChromiumClientSession;
-class QuicChromiumClientStream;
+class QuicMonyharClientSession;
+class QuicMonyharClientStream;
 
 namespace test {
 
-class QuicChromiumClientSessionPeer {
+class QuicMonyharClientSessionPeer {
  public:
-  static void SetHostname(QuicChromiumClientSession* session,
+  static void SetHostname(QuicMonyharClientSession* session,
                           const std::string& hostname);
 
-  static uint64_t GetPushedBytesCount(QuicChromiumClientSession* session);
+  static uint64_t GetPushedBytesCount(QuicMonyharClientSession* session);
 
   static uint64_t GetPushedAndUnclaimedBytesCount(
-      QuicChromiumClientSession* session);
+      QuicMonyharClientSession* session);
 
-  static QuicChromiumClientStream* CreateOutgoingStream(
-      QuicChromiumClientSession* session);
+  static QuicMonyharClientStream* CreateOutgoingStream(
+      QuicMonyharClientSession* session);
 
-  static bool GetSessionGoingAway(QuicChromiumClientSession* session);
+  static bool GetSessionGoingAway(QuicMonyharClientSession* session);
 
-  static bool DoesSessionAllowPortMigration(QuicChromiumClientSession* session);
+  static bool DoesSessionAllowPortMigration(QuicMonyharClientSession* session);
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(QuicChromiumClientSessionPeer);
+  DISALLOW_COPY_AND_ASSIGN(QuicMonyharClientSessionPeer);
 };
 
 }  // namespace test

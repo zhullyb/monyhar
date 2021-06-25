@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -50,8 +50,8 @@ PPB_Graphics3D_Impl::PPB_Graphics3D_Impl(PP_Instance instance)
       has_alpha_(false),
       use_image_monyhar_(
           !base::CommandLine::ForCurrentProcess()->HasSwitch(
-              switches::kDisablePepper3DImageChromium) &&
-          base::FeatureList::IsEnabled(features::kPepper3DImageChromium)) {}
+              switches::kDisablePepper3DImageMonyhar) &&
+          base::FeatureList::IsEnabled(features::kPepper3DImageMonyhar)) {}
 
 PPB_Graphics3D_Impl::~PPB_Graphics3D_Impl() {
   // Unset the client before the command_buffer_ is destroyed, similar to how

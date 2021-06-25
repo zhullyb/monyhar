@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -5096,8 +5096,8 @@ if __name__ == '__main__':
         chrome_path = os.path.join(driver_path, 'Google Chrome.app',
                                    'Contents', 'MacOS', 'Google Chrome')
       else:
-        chrome_path = os.path.join(driver_path, 'Chromium.app',
-                                   'Contents', 'MacOS', 'Chromium')
+        chrome_path = os.path.join(driver_path, 'Monyhar.app',
+                                   'Contents', 'MacOS', 'Monyhar')
     elif platform == 'win':
       chrome_path = os.path.join(driver_path, 'chrome.exe')
 

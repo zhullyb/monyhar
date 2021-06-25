@@ -5,6 +5,6 @@
 * [Mojo Basics](/mojo/docs/basics.md)
 * [IDL](/mojo/public/tools/bindings/README.md)
 * [C++ bindings](/mojo/public/cpp/bindings/README.md)
-* [Chromium's Mojo style guide](/docs/security/mojo.md)
+* [Monyhar's Mojo style guide](/docs/security/mojo.md)
 
 [home]: /mojo/README.md

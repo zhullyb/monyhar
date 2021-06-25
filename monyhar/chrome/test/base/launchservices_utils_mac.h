@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,7 +7,7 @@
 
 namespace test {
 
-// Attempts to guess the path to the Chromium app bundle and register it with
+// Attempts to guess the path to the Monyhar app bundle and register it with
 // LaunchServices. This is necessary in tests that want to install protocol
 // handlers, since as of macOS 10.15 a bundle ID cannot be the handler for a
 // protocol unless a corresponding app is already registered with

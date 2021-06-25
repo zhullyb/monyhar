@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,7 +37,7 @@ import java.util.concurrent.RejectedExecutionException;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
- * {@link BidirectionalStream} implementation using Chromium network stack.
+ * {@link BidirectionalStream} implementation using Monyhar network stack.
  * All @CalledByNative methods are called on the native network thread
  * and post tasks with callback calls onto Executor. Upon returning from callback, the native
  * stream is called on Executor thread and posts native tasks to the native network thread.

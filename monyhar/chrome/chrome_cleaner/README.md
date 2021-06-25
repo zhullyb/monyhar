@@ -21,7 +21,7 @@ remove the UwS.
 
 This directory contains the source for both.
 
-Code in Chromium that deals with the Software Reporter Tool and Chrome Cleanup
+Code in Monyhar that deals with the Software Reporter Tool and Chrome Cleanup
 Tool includes:
 
 *   [Software Reporter component updater](/chrome/browser/component_updater)
@@ -33,7 +33,7 @@ Tool includes:
 *   [UI for modal dialogs](/chrome/browser/ui/views) (files `chrome_cleaner_*`)
 *   [Shared constants and IPC interfaces](/components/chrome_cleaner/public) -
     These are used for communication between Chrome and the Software Reporter /
-    Chrome Cleanup Tool, so both this directory and the other Chromium
+    Chrome Cleanup Tool, so both this directory and the other Monyhar
     directories above have dependencies on them.
 
 ## Targets
@@ -57,7 +57,7 @@ files that the tool will detect as UwS:
 
 The public build will link to the test scanning engine in
 `chrome/chrome_cleaner/engines/target/test_engine_delegate.cc` which only
-detects test files. This is the default when building on the Chromium
+detects test files. This is the default when building on the Monyhar
 buildbots.
 
 If `is_internal_chrome_cleaner_build` is set in GN, the build looks for
@@ -95,7 +95,7 @@ The build is controlled by the following arguments that can be set in args.gn:
 *  `reporter_branding_path`, `cleaner_branding_path`, `version_path`: Paths to
    resource files that will be used to populate the VERSIONINFO of the
    executables.
-   * By default these identify as The Chromium Authors. When
+   * By default these identify as The Monyhar Authors. When
    `is_internal_chrome_cleaner_build` is set, these are overridden to identify
    as Google.
    * To ship a customized version of the tool, override these to point

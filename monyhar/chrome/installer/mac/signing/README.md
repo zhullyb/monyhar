@@ -25,7 +25,7 @@ Chrome uses.
 A sample invocation to use during development would be:
 
     $ ninja -C out/release chrome chrome/installer/mac
-    $ ./out/release/Chromium\ Packaging/sign_chrome.py --input out/release --output /tmp/signed --identity 'MacOS Developer' --development --disable-packaging
+    $ ./out/release/Monyhar\ Packaging/sign_chrome.py --input out/release --output /tmp/signed --identity 'MacOS Developer' --development --disable-packaging
 
 The `--disable-packaging` flag skips the creation of DMG and PKG files, which
 speeds up the signing process when one is only interested in a signed .app
@@ -56,16 +56,16 @@ You will need to explicitly mark the certificate in Keychain Access as trusted.
 Be sure that `security -v find-identity` lists this new certificate as a valid
 identity.
 
-## Chromium
+## Monyhar
 
 There are slight differences between the official Google Chrome signed build and
-a development-signed Chromium build. Specifically, the entitlements will vary
+a development-signed Monyhar build. Specifically, the entitlements will vary
 because the default
 [chrome/app/app-entitlements.plist](../../../app/app-entitlements.plist) omits
 [specific entitlements](../../../app/app-entitlements-chrome.plist) that are
 tied to the official Google signing identity.
 
-In addition, the Chromium [code sign
+In addition, the Monyhar [code sign
 config](https://cs.monyhar.org/monyhar/src/chrome/installer/mac/signing/monyhar_config.py)
 only produces one Distribution to sign just the .app. An
 `is_chrome_branded=true` build produces several Distributions for the official
@@ -82,7 +82,7 @@ an empty plist.
 
 ### System Detached Signatures
 
-MacOS may itself sign Chromium build binaries when it needs to record a
+MacOS may itself sign Monyhar build binaries when it needs to record a
 signature for certain OS operations. The signature is not attached to the
 application bundle, as the signing scripts do, but it is instead recorded in a
 _detached signature database_. This happens, e.g. when a network request

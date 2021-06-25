@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -25,16 +25,16 @@ def FindChrome(src_dir, configs, verbose=False):
     chrome_locations.extend([
         'build/%s/chrome.exe' % config,
         'chrome/%s/chrome.exe' % config,
-        # Windows Chromium ninja builder
+        # Windows Monyhar ninja builder
         'out/%s/chrome.exe' % config,
         # Linux
         'out/%s/chrome' % config,
-        # Mac Chromium ninja builder
-        'out/%s/Chromium.app/Contents/MacOS/Chromium' % config,
+        # Mac Monyhar ninja builder
+        'out/%s/Monyhar.app/Contents/MacOS/Monyhar' % config,
         # Mac release ninja builder
         'out/%s/Google Chrome.app/Contents/MacOS/Google Chrome' % config,
-        # Mac Chromium xcode builder
-        'xcodebuild/%s/Chromium.app/Contents/MacOS/Chromium' % config,
+        # Mac Monyhar xcode builder
+        'xcodebuild/%s/Monyhar.app/Contents/MacOS/Monyhar' % config,
         # Mac release xcode builder
         'xcodebuild/%s/Google Chrome.app/Contents/MacOS/Google Chrome' % config,
     ])

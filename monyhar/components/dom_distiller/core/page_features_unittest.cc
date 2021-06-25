@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -21,7 +21,7 @@ namespace dom_distiller {
 
 // This test uses input data of core features and the output of the training
 // pipeline's derived feature extraction to ensure that the extraction that is
-// done in Chromium matches that in the training pipeline.
+// done in Monyhar matches that in the training pipeline.
 TEST(DomDistillerPageFeaturesTest, TestCalculateDerivedFeatures) {
   base::FilePath dir_source_root;
   EXPECT_TRUE(base::PathService::Get(base::DIR_SOURCE_ROOT, &dir_source_root));

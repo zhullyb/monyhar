@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -79,11 +79,11 @@ class ChromeEnterpriseTestCase(EnterpriseTestCase):
     segments = policy_name.split('\\')
     policy_name = segments[-1]
 
-    # The policy will be set for both Chrome and Chromium, since only
+    # The policy will be set for both Chrome and Monyhar, since only
     # googlers can build Chrome-branded executable.
     keys = [
         r'HKLM\Software\Policies\Google\Chrome',
-        r'HKLM\Software\Policies\Chromium'
+        r'HKLM\Software\Policies\Monyhar'
     ]
     for key in keys:
       if len(segments) >= 2:
@@ -104,7 +104,7 @@ class ChromeEnterpriseTestCase(EnterpriseTestCase):
 
     keys = [
         r'HKLM\Software\Policies\Google\Chrome',
-        r'HKLM\Software\Policies\Chromium'
+        r'HKLM\Software\Policies\Monyhar'
     ]
     for key in keys:
       if len(segments) >= 2:

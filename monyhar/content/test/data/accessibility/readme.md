@@ -134,7 +134,7 @@ prefixed by a platform name:
 * `@WIN-` applied to Windows platform, MSAA/IAccessible2 APIs;
 * `@UIA-WIN-` applied to UIA on Windows;
 * `@MAC-` applied to Mac platform, NSAccessibility API;
-* `@BLINK-` applied to Chromium engine;
+* `@BLINK-` applied to Monyhar engine;
 * `@ANDROID-` applied to Android platform;
 * `@AURALINUX-` applied to Linux platform, ATK API.
 

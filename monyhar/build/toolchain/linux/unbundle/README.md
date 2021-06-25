@@ -1,7 +1,7 @@
 # Overview
 
 This directory contains files that make it possible for Linux
-distributions to build Chromium using system toolchain.
+distributions to build Monyhar using system toolchain.
 
 For more info on established way such builds are configured,
 please read the following:

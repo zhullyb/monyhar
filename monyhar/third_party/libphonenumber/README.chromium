@@ -21,7 +21,7 @@ Additional files, not in the original library:
   LICENSE # Taken from https://github.com/googlei18n/libphonenumber/
   phonenumber_api.h
 
-The library is mapped through the DEPS file into the Chromium sources root
+The library is mapped through the DEPS file into the Monyhar sources root
 folder. To update:
 1. Get the latest commit hash from
    https://github.com/googlei18n/libphonenumber/

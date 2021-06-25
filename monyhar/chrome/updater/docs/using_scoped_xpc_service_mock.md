@@ -175,7 +175,7 @@ StateChangeTestEngine.
 
 This unit test uses the MacUpdateServiceOutOfProcessTest test fixture, which
 creates a ScopedXPCServiceMock named `mock_driver_` when allocated, along with
-a `base::test::SingleThreadTaskEnvironment` to allow Chromium sequence behavior
+a `base::test::SingleThreadTaskEnvironment` to allow Monyhar sequence behavior
 to be intercepted and manipulated for testing. In `SetUp`, it prepares a
 reference to the active RunLoop, and prepares to define `service_` later - a
 field that will only be filled once the runloop starts running, because

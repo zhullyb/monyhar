@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -47,7 +47,7 @@ def install(out_dir):
   cmd = ['build/android/adb_install_apk.py']
   env = {'BUILDTYPE': out_dir[4:]}
   return run(cmd + ['CronetTestInstrumentation.apk'], env=env) or \
-      run(cmd + ['ChromiumNetTestSupport.apk'], env=env)
+      run(cmd + ['MonyharNetTestSupport.apk'], env=env)
 
 
 def test(out_dir, extra_options):

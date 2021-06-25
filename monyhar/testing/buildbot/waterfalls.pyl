@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -1376,7 +1376,7 @@
     'name': 'monyhar.monyharos',
     'mixins': ['monyhar-tester-service-account'],
     'machines': {
-      'Linux ChromiumOS Full': {
+      'Linux MonyharOS Full': {
         'additional_compile_targets': [
           'base_unittests',
           'browser_tests',
@@ -2369,7 +2369,7 @@
           'monyhar_builder_asan',
         ],
       },
-      'ChromiumOS ASAN Release': {
+      'MonyharOS ASAN Release': {
         'additional_compile_targets': [
           'monyhar_builder_asan',
         ],
@@ -3272,7 +3272,7 @@
         'swarming': {
           'dimension_sets': [
             {
-              # This matches the dimensions for "Chromium Mac10.13" in
+              # This matches the dimensions for "Monyhar Mac10.13" in
               # monyhar_fyi.py.
               'cpu': 'x86-64',
               'gpu': '8086:0a2e',
@@ -3301,7 +3301,7 @@
         'swarming': {
           'dimension_sets': [
             {
-              # This matches the dimensions for "Chromium Mac10.15" in
+              # This matches the dimensions for "Monyhar Mac10.15" in
               # monyhar_fyi.py.
               'cpu': 'x86-64',
               'gpu': '8086:0a2e',
@@ -3399,17 +3399,17 @@
     'name': 'monyhar.goma',
     'mixins': ['monyhar-tester-service-account'],
     'machines': {
-      'Chromium Android ARM 32-bit Goma RBE ToT': {
+      'Monyhar Android ARM 32-bit Goma RBE ToT': {
         'additional_compile_targets': [
           'all',
         ],
       },
-      'Chromium Android ARM 32-bit Goma RBE ToT (ATS)': {
+      'Monyhar Android ARM 32-bit Goma RBE ToT (ATS)': {
         'additional_compile_targets': [
           'all',
         ],
       },
-      'Chromium Linux Goma RBE Staging': {
+      'Monyhar Linux Goma RBE Staging': {
         'mixins': [
           'linux-bionic',
         ],
@@ -3420,7 +3420,7 @@
           'gtest_tests': 'goma_gtests',
         },
       },
-      'Chromium Linux Goma RBE Staging (clobber)': {
+      'Monyhar Linux Goma RBE Staging (clobber)': {
         'mixins': [
           'linux-bionic',
         ],
@@ -3431,7 +3431,7 @@
           'gtest_tests': 'goma_gtests',
         },
       },
-      'Chromium Linux Goma RBE Staging (dbg)': {
+      'Monyhar Linux Goma RBE Staging (dbg)': {
         'mixins': [
           'linux-bionic',
         ],
@@ -3442,7 +3442,7 @@
           'gtest_tests': 'goma_gtests',
         },
       },
-      'Chromium Linux Goma RBE Staging (dbg) (clobber)': {
+      'Monyhar Linux Goma RBE Staging (dbg) (clobber)': {
         'mixins': [
           'linux-bionic',
         ],
@@ -3455,7 +3455,7 @@
       },
       # Due to disk shortage on Mac, we build 'chrome' instead of 'all'.
       # See crbug.com/899425
-      'Chromium Mac Goma RBE Staging': {
+      'Monyhar Mac Goma RBE Staging': {
         'mixins': [
           'mac_x64',
         ],
@@ -3466,7 +3466,7 @@
           'gtest_tests': 'goma_gtests',
         },
       },
-      'Chromium Mac Goma RBE Staging (clobber)': {
+      'Monyhar Mac Goma RBE Staging (clobber)': {
         'mixins': [
           'mac_x64',
         ],
@@ -3477,7 +3477,7 @@
           'gtest_tests': 'goma_gtests',
         },
       },
-      'Chromium Mac Goma RBE Staging (dbg)': {
+      'Monyhar Mac Goma RBE Staging (dbg)': {
         'mixins': [
           'mac_x64',
         ],
@@ -3488,7 +3488,7 @@
           'gtest_tests': 'goma_gtests',
         },
       },
-      'Chromium Mac Goma RBE ToT': {
+      'Monyhar Mac Goma RBE ToT': {
         'mixins': [
           'mac_x64',
         ],
@@ -3499,7 +3499,7 @@
           'gtest_tests': 'goma_gtests',
         },
       },
-      'Chromium iOS Goma RBE ToT': {
+      'Monyhar iOS Goma RBE ToT': {
         'additional_compile_targets': [
           'all',
         ],
@@ -5077,7 +5077,7 @@
           'gtest_tests': 'monyhar_linux_and_gl_gtests',
         },
       },
-      'Linux Chromium OS ASan LSan Tests (1)': {
+      'Linux Monyhar OS ASan LSan Tests (1)': {
         'mixins': [
           'linux-bionic',
         ],
@@ -5088,7 +5088,7 @@
           '--test-launcher-print-test-stdio=always',
         ],
       },
-      'Linux ChromiumOS MSan Tests': {
+      'Linux MonyharOS MSan Tests': {
         'mixins': [
           'linux-xenial',
           'x86-64',
@@ -5230,7 +5230,7 @@
           'gtest_tests': 'mojo_android_gtests',
         },
       },
-      'Mojo ChromiumOS': {
+      'Mojo MonyharOS': {
         'test_suites': {
           'gtest_tests': 'mojo_monyharos_fyi_gtests',
         },
@@ -5715,20 +5715,20 @@
     'name': 'monyhar.webrtc',
     'mixins': ['monyhar-tester-service-account'],
     'machines': {
-      'WebRTC Chromium Android Builder': {},
-      'WebRTC Chromium Android Tester': {
+      'WebRTC Monyhar Android Builder': {},
+      'WebRTC Monyhar Android Tester': {
         'os_type': 'android',
         'test_suites': {
           'gtest_tests': 'webrtc_android_tests_with_baremetal_tests',
         },
       },
-      'WebRTC Chromium Linux Builder': {
+      'WebRTC Monyhar Linux Builder': {
         'additional_compile_targets': [
           'jingle_unittests',
           'remoting_unittests',
         ],
       },
-      'WebRTC Chromium Linux Tester': {
+      'WebRTC Monyhar Linux Tester': {
         'mixins': [
           'linux-bionic',
           # Set an alias for builder name used in perf dashboard.
@@ -5743,13 +5743,13 @@
           'gtest_tests': 'webrtc_monyhar_tests_with_baremetal_tests',
         },
       },
-      'WebRTC Chromium Mac Builder': {
+      'WebRTC Monyhar Mac Builder': {
         'additional_compile_targets': [
           'jingle_unittests',
           'remoting_unittests',
         ],
       },
-      'WebRTC Chromium Mac Tester': {
+      'WebRTC Monyhar Mac Tester': {
         'mixins': [
           'monyhar-webrtc-rel-mac',
           'mac_x64',
@@ -5758,13 +5758,13 @@
           'gtest_tests': 'webrtc_monyhar_tests_with_baremetal_tests',
         },
       },
-      'WebRTC Chromium Win Builder': {
+      'WebRTC Monyhar Win Builder': {
         'additional_compile_targets': [
           'jingle_unittests',
           'remoting_unittests',
         ],
       },
-      'WebRTC Chromium Win10 Tester': {
+      'WebRTC Monyhar Win10 Tester': {
         'mixins': [
           'monyhar-webrtc-rel-win10',
         ],
@@ -5772,7 +5772,7 @@
           'gtest_tests': 'webrtc_monyhar_tests_with_baremetal_tests',
         },
       },
-      'WebRTC Chromium Win7 Tester': {
+      'WebRTC Monyhar Win7 Tester': {
         'mixins': [
           'monyhar-webrtc-rel-7',
         ],
@@ -5780,7 +5780,7 @@
           'gtest_tests': 'webrtc_monyhar_tests_with_baremetal_tests',
         },
       },
-      'WebRTC Chromium Win8 Tester': {
+      'WebRTC Monyhar Win8 Tester': {
         'mixins': [
           'monyhar-webrtc-rel-win8',
         ],
@@ -5796,7 +5796,7 @@
     'machines': {
       # For builders, specify targets if the builder has no associated
       # tester (if it does, it will build what the tester needs).
-      'WebRTC Chromium FYI Android Builder': {
+      'WebRTC Monyhar FYI Android Builder': {
         'additional_compile_targets': [
           'capture_unittests',
           'content_browsertests',
@@ -5805,9 +5805,9 @@
           'remoting_unittests',
         ],
       },
-      'WebRTC Chromium FYI Android Builder (dbg)': {},
-      'WebRTC Chromium FYI Android Builder ARM64 (dbg)': {},
-      'WebRTC Chromium FYI Android Tests (dbg) (L Nexus5)': {
+      'WebRTC Monyhar FYI Android Builder (dbg)': {},
+      'WebRTC Monyhar FYI Android Builder ARM64 (dbg)': {},
+      'WebRTC Monyhar FYI Android Tests (dbg) (L Nexus5)': {
         'os_type': 'android',
         'mixins': [
           'lollipop_generic',
@@ -5817,7 +5817,7 @@
           'gtest_tests': 'webrtc_monyhar_simple_gtests',
         },
       },
-      'WebRTC Chromium FYI Android Tests (dbg) (M Nexus5X)': {
+      'WebRTC Monyhar FYI Android Tests (dbg) (M Nexus5X)': {
         'os_type': 'android',
         'mixins': [
           'marshmallow',
@@ -5827,7 +5827,7 @@
           'gtest_tests': 'webrtc_monyhar_simple_gtests',
         },
       },
-      'WebRTC Chromium FYI Linux Builder (dbg)': {
+      'WebRTC Monyhar FYI Linux Builder (dbg)': {
         'additional_compile_targets': [
           'browser_tests',
           'capture_unittests',
@@ -5837,7 +5837,7 @@
           'remoting_unittests',
         ],
       },
-      'WebRTC Chromium FYI Linux Tester': {
+      'WebRTC Monyhar FYI Linux Tester': {
         'mixins': [
           'x86-64',
           'linux-xenial',
@@ -5846,7 +5846,7 @@
           'gtest_tests': 'webrtc_monyhar_gtests',
         },
       },
-      'WebRTC Chromium FYI Mac Builder (dbg)': {
+      'WebRTC Monyhar FYI Mac Builder (dbg)': {
         'additional_compile_targets': [
           'browser_tests',
           'capture_unittests',
@@ -5856,7 +5856,7 @@
           'remoting_unittests',
         ],
       },
-      'WebRTC Chromium FYI Mac Tester': {
+      'WebRTC Monyhar FYI Mac Tester': {
         'mixins': [
           'mac_mini_10.12',
         ],
@@ -5864,7 +5864,7 @@
           'gtest_tests': 'webrtc_monyhar_gtests',
         },
       },
-      'WebRTC Chromium FYI Win Builder (dbg)': {
+      'WebRTC Monyhar FYI Win Builder (dbg)': {
         'additional_compile_targets': [
           'browser_tests',
           'capture_unittests',
@@ -5874,7 +5874,7 @@
           'remoting_unittests',
         ],
       },
-      'WebRTC Chromium FYI Win10 Tester': {
+      'WebRTC Monyhar FYI Win10 Tester': {
         'mixins': [
           'x86-64',
           'win10',
@@ -5883,7 +5883,7 @@
           'gtest_tests': 'webrtc_monyhar_gtests',
         },
       },
-      'WebRTC Chromium FYI Win7 Tester': {
+      'WebRTC Monyhar FYI Win7 Tester': {
         'mixins': [
           'x86-64',
           'win7',
@@ -5892,7 +5892,7 @@
           'gtest_tests': 'webrtc_monyhar_gtests',
         },
       },
-      'WebRTC Chromium FYI Win8 Tester': {
+      'WebRTC Monyhar FYI Win8 Tester': {
         'mixins': [
           'x86-64',
           'win8',

@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -9,10 +9,10 @@ import compile_xcassets
 class TestFilterCompilerOutput(unittest.TestCase):
 
   relative_paths = {
-    '/Users/janedoe/monyhar/src/Chromium.xcassets':
-        '../../Chromium.xcassets',
-    '/Users/janedoe/monyhar/src/out/Default/Chromium.app/Assets.car':
-        'Chromium.app/Assets.car',
+    '/Users/janedoe/monyhar/src/Monyhar.xcassets':
+        '../../Monyhar.xcassets',
+    '/Users/janedoe/monyhar/src/out/Default/Monyhar.app/Assets.car':
+        'Monyhar.app/Assets.car',
   }
 
   def testNoError(self):
@@ -20,7 +20,7 @@ class TestFilterCompilerOutput(unittest.TestCase):
         '',
         compile_xcassets.FilterCompilerOutput(
             '/* com.apple.actool.compilation-results */\n'
-            '/Users/janedoe/monyhar/src/out/Default/Chromium.app/Assets.car\n',
+            '/Users/janedoe/monyhar/src/out/Default/Monyhar.app/Assets.car\n',
             self.relative_paths))
 
   def testNoErrorRandomMessages(self):
@@ -33,33 +33,33 @@ class TestFilterCompilerOutput(unittest.TestCase):
                 'yeDeVgWK) is from an older version and is being removed to pr'
                 'event problems.\n'
             '/* com.apple.actool.compilation-results */\n'
-            '/Users/janedoe/monyhar/src/out/Default/Chromium.app/Assets.car\n',
+            '/Users/janedoe/monyhar/src/out/Default/Monyhar.app/Assets.car\n',
             self.relative_paths))
 
   def testWarning(self):
     self.assertEquals(
         '/* com.apple.actool.document.warnings */\n'
-        '../../Chromium.xcassets:./image1.imageset/[universal][][][1x][][][]['
+        '../../Monyhar.xcassets:./image1.imageset/[universal][][][1x][][][]['
             '][][]: warning: The file "image1.png" for the image set "image1"'
             ' does not exist.\n',
         compile_xcassets.FilterCompilerOutput(
             '/* com.apple.actool.document.warnings */\n'
-            '/Users/janedoe/monyhar/src/Chromium.xcassets:./image1.imageset/['
+            '/Users/janedoe/monyhar/src/Monyhar.xcassets:./image1.imageset/['
                 'universal][][][1x][][][][][][]: warning: The file "image1.png'
                 '" for the image set "image1" does not exist.\n'
             '/* com.apple.actool.compilation-results */\n'
-            '/Users/janedoe/monyhar/src/out/Default/Chromium.app/Assets.car\n',
+            '/Users/janedoe/monyhar/src/out/Default/Monyhar.app/Assets.car\n',
             self.relative_paths))
 
   def testError(self):
     self.assertEquals(
         '/* com.apple.actool.errors */\n'
-        '../../Chromium.xcassets: error: The output directory "/Users/janedoe/'
-            'monyhar/src/out/Default/Chromium.app" does not exist.\n',
+        '../../Monyhar.xcassets: error: The output directory "/Users/janedoe/'
+            'monyhar/src/out/Default/Monyhar.app" does not exist.\n',
         compile_xcassets.FilterCompilerOutput(
             '/* com.apple.actool.errors */\n'
-            '/Users/janedoe/monyhar/src/Chromium.xcassets: error: The output '
-                'directory "/Users/janedoe/monyhar/src/out/Default/Chromium.a'
+            '/Users/janedoe/monyhar/src/Monyhar.xcassets: error: The output '
+                'directory "/Users/janedoe/monyhar/src/out/Default/Monyhar.a'
                 'pp" does not exist.\n'
             '/* com.apple.actool.compilation-results */\n',
             self.relative_paths))
@@ -67,15 +67,15 @@ class TestFilterCompilerOutput(unittest.TestCase):
   def testSpurious(self):
     self.assertEquals(
         '/* com.apple.actool.document.warnings */\n'
-        '../../Chromium.xcassets:./AppIcon.appiconset: warning: A 1024x1024 ap'
+        '../../Monyhar.xcassets:./AppIcon.appiconset: warning: A 1024x1024 ap'
             'p store icon is required for iOS apps\n',
         compile_xcassets.FilterCompilerOutput(
             '/* com.apple.actool.document.warnings */\n'
-            '/Users/janedoe/monyhar/src/Chromium.xcassets:./AppIcon.appiconse'
+            '/Users/janedoe/monyhar/src/Monyhar.xcassets:./AppIcon.appiconse'
                 't: warning: A 1024x1024 app store icon is required for iOS ap'
                 'ps\n'
             '/* com.apple.actool.document.notices */\n'
-            '/Users/janedoe/monyhar/src/Chromium.xcassets:./AppIcon.appiconse'
+            '/Users/janedoe/monyhar/src/Monyhar.xcassets:./AppIcon.appiconse'
                 't/[][ipad][76x76][][][1x][][]: notice: (null)\n',
             self.relative_paths))
 

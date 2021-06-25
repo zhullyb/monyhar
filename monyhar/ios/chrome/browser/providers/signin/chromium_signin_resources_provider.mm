@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,16 +12,16 @@
 #error "This file requires ARC support."
 #endif
 
-ChromiumSigninResourcesProvider::ChromiumSigninResourcesProvider() {}
-ChromiumSigninResourcesProvider::~ChromiumSigninResourcesProvider() {}
+MonyharSigninResourcesProvider::MonyharSigninResourcesProvider() {}
+MonyharSigninResourcesProvider::~MonyharSigninResourcesProvider() {}
 
 // The signin code expects to receive a non-nil response to this method, even
-// though signin is not supported by Chromium builds.
-UIImage* ChromiumSigninResourcesProvider::GetDefaultAvatar() {
+// though signin is not supported by Monyhar builds.
+UIImage* MonyharSigninResourcesProvider::GetDefaultAvatar() {
   return ImageWithColor([UIColor lightGrayColor]);
 }
 
-NSString* ChromiumSigninResourcesProvider::GetLocalizedString(
+NSString* MonyharSigninResourcesProvider::GetLocalizedString(
     ios::SigninStringID string_id) {
   return @"";
 }

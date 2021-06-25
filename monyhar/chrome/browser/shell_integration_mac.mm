@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ bool IsIdentifierDefaultProtocolClient(NSString* identifier,
 
 }  // namespace
 
-// Sets Chromium as default browser to be used by the operating system. This
+// Sets Monyhar as default browser to be used by the operating system. This
 // applies only for the current user. Returns false if this cannot be done, or
 // if the operation fails.
 bool SetAsDefaultBrowser() {
@@ -70,7 +70,7 @@ bool SetAsDefaultBrowser() {
   return true;
 }
 
-// Sets Chromium as the default application to be used by the operating system
+// Sets Monyhar as the default application to be used by the operating system
 // for the given protocol. This applies only for the current user. Returns false
 // if this cannot be done, or if the operation fails.
 bool SetAsDefaultProtocolClient(const std::string& protocol) {

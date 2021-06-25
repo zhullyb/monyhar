@@ -10,14 +10,14 @@
 #
 # Note that runhooks extracts the cipd file to build/mac/xcode_binaries -- your
 # build/xcode_binaries you're creating in step 1 above isn't used as part of
-# the Chromium build, build/mac_files/xcode_binaries is. So you need to
+# the Monyhar build, build/mac_files/xcode_binaries is. So you need to
 # `runhooks` after updating the hash in mac_toolchain.py like everyone else to
 # get the new bits for your local build.
 #
 # The ACLs for this package are determined by the directory structure. The
 # nomenclature mirrors that of the hermetic toolchain to avoid ACL duplication.
 package: infra_internal/ios/xcode/xcode_binaries/mac-amd64
-description: A hermetic deployment of all Xcode binaries used to build Chromium.
+description: A hermetic deployment of all Xcode binaries used to build Monyhar.
 root: "xcode_binaries"
 data:
   - dir: Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/

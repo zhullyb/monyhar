@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -228,7 +228,7 @@ AudioConfig DecoderConfigAdapter::ToCastAudioConfig(
       ToEncryptionScheme(config.encryption_scheme());
 
 #if defined(OS_ANDROID)
-  // On Android, Chromium's mp4 parser adds extra data for AAC, but we don't
+  // On Android, Monyhar's mp4 parser adds extra data for AAC, but we don't
   // need this with CMA.
   if (audio_config.codec == kCodecAAC)
     audio_config.extra_data.clear();

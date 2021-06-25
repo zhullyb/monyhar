@@ -1,6 +1,6 @@
 @ECHO OFF
 REM
-REM Copyright (c) 2017 The Chromium Project Authors. All rights reserved.
+REM Copyright (c) 2017 The Monyhar Project Authors. All rights reserved.
 REM Use of this source code is governed by a BSD-style license that can be
 REM found in the LICENSE file.
 REM

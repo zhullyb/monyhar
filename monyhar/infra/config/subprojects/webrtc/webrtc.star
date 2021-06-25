@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -39,65 +39,65 @@ defaults.swarming_tags.set(["vpython:native-python-wrapper"])
 defaults.triggered_by.set(["monyhar-gitiles-trigger"])
 
 defaults.properties.set({
-    "perf_dashboard_machine_group": "ChromiumWebRTC",
+    "perf_dashboard_machine_group": "MonyharWebRTC",
 })
 
 # Builders are defined in lexicographic order by name
 
 builder(
-    name = "WebRTC Chromium Android Builder",
+    name = "WebRTC Monyhar Android Builder",
     goma_backend = goma.backend.RBE_PROD,
 )
 
 builder(
-    name = "WebRTC Chromium Android Tester",
-    triggered_by = ["WebRTC Chromium Android Builder"],
+    name = "WebRTC Monyhar Android Tester",
+    triggered_by = ["WebRTC Monyhar Android Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium Linux Builder",
+    name = "WebRTC Monyhar Linux Builder",
     goma_backend = goma.backend.RBE_PROD,
 )
 
 builder(
-    name = "WebRTC Chromium Linux Tester",
-    triggered_by = ["WebRTC Chromium Linux Builder"],
+    name = "WebRTC Monyhar Linux Tester",
+    triggered_by = ["WebRTC Monyhar Linux Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium Mac Builder",
+    name = "WebRTC Monyhar Mac Builder",
     cores = 8,
     goma_backend = goma.backend.RBE_PROD,
     os = os.MAC_ANY,
 )
 
 builder(
-    name = "WebRTC Chromium Mac Tester",
+    name = "WebRTC Monyhar Mac Tester",
     os = os.MAC_ANY,
-    triggered_by = ["WebRTC Chromium Mac Builder"],
+    triggered_by = ["WebRTC Monyhar Mac Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium Win Builder",
+    name = "WebRTC Monyhar Win Builder",
     goma_backend = goma.backend.RBE_PROD,
     goma_enable_ats = True,
     os = os.WINDOWS_ANY,
 )
 
 builder(
-    name = "WebRTC Chromium Win10 Tester",
+    name = "WebRTC Monyhar Win10 Tester",
     os = os.WINDOWS_ANY,
-    triggered_by = ["WebRTC Chromium Win Builder"],
+    triggered_by = ["WebRTC Monyhar Win Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium Win7 Tester",
+    name = "WebRTC Monyhar Win7 Tester",
     os = os.WINDOWS_ANY,
-    triggered_by = ["WebRTC Chromium Win Builder"],
+    triggered_by = ["WebRTC Monyhar Win Builder"],
 )
 
 builder(
-    name = "WebRTC Chromium Win8 Tester",
+    name = "WebRTC Monyhar Win8 Tester",
     os = os.WINDOWS_ANY,
-    triggered_by = ["WebRTC Chromium Win Builder"],
+    triggered_by = ["WebRTC Monyhar Win Builder"],
 )

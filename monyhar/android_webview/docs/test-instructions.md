@@ -12,7 +12,7 @@ This guide is an extension with WebView-specific content.
 **Note:** except where otherwise noted, all tests require a device or emulator.
 ***
 
-## Chromium-side tests
+## Monyhar-side tests
 
 ### Instrumentation tests
 
@@ -218,7 +218,7 @@ WebView has [CTS](https://source.android.com/compatibility/cts) tests, testing
 end-to-end behavior (using the WebView installed on the system). These tests
 live in the Android source tree (under `//platform/cts/tests/tests/webkit/`).
 
-Chromium developers can download and run pre-built APKs for these test cases
+Monyhar developers can download and run pre-built APKs for these test cases
 with:
 
 ```sh

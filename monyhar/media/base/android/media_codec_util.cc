@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -50,7 +50,7 @@ const char kVp9MimeType[] = "video/x-vnd.on2.vp9";
 const char kAv1MimeType[] = "video/av01";
 }  // namespace
 
-static CodecProfileLevel MediaCodecProfileLevelToChromiumProfileLevel(
+static CodecProfileLevel MediaCodecProfileLevelToMonyharProfileLevel(
     JNIEnv* env,
     const JavaRef<jobject>& j_codec_profile_level) {
   VideoCodec codec = static_cast<VideoCodec>(
@@ -352,7 +352,7 @@ bool MediaCodecUtil::AddSupportedCodecProfileLevels(
       Java_MediaCodecUtil_getSupportedCodecProfileLevels(env));
   for (auto java_codec_profile_level :
        j_codec_profile_levels.ReadElements<jobject>()) {
-    result->push_back(MediaCodecProfileLevelToChromiumProfileLevel(
+    result->push_back(MediaCodecProfileLevelToMonyharProfileLevel(
         env, java_codec_profile_level));
   }
   return true;

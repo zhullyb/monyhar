@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -130,7 +130,7 @@ class CommonTest(unittest.TestCase):
         # Rejects basenames.
         with self.assertRaises(AssertionError):
             is_file_exportable('MANIFEST.json')
-        # Rejects files not in Chromium WPT.
+        # Rejects files not in Monyhar WPT.
         with self.assertRaises(AssertionError):
             is_file_exportable('third_party/fake/OWNERS')
         # Rejects absolute paths.

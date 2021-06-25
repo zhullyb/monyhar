@@ -12,8 +12,8 @@
 
 promise_setup(async t => {
   await test_driver.set_permission({ name: 'idle-detection' }, 'granted', false);
-  if (isChromiumBased) {
-    await loadChromiumResources();
+  if (isMonyharBased) {
+    await loadMonyharResources();
   }
 })
 

@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -770,7 +770,7 @@ void DirectCompositionSurfaceWin::Destroy() {
   // device to become 'dirty'. We must commit the changes to the device
   // in order for the objects to actually be destroyed.
   // Leaving the device in the dirty state for long periods of time means
-  // that if DWM.exe crashes, the Chromium window will become black until
+  // that if DWM.exe crashes, the Monyhar window will become black until
   // the next Commit.
   layer_tree_.reset();
   if (dcomp_device_)

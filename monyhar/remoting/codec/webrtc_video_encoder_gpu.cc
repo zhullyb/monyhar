@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -280,7 +280,7 @@ std::unique_ptr<WebrtcVideoEncoder> WebrtcVideoEncoderGpu::CreateForH264() {
 bool WebrtcVideoEncoderGpu::IsSupportedByH264(
     const WebrtcVideoEncoderSelector::Profile& profile) {
 #if defined(OS_WIN)
-  // This object is required by Chromium to ensure proper init/uninit of COM on
+  // This object is required by Monyhar to ensure proper init/uninit of COM on
   // this thread.  The guidance is to match the lifetime of this object to the
   // lifetime of the thread if possible.  Since we are still experimenting with
   // H.264 and run the encoder on a different thread, we use a locally scoped

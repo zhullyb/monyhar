@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -100,7 +100,7 @@ const char kAutoSelectDesktopCaptureSource[] =
 // the media-picker should otherwise be displayed to the user. This switch
 // is very similar to kAutoSelectDesktopCaptureSource, but limits selection
 // to tabs. This solves the issue of kAutoSelectDesktopCaptureSource being
-// liable to accidentally capturing the Chromium window instead of the tab,
+// liable to accidentally capturing the Monyhar window instead of the tab,
 // as both have the same title if the tab is focused.
 const char kAutoSelectTabCaptureSourceByTitle[] =
     "auto-select-tab-capture-source-by-title";
@@ -600,7 +600,7 @@ const char kWindowSize[]                    = "window-size";
 const char kWindowWorkspace[]               = "window-workspace";
 
 // Uses WinHTTP to fetch and evaluate PAC scripts. Otherwise the default is to
-// use Chromium's network stack to fetch, and V8 to evaluate.
+// use Monyhar's network stack to fetch, and V8 to evaluate.
 const char kWinHttpProxyResolver[]          = "winhttp-proxy-resolver";
 
 // Specifies which category option was clicked in the Windows Jumplist that

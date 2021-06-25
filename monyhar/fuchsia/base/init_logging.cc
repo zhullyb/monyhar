@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@
 namespace cr_fuchsia {
 
 // These values must match content/public/common/content_switches.cc so that
-// the values will be passed to child processes in projects that Chromium's
+// the values will be passed to child processes in projects that Monyhar's
 // Content layer.
 constexpr char kEnableLogging[] = "enable-logging";
 constexpr char kLogFile[] = "log-file";

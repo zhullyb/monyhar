@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -13,7 +13,7 @@ COLUMN_TYPES = (
     # Index columns.
     ('test_suite', str),  # benchmark name ('loading.mobile')
     ('measurement', str),  # metric name ('timeToFirstContentfulPaint')
-    ('bot', str),  # master/builder name ('ChromiumPerf.android-nexus5')
+    ('bot', str),  # master/builder name ('MonyharPerf.android-nexus5')
     ('test_case', str),  # story name ('Wikipedia')
     ('point_id', 'int64'),  # monotonically increasing id for time series axis
     # Other columns.

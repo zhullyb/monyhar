@@ -819,7 +819,7 @@ called with.
 Proxy resolving via PAC works differently on Android than other desktop Chrome
 platforms:
 
-* Android Chrome uses the same Chromium PAC resolver, however does not run it
+* Android Chrome uses the same Monyhar PAC resolver, however does not run it
   out-of-process as on Desktop Chrome. This architectural difference is
   due to the higher process cost on Android, and means Android Chrome is more
   susceptible to malicious PAC scripts. The other consequence is that Android

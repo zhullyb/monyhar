@@ -57,7 +57,7 @@ To run Cronet's perf tests, follow the instructions in
 
 ## Running tests remotely
 
-Once you've uploaded a Chromium change list using `git cl upload`, you can
+Once you've uploaded a Monyhar change list using `git cl upload`, you can
 launch a bot to build and test your change list:
 
 ```shell
@@ -94,7 +94,7 @@ $ adb shell setprop log.tag.CronetUrlRequestContext NONE
 
 ### Network Log
 
-NetLog is Chromium's network logging system. To create a NetLog dump, you can
+NetLog is Monyhar's network logging system. To create a NetLog dump, you can
 use the following pair of methods:
 
 ```
@@ -102,7 +102,7 @@ CronetEngine.startNetLogToFile()
 CronetEngine.stopNetLog()
 ```
 
-Unlike the Android system log which is line-based, the Chromium log is formatted
+Unlike the Android system log which is line-based, the Monyhar log is formatted
 in JSON.  As such, it will probably not be well-formed until you have called the
 `stopNetLog()` method, as filesystem buffers will not have been flushed.
 

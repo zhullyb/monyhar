@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -365,7 +365,7 @@ PerUserTopicSubscriptionRequest::Builder::BuildURLFetcher(
           sender:
             "Subscribe the Sync client for listening to the specific topic"
           description:
-            "Chromium can receive Sync invalidations via FCM messages."
+            "Monyhar can receive Sync invalidations via FCM messages."
             "This request subscribes the client for receiving messages for the"
             "concrete topic. In case of Chrome Sync topic is a ModelType,"
             "e.g. BOOKMARK"

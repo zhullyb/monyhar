@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -170,13 +170,13 @@ message SystemProfileProto {
   // Information on the user's hardware.
   // Next tag: 22
   message Hardware {
-    // OS CPU architecture. Taken from uname -m and modified in Chromium logic.
+    // OS CPU architecture. Taken from uname -m and modified in Monyhar logic.
     // Common options are: x86, x86_64, armv7l, armv8l, aarch64.
     // Not recorded on iOS.
     optional string cpu_architecture = 1;
 
     // Browser process CPU architecture. Will be different from
-    // `cpu_architecture` in the case where Chromium runs non-natively (e.g.
+    // `cpu_architecture` in the case where Monyhar runs non-natively (e.g.
     // macOS Rosetta or Arm Windows). One of four values: x86, x86_64, ARM,
     // ARM_64. Added in M90.
     optional string app_cpu_architecture = 21;

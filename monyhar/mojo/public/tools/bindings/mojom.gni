@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -23,12 +23,12 @@ import("//tools/ipc_fuzzer/ipc_fuzzer.gni")
 declare_args() {
   # Indicates whether typemapping should be supported in this build
   # configuration. This may be disabled when building external projects which
-  # depend on //mojo but which do not need/want all of the Chromium tree
+  # depend on //mojo but which do not need/want all of the Monyhar tree
   # dependencies that come with typemapping.
   #
-  # Note that (perhaps obviously) a huge amount of Chromium code will not build
+  # Note that (perhaps obviously) a huge amount of Monyhar code will not build
   # with typemapping disabled, so it is never valid to set this to |false| in
-  # any Chromium build configuration.
+  # any Monyhar build configuration.
   enable_mojom_typemapping = true
 
   # Controls message ID scrambling behavior. If |true|, message IDs are

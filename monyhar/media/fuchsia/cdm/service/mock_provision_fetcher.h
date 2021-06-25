@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@
 namespace media {
 namespace testing {
 
-// This is a mock for the Chromium media::ProvisionFetcher (and not Fuchsia's
+// This is a mock for the Monyhar media::ProvisionFetcher (and not Fuchsia's
 // similarly named ProvisioningFetcher protocol).
 class MockProvisionFetcher : public ProvisionFetcher {
  public:

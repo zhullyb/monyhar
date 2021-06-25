@@ -11,7 +11,7 @@ CPEPrefix: cpe:/a:google:closure_library:20191111
 
 Description:
 Google Closure Library is Google's common JavaScript library. It is used in
-Chromium to allow protocol buffers to be serialized/deserialized in JavaScript.
+Monyhar to allow protocol buffers to be serialized/deserialized in JavaScript.
 
 Local Modifications:
 None

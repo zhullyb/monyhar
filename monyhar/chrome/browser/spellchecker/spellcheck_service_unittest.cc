@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -426,7 +426,7 @@ static const DictionaryMappingTestCase kHybridDictionaryMappingsParams[] = {
     DictionaryMappingTestCase({"kok-Deva-IN", "kok", "kok-Deva", "", ""}),
     DictionaryMappingTestCase({"sr-Cyrl-RS", "sr", "sr-Cyrl", "", ""}),
     DictionaryMappingTestCase({"sr-Cyrl-ME", "sr", "sr-Cyrl", "", ""}),
-    // Only sr with Cyrillic implied supported in Chromium.
+    // Only sr with Cyrillic implied supported in Monyhar.
     DictionaryMappingTestCase({"sr-Latn-RS", "", "sr-Latn", "", ""}),
     DictionaryMappingTestCase({"sr-Latn-ME", "", "sr-Latn", "", ""}),
     DictionaryMappingTestCase({"ca-ES", "ca", "ca", "", ""}),

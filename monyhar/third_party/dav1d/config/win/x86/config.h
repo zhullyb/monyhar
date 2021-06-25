@@ -21,7 +21,7 @@
 
 #define CONFIG_8BPC 1
 
-// #define CONFIG_LOG 1 -- Logging is controlled by Chromium
+// #define CONFIG_LOG 1 -- Logging is controlled by Monyhar
 
 #define ENDIANNESS_BIG 0
 
@@ -35,7 +35,7 @@
 
 #define PREFIX 1
 
-// #define STACK_ALIGNMENT 4 -- Stack alignment is controlled by Chromium
+// #define STACK_ALIGNMENT 4 -- Stack alignment is controlled by Monyhar
 
 #define UNICODE 1
 
@@ -43,7 +43,7 @@
 
 #define _UNICODE 1
 
-// #define _WIN32_WINNT 0x0601 -- Windows version is controlled by Chromium
+// #define _WIN32_WINNT 0x0601 -- Windows version is controlled by Monyhar
 
 #define __USE_MINGW_ANSI_STDIO 1
 

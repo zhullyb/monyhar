@@ -5,7 +5,7 @@
 // implementation of the Web Serial API with one that can be automated from
 // Javascript for testing purposes.
 //
-// In Chromium-based browsers this implementation is provided by a polyfill
+// In Monyhar-based browsers this implementation is provided by a polyfill
 // in order to reduce the amount of test-only code shipped to users. To enable
 // these tests the browser must be run with these options:
 //
@@ -32,7 +32,7 @@ function serial_test(func, name, properties) {
     assert_implements(navigator.serial, 'missing navigator.serial');
     if (fakeSerialService === undefined) {
       // Try loading a polyfill for the fake serial service.
-      if (isChromiumBased) {
+      if (isMonyharBased) {
         const fakes = await import('/resources/monyhar/fake-serial.js');
         fakeSerialService = fakes.fakeSerialService;
       }

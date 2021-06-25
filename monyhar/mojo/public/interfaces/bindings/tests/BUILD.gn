@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -313,7 +313,7 @@ mojom("test_interfaces") {
       types = [
         {
           mojom = "mojo.test.TypemappedRect"
-          cpp = "::mojo::test::RectChromium"
+          cpp = "::mojo::test::RectMonyhar"
           hashable = true
         },
         {
@@ -330,11 +330,11 @@ mojom("test_interfaces") {
       types = [
         {
           mojom = "mojo.test.PickledEnum"
-          cpp = "::mojo::test::PickledEnumChromium"
+          cpp = "::mojo::test::PickledEnumMonyhar"
         },
         {
           mojom = "mojo.test.PickledStruct"
-          cpp = "::mojo::test::PickledStructChromium"
+          cpp = "::mojo::test::PickledStructMonyhar"
           move_only = true
         },
         {

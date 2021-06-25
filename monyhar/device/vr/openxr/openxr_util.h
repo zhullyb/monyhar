@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -21,7 +21,7 @@ using AnchorId = util::IdTypeU64<class AnchorTag>;
 constexpr AnchorId kInvalidAnchorId;
 
 namespace device {
-// These macros aren't common in Chromium and generally discouraged, so define
+// These macros aren't common in Monyhar and generally discouraged, so define
 // all OpenXR helper macros here so they can be kept track of. This file
 // should not be included outside of device/vr/openxr.
 

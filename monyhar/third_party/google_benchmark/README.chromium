@@ -9,11 +9,11 @@ Security Critical: no
 Description:
 A microbenchmark support library.
 
-Google Benchmark is NOT supported for writing benchmarks in Chromium. It is
+Google Benchmark is NOT supported for writing benchmarks in Monyhar. It is
 included to run benchmarks in third-party code that have already been written
 against Google Benchmarks.
 
-To include this library in the Chromium checkout, add the following clause to
+To include this library in the Monyhar checkout, add the following clause to
 your .gclient configuration.
 
     "custom_vars": {

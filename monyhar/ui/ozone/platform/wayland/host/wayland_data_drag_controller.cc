@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -146,7 +146,7 @@ bool WaylandDataDragController::StartSession(const OSExchangeData& data,
   return true;
 }
 
-// Sessions initiated from Chromium, will have |data_source_| set. In which
+// Sessions initiated from Monyhar, will have |data_source_| set. In which
 // case, |data_| is expected to be non-null as well.
 bool WaylandDataDragController::IsDragSource() const {
   DCHECK(!data_source_ || data_);
@@ -194,7 +194,7 @@ void WaylandDataDragController::OnDragEnter(WaylandWindow* window,
   }
 
   if (IsDragSource()) {
-    // If the DND session was initiated from a Chromium window, |data_| already
+    // If the DND session was initiated from a Monyhar window, |data_| already
     // holds the data to be exchanged, so we don't need to read it through
     // Wayland and can just copy it here.
     DCHECK(data_);

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -76,9 +76,9 @@ void BlocklistStateFetcher::SendRequest(const std::string& id) {
         semantics {
           sender: "Extension Blacklist"
           description:
-            "Chromium protects the users from malicious extensions by checking "
+            "Monyhar protects the users from malicious extensions by checking "
             "extensions that are being installed or have been installed "
-            "against a list of known malwares. Chromium sends the identifiers "
+            "against a list of known malwares. Monyhar sends the identifiers "
             "of extensions to Google and Google responds with whether it "
             "believes each extension is malware or not. Only extensions that "
             "match the safe browsing blacklist can trigger this request."
@@ -93,7 +93,7 @@ void BlocklistStateFetcher::SendRequest(const std::string& id) {
           cookies_store: "Safe Browsing cookies store"
           setting:
             "Users can enable or disable this feature by toggling 'Protect you "
-            "and your device from dangerous sites' in Chromium settings under "
+            "and your device from dangerous sites' in Monyhar settings under "
             "Privacy. This feature is enabled by default."
           chrome_policy {
             SafeBrowsingEnabled {

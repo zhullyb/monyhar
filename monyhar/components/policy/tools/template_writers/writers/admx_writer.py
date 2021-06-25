@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -466,9 +466,9 @@ class ADMXWriter(xml_formatted_writer.XMLFormattedWriter,
     '''
     dom_impl = minidom.getDOMImplementation('')
     self._doc = dom_impl.createDocument(None, 'policyDefinitions', None)
-    if self._GetChromiumVersionString() is not None:
+    if self._GetMonyharVersionString() is not None:
       self.AddComment(self._doc.documentElement, self.config['build'] + \
-          ' version: ' + self._GetChromiumVersionString())
+          ' version: ' + self._GetMonyharVersionString())
     policy_definitions_elem = self._doc.documentElement
 
     policy_definitions_elem.attributes['revision'] = '1.0'

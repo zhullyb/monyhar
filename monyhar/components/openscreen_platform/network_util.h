@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ class IPAddress;
 class IPEndPoint;
 }  // namespace net
 
-// Helper methods that convert between Open Screen and Chromium //net types.
+// Helper methods that convert between Open Screen and Monyhar //net types.
 namespace openscreen_platform {
 
 const net::IPAddress ToNetAddress(const openscreen::IPAddress& address);

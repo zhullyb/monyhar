@@ -1,11 +1,11 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 # This file contains the definition of the template absl_source_set which
 # should be the only type of target needed in abseil's BUILD.gn files.
 # This template will correctly set "configs" and "public_configs" in order
-# to correctly compile abseil in Chromium.
+# to correctly compile abseil in Monyhar.
 #
 # Usage:
 # Most of the times its usage will be similar to the example below but all
@@ -43,7 +43,7 @@ template("absl_source_set") {
     public_configs += [ "//third_party/abseil-cpp:absl_include_config" ]
 
     if (!defined(visibility)) {
-      # Within Chromium builds, restrict direct visibility of Abseil sources, so
+      # Within Monyhar builds, restrict direct visibility of Abseil sources, so
       # users must depend on //third_party/abseil-cpp:absl. This prevents use of
       # banned targets like absl/types:any. A few targets require exceptions.
       # TODO(crbug.com/1096380): Consider replacing build_with_monyhar with
@@ -65,11 +65,11 @@ template("absl_source_set") {
 
           # WebRTC binaries used by //:monyhar_builder_asan. They both
           # statically link absl (because they depend on absl/flags) and are
-          # used by Chromium only when is_component_build=false.
+          # used by Monyhar only when is_component_build=false.
           "//third_party/webrtc/rtc_tools:rtp_generator",
           "//third_party/webrtc/rtc_tools:video_replay",
 
-          # Not used by Chromium directly.
+          # Not used by Monyhar directly.
           "//chromecast/internal/*",
           "//libassistant/*",
         ]

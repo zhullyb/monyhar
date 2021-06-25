@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@
 namespace logging_win {
 
 // A parser for Mof data found in an EVENT_TRACE object as formatted by
-// Chromium-related classes.  Instances have an implicit cursor that scans the
+// Monyhar-related classes.  Instances have an implicit cursor that scans the
 // data.  Callers invoke Read* methods to extract primitive data types values or
 // pointers to complex data types (arrays and strings).  In the latter case, the
 // pointers are only valid for the lifetime of the underlying event.

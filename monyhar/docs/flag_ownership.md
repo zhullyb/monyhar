@@ -1,10 +1,10 @@
-# Chromium Flag Ownership
+# Monyhar Flag Ownership
 
 ellyjones@ / avi@
 
-This document introduces the concept of flag ownership in Chromium.
+This document introduces the concept of flag ownership in Monyhar.
 
-See also [Chromium Flag Expiry](flag_expiry.md).
+See also [Monyhar Flag Expiry](flag_expiry.md).
 
 [TOC]
 
@@ -33,7 +33,7 @@ configuration surface that was exposed to users and to QA. Worse, obsolete flags
 often prevented removal of legacy code paths that were not used in the field but
 were still reachable via a flag setting.
 
-The flag ownership project has dealt with that by moving Chromium towards a
+The flag ownership project has dealt with that by moving Monyhar towards a
 model where `chrome://flags` entries are what they were originally intended to
 be: temporary, experimental options. Each flag must have a set owner who can
 keep track of whether or when that flag should expire and an express time by

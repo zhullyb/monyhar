@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -66,7 +66,7 @@ struct MODULES_EXPORT VideoDeviceCaptureCapabilities {
 
 // This function performs source, source-settings and track-settings selection
 // based on the given |capabilities| and |constraints|.
-// Chromium performs constraint resolution in two steps. First, a source and its
+// Monyhar performs constraint resolution in two steps. First, a source and its
 // settings are selected, then track settings are selected based on the source
 // settings. This function implements both steps. Sources are not a user-visible
 // concept, so the spec only specifies an algorithm for track settings.
@@ -107,7 +107,7 @@ struct MODULES_EXPORT VideoDeviceCaptureCapabilities {
 //    the spec. According to spec, all candidates that share the same fitness
 //    distance are equally acceptable, but this implementation has additional
 //    criteria to break ties.
-// 3. C1 is better than C2 if C1 has a lower Chromium-specific custom distance
+// 3. C1 is better than C2 if C1 has a lower Monyhar-specific custom distance
 //    from the basic constraint set that penalizes the amount of resolution and
 //    frame-rate adjustment required to satisfy the range and ideal value
 //    specified by width, height and frameRate constraints.

@@ -872,14 +872,14 @@ def check_for_copyright(lines, error):
 
 
 def get_header_guard_cpp_variable(filename):
-    """Returns the CPP variable that should be used as a header guard in Chromium-style.
+    """Returns the CPP variable that should be used as a header guard in Monyhar-style.
 
     Args:
       filename: The name of a C++ header file.
 
     Returns:
       The CPP variable that should be used as a header guard in the
-      named file in Chromium-style.
+      named file in Monyhar-style.
     """
 
     # Restores original filename in case that style checker is invoked from Emacs's
@@ -927,7 +927,7 @@ def check_for_header_guard(filename, clean_lines, error):
             cpp_var)
         return
 
-    # The guard should be File_h or, for Chromium style, BLINK_PATH_TO_FILE_H_.
+    # The guard should be File_h or, for Monyhar style, BLINK_PATH_TO_FILE_H_.
     if ifndef != cpp_var:
         error(ifndef_line_number, 'build/header_guard', 5,
               '#ifndef header guard has wrong style, please use: %s' % cpp_var)

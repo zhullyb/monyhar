@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Chromium Authors. All rights reserved.
+// Copyright (c) 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -251,7 +251,7 @@ IN_PROC_BROWSER_TEST_F(SnapshotBrowserTest, SingleWindowTest) {
 // Timing out either all the time, or infrequently, apparently because
 // they're too slow, on the following configurations:
 //   Windows Debug
-//   Linux Chromium OS ASAN LSAN Tests (1)
+//   Linux Monyhar OS ASAN LSAN Tests (1)
 //   Linux TSAN Tests
 // See crbug.com/771119
 #if (defined(OS_WIN) && !defined(NDEBUG)) || (BUILDFLAG(IS_CHROMEOS_ASH)) || \

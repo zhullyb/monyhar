@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -30,7 +30,7 @@ CameraBufferFactory::CreateGpuMemoryBuffer(const gfx::Size& size,
 // There's no good way to resolve the HAL pixel format to the platform-specific
 // DRM format, other than to actually allocate the buffer and see if the
 // allocation succeeds.
-ChromiumPixelFormat CameraBufferFactory::ResolveStreamBufferFormat(
+MonyharPixelFormat CameraBufferFactory::ResolveStreamBufferFormat(
     cros::mojom::HalPixelFormat hal_format,
     gfx::BufferUsage usage) {
   const auto key = std::make_pair(hal_format, usage);
@@ -38,11 +38,11 @@ ChromiumPixelFormat CameraBufferFactory::ResolveStreamBufferFormat(
     return resolved_format_usages_[key];
   }
 
-  ChromiumPixelFormat kUnsupportedFormat{PIXEL_FORMAT_UNKNOWN,
+  MonyharPixelFormat kUnsupportedFormat{PIXEL_FORMAT_UNKNOWN,
                                          gfx::BufferFormat::RGBX_8888};
   size_t kDummyBufferWidth = 128, kDummyBufferHeight = 128;
-  std::vector<ChromiumPixelFormat> cr_formats =
-      PixFormatHalToChromium(hal_format);
+  std::vector<MonyharPixelFormat> cr_formats =
+      PixFormatHalToMonyhar(hal_format);
   if (cr_formats.empty()) {
     return kUnsupportedFormat;
   }

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -127,7 +127,7 @@ public class PassphraseDialogFragment extends DialogFragment implements OnClickL
                 PorterDuff.Mode.SRC_IN);
 
         final AlertDialog d =
-                new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog)
+                new AlertDialog.Builder(getActivity(), R.style.Theme_Monyhar_AlertDialog)
                         .setView(v)
                         .setPositiveButton(R.string.submit,
                                 new Dialog.OnClickListener() {

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (c) 2021 The Chromium Authors. All rights reserved.
+# Copyright (c) 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """The script runs password change tests present in PasswordChangeFixtureTest.
@@ -131,7 +131,7 @@ def main(args):
     return
 
   # Install dependencies. Apks should live in the same directory.
-  apks = ['ChromePublicTest.apk', 'ChromiumNetTestSupport.apk']
+  apks = ['ChromePublicTest.apk', 'MonyharNetTestSupport.apk']
   print('Installing apks')
   for apk in apks:
     if os.path.isfile(apk):
@@ -192,7 +192,7 @@ def main(args):
       '\"org.monyhar.chrome.browser.autofill_assistant.'
       'PasswordChangeFixtureTest#%s\"' % options.test,
       'org.monyhar.chrome.tests/org.monyhar.base.test'
-      '.BaseChromiumAndroidJUnitRunner'
+      '.BaseMonyharAndroidJUnitRunner'
   ])
 
   subprocess.call(command)

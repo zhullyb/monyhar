@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 '''Unit tests for writers.adm_writer'''
@@ -91,12 +91,12 @@ class AdmWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     }, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
   END CATEGORY
 
@@ -104,8 +104,8 @@ class AdmWriterUnittest(writer_unittest_common.WriterUnittestCommon):
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"''')
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"''')
     self.CompareOutputs(output, expected_output)
 
   def testVersionAnnotation(self):
@@ -124,12 +124,12 @@ monyhar_recommended="Chromium - Recommended"''')
     expected_output = '; monyhar version: 39.0.0.0\n' + \
         self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
   END CATEGORY
 
@@ -137,8 +137,8 @@ monyhar_recommended="Chromium - Recommended"''')
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"''')
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"''')
     self.CompareOutputs(output, expected_output)
 
   def testMainPolicy(self):
@@ -290,7 +290,7 @@ With a newline.""",
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     POLICY !!StringPolicy_Policy
       #if version >= 4
@@ -307,7 +307,7 @@ With a newline.""",
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     POLICY !!StringPolicy_Policy
       #if version >= 4
@@ -327,8 +327,8 @@ With a newline.""",
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 StringPolicy_Policy="Caption of policy."
 StringPolicy_Explain="Description of group.\\nWith a newline.\\n\\n\
 Reference: \
@@ -358,7 +358,7 @@ StringPolicy_Part="Caption of policy."
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     POLICY !!IntPolicy_Policy
       #if version >= 4
@@ -375,7 +375,7 @@ StringPolicy_Part="Caption of policy."
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     POLICY !!IntPolicy_Policy
       #if version >= 4
@@ -395,8 +395,8 @@ StringPolicy_Part="Caption of policy."
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 IntPolicy_Policy="Caption of policy."
 IntPolicy_Explain="Description of policy.\\n\\n\
 Reference: \
@@ -427,7 +427,7 @@ IntPolicy_Part="Caption of policy."
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     POLICY !!IntPolicy_Policy
       #if version >= 4
@@ -444,7 +444,7 @@ IntPolicy_Part="Caption of policy."
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     POLICY !!IntPolicy_Policy
       #if version >= 4
@@ -464,8 +464,8 @@ IntPolicy_Part="Caption of policy."
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 IntPolicy_Policy="Caption of policy."
 IntPolicy_Explain="Description of policy.\\n\\n\
 Reference: \
@@ -497,7 +497,7 @@ IntPolicy_Part="Caption of policy."
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     POLICY !!IntPolicy_Policy
       #if version >= 4
@@ -514,7 +514,7 @@ IntPolicy_Part="Caption of policy."
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     POLICY !!IntPolicy_Policy
       #if version >= 4
@@ -534,8 +534,8 @@ IntPolicy_Part="Caption of policy."
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 IntPolicy_Policy="Caption of policy."
 IntPolicy_Explain="Description of policy.\\n\\n\
 Reference: \
@@ -747,7 +747,7 @@ With a newline.""",
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     POLICY !!ListPolicy_Policy
       #if version >= 4
@@ -756,7 +756,7 @@ With a newline.""",
       EXPLAIN !!ListPolicy_Explain
 
       PART !!ListPolicy_Part  LISTBOX
-        KEYNAME "Software\\Policies\\Chromium\\ListPolicy"
+        KEYNAME "Software\\Policies\\Monyhar\\ListPolicy"
         VALUEPREFIX ""
       END PART
     END POLICY
@@ -764,7 +764,7 @@ With a newline.""",
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     POLICY !!ListPolicy_Policy
       #if version >= 4
@@ -773,7 +773,7 @@ With a newline.""",
       EXPLAIN !!ListPolicy_Explain
 
       PART !!ListPolicy_Part  LISTBOX
-        KEYNAME "Software\\Policies\\Chromium\\Recommended\\ListPolicy"
+        KEYNAME "Software\\Policies\\Monyhar\\Recommended\\ListPolicy"
         VALUEPREFIX ""
       END PART
     END POLICY
@@ -784,8 +784,8 @@ With a newline.""",
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 ListPolicy_Policy="Caption of list policy."
 ListPolicy_Explain="Description of list policy.\\nWith a newline.\\n\\n\
 Reference: \
@@ -823,7 +823,7 @@ With a newline.""",
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     POLICY !!ListPolicy_Policy
       #if version >= 4
@@ -832,7 +832,7 @@ With a newline.""",
       EXPLAIN !!ListPolicy_Explain
 
       PART !!ListPolicy_Part  LISTBOX
-        KEYNAME "Software\\Policies\\Chromium\\ListPolicy"
+        KEYNAME "Software\\Policies\\Monyhar\\ListPolicy"
         VALUEPREFIX ""
       END PART
     END POLICY
@@ -840,7 +840,7 @@ With a newline.""",
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     POLICY !!ListPolicy_Policy
       #if version >= 4
@@ -849,7 +849,7 @@ With a newline.""",
       EXPLAIN !!ListPolicy_Explain
 
       PART !!ListPolicy_Part  LISTBOX
-        KEYNAME "Software\\Policies\\Chromium\\Recommended\\ListPolicy"
+        KEYNAME "Software\\Policies\\Monyhar\\Recommended\\ListPolicy"
         VALUEPREFIX ""
       END PART
     END POLICY
@@ -860,8 +860,8 @@ With a newline.""",
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 ListPolicy_Policy="Caption of list policy."
 ListPolicy_Explain="Description of list policy.\\nWith a newline.\\n\\n\
 Reference: \
@@ -891,7 +891,7 @@ ListPolicy_Part="Label of list policy."
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     POLICY !!DictionaryPolicy_Policy
       #if version >= 4
@@ -908,7 +908,7 @@ ListPolicy_Part="Label of list policy."
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     POLICY !!DictionaryPolicy_Policy
       #if version >= 4
@@ -928,8 +928,8 @@ ListPolicy_Part="Label of list policy."
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 DictionaryPolicy_Policy="Caption of policy."
 DictionaryPolicy_Explain="Description of group.\\n\\n\
 Reference: \
@@ -959,7 +959,7 @@ DictionaryPolicy_Part="Caption of policy."
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     POLICY !!ExternalPolicy_Policy
       #if version >= 4
@@ -976,7 +976,7 @@ DictionaryPolicy_Part="Caption of policy."
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     POLICY !!ExternalPolicy_Policy
       #if version >= 4
@@ -996,8 +996,8 @@ DictionaryPolicy_Part="Caption of policy."
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 ExternalPolicy_Policy="Caption of policy."
 ExternalPolicy_Explain="Description of group.\\n\\n\
 Reference: \
@@ -1034,12 +1034,12 @@ ExternalPolicy_Part="Caption of policy."
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
   END CATEGORY
 
@@ -1047,8 +1047,8 @@ ExternalPolicy_Part="Caption of policy."
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 ''')
     self.CompareOutputs(output, expected_output)
 
@@ -1145,7 +1145,7 @@ With a newline."""
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     CATEGORY !!Group1_Category
       POLICY !!Policy1_Policy
@@ -1155,7 +1155,7 @@ With a newline."""
         EXPLAIN !!Policy1_Explain
 
         PART !!Policy1_Part  LISTBOX
-          KEYNAME "Software\\Policies\\Chromium\\Policy1"
+          KEYNAME "Software\\Policies\\Monyhar\\Policy1"
           VALUEPREFIX ""
         END PART
       END POLICY
@@ -1177,7 +1177,7 @@ With a newline."""
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     CATEGORY !!Group1_Category
       POLICY !!Policy1_Policy
@@ -1187,7 +1187,7 @@ With a newline."""
         EXPLAIN !!Policy1_Explain
 
         PART !!Policy1_Part  LISTBOX
-          KEYNAME "Software\\Policies\\Chromium\\Recommended\\Policy1"
+          KEYNAME "Software\\Policies\\Monyhar\\Recommended\\Policy1"
           VALUEPREFIX ""
         END PART
       END POLICY
@@ -1200,8 +1200,8 @@ With a newline."""
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 Group1_Category="Caption of group."
 Policy1_Policy="Caption of policy1."
 Policy1_Explain="Description of policy1.\\nWith a newline.\\n\\n\
@@ -1336,7 +1336,7 @@ EnumPolicy_B_tls1_2_DropDown="tls1.2"
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     CATEGORY !!DeprecatedPolicies_Category
       POLICY !!Policy1_Policy
@@ -1356,7 +1356,7 @@ EnumPolicy_B_tls1_2_DropDown="tls1.2"
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     CATEGORY !!DeprecatedPolicies_Category
       POLICY !!Policy1_Policy
@@ -1379,8 +1379,8 @@ EnumPolicy_B_tls1_2_DropDown="tls1.2"
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 DeprecatedPolicies_Category="Deprecated policies"
 Policy1_Policy="Caption of policy1."
 Policy1_Explain="This policy is deprecated. blah blah blah\\n\\n"
@@ -1412,7 +1412,7 @@ Policy1_Part="Caption of policy1."
                                           'major_version': 84}, 'adm')
     expected_output = self.ConstructOutput(['MACHINE', 'USER'], '''
   CATEGORY !!monyhar
-    KEYNAME "Software\\Policies\\Chromium"
+    KEYNAME "Software\\Policies\\Monyhar"
 
     CATEGORY !!RemovedPolicies_Category
       POLICY !!Policy1_Policy
@@ -1432,7 +1432,7 @@ Policy1_Part="Caption of policy1."
   END CATEGORY
 
   CATEGORY !!monyhar_recommended
-    KEYNAME "Software\\Policies\\Chromium\\Recommended"
+    KEYNAME "Software\\Policies\\Monyhar\\Recommended"
 
     CATEGORY !!RemovedPolicies_Category
       POLICY !!Policy1_Policy
@@ -1455,8 +1455,8 @@ Policy1_Part="Caption of policy1."
 ''', '''[Strings]
 SUPPORTED_WIN7="Microsoft Windows 7 or later"
 SUPPORTED_WIN7_ONLY="Microsoft Windows 7"
-monyhar="Chromium"
-monyhar_recommended="Chromium - Recommended"
+monyhar="Monyhar"
+monyhar_recommended="Monyhar - Recommended"
 RemovedPolicies_Category="Removed policies"
 Policy1_Policy="Caption of policy1."
 Policy1_Explain="This policy is removed. blah blah blah\\n\\n"

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,10 +7,10 @@
 
 #include "ios/public/provider/chrome/browser/images/branded_image_provider.h"
 
-class ChromiumBrandedImageProvider : public BrandedImageProvider {
+class MonyharBrandedImageProvider : public BrandedImageProvider {
  public:
-  ChromiumBrandedImageProvider();
-  ~ChromiumBrandedImageProvider() override;
+  MonyharBrandedImageProvider();
+  ~MonyharBrandedImageProvider() override;
 
   // BrandedImageProvider.
   UIImage* GetAccountsListActivityControlsImage() override;
@@ -26,7 +26,7 @@ class ChromiumBrandedImageProvider : public BrandedImageProvider {
   UIImage* GetNonModalPromoImage() override;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(ChromiumBrandedImageProvider);
+  DISALLOW_COPY_AND_ASSIGN(MonyharBrandedImageProvider);
 };
 
 #endif  // IOS_CHROME_BROWSER_PROVIDERS_IMAGES_CHROMIUM_BRANDED_IMAGE_PROVIDER_H_

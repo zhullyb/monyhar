@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -419,7 +419,7 @@ class WPTGitHub(object):
                               'delete remote branch %s' % remote_branch_name)
 
     def pr_for_monyhar_commit(self, monyhar_commit):
-        """Returns a PR corresponding to the given ChromiumCommit, or None."""
+        """Returns a PR corresponding to the given MonyharCommit, or None."""
         # We rely on Change-Id because Gerrit returns ToT+1 as the commit
         # positions for in-flight CLs, whereas Change-Id is permanent.
         return self.pr_with_change_id(monyhar_commit.change_id())

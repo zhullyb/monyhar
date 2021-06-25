@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -64,7 +64,7 @@ public class ConfirmSyncDataStateMachineDelegate {
                 dismiss();
             }
 
-            return new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog)
+            return new AlertDialog.Builder(getActivity(), R.style.Theme_Monyhar_AlertDialog)
                     .setView(R.layout.signin_progress_bar_dialog)
                     .setNegativeButton(R.string.cancel, (dialog, i) -> dialog.cancel())
                     .create();
@@ -106,7 +106,7 @@ public class ConfirmSyncDataStateMachineDelegate {
                 dismiss();
             }
 
-            return new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog)
+            return new AlertDialog.Builder(getActivity(), R.style.Theme_Monyhar_AlertDialog)
                     .setTitle(R.string.sign_in_timeout_title)
                     .setMessage(R.string.sign_in_timeout_message)
                     .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.cancel())

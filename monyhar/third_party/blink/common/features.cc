@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -567,8 +567,8 @@ const base::Feature kDispatchBeforeUnloadOnFreeze{
 // Enables the use of GpuMemoryBuffer images for low latency 2d canvas.
 // TODO(khushalsagar): Enable this if we're using SurfaceControl and GMBs allow
 // us to overlay these resources.
-const base::Feature kLowLatencyCanvas2dImageChromium {
-  "LowLatencyCanvas2dImageChromium",
+const base::Feature kLowLatencyCanvas2dImageMonyhar {
+  "LowLatencyCanvas2dImageMonyhar",
 #if BUILDFLAG(IS_CHROMEOS_ASH)
       base::FEATURE_ENABLED_BY_DEFAULT
 #else

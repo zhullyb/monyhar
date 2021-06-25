@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@
 namespace registry_util {
 
 namespace {
-const wchar_t kTestKeyPath[] = L"Software\\Chromium\\Foo\\Baz\\TestKey";
+const wchar_t kTestKeyPath[] = L"Software\\Monyhar\\Foo\\Baz\\TestKey";
 const wchar_t kTestValueName[] = L"TestValue";
 }  // namespace
 

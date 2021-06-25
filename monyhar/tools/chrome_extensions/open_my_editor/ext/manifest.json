@@ -1,6 +1,6 @@
 {
   "name": "OME",
-  "description": "OME gives you a context menu for opening files in your editor on Chromium Code Search and Code Review.",
+  "description": "OME gives you a context menu for opening files in your editor on Monyhar Code Search and Code Review.",
   "version": "0.6.0",
   "permissions": [
     "contextMenus",

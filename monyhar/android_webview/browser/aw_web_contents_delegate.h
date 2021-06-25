@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,7 +11,7 @@ namespace android_webview {
 
 // WebView specific WebContentsDelegate.
 // Should contain WebContentsDelegate code required by WebView that should not
-// be part of the Chromium Android port.
+// be part of the Monyhar Android port.
 class AwWebContentsDelegate
     : public web_contents_delegate_android::WebContentsDelegateAndroid {
  public:

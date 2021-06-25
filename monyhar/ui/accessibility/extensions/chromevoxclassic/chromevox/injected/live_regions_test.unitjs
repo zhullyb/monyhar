@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -51,7 +51,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'InsertNonLiveRegion', function() {
 /**
  * Test inserting an 'alert' live region.
  */
-// Flaky on Chromium OS: crbug.com/498881.
+// Flaky on Monyhar OS: crbug.com/498881.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_InsertAlertLiveRegion',
        function() {
   var region = document.createElement('div');
@@ -70,7 +70,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_InsertAlertLiveRegion',
  * Test making text appear inside an 'alert' live region by setting its
  * display to something other than 'none'.
  */
-// Flaky on Chromium OS: crbug.com/498881.
+// Flaky on Monyhar OS: crbug.com/498881.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_RevealAlertLiveRegion', function() {
   this.loadDoc(function() {/*!
     <div role="alert">
@@ -96,7 +96,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_RevealAlertLiveRegion', functio
 /**
  * Test inserting a 'polite' live region.
  */
-// Flaky on Chromium OS: crbug.com/498881.
+// Flaky on Monyhar OS: crbug.com/498881.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_InsertPoliteLiveRegion', function() {
   var region = document.createElement('div');
   region.innerHTML = '<div aria-live="polite">Beta</div>';
@@ -132,7 +132,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_ModifyStatusLiveRegion', functi
 /**
  * Test adding element to a atomic and non-atomic live regions.
  */
-// Flaky on Chromium OS: crbug.com/909973.
+// Flaky on Monyhar OS: crbug.com/909973.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_AddToLiveRegion', function() {
   this.loadDoc(function() {/*!
     <div>
@@ -165,7 +165,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_AddToLiveRegion', function() {
 /**
  * Test removing elements from live regions.
  */
-// Flaky on Chromium OS: crbug.com/498881.
+// Flaky on Monyhar OS: crbug.com/498881.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_RemoveFromLiveRegion', function() {
   this.loadDoc(function() {/*!
     <div>
@@ -190,7 +190,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_RemoveFromLiveRegion', function
 /**
  * Test live region that's a progress bar through the event watcher.
  */
-// Flaky on Chromium OS: crbug.com/498881.
+// Flaky on Monyhar OS: crbug.com/498881.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_ProgressBarLiveRegionEvents', function() {
   this.loadDoc(function() {/*!
     <div id="progress" role="progressbar" aria-live="polite" aria-valuenow="1">
@@ -259,7 +259,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'FocusTriggeredAlertLiveRegion', function
 /**
  * Test focus followed by live region change, make sure both are spoken.
  */
-// Flaky on Chromium OS: crbug.com/498881.
+// Flaky on Monyhar OS: crbug.com/498881.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_FocusThenLiveRegion', function() {
   this.loadDoc(function() {/*!
     <button id="button_to_focus">Button To Focus</button>
@@ -280,7 +280,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_FocusThenLiveRegion', function(
 /**
  * Test live region change followed by focus, make sure both are spoken.
  */
-// Flaky on Chromium OS: crbug.com/498881.
+// Flaky on Monyhar OS: crbug.com/498881.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_LiveRegionThenFocus', function() {
   this.loadDoc(function() {/*!
     <button id="button_to_focus">Button To Focus</button>
@@ -304,7 +304,7 @@ TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_LiveRegionThenFocus', function(
  * Two elements inside a live region. These are all combined into
  * one utterance until this bug is fixed: http://crbug.com/415679
  */
-// Flaky on Chromium OS: crbug.com/498881.
+// Flaky on Monyhar OS: crbug.com/498881.
 TEST_F('ChromeVoxLiveRegionsUnitTest', 'DISABLED_TwoElementsInLiveRegion', function() {
   this.loadDoc(function() {/*!
     <div id="live" aria-live="polite">

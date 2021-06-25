@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -132,7 +132,7 @@ def _UseLocalBuildProducts(output_directory, devil_dynamic_config):
   }
 
 
-def _BuildWithChromium():
+def _BuildWithMonyhar():
   """Returns value of gclient's |build_with_monyhar|."""
   gni_path = os.path.join(_BUILD_DIR, 'config', 'gclient_args.gni')
   if not os.path.exists(gni_path):
@@ -170,7 +170,7 @@ def Initialize(output_directory=None, custom_deps=None, adb_path=None):
     adb_path: An optional path to use for the adb binary. If not set, this uses
       the adb binary provided by the Android SDK.
   """
-  build_with_monyhar = _BuildWithChromium()
+  build_with_monyhar = _BuildWithMonyhar()
 
   devil_dynamic_config = {
     'config_type': 'BaseConfig',
@@ -178,7 +178,7 @@ def Initialize(output_directory=None, custom_deps=None, adb_path=None):
   }
   if build_with_monyhar and output_directory:
     # Non-monyhar users of monyhar's //build directory fetch build products
-    # from google storage rather than use locally built copies. Chromium uses
+    # from google storage rather than use locally built copies. Monyhar uses
     # locally-built copies so that changes to the tools can be easily tested.
     _UseLocalBuildProducts(output_directory, devil_dynamic_config)
 

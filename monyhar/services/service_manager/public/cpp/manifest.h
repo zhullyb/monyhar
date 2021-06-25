@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -80,16 +80,16 @@ struct COMPONENT_EXPORT(SERVICE_MANAGER_CPP) Manifest {
   // manifests.
   enum class ExecutionMode {
     // The service implementation is built into the Service Manager embedder's
-    // binary (for example Chromium, or any Content embedder), and the embedder
+    // binary (for example Monyhar, or any Content embedder), and the embedder
     // handles requests for new instances of the service in-process via
     // ServiceManager::Delegate::RunBuiltinServiceInstanceInCurrentProcess().
     //
-    // If a service uses this ExecutionMode in Chromium for example, that means
+    // If a service uses this ExecutionMode in Monyhar for example, that means
     // the service always runs in the browser process.
     kInProcessBuiltin,
 
     // The service implementation is built into the Service Manager embedder's
-    // binary (for example Chromium, or any Content embedder), and the embedder
+    // binary (for example Monyhar, or any Content embedder), and the embedder
     // handles requests for new instances of the service via
     // ServiceProcess::Delegate::RunService(). The service will always run in
     // a child process sandboxed according to sandbox::policy::SandboxType (see

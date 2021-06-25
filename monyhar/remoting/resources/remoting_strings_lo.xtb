@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">ຄັງເກັບມ້ຽນຕົ້ນຕໍ</translation>
 <translation id="443560535555262820">ເປີດການຕັ້ງຄ່າການຊ່ວຍເຂົ້າເຖິງ</translation>
 <translation id="4450893287417543264">ຢ່າສະແດງອີກ</translation>
-<translation id="4512952200932940229">ລິຂະສິດ 2021 Chromium Authors. ສະຫງວນສິດທັງໝົດ.</translation>
+<translation id="4512952200932940229">ລິຂະສິດ 2021 Monyhar Authors. ສະຫງວນສິດທັງໝົດ.</translation>
 <translation id="4513946894732546136">ຄໍາຄິດເຫັນ</translation>
 <translation id="4563926062592110512">ຕັດເຊື່ອມຕໍ່ລູກຂ່າຍແລ້ວ: <ph name="CLIENT_USERNAME" /> .</translation>
 <translation id="4635770493235256822">ອຸປະກອນທາງໄກ</translation>
@@ -148,7 +148,7 @@ Desktop</translation>
 <translation id="7868137160098754906">ກະ​ລຸ​ນາ​ໃສ່ PIN ຂອງ​ທ່ານ​ສໍາ​ລັບ​ຄອມ​ພິວ​ເຕີທາງ​ໄກ.</translation>
 <translation id="7895403300744144251">ນະໂຍບາຍຄວາມປອດໄພໃນຄອມພິວເຕີທາງໄກບໍ່ອະນຸຍາດການເຊື່ອມຕໍ່ຈາກບັນຊີຂອງທ່ານ.</translation>
 <translation id="7936528439960309876">ຄັດຕິດໃສ່ເບື້ອງຂວາ</translation>
-<translation id="7970576581263377361">ການຮັບຮອງຄວາມຖືກຕ້ອງບໍ່ສໍາ​ເລັດ​. ກະ​ລຸ​ນາລົງຊື່ເຂົ້າ Chromium ອີກ.</translation>
+<translation id="7970576581263377361">ການຮັບຮອງຄວາມຖືກຕ້ອງບໍ່ສໍາ​ເລັດ​. ກະ​ລຸ​ນາລົງຊື່ເຂົ້າ Monyhar ອີກ.</translation>
 <translation id="7981525049612125370">ຊ່ວງເຂົ້າໃຊ້​ທາງ​ໄກ​ໝົດ​ອາ​ຍຸ​ແລ້ວ.</translation>
 <translation id="8038111231936746805">(ມາດຕະຖານ)</translation>
 <translation id="8041089156583427627">ສົ່ງຄຳຕິຊົມ</translation>
@@ -182,6 +182,6 @@ Desktop</translation>
 <translation id="9187628920394877737">ໃຫ້ການອະນຸຍາດ 'ການບັນທຶກໜ້າຈໍ' ແກ່ <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">ການ​ກຳ​ນົດ​ຄ່າ​ແມ່​ຂ່າຍ​ໃຊ້​ບໍ່​ໄດ້.</translation>
 <translation id="981121421437150478">ອອຟລາຍນ໌</translation>
-<translation id="985602178874221306">ຜູ້ຂຽນ Chromium</translation>
+<translation id="985602178874221306">ຜູ້ຂຽນ Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (ອອນ​ລາຍ​ນ໌​ຄັ້ງ​ສຸດ​ທ້າຍ <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

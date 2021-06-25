@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@ import("//build/config/locales.gni")
 import("//chrome/common/features.gni")
 import("//tools/grit/grit_rule.gni")
 
-assert(!is_ios, "Chromium/iOS shouldn't use anything in //chrome")
+assert(!is_ios, "Monyhar/iOS shouldn't use anything in //chrome")
 
 grit("locale_settings") {
   source = "locale_settings.grd"

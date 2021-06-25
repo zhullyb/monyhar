@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
@@ -35,7 +35,7 @@ class Capture(object):
 
 class PresubmitTest(unittest.TestCase):
     @mock.patch('subprocess.Popen')
-    def testCheckChangeOnUploadWithBlinkAndChromiumFiles(self, _):
+    def testCheckChangeOnUploadWithBlinkAndMonyharFiles(self, _):
         """This verifies that CheckChangeOnUpload will only call
         check_blink_style.py on non-test files.
         """
@@ -171,7 +171,7 @@ class CxxDependencyTest(unittest.TestCase):
         ]
         # Access to a protected member
         # pylint: disable=W0212
-        return PRESUBMIT._CheckForForbiddenChromiumCode(
+        return PRESUBMIT._CheckForForbiddenMonyharCode(
             mock_input_api, MockOutputApi())
 
     # References in comments should never be checked.

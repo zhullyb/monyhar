@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -46,7 +46,7 @@ public class ChromeApplicationTestUtils {
         PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         sWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK
                         | PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.ON_AFTER_RELEASE,
-                "Chromium:" + TAG);
+                "Monyhar:" + TAG);
         sWakeLock.acquire();
 
         // Disable Omaha related activities.

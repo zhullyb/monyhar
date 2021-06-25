@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -271,7 +271,7 @@ public class AwContents implements SmartClipProvider {
 
     /**
      * Factory interface used for constructing functors that the Android framework uses for
-     * calling back into Chromium code to render the the contents of a Chromium frame into
+     * calling back into Monyhar code to render the the contents of a Monyhar frame into
      * an Android view.
      */
     public interface NativeDrawFunctorFactory {
@@ -1970,7 +1970,7 @@ public class AwContents implements SmartClipProvider {
             if (ContextUtils.getApplicationContext().getApplicationInfo().targetSdkVersion
                             < Build.VERSION_CODES.Q
                     && !isBase64Encoded(encoding)) {
-                // As of Chromium M72, data URI parsing strictly enforces encoding of '#'. To
+                // As of Monyhar M72, data URI parsing strictly enforces encoding of '#'. To
                 // support WebView applications which were not expecting this change, we do it for
                 // them.
                 data = fixupOctothorpesInLoadDataContent(data);
@@ -1982,9 +1982,9 @@ public class AwContents implements SmartClipProvider {
 
     /**
      * Helper method to fixup content passed to {@link #loadData} which may not have had '#'
-     * characters encoded correctly. Historically Chromium did not strictly enforce the encoding of
+     * characters encoded correctly. Historically Monyhar did not strictly enforce the encoding of
      * '#' characters in Data URLs; they would be treated both as renderable content and as
-     * potential URL fragments for DOM id matching. This behavior changed in Chromium M72 where
+     * potential URL fragments for DOM id matching. This behavior changed in Monyhar M72 where
      * stricter parsing was enforced; the first '#' character now marks the end of the renderable
      * section and the start of the DOM fragment.
      *
@@ -2148,7 +2148,7 @@ public class AwContents implements SmartClipProvider {
         mNavigationController.loadUrl(params);
 
         // The behavior of WebViewClassic uses the populateVisitedLinks callback in WebKit.
-        // Chromium does not use this use code path and the best emulation of this behavior to call
+        // Monyhar does not use this use code path and the best emulation of this behavior to call
         // request visited links once on the first URL load of the WebView.
         if (!mHasRequestedVisitedHistoryFromClient) {
             mHasRequestedVisitedHistoryFromClient = true;

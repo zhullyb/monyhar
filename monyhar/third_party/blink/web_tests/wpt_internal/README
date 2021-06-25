@@ -1,4 +1,4 @@
-This directory is the Chromium-internal (*) counterpart of external/wpt. All WPT
+This directory is the Monyhar-internal (*) counterpart of external/wpt. All WPT
 features (except `wpt lint`) are enabled in this directory, including wptserve.
 This directory is mapped to wpt_internal/ on wptserve.
 

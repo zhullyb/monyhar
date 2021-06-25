@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,27 +9,27 @@
 
 namespace quic {
 
-QuicChromiumClock* QuicChromiumClock::GetInstance() {
-  static base::NoDestructor<QuicChromiumClock> instance;
+QuicMonyharClock* QuicMonyharClock::GetInstance() {
+  static base::NoDestructor<QuicMonyharClock> instance;
   return instance.get();
 }
-QuicChromiumClock::QuicChromiumClock() {}
+QuicMonyharClock::QuicMonyharClock() {}
 
-QuicChromiumClock::~QuicChromiumClock() {}
+QuicMonyharClock::~QuicMonyharClock() {}
 
-QuicTime QuicChromiumClock::ApproximateNow() const {
+QuicTime QuicMonyharClock::ApproximateNow() const {
   // At the moment, Chrome does not have a distinct notion of ApproximateNow().
   // We should consider implementing this using MessageLoop::recent_time_.
   return Now();
 }
 
-QuicTime QuicChromiumClock::Now() const {
+QuicTime QuicMonyharClock::Now() const {
   int64_t ticks = (base::TimeTicks::Now() - base::TimeTicks()).InMicroseconds();
   DCHECK_GE(ticks, 0);
   return CreateTimeFromMicroseconds(ticks);
 }
 
-QuicWallTime QuicChromiumClock::WallNow() const {
+QuicWallTime QuicMonyharClock::WallNow() const {
   const base::TimeDelta time_since_unix_epoch =
       base::Time::Now() - base::Time::UnixEpoch();
   int64_t time_since_unix_epoch_micro = time_since_unix_epoch.InMicroseconds();

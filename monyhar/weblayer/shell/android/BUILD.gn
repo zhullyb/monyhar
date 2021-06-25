@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -247,7 +247,7 @@ android_apk("weblayer_support_apk") {
   # default upstream classes
   deps += [ "//weblayer/browser/java:upstream_java" ]
 
-  # Add the Chromium linker for WebView compatibility support on L-M.
+  # Add the Monyhar linker for WebView compatibility support on L-M.
   deps += [ "//base/android/linker:monyhar_android_linker" ]
   loadable_modules =
       [ "$root_out_dir/libmonyhar_android_linker$shlib_extension" ]

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,7 +34,7 @@ class COMPONENT_EXPORT(CDM_FACTORY_DAEMON) CdmFactoryDaemonClient {
   static CdmFactoryDaemonClient* Get();
 
   // CdmFactoryDaemon D-Bus method calls. See org.monyhar.CdmFactoryDaemon.xml
-  // in Chromium OS code for the documentation of the methods and
+  // in Monyhar OS code for the documentation of the methods and
   // request/response messages.
   virtual void BootstrapMojoConnection(
       base::ScopedFD fd,

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -225,12 +225,12 @@ InterfaceList::InterfaceList() {
          PPB_OpenGLES2_Shared::GetFramebufferMultisampleInterface(),
          PERMISSION_NONE);
   AddPPB(PPB_OPENGLES2_CHROMIUMENABLEFEATURE_INTERFACE_1_0,
-         PPB_OpenGLES2_Shared::GetChromiumEnableFeatureInterface(),
+         PPB_OpenGLES2_Shared::GetMonyharEnableFeatureInterface(),
          PERMISSION_NONE);
   AddPPB(PPB_OPENGLES2_CHROMIUMMAPSUB_INTERFACE_1_0,
-         PPB_OpenGLES2_Shared::GetChromiumMapSubInterface(), PERMISSION_NONE);
+         PPB_OpenGLES2_Shared::GetMonyharMapSubInterface(), PERMISSION_NONE);
   AddPPB(PPB_OPENGLES2_CHROMIUMMAPSUB_DEV_INTERFACE_1_0,
-         PPB_OpenGLES2_Shared::GetChromiumMapSubInterface(), PERMISSION_NONE);
+         PPB_OpenGLES2_Shared::GetMonyharMapSubInterface(), PERMISSION_NONE);
   AddPPB(PPB_OPENGLES2_QUERY_INTERFACE_1_0,
          PPB_OpenGLES2_Shared::GetQueryInterface(), PERMISSION_NONE);
   AddPPB(PPB_OPENGLES2_VERTEXARRAYOBJECT_INTERFACE_1_0,

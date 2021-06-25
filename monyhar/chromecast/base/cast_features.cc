@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -79,7 +79,7 @@ void SetExperimentIds(const base::Value& list) {
 //    The first parameter that you pass in the definition is the feature's name.
 //    This MUST match the DCS experiment key for this feature.
 //
-//    While Features elsewhere in Chromium alternatively use dashed-case or
+//    While Features elsewhere in Monyhar alternatively use dashed-case or
 //    PascalCase for their names, Chromecast features should use snake_case
 //    (lowercase letters separated by underscores). This will ensure that DCS
 //    configs, which are passed around as JSON, remain conformant and readable.

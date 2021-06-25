@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -39,7 +39,7 @@ CONTENT_EXPORT extern const base::Feature
     kBrowserVerifiedUserActivationKeyboard;
 CONTENT_EXPORT extern const base::Feature kBrowserVerifiedUserActivationMouse;
 CONTENT_EXPORT extern const base::Feature kCacheInlineScriptCode;
-CONTENT_EXPORT extern const base::Feature kCanvas2DImageChromium;
+CONTENT_EXPORT extern const base::Feature kCanvas2DImageMonyhar;
 CONTENT_EXPORT extern const base::Feature kCapabilityDelegationPaymentRequest;
 CONTENT_EXPORT extern const base::Feature
     kClearCrossSiteCrossBrowsingContextGroupWindowName;
@@ -127,7 +127,7 @@ CONTENT_EXPORT extern const base::Feature kOpenXrExtendedFeatureSupport;
 CONTENT_EXPORT extern const base::Feature kOverscrollHistoryNavigation;
 CONTENT_EXPORT extern const base::Feature kPeriodicBackgroundSync;
 CONTENT_EXPORT extern const base::Feature kFeaturePolicyHeader;
-CONTENT_EXPORT extern const base::Feature kPepper3DImageChromium;
+CONTENT_EXPORT extern const base::Feature kPepper3DImageMonyhar;
 CONTENT_EXPORT extern const base::Feature kPepperCrossOriginRedirectRestriction;
 CONTENT_EXPORT extern const base::Feature kPrefersColorSchemeClientHintHeader;
 CONTENT_EXPORT extern const base::Feature kProcessHostOnUI;
@@ -234,7 +234,7 @@ CONTENT_EXPORT extern const base::Feature kWebAuthConditionalUI;
 CONTENT_EXPORT extern const base::Feature kWebBluetoothNewPermissionsBackend;
 CONTENT_EXPORT extern const base::Feature kWebBundles;
 CONTENT_EXPORT extern const base::Feature kWebBundlesFromNetwork;
-CONTENT_EXPORT extern const base::Feature kWebGLImageChromium;
+CONTENT_EXPORT extern const base::Feature kWebGLImageMonyhar;
 CONTENT_EXPORT extern const base::Feature kWebGPUService;
 CONTENT_EXPORT extern const base::Feature kWebID;
 CONTENT_EXPORT extern const base::Feature kWebOtpBackendAuto;

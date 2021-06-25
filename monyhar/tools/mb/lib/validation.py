@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Validation functions for the Meta-Build config file"""
@@ -56,7 +56,7 @@ def CheckAllConfigsAndMixinsReferenced(errs, all_configs, configs, mixins):
 
 
 def EnsureNoProprietaryMixins(errs, builder_groups, configs, mixins):
-  """If we're checking the Chromium config, check that the 'monyhar' bots
+  """If we're checking the Monyhar config, check that the 'monyhar' bots
   which build public artifacts do not include the chrome_with_codecs mixin.
   """
   if 'monyhar' in builder_groups:

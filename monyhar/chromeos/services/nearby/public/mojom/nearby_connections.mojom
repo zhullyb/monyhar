@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ interface MdnsResponderFactory {
 
 // Collection of dependencies required by WebRTC medium.
 struct WebRtcDependencies {
-  // Used to allocate p2p sockets via Chromium's network service.
+  // Used to allocate p2p sockets via Monyhar's network service.
   pending_remote<network.mojom.P2PSocketManager> socket_manager;
   // Used to create an mDNS responder interface on demand.
   pending_remote<MdnsResponderFactory> mdns_responder_factory;

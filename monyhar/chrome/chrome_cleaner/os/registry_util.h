@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -62,12 +62,12 @@ extern const wchar_t kChromePoliciesForcelistKeyPath[];
 extern const wchar_t kChromePoliciesWhitelistKeyPathDeprecated[];
 extern const wchar_t kChromePoliciesAllowlistKeyPath[];
 
-// The keys for the Chromium policy forcelist, whitelist and allowlist.
+// The keys for the Monyhar policy forcelist, whitelist and allowlist.
 // Whitelist has been deprecated in favor of allowlist, but is still reported
-// by the cleaner for compatibility with older versions of Chromium.
-extern const wchar_t kChromiumPoliciesForcelistKeyPath[];
-extern const wchar_t kChromiumPoliciesWhitelistKeyPathDeprecated[];
-extern const wchar_t kChromiumPoliciesAllowlistKeyPath[];
+// by the cleaner for compatibility with older versions of Monyhar.
+extern const wchar_t kMonyharPoliciesForcelistKeyPath[];
+extern const wchar_t kMonyharPoliciesWhitelistKeyPathDeprecated[];
+extern const wchar_t kMonyharPoliciesAllowlistKeyPath[];
 
 // Returns a string representation of the registry value type.
 std::wstring RegistryValueTypeToString(DWORD value_type);

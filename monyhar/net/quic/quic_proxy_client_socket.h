@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Chromium Authors. All rights reserved.
+// Copyright (c) 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ class HttpAuthController;
 class ProxyDelegate;
 
 // QuicProxyClientSocket provides a socket interface to an underlying
-// QuicChromiumClientStream. Bytes written to/read from a QuicProxyClientSocket
+// QuicMonyharClientStream. Bytes written to/read from a QuicProxyClientSocket
 // are sent/received via STREAM frames in the underlying QUIC stream.
 class NET_EXPORT_PRIVATE QuicProxyClientSocket : public ProxyClientSocket {
  public:
@@ -31,8 +31,8 @@ class NET_EXPORT_PRIVATE QuicProxyClientSocket : public ProxyClientSocket {
   // frame for |endpoint|.  After the response HEADERS frame is received, any
   // data read/written to the socket will be transferred in STREAM frames.
   QuicProxyClientSocket(
-      std::unique_ptr<QuicChromiumClientStream::Handle> stream,
-      std::unique_ptr<QuicChromiumClientSession::Handle> session,
+      std::unique_ptr<QuicMonyharClientStream::Handle> stream,
+      std::unique_ptr<QuicMonyharClientSession::Handle> session,
       const ProxyServer& proxy_server,
       const std::string& user_agent,
       const HostPortPair& endpoint,
@@ -111,10 +111,10 @@ class NET_EXPORT_PRIVATE QuicProxyClientSocket : public ProxyClientSocket {
   State next_state_;
 
   // Handle to the QUIC Stream that this sits on top of.
-  std::unique_ptr<QuicChromiumClientStream::Handle> stream_;
+  std::unique_ptr<QuicMonyharClientStream::Handle> stream_;
 
   // Handle to the session that |stream_| belongs to.
-  std::unique_ptr<QuicChromiumClientSession::Handle> session_;
+  std::unique_ptr<QuicMonyharClientSession::Handle> session_;
 
   // Stores the callback for Connect().
   CompletionOnceCallback connect_callback_;

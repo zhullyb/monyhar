@@ -271,7 +271,7 @@ self.GenericSensorTest = (() => {
         this.maxFrequency_ = Math.min(10, this.maxFrequency_);
       }
 
-      // Chromium applies some rounding and other privacy-related measures that
+      // Monyhar applies some rounding and other privacy-related measures that
       // can cause ALS not to report a reading when it has not changed beyond a
       // certain threshold compared to the previous illuminance value. Make
       // each reading return a different value that is significantly different
@@ -375,7 +375,7 @@ self.GenericSensorTest = (() => {
     sensorProvider: null
   }
 
-  class GenericSensorTestChromium {
+  class GenericSensorTestMonyhar {
     constructor() {
       Object.freeze(this); // Make it immutable.
     }
@@ -384,7 +384,7 @@ self.GenericSensorTest = (() => {
       if (testInternal.initialized)
         throw new Error('Call reset() before initialize().');
 
-      // Grant sensor permissions for Chromium testdriver.
+      // Grant sensor permissions for Monyhar testdriver.
       // testdriver.js only works in the top-level browsing context, so do
       // nothing if we're in e.g. an iframe.
       if (window.parent === window) {
@@ -416,5 +416,5 @@ self.GenericSensorTest = (() => {
     }
   }
 
-  return GenericSensorTestChromium;
+  return GenericSensorTestMonyhar;
 })();

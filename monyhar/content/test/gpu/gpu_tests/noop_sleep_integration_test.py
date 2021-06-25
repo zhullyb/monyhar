@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -11,7 +11,7 @@ import time
 from gpu_tests import gpu_integration_test
 from gpu_tests import path_util
 
-data_path = os.path.join(path_util.GetChromiumSrcDir(), 'content', 'test',
+data_path = os.path.join(path_util.GetMonyharSrcDir(), 'content', 'test',
                          'data', 'gpu')
 
 

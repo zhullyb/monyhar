@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -73,13 +73,13 @@ declare_args() {
   # This is initialized below, after use_gold might have been overridden.
   gold_path = ""
 
-  # Enable fatal linker warnings. Building Chromium with certain versions
+  # Enable fatal linker warnings. Building Monyhar with certain versions
   # of binutils can cause linker warning.
   # TODO(thakis): Set this to true unconditionally once lld/MachO bring-up
   # is along far enough that it no longer emits linker warnings.
   fatal_linker_warnings = !(is_apple && use_lld)
 
-  # Build with C++ RTTI enabled. Chromium builds without RTTI by default,
+  # Build with C++ RTTI enabled. Monyhar builds without RTTI by default,
   # but some sanitizers are known to require it, like CFI diagnostics
   # and UBsan variants.
   use_rtti = use_cfi_diag || is_ubsan_vptr || is_ubsan_security
@@ -90,7 +90,7 @@ declare_args() {
   # the needed gcov profiling data.
   auto_profile_path = ""
 
-  # Allow projects that wish to stay on C++11 to override Chromium's default.
+  # Allow projects that wish to stay on C++11 to override Monyhar's default.
   use_cxx11 = false
 
   # Path to an AFDO profile to use while building with clang, if any. Empty
@@ -100,7 +100,7 @@ declare_args() {
   # Some configurations have default sample profiles. If this is true and
   # clang_sample_profile_path is empty, we'll fall back to the default.
   #
-  # We currently only have default profiles for Chromium in-tree, so we disable
+  # We currently only have default profiles for Monyhar in-tree, so we disable
   # this by default for all downstream projects, since these profiles are likely
   # nonsensical for said projects.
   clang_use_default_sample_profile =
@@ -572,7 +572,7 @@ config("compiler") {
       }
     } else {
       # Gcc does not support ##__VA_ARGS__ when in standards-conforming mode,
-      # but we use this feature in several places in Chromium.
+      # but we use this feature in several places in Monyhar.
       # TODO(thomasanderson): Replace usages of ##__VA_ARGS__ with the
       # standard-compliant __VA_OPT__ added by C++20, and switch the gcc build
       # to -std=c*.
@@ -581,7 +581,7 @@ config("compiler") {
 
     cflags_c += [ "-std=${standard_prefix}11" ]
     if (cxx11_override) {
-      # Override Chromium's default for projects that wish to stay on C++11.
+      # Override Monyhar's default for projects that wish to stay on C++11.
       cflags_cc += [ "-std=${standard_prefix}++11" ]
     } else {
       cflags_cc += [ "-std=${standard_prefix}++14" ]
@@ -1139,7 +1139,7 @@ config("compiler_cpu_abi") {
 }
 
 # This provides options to tweak code generation that are necessary
-# for particular Chromium code or for working around particular
+# for particular Monyhar code or for working around particular
 # compiler bugs (or the combination of the two).
 config("compiler_codegen") {
   configs = []
@@ -1419,7 +1419,7 @@ config("default_warnings") {
       #        non-portable
       # This warning is unavoidable when using e.g. setjmp/longjmp.  MSDN
       # suggests using exceptions instead of setjmp/longjmp for C++, but
-      # Chromium code compiles without exception support.  We therefore have to
+      # Monyhar code compiles without exception support.  We therefore have to
       # use setjmp/longjmp for e.g. JPEG decode error handling, which means we
       # have to turn off this warning (and be careful about how object
       # destruction happens in such cases).
@@ -1640,7 +1640,7 @@ config("default_warnings") {
 # monyhar_code ---------------------------------------------------------------
 #
 # Toggles between higher and lower warnings for code that is (or isn't)
-# part of Chromium.
+# part of Monyhar.
 
 config("monyhar_code") {
   if (is_win) {
@@ -1665,7 +1665,7 @@ config("monyhar_code") {
       cflags += [ "-Wextra" ]
     }
 
-    # In Chromium code, we define __STDC_foo_MACROS in order to get the
+    # In Monyhar code, we define __STDC_foo_MACROS in order to get the
     # C99 macros on Mac and Linux.
     defines = [
       "__STDC_CONSTANT_MACROS",
@@ -2248,7 +2248,7 @@ if (is_clang && is_a_target_toolchain) {
     _clang_sample_profile = clang_sample_profile_path
   } else if (clang_use_default_sample_profile) {
     assert(build_with_monyhar,
-           "Our default profiles currently only apply to Chromium")
+           "Our default profiles currently only apply to Monyhar")
     assert(is_android || is_chromeos_lacros || is_chromeos_ash || is_chromecast,
            "The current platform has no default profile")
     if (is_android || is_chromecast) {
@@ -2324,7 +2324,7 @@ config("win_pdbaltpath") {
   # absolute path into just the basename of the pdb file, which helps with
   # build reproducibility. Debuggers look for pdb files next to executables,
   # so there's minimal downside to always using this. However, post-mortem
-  # debugging of Chromium crash dumps and ETW tracing can be complicated by this
+  # debugging of Monyhar crash dumps and ETW tracing can be complicated by this
   # switch so an option to omit it is important.
   if (!use_full_pdb_paths) {
     ldflags = [ "/pdbaltpath:%_PDB%" ]

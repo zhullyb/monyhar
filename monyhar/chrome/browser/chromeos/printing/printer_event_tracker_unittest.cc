@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@ constexpr int kProductId = 0x1337;
 constexpr char kUsbManufacturer[] = "Usb MakesPrinters";
 constexpr char kUsbModel[] = "Printer ModelName";
 
-constexpr char kMakeAndModel[] = "Chromium RazLazer X4321er";
+constexpr char kMakeAndModel[] = "Monyhar RazLazer X4321er";
 constexpr char kEffectiveMakeAndModel[] = "Generic PostScript";
 
 class PrinterEventTrackerTest : public testing::Test {

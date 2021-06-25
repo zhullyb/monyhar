@@ -20,7 +20,7 @@ if (!isPrerendering) {
     navigator.requestMIDIAccess({sysex: params.get("sysex") === "true"}).then(
       _ => { resolve(); },
       e => {
-        // Chromium rejects the promise on trybots with an error like:
+        // Monyhar rejects the promise on trybots with an error like:
         // ALSA lib seq_hw.c:457:(snd_seq_hw_open) open /dev/snd/seq failed:
         //   Permission denied
         //

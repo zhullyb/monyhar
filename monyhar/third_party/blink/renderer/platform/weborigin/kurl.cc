@@ -969,7 +969,7 @@ bool KURL::ProtocolIs(const StringView protocol) const {
   // JavaScript URLs are "valid" and should be executed even if KURL decides
   // they are invalid.  The free function protocolIsJavaScript() should be used
   // instead.
-  // FIXME: Chromium code needs to be fixed for this assert to be enabled.
+  // FIXME: Monyhar code needs to be fixed for this assert to be enabled.
   // DCHECK(strcmp(protocol, "javascript"));
   return protocol_ == protocol;
 }

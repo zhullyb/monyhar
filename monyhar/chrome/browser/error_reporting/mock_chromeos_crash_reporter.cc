@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -111,7 +111,7 @@ bool UploadViaHttp(const std::string& base_url,
     return false;
   }
 
-  // Upload using httplib. The normal Chromium way (SimpleURLLoader) needs a lot
+  // Upload using httplib. The normal Monyhar way (SimpleURLLoader) needs a lot
   // of browser stuff to be set up before it can be used, so we use the
   // standalone httplib in this test binary.
   std::string host = upload_url.host();

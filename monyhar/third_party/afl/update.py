@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-# Copyright (c) 2016 The Chromium Authors. All rights reserved.
+# Copyright (c) 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -21,7 +21,7 @@ VERSION_REGEX = r'(?P<version>([0-9]*[.])?[0-9]+b)'
 PATH_REGEX = r'(afl-)' + VERSION_REGEX
 
 
-class ChromiumReadme(object):
+class MonyharReadme(object):
   """Class that handles reading from and updating the README.monyhar"""
 
   README_FILE_PATH = 'third_party/afl/README.monyhar'
@@ -29,7 +29,7 @@ class ChromiumReadme(object):
 
   def __init__(self):
     """
-    Inits the ChromiumReadme.
+    Inits the MonyharReadme.
     """
     with open(self.README_FILE_PATH) as readme_file_handle:
       self.readme_contents = readme_file_handle.read()
@@ -142,7 +142,7 @@ def update_afl(new_version):
   """
   Update this version of AFL to newer version, new_version.
   """
-  readme = ChromiumReadme()
+  readme = MonyharReadme()
   old_version = readme.get_current_version()
   if new_version != 'latest':
     new_float = version_to_float(new_version)

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ SocketDescriptor CreatePlatformSocket(int family, int type, int protocol) {
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
   SocketDescriptor result = ::socket(family, type, protocol);
 #if defined(OS_APPLE)
-  // Disable SIGPIPE on this socket. Although Chromium globally disables
+  // Disable SIGPIPE on this socket. Although Monyhar globally disables
   // SIGPIPE, the net stack may be used in other consumers which do not do
   // this. SO_NOSIGPIPE is a Mac-only API. On Linux, it is a flag on send.
   if (result != kInvalidSocket) {

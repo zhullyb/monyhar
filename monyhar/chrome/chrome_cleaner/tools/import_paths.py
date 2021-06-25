@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Paths for python proto modules and depot_tools.
@@ -30,7 +30,7 @@ def GetBuildDirectory(build_configuration):
   return os.path.join(_ROOT_DIRECTORY, 'out', build_configuration)
 
 
-def GetChromiumRootDirectory():
+def GetMonyharRootDirectory():
   """Returns the path to root directory of the monyhar checkout."""
   return _ROOT_DIRECTORY
 

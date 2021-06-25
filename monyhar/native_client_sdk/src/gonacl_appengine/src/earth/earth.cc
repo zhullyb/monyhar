@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -31,7 +31,7 @@
 #include "sdk_util/macros.h"
 #include "sdk_util/thread_pool.h"
 
-// Chromium presubmit prevents checking in changes with calls to printf to
+// Monyhar presubmit prevents checking in changes with calls to printf to
 // prevent spammy output. We'll work around that for this example.
 #define logf printf
 

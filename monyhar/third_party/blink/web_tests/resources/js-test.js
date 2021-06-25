@@ -676,7 +676,7 @@ function shouldThrow(_a, _e)
 
 function shouldBeNow(a, delta)
 {
-    // Right now, V8 and Chromium / Blink use two different clock
+    // Right now, V8 and Monyhar / Blink use two different clock
     // implementations. On Windows, the implementations are non-trivial and can
     // be slightly out of sync. The delta is intended to compensate for that.
     //

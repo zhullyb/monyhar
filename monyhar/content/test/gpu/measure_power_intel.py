@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """This script runs power measurements for browsers using Intel Power Gadget.
@@ -30,7 +30,7 @@ Supported browsers (--browser=xxx): 'stable', 'beta', 'dev', 'canary',
   'monyhar', 'edge', and path_to_exe_file.
 For Edge from insider channels (beta, dev, can), use path_to_exe_file.
 
-It is recommended to test with optimized builds of Chromium e.g. these GN args:
+It is recommended to test with optimized builds of Monyhar e.g. these GN args:
 
   is_debug = false
   is_component_build = false
@@ -74,7 +74,7 @@ CHROME_DEV_PATH_WIN = (
     r"C:\Program Files (x86)\Google\Chrome Dev\Application\chrome.exe")
 # The following two paths are relative to the LOCALAPPDATA
 CHROME_CANARY_PATH_WIN = r"Google\Chrome SxS\Application\chrome.exe"
-CHROMIUM_PATH_WIN = r"Chromium\Application\chrome.exe"
+CHROMIUM_PATH_WIN = r"Monyhar\Application\chrome.exe"
 
 CHROME_STABLE_PATH_MAC = (
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
@@ -126,7 +126,7 @@ def LocateBrowserMac(options_browser):
     browser = CHROME_DEV_PATH_MAC
   elif options_browser == 'canary':
     browser = CHROME_CANARY_PATH_MAC
-  elif options_browser.endswith("Chromium"):
+  elif options_browser.endswith("Monyhar"):
     browser = options_browser
   else:
     logging.warning("Invalid value for --browser")

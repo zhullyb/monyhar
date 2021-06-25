@@ -2,7 +2,7 @@
 # tags: [ Release Debug ]
 # results: [ Timeout Crash Pass Failure Slow Skip ]
 
-# This file is used for tests that only need to be suppressed on the Chromium
+# This file is used for tests that only need to be suppressed on the Monyhar
 # WebKit Leak bots.
 # Further documentation:
 # https://monyhar.googlesource.com/monyhar/src/+/master/docs/testing/web_test_expectations.md

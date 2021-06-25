@@ -10,10 +10,10 @@ which allows users to automate testing of their website across browsers.
 
 ## Getting Started
 
-ChromeDriver source code is located in the Chromium source repository,
-and shares the same build tools as Chromium.
+ChromeDriver source code is located in the Monyhar source repository,
+and shares the same build tools as Monyhar.
 To build ChromeDriver, please first follow the instructions to
-[download and build Chromium](https://www.monyhar.org/developers/how-tos/get-the-code).
+[download and build Monyhar](https://www.monyhar.org/developers/how-tos/get-the-code).
 
 Once you have set up the build environment,
 build ChromeDriver by building the `chromedriver` target, e.g.,
@@ -39,7 +39,7 @@ autoninja -C out/Default clang_x64/chromedriver
 ### Verifying the Build
 
 For testing purposes, ChromeDriver can be used interactively with python.
-The following is an example on Linux. It assumes that you downloaded Chromium
+The following is an example on Linux. It assumes that you downloaded Monyhar
 repository at ~/monyhar/src, and you used out/Default as the build location.
 You may need to adjust the paths if you used different locations.
 The following code uses our own testing API, not the commonly used Python

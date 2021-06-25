@@ -16,7 +16,7 @@
 #
 # Nowadays canonical input method configs on CrOS are defined in:
 # chrome/browser/resources/chromeos/input_method/google_xkb_manifest.json
-# For open-source Chromium OS: see other *_manifest.json in the same folder.
+# For open-source Monyhar OS: see other *_manifest.json in the same folder.
 #
 # Deprecated data aren't removed yet. This file is shipped in CrOS images, thus
 # possibly still read (and likely interpreted incorrectly) by other systems.

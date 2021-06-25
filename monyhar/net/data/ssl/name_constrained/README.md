@@ -1,7 +1,7 @@
 # Certificate Blocklist
 
 This directory contains a number of certificates and public keys which are to be
-treated as named-constrained during certiicate validation within Chromium-based
+treated as named-constrained during certiicate validation within Monyhar-based
 products. 
 
 When applicable, additional information and the full certificate or key

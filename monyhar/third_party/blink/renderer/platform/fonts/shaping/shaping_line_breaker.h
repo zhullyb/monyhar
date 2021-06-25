@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -36,7 +36,7 @@ class PLATFORM_EXPORT ShapingLineBreaker final {
  public:
   // Callback function to reshape line edges.
   //
-  // std::function is forbidden in Chromium and base::RepeatingCallback is way
+  // std::function is forbidden in Monyhar and base::RepeatingCallback is way
   // too expensive so we resort to a good old function pointer instead.
   using ShapeCallback = scoped_refptr<ShapeResult> (*)(void* context,
                                                        unsigned start,

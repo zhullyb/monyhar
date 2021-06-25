@@ -23,7 +23,7 @@ to propagate policies for all users (including non-managed ones):
 
 **Linux** Policies can be set via files in specific directories:
 
-The base directory is `/etc/monyhar/policies` for Chromium builds,
+The base directory is `/etc/monyhar/policies` for Monyhar builds,
  `/etc/opt/chrome/policies/` for official Chrome builds.
 The base directory contains two subdirectories: `managed/` for mandatory
 policies and `recommended/` for recommended policies. All files inside these

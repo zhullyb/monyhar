@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython3
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Script for updating the project settings for a monyhar branch.
@@ -64,7 +64,7 @@ def parse_args(args=None, *, parser_type=None):
 def initial_settings(milestone, branch):
   settings = dict(
       project=f'monyhar-m{milestone}',
-      project_title=f'Chromium M{milestone}',
+      project_title=f'Monyhar M{milestone}',
       is_main=False,
       is_lts_branch=False,
       ref=f'refs/branch-heads/{branch}',

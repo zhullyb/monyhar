@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1308,7 +1308,7 @@ bool TSFTextStore::CancelComposition() {
   // in IMM32 hence calling falling back to |ConfirmComposition()| is not
   // technically correct, because |ConfirmComposition()| corresponds to
   // |CPS_COMPLETE| rather than |CPS_CANCEL|.
-  // However in Chromium it seems that |InputMethod::CancelComposition()|
+  // However in Monyhar it seems that |InputMethod::CancelComposition()|
   // might have already committed composing text despite its name.
   // TODO(IME): Check other platforms to see if |CancelComposition()| is
   //            actually working or not.

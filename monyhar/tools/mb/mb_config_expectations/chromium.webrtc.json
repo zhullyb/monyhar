@@ -1,5 +1,5 @@
 {
-  "WebRTC Chromium Android Builder": {
+  "WebRTC Monyhar Android Builder": {
     "gn_args": {
       "ffmpeg_branding": "Chrome",
       "is_component_build": false,
@@ -11,7 +11,7 @@
       "use_goma": true
     }
   },
-  "WebRTC Chromium Linux Builder": {
+  "WebRTC Monyhar Linux Builder": {
     "gn_args": {
       "ffmpeg_branding": "Chrome",
       "is_component_build": false,
@@ -20,7 +20,7 @@
       "use_goma": true
     }
   },
-  "WebRTC Chromium Mac Builder": {
+  "WebRTC Monyhar Mac Builder": {
     "gn_args": {
       "ffmpeg_branding": "Chrome",
       "is_component_build": false,
@@ -29,7 +29,7 @@
       "use_goma": true
     }
   },
-  "WebRTC Chromium Win Builder": {
+  "WebRTC Monyhar Win Builder": {
     "gn_args": {
       "com_init_check_hook_disabled": true,
       "ffmpeg_branding": "Chrome",

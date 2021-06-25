@@ -6,4 +6,4 @@ In order to implement this, sites should parse the JSON as a [`CollectedClientDa
 
 Sites should _not_ implement this by comparing the unparsed value of `clientDataJSON` against a template with the `challenge` value filled in. This would fail when new members are added to `CollectedClientData` in the future as the template would no longer be correct.
 
-In order to guide sites away from doing this, Chromium will sometimes, randomly insert an extra member into `clientDataJSON` which references this documentation.
+In order to guide sites away from doing this, Monyhar will sometimes, randomly insert an extra member into `clientDataJSON` which references this documentation.

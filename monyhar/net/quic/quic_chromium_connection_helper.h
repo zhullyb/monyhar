@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -24,12 +24,12 @@ class QuicRandom;
 }  // namespace quic
 namespace net {
 
-class NET_EXPORT_PRIVATE QuicChromiumConnectionHelper
+class NET_EXPORT_PRIVATE QuicMonyharConnectionHelper
     : public quic::QuicConnectionHelperInterface {
  public:
-  QuicChromiumConnectionHelper(const quic::QuicClock* clock,
+  QuicMonyharConnectionHelper(const quic::QuicClock* clock,
                                quic::QuicRandom* random_generator);
-  ~QuicChromiumConnectionHelper() override;
+  ~QuicMonyharConnectionHelper() override;
 
   // quic::QuicConnectionHelperInterface
   const quic::QuicClock* GetClock() const override;
@@ -40,7 +40,7 @@ class NET_EXPORT_PRIVATE QuicChromiumConnectionHelper
   const quic::QuicClock* clock_;
   quic::QuicRandom* random_generator_;
 
-  DISALLOW_COPY_AND_ASSIGN(QuicChromiumConnectionHelper);
+  DISALLOW_COPY_AND_ASSIGN(QuicMonyharConnectionHelper);
 };
 
 }  // namespace net

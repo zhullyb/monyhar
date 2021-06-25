@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """GPU implementation of //testing/skia_gold_common/skia_gold_properties.py."""
@@ -9,7 +9,7 @@ import subprocess
 import sys
 
 from gpu_tests import path_util
-path_util.AddDirToPathIfNeeded(path_util.GetChromiumSrcDir(), 'build')
+path_util.AddDirToPathIfNeeded(path_util.GetMonyharSrcDir(), 'build')
 from skia_gold_common import skia_gold_properties
 
 
@@ -19,7 +19,7 @@ class GpuSkiaGoldProperties(skia_gold_properties.SkiaGoldProperties):
     try:
       return subprocess.check_output(['git', 'rev-parse', 'origin/master'],
                                      shell=_IsWin(),
-                                     cwd=path_util.GetChromiumSrcDir()).strip()
+                                     cwd=path_util.GetMonyharSrcDir()).strip()
     except subprocess.CalledProcessError:
       return None
 

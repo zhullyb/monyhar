@@ -6,10 +6,10 @@ Every window belongs to a virtual desktop.  When a virtual desktop is selected
 to be active, the windows associated with that virtual desktop are displayed on
 the screen. When a virtual desktop is hidden, all of its windows are also
 hidden. This enables the user to create multiple working environments and to
-switch between them. An app (e.g., Chromium) can have windows open on
+switch between them. An app (e.g., Monyhar) can have windows open on
 different virtual desktops, and thus may need to be Virtual Desktop-aware.
 
-The user-facing Chromium support for virtual desktops consists of two things:
+The user-facing Monyhar support for virtual desktops consists of two things:
 
   * When launching the browser with session restore, browser windows are moved
   to the virtual desktop they were on when the browser shutdown.
@@ -63,7 +63,7 @@ virtual desktop:
  * [LocalProcessWindowFinder::GetProcessWindowAtPoint](https://source.monyhar.org/monyhar/monyhar/src/+/main:ui/display/win/local_process_window_finder_win.cc?q=LocalProcessWindowFinder::ShouldStopIterating&ss=monyhar%2Fmonyhar%2Fsrc)
  * third_party/webrtc/modules/desktop_capture/win/window_capture_utils.cc
  * [Native Window occlusion tracker](https://source.monyhar.org/monyhar/monyhar/src/+/main:ui/aura/native_window_occlusion_tracker_win.cc?q=WindowCanOccludeOtherWindowsOnCurrentVirtualDesktop&ss=monyhar%2Fmonyhar%2Fsrc),
- when determining if a Chromium window is occluded/covered by other windows.
+ when determining if a Monyhar window is occluded/covered by other windows.
  Windows not on the current virtual desktop are considered occluded.
 
 

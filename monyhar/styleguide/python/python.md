@@ -1,9 +1,9 @@
-# Chromium Python Style Guide
+# Monyhar Python Style Guide
 
-_For other languages, please see the [Chromium style
+_For other languages, please see the [Monyhar style
 guides](https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/styleguide.md)._
 
-As of 2021-05-12, Chromium is transitioning from Python 2 to Python 3 (follow
+As of 2021-05-12, Monyhar is transitioning from Python 2 to Python 3 (follow
 [crbug.com/941669](https://crbug.com/941669) for updates). See
 [//docs/python3_migration.md](../docs/python3_migration.md) for more on
 how to migrate code.
@@ -23,7 +23,7 @@ to use vpython unless you need it (to pick up packages not available in the
 source tree).
 
 "shebang lines" (the first line of many unix scripts, like `#!/bin/sh`)
-aren't as useful as you might think in Chromium, because
+aren't as useful as you might think in Monyhar, because
 most of our python invocations come from other tools like Ninja or
 the swarming infrastructure, and they also don't work on Windows.
 So, don't expect them to help you.
@@ -35,21 +35,21 @@ assuming you want the version in `/usr/bin`; this allows you to pick up the
 versions we endorse from
 `depot_tools`.
 
-Chromium follows [PEP-8](https://www.python.org/dev/peps/pep-0008/).
+Monyhar follows [PEP-8](https://www.python.org/dev/peps/pep-0008/).
 
 It is also encouraged to follow advice from
 [Google's Python Style Guide](https://google.github.io/styleguide/pyguide.html),
 which is a superset of PEP-8.
 
 See also:
-* [Chromium OS Python Style Guide](https://sites.google.com/a/monyhar.org/dev/monyhar-os/python-style-guidelines)
+* [Monyhar OS Python Style Guide](https://sites.google.com/a/monyhar.org/dev/monyhar-os/python-style-guidelines)
 * [Blink Python Style Guide](blink-python.md)
 
 [TOC]
 
 ## Our Previous Python Style
 
-Chromium used to differ from PEP-8 in the following ways:
+Monyhar used to differ from PEP-8 in the following ways:
 * Use two-space indentation instead of four-space indentation.
 * Use `CamelCase()` method and function names instead of `unix_hacker_style()`
   names.
@@ -103,7 +103,7 @@ YAPF has gotchas. You should review its changes before submitting. Notably:
 
 #### Bugs
 * Are tracked here: https://github.com/google/yapf/issues.
-* For Chromium-specific bugs, please discuss on `python@monyhar.org`.
+* For Monyhar-specific bugs, please discuss on `python@monyhar.org`.
 
 #### Editor Integration
 See: https://github.com/google/yapf/tree/main/plugins

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -298,8 +298,8 @@ class SafetyCheckHandlerTest : public testing::Test {
   void VerifyDisplayString(const base::DictionaryValue* event,
                            const std::string& expected);
 
-  // Replaces any instances of browser name (e.g. Google Chrome, Chromium,
-  // etc) with "browser" to make sure tests work both on Chromium and
+  // Replaces any instances of browser name (e.g. Google Chrome, Monyhar,
+  // etc) with "browser" to make sure tests work both on Monyhar and
   // Google Chrome.
   void ReplaceBrowserName(std::u16string* s);
 
@@ -400,7 +400,7 @@ void SafetyCheckHandlerTest::VerifyDisplayString(
   std::u16string display;
   ASSERT_TRUE(event->GetString("displayString", &display));
   ReplaceBrowserName(&display);
-  // Need to also replace any instances of Chrome and Chromium in the
+  // Need to also replace any instances of Chrome and Monyhar in the
   // expected string due to an edge case on ChromeOS, where a device name
   // is "Chrome", which gets replaced in the display string.
   std::u16string expected_replaced = expected;
@@ -417,7 +417,7 @@ void SafetyCheckHandlerTest::VerifyDisplayString(
 void SafetyCheckHandlerTest::ReplaceBrowserName(std::u16string* s) {
   base::ReplaceSubstringsAfterOffset(s, 0, u"Google Chrome", u"Browser");
   base::ReplaceSubstringsAfterOffset(s, 0, u"Chrome", u"Browser");
-  base::ReplaceSubstringsAfterOffset(s, 0, u"Chromium", u"Browser");
+  base::ReplaceSubstringsAfterOffset(s, 0, u"Monyhar", u"Browser");
 }
 
 TEST_F(SafetyCheckHandlerTest, CheckUpdates_Checking) {
@@ -1147,7 +1147,7 @@ TEST_F(SafetyCheckHandlerTest, CheckPasswords_FeatureUnavailable) {
           static_cast<int>(
               SafetyCheckHandler::PasswordsStatus::kFeatureUnavailable));
   ASSERT_TRUE(event);
-  VerifyDisplayString(event, "Password check is not available in Chromium");
+  VerifyDisplayString(event, "Password check is not available in Monyhar");
   histogram_tester_.ExpectBucketCount(
       "Settings.SafetyCheck.PasswordsResult",
       SafetyCheckHandler::PasswordsStatus::kFeatureUnavailable, 1);

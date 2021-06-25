@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -173,7 +173,7 @@ def GenerateBenchmarkOptions(output_dir, benchmark_cls):
   options = testing.GetRunOptions(
       output_dir=output_dir, benchmark_cls=benchmark_cls,
       overrides={'run_full_story_set': True},
-      environment=monyhar_config.GetDefaultChromiumConfig())
+      environment=monyhar_config.GetDefaultMonyharConfig())
   options.pageset_repeat = 1  # For smoke testing only run each page once.
   options.output_formats = ['histograms']
   options.max_values_per_test_case = MAX_VALUES_PER_TEST_CASE

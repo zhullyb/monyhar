@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -301,7 +301,7 @@ TEST_F(MacUtilTest, TestRemoveQuarantineAttribute) {
   ASSERT_TRUE(temp_dir_.CreateUniqueTempDir());
   FilePath dummy_folder_path = temp_dir_.GetPath().Append("DummyFolder");
   ASSERT_TRUE(base::CreateDirectory(dummy_folder_path));
-  const char* quarantine_str = "0000;4b392bb2;Chromium;|org.monyhar.Chromium";
+  const char* quarantine_str = "0000;4b392bb2;Monyhar;|org.monyhar.Monyhar";
   const char* file_path_str = dummy_folder_path.value().c_str();
   EXPECT_EQ(0, setxattr(file_path_str, "com.apple.quarantine",
       quarantine_str, strlen(quarantine_str), 0, 0));

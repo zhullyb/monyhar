@@ -107,7 +107,7 @@ async function runTest(timing, destType, result, inlineOrExternal, type) {
   const [sourceWindow, sourceDocument] = await createDocument(
       "iframe", result, inlineOrExternal, type, hasBlockingStylesheet);
 
-  // Due to https://crbug.com/1034176, Chromium needs
+  // Due to https://crbug.com/1034176, Monyhar needs
   // blocking stylesheets also in the destination Documents.
   const [destWindow, destDocument] = await createDocument(
       destType, null, null, null, hasBlockingStylesheet);
@@ -176,7 +176,7 @@ async function runTest(timing, destType, result, inlineOrExternal, type) {
 
   // Note: scripts are expected to be loaded at t=3, because the fetch
   // is started by #prepare-a-script at t=1, and the script's delay is
-  // 2 seconds. However in Chromium, due to preload scanner, the script
+  // 2 seconds. However in Monyhar, due to preload scanner, the script
   // loading might take 4 seconds, because the first request by preload
   // scanner of the source Document takes 2 seconds (between t=1 and t=3)
   // which blocks the second request by #prepare-a-script that takes

@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -87,7 +87,7 @@ using completion_block_util::GetSafeDecidePolicyCompletion;
   // yet added to the window. Retry after |kDelayBetweenAttemptsNanoSecs|.
   // TODO(crbug.com/227868): The strategy to poll until the resubmit data action
   // sheet can be presented is a temporary workaround. This needs to be
-  // refactored to match the Chromium implementation:
+  // refactored to match the Monyhar implementation:
   // * web_controller should notify/ the BVC once an action sheet should be
   //   shown.
   // * BVC should present the action sheet and then trigger the reload

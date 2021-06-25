@@ -61,7 +61,7 @@ self.ManagedConfigTest = (() => {
     mockManagedConfig: null
   }
 
-  class ManagedConfigTestChromium {
+  class ManagedConfigTestMonyhar {
     constructor() {
       Object.freeze(this);  // Make it immutable.
     }
@@ -87,5 +87,5 @@ self.ManagedConfigTest = (() => {
     }
   }
 
-  return ManagedConfigTestChromium;
+  return ManagedConfigTestMonyhar;
 })();

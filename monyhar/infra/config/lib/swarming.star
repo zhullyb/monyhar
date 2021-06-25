@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -7,22 +7,22 @@
 load("//lib/branches.star", "branches")
 
 def root_permissions():
-    """Sets up permissions that apply to all Chromium pools.
+    """Sets up permissions that apply to all Monyhar pools.
 
     Noop on a non-main branch, since Swarming pools are owned by the primary
-    Chromium project defined on the main branch.
+    Monyhar project defined on the main branch.
     """
     if not branches.matches(branches.MAIN):
         return
 
-    # Allow admins to cancel any task, delete bots, etc. in any Chromium pool.
+    # Allow admins to cancel any task, delete bots, etc. in any Monyhar pool.
     luci.binding(
         realm = "@root",
         roles = "role/swarming.poolOwner",
         groups = "project-monyhar-admins",
     )
 
-    # Allow everyone to see all tasks and bots in Chromium pools.
+    # Allow everyone to see all tasks and bots in Monyhar pools.
     luci.binding(
         realm = "@root",
         roles = "role/swarming.poolViewer",
@@ -38,7 +38,7 @@ def pool_realm(*, name, extends = None, groups = None, users = None, projects = 
     Individual Swarming pools are assigned to this realm in pools.cfg in
     Swarming server-side configs.
 
-    Pools are owned by the main Chromium project and it makes sense to defined
+    Pools are owned by the main Monyhar project and it makes sense to defined
     them only on the main branch. This declaration is noop on a non-main branch.
     """
     if not branches.matches(branches.MAIN):
@@ -83,7 +83,7 @@ def task_triggerers(*, builder_realm, pool_realm, users = None, groups = None):
     (e.g. tasks that pretend to be "monyhar/try" tasks), running on a Swarming
     pool in some `pool_realm` (e.g. "pools/try" or "pools/tests").
 
-    Pools are owned by the main Chromium project, thus `pool_realm` setting is
+    Pools are owned by the main Monyhar project, thus `pool_realm` setting is
     effective only on the main branch where pool realms are defined. It is
     silently skipped on on a non-main branch. Per-milestone projects still have
     builders, so `builder_realm` setting is always effective.

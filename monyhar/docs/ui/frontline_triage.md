@@ -1,10 +1,10 @@
-# Chromium UI Frontline Triage Procedures and Policy
+# Monyhar UI Frontline Triage Procedures and Policy
 
 ## Filing New Issues
 
 ### Steps
 
-0. Read and follow the [Chromium Code of Conduct](https://monyhar.googlesource.com/monyhar/src/+/main/CODE_OF_CONDUCT.md).
+0. Read and follow the [Monyhar Code of Conduct](https://monyhar.googlesource.com/monyhar/src/+/main/CODE_OF_CONDUCT.md).
 1. File your issue on http://crbug.com/.
    * Required: Repro Steps
    * Preferred: Screenshots

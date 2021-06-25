@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -61,7 +61,7 @@ ScenicSurface::ScenicSurface(
   main_shape_.SetMaterial(transparent_material);
   main_shape_.SetEventMask(fuchsia::ui::gfx::kMetricsEventMask);
   scenic_surface_factory->AddSurface(window, this);
-  scenic_session_.SetDebugName("Chromium ScenicSurface");
+  scenic_session_.SetDebugName("Monyhar ScenicSurface");
   scenic_session_.set_event_handler(
       fit::bind_member(this, &ScenicSurface::OnScenicEvents));
 }

@@ -1,5 +1,5 @@
 # Quick Start Guide to Using Cronet
-Cronet is the networking stack of Chromium put into a library for use on
+Cronet is the networking stack of Monyhar put into a library for use on
 mobile. This is the same networking stack that is used in the Chrome browser
 by over a billion people. It offers an easy-to-use, high performance,
 standards-compliant, and secure way to perform HTTP requests. Cronet has support

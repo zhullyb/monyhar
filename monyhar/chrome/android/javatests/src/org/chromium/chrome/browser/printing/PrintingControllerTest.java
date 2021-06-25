@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ import java.util.concurrent.TimeoutException;
  * Tests Android printing.
  * TODO(cimamoglu): Add a test with cancellation.
  * TODO(cimamoglu): Add a test with multiple, stacked onLayout/onWrite calls.
- * TODO(cimamoglu): Add a test which emulates Chromium failing to generate a PDF.
+ * TODO(cimamoglu): Add a test which emulates Monyhar failing to generate a PDF.
  */
 @RunWith(ChromeJUnit4ClassRunner.class)
 @CommandLineFlags.Add({ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE})

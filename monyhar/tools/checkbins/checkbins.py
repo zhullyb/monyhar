@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2011 The Chromium Authors. All rights reserved.
+# Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -146,7 +146,7 @@ def main(options, args):
         print("Checking %s ImageBase (0x%X > 4GB)... PASS" %
               (path, pe.OPTIONAL_HEADER.ImageBase))
 
-    # Can only guarantee that files that are built by Chromium
+    # Can only guarantee that files that are built by Monyhar
     # are protected by /GUARD:CF. Some system libraries are not.
     if IsInDefaultFileGroup(path):
       # Check for /GUARD:CF.

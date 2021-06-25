@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -180,7 +180,7 @@ public class LanguagesManager {
                 return getPotentialTranslateLanguages(TranslateBridge.getNeverTranslateLanguages());
             case LanguageListType.TARGET_LANGUAGES:
                 return getPotentialTranslateLanguages(
-                        Arrays.asList(TranslateBridge.getTargetLanguageForChromium()));
+                        Arrays.asList(TranslateBridge.getTargetLanguageForMonyhar()));
             case LanguageListType.UI_LANGUAGES:
                 return getPotentialUiLanguages();
             case LanguageListType.ACCEPT_LANGUAGES:

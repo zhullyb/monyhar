@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -174,14 +174,14 @@ public class LanguageSettings extends PreferenceFragmentCompat
         // Setup target language preference.
         LanguageItemPickerPreference targetLanguagePreference =
                 (LanguageItemPickerPreference) findPreference(TARGET_LANGUAGE_KEY);
-        targetLanguagePreference.setLanguageItem(TranslateBridge.getTargetLanguageForChromium());
+        targetLanguagePreference.setLanguageItem(TranslateBridge.getTargetLanguageForMonyhar());
         setSelectLanguageLauncher(targetLanguagePreference,
                 LanguagesManager.LanguageListType.TARGET_LANGUAGES,
                 REQUEST_CODE_CHANGE_TARGET_LANGUAGE,
                 LanguagesManager.LanguageSettingsPageType.CHANGE_TARGET_LANGUAGE);
         mPrefChangeRegistrar.addObserver(Pref.PREF_TRANSLATE_RECENT_TARGET, () -> {
             targetLanguagePreference.setLanguageItem(
-                    TranslateBridge.getTargetLanguageForChromium());
+                    TranslateBridge.getTargetLanguageForMonyhar());
         });
 
         // Setup always translate preference.

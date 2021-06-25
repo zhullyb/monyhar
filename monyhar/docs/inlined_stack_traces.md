@@ -60,7 +60,7 @@ so the code we are interested in is at `0x17c3a78`.
 [This doc](https://monyhar.googlesource.com/monyhar/src/+/main/docs/disassemble_code.md) describes how to dump the assembler code for a method from a binary.
 In this example, it's a crash from an Android Chrome binary.
 Only Googlers have access to the unstripped binary files needed for this example
-but the steps are generic and work with any version of Chromium
+but the steps are generic and work with any version of Monyhar
 (or indeed other binaries).
 
 In this case, we can dump the entire `Dispatch()` method

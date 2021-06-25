@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1532,7 +1532,7 @@ IN_PROC_BROWSER_TEST_F(StartupBrowserWithRealWebAppTest,
   ASSERT_TRUE(app);
 
   // destroy session services so we don't record this closure.
-  // This simulates a user choosing ... -> Exit Chromium.
+  // This simulates a user choosing ... -> Exit Monyhar.
   for (auto* profile : profile_manager->GetLoadedProfiles()) {
     // Don't construct SessionServices for every type just to
     // shut them down. If they were never created, just skip.

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,11 +48,11 @@ std::unique_ptr<network::SimpleURLLoader> DistillerURLFetcher::CreateURLFetcher(
         semantics {
           sender: "DOM Distiller"
           description:
-            "Chromium provides Mobile-friendly view on Android phones when the "
+            "Monyhar provides Mobile-friendly view on Android phones when the "
             "web page contains an article, and is not mobile-friendly. If the "
             "user enters Mobile-friendly view, the main content would be "
             "extracted and reflowed in a simple layout for better readability. "
-            "On iOS, apps can add URLs to the Reading List in Chromium. When "
+            "On iOS, apps can add URLs to the Reading List in Monyhar. When "
             "opening the entries in the Reading List with no or limited "
             "network, the simple layout would be shown. DOM distiller is the "
             "backend service for Mobile-friendly view and Reading List."
@@ -68,7 +68,7 @@ std::unique_ptr<network::SimpleURLLoader> DistillerURLFetcher::CreateURLFetcher(
           cookies_allowed: YES
           cookies_store: "user"
           setting: "Users can enable or disable Mobile-friendly view by "
-          "toggling chrome://flags#reader-mode-heuristics in Chromium on "
+          "toggling chrome://flags#reader-mode-heuristics in Monyhar on "
           "Android."
           policy_exception_justification:
             "Not implemented, considered not useful as no content is being "

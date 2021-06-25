@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -139,7 +139,7 @@ void ChromeJsErrorReportProcessor::SendReport(
         cookies_allowed: NO
         setting:
           "You can enable or disable this feature via 'Automatically send "
-          "usage statistics and crash reports to Google' in Chromium's "
+          "usage statistics and crash reports to Google' in Monyhar's "
           "settings under Advanced, Privacy. (This is in System Settings on "
           "Chromebooks.) This feature is enabled by default."
         chrome_policy {

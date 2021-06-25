@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -524,7 +524,7 @@ Polymer({
   /**
    * Handle all accessibility buttons.
    * Note that each <oobe-a11y-option> has chromeMessage attribute
-   * containing Chromium callback name.
+   * containing Monyhar callback name.
    *
    * @private
    * @param {!Event} event

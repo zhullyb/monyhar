@@ -169,7 +169,7 @@ test(function() {
     test.innerHTML = buffer.substr(0, e.updateRangeStart) + e.updateText.toUpperCase()  + buffer.substr(e.updateRangeEnd);
   });
   editContext.addEventListener("textformatupdate", e => {
-    //TODO: Currently Chromium only fires default styles
+    //TODO: Currently Monyhar only fires default styles
     formatRangeStart = e.formatRangeStart;
     formatRangeEnd = e.formatRangeEnd;
     underlineColor = e.underlineColor;

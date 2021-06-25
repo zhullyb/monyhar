@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ import org.monyhar.base.Log;
 import org.monyhar.base.ThreadUtils;
 import org.monyhar.components.background_task_scheduler.TaskInfo;
 import org.monyhar.components.background_task_scheduler.TaskParameters;
-import org.monyhar.gms.ChromiumPlayServicesAvailability;
+import org.monyhar.gms.MonyharPlayServicesAvailability;
 
 import java.util.concurrent.TimeUnit;
 
@@ -245,7 +245,7 @@ class BackgroundTaskSchedulerGcmNetworkManager implements BackgroundTaskSchedule
     }
 
     private GcmNetworkManager getGcmNetworkManager(Context context) {
-        if (ChromiumPlayServicesAvailability.isGooglePlayServicesAvailable(context)) {
+        if (MonyharPlayServicesAvailability.isGooglePlayServicesAvailable(context)) {
             return GcmNetworkManager.getInstance(context);
         }
         return null;

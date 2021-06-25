@@ -96,9 +96,9 @@ aware of the per-Pokemon data belonging to PokemonNurse.
 *   Having the consumer store a map between objects of class C and the
     consumer's C-specific data.
 
-## How to use this pattern in Chromium:
+## How to use this pattern in Monyhar:
 
-The two most commonly-used instances of this pattern in Chromium are
+The two most commonly-used instances of this pattern in Monyhar are
 [SupportsUserData] (especially [WebContentsUserData] and [WebStateUserData]) and
 [KeyedService] (usually via [BrowserContextKeyedServiceFactory] and
 [BrowserStateKeyedServiceFactory]).

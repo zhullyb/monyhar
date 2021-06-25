@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,11 +13,11 @@ class V4L2DecodeSurface;
 class V4L2DecodeSurfaceHandler;
 class V4L2Device;
 
-class V4L2ChromiumVP9Accelerator : public VP9Decoder::VP9Accelerator {
+class V4L2MonyharVP9Accelerator : public VP9Decoder::VP9Accelerator {
  public:
-  explicit V4L2ChromiumVP9Accelerator(V4L2DecodeSurfaceHandler* surface_handler,
+  explicit V4L2MonyharVP9Accelerator(V4L2DecodeSurfaceHandler* surface_handler,
                                       V4L2Device* device);
-  ~V4L2ChromiumVP9Accelerator() override;
+  ~V4L2MonyharVP9Accelerator() override;
 
   // VP9Decoder::VP9Accelerator implementation.
   scoped_refptr<VP9Picture> CreateVP9Picture() override;
@@ -41,7 +41,7 @@ class V4L2ChromiumVP9Accelerator : public VP9Decoder::VP9Accelerator {
 
   bool device_needs_frame_context_ = false;
 
-  DISALLOW_COPY_AND_ASSIGN(V4L2ChromiumVP9Accelerator);
+  DISALLOW_COPY_AND_ASSIGN(V4L2MonyharVP9Accelerator);
 };
 
 }  // namespace media

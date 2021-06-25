@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -47,17 +47,17 @@ void ShowMenu() {
 namespace remoting {
 namespace ios {
 
-AccountManagerChromium::AccountManagerChromium() = default;
+AccountManagerMonyhar::AccountManagerMonyhar() = default;
 
-AccountManagerChromium::~AccountManagerChromium() = default;
+AccountManagerMonyhar::~AccountManagerMonyhar() = default;
 
 UIViewController*
-AccountManagerChromium::CreateAccountParticleDiscViewController() {
+AccountManagerMonyhar::CreateAccountParticleDiscViewController() {
   return [[SimpleAccountParticleDiscViewController alloc] initWithNibName:nil
                                                                    bundle:nil];
 }
 
-void AccountManagerChromium::PresentSignInMenu() {
+void AccountManagerMonyhar::PresentSignInMenu() {
   ShowMenu();
 }
 

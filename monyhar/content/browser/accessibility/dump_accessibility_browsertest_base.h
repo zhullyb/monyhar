@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,7 +27,7 @@ class DumpAccessibilityTestHelper;
 // then compares that text to an expectation file in the same directory.
 //
 // The system was inspired by WebKit/Blink LayoutTests, but customized for
-// testing accessibility in Chromium.
+// testing accessibility in Monyhar.
 //
 // See content/test/data/accessibility/readme.md for an overview.
 class DumpAccessibilityTestBase

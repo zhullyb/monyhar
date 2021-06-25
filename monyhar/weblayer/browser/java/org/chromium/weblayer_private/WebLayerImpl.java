@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -129,7 +129,7 @@ public final class WebLayerImpl extends IWebLayer.Stub {
 
     // The required package ID for WebLayer when loaded as a shared library, hardcoded in the
     // resources. If this value changes make sure to change _SHARED_LIBRARY_HARDCODED_ID in
-    // //build/android/gyp/util/protoresources.py and WebViewChromiumFactoryProvider.java.
+    // //build/android/gyp/util/protoresources.py and WebViewMonyharFactoryProvider.java.
     private static final int REQUIRED_PACKAGE_IDENTIFIER = 36;
 
     private final ProfileManager mProfileManager = new ProfileManager();
@@ -869,7 +869,7 @@ public final class WebLayerImpl extends IWebLayer.Stub {
     }
 
     /**
-     * Chromium versionCodes follow the scheme "BBBBPPPAX":
+     * Monyhar versionCodes follow the scheme "BBBBPPPAX":
      * BBBB: 4 digit branch number. It monotonically increases over time.
      * PPP:  Patch number in the branch. It is padded with zeroes to the left. These three digits
      *       may change their meaning in the future.
@@ -898,10 +898,10 @@ public final class WebLayerImpl extends IWebLayer.Stub {
         // TODO(crbug.com/1112001): Investigate why loading classes causes strict mode
         // violations in some situations.
         try (StrictModeContext ignored = StrictModeContext.allowDiskReads()) {
-            Class<?> webViewChromiumFactoryProviderClass =
-                    Class.forName("com.android.webview.monyhar.WebViewChromiumFactoryProvider",
+            Class<?> webViewMonyharFactoryProviderClass =
+                    Class.forName("com.android.webview.monyhar.WebViewMonyharFactoryProvider",
                             true, webViewClassLoader);
-            Method setter = webViewChromiumFactoryProviderClass.getDeclaredMethod(
+            Method setter = webViewMonyharFactoryProviderClass.getDeclaredMethod(
                     "setWebLayerRunningInSameProcess");
             setter.invoke(null);
         } catch (Exception e) {

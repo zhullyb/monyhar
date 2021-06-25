@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -22,12 +22,12 @@ class TaskRunner;
 
 namespace net {
 
-class NET_EXPORT_PRIVATE QuicChromiumAlarmFactory
+class NET_EXPORT_PRIVATE QuicMonyharAlarmFactory
     : public quic::QuicAlarmFactory {
  public:
-  QuicChromiumAlarmFactory(base::TaskRunner* task_runner,
+  QuicMonyharAlarmFactory(base::TaskRunner* task_runner,
                            const quic::QuicClock* clock);
-  ~QuicChromiumAlarmFactory() override;
+  ~QuicMonyharAlarmFactory() override;
 
   // quic::QuicAlarmFactory
   quic::QuicAlarm* CreateAlarm(quic::QuicAlarm::Delegate* delegate) override;
@@ -38,9 +38,9 @@ class NET_EXPORT_PRIVATE QuicChromiumAlarmFactory
  private:
   base::TaskRunner* task_runner_;
   const quic::QuicClock* clock_;
-  base::WeakPtrFactory<QuicChromiumAlarmFactory> weak_factory_{this};
+  base::WeakPtrFactory<QuicMonyharAlarmFactory> weak_factory_{this};
 
-  DISALLOW_COPY_AND_ASSIGN(QuicChromiumAlarmFactory);
+  DISALLOW_COPY_AND_ASSIGN(QuicMonyharAlarmFactory);
 };
 
 }  // namespace net

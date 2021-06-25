@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -20,7 +20,7 @@ from telemetry.testing import unittest_runner
 
 
 def main():
-  project_config = monyhar_config.ChromiumConfig(
+  project_config = monyhar_config.MonyharConfig(
       top_level_dir=path_util.GetPerfDir())
   return unittest_runner.Run(project_config)
 

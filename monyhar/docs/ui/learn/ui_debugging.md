@@ -1,6 +1,6 @@
-# Chromium Desktop UI Debugging Tools and Tips
+# Monyhar Desktop UI Debugging Tools and Tips
 
-To help develop and debug Chromium desktop UI, this doc shares a set of
+To help develop and debug Monyhar desktop UI, this doc shares a set of
 developer tools and their usages.
 
 
@@ -18,7 +18,7 @@ able to use the following keyboard shortcuts:
 
 ## UI DevTools
 
-UI DevTools is a set of graphical inspection and debugging tools for Chromium
+UI DevTools is a set of graphical inspection and debugging tools for Monyhar
 native UI. They largely resemble the Web DevTools used by Web developers.
 There are two ways to enable the tools:
 * Enable `ui-debug-tools` flag from `chrome://flags`

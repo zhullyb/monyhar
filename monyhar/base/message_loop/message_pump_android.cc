@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -126,7 +126,7 @@ MessagePumpForUI::~MessagePumpForUI() {
 }
 
 void MessagePumpForUI::OnDelayedLooperCallback() {
-  // There may be non-Chromium callbacks on the same ALooper which may have left
+  // There may be non-Monyhar callbacks on the same ALooper which may have left
   // a pending exception set, and ALooper does not check for this between
   // callbacks. Check here, and if there's already an exception, just skip this
   // iteration without clearing the fd. If the exception ends up being non-fatal
@@ -175,7 +175,7 @@ void MessagePumpForUI::DoDelayedLooperWork() {
 }
 
 void MessagePumpForUI::OnNonDelayedLooperCallback() {
-  // There may be non-Chromium callbacks on the same ALooper which may have left
+  // There may be non-Monyhar callbacks on the same ALooper which may have left
   // a pending exception set, and ALooper does not check for this between
   // callbacks. Check here, and if there's already an exception, just skip this
   // iteration without clearing the fd. If the exception ends up being non-fatal

@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Update CTS Tests to a new version."""
@@ -88,7 +88,7 @@ class UpdateCTS(object):
   - Regenerate the buildbot json files.
 
   After these steps are completed, the user can commit and upload
-  the CL to Chromium Gerrit.
+  the CL to Monyhar Gerrit.
   """
 
   def __init__(self, work_dir, repo_root):
@@ -106,7 +106,7 @@ class UpdateCTS(object):
     self._stage_dir = os.path.join(self._work_dir, 'staged')
     self._version_file = os.path.join(self._work_dir, 'cipd_version.txt')
     self._repo_root = os.path.abspath(repo_root)
-    helper = cts_utils.ChromiumRepoHelper(self._repo_root)
+    helper = cts_utils.MonyharRepoHelper(self._repo_root)
     self._repo_helper = helper
     self._CTSConfig = cts_utils.CTSConfig(
         helper.rebase(cts_utils.TOOLS_DIR, cts_utils.CONFIG_FILE))

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -150,7 +150,7 @@ def main(args):
 
   print('Hashing sysroot...')
   # Hash the sysroot to catch updates to the headers, but don't hash the whole
-  # tree, as we want to avoid rebuilding all of Chromium if it's only e.g. the
+  # tree, as we want to avoid rebuilding all of Monyhar if it's only e.g. the
   # kernel blob has changed. https://crbug.com/793956.
   sysroot_hash_obj = hashlib.sha1()
   for root, dirs, files in os.walk(os.path.join(sdk_output_dir, 'sysroot')):

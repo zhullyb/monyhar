@@ -2,7 +2,7 @@
 ## Development Setup
 ### Shell variables
 
-This setup assumes Chromium is in a `cr` directory (`~/cr/src/...`). To make setup easier, you can modify and export the following variables:
+This setup assumes Monyhar is in a `cr` directory (`~/cr/src/...`). To make setup easier, you can modify and export the following variables:
 ```
 export DEP_ANALYSIS_DIR=~/cr/src/tools/android/dependency_analysis
 export DEP_ANALYSIS_BUILD_DIR=~/cr/src/out/Debug
@@ -68,7 +68,7 @@ npm run build && npm run serve-dist
 **To view the visualization, open `localhost:8888/package_view.html`.**
 
 ### Deploy
-The Chromium Dependency Graph Visualizer is hosted at
+The Monyhar Dependency Graph Visualizer is hosted at
 https://monyhar-dependency-graph.firebaseapp.com.
 
 If you are a Googler, you can see this [doc][deploy doc] for how to deploy a new

@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -566,7 +566,7 @@ class WPTMetadataBuilderTest(unittest.TestCase):
         In this case, only the SKIP status is translated since skipped tests are
         not combined with any other statuses. This is because wpt metadata
         requires a special 'disabled' keyword to skip tests, it's not just
-        another status in the expected status list like in Chromium.
+        another status in the expected status list like in Monyhar.
         """
         test_name = "external/wpt/test.html"
         expectation_dict = OrderedDict()

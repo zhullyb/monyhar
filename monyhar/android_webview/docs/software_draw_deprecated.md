@@ -17,7 +17,7 @@ Software draw has many drawbacks compared to hardware-accelerated draws.
 ## How to avoid software draws
 
 [Hardware acceleration](https://developer.android.com/guide/topics/graphics/hardware-accel)
-is enabled by default for all Android versions that supports Chromium WebView.
+is enabled by default for all Android versions that supports Monyhar WebView.
 However apps should avoid accidentally disabling hardware acceleration for
 WebView.
 

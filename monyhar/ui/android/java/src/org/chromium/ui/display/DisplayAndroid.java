@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 
 /**
- * Chromium's object for android.view.Display. Instances of this object should be obtained
+ * Monyhar's object for android.view.Display. Instances of this object should be obtained
  * from WindowAndroid.
  * This class is designed to avoid leaks. It is ok to hold a strong ref of this class from
  * anywhere, as long as the corresponding WindowAndroids are destroyed. The observers are

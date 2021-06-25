@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -227,7 +227,7 @@ sk_sp<SkDocument> MakePdfDocument(const std::string& creator,
   metadata.fCreation = now;
   metadata.fModified = now;
   metadata.fCreator = creator.empty()
-                          ? SkString("Chromium")
+                          ? SkString("Monyhar")
                           : SkString(creator.c_str(), creator.size());
   metadata.fRasterDPI = 300.0f;
 

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,9 +23,9 @@ namespace guest_view {
 class GuestViewBase;
 
 // A GuestViewManagerDelegate interface allows GuestViewManager to delegate
-// responsibilities to other modules in Chromium. Different builds of Chromium
+// responsibilities to other modules in Monyhar. Different builds of Monyhar
 // may use different GuestViewManagerDelegate implementations. For example,
-// mobile builds of Chromium do not include an extensions module and so
+// mobile builds of Monyhar do not include an extensions module and so
 // permission checks would be different, and IsOwnedByExtension would always
 // return false.
 class GuestViewManagerDelegate {

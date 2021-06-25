@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,7 +37,7 @@ bool AndroidImageReader::IsSupported() {
 AndroidImageReader::AndroidImageReader() : is_supported_(LoadFunctions()) {}
 
 bool AndroidImageReader::LoadFunctions() {
-  // If the Chromium build requires __ANDROID_API__ >= 26 at some
+  // If the Monyhar build requires __ANDROID_API__ >= 26 at some
   // point in the future, we could directly use the global functions instead of
   // dynamic loading. However, since this would be incompatible with pre-Oreo
   // devices, this is unlikely to happen in the foreseeable future, so we use

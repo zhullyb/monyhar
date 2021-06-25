@@ -12,7 +12,7 @@ of functions.
 Partial application is the process of binding a subset of a function's arguments
 to produce another function that takes fewer arguments. This can be used to pass
 around a unit of delayed execution, much like lexical closures are used in other
-languages. For example, it is used in Chromium code to schedule tasks on
+languages. For example, it is used in Monyhar code to schedule tasks on
 different MessageLoops.
 
 A callback with no unbound input parameters (`base::OnceCallback<void()>`) is
@@ -832,7 +832,7 @@ These types are passed to the `Unwrap()` functions to modify the behavior of
 `base::Bind{Once, Repeating}()`.  The `Unwrap()` functions change behavior by doing partial
 specialization based on whether or not a parameter is a wrapper type.
 
-`base::Unretained()` is specific to Chromium.
+`base::Unretained()` is specific to Monyhar.
 
 ### Missing Functionality
  - Binding arrays to functions that take a non-const pointer.

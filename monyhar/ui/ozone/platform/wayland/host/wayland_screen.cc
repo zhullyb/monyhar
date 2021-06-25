@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ WaylandScreen::WaylandScreen(WaylandConnection* connection)
     : connection_(connection), weak_factory_(this) {
   DCHECK(connection_);
 
-  // Chromium specifies either RGBA_8888 or BGRA_8888 as initial image format
+  // Monyhar specifies either RGBA_8888 or BGRA_8888 as initial image format
   // for alpha case and RGBX_8888 for no alpha case. Figure out
   // which one is supported and use that. If RGBX_8888 is not supported, the
   // format that |have_format_alpha| uses will be used by default (RGBA_8888 or
@@ -47,13 +47,13 @@ WaylandScreen::WaylandScreen(WaylandConnection* connection)
 
     // TODO(crbug.com/1127822): Investigate a better fix for this.
 #if !BUILDFLAG(IS_CHROMEOS_LACROS)
-    // RGBA_8888 is the preferred format, except when running on ChromiumOS. See
+    // RGBA_8888 is the preferred format, except when running on MonyharOS. See
     // crbug.com/1127558.
     if (format == gfx::BufferFormat::RGBA_8888)
       image_format_alpha_ = gfx::BufferFormat::RGBA_8888;
 
       // TODO(1128997): |image_format_no_alpha_| should use RGBX_8888 when it's
-      // available, but for some reason Chromium gets broken when it's used.
+      // available, but for some reason Monyhar gets broken when it's used.
       // Though,  we can import RGBX_8888 dma buffer to EGLImage successfully.
       // Enable that back when the issue is resolved.
 #endif  // !BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -189,7 +189,7 @@ display::Display WaylandScreen::GetDisplayForAcceleratedWidget(
 gfx::Point WaylandScreen::GetCursorScreenPoint() const {
   // Wayland does not provide either location of surfaces in global space
   // coordinate system or location of a pointer. Instead, only locations of
-  // mouse/touch events are known. Given that Chromium assumes top-level
+  // mouse/touch events are known. Given that Monyhar assumes top-level
   // windows are located at origin, always provide a cursor point in regards
   // to surfaces' location.
   //

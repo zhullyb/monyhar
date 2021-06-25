@@ -13,7 +13,7 @@ already existed, they still didn't cover all important aspects of the bridge
 behavior and we had to add some new tests to ensure we are preserving
 compatibility.
 
-The Gin implementation was introduced in Chromium M37 (initial Android Lollipop
+The Gin implementation was introduced in Monyhar M37 (initial Android Lollipop
 release), with the threading issue fixed in M39 (L MR1).
 
 ## The API
@@ -127,19 +127,19 @@ So far, we were thinking about Java bridge in abstract terms. But in fact, it is
 used in the context of a WebView-based application. The Java side of the bridge
 is tightly coupled to an instance of WebView class, while bridge's JavaScript
 side is bound to a HTML rendering engine. This is further complicated by the
-facts that in the Chromium architecture renderers are isolated from their
-controlling entities, and that Chromium is mainly implemented in C++, but needs
+facts that in the Monyhar architecture renderers are isolated from their
+controlling entities, and that Monyhar is mainly implemented in C++, but needs
 to interact with Android framework which is implemented in Java.
 
 Thus, if we want to depict the architecture of Java bridge, we also need to
-include parts of the Chromium framework that are glued to Java bridge:
+include parts of the Monyhar framework that are glued to Java bridge:
 
 ![Java bridge architecture](images/java_bridge/java_bridge_architecture.png)
 
 The figure is now much scarier. Let's figure out what is what here:
 - In Java VM (browser side):
   **WebView** is android.webkit.WebView class. It is exposed to the embedder and
-  interacts with Chromium rendering machinery. WebView owns a retaining set
+  interacts with Monyhar rendering machinery. WebView owns a retaining set
   (**`Set<Object>`**) that holds all injected objects to prevent their
   collection. Note that WebView class manages a C++ object called
   **WebContents** (in fact, the relationship is more complex, but these details

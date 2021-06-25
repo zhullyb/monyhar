@@ -1,6 +1,6 @@
 # Working With Files
 
-Adding, removing, and renaming files in iOS Chromium needs to follow a specific
+Adding, removing, and renaming files in iOS Monyhar needs to follow a specific
 procedure that will be unfamiliar to engineers coming from other iOS projects.
 Conceptually, every file is recorded in _four_ locations: the local filesystem,
 git, the `BUILD.gn` files, and the XCode projects. Of these, the XCode project
@@ -11,8 +11,8 @@ is wholly generated from the others.
 ## Overview
 
 **Do not use XCode to manipulate files.** The XCode project used for iOS
-Chromium is _generated_; it's functionally a build artifact. The various
-`BUILD.gn` files in Chromium define structure of the XCode project file. Running
+Monyhar is _generated_; it's functionally a build artifact. The various
+`BUILD.gn` files in Monyhar define structure of the XCode project file. Running
 `gclient runhooks` causes the project files to be regenerated.
 
 Individual files can have their contents edited within XCode, and all of the
@@ -26,7 +26,7 @@ To add any files (new headers, `.mm` or `.cc` implementation files, asset files
 of any kind), the following general steps need to happen:
 
 1.  The file needs to exist in the correct directory of the file system for your
-    Chromium checkout. New files need to be created, or assets need to be
+    Monyhar checkout. New files need to be created, or assets need to be
     copied to the right location.
 
 1.  The new files need to be added to git.

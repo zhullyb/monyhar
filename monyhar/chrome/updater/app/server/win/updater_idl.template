@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -6,7 +6,7 @@ import "oaidl.idl";
 import "ocidl.idl";
 
 
-// Public interfaces for the Chromium Updater.
+// Public interfaces for the Monyhar Updater.
 // For documentation, see the similar types defined in updater::UpdateService.
 
 [
@@ -99,7 +99,7 @@ interface IUpdater : IUnknown {
 [
   uuid(PLACEHOLDER-GUID-69464FF0-D9EC-4037-A35F-8AE4358106CC),
   version(1.0),
-  helpstring("Chromium Updater type library")
+  helpstring("Monyhar Updater type library")
 ]
 library UpdaterLib {
   importlib("stdole2.tlb");

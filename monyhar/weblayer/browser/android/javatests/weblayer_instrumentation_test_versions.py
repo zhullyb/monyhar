@@ -1,6 +1,6 @@
 #!/usr/bin/env vpython
 #
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
@@ -190,7 +190,7 @@ def main():
       '--use-webview-provider',
       os.path.join(args.implementation_outdir, args.webview_apk_path),
       '--additional-apk',
-      os.path.join(args.client_outdir, 'apks/ChromiumNetTestSupport.apk')]
+      os.path.join(args.client_outdir, 'apks/MonyharNetTestSupport.apk')]
 
   cmd = [sys.executable, executable_path] + executable_args + remaining_args
 

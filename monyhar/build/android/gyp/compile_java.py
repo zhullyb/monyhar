@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -83,7 +83,7 @@ ERRORPRONE_WARNINGS_TO_DISABLE = [
     'ThreadLocalUsage',
     # Also just false positives.
     'Finally',
-    # False positives for Chromium.
+    # False positives for Monyhar.
     'FragmentNotInstantiable',
     # Low priority to fix.
     'HidingField',
@@ -106,7 +106,7 @@ ERRORPRONE_WARNINGS_TO_DISABLE = [
     # Nice to have better type safety.
     'CollectionToArraySafeParameter',
     # Makes logcat debugging more difficult, and does not provide obvious
-    # benefits in the Chromium codebase.
+    # benefits in the Monyhar codebase.
     'ObjectToString',
     # Triggers on private methods that are @CalledByNative.
     'UnusedMethod',
@@ -290,7 +290,7 @@ class _InfoFileContext(object):
       if '_aidl.srcjar' in source:
         continue
       assert not self._monyhar_code or len(class_names) == 1, (
-          'Chromium java files must only have one class: {}'.format(source))
+          'Monyhar java files must only have one class: {}'.format(source))
       if self._monyhar_code:
         # This check is not necessary but nice to check this somewhere.
         self._CheckPathMatchesClassName(java_file, package_name, class_names[0])
@@ -610,7 +610,7 @@ def main(argv):
 
   javac_args = [
       '-g',
-      # Chromium only allows UTF8 source files.  Being explicit avoids
+      # Monyhar only allows UTF8 source files.  Being explicit avoids
       # javac pulling a default encoding from the user's environment.
       '-encoding',
       'UTF-8',

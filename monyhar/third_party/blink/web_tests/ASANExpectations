@@ -3,7 +3,7 @@
 # results: [ Timeout Crash Pass Failure Slow Skip ]
 
 # This file is used for tests that only need to be suppressed on
-# the Chromium WebKit ASAN bots.
+# the Monyhar WebKit ASAN bots.
 # Further documentation:
 # https://monyhar.googlesource.com/monyhar/src/+/master/docs/testing/web_test_expectations.md
 

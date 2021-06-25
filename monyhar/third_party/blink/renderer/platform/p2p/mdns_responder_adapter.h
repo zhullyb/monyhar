@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ class MojoBindingContext;
 
 // This class is created on the main thread but is used only on the WebRTC
 // worker threads. The MdnsResponderAdapter implements the WebRTC mDNS responder
-// interface via the MdnsResponder service in Chromium, and is used to register
+// interface via the MdnsResponder service in Monyhar, and is used to register
 // and resolve mDNS hostnames to conceal local IP addresses.
 class PLATFORM_EXPORT MdnsResponderAdapter
     : public webrtc::MdnsResponderInterface {

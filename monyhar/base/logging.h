@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -105,7 +105,7 @@
 // E.g., "*/foo/bar/*=2" would change the logging level for all code
 // in source files under a "foo/bar" directory.
 //
-// Note that for a Chromium binary built in release mode (is_debug = false) you
+// Note that for a Monyhar binary built in release mode (is_debug = false) you
 // must pass "--enable-logging=stderr" in order to see the output of VLOG
 // statements.
 //

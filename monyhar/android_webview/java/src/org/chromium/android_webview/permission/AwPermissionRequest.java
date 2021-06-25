@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ import org.monyhar.base.annotations.JNINamespace;
 import org.monyhar.base.annotations.NativeMethods;
 
 /**
- * This class wraps permission request in Chromium side, and can only be created
+ * This class wraps permission request in Monyhar side, and can only be created
  * by native side.
  */
 @JNINamespace("android_webview")

@@ -371,7 +371,7 @@ class Chrome(BrowserSetup):
             else:
                 raise WptrunError("Unable to locate or install matching ChromeDriver binary")
         if browser_channel in self.experimental_channels:
-            logger.info("Automatically turning on experimental features for Chrome Dev/Canary or Chromium trunk")
+            logger.info("Automatically turning on experimental features for Chrome Dev/Canary or Monyhar trunk")
             kwargs["binary_args"].append("--enable-experimental-web-platform-features")
             # HACK(Hexcles): work around https://github.com/web-platform-tests/wpt/issues/16448
             kwargs["webdriver_args"].append("--disable-build-check")
@@ -520,9 +520,9 @@ class Opera(BrowserSetup):
                 raise WptrunError("Unable to locate or install operadriver binary")
 
 
-class EdgeChromium(BrowserSetup):
+class EdgeMonyhar(BrowserSetup):
     name = "MicrosoftEdge"
-    browser_cls = browser.EdgeChromium
+    browser_cls = browser.EdgeMonyhar
 
     def setup_kwargs(self, kwargs):
         browser_channel = kwargs["browser_channel"]
@@ -728,7 +728,7 @@ product_setup = {
     "chrome": Chrome,
     "chrome_android": ChromeAndroid,
     "chrome_ios": ChromeiOS,
-    "edgemonyhar": EdgeChromium,
+    "edgemonyhar": EdgeMonyhar,
     "edge": Edge,
     "edge_webdriver": EdgeWebDriver,
     "ie": InternetExplorer,

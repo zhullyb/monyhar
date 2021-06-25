@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -103,9 +103,9 @@ class CONTENT_EXPORT BrowserTaskExecutor : public BaseBrowserTaskExecutor {
   // get via ThreadTaskRunnerHandle::Get()) will be active. This is the same
   // task runner you get by calling BrowserProcessIOThread::task_runner(). The
   // queues can be initialized by calling InitializeIOThread which is done
-  // during Chromium starup in BrowserMainLoop::CreateThreads.
+  // during Monyhar starup in BrowserMainLoop::CreateThreads.
   //
-  // Early on during Chromium startup we initialize the ServiceManager and it
+  // Early on during Monyhar startup we initialize the ServiceManager and it
   // needs to run tasks immediately. The ServiceManager itself does not know
   // about the IO thread (it does not use the browser task traits), it only uses
   // the task runner provided to it during initialization and possibly

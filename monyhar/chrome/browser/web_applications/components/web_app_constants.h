@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -130,8 +130,8 @@ std::ostream& operator<<(std::ostream& os, InstallResultCode code);
 // what flags will be used when installing the app.
 //
 // Internal means that the set of apps to install is defined statically, and
-// can be determined solely by 'first party' data: the Chromium binary,
-// stored user preferences (assumed to have been edited only by Chromiums
+// can be determined solely by 'first party' data: the Monyhar binary,
+// stored user preferences (assumed to have been edited only by Monyhars
 // past and present) and the like. External means that the set of apps to
 // install is defined dynamically, depending on 'third party' data that can
 // change from session to session even if those sessions are for the same

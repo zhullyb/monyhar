@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -112,7 +112,7 @@ class UkmConsentStateObserver
   // The list of URL-keyed anonymized data collection consent helpers.
   //
   // Note: UrlKeyedDataCollectionConsentHelper does not rely on sync but there
-  // must be exactly one per Chromium profile. As there is a single sync service
+  // must be exactly one per Monyhar profile. As there is a single sync service
   // per profile, it is safe to key them by sync service instead of introducing
   // an additional map.
   std::map<

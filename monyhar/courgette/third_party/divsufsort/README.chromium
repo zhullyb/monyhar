@@ -12,7 +12,7 @@ available in its original form from:
   https://github.com/y-256/libdivsufsort
 
 The copy in this directory is so extensively modified that the binary format is
-incompatible with the original and it cannot be compiled outside the Chromium
+incompatible with the original and it cannot be compiled outside the Monyhar
 source tree or the Courgette project.
 
 List of changes made to original code:

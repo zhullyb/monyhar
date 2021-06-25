@@ -7,7 +7,7 @@ platform features (i.e. HTML5) and GPU acceleration. It does not include Chrome
 features, e.g. extensions/autofill/spelling etc.
 
 ## Motivation
-As the Chromium code has grown, features inevitably hooked into the wrong
+As the Monyhar code has grown, features inevitably hooked into the wrong
 places, causing layering violations and dependencies that shouldn't exist. It's
 been hard for developers to figure out what the "best" way is because the APIs
 (when they existed) and features were together in the same directory. To avoid

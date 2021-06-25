@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -245,7 +245,7 @@ TEST_F(TracedValueProtoWriterTest, ProtoMessageBoundaries) {
 
     value->SetString("source", "RendererCompositor");
     value->SetString("thread", "RendererCompositor");
-    value->SetString("compile_target", "Chromium");
+    value->SetString("compile_target", "Monyhar");
 
     auto full_proto = GetProtoFromTracedValue(value.get());
 
@@ -254,7 +254,7 @@ TEST_F(TracedValueProtoWriterTest, ProtoMessageBoundaries) {
     EXPECT_TRUE(
         IsValue(FindDictEntry(&full_proto, "thread"), "RendererCompositor"));
     EXPECT_TRUE(
-        IsValue(FindDictEntry(&full_proto, "compile_target"), "Chromium"));
+        IsValue(FindDictEntry(&full_proto, "compile_target"), "Monyhar"));
   }
 }
 

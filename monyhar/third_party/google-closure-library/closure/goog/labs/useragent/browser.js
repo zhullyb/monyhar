@@ -33,7 +33,7 @@ goog.require('goog.string.internal');
 
 
 /**
- * @return {boolean} Whether the user's browser is Opera.  Note: Chromium
+ * @return {boolean} Whether the user's browser is Opera.  Note: Monyhar
  *     based Opera (Opera 15+) is detected as Chrome to avoid unnecessary
  *     special casing.
  * @private
@@ -64,19 +64,19 @@ goog.labs.userAgent.browser.matchEdgeHtml_ = function() {
 
 
 /**
- * @return {boolean} Whether the user's browser is Chromium based Edge.
+ * @return {boolean} Whether the user's browser is Monyhar based Edge.
  * @private
  */
-goog.labs.userAgent.browser.matchEdgeChromium_ = function() {
+goog.labs.userAgent.browser.matchEdgeMonyhar_ = function() {
   return goog.labs.userAgent.util.matchUserAgent('Edg/');
 };
 
 
 /**
- * @return {boolean} Whether the user's browser is Chromium based Opera.
+ * @return {boolean} Whether the user's browser is Monyhar based Opera.
  * @private
  */
-goog.labs.userAgent.browser.matchOperaChromium_ = function() {
+goog.labs.userAgent.browser.matchOperaMonyhar_ = function() {
   return goog.labs.userAgent.util.matchUserAgent('OPR');
 };
 
@@ -101,8 +101,8 @@ goog.labs.userAgent.browser.matchSafari_ = function() {
         goog.labs.userAgent.browser.matchCoast_() ||
         goog.labs.userAgent.browser.matchOpera_() ||
         goog.labs.userAgent.browser.matchEdgeHtml_() ||
-        goog.labs.userAgent.browser.matchEdgeChromium_() ||
-        goog.labs.userAgent.browser.matchOperaChromium_() ||
+        goog.labs.userAgent.browser.matchEdgeMonyhar_() ||
+        goog.labs.userAgent.browser.matchOperaMonyhar_() ||
         goog.labs.userAgent.browser.matchFirefox_() ||
         goog.labs.userAgent.browser.isSilk() ||
         goog.labs.userAgent.util.matchUserAgent('Android'));
@@ -137,8 +137,8 @@ goog.labs.userAgent.browser.matchIosWebview_ = function() {
 
 
 /**
- * @return {boolean} Whether the user's browser is any Chromium browser. This
- * returns true for Chrome, Opera 15+, and Edge Chromium.
+ * @return {boolean} Whether the user's browser is any Monyhar browser. This
+ * returns true for Chrome, Opera 15+, and Edge Monyhar.
  * @private
  */
 goog.labs.userAgent.browser.matchChrome_ = function() {
@@ -182,16 +182,16 @@ goog.labs.userAgent.browser.isEdge = goog.labs.userAgent.browser.matchEdgeHtml_;
 
 
 /**
- * @return {boolean} Whether the user's browser is Chromium based Edge.
+ * @return {boolean} Whether the user's browser is Monyhar based Edge.
  */
-goog.labs.userAgent.browser.isEdgeChromium =
-    goog.labs.userAgent.browser.matchEdgeChromium_;
+goog.labs.userAgent.browser.isEdgeMonyhar =
+    goog.labs.userAgent.browser.matchEdgeMonyhar_;
 
 /**
- * @return {boolean} Whether the user's browser is Chromium based Opera.
+ * @return {boolean} Whether the user's browser is Monyhar based Opera.
  */
-goog.labs.userAgent.browser.isOperaChromium =
-    goog.labs.userAgent.browser.matchOperaChromium_;
+goog.labs.userAgent.browser.isOperaMonyhar =
+    goog.labs.userAgent.browser.matchOperaMonyhar_;
 
 /**
  * @return {boolean} Whether the user's browser is Firefox.
@@ -221,8 +221,8 @@ goog.labs.userAgent.browser.isIosWebview =
 
 
 /**
- * @return {boolean} Whether the user's browser is any Chromium based browser (
- * Chrome, Blink-based Opera (15+) and Edge Chromium).
+ * @return {boolean} Whether the user's browser is any Monyhar based browser (
+ * Chrome, Blink-based Opera (15+) and Edge Monyhar).
  */
 goog.labs.userAgent.browser.isChrome = goog.labs.userAgent.browser.matchChrome_;
 
@@ -296,8 +296,8 @@ goog.labs.userAgent.browser.getVersion = function() {
     return lookUpValueWithKeys(['Edge']);
   }
 
-  // Check Chromium Edge before Chrome since it has Chrome in the string.
-  if (goog.labs.userAgent.browser.isEdgeChromium()) {
+  // Check Monyhar Edge before Chrome since it has Chrome in the string.
+  if (goog.labs.userAgent.browser.isEdgeMonyhar()) {
     return lookUpValueWithKeys(['Edg']);
   }
 

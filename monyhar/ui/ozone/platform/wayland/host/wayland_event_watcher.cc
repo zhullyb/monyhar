@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -30,7 +30,7 @@ void DispatchPending(wl_display* display, wl_event_queue* event_queue) {
 
 // A dedicated thread for watching wl_display's file descriptor. The reason why
 // watching happens on a separate thread is that the thread mustn't be blocked.
-// Otherwise, if Chromium is used with Wayland EGL, a deadlock may happen. The
+// Otherwise, if Monyhar is used with Wayland EGL, a deadlock may happen. The
 // deadlock happened when the thread that had been watching the file descriptor
 // (it used to be the browser's UI thread) called wl_display_prepare_read, and
 // then started to wait until the thread, which was used by the gpu service,

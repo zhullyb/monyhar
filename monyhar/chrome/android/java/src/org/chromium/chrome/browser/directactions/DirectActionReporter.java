@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,7 +33,7 @@ import java.lang.annotation.RetentionPolicy;
  * <p>This class produces lists of {@code android.app.DirectAction}. Since this class is only
  * available starting with API 29, this class accesses these as {@link List}, without specifying the
  * instance type, to allow compiling against older SDKs. TODO(crbug.com/973781): Clean it up once
- * Chromium is compiled against Android Q SDK.
+ * Monyhar is compiled against Android Q SDK.
  */
 @TargetApi(29)
 public interface DirectActionReporter {

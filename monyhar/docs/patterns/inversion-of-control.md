@@ -60,8 +60,8 @@ void YourFunction() {
 }
 ```
 
-It is also often inverted in the Chromium dependency sense. For example, in
-Chromium, code in //content can't call, link against, or generally be aware of
+It is also often inverted in the Monyhar dependency sense. For example, in
+Monyhar, code in //content can't call, link against, or generally be aware of
 code in //chrome - the normal flow of data and control is only in one direction,
 from //chrome "down" to //content. When //content calls back into //chrome, that
 is an inversion of control.
@@ -75,7 +75,7 @@ the low-level class to use functionality of the high-level class without being
 aware of the specific high-level class's existence, or a high-level class to
 plug logic into a low-level class.
 
-There are a few main ways this is done in Chromium:
+There are a few main ways this is done in Monyhar:
 
 * Callbacks
 * Observers
@@ -83,7 +83,7 @@ There are a few main ways this is done in Chromium:
 * Delegates
 
 **Inversion of control should not be your first resort. It is sometimes useful
-for solving specific problems, but in general it is overused in Chromium.**
+for solving specific problems, but in general it is overused in Monyhar.**
 
 ### Callbacks
 
@@ -320,7 +320,7 @@ They also have disadvantages:
    button received the click.
 
 4. Large inversion-of-control interfaces should be split into smaller
-   interfaces when it makes sense to do so. One notorious Chromium example
+   interfaces when it makes sense to do so. One notorious Monyhar example
    is [WebContentsObserver], which observes dozens of different events.
    Whenever *any* of these events happens, *every* registered
    WebContentsObserver has to be notified, even though virtually none of them
@@ -347,7 +347,7 @@ They also have disadvantages:
 7. A callback is probably a better fit for what you're trying to do than one
    of the other patterns given above!
 
-### Inversion of Control in Chromium
+### Inversion of Control in Monyhar
 
 Some key classes in `//base`:
 

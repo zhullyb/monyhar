@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 '''Unit tests for writers.plist_writer'''
@@ -23,7 +23,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     of PListWriter.
 
     Args:
-      product_name: The name of the product, normally Chromium or Google Chrome.
+      product_name: The name of the product, normally Monyhar or Google Chrome.
       bundle_id: The mac bundle id of the product.
       policies: The list of policies.
 
@@ -57,7 +57,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     of PListWriter.
 
     Args:
-      product_name: The name of the product, normally Chromium or Google Chrome.
+      product_name: The name of the product, normally Monyhar or Google Chrome.
       bundle_id: The mac bundle id of the product.
       policies: The list of policies.
 
@@ -99,7 +99,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         '_monyhar': '1',
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
-    expected_output = self._GetExpectedOutputs('Chromium', 'com.example.Test',
+    expected_output = self._GetExpectedOutputs('Monyhar', 'com.example.Test',
                                                '<array/>')
     self.assertEquals(output.strip(), expected_output.strip())
 
@@ -120,7 +120,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
             'version': '39.0.0.0'
         }, 'plist')
     expected_output = self._GetExpectedOutputsWithVersion(
-        'Chromium', 'com.example.Test', '<array/>',
+        'Monyhar', 'com.example.Test', '<array/>',
         'monyhar version: 39.0.0.0')
     self.assertEquals(output.strip(), expected_output.strip())
 
@@ -153,7 +153,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>MainPolicy</string>
@@ -203,7 +203,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>MainPolicy</string>
@@ -255,7 +255,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>MainPolicy</string>
@@ -302,7 +302,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>StringPolicy</string>
@@ -353,7 +353,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>ListPolicy</string>
@@ -416,7 +416,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>ListPolicy</string>
@@ -470,7 +470,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>IntPolicy</string>
@@ -629,7 +629,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>DictionaryPolicy</string>
@@ -676,7 +676,7 @@ class PListWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'mac_bundle_id': 'com.example.Test'
     }, 'plist')
     expected_output = self._GetExpectedOutputs(
-        'Chromium', 'com.example.Test', '''<array>
+        'Monyhar', 'com.example.Test', '''<array>
       <dict>
         <key>pfm_name</key>
         <string>ExternalPolicy</string>

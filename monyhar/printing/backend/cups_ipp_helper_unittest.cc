@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -252,13 +252,13 @@ TEST_F(PrintBackendCupsIppHelperTest, OmitPapersWithoutVendorIds) {
 }
 
 // Tests that CapsAndDefaultsFromPrinter() does not propagate the
-// special IPP values that CUPS happens to expose to the Chromium print
+// special IPP values that CUPS happens to expose to the Monyhar print
 // backend.
 TEST_F(PrintBackendCupsIppHelperTest, OmitPapersWithSpecialVendorIds) {
   // Maintainer's note: there's no reason why a printer would deliver
   // two discrete sizes for custom_min* and custom_max*; in practice,
   // we always see the fully qualified custom_m(in|ax)_<DIMENSIONS>
-  // delivered to the Chromium print backend.
+  // delivered to the Monyhar print backend.
   printer_->SetSupportedOptions(
       "media",
       MakeStringCollection(

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -246,7 +246,7 @@ void* AllocateAlignedMemory(size_t alignment, size_t size) {
   // - Reduced fragmentation
   // - Better coverage for MiraclePtr variants requiring extras
   //
-  // There are several call sites in Chromium where base::AlignedAlloc is called
+  // There are several call sites in Monyhar where base::AlignedAlloc is called
   // with a small alignment. Some may be due to overly-careful code, some are
   // because the client code doesn't know the required alignment at compile
   // time.

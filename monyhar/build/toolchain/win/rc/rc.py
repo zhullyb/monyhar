@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -227,7 +227,7 @@ def CompareToMsRcOutput(preprocessed_output, is_utf8, flags):
   # 3. next to -I directories
   # Changing the cwd means we'd have to rewrite all -I flags, so just add
   # the input file dir as -I flag. That technically gets the order of 1 and 2
-  # wrong, but in Chromium's build the cwd is the gn out dir, and generated
+  # wrong, but in Monyhar's build the cwd is the gn out dir, and generated
   # files there are in obj/ and gen/, so this difference doesn't matter in
   # practice.
   if os.path.dirname(flags.input):

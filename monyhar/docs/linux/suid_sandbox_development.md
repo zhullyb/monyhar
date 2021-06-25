@@ -67,9 +67,9 @@ If you are certain that you don't want the setuid sandbox, use
 `--disable-setuid-sandbox`. There should be very few cases like this. So if
 you're not absolutely sure, run with the setuid sandbox.
 
-## Installation instructions for "[Raw builds of Chromium](https://commondatastorage.googleapis.com/monyhar-browser-continuous/index.html)"
+## Installation instructions for "[Raw builds of Monyhar](https://commondatastorage.googleapis.com/monyhar-browser-continuous/index.html)"
 
-If you're using a "raw" build of Chromium, do the following:
+If you're using a "raw" build of Monyhar, do the following:
 
     sudo chown root:root chrome_sandbox && sudo chmod 4755 chrome_sandbox && \
         export CHROME_DEVEL_SANDBOX="$PWD/chrome_sandbox"
@@ -79,8 +79,8 @@ You can also make such an installation more permanent by following the
 [steps above](#Installation-Instructions-for-developers) and installing
 `chrome_sandbox` to a more permanent location.
 
-## System-wide installations of Chromium
+## System-wide installations of Monyhar
 
 The `CHROME_DEVEL_SANDBOX` variable is intended for developers and won't work
-for a system-wide installation of Chromium. Package maintainers should make sure
+for a system-wide installation of Monyhar. Package maintainers should make sure
 the `setuid` binary is installed.

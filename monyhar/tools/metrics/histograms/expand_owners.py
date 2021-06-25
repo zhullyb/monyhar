@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -40,7 +40,7 @@ def _AddTextNodeWithNewLineAndIndent(histogram, node_to_insert_before):
 def _IsValidPrimaryOwnerEmail(owner_tag_text):
   """Returns true if |owner_tag_text| is a valid primary owner.
 
-  A valid primary owner is an individual (not a team) with a Chromium or Google
+  A valid primary owner is an individual (not a team) with a Monyhar or Google
   email address.
 
   Args:

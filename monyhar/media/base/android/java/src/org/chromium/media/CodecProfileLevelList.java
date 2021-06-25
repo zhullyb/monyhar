@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,8 +28,8 @@ class CodecProfileLevelList {
         try {
             int codec = getCodecFromMime(mime);
             mList.add(new CodecProfileLevelAdapter(codec,
-                    mediaCodecProfileToChromiumMediaProfile(codec, codecProfileLevel.profile),
-                    mediaCodecLevelToChromiumMediaLevel(codec, codecProfileLevel.level)));
+                    mediaCodecProfileToMonyharMediaProfile(codec, codecProfileLevel.profile),
+                    mediaCodecLevelToMonyharMediaLevel(codec, codecProfileLevel.level)));
             return true;
         } catch (UnsupportedCodecProfileException e) {
             return false;
@@ -83,7 +83,7 @@ class CodecProfileLevelList {
         throw new UnsupportedCodecProfileException();
     }
 
-    private static int mediaCodecProfileToChromiumMediaProfile(int codec, int profile) {
+    private static int mediaCodecProfileToMonyharMediaProfile(int codec, int profile) {
         switch (codec) {
             case VideoCodec.CODEC_H264:
                 switch (profile) {
@@ -157,7 +157,7 @@ class CodecProfileLevelList {
         }
     }
 
-    private static int mediaCodecLevelToChromiumMediaLevel(int codec, int level) {
+    private static int mediaCodecLevelToMonyharMediaLevel(int codec, int level) {
         switch (codec) {
             case VideoCodec.CODEC_H264:
                 switch (level) {

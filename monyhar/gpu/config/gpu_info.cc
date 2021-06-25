@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -130,7 +130,7 @@ void EnumerateOverlayInfo(const gpu::OverlayInfo& info,
 bool IsSoftwareRenderer(uint32_t vendor_id) {
   switch (vendor_id) {
     case 0x0000:  // Info collection failed to identify a GPU
-    case 0xffff:  // Chromium internal flag for software rendering
+    case 0xffff:  // Monyhar internal flag for software rendering
     case 0x15ad:  // VMware
     case 0x1414:  // Microsoft software renderer
       return true;

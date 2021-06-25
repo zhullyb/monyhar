@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ typedef PlatformTest DeviceUtilTest;
 void CleanNSUserDefaultsForDeviceId() {
   NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
   [defaults removeObjectForKey:@"ChromeClientID"];
-  [defaults removeObjectForKey:@"ChromiumClientID"];
+  [defaults removeObjectForKey:@"MonyharClientID"];
   [defaults removeObjectForKey:@"ClientIDGenerationHardwareType"];
   [defaults synchronize];
 }
@@ -71,7 +71,7 @@ TEST_F(DeviceUtilTest, CheckMigration) {
   std::string expected_id = ios::device_util::GetDeviceIdentifier(NULL);
   [defaults removeObjectForKey:@"ChromeClientID"];
   [defaults setObject:@"10000000-0000-0000-0000-000000000000"
-               forKey:@"ChromiumClientID"];
+               forKey:@"MonyharClientID"];
   [defaults synchronize];
   std::string new_id = ios::device_util::GetDeviceIdentifier(NULL);
   EXPECT_EQ(expected_id, new_id);
@@ -89,7 +89,7 @@ TEST_F(DeviceUtilTest, CheckMigrationFromZero) {
   std::string zero_id = ios::device_util::GetDeviceIdentifier(NULL);
   [defaults removeObjectForKey:@"ChromeClientID"];
   [defaults setObject:@"00000000-0000-0000-0000-000000000000"
-               forKey:@"ChromiumClientID"];
+               forKey:@"MonyharClientID"];
   [defaults synchronize];
   std::string new_id = ios::device_util::GetDeviceIdentifier(NULL);
   EXPECT_NE(zero_id, new_id);

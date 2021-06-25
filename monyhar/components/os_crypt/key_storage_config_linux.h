@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,9 +26,9 @@ struct COMPONENT_EXPORT(OS_CRYPT) Config {
   std::string store;
   // The product name to use for permission prompts.
   std::string product_name;
-  // The application name to store the key under. For Chromium/Chrome builds
+  // The application name to store the key under. For Monyhar/Chrome builds
   // leave this unset and it will default correctly.  This config option is
-  // for embedders to provide their application name in place of "Chromium".
+  // for embedders to provide their application name in place of "Monyhar".
   // Only used when the allow_runtime_configurable_key_storage feature is
   // enabled.
   std::string application_name;

@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -1151,7 +1151,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>kolos@monyhar.org</owner>
   <owner>nepper@monyhar.org</owner>
   <summary>
-    Counts for submitted forms whether Chromium had any address or payments data
+    Counts for submitted forms whether Monyhar had any address or payments data
     to fill.
 
     It does not matter whether the user actually requested to fill the data. It

@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -15,7 +15,7 @@ from pylib.symbols import elf_symbolizer
 
 
 def _AndroidAbiToCpuArch(android_abi):
-  """Return the Chromium CPU architecture name for a given Android ABI."""
+  """Return the Monyhar CPU architecture name for a given Android ABI."""
   _ARCH_MAP = {
     'armeabi': 'arm',
     'armeabi-v7a': 'arm',

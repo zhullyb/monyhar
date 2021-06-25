@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -9182,8 +9182,8 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.BrowserStates"
-    enum="ChromiumAndroidLinkerBrowserState" expires_after="M77">
+<histogram name="MonyharAndroidLinker.BrowserStates"
+    enum="MonyharAndroidLinkerBrowserState" expires_after="M77">
   <obsolete>
     Removed as of 06/2019.
   </obsolete>
@@ -9196,17 +9196,17 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.IsLowMemoryDevice" enum="Boolean"
+<histogram name="MonyharAndroidLinker.IsLowMemoryDevice" enum="Boolean"
     expires_after="2014-10-13">
   <obsolete>
     Removed 10/2014 in Issue 419010, and replaced by
-    ChromiumAndroidLinker.BrowserStates.
+    MonyharAndroidLinker.BrowserStates.
   </obsolete>
   <owner>simonb@monyhar.org</owner>
   <summary>Is low memory device.</summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.LibraryLoadFromApkStatus"
+<histogram name="MonyharAndroidLinker.LibraryLoadFromApkStatus"
     enum="LibraryLoadFromApkStatus" expires_after="M77">
   <obsolete>
     Removed as of 06/2019.
@@ -9214,22 +9214,22 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>petrcermak@monyhar.org</owner>
   <summary>
     Whether the device supports loading a library directly from the APK file.
-    The functionality is checked and reported during every Chromium browser
+    The functionality is checked and reported during every Monyhar browser
     process start up.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.LoadedAtFixedAddressFailed"
+<histogram name="MonyharAndroidLinker.LoadedAtFixedAddressFailed"
     enum="Boolean" expires_after="2014-10-13">
   <obsolete>
     Removed 10/2014 in Issue 419010, and replaced by
-    ChromiumAndroidLinker.RendererStates.
+    MonyharAndroidLinker.RendererStates.
   </obsolete>
   <owner>simonb@monyhar.org</owner>
   <summary>Load at fixed address failed.</summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.LoadLibraryStatus"
+<histogram name="MonyharAndroidLinker.LoadLibraryStatus"
     enum="LoadLibraryStatus" expires_after="2020-08-02">
   <obsolete>
     Removed 2020-02 as part of crbug.com/1021156.
@@ -9243,7 +9243,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.RelinkerFallbackCount"
+<histogram name="MonyharAndroidLinker.RelinkerFallbackCount"
     enum="BooleanIsUseRelinker" expires_after="M80">
   <obsolete>
     Removed 2019-07 in crbug.com/981599.
@@ -9256,8 +9256,8 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="ChromiumAndroidLinker.RendererStates"
-    enum="ChromiumAndroidLinkerRendererState" expires_after="M77">
+<histogram name="MonyharAndroidLinker.RendererStates"
+    enum="MonyharAndroidLinkerRendererState" expires_after="M77">
   <obsolete>
     Removed as of 06/2019.
   </obsolete>
@@ -13255,7 +13255,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <summary>
     The time taken in milliseconds to fetch the matching rules for the first
     time from the platform external data use observer. This measures the
-    duration from the start time of Chromium to the time the rules are returned
+    duration from the start time of Monyhar to the time the rules are returned
     asynchronously. A sample is recorded when the first fetch done callback is
     called.
   </summary>
@@ -13324,10 +13324,10 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     The duration from the start time of a tab entry's latest data usage tracking
     session, till when the entry is expired and removed from the tab model. This
     is for tab entries that are still actively tracking data usage for a
-    Chromium tab.
+    Monyhar tab.
 
     Tab model maintains the tab entries, each pertaining to tracking sessions of
-    a single Chromium tab. These entries are considered expired after some
+    a single Monyhar tab. These entries are considered expired after some
     duration and can be removed from the tab model after that. The sample is
     taken when an expired tab entry still tracking data usage is removed from
     the tab model.
@@ -13344,11 +13344,11 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <summary>
     The duration from the end time of a tab entry's latest data usage tracking
     session, till when the entry is expired and removed from the tab model. This
-    is for tab entries that are not actively tracking data usage for a Chromium
+    is for tab entries that are not actively tracking data usage for a Monyhar
     tab.
 
     Tab model maintains the tab entries, each pertaining to tracking sessions of
-    a single Chromium tab. These entries are considered expired after some
+    a single Monyhar tab. These entries are considered expired after some
     duration and can be removed from the tab model after that. The sample is
     taken when an expired inactive tab entry is removed from the tab model.
   </summary>
@@ -13366,7 +13366,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     the tracking session is removed from the tab model. This is for old tracking
     sessions that are not actively tracking data usage.
 
-    Tab model maintains a limited number of tracking sessions per Chromium tab.
+    Tab model maintains a limited number of tracking sessions per Monyhar tab.
     When this limit is reached oldest inactive tracking sessions are removed.
     The sample is taken when an old inactive tracking session of a tab is
     removed from the tab model.
@@ -13381,7 +13381,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>bengr@monyhar.org</owner>
   <owner>rajendrant@monyhar.org</owner>
   <summary>
-    The lifetime of a data usage tracking session of a Chromium tab, maintained
+    The lifetime of a data usage tracking session of a Monyhar tab, maintained
     by the tab model. This is the duration between the time tracking started due
     to an entry event and ended with an exit event. The sample is taken when the
     data usage tracking session ends.
@@ -13402,7 +13402,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     removed from the tab model.
 
     Tab model maintains a limited number of entries, each pertaining to tracking
-    sessions of a single Chromium tab. When this limit is reached even after
+    sessions of a single Monyhar tab. When this limit is reached even after
     removing expired tab entries, then oldest unexpired tab entries are removed.
     The sample is taken when an unexpired tab entry is removed from the tab
     model.
@@ -25606,7 +25606,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>jmadill@monyhar.org</owner>
   <summary>
     The time that elapses for the initial call to D3D11CreateDevice on D3D11
-    ANGLE. A pure system call, with no ANGLE or Chromium code, called once every
+    ANGLE. A pure system call, with no ANGLE or Monyhar code, called once every
     GPU process startup.
   </summary>
 </histogram>
@@ -29161,7 +29161,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </obsolete>
   <owner>dgrogan@monyhar.org</owner>
   <summary>
-    File errors in leveldb ChromiumEnv's NewRandomAccessFile method.
+    File errors in leveldb MonyharEnv's NewRandomAccessFile method.
   </summary>
 </histogram>
 
@@ -30999,7 +30999,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     Whenever an error is logged from the DXVAVDA picture buffer code, this
     records the line in dxva_picture_buffer_win.cc where the failure occurred.
     This histogram can only meaningfully be compared between different versions
-    of Chromium if no line numbers in that file changed between those versions.
+    of Monyhar if no line numbers in that file changed between those versions.
   </summary>
 </histogram>
 
@@ -31427,7 +31427,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 
     The &quot;EnhancedTree&quot; variant uses ExtraTrees, plus additional
     features such as NetworkType. The exact set of features is still in flux, so
-    be sure to restrict reporting to a particular Chromium version.
+    be sure to restrict reporting to a particular Monyhar version.
   </summary>
 </histogram>
 
@@ -39316,7 +39316,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.ErrAborted.ReceivedBytes" units="bytes"
     expires_after="2018-07-02">
   <obsolete>
-    Removed from Chromium as of 2018/7/2.
+    Removed from Monyhar as of 2018/7/2.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -39327,7 +39327,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.ErrAborted.SentBytes" units="bytes"
     expires_after="2018-07-02">
   <obsolete>
-    Removed from Chromium as of 2018/7/2.
+    Removed from Monyhar as of 2018/7/2.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -41708,7 +41708,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   </summary>
 </histogram>
 
-<histogram name="Net.QuicChromiumPacketReader.ShouldStopReadingInLoop"
+<histogram name="Net.QuicMonyharPacketReader.ShouldStopReadingInLoop"
     enum="BooleanHit" expires_after="M82">
   <obsolete>
     Removed 11/2019, associated bug is root-caused and fixed.
@@ -41716,13 +41716,13 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>zhongyi@monyhar.org</owner>
   <owner>src/net/quic/OWNERS</owner>
   <summary>
-    The number of times that QuicChromiumPacketReader should stop reading in the
+    The number of times that QuicMonyharPacketReader should stop reading in the
     loop at StartReading. This data will be compared against crashes and help
     investigate https://crbug.com/1014092.
   </summary>
 </histogram>
 
-<histogram name="Net.QuicChromiumPacketReader.ShouldStopReadingOnReadComplete"
+<histogram name="Net.QuicMonyharPacketReader.ShouldStopReadingOnReadComplete"
     enum="BooleanHit" expires_after="M82">
   <obsolete>
     Removed 11/2019, associated bug is root-caused and fixed.
@@ -41730,7 +41730,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>zhongyi@monyhar.org</owner>
   <owner>src/net/quic/OWNERS</owner>
   <summary>
-    The number of times that QuicChromiumPacketReader should stop reading after
+    The number of times that QuicMonyharPacketReader should stop reading after
     finishing the previous read. This data will be compared against crashes and
     help investigate https://crbug.com/1014092.
   </summary>
@@ -42545,7 +42545,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 
 <histogram name="Net.RequestTime2" units="units" expires_after="2017-09-01">
   <obsolete>
-    Unused, so removed from Chromium as of 2017/8/31.
+    Unused, so removed from Monyhar as of 2017/8/31.
   </obsolete>
   <summary>
     The amount of time between request initiation and request completion for
@@ -42556,7 +42556,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.RequestTime2.ErrAborted.HttpScheme" units="ms"
     expires_after="2017-09-01">
   <obsolete>
-    Unused, so removed from Chromium as of 2017/8/31.
+    Unused, so removed from Monyhar as of 2017/8/31.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -42568,7 +42568,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.RequestTime2.ErrAborted.NetworkContent" units="ms"
     expires_after="2017-09-01">
   <obsolete>
-    Unused, so removed from Chromium as of 2017/8/31.
+    Unused, so removed from Monyhar as of 2017/8/31.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -42580,7 +42580,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.RequestTime2.ErrAborted.NoBytesRead" units="ms"
     expires_after="2017-09-01">
   <obsolete>
-    Unused, so removed from Chromium as of 2017/8/31.
+    Unused, so removed from Monyhar as of 2017/8/31.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -42593,7 +42593,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.RequestTime2.ErrAborted.NoNetworkContent.CachedContent"
     units="ms" expires_after="2017-09-01">
   <obsolete>
-    Unused, so removed from Chromium as of 2017/8/31.
+    Unused, so removed from Monyhar as of 2017/8/31.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -42606,7 +42606,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.RequestTime2.ErrAborted.NonHttpScheme" units="ms"
     expires_after="2017-09-01">
   <obsolete>
-    Unused, so removed from Chromium as of 2017/8/31.
+    Unused, so removed from Monyhar as of 2017/8/31.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -42618,7 +42618,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.RequestTime2Success.MainFrame" units="ms"
     expires_after="2018-07-02">
   <obsolete>
-    Removed from Chromium as of 2018/7/2.
+    Removed from Monyhar as of 2018/7/2.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -42630,7 +42630,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.RequestTime2Success.Subresource" units="ms"
     expires_after="2018-07-02">
   <obsolete>
-    Removed from Chromium as of 2018/7/2.
+    Removed from Monyhar as of 2018/7/2.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -42642,7 +42642,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.ResourceDispatcherHost.OutstandingRequests.PerProcess"
     units="requests" expires_after="2018-07-09">
   <obsolete>
-    Removed from Chromium as of 2018/7.
+    Removed from Monyhar as of 2018/7.
   </obsolete>
   <owner>mef@monyhar.org</owner>
   <owner>pauljensen@monyhar.org</owner>
@@ -42655,7 +42655,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.ResourceDispatcherHost.OutstandingRequests.Total"
     units="requests" expires_after="2018-07-09">
   <obsolete>
-    Removed from Chromium as of 2018/7.
+    Removed from Monyhar as of 2018/7.
   </obsolete>
   <owner>mef@monyhar.org</owner>
   <owner>pauljensen@monyhar.org</owner>
@@ -42764,7 +42764,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
 <histogram name="Net.ResourceLoader.TimeToURLRequestStart" units="ms"
     expires_after="2018-07-02">
   <obsolete>
-    Removed from Chromium as of 2018/7/2.
+    Removed from Monyhar as of 2018/7/2.
   </obsolete>
   <owner>csharrison@monyhar.org</owner>
   <summary>
@@ -44590,7 +44590,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>ricea@monyhar.org</owner>
   <summary>
     Count the number of WebSockets that accepted permessage-deflate extension
-    for each context take over mode. Used by the new Chromium-based WebSocket
+    for each context take over mode. Used by the new Monyhar-based WebSocket
     implementation.
   </summary>
 </histogram>
@@ -67770,7 +67770,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>chrome-safebrowsing-alerts@google.com</owner>
   <summary>
     Records the time it takes to read, parse, and process a SafeBrowsing list
-    stored on disk. This happens at Chromium start-up. It includes
+    stored on disk. This happens at Monyhar start-up. It includes
     V4AddUnlumpedHashes.Time for each prefix-sized list, and
     SafeBrowsing.V4ReadFromDisk.MergeUpdate.Time. Additionally, if the file is
     Rice-encoded, it includes V4ReadFromDisk.DecodeAdditions.Time for each
@@ -67811,7 +67811,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>chrome-safebrowsing-alerts@google.com</owner>
   <summary>
     Records the time it takes to read, parse, and process a SafeBrowsing list
-    stored on disk. This happens at Chromium start-up. It includes
+    stored on disk. This happens at Monyhar start-up. It includes
     V4AddUnlumpedHashesTime for each prefix-sized list, and V4MergeUpdateTime.
     Additionally, if the file is Rice-encoded, it includes V4DecodeAdditionsTime
     for each prefix-sized list that's Rice-encoded.

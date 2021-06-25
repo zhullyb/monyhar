@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,7 +9,7 @@
 #error Only one SkRefCnt should be used.
 #endif
 
-// Alternate implementation of SkRefCnt for Chromium release builds
+// Alternate implementation of SkRefCnt for Monyhar release builds
 class SK_API SkRefCnt : public SkRefCntBase {
 public:
   void deref() const { SkRefCntBase::unref(); }

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -683,7 +683,7 @@ bool ParseInspectorMessage(const std::string& message,
     base::DictionaryValue* unscoped_result = nullptr;
     *type = kCommandResponseMessageType;
     command_response->id = id;
-    // As per Chromium issue 392577, DevTools does not necessarily return a
+    // As per Monyhar issue 392577, DevTools does not necessarily return a
     // "result" dictionary for every valid response. In particular,
     // Tracing.start and Tracing.end command responses do not contain one.
     // So, if neither "error" nor "result" keys are present, just provide

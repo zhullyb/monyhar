@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -598,7 +598,7 @@ TEST_F(NetworkContextTest, DisableQuic) {
 }
 
 TEST_F(NetworkContextTest, UserAgentAndLanguage) {
-  const char kUserAgent[] = "Chromium Unit Test";
+  const char kUserAgent[] = "Monyhar Unit Test";
   const char kAcceptLanguage[] = "en-US,en;q=0.9,uk;q=0.8";
   mojom::NetworkContextParamsPtr params = CreateContextParams();
   params->user_agent = kUserAgent;

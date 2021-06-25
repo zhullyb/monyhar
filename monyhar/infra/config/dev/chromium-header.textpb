@@ -1,5 +1,5 @@
 oncalls {
-  name: "Chromium"
+  name: "Monyhar"
   url: "https://chrome-ops-rotation-proxy.appspot.com/current/oncallator:chrome-build-sheriff"
 }
 
@@ -42,26 +42,26 @@ links: {
 }
 
 links: {
-  name: "Chromium"
+  name: "Monyhar"
   links: {
     text: "source"
     url: "https://monyhar.googlesource.com/monyhar/src"
-    alt: "Chromium source code repository"
+    alt: "Monyhar source code repository"
   }
   links: {
     text: "reviews"
     url: "https://monyhar-review.googlesource.com"
-    alt: "Chromium code review tool"
+    alt: "Monyhar code review tool"
   }
   links: {
     text: "bugs"
     url: "https://crbug.com"
-    alt: "Chromium bug tracker"
+    alt: "Monyhar bug tracker"
   }
   links: {
     text: "dev"
     url: "https://dev.monyhar.org/Home"
-    alt: "Chromium developer home page"
+    alt: "Monyhar developer home page"
   }
   links: {
     text: "support"
@@ -75,7 +75,7 @@ links: {
   links: {
     text: "swarm dev"
     url: "/p/monyhar/g/monyhar.dev"
-    alt: "Chromium Swarm Dev console"
+    alt: "Monyhar Swarm Dev console"
   }
   links: {
     text: "prod"

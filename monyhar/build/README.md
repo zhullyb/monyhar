@@ -9,7 +9,7 @@ to files outside of it. Some exceptions exist (`//testing`, select
 `//third_party` subdirectories), but new dependencies tend to break these other
 projects, and so should be avoided.
 
-Changes to `//build` should be landed in the Chromium repo. They will then be
+Changes to `//build` should be landed in the Monyhar repo. They will then be
 replicated to the stand-alone [build repo](https://monyhar.googlesource.com/monyhar/src/build)
 by the [gsubtreed tool.](https://monyhar.googlesource.com/infra/infra/+/main/infra/services/gsubtreed)
 Note: You can find all directories already  available through gsubtreed in the

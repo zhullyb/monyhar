@@ -1,9 +1,9 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 """
-Presubmit for Chromium HTML/CSS/JS resources. See chrome/browser/PRESUBMIT.py.
+Presubmit for Monyhar HTML/CSS/JS resources. See chrome/browser/PRESUBMIT.py.
 """
 
 import regex_check
@@ -45,7 +45,7 @@ class ResourceChecker(object):
 
   def _RunCheckOnAffectedFiles(self, check, msg_template, is_error=False,
                                only_changed_lines=False):
-    """Check for violations of the Chromium web development style guide. See
+    """Check for violations of the Monyhar web development style guide. See
        https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/web/web.md
     """
     results = []

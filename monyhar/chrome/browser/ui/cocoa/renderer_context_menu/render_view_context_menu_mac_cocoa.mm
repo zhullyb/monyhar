@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -76,10 +76,10 @@ NSMenuItem* GetMenuItemByID(ui::MenuModel* model,
 
   // Remove some services.
   //   - Remove the ones from Safari, as they are redundant to the ones provided
-  //     by Chromium, and confusing to the user due to them switching apps
+  //     by Monyhar, and confusing to the user due to them switching apps
   //     upon their selection.
   //   - Remove the "Open URL" one provided by SystemUIServer, as it is
-  //     redundant to the one provided by Chromium and has other serious issues.
+  //     redundant to the one provided by Monyhar and has other serious issues.
   //     (https://crbug.com/960209)
 
   for (_NSServiceEntry* nextEntry in entries) {

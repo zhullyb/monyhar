@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -190,7 +190,7 @@ chrome.test.runTests([
   },
 
   /*
-  This test doesn't work on mac because the Chromium app never gets
+  This test doesn't work on mac because the Monyhar app never gets
   brought to the front. See: crbug.com/60963.
   It also doesn't work on Chrome OS for unknown reasons.
   It also times out on the full XP builder for unknown reasons.

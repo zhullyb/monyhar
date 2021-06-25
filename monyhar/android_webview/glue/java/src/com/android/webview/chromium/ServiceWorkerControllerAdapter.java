@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import org.monyhar.android_webview.AwServiceWorkerController;
 
 /**
- * Chromium implementation of ServiceWorkerController -- forwards calls to
+ * Monyhar implementation of ServiceWorkerController -- forwards calls to
  * the monyhar internal implementation.
  */
 @TargetApi(Build.VERSION_CODES.N)

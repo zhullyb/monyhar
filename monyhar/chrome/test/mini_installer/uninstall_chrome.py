@@ -1,4 +1,4 @@
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Uninstalls Chrome.
@@ -22,7 +22,7 @@ def main():
                       help='Uninstall Chrome at system level.')
     parser.add_option('--chrome-long-name',
                       default='Google Chrome',
-                      help='Google Chrome or Chromium)')
+                      help='Google Chrome or Monyhar)')
     parser.add_option('--interactive',
                       action='store_true',
                       dest='interactive',

@@ -253,7 +253,7 @@ template("nacl_irt_toolchain") {
     nm = toolprefix + "nm" + toolsuffix
     strip = toolprefix + "strip" + toolsuffix
 
-    # Some IRT implementations (notably, Chromium's) contain C++ code,
+    # Some IRT implementations (notably, Monyhar's) contain C++ code,
     # so we need to link w/ the C++ linker.
     ld = "${python_path} ${link_irt} --tls-edit=${tls_edit} --link-cmd=${cxx} --readelf-cmd=${readelf}"
 

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -38,18 +38,18 @@ class ConstantScopedFakeClock : public rtc::ClockInterface {
 
 }  // namespace
 
-class ChromiumSocketFactoryTest : public testing::Test,
+class MonyharSocketFactoryTest : public testing::Test,
                                   public sigslot::has_slots<> {
  public:
   void SetUp() override {
-    socket_factory_ = std::make_unique<ChromiumPacketSocketFactory>(nullptr);
+    socket_factory_ = std::make_unique<MonyharPacketSocketFactory>(nullptr);
 
     socket_.reset(socket_factory_->CreateUdpSocket(
         rtc::SocketAddress("127.0.0.1", 0), 0, 0));
     ASSERT_TRUE(socket_.get() != nullptr);
     EXPECT_EQ(socket_->GetState(), rtc::AsyncPacketSocket::STATE_BOUND);
     socket_->SignalReadPacket.connect(
-        this, &ChromiumSocketFactoryTest::OnPacket);
+        this, &MonyharSocketFactoryTest::OnPacket);
   }
 
   void OnPacket(rtc::AsyncPacketSocket* socket,
@@ -105,7 +105,7 @@ class ChromiumSocketFactoryTest : public testing::Test,
   ConstantScopedFakeClock fake_clock_;
 };
 
-TEST_F(ChromiumSocketFactoryTest, SendAndReceive) {
+TEST_F(MonyharSocketFactoryTest, SendAndReceive) {
   std::unique_ptr<rtc::AsyncPacketSocket> sending_socket(
       socket_factory_->CreateUdpSocket(rtc::SocketAddress("127.0.0.1", 0), 0,
                                        0));
@@ -116,12 +116,12 @@ TEST_F(ChromiumSocketFactoryTest, SendAndReceive) {
   VerifyCanSendAndReceive(sending_socket.get());
 }
 
-TEST_F(ChromiumSocketFactoryTest, SetOptions) {
+TEST_F(MonyharSocketFactoryTest, SetOptions) {
   EXPECT_EQ(0, socket_->SetOption(rtc::Socket::OPT_SNDBUF, 4096));
   EXPECT_EQ(0, socket_->SetOption(rtc::Socket::OPT_RCVBUF, 4096));
 }
 
-TEST_F(ChromiumSocketFactoryTest, PortRange) {
+TEST_F(MonyharSocketFactoryTest, PortRange) {
   constexpr uint16_t kMinPort = 12400;
   constexpr uint16_t kMaxPort = 12410;
   socket_.reset(socket_factory_->CreateUdpSocket(
@@ -132,7 +132,7 @@ TEST_F(ChromiumSocketFactoryTest, PortRange) {
   EXPECT_LE(socket_->GetLocalAddress().port(), kMaxPort);
 }
 
-TEST_F(ChromiumSocketFactoryTest, CreateMultiplePortsFromPortRange) {
+TEST_F(MonyharSocketFactoryTest, CreateMultiplePortsFromPortRange) {
   constexpr uint16_t kPortCount = 5;
   constexpr uint16_t kMinPort = 12400;
   constexpr uint16_t kMaxPort = kMinPort + kPortCount - 1;
@@ -160,7 +160,7 @@ TEST_F(ChromiumSocketFactoryTest, CreateMultiplePortsFromPortRange) {
   ASSERT_EQ(nullptr, extra_socket);
 }
 
-TEST_F(ChromiumSocketFactoryTest, TransientError) {
+TEST_F(MonyharSocketFactoryTest, TransientError) {
   std::unique_ptr<rtc::AsyncPacketSocket> sending_socket(
       socket_factory_->CreateUdpSocket(rtc::SocketAddress("127.0.0.1", 0), 0,
                                        0));
@@ -177,13 +177,13 @@ TEST_F(ChromiumSocketFactoryTest, TransientError) {
   VerifyCanSendAndReceive(sending_socket.get());
 }
 
-TEST_F(ChromiumSocketFactoryTest, CheckSendTime) {
+TEST_F(MonyharSocketFactoryTest, CheckSendTime) {
   std::unique_ptr<rtc::AsyncPacketSocket> sending_socket(
       socket_factory_->CreateUdpSocket(rtc::SocketAddress("127.0.0.1", 0), 0,
                                        0));
   sending_socket->SignalSentPacket.connect(
-      static_cast<ChromiumSocketFactoryTest*>(this),
-      &ChromiumSocketFactoryTest::OnSentPacket);
+      static_cast<MonyharSocketFactoryTest*>(this),
+      &MonyharSocketFactoryTest::OnSentPacket);
   VerifyCanSendAndReceive(sending_socket.get());
 
   // Check receive time is from rtc clock as well

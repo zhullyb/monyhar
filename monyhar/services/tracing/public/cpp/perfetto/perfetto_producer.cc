@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -123,7 +123,7 @@ std::unique_ptr<perfetto::TraceWriter> PerfettoProducer::CreateTraceWriter(
     perfetto::BufferID target_buffer,
     perfetto::BufferExhaustedPolicy buffer_exhausted_policy) {
   DCHECK(MaybeSharedMemoryArbiter());
-  // Chromium uses BufferExhaustedPolicy::kDrop to avoid stalling trace writers
+  // Monyhar uses BufferExhaustedPolicy::kDrop to avoid stalling trace writers
   // when the chunks in the SMB are exhausted. Stalling could otherwise lead to
   // deadlocks in monyhar, because a stalled mojo IPC thread could prevent
   // CommitRequest messages from reaching the perfetto service.

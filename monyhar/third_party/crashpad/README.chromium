@@ -13,20 +13,20 @@ Crashpad is a crash-reporting system. It’s the successor to Breakpad.
 Crashpad’s authoritative upstream repository is
 https://monyhar.googlesource.com/crashpad/crashpad.
 
-Because Crashpad depends on some Chromium code (notably base and build), it is
-acceptable to make changes to this in-Chromium copy of Crashpad in order to
-conform to interface changes in Chromium. These changes must be noted in the
+Because Crashpad depends on some Monyhar code (notably base and build), it is
+acceptable to make changes to this in-Monyhar copy of Crashpad in order to
+conform to interface changes in Monyhar. These changes must be noted in the
 “local modifications” section below, and should also be reflected in the
 authoritative Crashpad repository as soon as practical.
 
 Substantive development must occur in the authoritative Crashpad repository. If
-this type of work is done in the in-Chromium copy, it will be obliterated the
-next time Crashpad is imported into Chromium.
+this type of work is done in the in-Monyhar copy, it will be obliterated the
+next time Crashpad is imported into Monyhar.
 
-To update the in-Chromium copy of Crashpad, run update.py, located in this
+To update the in-Monyhar copy of Crashpad, run update.py, located in this
 directory.
 
-To carry changes made in Chromium to Crashpad, run:
+To carry changes made in Monyhar to Crashpad, run:
 $ cd "${THIS_DIR}"
 $ mkdir /tmp/patchdir
 $ git format-patch -1 --binary --output-directory=/tmp/patchdir/cur "${HASH}" \

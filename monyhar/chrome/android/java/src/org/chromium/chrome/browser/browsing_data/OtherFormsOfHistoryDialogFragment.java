@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -63,7 +63,7 @@ public class OtherFormsOfHistoryDialogFragment
 
         // Construct the dialog.
         AlertDialog dialog =
-                new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog)
+                new AlertDialog.Builder(getActivity(), R.style.Theme_Monyhar_AlertDialog)
                         .setView(view)
                         .setTitle(R.string.clear_browsing_data_history_dialog_title)
                         .setPositiveButton(R.string.ok_got_it, this)

@@ -16,7 +16,7 @@ This outputs Java String constants which represent the name of the
    2020" to be whatever the year is at the time of writing (as you would for any
    other file).
    ```java
-    // Copyright 2020 The Chromium Authors. All rights reserved.
+    // Copyright 2020 The Monyhar Authors. All rights reserved.
     // Use of this source code is governed by a BSD-style license that can be
     // found in the LICENSE file.
 
@@ -67,7 +67,7 @@ This outputs Java String constants which represent the name of the
    would contain:
 
     ```java
-    // Copyright $YEAR The Chromium Authors. All rights reserved.
+    // Copyright $YEAR The Monyhar Authors. All rights reserved.
     // Use of this source code is governed by a BSD-style license that can be
     // found in the LICENSE file.
 

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -111,7 +111,7 @@ IN_PROC_BROWSER_TEST_F(ExternalProtocolHandlerBrowserTest,
 
 IN_PROC_BROWSER_TEST_F(ExternalProtocolHandlerBrowserTest,
                        ProtocolFailureEmitsConsoleLog) {
-// Only on Mac and Windows is there a way for Chromium to know whether a
+// Only on Mac and Windows is there a way for Monyhar to know whether a
 // protocol handler is registered ahead of time.
 #if defined(OS_MAC) || defined(OS_WIN)
   content::WebContents* web_contents =

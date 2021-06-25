@@ -1,8 +1,8 @@
-# Chromium Objective-C and Objective-C++ style guide
+# Monyhar Objective-C and Objective-C++ style guide
 
-_For other languages, please see the [Chromium style guides](https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/styleguide.md)._
+_For other languages, please see the [Monyhar style guides](https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/styleguide.md)._
 
-Chromium follows the
+Monyhar follows the
 [Google Objective-C style guide](https://google.github.io/styleguide/objcguide.html)
 unless an exception is listed below.
 
@@ -14,13 +14,13 @@ formatting doesn't follow this style guide, file a bug.
 
 ## Line length
 
-For consistency with the 80 character line length used in Chromium C++ code,
+For consistency with the 80 character line length used in Monyhar C++ code,
 Objective-C and Objective-C++ code also has an 80 character line length.
 
-## Chromium C++ style
+## Monyhar C++ style
 
-Where appropriate, the [Chromium C++ style](../c++/c++.md) style guide applies
-to Chromium Objective-C and (especially) Objective-C++
+Where appropriate, the [Monyhar C++ style](../c++/c++.md) style guide applies
+to Monyhar Objective-C and (especially) Objective-C++
 
 ## Code Formatting
 

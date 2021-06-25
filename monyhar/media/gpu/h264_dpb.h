@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -45,7 +45,7 @@ class MEDIA_GPU_EXPORT H264Picture : public CodecPicture {
 
   // Values calculated per H.264 specification or taken from slice header.
   // See spec for more details on each (some names have been converted from
-  // CamelCase in spec to Chromium-style names).
+  // CamelCase in spec to Monyhar-style names).
   int pic_order_cnt_type;
   int top_field_order_cnt;
   int bottom_field_order_cnt;

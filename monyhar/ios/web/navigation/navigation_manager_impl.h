@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -380,9 +380,9 @@ class NavigationManagerImpl : public NavigationManager {
   NavigationItem* GetLastCommittedItemWithUserAgentType() const;
 
   // Returns true if |last_committed_item| matches WKWebView.URL when expected.
-  // WKWebView is more aggressive than Chromium is in updating the committed
+  // WKWebView is more aggressive than Monyhar is in updating the committed
   // URL, and there are cases where, even though WKWebView's URL has updated,
-  // Chromium still wants to display last committed.  Normally this is managed
+  // Monyhar still wants to display last committed.  Normally this is managed
   // by NavigationManagerImpl last committed, but there are short periods
   // during fast navigations where WKWebView.URL has updated and ios/web can't
   // validate what should be shown for the visible item.  More importantly,

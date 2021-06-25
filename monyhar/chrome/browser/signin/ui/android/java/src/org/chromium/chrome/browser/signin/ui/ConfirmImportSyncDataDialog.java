@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -111,7 +111,7 @@ public class ConfirmImportSyncDataDialog
                                            .getManagementDomain()
                 != null;
         final AlertDialog alertDialog =
-                new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog)
+                new AlertDialog.Builder(getActivity(), R.style.Theme_Monyhar_AlertDialog)
                         .setPositiveButton(R.string.continue_button, this)
                         .setNegativeButton(R.string.cancel, this)
                         .setView(v)

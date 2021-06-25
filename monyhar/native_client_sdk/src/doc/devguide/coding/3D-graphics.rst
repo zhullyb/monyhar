@@ -104,7 +104,7 @@ check for the extensions and the features you need. For example:
 * If you are using the functions ``glMapBufferSubDataCHROMIUM``,
   ``glUnmapBufferSubDataCHROMIUM``, ``glMapTexSubImage2DCHROMIUM``,
   ``glUnmapTexSubImage2DCHROMIUM``, or the PPAPI interface
-  ``PPB_OpenGLES2ChromiumMapSub``, make sure the corresponding extension
+  ``PPB_OpenGLES2MonyharMapSub``, make sure the corresponding extension
   ``GL_CHROMIUM_map_sub`` exists.
 
 Check for system capabilites with ``glGetIntegerv`` and adjust shader programs
@@ -174,7 +174,7 @@ Document unreliable drivers
 It can be helpful to include information about known dubious drivers in your
 user documentation. This might help identify if a rogue driver is the cause of a
 problem. There are many sources of GPU driver blacklists. Two such lists can be
-found at the `Chromium project
+found at the `Monyhar project
 <http://src.monyhar.org/viewvc/chrome/trunk/deps/gpu/software_rendering_list/software_rendering_list.json>`_
 and `Khronos <http://www.khronos.org/webgl/wiki/BlacklistsAndWhitelists>`_. You
 can use these lists to include information in your documentation that warns

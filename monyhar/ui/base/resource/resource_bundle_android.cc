@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -119,7 +119,7 @@ std::string ResourceBundle::LoadLocaleResources(const std::string& pref_locale,
              << "locale.pak already loaded";
   std::string app_locale = l10n_util::GetApplicationLocale(pref_locale);
 
-  // Some Chromium apps have two sets of .pak files for their UI strings, i.e.:
+  // Some Monyhar apps have two sets of .pak files for their UI strings, i.e.:
   //
   // a) WebView strings, which are always stored uncompressed under
   //    assets/stored-locales/ inside the APK or App Bundle.

@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Top-level presubmit script for Blink.
@@ -199,8 +199,8 @@ def _CheckForPrintfDebugging(input_api, output_api):
     return []
 
 
-def _CheckForForbiddenChromiumCode(input_api, output_api):
-    """Checks that Blink uses Chromium classes and namespaces only in
+def _CheckForForbiddenMonyharCode(input_api, output_api):
+    """Checks that Blink uses Monyhar classes and namespaces only in
     permitted code.
     """
     # TODO(dcheng): This is pretty similar to _FindNewViolationsOfRule.
@@ -232,7 +232,7 @@ def CheckChangeOnUpload(input_api, output_api):
     results.extend(_CommonChecks(input_api, output_api))
     results.extend(_CheckStyle(input_api, output_api))
     results.extend(_CheckForPrintfDebugging(input_api, output_api))
-    results.extend(_CheckForForbiddenChromiumCode(input_api, output_api))
+    results.extend(_CheckForForbiddenMonyharCode(input_api, output_api))
     return results
 
 

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -81,18 +81,18 @@ base::OnceCallback<void(Arg)> BindSimpleLambda(Func func) {
   return base::BindOnce(&RunSimpleLambda<Func, Arg>, func);
 }
 
-// This implements the generated Chromium variant of PicklePasser.
-class ChromiumPicklePasserImpl : public PicklePasser {
+// This implements the generated Monyhar variant of PicklePasser.
+class MonyharPicklePasserImpl : public PicklePasser {
  public:
-  ChromiumPicklePasserImpl() {}
+  MonyharPicklePasserImpl() {}
 
   // mojo::test::PicklePasser:
-  void PassPickledStruct(PickledStructChromium pickle,
+  void PassPickledStruct(PickledStructMonyhar pickle,
                          PassPickledStructCallback callback) override {
     std::move(callback).Run(std::move(pickle));
   }
 
-  void PassPickledEnum(PickledEnumChromium pickle,
+  void PassPickledEnum(PickledEnumMonyhar pickle,
                        PassPickledEnumCallback callback) override {
     std::move(callback).Run(pickle);
   }
@@ -102,13 +102,13 @@ class ChromiumPicklePasserImpl : public PicklePasser {
     std::move(callback).Run(std::move(container));
   }
 
-  void PassPickles(std::vector<PickledStructChromium> pickles,
+  void PassPickles(std::vector<PickledStructMonyhar> pickles,
                    PassPicklesCallback callback) override {
     std::move(callback).Run(std::move(pickles));
   }
 
   void PassPickleArrays(
-      std::vector<std::vector<PickledStructChromium>> pickle_arrays,
+      std::vector<std::vector<PickledStructMonyhar>> pickle_arrays,
       PassPickleArraysCallback callback) override {
     std::move(callback).Run(std::move(pickle_arrays));
   }
@@ -147,14 +147,14 @@ class BlinkPicklePasserImpl : public blink::PicklePasser {
   }
 };
 
-// A test which runs both Chromium and Blink implementations of the
+// A test which runs both Monyhar and Blink implementations of the
 // PicklePasser service.
 class PickleTest : public testing::Test {
  public:
   PickleTest() {}
 
   template <typename ProxyType = PicklePasser>
-  Remote<ProxyType> ConnectToChromiumService() {
+  Remote<ProxyType> ConnectToMonyharService() {
     Remote<ProxyType> proxy;
     monyhar_receivers_.Add(&monyhar_service_,
                             ConvertPendingReceiver<PicklePasser>(
@@ -192,7 +192,7 @@ class PickleTest : public testing::Test {
 
  private:
   base::test::SingleThreadTaskEnvironment task_environment_;
-  ChromiumPicklePasserImpl monyhar_service_;
+  MonyharPicklePasserImpl monyhar_service_;
   ReceiverSet<PicklePasser> monyhar_receivers_;
   BlinkPicklePasserImpl blink_service_;
   ReceiverSet<blink::PicklePasser> blink_receivers_;
@@ -200,46 +200,46 @@ class PickleTest : public testing::Test {
 
 }  // namespace
 
-TEST_F(PickleTest, ChromiumProxyToChromiumService) {
-  auto monyhar_proxy = ConnectToChromiumService();
+TEST_F(PickleTest, MonyharProxyToMonyharService) {
+  auto monyhar_proxy = ConnectToMonyharService();
   {
     base::RunLoop loop;
     monyhar_proxy->PassPickledStruct(
-        PickledStructChromium(1, 2),
-        ExpectResult(PickledStructChromium(1, 2), loop.QuitClosure()));
+        PickledStructMonyhar(1, 2),
+        ExpectResult(PickledStructMonyhar(1, 2), loop.QuitClosure()));
     loop.Run();
   }
   {
     base::RunLoop loop;
     monyhar_proxy->PassPickledStruct(
-        PickledStructChromium(4, 5),
-        ExpectResult(PickledStructChromium(4, 5), loop.QuitClosure()));
+        PickledStructMonyhar(4, 5),
+        ExpectResult(PickledStructMonyhar(4, 5), loop.QuitClosure()));
     loop.Run();
   }
 
   {
     base::RunLoop loop;
     monyhar_proxy->PassPickledEnum(
-        PickledEnumChromium::VALUE_1,
-        ExpectEnumResult(PickledEnumChromium::VALUE_1, loop.QuitClosure()));
+        PickledEnumMonyhar::VALUE_1,
+        ExpectEnumResult(PickledEnumMonyhar::VALUE_1, loop.QuitClosure()));
     loop.Run();
   }
 }
 
-TEST_F(PickleTest, ChromiumProxyToBlinkService) {
+TEST_F(PickleTest, MonyharProxyToBlinkService) {
   auto monyhar_proxy = ConnectToBlinkService<PicklePasser>();
   {
     base::RunLoop loop;
     monyhar_proxy->PassPickledStruct(
-        PickledStructChromium(1, 2),
-        ExpectResult(PickledStructChromium(1, 2), loop.QuitClosure()));
+        PickledStructMonyhar(1, 2),
+        ExpectResult(PickledStructMonyhar(1, 2), loop.QuitClosure()));
     loop.Run();
   }
   {
     base::RunLoop loop;
     monyhar_proxy->PassPickledStruct(
-        PickledStructChromium(4, 5),
-        ExpectResult(PickledStructChromium(4, 5), loop.QuitClosure()));
+        PickledStructMonyhar(4, 5),
+        ExpectResult(PickledStructMonyhar(4, 5), loop.QuitClosure()));
     loop.Run();
   }
   // The Blink service should drop our connection because the
@@ -247,8 +247,8 @@ TEST_F(PickleTest, ChromiumProxyToBlinkService) {
   {
     base::RunLoop loop;
     monyhar_proxy->PassPickledStruct(
-        PickledStructChromium(-1, -1),
-        Fail<PickledStructChromium>("Blink service should reject this."));
+        PickledStructMonyhar(-1, -1),
+        Fail<PickledStructMonyhar>("Blink service should reject this."));
     ExpectError(&monyhar_proxy, loop.QuitClosure());
     loop.Run();
   }
@@ -257,8 +257,8 @@ TEST_F(PickleTest, ChromiumProxyToBlinkService) {
   {
     base::RunLoop loop;
     monyhar_proxy->PassPickledEnum(
-        PickledEnumChromium::VALUE_0,
-        ExpectEnumResult(PickledEnumChromium::VALUE_0, loop.QuitClosure()));
+        PickledEnumMonyhar::VALUE_0,
+        ExpectEnumResult(PickledEnumMonyhar::VALUE_0, loop.QuitClosure()));
     loop.Run();
   }
 
@@ -267,8 +267,8 @@ TEST_F(PickleTest, ChromiumProxyToBlinkService) {
   {
     base::RunLoop loop;
     monyhar_proxy->PassPickledEnum(
-        PickledEnumChromium::VALUE_2,
-        EnumFail<PickledEnumChromium>("Blink service should reject this."));
+        PickledEnumMonyhar::VALUE_2,
+        EnumFail<PickledEnumMonyhar>("Blink service should reject this."));
     ExpectError(&monyhar_proxy, loop.QuitClosure());
     loop.Run();
   }
@@ -293,8 +293,8 @@ TEST_F(PickleTest, BlinkProxyToBlinkService) {
   }
 }
 
-TEST_F(PickleTest, BlinkProxyToChromiumService) {
-  auto blink_proxy = ConnectToChromiumService<blink::PicklePasser>();
+TEST_F(PickleTest, BlinkProxyToMonyharService) {
+  auto blink_proxy = ConnectToMonyharService<blink::PicklePasser>();
   {
     base::RunLoop loop;
     blink_proxy->PassPickledStruct(
@@ -314,8 +314,8 @@ TEST_F(PickleTest, BlinkProxyToChromiumService) {
 
 TEST_F(PickleTest, PickleArray) {
   ScopedForceMessageSerialization force_serialization;
-  auto proxy = ConnectToChromiumService();
-  auto pickles = std::vector<PickledStructChromium>(2);
+  auto proxy = ConnectToMonyharService();
+  auto pickles = std::vector<PickledStructMonyhar>(2);
   pickles[0].set_foo(1);
   pickles[0].set_bar(2);
   pickles[0].set_baz(100);
@@ -329,8 +329,8 @@ TEST_F(PickleTest, PickleArray) {
     // rather than doing a byte-for-byte copy of the element data, beacuse the
     // |baz| field should never be serialized.
     proxy->PassPickles(std::move(pickles),
-                       BindSimpleLambda<std::vector<PickledStructChromium>>(
-                           [&](std::vector<PickledStructChromium> passed) {
+                       BindSimpleLambda<std::vector<PickledStructMonyhar>>(
+                           [&](std::vector<PickledStructMonyhar> passed) {
                              ASSERT_EQ(2u, passed.size());
                              EXPECT_EQ(1, passed[0].foo());
                              EXPECT_EQ(2, passed[0].bar());
@@ -346,10 +346,10 @@ TEST_F(PickleTest, PickleArray) {
 
 TEST_F(PickleTest, PickleArrayArray) {
   ScopedForceMessageSerialization force_serialization;
-  auto proxy = ConnectToChromiumService();
-  auto pickle_arrays = std::vector<std::vector<PickledStructChromium>>(2);
+  auto proxy = ConnectToMonyharService();
+  auto pickle_arrays = std::vector<std::vector<PickledStructMonyhar>>(2);
   for (size_t i = 0; i < 2; ++i)
-    pickle_arrays[i] = std::vector<PickledStructChromium>(2);
+    pickle_arrays[i] = std::vector<PickledStructMonyhar>(2);
 
   pickle_arrays[0][0].set_foo(1);
   pickle_arrays[0][0].set_bar(2);
@@ -368,8 +368,8 @@ TEST_F(PickleTest, PickleArrayArray) {
     // Verify that the array-of-arrays serializes and deserializes properly.
     proxy->PassPickleArrays(
         std::move(pickle_arrays),
-        BindSimpleLambda<std::vector<std::vector<PickledStructChromium>>>(
-            [&](std::vector<std::vector<PickledStructChromium>> passed) {
+        BindSimpleLambda<std::vector<std::vector<PickledStructMonyhar>>>(
+            [&](std::vector<std::vector<PickledStructMonyhar>> passed) {
               ASSERT_EQ(2u, passed.size());
               ASSERT_EQ(2u, passed[0].size());
               ASSERT_EQ(2u, passed[1].size());
@@ -393,12 +393,12 @@ TEST_F(PickleTest, PickleArrayArray) {
 
 TEST_F(PickleTest, PickleContainer) {
   ScopedForceMessageSerialization force_serialization;
-  auto proxy = ConnectToChromiumService();
+  auto proxy = ConnectToMonyharService();
   PickleContainerPtr pickle_container = PickleContainer::New();
   pickle_container->f_struct.set_foo(42);
   pickle_container->f_struct.set_bar(43);
   pickle_container->f_struct.set_baz(44);
-  pickle_container->f_enum = PickledEnumChromium::VALUE_1;
+  pickle_container->f_enum = PickledEnumMonyhar::VALUE_1;
   EXPECT_TRUE(pickle_container.Equals(pickle_container));
   EXPECT_FALSE(pickle_container.Equals(PickleContainer::New()));
   {
@@ -410,7 +410,7 @@ TEST_F(PickleTest, PickleContainer) {
                                      EXPECT_EQ(42, passed->f_struct.foo());
                                      EXPECT_EQ(43, passed->f_struct.bar());
                                      EXPECT_EQ(0, passed->f_struct.baz());
-                                     EXPECT_EQ(PickledEnumChromium::VALUE_1,
+                                     EXPECT_EQ(PickledEnumMonyhar::VALUE_1,
                                                passed->f_enum);
                                      run_loop.Quit();
                                    }));

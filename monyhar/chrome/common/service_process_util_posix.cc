@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -41,7 +41,7 @@ bool FilePathForMemoryName(const std::string& mem_name, base::FilePath* path) {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
   static const char kShmem[] = "com.google.Chrome.shmem.";
 #else
-  static const char kShmem[] = "org.monyhar.Chromium.shmem.";
+  static const char kShmem[] = "org.monyhar.Monyhar.shmem.";
 #endif
   *path = temp_dir.AppendASCII(kShmem + mem_name);
   return true;

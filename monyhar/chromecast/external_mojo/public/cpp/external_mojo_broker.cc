@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -73,7 +73,7 @@ class ExternalMojoBroker::ConnectorImpl : public mojom::ExternalConnector {
  public:
   ConnectorImpl() : connector_facade_(this) {}
 
-  void InitializeChromium(
+  void InitializeMonyhar(
       std::unique_ptr<service_manager::Connector> connector,
       const std::vector<std::string>& external_services_to_proxy) {
     DCHECK(connector);
@@ -296,7 +296,7 @@ class ExternalMojoBroker::ConnectorImpl : public mojom::ExternalConnector {
     AddReceiver(std::move(receiver));
   }
 
-  void BindChromiumConnector(
+  void BindMonyharConnector(
       mojo::ScopedMessagePipeHandle interface_pipe) override {
     if (!connector_) {
       connector_facade_.AddReceiver(
@@ -433,10 +433,10 @@ ExternalMojoBroker::ExternalMojoBroker(const std::string& broker_path) {
 #endif  // BUILDFLAG(ENABLE_EXTERNAL_MOJO_SERVICES)
 }
 
-void ExternalMojoBroker::InitializeChromium(
+void ExternalMojoBroker::InitializeMonyhar(
     std::unique_ptr<service_manager::Connector> connector,
     const std::vector<std::string>& external_services_to_proxy) {
-  connector_->InitializeChromium(std::move(connector),
+  connector_->InitializeMonyhar(std::move(connector),
                                  external_services_to_proxy);
 }
 

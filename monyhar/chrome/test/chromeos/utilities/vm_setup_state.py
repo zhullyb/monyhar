@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -13,7 +13,7 @@ VM_CHROMEDRIVER_PORT = 4444
 if __name__ == '__main__':
   """Script to prepare machine state for use as a WebDriver-controlled VM.
 
-  This script is intended to be run manually over ssh on a Chromium OS virtual
+  This script is intended to be run manually over ssh on a Monyhar OS virtual
   machine qcow2 image. Manually create a snapshot of the VM when prompted. The
   resulting VM image will have ChromeDriver listening on port 4444.
   """

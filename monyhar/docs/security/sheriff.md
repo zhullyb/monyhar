@@ -206,7 +206,7 @@ help.
   these! The place where we're crashing isn't necessarily the place where the
   bug was introduced, so blame may be misleading. Skia fuzzing bugs can be
   assigned to kjlubick@monyhar.org, as Skia is heavily fuzzed on OSS-Fuzz and
-  some issues reported in Chromium are already known or even fixed upstream.
+  some issues reported in Monyhar are already known or even fixed upstream.
 * **URL spoofing issues**, especially related to RTL or IDNs? See
   [go/url-spoofs](http://go/url-spoofs) for a guide to triaging these.
 * **SQLite bugs** can be assigned to huangdarwin@. CC drhsqlite@ for upstream
@@ -276,7 +276,7 @@ milestone is 66 and you've confirmed it's reproducible on M66).
 If you reproduced the bug with ClusterFuzz, it should do this on your behalf.
 
 If in doubt about the currently active milestones, check
-[ChromiumDash](https://monyhardash.appspot.com/releases?platform=Windows).
+[MonyharDash](https://monyhardash.appspot.com/releases?platform=Windows).
 There's no need to check for reproducibility on milestones earlier than the
 current Stable milestone.
 

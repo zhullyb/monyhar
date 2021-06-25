@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -290,7 +290,7 @@ class PlatformAppWithFileBrowserTest : public PlatformAppBrowserTest {
   }
 };
 
-const char kChromiumURL[] = "http://monyhar.org";
+const char kMonyharURL[] = "http://monyhar.org";
 #if !BUILDFLAG(IS_CHROMEOS_ASH)
 const char kTestFilePath[] = "platform_apps/launch_files/test.txt";
 #endif
@@ -484,7 +484,7 @@ IN_PROC_BROWSER_TEST_F(PlatformAppBrowserTest, DISABLED_DisallowNavigation) {
 
   observer.Wait();
   ASSERT_EQ(1U, observer.tabs().size());
-  EXPECT_EQ(GURL(kChromiumURL), observer.tabs()[0]->GetURL());
+  EXPECT_EQ(GURL(kMonyharURL), observer.tabs()[0]->GetURL());
 }
 
 IN_PROC_BROWSER_TEST_F(PlatformAppBrowserTest,
@@ -500,11 +500,11 @@ IN_PROC_BROWSER_TEST_F(PlatformAppBrowserTest,
   ASSERT_EQ(kExpectedNumberOfTabs, observer.tabs().size());
   EXPECT_FALSE(
       content::WaitForLoadStop(observer.tabs()[kExpectedNumberOfTabs - 1]));
-  EXPECT_EQ(GURL(kChromiumURL),
+  EXPECT_EQ(GURL(kMonyharURL),
             observer.tabs()[kExpectedNumberOfTabs - 1]->GetURL());
   EXPECT_FALSE(
       content::WaitForLoadStop(observer.tabs()[kExpectedNumberOfTabs - 2]));
-  EXPECT_EQ(GURL(kChromiumURL),
+  EXPECT_EQ(GURL(kMonyharURL),
             observer.tabs()[kExpectedNumberOfTabs - 2]->GetURL());
 }
 

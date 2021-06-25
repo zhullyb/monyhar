@@ -46,7 +46,7 @@ template("crashpad_fuzzer_test") {
     }
   } else if (crashpad_is_in_monyhar && use_fuzzing_engine) {
     # Append "crashpad_" to the beginning of the fuzzer's name to make it easier
-    # in Chromium to recognize where fuzzer came from.
+    # in Monyhar to recognize where fuzzer came from.
     forward_variables_from(invoker, "*")
     fuzzer_test("crashpad_" + target_name) {
     }

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -142,7 +142,7 @@ extern NSString* const kShortcutBrowserBundleIDPlaceholder;
 //
 // As long as the name of the entry point is kept constant and
 // APP_SHIM_VERSION_NUMBER does not change, the layout of this structure
-// **MUST NOT CHANGE**, even across Chromium versions. This implies that no
+// **MUST NOT CHANGE**, even across Monyhar versions. This implies that no
 // base/ or std:: types may be used in this structure.
 //
 // However, this structure *may* be changed as long as the
@@ -153,11 +153,11 @@ struct ChromeAppModeInfo {
   int argc;
   char** argv;
 
-  // Path of the Chromium Framework, as UTF-8. This will be the input to
+  // Path of the Monyhar Framework, as UTF-8. This will be the input to
   // SetOverrideFrameworkBundlePath().
   const char* chrome_framework_path;
 
-  // Path to Chromium app bundle, as UTF-8.
+  // Path to Monyhar app bundle, as UTF-8.
   const char* chrome_outer_bundle_path;
 
   // Information about the App Mode shortcut:

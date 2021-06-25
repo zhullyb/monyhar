@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -22,7 +22,7 @@ declare_args() {
              ((is_linux || is_chromeos_lacros) && !is_chromecast)
 
   # Should Dawn test binaries (unittests, end2end_tests, perf_tests) be built?
-  # Independent of use_dawn, which controls whether Dawn is used in Chromium.
+  # Independent of use_dawn, which controls whether Dawn is used in Monyhar.
   build_dawn_tests = is_mac || is_win || is_linux || is_chromeos
 }
 

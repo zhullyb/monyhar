@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -31,14 +31,14 @@ import org.monyhar.components.background_task_scheduler.BackgroundTask;
 import org.monyhar.components.background_task_scheduler.TaskIds;
 import org.monyhar.components.background_task_scheduler.TaskInfo;
 import org.monyhar.components.background_task_scheduler.TaskParameters;
-import org.monyhar.gms.shadows.ShadowChromiumPlayServicesAvailability;
+import org.monyhar.gms.shadows.ShadowMonyharPlayServicesAvailability;
 
 import java.util.concurrent.TimeUnit;
 
 /** Unit tests for {@link BackgroundTaskSchedulerGcmNetworkManager}. */
 @RunWith(BaseRobolectricTestRunner.class)
 @Config(manifest = Config.NONE,
-        shadows = {ShadowGcmNetworkManager.class, ShadowChromiumPlayServicesAvailability.class})
+        shadows = {ShadowGcmNetworkManager.class, ShadowMonyharPlayServicesAvailability.class})
 public class BackgroundTaskSchedulerGcmNetworkManagerTest {
     ShadowGcmNetworkManager mGcmNetworkManager;
 
@@ -56,7 +56,7 @@ public class BackgroundTaskSchedulerGcmNetworkManagerTest {
 
     @Before
     public void setUp() {
-        ShadowChromiumPlayServicesAvailability.setIsGooglePlayServicesAvailable(true);
+        ShadowMonyharPlayServicesAvailability.setIsGooglePlayServicesAvailable(true);
         mGcmNetworkManager = (ShadowGcmNetworkManager) Shadow.extract(
                 GcmNetworkManager.getInstance(ContextUtils.getApplicationContext()));
         BackgroundTaskSchedulerGcmNetworkManager.setClockForTesting(mClock);
@@ -297,7 +297,7 @@ public class BackgroundTaskSchedulerGcmNetworkManagerTest {
     @Test
     @Feature("BackgroundTaskScheduler")
     public void testScheduleNoGooglePlayServices() {
-        ShadowChromiumPlayServicesAvailability.setIsGooglePlayServicesAvailable(false);
+        ShadowMonyharPlayServicesAvailability.setIsGooglePlayServicesAvailable(false);
 
         TaskInfo.TimingInfo timingInfo =
                 TaskInfo.OneOffInfo.create().setWindowEndTimeMs(TIME_24_H_TO_MS).build();
@@ -327,7 +327,7 @@ public class BackgroundTaskSchedulerGcmNetworkManagerTest {
     @Feature("BackgroundTaskScheduler")
     public void testCancelNoGooglePlayServices() {
         // This simulates situation where Google Play Services is uninstalled.
-        ShadowChromiumPlayServicesAvailability.setIsGooglePlayServicesAvailable(false);
+        ShadowMonyharPlayServicesAvailability.setIsGooglePlayServicesAvailable(false);
 
         TaskInfo.TimingInfo timingInfo =
                 TaskInfo.OneOffInfo.create().setWindowEndTimeMs(TIME_24_H_TO_MS).build();

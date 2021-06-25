@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,8 +11,8 @@
 
 namespace ui_devtools {
 
-UI_DEVTOOLS_EXPORT extern const char kChromiumCodeSearchURL[];
-UI_DEVTOOLS_EXPORT extern const char kChromiumCodeSearchSrcURL[];
+UI_DEVTOOLS_EXPORT extern const char kMonyharCodeSearchURL[];
+UI_DEVTOOLS_EXPORT extern const char kMonyharCodeSearchSrcURL[];
 
 // Synchonously gets source code and returns true if successful.
 bool UI_DEVTOOLS_EXPORT GetSourceCode(std::string path,

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -169,7 +169,7 @@ public class InfoBarContainer implements KeyboardVisibilityListener, InfoBar.Con
         mTab = tab;
         mTab.getWebContents().addObserver(mWebContentsObserver);
 
-        // Chromium's InfoBarContainer may add an InfoBar immediately during this initialization
+        // Monyhar's InfoBarContainer may add an InfoBar immediately during this initialization
         // call, so make sure everything in the InfoBarContainer is completely ready beforehand.
         mNativeInfoBarContainer = InfoBarContainerJni.get().init(InfoBarContainer.this);
     }

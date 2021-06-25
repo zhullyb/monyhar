@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -171,7 +171,7 @@ void ContextualSearchDelegate::ResolveSearchTermFromContext() {
           semantics {
             sender: "Contextual Search"
             description:
-              "Chromium can determine the best search term to apply for any "
+              "Monyhar can determine the best search term to apply for any "
                "section of plain text for almost any page.  This sends page "
                "data to Google and the response identifies what to search for "
                "plus additional actionable information."

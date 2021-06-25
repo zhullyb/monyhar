@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -96,7 +96,7 @@ TEST_F(V4StoreTest, TestReadFromAbsentFile) {
 }
 
 TEST_F(V4StoreTest, TestReadFromInvalidContentsFile) {
-  const char kInvalidContents[] = "Chromium";
+  const char kInvalidContents[] = "Monyhar";
   base::WriteFile(store_path_, kInvalidContents, strlen(kInvalidContents));
   EXPECT_EQ(PROTO_PARSING_FAILURE,
             V4Store(task_runner_, store_path_).ReadFromDisk());

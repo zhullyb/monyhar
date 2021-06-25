@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -326,9 +326,9 @@ bool GetBuildDirectory(base::FilePath* result) {
 
 #if defined(OS_MAC)
   if (base::mac::AmIBundled()) {
-    // The bundled app executables (Chromium, TestShell, etc) live three
+    // The bundled app executables (Monyhar, TestShell, etc) live three
     // levels down from the build directory, eg:
-    // Chromium.app/Contents/MacOS/Chromium
+    // Monyhar.app/Contents/MacOS/Monyhar
     *result = result->DirName().DirName().DirName();
   }
 #endif

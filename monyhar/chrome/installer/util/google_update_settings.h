@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -213,8 +213,8 @@ class GoogleUpdateSettings {
                                          bool* is_overridden);
 
   // Returns true if Chrome should be updated automatically by Google Update
-  // based on current autoupdate settings. Note that for Chromium builds, this
-  // returns false since Chromium is assumed not to autoupdate.
+  // based on current autoupdate settings. Note that for Monyhar builds, this
+  // returns false since Monyhar is assumed not to autoupdate.
   static bool AreAutoupdatesEnabled();
 
   // Attempts to reenable auto-updates for Chrome by removing any group policy
@@ -224,7 +224,7 @@ class GoogleUpdateSettings {
   // this method. Will need to be called from an elevated process since those
   // settings live in HKLM. Returns true if there is a reasonable belief that
   // updates are not disabled by policy when this method returns, false
-  // otherwise. Note that for Chromium builds, this returns true since Chromium
+  // otherwise. Note that for Monyhar builds, this returns true since Monyhar
   // is assumed not to autoupdate.
   static bool ReenableAutoupdates();
 

@@ -1,6 +1,6 @@
 # Client Hints
 
-This README will serve as a reference for the Chromium implementation of [HTTP Client Hints](https://www.rfc-editor.org/rfc/rfc8942.html), the [HTML and Fetch integrations](https://wicg.github.io/client-hints-infrastructure), and the [Critical-CH response header](https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability) as defined in the Client Hints Reliability draft.
+This README will serve as a reference for the Monyhar implementation of [HTTP Client Hints](https://www.rfc-editor.org/rfc/rfc8942.html), the [HTML and Fetch integrations](https://wicg.github.io/client-hints-infrastructure), and the [Critical-CH response header](https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability) as defined in the Client Hints Reliability draft.
 
 The code can be found in the following directories:
 
@@ -72,7 +72,7 @@ The Critical-CH retry mechanism is implemented as [content::CriticalClientHintsT
 
 ## Adding a new hint
 
-There’s two main steps to adding a hint to Chromium: adding the token, and populating the value when appropriate
+There’s two main steps to adding a hint to Monyhar: adding the token, and populating the value when appropriate
 
 ### Adding a new client hint token
 

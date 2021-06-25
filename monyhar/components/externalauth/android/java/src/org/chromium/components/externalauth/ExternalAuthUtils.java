@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ import org.monyhar.base.StrictModeContext;
 import org.monyhar.base.task.PostTask;
 import org.monyhar.components.embedder_support.util.Origin;
 import org.monyhar.content_public.browser.UiThreadTaskTraits;
-import org.monyhar.gms.ChromiumPlayServicesAvailability;
+import org.monyhar.gms.MonyharPlayServicesAvailability;
 
 /**
  * Utility class for external authentication tools.
@@ -262,7 +262,7 @@ public class ExternalAuthUtils {
     protected int checkGooglePlayServicesAvailable(final Context context) {
         // TODO(crbug.com/577190): Temporarily allowing disk access until more permanent fix is in.
         try (StrictModeContext ignored = StrictModeContext.allowDiskWrites()) {
-            return ChromiumPlayServicesAvailability.getGooglePlayServicesConnectionResult(context);
+            return MonyharPlayServicesAvailability.getGooglePlayServicesConnectionResult(context);
         }
     }
 

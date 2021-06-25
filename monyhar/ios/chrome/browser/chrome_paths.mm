@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,7 +26,7 @@ const base::FilePath::CharType kProductDirName[] =
     FILE_PATH_LITERAL("Google/Chrome");
 #else
 const base::FilePath::CharType kProductDirName[] =
-    FILE_PATH_LITERAL("Chromium");
+    FILE_PATH_LITERAL("Monyhar");
 #endif
 
 bool GetDefaultUserDataDirectory(base::FilePath* result) {

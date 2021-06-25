@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -186,7 +186,7 @@ void AddressTrackerLinux::Init() {
   // RTM_GETLINK stopped working in Android 11 (see
   // https://developer.android.com/preview/privacy/mac-address),
   // so AddressTrackerLinux should not be used in later versions
-  // of Android.  Chromium code doesn't need it past Android P.
+  // of Android.  Monyhar code doesn't need it past Android P.
   DCHECK_LT(base::android::BuildInfo::GetInstance()->sdk_int(),
             base::android::SDK_VERSION_P);
 #endif

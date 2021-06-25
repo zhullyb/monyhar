@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -93,10 +93,10 @@ public class CaptioningBridge
     }
 
     /**
-     * Create a Chromium CaptioningStyle from a platform CaptionStyle
+     * Create a Monyhar CaptioningStyle from a platform CaptionStyle
      *
      * @param userStyle the platform CaptionStyle
-     * @return a Chromium CaptioningStyle
+     * @return a Monyhar CaptioningStyle
      */
     private CaptioningStyle getCaptioningStyleFrom(CaptioningManager.CaptionStyle userStyle) {
         return CaptioningStyle.createFrom(userStyle);

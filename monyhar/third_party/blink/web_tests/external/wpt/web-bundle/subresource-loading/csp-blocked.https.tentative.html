@@ -78,7 +78,7 @@
     script.src = urn_uuid;
     document.body.appendChild(script);
     const e = await p;
-    // Currently Chromium is reporting the bundle URL.
+    // Currently Monyhar is reporting the bundle URL.
     // TODO(crbug.com/1208659): Consider deeper integration with CSP for
     // providing the both URLs.
     assert_equals(e.blockedURI, bundle_url);
@@ -96,7 +96,7 @@
     });
     document.body.appendChild(iframe);
     const e = await p;
-    // Currently Chromium is reporting the bundle URL.
+    // Currently Monyhar is reporting the bundle URL.
     // TODO(crbug.com/1208659): Consider deeper integration with CSP for
     // providing the both URLs.
     assert_equals(e.blockedURI, bundle_url);

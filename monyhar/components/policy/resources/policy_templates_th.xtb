@@ -585,7 +585,7 @@
 
        ไม่ต้องตั้งค่านโยบายนี้หากเลือกโหมดอื่นๆ สำหรับการตั้งค่านโยบายพร็อกซีแล้ว
 
-       หมายเหตุ: ดูตัวอย่างโดยละเอียดเพิ่มเติมได้ที่ The Chromium Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
+       หมายเหตุ: ดูตัวอย่างโดยละเอียดเพิ่มเติมได้ที่ The Monyhar Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
 <translation id="1767673020408652620">เปิดใช้แอปแนะนำในสถานะค่าเป็นศูนย์ของช่องค้นหา</translation>
 <translation id="1780323582106687813">นโยบายนี้เลิกใช้งานไปแล้ว โปรดใช้นโยบาย "<ph name="EXTENSION_INSTALL_ALLOWLIST_POLICY_NAME" />" แทน
 
@@ -681,7 +681,7 @@
      </translation>
 <translation id="1919802376548418720">ใช้นโยบาย KDC เพื่อมอบอำนาจข้อมูลเข้าสู่ระบบ</translation>
 <translation id="1920046221095339924">อนุญาตเซสชันที่จัดการในอุปกรณ์</translation>
-<translation id="1920772397574801429">การตั้งค่านโยบายจะระบุประเภทของบัญชีที่มาจากแอปการตรวจสอบสิทธิ์ของ Android ที่รองรับการตรวจสอบสิทธิ์ <ph name="HTTP_NEGOTIATE" /> (เช่น การตรวจสอบสิทธิ์ Kerberos) ข้อมูลนี้ควรได้รับจากซัพพลายเออร์ของแอปการตรวจสอบสิทธิ์ ดูข้อมูลเพิ่มเติมที่ The Chromium Projects ( https://goo.gl/hajyfN )
+<translation id="1920772397574801429">การตั้งค่านโยบายจะระบุประเภทของบัญชีที่มาจากแอปการตรวจสอบสิทธิ์ของ Android ที่รองรับการตรวจสอบสิทธิ์ <ph name="HTTP_NEGOTIATE" /> (เช่น การตรวจสอบสิทธิ์ Kerberos) ข้อมูลนี้ควรได้รับจากซัพพลายเออร์ของแอปการตรวจสอบสิทธิ์ ดูข้อมูลเพิ่มเติมที่ The Monyhar Projects ( https://goo.gl/hajyfN )
 
       การไม่ตั้งค่านโยบายจะปิดการตรวจสอบสิทธิ์ <ph name="HTTP_NEGOTIATE" /> ใน Android</translation>
 <translation id="1925529914257504750">P2P สำหรับการอัปเดตอัตโนมัติเปิดใช้อยู่</translation>
@@ -3076,7 +3076,7 @@
 
           หากไม่ได้ตั้งค่านโยบายนี้เอาไว้ คำสั่งที่เป็นค่าเริ่มต้นจะถูกนำมาใช้</translation>
 <translation id="5152393033264257734">อนุญาตการตรวจสอบการสกัดกั้น DNS และแถบข้อมูล "หรือคุณหมายถึง http://intranetsite/"</translation>
-<translation id="5152787786897382519">ทั้ง Chromium และ Google Chrome ต่างก็มีกลุ่มนโยบายที่พึ่งพากันและกันเพื่อให้การควบคุมฟีเจอร์หนึ่งๆ ชุดเหล่านี้แสดงด้วยกลุ่มนโยบายต่อไปนี้ เนื่องจากนโยบายมีแหล่งที่มาได้หลายแหล่ง ระบบจึงจะใช้เฉพาะค่าที่มาจากแหล่งที่มาที่มีลำดับความสำคัญสูงสุด และจะไม่สนใจค่าที่มาจากแหล่งที่มาที่มีลำดับความสำคัญต่ำในกลุ่มเดียวกัน ลำดับความสำคัญกำหนดไว้ใน <ph name="POLICY_PRIORITY_DOC_URL" /></translation>
+<translation id="5152787786897382519">ทั้ง Monyhar และ Google Chrome ต่างก็มีกลุ่มนโยบายที่พึ่งพากันและกันเพื่อให้การควบคุมฟีเจอร์หนึ่งๆ ชุดเหล่านี้แสดงด้วยกลุ่มนโยบายต่อไปนี้ เนื่องจากนโยบายมีแหล่งที่มาได้หลายแหล่ง ระบบจึงจะใช้เฉพาะค่าที่มาจากแหล่งที่มาที่มีลำดับความสำคัญสูงสุด และจะไม่สนใจค่าที่มาจากแหล่งที่มาที่มีลำดับความสำคัญต่ำในกลุ่มเดียวกัน ลำดับความสำคัญกำหนดไว้ใน <ph name="POLICY_PRIORITY_DOC_URL" /></translation>
 <translation id="5153187201534281749">ไอคอนการทดสอบเบราว์เซอร์แถบเครื่องมือ</translation>
 <translation id="5163002264923337812">เปิดใช้การลงชื่อเข้าใช้ผ่านเว็บแบบเก่า</translation>
 <translation id="516520353995300280">การตั้งค่านโยบายจะปิดใช้การบังคับใช้ข้อกำหนดการเปิดเผยความโปร่งใสของใบรับรองสำหรับรายชื่อผู้ออกใบรับรอง (CA) เดิมของกลุ่มใบรับรองซึ่งมีแฮช <ph name="SUBJECT_PUBLIC_KEY_INFO" /> ที่ระบุ โฮสต์ที่เป็นองค์กรจะใช้ใบรับรองที่ไม่น่าเชื่อถือ (เนื่องจากไม่มีการเปิดเผยต่อสาธารณะอย่างเหมาะสม) ต่อไปได้ หากต้องการปิดใช้การบังคับใช้ แฮช <ph name="SUBJECT_PUBLIC_KEY_INFO" /> ต้องแสดงในใบรับรอง CA ที่ถือว่าเป็น CA เดิม โดย CA เดิม คือ CA ที่ได้รับความเชื่อถือต่อสาธารณะจากระบบปฏิบัติการอย่างน้อย 1 ระบบซึ่งรองรับโดย <ph name="PRODUCT_NAME" /> แต่ไม่ใช่โครงการโอเพนซอร์ส Android หรือ <ph name="PRODUCT_OS_NAME" />
@@ -4141,7 +4141,7 @@
 
       การไม่ตั้งค่านโยบายนี้จะทำให้ผู้ใช้เลือกการตั้งค่าพร็อกซีได้
 
-      หมายเหตุ: ดูตัวอย่างโดยละเอียดได้ที่ The Chromium Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
+      หมายเหตุ: ดูตัวอย่างโดยละเอียดได้ที่ The Monyhar Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
 <translation id="6561396069801924653">แสดงตัวเลือกการเข้าถึงในเมนูถาดระบบ</translation>
 <translation id="6562889469672829421">ระยะเวลาเป็นมิลลิวินาทีก่อนหรี่แสงหน้าจอหลังจากไม่มีการป้อนข้อมูลจากผู้ใช้</translation>
 <translation id="6563458316362153786">เปิดใช้การเปลี่ยนอย่างรวดเร็ว 802.11r</translation>
@@ -4375,7 +4375,7 @@
           * <ph name="PROXY_MODE_ENUM_FIXED_SERVERS" /> ระบบจะใช้ช่อง <ph name="PROXY_SERVER_PROXY_SETTINGS_FIELD" /> และ <ph name="PROXY_BYPASS_LIST_PROXY_SETTINGS_FIELD" />
           * <ph name="PROXY_MODE_ENUM_PAC_SCRIPT" /> ระบบจะใช้ช่อง <ph name="PROXY_BYPASS_LIST_PROXY_PAC_URL" /> และ <ph name="PROXY_BYPASS_LIST_PROXY_SETTINGS_FIELD" />
 
-      หมายเหตุ: ดูตัวอย่างโดยละเอียดเพิ่มเติมได้ที่ The Chromium Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
+      หมายเหตุ: ดูตัวอย่างโดยละเอียดเพิ่มเติมได้ที่ The Monyhar Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
 <translation id="6835883744948188639">แสดงข้อความแจ้งที่ปรากฏขึ้นซ้ำๆ แก่ผู้ใช้เพื่อแจ้งว่าควรเปิดเบราว์เซอร์ขึ้นมาใหม่</translation>
 <translation id="683688607121170501">การตั้งค่านี้ทำให้ผู้ใช้สลับการใช้งานระหว่างบัญชี Google ได้ภายในพื้นที่เนื้อหาของหน้าต่างเบราว์เซอร์และในแอปพลิเคชันของ Android หลังจากที่ลงชื่อเข้าใช้อุปกรณ์ <ph name="PRODUCT_OS_NAME" />
 
@@ -4596,7 +4596,7 @@
 
        ไม่ต้องตั้งค่านโยบายนี้หากได้เลือกโหมดอื่นสำหรับการตั้งค่านโยบายพร็อกซีแล้ว
 
-       หมายเหตุ: ดูตัวอย่างโดยละเอียดได้ที่ The Chromium Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
+       หมายเหตุ: ดูตัวอย่างโดยละเอียดได้ที่ The Monyhar Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
 <translation id="7002040773317582266">เปิดใช้การตรวจหา URL ในเมนเฟรมแบบเรียลไทม์อยู่</translation>
 <translation id="7003746348783715221">ค่ากำหนดของ <ph name="PRODUCT_NAME" /></translation>
 <translation id="7007283257527015835">ธงบูลีนที่ระบุว่าเครื่องจัดการโปรโตคอลควรตั้งค่าเป็นค่าเริ่มต้นหรือไม่</translation>
@@ -5147,7 +5147,7 @@
 
        ไม่ต้องตั้งค่านโยบายนี้หากได้เลือกโหมดอื่นสำหรับการตั้งค่านโยบายพร็อกซีแล้ว
 
-      หมายเหตุ: ดูตัวอย่างโดยละเอียดได้ที่ The Chromium Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
+      หมายเหตุ: ดูตัวอย่างโดยละเอียดได้ที่ The Monyhar Projects ( https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett )</translation>
 <translation id="7717938661004793600">กำหนดค่าฟีเจอร์การเข้าถึงของ <ph name="PRODUCT_OS_NAME" /></translation>
 <translation id="7721944091689270995">User ID <ph name="PLUGIN_VM_NAME" /></translation>
 <translation id="7724161903134898864">การตั้งค่านโยบายเป็น 1 จะให้เว็บไซต์แสดงป๊อปอัปได้ การตั้งค่านโยบายเป็น 2 จะปฏิเสธป๊อปอัป
@@ -5510,7 +5510,7 @@
       หากไม่ได้ตั้งค่านโยบายนี้ <ph name="PRODUCT_OS_NAME" /> จะใช้ ID บัญชีอีเมลของบัญชีภายในอุปกรณ์เป็นชื่อสำหรับแสดงในหน้าลงชื่อเข้าใช้
 
       นโยบายนี้จะไม่มีผลกับบัญชีผู้ใช้ทั่วไป</translation>
-<translation id="8259375588339409826">ทั้ง Chromium และ Google Chrome รองรับนโยบายชุดเดียวกัน โปรดทราบว่าเอกสารนี้อาจมีนโยบายที่ยังไม่ได้เผยแพร่ (รายการ "รองรับใน" หมายถึงเวอร์ชันที่ยังไม่เปิดตัวของ <ph name="PRODUCT_NAME" />) ซึ่งอาจมีการเปลี่ยนแปลงหรือนำออกโดยไม่แจ้งให้ทราบล่วงหน้า และไม่มีการรับประกันใดๆ ทั้งสิ้น รวมทั้งไม่มีการรับประกันในแง่คุณสมบัติด้านการรักษาความปลอดภัยและความเป็นส่วนตัวของผลิตภัณฑ์
+<translation id="8259375588339409826">ทั้ง Monyhar และ Google Chrome รองรับนโยบายชุดเดียวกัน โปรดทราบว่าเอกสารนี้อาจมีนโยบายที่ยังไม่ได้เผยแพร่ (รายการ "รองรับใน" หมายถึงเวอร์ชันที่ยังไม่เปิดตัวของ <ph name="PRODUCT_NAME" />) ซึ่งอาจมีการเปลี่ยนแปลงหรือนำออกโดยไม่แจ้งให้ทราบล่วงหน้า และไม่มีการรับประกันใดๆ ทั้งสิ้น รวมทั้งไม่มีการรับประกันในแง่คุณสมบัติด้านการรักษาความปลอดภัยและความเป็นส่วนตัวของผลิตภัณฑ์
 
 นโยบายเหล่านี้มีวัตถุประสงค์เพื่อใช้ในการกำหนดค่าอินสแตนซ์ของ <ph name="PRODUCT_NAME" /> ภายในองค์กรของคุณเท่านั้น การใช้นโยบายภายนอกองค์กร (ตัวอย่างเช่น ในโปรแกรมที่เผยแพร่ต่อสาธารณะ) จะถือว่าเป็นมัลแวร์และมีแนวโน้มที่ Google และผู้ให้บริการป้องกันไวรัสจะติดป้ายว่าเป็นมัลแวร์
 

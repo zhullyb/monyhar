@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -176,7 +176,7 @@ class MediaStreamRemoteVideoSourceTest : public ::testing::Test {
   Persistent<MediaStreamSource> source_;
   int number_of_successful_track_starts_ = 0;
   int number_of_failed_track_starts_ = 0;
-  // WebRTC Chromium timestamp diff
+  // WebRTC Monyhar timestamp diff
   const base::TimeDelta time_diff_;
 };
 

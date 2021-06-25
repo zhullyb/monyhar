@@ -3,7 +3,7 @@
 Generally, browser extensions cut across websites and web apps, while apps
 provide more isolated functionality. Read on for specifics.
 
-**This is a technical discussion of extension types for Chromium developers.**
+**This is a technical discussion of extension types for Monyhar developers.**
 Extension developers should refer to http://developer.chrome.com/ for
 documentation, usage guidelines and examples.
 

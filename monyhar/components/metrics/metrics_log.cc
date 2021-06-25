@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -166,7 +166,7 @@ uint64_t MetricsLog::Hash(const std::string& value) {
   // the code, but forgot to update the descriptive list of histograms.  When
   // that happens, all we get to see (server side) is a hash of the histogram
   // name.  We can then use this logging to find out what histogram name was
-  // being hashed to a given MD5 value by just running the version of Chromium
+  // being hashed to a given MD5 value by just running the version of Monyhar
   // in question with --enable-logging.
   DVLOG(1) << "Metrics: Hash numeric [" << value << "]=[" << hash << "]";
 

@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,8 +35,8 @@ class SimpleURLLoader;
 
 namespace syncer {
 
-// A bridge between the syncer and Chromium HTTP layers.
-// Provides a way for the sync backend to use Chromium directly for HTTP
+// A bridge between the syncer and Monyhar HTTP layers.
+// Provides a way for the sync backend to use Monyhar directly for HTTP
 // requests rather than depending on a third party provider (e.g libcurl).
 // This is a one-time use bridge. Create one for each request you want to make.
 class HttpBridge : public HttpPostProviderInterface {

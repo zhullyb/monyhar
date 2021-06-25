@@ -3,13 +3,13 @@
 [TOC]
 
 These handy tips apply in any memory management situation and in any kind of IPC
-situation (classic Chromium IPC, Mojo, Windows/POSIX IPC, Mach IPC, files,
+situation (classic Monyhar IPC, Mojo, Windows/POSIX IPC, Mach IPC, files,
 sockets, parsing binary formats, ...).
 
 Basically, don't believe the lie that 'computers are good at arithmetic'. In
 general, unless you explicitly check an arithmetic operation, it's safest to
 assume the operation went wrong. The least painful way to systematically check
-arithmetic is Chromium's base/numerics templates and helper functions.
+arithmetic is Monyhar's base/numerics templates and helper functions.
 
 ## Be Aware Of The Subtleties Of Integer Types
 
@@ -33,7 +33,7 @@ interpret `long` differently.)
 
 ### Java
 
-When writing code for Chromium on Android, you will often need to marshall
+When writing code for Monyhar on Android, you will often need to marshall
 arrays, and their sizes and indices, across the language barrier (and possibly
 also across the IPC barrier). The trouble here is that the Java integer types
 are well-defined, but the C++ integer types are whimsical. A Java `int` is a

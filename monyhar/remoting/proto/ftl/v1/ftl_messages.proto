@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@ package remoting.ftl;
 
 // Enums
 
-// This is exactly google.protobuf.Duration. The Chromium proto_library
+// This is exactly google.protobuf.Duration. The Monyhar proto_library
 // template has trouble importing protobuf outside the current directory.
 message Duration {
   int64 seconds = 1;
@@ -25,7 +25,7 @@ message ApiVersion {
 }
 
 message Platform {
-  // Added the FTL_ prefix because OS names are polluted by Chromium macros.
+  // Added the FTL_ prefix because OS names are polluted by Monyhar macros.
   enum Type {
     UNKNOWN = 0;
     FTL_ANDROID = 1;

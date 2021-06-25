@@ -1,7 +1,7 @@
 # Buildbot Testing Configuration Files
 
 The files in this directory control how tests are run on the
-[Chromium buildbots](https://www.monyhar.org/developers/testing/monyhar-build-infrastructure/tour-of-the-monyhar-buildbot).
+[Monyhar buildbots](https://www.monyhar.org/developers/testing/monyhar-build-infrastructure/tour-of-the-monyhar-buildbot).
 In addition to specifying what tests run on which builders, they also specify
 special arguments and constraints for the tests.
 
@@ -52,7 +52,7 @@ a standardized format.
 ## How the files are consumed
 ### Buildbot configuration json
 Logic in the
-[Chromium recipe](https://monyhar.googlesource.com/monyhar/tools/build/+/HEAD/recipes/recipes/monyhar.py)
+[Monyhar recipe](https://monyhar.googlesource.com/monyhar/tools/build/+/HEAD/recipes/recipes/monyhar.py)
 looks up each builder for each master and test generators in
 [monyhar_tests/steps.py](https://monyhar.googlesource.com/monyhar/tools/build/+/HEAD/recipes/recipe_modules/monyhar_tests/steps.py)
 parse the data. For example, as of
@@ -87,7 +87,7 @@ your tryjob). Non-trybot changes have to be landed manually :(.
 When adding tests or bumping timeouts, care must be taken to ensure the
 infrastructure has capacity to handle the extra load.  This is especially true
 for the established
-[Chromium CQ builders](https://monyhar.googlesource.com/monyhar/src/+/HEAD/infra/config/generated/cq-builders.md),
+[Monyhar CQ builders](https://monyhar.googlesource.com/monyhar/src/+/HEAD/infra/config/generated/cq-builders.md),
 as they operate under strict execution requirements. Make sure to get a resource
 owner or a member of Chrome Browser Core EngProd to sign off that there is both
 builder and swarmed test shard capacity available.
@@ -394,7 +394,7 @@ how a test is run on a bot_, or _remove keys from a test&apos;s specification on
 a bot_. The exceptions _can not_ be used to add a test to a bot. This
 restriction is by design, and helps prevent taking shortcuts when designing test
 suites which would make the test descriptions unmaintainable. (The number of
-exceptions needed to describe Chromium's waterfalls in their previous
+exceptions needed to describe Monyhar's waterfalls in their previous
 hand-maintained state has already gotten out of hand, and a concerted effort
 should be made to eliminate them wherever possible.)
 

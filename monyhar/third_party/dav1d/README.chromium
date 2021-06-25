@@ -9,7 +9,7 @@ Source: https://code.videolan.org/videolan/dav1d
 
 --[ DESCRIPTION ] ------------------
 This contains the source to the dav1d video decoder; used for AV1 decoding in
-Chromium. The LICENSE file is copied from libdav1d/COPYING.
+Monyhar. The LICENSE file is copied from libdav1d/COPYING.
 
 
 --[ UPDATING ] ------------------

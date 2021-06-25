@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -139,7 +139,7 @@ void CrasInputStream::Start(AudioInputCallback* callback) {
   DCHECK(callback);
 
   // Channel map to CRAS_CHANNEL, values in the same order of
-  // corresponding source in Chromium defined Channels.
+  // corresponding source in Monyhar defined Channels.
   static const int kChannelMap[] = {
     CRAS_CH_FL,
     CRAS_CH_FR,

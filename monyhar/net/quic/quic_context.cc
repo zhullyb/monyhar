@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -29,8 +29,8 @@ QuicParams::QuicParams(const QuicParams& other) = default;
 QuicParams::~QuicParams() = default;
 
 QuicContext::QuicContext()
-    : QuicContext(std::make_unique<QuicChromiumConnectionHelper>(
-          quic::QuicChromiumClock::GetInstance(),
+    : QuicContext(std::make_unique<QuicMonyharConnectionHelper>(
+          quic::QuicMonyharClock::GetInstance(),
           quic::QuicRandom::GetInstance())) {}
 
 QuicContext::QuicContext(

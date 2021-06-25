@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,9 +14,9 @@ import java.io.File;
 
 /**
  * Tests support for Java only Cronet engine tests. This class should not depend on
- * Chromium 'base' or 'net'.
+ * Monyhar 'base' or 'net'.
  */
-public class ChromiumPlatformOnlyTestSupport implements TestSupport {
+public class MonyharPlatformOnlyTestSupport implements TestSupport {
     @Override
     public TestServer createTestServer(Context context, Protocol protocol) {
         switch (protocol) {
@@ -38,16 +38,16 @@ public class ChromiumPlatformOnlyTestSupport implements TestSupport {
 
     @Override
     public void addHostResolverRules(JSONObject experimentalOptionsJson) {
-        throw new UnsupportedOperationException("Unsupported by ChromiumPlatformOnlyTestSupport");
+        throw new UnsupportedOperationException("Unsupported by MonyharPlatformOnlyTestSupport");
     }
 
     @Override
     public void installMockCertVerifierForTesting(ExperimentalCronetEngine.Builder builder) {
-        throw new UnsupportedOperationException("Unsupported by ChromiumPlatformOnlyTestSupport");
+        throw new UnsupportedOperationException("Unsupported by MonyharPlatformOnlyTestSupport");
     }
 
     @Override
     public void loadTestNativeLibrary() {
-        throw new UnsupportedOperationException("Unsupported by ChromiumPlatformOnlyTestSupport");
+        throw new UnsupportedOperationException("Unsupported by MonyharPlatformOnlyTestSupport");
     }
 }

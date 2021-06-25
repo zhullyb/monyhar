@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -183,7 +183,7 @@ bool IsSSN(const std::u16string& text) {
   // ascending in an alternating even/odd sequence. With that scheme it was
   // possible to check for validity by referencing a table that had the highest
   // group number assigned for a given area number. (This was something that
-  // Chromium never did though, because the "high group" values were constantly
+  // Monyhar never did though, because the "high group" values were constantly
   // changing.)
   //
   // However, starting on 25 June 2011 the SSA began issuing SSNs randomly from

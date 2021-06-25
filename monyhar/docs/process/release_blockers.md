@@ -16,7 +16,7 @@
 
 ## Context
 
-The Chromium project utilizes release block labels to help define each
+The Monyhar project utilizes release block labels to help define each
 milestone's critical path.  The following labels are available:
 
 *   **ReleaseBlock-Dev**, which blocks shipping to the dev, beta, and stable

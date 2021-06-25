@@ -1,10 +1,10 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // Linux specific implementation of VideoCaptureDevice.
 // V4L2 is used for capturing. V4L2 does not provide its own thread for
-// capturing so this implementation uses a Chromium thread for fetching frames
+// capturing so this implementation uses a Monyhar thread for fetching frames
 // from V4L2.
 
 #ifndef MEDIA_CAPTURE_VIDEO_LINUX_VIDEO_CAPTURE_DEVICE_LINUX_H_
@@ -30,7 +30,7 @@ class V4L2CaptureDelegate;
 // Linux V4L2 implementation of VideoCaptureDevice.
 class VideoCaptureDeviceLinux : public VideoCaptureDevice {
  public:
-  static VideoPixelFormat V4l2FourCcToChromiumPixelFormat(uint32_t v4l2_fourcc);
+  static VideoPixelFormat V4l2FourCcToMonyharPixelFormat(uint32_t v4l2_fourcc);
   static std::vector<uint32_t> GetListOfUsableFourCCs(bool favour_mjpeg);
 
   explicit VideoCaptureDeviceLinux(

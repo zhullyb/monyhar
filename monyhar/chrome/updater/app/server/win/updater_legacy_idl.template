@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -214,7 +214,7 @@ interface IAppWeb : IDispatch {
 [
   uuid(UPDATER_LEGACY_LIB_UUID),
   version(1.0),
-  helpstring("Chromium Updater legacy type library.")
+  helpstring("Monyhar Updater legacy type library.")
 ]
 library UpdaterLegacyLib {
   importlib("stdole2.tlb");

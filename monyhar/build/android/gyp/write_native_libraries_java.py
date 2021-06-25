@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -27,7 +27,7 @@ public class NativeLibraries {{
     public static final int CPU_FAMILY_MIPS = 2;
     public static final int CPU_FAMILY_X86 = 3;
 
-    // Set to true to enable the use of the Chromium Linker.
+    // Set to true to enable the use of the Monyhar Linker.
     public static {MAYBE_FINAL}boolean sUseLinker{USE_LINKER};
     public static {MAYBE_FINAL}boolean sUseLibraryInZipFile{USE_LIBRARY_IN_ZIP_FILE};
     public static {MAYBE_FINAL}boolean sUseModernLinker{USE_MODERN_LINKER};
@@ -57,7 +57,7 @@ def main():
   parser.add_argument(
       '--enable-monyhar-linker',
       action='store_true',
-      help='Enable Chromium linker.')
+      help='Enable Monyhar linker.')
   parser.add_argument(
       '--load-library-from-apk',
       action='store_true',

@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -60,7 +60,7 @@ def _LogToFlakinessDashboard(results, test_type, test_package,
                                test_package.lower().rstrip('test'))
       # Downstream server.
       else:
-        dashboard_test_type = 'Chromium_Android_Instrumentation'
+        dashboard_test_type = 'Monyhar_Android_Instrumentation'
 
     elif test_type == 'gtest':
       dashboard_test_type = test_package

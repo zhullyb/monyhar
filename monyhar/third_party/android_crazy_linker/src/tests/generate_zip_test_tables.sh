@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -22,7 +22,7 @@ OUTPUT_DIR=/tmp/zip-files
 
 generate_c_source () {
   # Turn generated table const, it's cleaner.
-  # Also indent with 4 spaces (Chromium style).
+  # Also indent with 4 spaces (Monyhar style).
   xxd -i $1 | \
     sed -e 's/^unsigned/const unsigned/g' | \
     sed -e 's/^  0x/    0x/g'
@@ -34,7 +34,7 @@ rm -rf $TMP_DIR/*
 cd $TMP_DIR
 
 cat <<EOF
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 

@@ -1,7 +1,7 @@
 # AFL Integration
 
-This document describes AFL's integration with Chromium. This document is only
-for the curious, developers writing Chromium fuzz targets shouldn't worry about
+This document describes AFL's integration with Monyhar. This document is only
+for the curious, developers writing Monyhar fuzz targets shouldn't worry about
 AFL, as this document will explain. Therefore, it does not explain how you
 should use AFL locally, in most cases you should just use libFuzzer.
 
@@ -41,11 +41,11 @@ complicated.
 
 ## Trophies
 
-* [AFL Chromium bugs] - bugs found by AFL in Chromium.
+* [AFL Monyhar bugs] - bugs found by AFL in Monyhar.
 * [AFL OSS-Fuzz bugs] - bugs found by AFL in [OSS-Fuzz].
 
 [AFL]: http://lcamtuf.coredump.cx/afl/
-[AFL Chromium bugs]: https://bugs.monyhar.org/p/monyhar/issues/list?can=1&q=afl_chrome_asan+-status%3AWontFix%2CDuplicate+label%3Aclusterfuzz
+[AFL Monyhar bugs]: https://bugs.monyhar.org/p/monyhar/issues/list?can=1&q=afl_chrome_asan+-status%3AWontFix%2CDuplicate+label%3Aclusterfuzz
 [AFL OSS-Fuzz bugs]: https://bugs.monyhar.org/p/oss-fuzz/issues/list?can=1&q=label%3AEngine-afl%2CStability-AFL+label%3AClusterFuzz+-status%3AWontFix%2CDuplicate
 [trace-pc-guard]: https://monyhar.googlesource.com/monyhar/src/+/HEAD/third_party/afl/src/llvm_mode/README.llvm#169
 [ASan]: https://clang.llvm.org/docs/AddressSanitizer.html

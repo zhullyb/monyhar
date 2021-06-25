@@ -1,16 +1,16 @@
-# Using Chromium with SwiftShader
+# Using Monyhar with SwiftShader
 
 SwiftShader is an open-source high-performance implementation of the Vulkan and OpenGL ES graphics APIs which runs purely on the CPU. Thus no graphics processor (GPU) is required for advanced (3D) graphics.
 
-Chromium uses SwiftShader in two different ways:
+Monyhar uses SwiftShader in two different ways:
 
 1) **As the OpenGL ES driver**
 
-When Chromium uses SwiftShader as the OpenGL ES driver, Chromium behaves as if it was running a on regular GPU, while actually running on SwiftShader. This allows Chromium to exercise hardware only code paths on GPU-less bots.
+When Monyhar uses SwiftShader as the OpenGL ES driver, Monyhar behaves as if it was running a on regular GPU, while actually running on SwiftShader. This allows Monyhar to exercise hardware only code paths on GPU-less bots.
 
 2) **As the WebGL fallback**
 
-When Chromium uses SwiftShader as the WebGL fallback, Chromium runs in all software mode and only uses SwiftShader to render WebGL content.
+When Monyhar uses SwiftShader as the WebGL fallback, Monyhar runs in all software mode and only uses SwiftShader to render WebGL content.
 
 SwiftShader also provides 2 different libraries:
 
@@ -24,7 +24,7 @@ Legacy SwiftShader includes a GLES library and an EGL library, in order to provi
 
 SwiftShader Vulkan can be used both to render Vulkan content directly, or OpenGL ES content when use in conjunction with the ANGLE library.
 
-## Relevant Chromium command line switches
+## Relevant Monyhar command line switches
 
 When running the **chrome** executable from the command line, SwiftShader can be enabled using the following Switches:
 1) As the OpenGL ES driver, SwANGLE (ANGLE + SwiftShader Vulkan)

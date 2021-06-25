@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@
 namespace ui {
 
 // Tree selector used to identify an accessible tree to traverse, it can be
-// built by a pre-defined tree type like Chromium to indicate that Chromium
+// built by a pre-defined tree type like Monyhar to indicate that Monyhar
 // browser tree should be traversed and/or by a string pattern which matches
 // an accessible name of a root of some accessible subtree.
 struct AX_EXPORT AXTreeSelector {
@@ -20,7 +20,7 @@ struct AX_EXPORT AXTreeSelector {
     None = 0,
     ActiveTab = 1 << 0,
     Chrome = 1 << 1,
-    Chromium = 1 << 2,
+    Monyhar = 1 << 2,
     Edge = 1 << 3,
     Firefox = 1 << 4,
     Safari = 1 << 5,

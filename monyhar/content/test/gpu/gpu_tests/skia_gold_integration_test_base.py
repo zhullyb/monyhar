@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -25,10 +25,10 @@ from py_utils import cloud_storage
 from telemetry.util import image_util
 
 GPU_RELATIVE_PATH = "content/test/data/gpu/"
-GPU_DATA_DIR = os.path.join(path_util.GetChromiumSrcDir(), GPU_RELATIVE_PATH)
+GPU_DATA_DIR = os.path.join(path_util.GetMonyharSrcDir(), GPU_RELATIVE_PATH)
 TEST_DATA_DIRS = [
     GPU_DATA_DIR,
-    os.path.join(path_util.GetChromiumSrcDir(), 'media/test/data'),
+    os.path.join(path_util.GetMonyharSrcDir(), 'media/test/data'),
 ]
 
 SKIA_GOLD_CORPUS = 'chrome-gpu'

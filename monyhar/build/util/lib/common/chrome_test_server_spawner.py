@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -137,7 +137,7 @@ class TestServerThread(threading.Thread):
       return False
     # First read the data length as an unsigned 4-byte value.  This
     # is _not_ using network byte ordering since the Python test server packs
-    # size as native byte order and all Chromium platforms so far are
+    # size as native byte order and all Monyhar platforms so far are
     # configured to use little-endian.
     # TODO(jnd): Change the Python test server and local_test_server_*.cc to
     # use a unified byte order (either big-endian or little-endian).

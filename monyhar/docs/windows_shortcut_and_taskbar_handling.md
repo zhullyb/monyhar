@@ -37,7 +37,7 @@ to construct the AUMI out of component strings.
 All AUMI's start with the base app id,
 [install_static::GetBaseAppId](https://source.monyhar.org/monyhar/monyhar/src/+/main:chrome/install_static/install_util.cc?q=install_static::GetBaseAppId).
 This varies for different Chrome channels (e.g., Canary vs. Stable) and
-different Chromium-based browsers (e.g., Chrome vs. Chromium).
+different Monyhar-based browsers (e.g., Chrome vs. Monyhar).
 
 The AUMI for a browser app has the format:
 `<BaseAppId>.<app_name>[.<profile_name>]`.

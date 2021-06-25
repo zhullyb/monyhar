@@ -1,4 +1,4 @@
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -10,9 +10,9 @@ import sys
 from gpu_tests import gpu_integration_test
 from gpu_tests import path_util
 
-html_path = os.path.join(path_util.GetChromiumSrcDir(), 'content', 'test',
+html_path = os.path.join(path_util.GetMonyharSrcDir(), 'content', 'test',
                          'data', 'gpu', 'webcodecs')
-data_path = os.path.join(path_util.GetChromiumSrcDir(), 'media', 'test', 'data')
+data_path = os.path.join(path_util.GetMonyharSrcDir(), 'media', 'test', 'data')
 
 frame_sources = ["camera", "capture", "offscreen", "hw_decoder", "sw_decoder"]
 codecs = ["avc1.42001E", "vp8", "vp09.00.10.08"]

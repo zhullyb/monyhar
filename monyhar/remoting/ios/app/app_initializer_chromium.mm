@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,9 +24,9 @@
       [[RemotingOAuthAuthentication alloc] init];
   HelpAndFeedback.instance = [[HelpAndFeedback alloc] init];
   RefreshControlProvider.instance =
-      [[RefreshControlProviderChromium alloc] init];
+      [[RefreshControlProviderMonyhar alloc] init];
   remoting::ios::AccountManager::SetInstance(
-      std::make_unique<remoting::ios::AccountManagerChromium>());
+      std::make_unique<remoting::ios::AccountManagerMonyhar>());
 }
 
 + (void)onAppDidFinishLaunching {

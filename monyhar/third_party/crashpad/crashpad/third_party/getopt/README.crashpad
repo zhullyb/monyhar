@@ -13,7 +13,7 @@ Local Modifications:
  - NO_ARG, REQUIRED_ARG, and OPTIONAL_ARG were renamed to the more traditional
    no_argument, required_argument, and optional_argument for source
    compatibility with BSD and glibc getopt_long().
- - Add copy of copyright (Public domain) to the top of both files for Chromium's
+ - Add copy of copyright (Public domain) to the top of both files for Monyhar's
    checklicenses step.
  - Compiled as .cc, and wrapped in namespace crashpad.
  - memcmp() -> strncmp() in getopt.cc to make ASan happier about some string

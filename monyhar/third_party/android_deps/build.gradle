@@ -1,8 +1,8 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-apply plugin: ChromiumPlugin
+apply plugin: MonyharPlugin
 
 buildscript {
     repositories {
@@ -39,7 +39,7 @@ dependencyCheck {
 }
 
 dependencies {
-    // Note about the configuration names: they are defined in buildSrc/ChromiumPlugin
+    // Note about the configuration names: they are defined in buildSrc/MonyharPlugin
 
     // Replacement for com.android.support:design
     compile 'com.google.android.material:material:1.2.0-alpha06'

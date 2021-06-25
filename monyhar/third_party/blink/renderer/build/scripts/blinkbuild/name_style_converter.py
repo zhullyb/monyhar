@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -201,7 +201,7 @@ class NameStyleConverter(object):
     # of the name, rather than a particular style.
 
     def to_class_name(self, prefix=None, suffix=None):
-        """Represents this name as a class name in Chromium C++ style.
+        """Represents this name as a class name in Monyhar C++ style.
 
         i.e. UpperCamelCase.
         """
@@ -210,7 +210,7 @@ class NameStyleConverter(object):
         return camel_prefix + self.to_upper_camel_case() + camel_suffix
 
     def to_class_data_member(self, prefix=None, suffix=None):
-        """Represents this name as a data member name in Chromium C++ style.
+        """Represents this name as a data member name in Monyhar C++ style.
 
         i.e. snake_case_with_trailing_underscore_.
         """
@@ -242,7 +242,7 @@ class NameStyleConverter(object):
         return 'k' + self.to_upper_camel_case()
 
     def to_header_guard(self):
-        """Represents this name as a header guard style in Chromium C++ style.
+        """Represents this name as a header guard style in Monyhar C++ style.
 
         i.e. THIRD_PARTY_BLINK_RENDERER_MODULES_MODULES_EXPORT_H_
         """

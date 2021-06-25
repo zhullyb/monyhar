@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ class QuicConfig;
 namespace net {
 
 class NetLogWithSource;
-class QuicChromiumClientSession;
+class QuicMonyharClientSession;
 class QuicCryptoClientConfigHandle;
 class QuicStreamFactory;
 
@@ -50,12 +50,12 @@ class QuicStreamFactoryPeer {
   static bool HasActiveJob(QuicStreamFactory* factory,
                            const quic::QuicServerId& server_id);
 
-  static QuicChromiumClientSession* GetPendingSession(
+  static QuicMonyharClientSession* GetPendingSession(
       QuicStreamFactory* factory,
       const quic::QuicServerId& server_id,
       const HostPortPair& destination);
 
-  static QuicChromiumClientSession* GetActiveSession(
+  static QuicMonyharClientSession* GetActiveSession(
       QuicStreamFactory* factory,
       const quic::QuicServerId& server_id,
       const NetworkIsolationKey& network_isolation_key = NetworkIsolationKey());
@@ -65,7 +65,7 @@ class QuicStreamFactoryPeer {
                              const quic::QuicServerId& server_id);
 
   static bool IsLiveSession(QuicStreamFactory* factory,
-                            QuicChromiumClientSession* session);
+                            QuicMonyharClientSession* session);
 
   static void SetTickClock(QuicStreamFactory* factory,
                            const base::TickClock* tick_clock);

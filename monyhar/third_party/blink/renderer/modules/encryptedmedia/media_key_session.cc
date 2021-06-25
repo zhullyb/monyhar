@@ -223,7 +223,7 @@ class MediaKeySession::PendingAction final
 };
 
 // This class wraps the promise resolver used when initializing a new session
-// and is passed to Chromium to fullfill the promise. This implementation of
+// and is passed to Monyhar to fullfill the promise. This implementation of
 // completeWithSession() will resolve the promise with void, while
 // completeWithError() will reject the promise with an exception. complete()
 // is not expected to be called, and will reject the promise.
@@ -257,7 +257,7 @@ class NewSessionResultPromise : public ContentDecryptionModuleResultPromise {
 };
 
 // This class wraps the promise resolver used when loading a session
-// and is passed to Chromium to fullfill the promise. This implementation of
+// and is passed to Monyhar to fullfill the promise. This implementation of
 // completeWithSession() will resolve the promise with true/false, while
 // completeWithError() will reject the promise with an exception. complete()
 // is not expected to be called, and will reject the promise.
@@ -350,7 +350,7 @@ MediaKeySession::MediaKeySession(ScriptState* script_state,
   DVLOG(MEDIA_KEY_SESSION_LOG_LEVEL) << __func__ << "(" << this << ")";
   InstanceCounters::IncrementCounter(InstanceCounters::kMediaKeySessionCounter);
 
-  // Create the matching Chromium object. It will not be usable until
+  // Create the matching Monyhar object. It will not be usable until
   // initializeNewSession() is called in response to the user calling
   // generateRequest().
   WebContentDecryptionModule* cdm = media_keys->ContentDecryptionModule();
@@ -457,7 +457,7 @@ ScriptPromise MediaKeySession::generateRequest(
   //    DOMException whose name is NotSupportedError. String comparison
   //    is case-sensitive.
   //    (blink side doesn't know what the CDM supports, so the proper check
-  //     will be done on the Chromium side. However, we can verify that
+  //     will be done on the Monyhar side. However, we can verify that
   //     |initDataType| is one of the registered values.)
   media::EmeInitDataType init_data_type =
       EncryptedMediaUtils::ConvertToInitDataType(init_data_type_string);
@@ -497,7 +497,7 @@ void MediaKeySession::GenerateRequestTask(ContentDecryptionModuleResult* result,
   // NOTE: Continue step 10 of MediaKeySession::generateRequest().
   DVLOG(MEDIA_KEY_SESSION_LOG_LEVEL) << __func__ << "(" << this << ")";
 
-  // initializeNewSession() in Chromium will execute steps 10.1 to 10.9.
+  // initializeNewSession() in Monyhar will execute steps 10.1 to 10.9.
   session_->InitializeNewSession(
       init_data_type, static_cast<unsigned char*>(init_data_buffer->Data()),
       init_data_buffer->ByteLength(), result->Result());
@@ -614,7 +614,7 @@ void MediaKeySession::LoadTask(ContentDecryptionModuleResult* result,
   //     (Done in the constructor.)
   DCHECK(std::isnan(expiration_));
 
-  // load() in Chromium will execute steps 8.5 through 8.8.
+  // load() in Monyhar will execute steps 8.5 through 8.8.
   session_->Load(session_id, result->Result());
 
   // Remaining step (8.9) executed in finishLoad(), called when |result|
@@ -709,7 +709,7 @@ void MediaKeySession::UpdateTask(ContentDecryptionModuleResult* result,
   // NOTE: Continue step 6 of MediaKeySession::update().
   DVLOG(MEDIA_KEY_SESSION_LOG_LEVEL) << __func__ << "(" << this << ")";
 
-  // update() in Chromium will execute steps 6.1 through 6.8.
+  // update() in Monyhar will execute steps 6.1 through 6.8.
   session_->Update(static_cast<unsigned char*>(sanitized_response->Data()),
                    sanitized_response->ByteLength(), result->Result());
 
@@ -757,7 +757,7 @@ void MediaKeySession::CloseTask(ContentDecryptionModuleResult* result) {
   // NOTE: Continue step 4 of MediaKeySession::close().
   DVLOG(MEDIA_KEY_SESSION_LOG_LEVEL) << __func__ << "(" << this << ")";
 
-  // close() in Chromium will execute steps 5.1 through 5.3.
+  // close() in Monyhar will execute steps 5.1 through 5.3.
   session_->Close(result->Result());
 
   // Last step (5.3.2 Resolve promise) will be done when |result| is resolved.
@@ -799,7 +799,7 @@ void MediaKeySession::RemoveTask(ContentDecryptionModuleResult* result) {
   // NOTE: Continue step 4 of MediaKeySession::remove().
   DVLOG(MEDIA_KEY_SESSION_LOG_LEVEL) << __func__ << "(" << this << ")";
 
-  // remove() in Chromium will execute steps 4.1 through 4.5.
+  // remove() in Monyhar will execute steps 4.1 through 4.5.
   session_->Remove(result->Result());
 
   // Last step (4.5.6 Resolve promise) will be done when |result| is resolved.

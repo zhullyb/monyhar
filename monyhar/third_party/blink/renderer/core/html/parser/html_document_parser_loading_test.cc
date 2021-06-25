@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -201,7 +201,7 @@ TEST_P(HTMLDocumentParserLoadingTest,
 
 TEST_P(HTMLDocumentParserLoadingTest,
        AsyncScriptsShouldNotRunBetweenSyncScripts) {
-  // This is a Chromium-specific quirk for async <script>s. The spec says that
+  // This is a Monyhar-specific quirk for async <script>s. The spec says that
   // async scripts can execute whenever they're ready, in practice some sites
   // assume that async scripts won't run during a block of <script> tags.
   // These sites can break under the synchronous, budgeted HTML parser because

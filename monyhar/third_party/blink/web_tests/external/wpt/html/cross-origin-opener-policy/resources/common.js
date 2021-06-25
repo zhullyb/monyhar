@@ -27,7 +27,7 @@ function validate_results(callback, test, w, channelName, hasOpener, openerDOMAc
     assert_equals(payload.openerDOMAccess, openerDOMAccess, 'openerDOMAccess');
   }
 
-  // The window proxy in Chromium might still reflect the previous frame,
+  // The window proxy in Monyhar might still reflect the previous frame,
   // until its unloaded. This delays the verification of w here.
   if( !w.closed && w.length == 0) {
     test.step_timeout( () => {

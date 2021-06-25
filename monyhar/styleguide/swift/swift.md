@@ -1,8 +1,8 @@
-# Chromium Swift style guide
+# Monyhar Swift style guide
 
-_For other languages, please see the [Chromium style guides](https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/styleguide.md)._
+_For other languages, please see the [Monyhar style guides](https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/styleguide.md)._
 
-Chromium follows the
+Monyhar follows the
 [Google Swift style guide](https://google.github.io/swift/)
 no exceptions at this point.
 

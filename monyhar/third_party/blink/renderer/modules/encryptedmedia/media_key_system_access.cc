@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,7 +34,7 @@ namespace blink {
 namespace {
 
 // This class wraps the promise resolver used when creating MediaKeys
-// and is passed to Chromium to fullfill the promise. This implementation of
+// and is passed to Monyhar to fullfill the promise. This implementation of
 // completeWithCdm() will resolve the promise with a new MediaKeys object,
 // while completeWithError() will reject the promise with an exception.
 // All other complete methods are not expected to be called, and will

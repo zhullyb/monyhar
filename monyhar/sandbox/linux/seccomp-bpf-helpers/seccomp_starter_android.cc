@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -41,7 +41,7 @@ bool SeccompStarterAndroid::StartSandbox() {
   if (old_handler != SIG_DFL) {
     // On Android O and later, the zygote applies a seccomp filter to all
     // apps. It has its own SIGSYS handler that must be un-hooked so that
-    // the Chromium one can be used instead. If pre-O devices have a SIGSYS
+    // the Monyhar one can be used instead. If pre-O devices have a SIGSYS
     // handler, then warn about that.
     DLOG_IF(WARNING, sdk_int_ < base::android::SDK_VERSION_OREO)
         << "Un-hooking existing SIGSYS handler before starting "

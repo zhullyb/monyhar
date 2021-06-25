@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -16,7 +16,7 @@ will be transformed to:
 I/stderr  ( 3915): ipc 3915.3.1370207904 2147483647 S ViewMsg_SetCSSColors
 
 In order to find the message header files efficiently, it requires that
-Chromium is checked out using git.
+Monyhar is checked out using git.
 """
 
 from __future__ import print_function

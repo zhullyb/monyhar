@@ -1,4 +1,4 @@
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -35,7 +35,7 @@ def ColumnNameToFieldType(column_name):
   """Converts the given |column_name| to the corresponding AutofillField type.
 
   |column_name| should be a string drawn from the column names of the
-  autofill_profiles table in the Chromium "Web Data" database.
+  autofill_profiles table in the Monyhar "Web Data" database.
 
   """
 

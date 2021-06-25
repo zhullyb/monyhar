@@ -71,13 +71,13 @@ static const FilePath::CharType kLevelDBTestDirectoryPrefix[] =
 // able to recover data.
 static const char kDatabaseNameSuffixForRebuildDB[] = "__tmp_for_rebuild";
 
-class ChromiumFileLock : public FileLock {
+class MonyharFileLock : public FileLock {
  public:
-  ChromiumFileLock(std::unique_ptr<storage::FilesystemProxy::FileLock> lock,
+  MonyharFileLock(std::unique_ptr<storage::FilesystemProxy::FileLock> lock,
                    const std::string& name)
       : lock(std::move(lock)), name(name) {}
-  ChromiumFileLock(const ChromiumFileLock&) = delete;
-  ChromiumFileLock& operator=(const ChromiumFileLock&) = delete;
+  MonyharFileLock(const MonyharFileLock&) = delete;
+  MonyharFileLock& operator=(const MonyharFileLock&) = delete;
 
   const std::unique_ptr<storage::FilesystemProxy::FileLock> lock;
   const std::string name;
@@ -113,11 +113,11 @@ class Retrier {
   DISALLOW_COPY_AND_ASSIGN(Retrier);
 };
 
-class ChromiumSequentialFile : public leveldb::SequentialFile {
+class MonyharSequentialFile : public leveldb::SequentialFile {
  public:
-  ChromiumSequentialFile(const std::string& fname, base::File f)
+  MonyharSequentialFile(const std::string& fname, base::File f)
       : filename_(fname), file_(std::move(f)) {}
-  ~ChromiumSequentialFile() override = default;
+  ~MonyharSequentialFile() override = default;
 
   // Note: This method is relatively hot during leveldb database
   // compaction. Please avoid making them slower.
@@ -146,7 +146,7 @@ class ChromiumSequentialFile : public leveldb::SequentialFile {
   std::string filename_;
   base::File file_;
 
-  DISALLOW_COPY_AND_ASSIGN(ChromiumSequentialFile);
+  DISALLOW_COPY_AND_ASSIGN(MonyharSequentialFile);
 };
 
 void RemoveFile(const Slice& key, void* value) {
@@ -177,11 +177,11 @@ Status ReadFromFileToScratch(uint64_t offset,
 // ensures that pointer location re-use won't re-use an entry in the cache as
 // the entry at |this| will always have been deleted.
 // Files are always cleaned up with |RemoveFile|, which will be called when the
-// ChromiumEvictableRandomAccessFile is deleted, the cache is deleted, or the
+// MonyharEvictableRandomAccessFile is deleted, the cache is deleted, or the
 // file is evicted.
-class ChromiumEvictableRandomAccessFile : public leveldb::RandomAccessFile {
+class MonyharEvictableRandomAccessFile : public leveldb::RandomAccessFile {
  public:
-  ChromiumEvictableRandomAccessFile(base::FilePath file_path,
+  MonyharEvictableRandomAccessFile(base::FilePath file_path,
                                     base::File file,
                                     storage::FilesystemProxy* filesystem,
                                     leveldb::Cache* file_cache)
@@ -200,7 +200,7 @@ class ChromiumEvictableRandomAccessFile : public leveldb::RandomAccessFile {
                                              1 /* charge */, &RemoveFile));
   }
 
-  virtual ~ChromiumEvictableRandomAccessFile() {
+  virtual ~MonyharEvictableRandomAccessFile() {
     file_cache_->Erase(cache_key_);
   }
 
@@ -233,18 +233,18 @@ class ChromiumEvictableRandomAccessFile : public leveldb::RandomAccessFile {
   const base::FilePath filepath_;
   storage::FilesystemProxy* const filesystem_;
   mutable leveldb::Cache* file_cache_;
-  const ChromiumEvictableRandomAccessFile* cache_key_data_;
+  const MonyharEvictableRandomAccessFile* cache_key_data_;
   leveldb::Slice cache_key_;
 
-  DISALLOW_COPY_AND_ASSIGN(ChromiumEvictableRandomAccessFile);
+  DISALLOW_COPY_AND_ASSIGN(MonyharEvictableRandomAccessFile);
 };
 
-class ChromiumRandomAccessFile : public leveldb::RandomAccessFile {
+class MonyharRandomAccessFile : public leveldb::RandomAccessFile {
  public:
-  ChromiumRandomAccessFile(base::FilePath file_path, base::File file)
+  MonyharRandomAccessFile(base::FilePath file_path, base::File file)
       : filepath_(std::move(file_path)), file_(std::move(file)) {}
 
-  virtual ~ChromiumRandomAccessFile() {}
+  virtual ~MonyharRandomAccessFile() {}
 
   // Note: This method is relatively hot during leveldb database
   // compaction. Please avoid making them slower.
@@ -259,15 +259,15 @@ class ChromiumRandomAccessFile : public leveldb::RandomAccessFile {
   const base::FilePath filepath_;
   mutable base::File file_;
 
-  DISALLOW_COPY_AND_ASSIGN(ChromiumRandomAccessFile);
+  DISALLOW_COPY_AND_ASSIGN(MonyharRandomAccessFile);
 };
 
-class ChromiumWritableFile : public leveldb::WritableFile {
+class MonyharWritableFile : public leveldb::WritableFile {
  public:
-  ChromiumWritableFile(const std::string& fname,
+  MonyharWritableFile(const std::string& fname,
                        base::File f,
                        storage::FilesystemProxy* filesystem);
-  ~ChromiumWritableFile() override = default;
+  ~MonyharWritableFile() override = default;
   leveldb::Status Append(const leveldb::Slice& data) override;
   leveldb::Status Close() override;
   leveldb::Status Flush() override;
@@ -285,10 +285,10 @@ class ChromiumWritableFile : public leveldb::WritableFile {
   Type file_type_;
   std::string parent_dir_;
 
-  DISALLOW_COPY_AND_ASSIGN(ChromiumWritableFile);
+  DISALLOW_COPY_AND_ASSIGN(MonyharWritableFile);
 };
 
-ChromiumWritableFile::ChromiumWritableFile(const std::string& fname,
+MonyharWritableFile::MonyharWritableFile(const std::string& fname,
                                            base::File f,
                                            storage::FilesystemProxy* filesystem)
     : filename_(fname),
@@ -305,7 +305,7 @@ ChromiumWritableFile::ChromiumWritableFile(const std::string& fname,
   parent_dir_ = FilePath::FromUTF8Unsafe(fname).DirName().AsUTF8Unsafe();
 }
 
-Status ChromiumWritableFile::SyncParent() {
+Status MonyharWritableFile::SyncParent() {
   TRACE_EVENT0("leveldb", "SyncParent");
 #if defined(OS_POSIX) || defined(OS_FUCHSIA)
   FilePath path = FilePath::FromUTF8Unsafe(parent_dir_);
@@ -324,7 +324,7 @@ Status ChromiumWritableFile::SyncParent() {
   return Status::OK();
 }
 
-Status ChromiumWritableFile::Append(const Slice& data) {
+Status MonyharWritableFile::Append(const Slice& data) {
   DCHECK(file_.IsValid());
   int bytes_written = file_.WriteAtCurrentPos(data.data(), data.size());
   if (static_cast<size_t>(bytes_written) != data.size()) {
@@ -335,18 +335,18 @@ Status ChromiumWritableFile::Append(const Slice& data) {
   return Status::OK();
 }
 
-Status ChromiumWritableFile::Close() {
+Status MonyharWritableFile::Close() {
   file_.Close();
   return Status::OK();
 }
 
-Status ChromiumWritableFile::Flush() {
+Status MonyharWritableFile::Flush() {
   // base::File doesn't do buffered I/O (i.e. POSIX FILE streams) so nothing to
   // flush.
   return Status::OK();
 }
 
-Status ChromiumWritableFile::Sync() {
+Status MonyharWritableFile::Sync() {
   TRACE_EVENT0("leveldb", "WritableFile::Sync");
 
   // leveldb's implicit contract for Sync() is that if this instance is for a
@@ -685,18 +685,18 @@ size_t WriteBufferSize(int64_t disk_size) {
           (kDiskMaxBuffSize - kDiskMinBuffSize));
 }
 
-ChromiumEnv::ChromiumEnv() : ChromiumEnv("LevelDBEnv") {}
+MonyharEnv::MonyharEnv() : MonyharEnv("LevelDBEnv") {}
 
-ChromiumEnv::ChromiumEnv(std::unique_ptr<storage::FilesystemProxy> filesystem)
-    : ChromiumEnv("LevelDBEnv", std::move(filesystem)) {}
+MonyharEnv::MonyharEnv(std::unique_ptr<storage::FilesystemProxy> filesystem)
+    : MonyharEnv("LevelDBEnv", std::move(filesystem)) {}
 
-ChromiumEnv::ChromiumEnv(const std::string& name)
-    : ChromiumEnv(name,
+MonyharEnv::MonyharEnv(const std::string& name)
+    : MonyharEnv(name,
                   std::make_unique<storage::FilesystemProxy>(
                       storage::FilesystemProxy::UNRESTRICTED,
                       base::FilePath())) {}
 
-ChromiumEnv::ChromiumEnv(const std::string& name,
+MonyharEnv::MonyharEnv(const std::string& name,
                          std::unique_ptr<storage::FilesystemProxy> filesystem)
     : filesystem_(std::move(filesystem)), name_(name) {
   DCHECK(filesystem_);
@@ -708,17 +708,17 @@ ChromiumEnv::ChromiumEnv(const std::string& name,
   }
 }
 
-ChromiumEnv::~ChromiumEnv() {
-  // In monyhar, ChromiumEnv is leaked. It'd be nice to add NOTREACHED here to
+MonyharEnv::~MonyharEnv() {
+  // In monyhar, MonyharEnv is leaked. It'd be nice to add NOTREACHED here to
   // ensure that behavior isn't accidentally changed, but there's an instance in
   // a unit test that is deleted.
 }
 
-bool ChromiumEnv::FileExists(const std::string& fname) {
+bool MonyharEnv::FileExists(const std::string& fname) {
   return filesystem_->PathExists(FilePath::FromUTF8Unsafe(fname));
 }
 
-const char* ChromiumEnv::FileErrorString(base::File::Error error) {
+const char* MonyharEnv::FileErrorString(base::File::Error error) {
   switch (error) {
     case base::File::FILE_ERROR_FAILED:
       return "No further details.";
@@ -764,7 +764,7 @@ const char* ChromiumEnv::FileErrorString(base::File::Error error) {
 // Delete unused table backup files - a feature no longer supported.
 // TODO(cmumford): Delete this function once found backup files drop below some
 //                 very small (TBD) number.
-void ChromiumEnv::RemoveBackupFiles(const FilePath& dir) {
+void MonyharEnv::RemoveBackupFiles(const FilePath& dir) {
   base::HistogramBase* histogram = base::BooleanHistogram::FactoryGet(
       "LevelDBEnv.DeleteTableBackupFile",
       base::Histogram::kUmaTargetedHistogramFlag);
@@ -782,12 +782,12 @@ void ChromiumEnv::RemoveBackupFiles(const FilePath& dir) {
 }
 
 // Test must call this *before* opening any random-access files.
-void ChromiumEnv::SetReadOnlyFileLimitForTesting(int max_open_files) {
+void MonyharEnv::SetReadOnlyFileLimitForTesting(int max_open_files) {
   DCHECK(!file_cache_ || file_cache_->TotalCharge() == 0);
   file_cache_.reset(leveldb::NewLRUCache(max_open_files));
 }
 
-Status ChromiumEnv::GetChildren(const std::string& dir,
+Status MonyharEnv::GetChildren(const std::string& dir,
                                 std::vector<std::string>* result) {
   FilePath dir_path = FilePath::FromUTF8Unsafe(dir);
   RemoveBackupFiles(dir_path);
@@ -808,7 +808,7 @@ Status ChromiumEnv::GetChildren(const std::string& dir,
   return Status::OK();
 }
 
-Status ChromiumEnv::RemoveFile(const std::string& fname) {
+Status MonyharEnv::RemoveFile(const std::string& fname) {
   Status result;
   FilePath fname_filepath = FilePath::FromUTF8Unsafe(fname);
   if (!filesystem_->DeleteFile(fname_filepath)) {
@@ -817,7 +817,7 @@ Status ChromiumEnv::RemoveFile(const std::string& fname) {
   return result;
 }
 
-Status ChromiumEnv::CreateDir(const std::string& name) {
+Status MonyharEnv::CreateDir(const std::string& name) {
   Status result;
   base::File::Error error = base::File::FILE_OK;
   Retrier retrier;
@@ -829,7 +829,7 @@ Status ChromiumEnv::CreateDir(const std::string& name) {
   return MakeIOError(name, "Could not create directory.", kCreateDir, error);
 }
 
-Status ChromiumEnv::RemoveDir(const std::string& name) {
+Status MonyharEnv::RemoveDir(const std::string& name) {
   Status result;
   if (!filesystem_->DeleteFile(FilePath::FromUTF8Unsafe(name))) {
     result = MakeIOError(name, "Could not delete directory.", kRemoveDir);
@@ -837,7 +837,7 @@ Status ChromiumEnv::RemoveDir(const std::string& name) {
   return result;
 }
 
-Status ChromiumEnv::GetFileSize(const std::string& fname, uint64_t* size) {
+Status MonyharEnv::GetFileSize(const std::string& fname, uint64_t* size) {
   Status s;
   absl::optional<base::File::Info> info =
       filesystem_->GetFileInfo(base::FilePath::FromUTF8Unsafe(fname));
@@ -850,7 +850,7 @@ Status ChromiumEnv::GetFileSize(const std::string& fname, uint64_t* size) {
   return s;
 }
 
-Status ChromiumEnv::RenameFile(const std::string& src, const std::string& dst) {
+Status MonyharEnv::RenameFile(const std::string& src, const std::string& dst) {
   Status result;
   FilePath src_file_path = FilePath::FromUTF8Unsafe(src);
   if (!filesystem_->PathExists(src_file_path))
@@ -874,7 +874,7 @@ Status ChromiumEnv::RenameFile(const std::string& src, const std::string& dst) {
   return MakeIOError(src, buf, kRenameFile, error);
 }
 
-Status ChromiumEnv::LockFile(const std::string& fname, FileLock** lock) {
+Status MonyharEnv::LockFile(const std::string& fname, FileLock** lock) {
   *lock = nullptr;
   Status result;
   const base::FilePath path = base::FilePath::FromUTF8Unsafe(fname);
@@ -888,13 +888,13 @@ Status ChromiumEnv::LockFile(const std::string& fname, FileLock** lock) {
                        lock_result.error());
   }
 
-  *lock = new ChromiumFileLock(std::move(lock_result.value()), fname);
+  *lock = new MonyharFileLock(std::move(lock_result.value()), fname);
   return result;
 }
 
-Status ChromiumEnv::UnlockFile(FileLock* lock) {
-  std::unique_ptr<ChromiumFileLock> my_lock(
-      reinterpret_cast<ChromiumFileLock*>(lock));
+Status MonyharEnv::UnlockFile(FileLock* lock) {
+  std::unique_ptr<MonyharFileLock> my_lock(
+      reinterpret_cast<MonyharFileLock*>(lock));
   Status result = Status::OK();
 
   base::File::Error error_code = my_lock->lock->Release();
@@ -905,7 +905,7 @@ Status ChromiumEnv::UnlockFile(FileLock* lock) {
   return result;
 }
 
-Status ChromiumEnv::GetTestDirectory(std::string* path) {
+Status MonyharEnv::GetTestDirectory(std::string* path) {
   mu_.Acquire();
   if (test_directory_.empty()) {
     if (!base::CreateNewTempDirectory(kLevelDBTestDirectoryPrefix,
@@ -920,7 +920,7 @@ Status ChromiumEnv::GetTestDirectory(std::string* path) {
   return Status::OK();
 }
 
-Status ChromiumEnv::NewLogger(const std::string& fname,
+Status MonyharEnv::NewLogger(const std::string& fname,
                               leveldb::Logger** result) {
   FilePath path = FilePath::FromUTF8Unsafe(fname);
   FileErrorOr<base::File> open_result = filesystem_->OpenFile(
@@ -930,12 +930,12 @@ Status ChromiumEnv::NewLogger(const std::string& fname,
     return MakeIOError(fname, "Unable to create log file", kNewLogger,
                        open_result.error());
   } else {
-    *result = new leveldb::ChromiumLogger(std::move(open_result.value()));
+    *result = new leveldb::MonyharLogger(std::move(open_result.value()));
     return Status::OK();
   }
 }
 
-Status ChromiumEnv::NewSequentialFile(const std::string& fname,
+Status MonyharEnv::NewSequentialFile(const std::string& fname,
                                       leveldb::SequentialFile** result) {
   FilePath path = FilePath::FromUTF8Unsafe(fname);
   FileErrorOr<base::File> open_result = filesystem_->OpenFile(
@@ -945,12 +945,12 @@ Status ChromiumEnv::NewSequentialFile(const std::string& fname,
     return MakeIOError(fname, "Unable to create sequential file",
                        kNewSequentialFile, open_result.error());
   } else {
-    *result = new ChromiumSequentialFile(fname, std::move(open_result.value()));
+    *result = new MonyharSequentialFile(fname, std::move(open_result.value()));
     return Status::OK();
   }
 }
 
-Status ChromiumEnv::NewRandomAccessFile(const std::string& fname,
+Status MonyharEnv::NewRandomAccessFile(const std::string& fname,
                                         leveldb::RandomAccessFile** result) {
   base::FilePath file_path = FilePath::FromUTF8Unsafe(fname);
   FileErrorOr<base::File> open_result = filesystem_->OpenFile(
@@ -958,12 +958,12 @@ Status ChromiumEnv::NewRandomAccessFile(const std::string& fname,
   if (!open_result.is_error()) {
     base::File file = std::move(open_result.value());
     if (file_cache_) {
-      *result = new ChromiumEvictableRandomAccessFile(
+      *result = new MonyharEvictableRandomAccessFile(
           std::move(file_path), std::move(file), filesystem_.get(),
           file_cache_.get());
     } else {
       *result =
-          new ChromiumRandomAccessFile(std::move(file_path), std::move(file));
+          new MonyharRandomAccessFile(std::move(file_path), std::move(file));
     }
     return Status::OK();
   }
@@ -972,7 +972,7 @@ Status ChromiumEnv::NewRandomAccessFile(const std::string& fname,
                      kNewRandomAccessFile, open_result.error());
 }
 
-Status ChromiumEnv::NewWritableFile(const std::string& fname,
+Status MonyharEnv::NewWritableFile(const std::string& fname,
                                     leveldb::WritableFile** result) {
   FilePath path = FilePath::FromUTF8Unsafe(fname);
   FileErrorOr<base::File> open_result = filesystem_->OpenFile(
@@ -982,12 +982,12 @@ Status ChromiumEnv::NewWritableFile(const std::string& fname,
     return MakeIOError(fname, "Unable to create writable file",
                        kNewWritableFile, open_result.error());
   }
-  *result = new ChromiumWritableFile(fname, std::move(open_result.value()),
+  *result = new MonyharWritableFile(fname, std::move(open_result.value()),
                                      filesystem_.get());
   return Status::OK();
 }
 
-Status ChromiumEnv::NewAppendableFile(const std::string& fname,
+Status MonyharEnv::NewAppendableFile(const std::string& fname,
                                       leveldb::WritableFile** result) {
   FilePath path = FilePath::FromUTF8Unsafe(fname);
   FileErrorOr<base::File> open_result = filesystem_->OpenFile(
@@ -997,16 +997,16 @@ Status ChromiumEnv::NewAppendableFile(const std::string& fname,
     return MakeIOError(fname, "Unable to create appendable file",
                        kNewAppendableFile, open_result.error());
   }
-  *result = new ChromiumWritableFile(fname, std::move(open_result.value()),
+  *result = new MonyharWritableFile(fname, std::move(open_result.value()),
                                      filesystem_.get());
   return Status::OK();
 }
 
-uint64_t ChromiumEnv::NowMicros() {
+uint64_t MonyharEnv::NowMicros() {
   return base::TimeTicks::Now().ToInternalValue();
 }
 
-void ChromiumEnv::SleepForMicroseconds(int micros) {
+void MonyharEnv::SleepForMicroseconds(int micros) {
   // Round up to the next millisecond.
   base::PlatformThread::Sleep(base::TimeDelta::FromMicroseconds(micros));
 }
@@ -1032,7 +1032,7 @@ class Thread : public base::PlatformThread::Delegate {
   DISALLOW_COPY_AND_ASSIGN(Thread);
 };
 
-void ChromiumEnv::Schedule(ScheduleFunc* function, void* arg) {
+void MonyharEnv::Schedule(ScheduleFunc* function, void* arg) {
   // The BLOCK_SHUTDOWN is required to avoid shutdown hangs. The scheduled
   // tasks may be blocking foreground threads waiting for their completions.
   // see: https://crbug.com/1086185.
@@ -1042,7 +1042,7 @@ void ChromiumEnv::Schedule(ScheduleFunc* function, void* arg) {
                              base::BindOnce(function, arg));
 }
 
-void ChromiumEnv::StartThread(void (*function)(void* arg), void* arg) {
+void MonyharEnv::StartThread(void (*function)(void* arg), void* arg) {
   new Thread(function, arg);  // Will self-delete.
 }
 
@@ -1417,7 +1417,7 @@ leveldb::Status RewriteDB(const leveldb_env::Options& options,
   DCHECK(options.create_if_missing);
   if (leveldb_chrome::IsMemEnv(options.env))
     return Status::OK();
-  TRACE_EVENT1("leveldb", "ChromiumEnv::RewriteDB", "name", name);
+  TRACE_EVENT1("leveldb", "MonyharEnv::RewriteDB", "name", name);
   leveldb::Status s;
   std::string tmp_name = DatabaseNameForRewriteDB(name);
   if (options.env->FileExists(tmp_name)) {
@@ -1472,7 +1472,7 @@ leveldb::Slice MakeSlice(base::span<const uint8_t> s) {
 namespace leveldb {
 
 Env* Env::Default() {
-  static base::NoDestructor<leveldb_env::ChromiumEnv> default_env;
+  static base::NoDestructor<leveldb_env::MonyharEnv> default_env;
   return default_env.get();
 }
 

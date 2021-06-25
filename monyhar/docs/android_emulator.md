@@ -14,7 +14,7 @@ target_cpu = "x86"  # or "x64" if you have an x86_64 emulator
 
 ### Using Prebuilt CIPD packages
 
-Chromium has a set of prebuilt images stored as CIPD packages. These are used
+Monyhar has a set of prebuilt images stored as CIPD packages. These are used
 by various builders to run tests on the emulator. Their configurations are
 currently stored in `//tools/android/avd/proto`.
 

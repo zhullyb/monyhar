@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,23 +13,23 @@ namespace mojo {
 namespace test {
 
 // An implementation of a hypothetical Rect type specifically for consumers in
-// in Chromium.
-class RectChromium {
+// in Monyhar.
+class RectMonyhar {
  public:
-  RectChromium() {}
-  RectChromium(const RectChromium& other)
+  RectMonyhar() {}
+  RectMonyhar(const RectMonyhar& other)
       : x_(other.x_),
         y_(other.y_),
         width_(other.width_),
         height_(other.height_) {}
-  RectChromium(int x, int y, int width, int height) :
+  RectMonyhar(int x, int y, int width, int height) :
       x_(x), y_(y), width_(width), height_(height) {
     DCHECK_GE(width_, 0);
     DCHECK_GE(height_, 0);
   }
-  ~RectChromium() {}
+  ~RectMonyhar() {}
 
-  RectChromium& operator=(const RectChromium& other) {
+  RectMonyhar& operator=(const RectMonyhar& other) {
     x_ = other.x_;
     y_ = other.y_;
     width_ = other.width_;
@@ -59,12 +59,12 @@ class RectChromium {
 
   auto TieForCmp() const { return std::tie(x_, y_, width_, height_); }
 
-  bool operator==(const RectChromium& other) const {
+  bool operator==(const RectMonyhar& other) const {
     return TieForCmp() == other.TieForCmp();
   }
-  bool operator!=(const RectChromium& other) const { return !(*this == other); }
+  bool operator!=(const RectMonyhar& other) const { return !(*this == other); }
 
-  bool operator<(const RectChromium& other) const {
+  bool operator<(const RectMonyhar& other) const {
     return TieForCmp() < other.TieForCmp();
   }
 
@@ -81,8 +81,8 @@ class RectChromium {
 namespace std {
 
 template <>
-struct hash<mojo::test::RectChromium> {
-  size_t operator()(const mojo::test::RectChromium& value) {
+struct hash<mojo::test::RectMonyhar> {
+  size_t operator()(const mojo::test::RectMonyhar& value) {
     // Terrible hash function:
     return (std::hash<int>()(value.x()) ^ std::hash<int>()(value.y()) ^
             std::hash<int>()(value.width()) ^ std::hash<int>()(value.height()));

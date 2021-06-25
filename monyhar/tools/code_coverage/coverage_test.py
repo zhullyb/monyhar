@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Tests for code coverage tools."""
@@ -13,7 +13,7 @@ import unittest
 
 # Appends third_party/ so that coverage_utils can import jinja2 from
 # third_party/, note that this is not done inside coverage_utils because
-# coverage_utils is also used outside of Chromium source tree.
+# coverage_utils is also used outside of Monyhar source tree.
 sys.path.append(
     os.path.join(
         os.path.dirname(__file__), os.path.pardir, os.path.pardir,
@@ -182,7 +182,7 @@ class CoverageTest(unittest.TestCase):
     self.assertFalse(
         os.path.exists(os.path.join(output_dir, 'component_view_index.html')))
 
-    # Testcase #2. Run the script for post processing in Chromium tree. This is
+    # Testcase #2. Run the script for post processing in Monyhar tree. This is
     # the workflow of the code coverage bots.
     instr_profile_path = os.path.join(self.REPORT_DIR_1, self.PLATFORM,
                                       'coverage.profdata')

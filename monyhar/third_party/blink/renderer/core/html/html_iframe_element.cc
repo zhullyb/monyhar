@@ -240,7 +240,7 @@ void HTMLIFrameElement::ParseAttribute(
     UseCounter::Count(GetDocument(), WebFeature::kTrustTokenIframe);
     trust_token_ = value;
   } else {
-    // Websites picked up a Chromium article that used this non-specified
+    // Websites picked up a Monyhar article that used this non-specified
     // attribute which ended up changing shape after the specification process.
     // This error message and use count will help developers to move to the
     // proper solution.

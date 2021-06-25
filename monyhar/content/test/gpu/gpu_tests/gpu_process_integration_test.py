@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -15,7 +15,7 @@ from gpu_tests import path_util
 
 _GPU_PAGE_TIMEOUT = 30
 
-data_path = os.path.join(path_util.GetChromiumSrcDir(), 'content', 'test',
+data_path = os.path.join(path_util.GetMonyharSrcDir(), 'content', 'test',
                          'data')
 
 test_harness_script = r"""
@@ -80,7 +80,7 @@ class GpuProcessIntegrationTest(gpu_integration_test.GpuIntegrationTest):
         # https://github.com/catapult-project/catapult/issues/3122
         '--no-first-run',
         # Disable:
-        #   Do you want the application "Chromium Helper.app" to accept incoming
+        #   Do you want the application "Monyhar Helper.app" to accept incoming
         #   network connections?
         # dialogs on macOS. crbug.com/969559
         cba.DISABLE_DEVICE_DISCOVERY_NOTIFICATIONS,

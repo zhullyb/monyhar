@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,7 +34,7 @@ namespace {
 
 using ::testing::HasSubstr;
 
-// TODO(timsteele): Should use PathService here. See Chromium Issue 3113.
+// TODO(timsteele): Should use PathService here. See Monyhar Issue 3113.
 const base::FilePath::CharType kDocRoot[] =
     FILE_PATH_LITERAL("chrome/test/data");
 

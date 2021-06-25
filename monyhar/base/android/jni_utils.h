@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ namespace base {
 
 namespace android {
 
-// Gets a ClassLoader instance capable of loading Chromium java classes.
+// Gets a ClassLoader instance capable of loading Monyhar java classes.
 // This should be called either from JNI_OnLoad or from within a method called
 // via JNI from Java.
 BASE_EXPORT ScopedJavaLocalRef<jobject> GetClassLoader(JNIEnv* env);

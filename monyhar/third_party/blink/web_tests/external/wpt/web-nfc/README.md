@@ -4,7 +4,7 @@ the `WebNFCTest` interfaces, which should emulate platform Web NFC backends.
 The `WebNFCTest` interface is defined as:
 
 ```
-  class NFCTestChromium {
+  class NFCTestMonyhar {
     initialize();  // Sets up the testing environment.
     async reset(); // Frees the resources.
     getMockNFC(); // Returns `MockNFC` interface.
@@ -21,7 +21,7 @@ The `WebNFCTest` interface is defined as:
   };
 ```
 
-The Chromium implementation of the `WebNFCTest` interface is located in
+The Monyhar implementation of the `WebNFCTest` interface is located in
 [nfc-mock.js](../resources/monyhar/nfc-mock.js).
 
 Other browser vendors should provide their own implementations of

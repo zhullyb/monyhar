@@ -1,6 +1,6 @@
-# Chromium-based Fuchsia services
+# Monyhar-based Fuchsia services
 This directory contains implementation code for various Fuchsia services living
-in the Chromium repository. To build Chromium on Fuchsia, check this
+in the Monyhar repository. To build Monyhar on Fuchsia, check this
 [documentation](../docs/fuchsia/build_instructions.md).
 
 [TOC]
@@ -9,7 +9,7 @@ in the Chromium repository. To build Chromium on Fuchsia, check this
 Each of the following subdirectories contain code for a specific Fuchsia
 service:
 * `./engine` contains the WebEngine implementation. The WebEngine enables
-Fuchsia applications to embed Chromium frames for rendering web content.
+Fuchsia applications to embed Monyhar frames for rendering web content.
 * `./http` contains an implementation for the Fuchsia HTTP service.
 * `./runners`contains implementations of Fuchsia `sys.runner`.
     * `./runners/cast` Enables the Fuchsia system to launch cast applications.
@@ -76,7 +76,7 @@ debugging tips.
 
 ### Building and deploying the WebRunner service
 
-When you build `web_runner`, Chromium will automatically generate scripts for
+When you build `web_runner`, Monyhar will automatically generate scripts for
 you that will automatically provision a device with Fuchsia and then install
 `web_runner` and its dependencies.
 
@@ -124,7 +124,7 @@ To build and run `web_runner`, follow these steps:
 6. Press Alt-Esc to switch back to graphical view if needed. The browser
 window should be displayed and ready to use.
 
-7. You can deploy and run new versions of Chromium without needing to reboot.
+7. You can deploy and run new versions of Monyhar without needing to reboot.
 
     First kill any running processes:
 

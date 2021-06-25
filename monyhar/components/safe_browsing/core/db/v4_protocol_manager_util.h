@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -93,7 +93,7 @@ std::string GetReportUrl(
     const bool is_enhanced_protection = false);
 
 // Different types of threats that SafeBrowsing protects against. This is the
-// type that's returned to the clients of SafeBrowsing in Chromium.
+// type that's returned to the clients of SafeBrowsing in Monyhar.
 // These values are persisted to logs. Entries should not be renumbered and
 // numeric values should never be reused.
 // GENERATED_JAVA_ENUM_PACKAGE: org.monyhar.components.safe_browsing

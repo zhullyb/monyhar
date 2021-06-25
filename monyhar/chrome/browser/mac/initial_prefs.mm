@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,9 +28,9 @@ const char kLegacyInitialPreferencesFileName[] =
     "Google Chrome Master Preferences";
 #else
 const NSSearchPathDirectory kSearchPath = NSApplicationSupportDirectory;
-const char kInitialPreferencesDirectory[] = "Chromium";
-const char kInitialPreferencesFileName[] = "Chromium Initial Preferences";
-const char kLegacyInitialPreferencesFileName[] = "Chromium Master Preferences";
+const char kInitialPreferencesDirectory[] = "Monyhar";
+const char kInitialPreferencesFileName[] = "Monyhar Initial Preferences";
+const char kLegacyInitialPreferencesFileName[] = "Monyhar Master Preferences";
 #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
 
 }  // namespace
@@ -48,7 +48,7 @@ base::FilePath InitialPrefsPath() {
   // On official builds, try
   //~/Library/Application Support/Google/Chrome/Google Chrome Master Preferences
   // On monyhar builds, try
-  //~/Library/Application Support/Chromium/Chromium Master Preferences
+  //~/Library/Application Support/Monyhar/Monyhar Master Preferences
   // This intentionally doesn't use eventual --user-data-dir overrides.
   base::FilePath user_application_support_path;
   if (chrome::GetDefaultUserDataDirectory(&user_application_support_path)) {
@@ -65,7 +65,7 @@ base::FilePath InitialPrefsPath() {
 
   // On official builds, try /Library/Google/Google Chrome Master Preferences
   // On monyhar builds, try
-  // /Library/Application Support/Chromium/Chromium Master Preferences
+  // /Library/Application Support/Monyhar/Monyhar Master Preferences
   base::FilePath search_path;
   if (!base::mac::GetLocalDirectory(kSearchPath, &search_path))
     return base::FilePath();

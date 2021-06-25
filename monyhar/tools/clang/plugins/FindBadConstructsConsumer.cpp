@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -448,7 +448,7 @@ void FindBadConstructsConsumer::CheckCtorDtorWeight(
           // isInlined() is a more reliable check than hasInlineBody(), but
           // unfortunately, it results in warnings for implicit copy/move
           // constructors in the previously mentioned situation. To preserve
-          // compatibility with existing Chromium code, only warn if it's an
+          // compatibility with existing Monyhar code, only warn if it's an
           // explicitly defaulted copy or move constructor.
           ReportIfSpellingLocNotIgnored(it->getInnerLocStart(),
                                         diag_inline_complex_ctor_);
@@ -766,7 +766,7 @@ FindBadConstructsConsumer::CheckRecordForRefcountIssue(
   return None;
 }
 
-// Returns true if |base| specifies one of the Chromium reference counted
+// Returns true if |base| specifies one of the Monyhar reference counted
 // classes (base::RefCounted / base::RefCountedThreadSafe).
 bool FindBadConstructsConsumer::IsRefCounted(
     const CXXBaseSpecifier* base,
@@ -805,7 +805,7 @@ bool FindBadConstructsConsumer::HasPublicDtorCallback(
     void* user_data) {
   // Only examine paths that have public inheritance, as they are the
   // only ones which will result in the destructor potentially being
-  // exposed. This check is largely redundant, as Chromium code should be
+  // exposed. This check is largely redundant, as Monyhar code should be
   // exclusively using public inheritance.
   if (path.Access != AS_public)
     return false;
@@ -842,7 +842,7 @@ unsigned FindBadConstructsConsumer::DiagnosticForIssue(RefcountIssue issue) {
 // issues and, if so, print them as warnings/errors based on the current
 // value of getErrorLevel().
 //
-// If |record| is a C++ class, and if it inherits from one of the Chromium
+// If |record| is a C++ class, and if it inherits from one of the Monyhar
 // ref-counting classes (base::RefCounted / base::RefCountedThreadSafe),
 // ensure that there are no public destructors in the class hierarchy. This
 // is to guard against accidentally stack-allocating a RefCounted class or

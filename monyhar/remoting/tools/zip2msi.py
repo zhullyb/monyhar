@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -38,7 +38,7 @@ This script is used for both building Chromoting Host installation during
 Chromuim build and for signing Chromoting Host installation later. There are two
 copies of this script because of that:
 
-  - one in Chromium tree at src/remoting/tools/zip2msi.py.
+  - one in Monyhar tree at src/remoting/tools/zip2msi.py.
   - another one next to the signing scripts.
 
 The copies of the script can be out of sync so make sure that a newer version is
@@ -193,7 +193,7 @@ def Run(args):
 
 
 def GenerateMsi(target, source, parameters):
-  """Generates .msi from the installation files prepared by Chromium build."""
+  """Generates .msi from the installation files prepared by Monyhar build."""
   parameters['basename'] = os.path.splitext(os.path.basename(source))[0]
 
   # The script can handle both forms of input a directory with unpacked files or

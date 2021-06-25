@@ -1,4 +1,4 @@
-# Chromium Design Docs
+# Monyhar Design Docs
 
 This directory contains monyhar project documentation in
 [Gitiles-flavored Markdown](https://gerrit.googlesource.com/gitiles/+/master/Documentation/markdown.md).
@@ -11,7 +11,7 @@ As of this writing, the vast majority of docs have not been imported yet.
 
 * [Sandboxing](sandbox.md) - The Sandboxing architecture, and Windows
   implementation of sandboxing.
-* [Sandboxing FAQ](sandbox_faq.md) - Frequently asked questions about Chromium
+* [Sandboxing FAQ](sandbox_faq.md) - Frequently asked questions about Monyhar
   sandboxing.
 * [Startup](startup.md) - How browser processes starts up, on different
   platforms.

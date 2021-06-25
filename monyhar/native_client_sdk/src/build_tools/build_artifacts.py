@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@
 This script builds binary components of the Native Client SDK, create tarballs
 for them, and uploads them to Google Cloud Storage.
 
-This prevents a source dependency on the Chromium/NaCl tree in the Native
+This prevents a source dependency on the Monyhar/NaCl tree in the Native
 Client SDK repo.
 """
 
@@ -346,8 +346,8 @@ def MakeGypArchives():
   join = os.path.join
   gyp_monyhar = join(SRC_DIR, 'build', 'gyp_monyhar')
   # TODO(binji): gyp_nacl doesn't build properly on Windows anymore; it only
-  # can use VS2010, not VS2013 which is now required by the Chromium repo. NaCl
-  # needs to be updated to perform the same logic as Chromium in detecting VS,
+  # can use VS2010, not VS2013 which is now required by the Monyhar repo. NaCl
+  # needs to be updated to perform the same logic as Monyhar in detecting VS,
   # which can now exist in the depot_tools directory.
   # See https://code.google.com/p/nativeclient/issues/detail?id=4022
   #

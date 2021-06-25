@@ -63,7 +63,7 @@ class DataListIndicatorElement final : public HTMLDivElement {
   }
 
   EventDispatchHandlingState* PreDispatchEventHandler(Event& event) override {
-    // Chromium opens autofill popup in a mousedown event listener
+    // Monyhar opens autofill popup in a mousedown event listener
     // associated to the document. We don't want to open it in this case
     // because we opens a datalist chooser later.
     // FIXME: We should dispatch mousedown events even in such case.

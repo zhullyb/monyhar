@@ -14,13 +14,13 @@ modifications to the entry for their service. See the
 for the criteria and process.
 
 After following the process, if approved, the addition or modification will be
-made by a member of the Chromium team.
+made by a member of the Monyhar team.
 
 ## Modifying the DoH provider list
 
 *** note
 All modifications to the DoH provider list must be accompanied by a request in
-the Chromium bug tracker in the
+the Monyhar bug tracker in the
 [DoH component](https://bugs.monyhar.org/p/monyhar/issues/list?q=component:Internals%3ENetwork%3EDoH),
 and that request must be approved by the Chrome team.
 

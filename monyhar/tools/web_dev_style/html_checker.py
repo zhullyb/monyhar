@@ -1,9 +1,9 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 """
-Presubmit for Chromium HTML resources. See chrome/browser/PRESUBMIT.py.
+Presubmit for Monyhar HTML resources. See chrome/browser/PRESUBMIT.py.
 """
 
 import regex_check
@@ -96,7 +96,7 @@ class HtmlChecker(object):
         'Please use quotes around Polymer bindings (i.e. attr="[[prop]]")')
 
   def RunChecks(self):
-    """Check for violations of the Chromium web development style guide. See
+    """Check for violations of the Monyhar web development style guide. See
        https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/web/web.md
     """
     results = []

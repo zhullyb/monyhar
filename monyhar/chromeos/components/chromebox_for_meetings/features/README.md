@@ -11,7 +11,7 @@ $ reboot ui
 ```
 
 This feature flag is controlled by a server-side experiment that enables
-Chromium to interact with mojom based Chromebox for Meetings services.
+Monyhar to interact with mojom based Chromebox for Meetings services.
 
 ### ERPTelemetryService (Feature Param)
 

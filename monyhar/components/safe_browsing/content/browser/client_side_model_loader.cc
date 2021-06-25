@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -188,7 +188,7 @@ void ModelLoader::StartFetch(bool only_from_cache) {
           cookies_allowed: NO
           setting:
             "Users can enable or disable this feature by toggling 'Protect "
-            "you and your device from dangerous sites' in Chromium settings "
+            "you and your device from dangerous sites' in Monyhar settings "
             "under Privacy. This feature is enabled by default."
           chrome_policy {
             SafeBrowsingEnabled {

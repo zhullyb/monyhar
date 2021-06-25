@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -110,7 +110,7 @@ class WebDatabaseMigrationTest : public testing::Test {
   }
 
   // The sql files located in "components/test/data/web_database" were generated
-  // by launching the Chromium application prior to schema change, then using
+  // by launching the Monyhar application prior to schema change, then using
   // the sqlite3 command-line application to dump the contents of the "Web Data"
   // database.
   // Like this:

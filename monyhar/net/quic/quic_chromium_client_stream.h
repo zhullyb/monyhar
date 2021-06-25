@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -36,7 +36,7 @@ namespace net {
 
 // A client-initiated ReliableQuicStream.  Instances of this class
 // are owned by the QuicClientSession which created them.
-class NET_EXPORT_PRIVATE QuicChromiumClientStream
+class NET_EXPORT_PRIVATE QuicMonyharClientStream
     : public quic::QuicSpdyStream {
  public:
   // Wrapper for interacting with the session in a restricted fashion.
@@ -146,10 +146,10 @@ class NET_EXPORT_PRIVATE QuicChromiumClientStream
     Idempotency GetRequestIdempotency() const;
 
    private:
-    friend class QuicChromiumClientStream;
+    friend class QuicMonyharClientStream;
 
     // Constucts a new Handle for |stream|.
-    explicit Handle(QuicChromiumClientStream* stream);
+    explicit Handle(QuicMonyharClientStream* stream);
 
     // Methods invoked by the stream.
     void OnEarlyHintsAvailable();
@@ -173,7 +173,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientStream
 
     int HandleIOComplete(int rv);
 
-    QuicChromiumClientStream* stream_;  // Unowned.
+    QuicMonyharClientStream* stream_;  // Unowned.
 
     bool may_invoke_callbacks_;  // True when callbacks may be invoked.
 
@@ -215,20 +215,20 @@ class NET_EXPORT_PRIVATE QuicChromiumClientStream
     DISALLOW_COPY_AND_ASSIGN(Handle);
   };
 
-  QuicChromiumClientStream(
+  QuicMonyharClientStream(
       quic::QuicStreamId id,
       quic::QuicSpdyClientSessionBase* session,
       quic::StreamType type,
       const NetLogWithSource& net_log,
       const NetworkTrafficAnnotationTag& traffic_annotation);
-  QuicChromiumClientStream(
+  QuicMonyharClientStream(
       quic::PendingStream* pending,
       quic::QuicSpdyClientSessionBase* session,
       quic::StreamType type,
       const NetLogWithSource& net_log,
       const NetworkTrafficAnnotationTag& traffic_annotation);
 
-  ~QuicChromiumClientStream() override;
+  ~QuicMonyharClientStream() override;
 
   // quic::QuicSpdyStream
   void OnInitialHeadersComplete(
@@ -266,7 +266,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientStream
                         bool fin);
 
   // Creates a new Handle for this stream. Must only be called once.
-  std::unique_ptr<QuicChromiumClientStream::Handle> CreateHandle();
+  std::unique_ptr<QuicMonyharClientStream::Handle> CreateHandle();
 
   // Clears |handle_| from this stream.
   void ClearHandle();
@@ -347,9 +347,9 @@ class NET_EXPORT_PRIVATE QuicChromiumClientStream
   };
   base::circular_deque<EarlyHints> early_hints_;
 
-  base::WeakPtrFactory<QuicChromiumClientStream> weak_factory_{this};
+  base::WeakPtrFactory<QuicMonyharClientStream> weak_factory_{this};
 
-  DISALLOW_COPY_AND_ASSIGN(QuicChromiumClientStream);
+  DISALLOW_COPY_AND_ASSIGN(QuicMonyharClientStream);
 };
 
 }  // namespace net

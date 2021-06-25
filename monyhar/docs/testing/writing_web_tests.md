@@ -268,7 +268,7 @@ and
 has methods that simulate events input such as keyboard / mouse input and
 drag-and-drop.
 
-Here is a UML diagram of how the `testRunner` bindings fit into Chromium.
+Here is a UML diagram of how the `testRunner` bindings fit into Monyhar.
 
 [![UML of testRunner bindings configuring platform implementation](https://docs.google.com/drawings/u/1/d/1KNRNjlxK0Q3Tp8rKxuuM5mpWf4OJQZmvm9_kpwu_Wwg/export/svg?id=1KNRNjlxK0Q3Tp8rKxuuM5mpWf4OJQZmvm9_kpwu_Wwg&pageid=p)](https://docs.google.com/drawings/d/1KNRNjlxK0Q3Tp8rKxuuM5mpWf4OJQZmvm9_kpwu_Wwg/edit)
 

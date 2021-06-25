@@ -1,5 +1,5 @@
 # File: ../../third_party/androidx/androidx_fragment.flags
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -15,7 +15,7 @@
 }
 
 # File: ../../third_party/androidx/androidx_mediarouter.flags
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -27,11 +27,11 @@
 }
 
 # File: ../../base/android/proguard/monyhar_apk.flags
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# Contains flags that we'd like all Chromium .apks to use.
+# Contains flags that we'd like all Monyhar .apks to use.
 
 # Keep line number information, useful for stack traces.
 -keepattributes SourceFile,LineNumberTable
@@ -139,7 +139,7 @@
 }
 
 # File: ../../base/android/proguard/monyhar_code.flags
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -251,7 +251,7 @@
 }
 
 # File: ../../build/android/dcheck_is_off.flags
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -270,7 +270,7 @@
 }
 
 # File: ../../chrome/android/proguard/main.flags
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -377,7 +377,7 @@
 -dontwarn com.google.protobuf.nano.NanoEnumValue
 
 # File: ../../android_webview/support_library/boundary_interfaces/proguard.flags
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -388,7 +388,7 @@
 -keep public class org.monyhar.support_lib_boundary.* { public *; }
 
 # File: ../../chrome/android/features/start_surface/internal/proguard.flags
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -419,7 +419,7 @@
 }
 
 # File: ../../android_webview/nonembedded/java/proguard.flags
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -429,7 +429,7 @@
 
 # Keep the factory and its public members; it's the main entry point used by the
 # framework.
--keep class com.android.webview.monyhar.WebViewChromiumFactoryProvider {
+-keep class com.android.webview.monyhar.WebViewMonyharFactoryProvider {
     public *;
 }
 
@@ -441,7 +441,7 @@
     public *;
 }
 
--keep class com.android.webview.monyhar.WebViewChromiumFactoryProviderFor* {
+-keep class com.android.webview.monyhar.WebViewMonyharFactoryProviderFor* {
     public *;
 }
 
@@ -451,7 +451,7 @@
 
 # This is the main entry point for APIs. It is kept to make developing with
 # unreleased Android easier.
--keep class com.android.webview.monyhar.WebViewChromium {
+-keep class com.android.webview.monyhar.WebViewMonyhar {
   public *;
 }
 

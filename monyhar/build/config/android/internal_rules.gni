@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -2208,13 +2208,13 @@ if (enable_java_templates) {
   #
   #   shared_resources_allowlist_locales: (optional)
   #     If shared_resources_allowlist is used, provide an optional list of
-  #     Chromium locale names to determine which localized shared string
+  #     Monyhar locale names to determine which localized shared string
   #     resources to put in the final output, even if aapt_locale_allowlist
   #     is defined to a smaller subset.
   #
   #   aapt_locale_allowlist: (optional)
   #     Restrict compiled locale-dependent resources to a specific allowlist.
-  #     NOTE: This is a list of Chromium locale names, not Android ones.
+  #     NOTE: This is a list of Monyhar locale names, not Android ones.
   #
   #   r_java_root_package_name: (optional)
   #     Short package name for this target's root R java file (ex. input of
@@ -2975,7 +2975,7 @@ if (enable_java_templates) {
   #    javac:processor_classes
   #  javac_jar_path: Path to the final output .jar file.
   #  javac_args: Optional list of extra arguments to pass to javac.
-  #  monyhar_code: Whether this corresponds to Chromium-specific sources.
+  #  monyhar_code: Whether this corresponds to Monyhar-specific sources.
   #  requires_android: True if these sources can only run on Android.
   #  additional_jar_files: Optional list of files to copy into the resulting
   #    .jar file (by default, only .class files are put there). Each entry
@@ -3283,14 +3283,14 @@ if (enable_java_templates) {
   #  public_deps: Dependencies that this target exposes as part of its public API.
   #    public_deps do not need to be listed in both the 'deps' and 'public_deps' lists.
   #  testonly: True iff target should only be used for tests.
-  #  monyhar_code: Optional. Whether this is Chromium-specific code. If not
+  #  monyhar_code: Optional. Whether this is Monyhar-specific code. If not
   #    provided, this is determined automatically, based on the location of
   #    the source files (i.e. anything under third_party/ is not
-  #    Chromium-specific unless it is in a 'monyhar' sub-directory).
+  #    Monyhar-specific unless it is in a 'monyhar' sub-directory).
   #  jacoco_never_instrument: Optional. If provided, whether to forbid
   #    instrumentation with the Jacoco coverage processor. If not provided,
   #    this is controlled by the global use_jacoco_coverage build arg variable
-  #    and only used for non-test Chromium code.
+  #    and only used for non-test Monyhar code.
   #  include_android_sdk: Optional. Whether or not the android SDK dep
   #    should be added to deps. Defaults to true for non-system libraries
   #    that support android.

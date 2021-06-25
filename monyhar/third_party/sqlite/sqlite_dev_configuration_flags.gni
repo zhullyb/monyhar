@@ -1,5 +1,5 @@
 # Compile-time options passed to SQLite when compiling and building
-# the Chromium developer tools amalgamation.
+# the Monyhar developer tools amalgamation.
 #
 # The vast majority of the macros here are documented at
 # https://www.sqlite.org/compile.html

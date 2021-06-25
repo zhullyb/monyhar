@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,16 +15,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Chromium implementation of WebStorage -- forwards calls to the
+ * Monyhar implementation of WebStorage -- forwards calls to the
  * monyhar internal implementation.
  */
 @SuppressWarnings("deprecation")
 final class WebStorageAdapter extends WebStorage {
-    private final WebViewChromiumFactoryProvider mFactory;
+    private final WebViewMonyharFactoryProvider mFactory;
     private final AwQuotaManagerBridge mQuotaManagerBridge;
 
     WebStorageAdapter(
-            WebViewChromiumFactoryProvider factory, AwQuotaManagerBridge quotaManagerBridge) {
+            WebViewMonyharFactoryProvider factory, AwQuotaManagerBridge quotaManagerBridge) {
         mFactory = factory;
         mQuotaManagerBridge = quotaManagerBridge;
     }
@@ -132,7 +132,7 @@ final class WebStorageAdapter extends WebStorage {
 
     private static boolean checkNeedsPost() {
         // Init is guaranteed to have happened if a WebStorageAdapter is created, so do not
-        // need to check WebViewChromiumFactoryProvider.hasStarted.
+        // need to check WebViewMonyharFactoryProvider.hasStarted.
         return !ThreadUtils.runningOnUiThread();
     }
 }

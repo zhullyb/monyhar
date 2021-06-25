@@ -105,7 +105,7 @@ $ cd src
 
 ### (Linux-only) Install any required host packages
 
-Chromium relies on some platform packages to be present in order to build.
+Monyhar relies on some platform packages to be present in order to build.
 You can install the current set of required packages with:
 
 ```shell
@@ -124,7 +124,7 @@ $ git rebase-update
 $ gclient sync
 ```
 
-The first command updates the primary Chromium source repository and rebases
+The first command updates the primary Monyhar source repository and rebases
 any of your local branches on top of tip-of-tree (aka the Git branch
 `origin/master`). If you don't want to use this script, you can also just use
 `git pull` or other common Git commands to update the repo.
@@ -138,7 +138,7 @@ in `DEPS`, so any time that file is modified (pulling, changing branches, etc.)
 
 Go to [this page](https://chrome-infra-packages.appspot.com/p/fuchsia/clang/mac-amd64/+/)
 and download the most recent build. Extract `bin/llvm-ar` to the clang folder
-in Chromium:
+in Monyhar:
 
 ```shell
 $ unzip /path/to/clang.zip bin/llvm-ar -d ${CHROMIUM_SRC}/third_party/llvm-build/Release+Asserts
@@ -146,7 +146,7 @@ $ unzip /path/to/clang.zip bin/llvm-ar -d ${CHROMIUM_SRC}/third_party/llvm-build
 
 ## Setting up the build
 
-Chromium uses [Ninja](https://ninja-build.org) as its main build tool along with
+Monyhar uses [Ninja](https://ninja-build.org) as its main build tool along with
 a tool called [GN](https://gn.googlesource.com/gn/+/master/docs/quick_start.md)
 to generate `.ninja` files. You can create any number of *build directories*
 with different configurations. To create a build directory, run:

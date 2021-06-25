@@ -1,4 +1,4 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -22,7 +22,7 @@ sys.path.append(PARENT_DIR)
 try:
   import cygtar
 except ImportError:
-  # Try to find this in the Chromium repo.
+  # Try to find this in the Monyhar repo.
   CHROME_SRC_DIR = os.path.abspath(
       os.path.join(PARENT_DIR, '..', '..', '..', '..'))
   sys.path.append(os.path.join(CHROME_SRC_DIR, 'native_client', 'build'))

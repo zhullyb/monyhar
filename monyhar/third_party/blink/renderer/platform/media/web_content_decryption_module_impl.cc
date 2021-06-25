@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -79,7 +79,7 @@ void WebContentDecryptionModuleImpl::Create(
   DCHECK(!key_system.empty());
 
   // TODO(ddorwin): Guard against this in supported types check and remove this.
-  // Chromium only supports ASCII key systems.
+  // Monyhar only supports ASCII key systems.
   if (!base::IsStringASCII(key_system)) {
     NOTREACHED();
     std::move(web_cdm_created_cb).Run(nullptr, "Invalid keysystem.");

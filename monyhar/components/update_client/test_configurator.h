@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -29,9 +29,9 @@ namespace update_client {
 class ActivityDataService;
 class CrxDownloaderFactory;
 class NetworkFetcherFactory;
-class PatchChromiumFactory;
+class PatchMonyharFactory;
 class ProtocolHandlerFactory;
-class UnzipChromiumFactory;
+class UnzipMonyharFactory;
 
 #define POST_INTERCEPT_SCHEME "https"
 #define POST_INTERCEPT_HOSTNAME "localhost2"
@@ -133,8 +133,8 @@ class TestConfigurator : public Configurator {
   GURL update_check_url_;
   GURL ping_url_;
 
-  scoped_refptr<update_client::UnzipChromiumFactory> unzip_factory_;
-  scoped_refptr<update_client::PatchChromiumFactory> patch_factory_;
+  scoped_refptr<update_client::UnzipMonyharFactory> unzip_factory_;
+  scoped_refptr<update_client::PatchMonyharFactory> patch_factory_;
 
   scoped_refptr<network::SharedURLLoaderFactory> test_shared_loader_factory_;
   network::TestURLLoaderFactory test_url_loader_factory_;

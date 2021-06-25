@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -52,7 +52,7 @@ net::NetworkTrafficAnnotationTag GetNetworkTrafficAnnotation(
         semantics {
           sender: "Metrics UMA Log Uploader"
           description:
-            "Report of usage statistics and crash-related data about Chromium. "
+            "Report of usage statistics and crash-related data about Monyhar. "
             "Usage statistics contain information such as preferences, button "
             "clicks, and memory usage and do not include web page URLs or "
             "personal information. See more at "
@@ -61,7 +61,7 @@ net::NetworkTrafficAnnotationTag GetNetworkTrafficAnnotation(
             "pseudonymous machine identifier and not to your email address."
           trigger:
             "Reports are automatically generated on startup and at intervals "
-            "while Chromium is running."
+            "while Monyhar is running."
           data:
             "A protocol buffer with usage statistics and crash related data."
           destination: GOOGLE_OWNED_SERVICE
@@ -71,7 +71,7 @@ net::NetworkTrafficAnnotationTag GetNetworkTrafficAnnotation(
           setting:
             "Users can enable or disable this feature by disabling "
             "'Automatically send usage statistics and crash reports to Google' "
-            "in Chromium's settings under Advanced Settings, Privacy. The "
+            "in Monyhar's settings under Advanced Settings, Privacy. The "
             "feature is enabled by default."
           chrome_policy {
             MetricsReportingEnabled {
@@ -86,7 +86,7 @@ net::NetworkTrafficAnnotationTag GetNetworkTrafficAnnotation(
       semantics {
         sender: "Metrics UKM Log Uploader"
         description:
-          "Report of usage statistics that are keyed by URLs to Chromium. This "
+          "Report of usage statistics that are keyed by URLs to Monyhar. This "
           "includes information about the web pages you visit and your usage "
           "of them, such as page load speed. This will also include URLs and "
           "statistics related to downloaded files. These statistics may also "
@@ -97,7 +97,7 @@ net::NetworkTrafficAnnotationTag GetNetworkTrafficAnnotation(
           "pseudonymous machine identifier and not to your email address."
         trigger:
           "Reports are automatically generated on startup and at intervals "
-          "while Chromium is running with Sync enabled."
+          "while Monyhar is running with Sync enabled."
         data:
           "A protocol buffer with usage statistics and associated URLs."
         destination: GOOGLE_OWNED_SERVICE

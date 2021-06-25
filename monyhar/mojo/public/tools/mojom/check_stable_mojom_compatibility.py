@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Verifies backward-compatibility of mojom type changes.
@@ -136,7 +136,7 @@ def _ValidateDelta(root, delta):
       raise Exception('Stable type %s appears to have changed in a way which '
                       'breaks backward-compatibility. Please fix!\n\nIf you '
                       'believe this assessment to be incorrect, please file a '
-                      'Chromium bug against the "Internals>Mojo>Bindings" '
+                      'Monyhar bug against the "Internals>Mojo>Bindings" '
                       'component.' % qualified_name)
 
 

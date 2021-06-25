@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -39,25 +39,25 @@ class TestKey(unittest.TestCase):
   def testKeyFromDict_typical(self):
     key1 = tables.timeseries.Key.FromDict({
         'test_suite': 'loading.mobile',
-        'bot': 'ChromiumPerf:android-nexus5',
+        'bot': 'MonyharPerf:android-nexus5',
         'measurement': 'timeToFirstInteractive',
         'test_case': 'Wikipedia'})
     key2 = tables.timeseries.Key(
         test_suite='loading.mobile',
         measurement='timeToFirstInteractive',
-        bot='ChromiumPerf:android-nexus5',
+        bot='MonyharPerf:android-nexus5',
         test_case='Wikipedia')
     self.assertEqual(key1, key2)
 
   def testKeyFromDict_defaultTestCase(self):
     key1 = tables.timeseries.Key.FromDict({
         'test_suite': 'loading.mobile',
-        'bot': 'ChromiumPerf:android-nexus5',
+        'bot': 'MonyharPerf:android-nexus5',
         'measurement': 'timeToFirstInteractive'})
     key2 = tables.timeseries.Key(
         test_suite='loading.mobile',
         measurement='timeToFirstInteractive',
-        bot='ChromiumPerf:android-nexus5',
+        bot='MonyharPerf:android-nexus5',
         test_case='')
     self.assertEqual(key1, key2)
 
@@ -65,13 +65,13 @@ class TestKey(unittest.TestCase):
     with self.assertRaises(TypeError):
       tables.timeseries.Key.FromDict({
           'test_suite': 'loading.mobile',
-          'bot': 'ChromiumPerf:android-nexus5'})
+          'bot': 'MonyharPerf:android-nexus5'})
 
 
 @unittest.skipIf(pandas is None, 'pandas not available')
 class TestTimeSeries(unittest.TestCase):
   def testDataFrameFromJsonV1(self):
-    test_path = ('ChromiumPerf/android-nexus5/loading.mobile'
+    test_path = ('MonyharPerf/android-nexus5/loading.mobile'
                  '/timeToFirstInteractive/PageSet/Google')
     data = {
         'test_path': test_path,
@@ -95,7 +95,7 @@ class TestTimeSeries(unittest.TestCase):
     point = timeseries.reset_index().iloc[0]
     self.assertEqual(point['test_suite'], 'loading.mobile')
     self.assertEqual(point['measurement'], 'timeToFirstInteractive')
-    self.assertEqual(point['bot'], 'ChromiumPerf/android-nexus5')
+    self.assertEqual(point['bot'], 'MonyharPerf/android-nexus5')
     self.assertEqual(point['test_case'], 'PageSet/Google')
     self.assertEqual(point['improvement_direction'], 'down')
     self.assertEqual(point['point_id'], 547397)
@@ -110,7 +110,7 @@ class TestTimeSeries(unittest.TestCase):
     test_path = tables.timeseries.Key(
         test_suite='loading.mobile',
         measurement='timeToFirstInteractive',
-        bot='ChromiumPerf:android-nexus5',
+        bot='MonyharPerf:android-nexus5',
         test_case='Wikipedia')
     data = {
         'improvement_direction': 'down',
@@ -132,7 +132,7 @@ class TestTimeSeries(unittest.TestCase):
     point = timeseries.reset_index().iloc[0]
     self.assertEqual(point['test_suite'], 'loading.mobile')
     self.assertEqual(point['measurement'], 'timeToFirstInteractive')
-    self.assertEqual(point['bot'], 'ChromiumPerf:android-nexus5')
+    self.assertEqual(point['bot'], 'MonyharPerf:android-nexus5')
     self.assertEqual(point['test_case'], 'Wikipedia')
     self.assertEqual(point['improvement_direction'], 'down')
     self.assertEqual(point['units'], 'ms')
@@ -148,7 +148,7 @@ class TestTimeSeries(unittest.TestCase):
     test_path = tables.timeseries.Key(
         test_suite='loading.mobile',
         measurement='timeToFirstInteractive',
-        bot='ChromiumPerf:android-nexus5',
+        bot='MonyharPerf:android-nexus5',
         test_case='')
     data = {
         'improvement_direction': 'down',
@@ -167,7 +167,7 @@ class TestTimeSeries(unittest.TestCase):
     test_path = tables.timeseries.Key(
         test_suite='loading.mobile',
         measurement='timeToFirstInteractive',
-        bot='ChromiumPerf:android-nexus5',
+        bot='MonyharPerf:android-nexus5',
         test_case='Wikipedia')
     data = {
         'improvement_direction': 'down',
@@ -192,7 +192,7 @@ class TestTimeSeries(unittest.TestCase):
     test_path = tables.timeseries.Key(
         test_suite='loading.mobile',
         measurement='timeToFirstInteractive',
-        bot='ChromiumPerf:android-nexus5',
+        bot='MonyharPerf:android-nexus5',
         test_case='')
     data = {
         'improvement_direction': 'down',
@@ -217,7 +217,7 @@ class TestTimeSeries(unittest.TestCase):
     test_path = tables.timeseries.Key(
         test_suite='loading.mobile',
         measurement='timeToFirstInteractive',
-        bot='ChromiumPerf:android-nexus5',
+        bot='MonyharPerf:android-nexus5',
         test_case='Wikipedia')
     data = {
         'improvement_direction': 'down',
@@ -239,7 +239,7 @@ class TestTimeSeries(unittest.TestCase):
     test_path = tables.timeseries.Key(
         test_suite='loading.mobile',
         measurement='timeToFirstInteractive',
-        bot='ChromiumPerf:android-nexus5',
+        bot='MonyharPerf:android-nexus5',
         test_case='Wikipedia')
 
     with tables.DbSession(':memory:') as con:

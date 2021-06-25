@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,7 +7,7 @@
 
 namespace background_task {
 
-// This enum lists all the unique task IDs used around in Chromium. These are
+// This enum lists all the unique task IDs used around in Monyhar. These are
 // listed here to ensure that there is no overlap of task IDs between different
 // users of the BackgroundTaskScheduler.
 // When adding your job id to the list below, remember to make a corresponding

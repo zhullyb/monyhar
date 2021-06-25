@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -162,7 +162,7 @@ test_cases = [
   {
     "name": "HttpsProxyHostOnly",
     "description" : "Test https.proxyHost and default port.",
-    # Chromium differs from the Android platform by connecting to port 80 for
+    # Monyhar differs from the Android platform by connecting to port 80 for
     # HTTPS connections by default, hence cpp-only.
     "cpp-only" : "",
     "properties" : {
@@ -231,7 +231,7 @@ test_cases = [
   {
     "name": "DefaultProxyDefaultPort",
     "description" : "Check that the default proxy port is as expected.",
-    # Chromium differs from the Android platform by connecting to port 80 for
+    # Monyhar differs from the Android platform by connecting to port 80 for
     # HTTPS connections by default, hence cpp-only.
     "cpp-only" : "",
     "properties" : {

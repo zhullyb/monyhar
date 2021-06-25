@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 """Moves C++ files to a new location, updating any include paths that point
 to them, and re-ordering headers as needed.  If multiple source files are
 specified, the destination must be a directory.  Updates include guards in
-moved header files.  Assumes Chromium coding style.
+moved header files.  Assumes Monyhar coding style.
 
 Attempts to update and reorder paths used in .gyp(i) files.
 
@@ -213,7 +213,7 @@ def UpdateIncludeGuard(old_path, new_path):
   previously residing at |old_path|, with an up-to-date include guard.
 
   Prints a warning if the update could not be completed successfully (e.g.,
-  because the old include guard was not formatted correctly per Chromium style).
+  because the old include guard was not formatted correctly per Monyhar style).
   """
   old_guard = MakeIncludeGuardName(old_path)
   new_guard = MakeIncludeGuardName(new_path)

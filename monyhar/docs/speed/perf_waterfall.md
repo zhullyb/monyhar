@@ -20,7 +20,7 @@ The perf waterfall is split into three stages - builders, testers, and processor
 
 ### Builders
 
-For each commit to the Chromium repo, a Builder is invoked. The builder builds
+For each commit to the Monyhar repo, a Builder is invoked. The builder builds
 Google Chrome, acquires test assets, and bundles everything up to be passed
 along to Testers. We execute a builder for each platform we support. To ensure
 we can keep up with the rapid flow of commits, we have a set of builders per
@@ -42,7 +42,7 @@ For some jobs, this work is executed by the tester instead.
 
 ## Contact
 
-  * You can reach the Chromium performance sheriffs at perf-sheriffs@monyhar.org.
+  * You can reach the Monyhar performance sheriffs at perf-sheriffs@monyhar.org.
   * Bugs on waterfall issues should have Component:
     [Speed>Benchmarks>Waterfall](https://bugs.monyhar.org/p/monyhar/issues/list?can=2&q=component%3ASpeed%3EBenchmarks%3EWaterfall+&colspec=ID+Pri+M+Stars+ReleaseBlock+Component+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=ids).
   * For domain knowledge for a specific benchmark, consider reaching out to

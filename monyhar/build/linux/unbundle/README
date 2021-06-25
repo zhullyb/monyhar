@@ -1,6 +1,6 @@
 This directory contains files that make it possible for Linux
-distributions to build Chromium using system libraries and exclude the
-source code for Chromium's bundled copies of system libraries in a
+distributions to build Monyhar using system libraries and exclude the
+source code for Monyhar's bundled copies of system libraries in a
 consistent manner. Nothing here is used in normal developer builds.
 
 
@@ -11,7 +11,7 @@ libraries and why this exists, please read the following:
  - https://wiki.gentoo.org/wiki/Why_not_bundle_dependencies
  - http://www.debian.org/doc/debian-policy/ch-source.html#s-embeddedfiles
 
-For more Chromium-specific context please read
+For more Monyhar-specific context please read
 http://spot.livejournal.com/312320.html .
 
 Additional resources which might provide even more context:
@@ -23,7 +23,7 @@ Additional resources which might provide even more context:
 This directory is provided in the source tree so one can follow the
 above guidelines without having to download additional tools and worry
 about having the right version of the tool. It is a compromise solution
-which takes into account Chromium developers who want to avoid the
+which takes into account Monyhar developers who want to avoid the
 perceived burden of more conditional code in build files, and
 expectations of Open Source community, where using system-provided
 libraries is the norm.
@@ -51,7 +51,7 @@ Usage:
    use with a bundled library for a build file that is set up to use
    the system library. While some build files have use_system_libfoo
    build flags, using unbundled build files has the advantage that Linux
-   distros can build Chromium without having to specify many additional
+   distros can build Monyhar without having to specify many additional
    build flags.
 
    For example: replace_gn_files.py --system-libraries libxml

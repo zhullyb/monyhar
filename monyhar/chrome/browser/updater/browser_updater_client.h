@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,8 +14,8 @@
 #include "base/sequenced_task_runner.h"
 #include "chrome/updater/update_service.h"
 
-// Cross-platform client to communicate between the browser and the Chromium
-// updater. It helps the browser register to the Chromium updater and invokes
+// Cross-platform client to communicate between the browser and the Monyhar
+// updater. It helps the browser register to the Monyhar updater and invokes
 // on-demand updates.
 class BrowserUpdaterClient
     : public base::RefCountedThreadSafe<BrowserUpdaterClient> {
@@ -24,11 +24,11 @@ class BrowserUpdaterClient
 
   BrowserUpdaterClient();
 
-  // Registers the browser to the Chromium updater via IPC registration API.
+  // Registers the browser to the Monyhar updater via IPC registration API.
   // When registration is completed, it will call RegistrationCompleted().
   void Register();
 
-  // Begins the process of an on-demand update from the Chromium updater via IPC
+  // Begins the process of an on-demand update from the Monyhar updater via IPC
   // update API. It will periodically get updates via HandleStatusUpdate(). When
   // update is completed, it will call UpdateCompleted().
   void CheckForUpdate(
@@ -59,7 +59,7 @@ class BrowserUpdaterClient
       updater::UpdateService::StateChangeCallback state_change,
       updater::UpdateService::Callback callback) = 0;
 
-  // Handles status updates from the Chromium Updater during an on-demand
+  // Handles status updates from the Monyhar Updater during an on-demand
   // update. The updater::UpdateService::UpdateState is translated into a
   // VersionUpdater::StatusCallback.
   void HandleStatusUpdate(
@@ -67,10 +67,10 @@ class BrowserUpdaterClient
           callback,
       updater::UpdateService::UpdateState update_state);
 
-  // Handles status update from Chromium updater when registration is completed.
+  // Handles status update from Monyhar updater when registration is completed.
   void RegistrationCompleted(updater::UpdateService::Result result);
 
-  // Handles status update from Chromium updater when updates are completed.
+  // Handles status update from Monyhar updater when updates are completed.
   void UpdateCompleted(base::RepeatingCallback<
                            void(updater::UpdateService::UpdateState)> callback,
                        updater::UpdateService::Result result);

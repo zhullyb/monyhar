@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -132,7 +132,7 @@ KURL ModulatorImplBase::ResolveModuleSpecifier(const String& specifier,
                                       &import_map_debug_message);
 
     // Output the resolution log. This is too verbose to be always shown, but
-    // will be helpful for Web developers (and also Chromium developers) for
+    // will be helpful for Web developers (and also Monyhar developers) for
     // debugging import maps.
     LOG(INFO) << import_map_debug_message;
 

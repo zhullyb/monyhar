@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The Chromium Authors. All rights reserved.
+// Copyright (c) 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -42,9 +42,9 @@ constexpr net::NetworkTrafficAnnotationTag kDialUrlFetcherTrafficAnnotation =
         semantics {
           sender: "DIAL"
           description:
-            "Chromium sends a request to a device (such as a smart TV) "
+            "Monyhar sends a request to a device (such as a smart TV) "
             "discovered via the DIAL (Discovery and Launch) protocol to obtain "
-            "its device description or app info data. Chromium then uses the "
+            "its device description or app info data. Monyhar then uses the "
             "data to determine the capabilities of the device to be used as a "
             "targetfor casting media content."
           trigger:

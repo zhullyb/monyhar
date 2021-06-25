@@ -11,6 +11,6 @@
 
 %define PREFIX 1
 
-; %define STACK_ALIGNMENT 4 -- Stack alignment is controlled by Chromium
+; %define STACK_ALIGNMENT 4 -- Stack alignment is controlled by Monyhar
 
 %define private_prefix dav1d

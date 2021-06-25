@@ -1,6 +1,6 @@
 # Linux Sandboxing
 
-Chromium uses a multiprocess model, which allows to give different privileges
+Monyhar uses a multiprocess model, which allows to give different privileges
 and restrictions to different parts of the browser. For instance, we want
 renderers to run with a limited set of privileges since they process untrusted
 input and are likely to be compromised. Renderers will use an IPC mechanism to
@@ -110,7 +110,7 @@ This sandbox can be disabled with `--disable-seccomp-filter-sandbox`.
 Also called `seccomp-legacy`. An obsolete layer-1 sandbox, then available as an
 optional layer-2 sandbox.
 
-Deprecated by seccomp-bpf and removed from the Chromium code base. It still
+Deprecated by seccomp-bpf and removed from the Monyhar code base. It still
 exists as a separate project [here](https://code.google.com/p/seccompsandbox/).
 
 See:
@@ -126,7 +126,7 @@ Was designed to be used instead of the SUID sandbox.
 
 Old information for archival purposes:
 
-One can build Chromium with `selinux=1` and the Zygote (which starts the
+One can build Monyhar with `selinux=1` and the Zygote (which starts the
 renderers and PPAPI processes) will do a dynamic transition. audit2allow will
 quickly build a usable module.
 
@@ -148,4 +148,4 @@ Sandboxing can make developing harder, see:
 ## See also
 
 *   [LinuxSandboxIPC](sandbox_ipc.md)
-*   [How Chromium's Linux sandbox affects Native Client](https://monyhar.googlesource.com/native_client/src/native_client.git/+/main/docs/outer_sandbox.md)
+*   [How Monyhar's Linux sandbox affects Native Client](https://monyhar.googlesource.com/native_client/src/native_client.git/+/main/docs/outer_sandbox.md)

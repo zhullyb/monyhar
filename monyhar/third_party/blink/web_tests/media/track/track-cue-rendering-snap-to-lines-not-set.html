@@ -12,7 +12,7 @@ async_test(function(t) {
     var testTrack = document.querySelector("track");
     video.src = "../content/test.ogv";
 
-    // In Chromium it is the enclosure element, which provides the controls height, otherwise the panel;
+    // In Monyhar it is the enclosure element, which provides the controls height, otherwise the panel;
     // both are the second child in the shadow DOM.
     var controlsPanelElement = internals.shadowRoot(video).firstChild.firstChild;
 

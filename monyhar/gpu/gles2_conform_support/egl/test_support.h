@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Chromium Authors. All rights reserved.
+// Copyright (c) 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,8 +10,8 @@
 #if defined(COMPONENT_BUILD) && defined(COMMAND_BUFFER_GLES_LIB_SUPPORT_ONLY)
 // A variable used for communicating whether the app has initialized the global
 // variables.
-// On component build, the dynamic library and the Chromium test
-// runner executable refer to the same global variables. Any non-Chromium client
+// On component build, the dynamic library and the Monyhar test
+// runner executable refer to the same global variables. Any non-Monyhar client
 // of the dynamic library will not initialize the globabl variables.
 // On non-component (static) build, the library and the runner have distinct
 // global variables.

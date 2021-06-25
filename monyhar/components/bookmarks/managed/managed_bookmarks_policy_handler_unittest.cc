@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -64,7 +64,7 @@ TEST_F(ManagedBookmarksPolicyHandlerTest, ApplyPolicySettings) {
                                     "        \"url\": \"youtube.com\""
                                     "      },"
                                     "      {"
-                                    "        \"name\": \"Chromium\","
+                                    "        \"name\": \"Monyhar\","
                                     "        \"url\": \"monyhar.org\""
                                     "      },"
                                     "      {"
@@ -114,7 +114,7 @@ TEST_F(ManagedBookmarksPolicyHandlerTest, ApplyPolicySettings) {
             "url": "http://youtube.com/"
           },
           {
-            "name": "Chromium",
+            "name": "Monyhar",
             "url": "http://monyhar.org/"
           },
           {

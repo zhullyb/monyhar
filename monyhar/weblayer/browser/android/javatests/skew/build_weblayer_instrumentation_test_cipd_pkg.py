@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 #
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
 # Script to build a CIPD package for weblayer_instrumentation_test_apk from
-# the current Chromium checkout.
+# the current Monyhar checkout.
 #
 # This should be run from the src directory of a release branch. This will
 # take care of the build, you need not do that yourself. After the package is
@@ -101,7 +101,7 @@ def get_monyhar_version():
     version = '.'.join(line[line.index('=') + 1:]
                        for line in f.read().splitlines())
   if not re.match(CHROMIUM_VERSION_REGEX, version):
-    raise ValueError("Chromium version, '%s', is not in proper format" %
+    raise ValueError("Monyhar version, '%s', is not in proper format" %
                      version)
   return version
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -72,7 +72,7 @@ void WebstoreInstallHelper::Start(
           policy {
             cookies_allowed: NO
             setting:
-              "There's no direct Chromium's setting to disable this, but you "
+              "There's no direct Monyhar's setting to disable this, but you "
               "could uninstall all extensions and not install (or begin the "
               "installation flow for) any more."
             policy_exception_justification:

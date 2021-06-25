@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -71,7 +71,7 @@ public class ModalDialogViewTest extends DummyUiActivityTestCase {
             mModalDialogView =
                     (ModalDialogView) LayoutInflater
                             .from(new ContextThemeWrapper(
-                                    activity, R.style.Theme_Chromium_ModalDialog_TextPrimaryButton))
+                                    activity, R.style.Theme_Monyhar_ModalDialog_TextPrimaryButton))
                             .inflate(R.layout.modal_dialog_view, null);
             activity.setContentView(mContentView);
             mContentView.addView(mModalDialogView, MATCH_PARENT, WRAP_CONTENT);

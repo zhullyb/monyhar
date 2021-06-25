@@ -17,14 +17,14 @@ Dependencies
 Overview
 
     This extension is for WebGL only. In some implemenations of OpenGL ES 2.0,
-    in particular the Chromium implementation, it is possible to create an
+    in particular the Monyhar implementation, it is possible to create an
     OpenGL context and request that most extensions be disabled. From that
     point, this extension allows extensions to then be selectively enabled.
 
     WebGL requires the base OpenGL ES 2.0 with NO extensions. So for example,
     if an OpenGL ES 2.0 implemention exposed the extension OES_texture_npot, the
     WebGL implementation would have to make it appear as though that extension
-    does not exist. For Chromium WebGL OpenGL contexts, Chromium requests a
+    does not exist. For Monyhar WebGL OpenGL contexts, Monyhar requests a
     context with no extensions. It then queries which extensions exist. If
     OES_texture_npot does NOT exist then WebGL can decide to not do the extra
     work required to emulate it not existing.

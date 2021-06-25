@@ -1,4 +1,4 @@
-# Checking out and building Chromium for iOS
+# Checking out and building Monyhar for iOS
 
 There are instructions for other platforms linked from the
 [get the code](../get_the_code.md) page.
@@ -134,7 +134,7 @@ GN arg `target_os="ios"`.
 
 ## Building for device
 
-To be able to build and run Chromium and the tests for devices, you need to
+To be able to build and run Monyhar and the tests for devices, you need to
 have an Apple developer account (a free one will work) and the appropriate
 provisioning profiles, then configure the build to use them.
 
@@ -165,7 +165,7 @@ for the application bundle identifier. This is controlled by the gn variable
 (the default value is `"org.monyhar"`).
 
 You then need to request provisioning profiles from Apple for your devices
-for the following bundle identifiers to build and run Chromium with these
+for the following bundle identifiers to build and run Monyhar with these
 application extensions:
 
 -   `${prefix}.chrome.ios.dev`
@@ -183,10 +183,10 @@ the following groups:
 -   `group.${prefix}.chrome`
 -   `group.${prefix}.common`
 
-The `group.${prefix}.chrome` is only shared by Chromium and its extensions
+The `group.${prefix}.chrome` is only shared by Monyhar and its extensions
 to share files and configurations while the `group.${prefix}.common` is shared
-with Chromium and other applications from the same organisation and can be used
-to send commands to Chromium.
+with Monyhar and other applications from the same organisation and can be used
+to send commands to Monyhar.
 
 `${prefix}.chrome.ios.dev.CredentialProviderExtension` needs the AutoFill 
 Credential Provider Entitlement, which corresponds to the key 
@@ -252,10 +252,10 @@ entitlements").
 Any target that is built and runs on the bots (see [below](#Troubleshooting))
 should run successfully in a local build. To run in the simulator from the
 command line, you can use `iossim`. For example, to run a debug build of
-`Chromium`:
+`Monyhar`:
 
 ```shell
-$ out/Debug-iphonesimulator/iossim out/Debug-iphonesimulator/Chromium.app
+$ out/Debug-iphonesimulator/iossim out/Debug-iphonesimulator/Monyhar.app
 ```
 
 With Xcode 9, `iossim` no longer automatically launches the Simulator. This must now
@@ -316,7 +316,7 @@ $ git rebase-update
 $ gclient sync
 ```
 
-The first command updates the primary Chromium source repository and rebases
+The first command updates the primary Monyhar source repository and rebases
 any of your local branches on top of tip-of-tree (aka the Git branch
 `origin/master`). If you don't want to use this script, you can also just use
 `git pull` or other common Git commands to update the repo.
@@ -326,7 +326,7 @@ hooks as needed.
 
 ## Tips, tricks, and troubleshooting
 
-Remember that the XCode project you interact with while working on Chromium is a
+Remember that the XCode project you interact with while working on Monyhar is a
 build artifact, generated from the `BUILD.gn` files. Do not use it to add new
 files; instead see the procedures for [working with
 files](working_with_files.md).
@@ -342,14 +342,14 @@ To help with deterministic builds, and to work with Goma, the path to source
 files in debugging symbols are relative to source directory. To allow Xcode
 to find the source files, you need to ensure to have an `~/.lldbinit-Xcode`
 file with the following lines into it (substitute {SRC} for your actual path
-to the root of Chromium's sources):
+to the root of Monyhar's sources):
 
 ```
 script sys.path[:0] = ['{SRC}/tools/lldb']
 script import lldbinit
 ```
 
-This will also allow you to see the content of some of Chromium types in the
+This will also allow you to see the content of some of Monyhar types in the
 debugger like `std::u16string`, ... If you want to use `lldb` directly, name
 the file `~/.lldbinit` instead of `~/.lldbinit-Xcode`.
 
@@ -359,7 +359,7 @@ configure Xcode to use that file instead of the global one.
 
 ### Changing the version of Xcode
 
-To change the version of Xcode used to build Chromium on iOS, please follow
+To change the version of Xcode used to build Monyhar on iOS, please follow
 the steps below:
 
 1.  Launch the new version of Xcode.app.
@@ -398,7 +398,7 @@ you will have to follow the same steps.
 #### Increase the vnode cache size
 
 `git status` is used frequently to determine the status of your checkout.  Due
-to the large number of files in Chromium's checkout, `git status` performance
+to the large number of files in Monyhar's checkout, `git status` performance
 can be quite variable.  Increasing the system's vnode cache appears to help.
 By default, this command:
 
@@ -414,7 +414,7 @@ $ sudo sysctl kern.maxvnodes=$((512*1024))
 ```
 
 Higher values may be appropriate if you routinely move between different
-Chromium checkouts.  This setting will reset on reboot, the startup setting can
+Monyhar checkouts.  This setting will reset on reboot, the startup setting can
 be set in `/etc/sysctl.conf`:
 
 ```shell

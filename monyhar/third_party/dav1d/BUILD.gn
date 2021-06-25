@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -80,7 +80,7 @@ config("public_dav1d_config") {
   }
 
   # Don't let dav1d export any symbols. Otherwise the verify_order step on macOS
-  # can fail since these exports end up in the final Chromium binary.
+  # can fail since these exports end up in the final Monyhar binary.
   defines += [ "DAV1D_API=" ]
 }
 

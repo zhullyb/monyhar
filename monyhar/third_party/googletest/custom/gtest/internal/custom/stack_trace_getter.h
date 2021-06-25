@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@
 #include "third_party/googletest/src/googletest/src/gtest-internal-inl.h"
 
 // An implementation of Google Test's OsStackTraceGetterInterface that uses
-// Chromium's base::debug::StackTrace to obtain stringified stack traces.
+// Monyhar's base::debug::StackTrace to obtain stringified stack traces.
 class StackTraceGetter
     : public ::testing::internal::OsStackTraceGetterInterface {
  public:

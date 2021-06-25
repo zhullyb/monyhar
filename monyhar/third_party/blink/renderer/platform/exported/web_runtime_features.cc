@@ -166,8 +166,8 @@ void WebRuntimeFeatures::EnableCookiesWithoutSameSiteMustBeSecure(bool enable) {
   RuntimeEnabledFeatures::SetCookiesWithoutSameSiteMustBeSecureEnabled(enable);
 }
 
-void WebRuntimeFeatures::EnableCanvas2dImageChromium(bool enable) {
-  RuntimeEnabledFeatures::SetCanvas2dImageChromiumEnabled(enable);
+void WebRuntimeFeatures::EnableCanvas2dImageMonyhar(bool enable) {
+  RuntimeEnabledFeatures::SetCanvas2dImageMonyharEnabled(enable);
 }
 
 void WebRuntimeFeatures::EnableCompositedSelectionUpdate(bool enable) {
@@ -348,8 +348,8 @@ void WebRuntimeFeatures::EnableWebGLDraftExtensions(bool enable) {
   RuntimeEnabledFeatures::SetWebGLDraftExtensionsEnabled(enable);
 }
 
-void WebRuntimeFeatures::EnableWebGLImageChromium(bool enable) {
-  RuntimeEnabledFeatures::SetWebGLImageChromiumEnabled(enable);
+void WebRuntimeFeatures::EnableWebGLImageMonyhar(bool enable) {
+  RuntimeEnabledFeatures::SetWebGLImageMonyharEnabled(enable);
 }
 
 void WebRuntimeFeatures::EnableOverlayScrollbars(bool enable) {

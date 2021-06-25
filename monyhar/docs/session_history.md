@@ -5,7 +5,7 @@ support back/forward navigations and session restore. This is in contrast to
 "history" (e.g., `chrome://history`), which tracks the main frame URLs the user
 has visited in any tab for the lifetime of a profile.
 
-Chromium tracks the session history of each tab in NavigationController, using a
+Monyhar tracks the session history of each tab in NavigationController, using a
 list of NavigationEntry objects to represent the joint session history items.
 Each frame creates _session history items_ as it navigates. A _joint session
 history item_ contains the state of each frame of a page at a given point in
@@ -73,7 +73,7 @@ which `RendererDidNavigate` helper methods are used when a navigation commits.
 ## Persistence
 
 The joint session history of a tab is persisted so that tabs can be restored
-(e.g., between Chromium restarts, after closing a tab, or on another device).
+(e.g., between Monyhar restarts, after closing a tab, or on another device).
 This requires serializing the state in each NavigationEntry and its tree of
 FrameNavigationEntries, using a PageState object and other metadata.
 

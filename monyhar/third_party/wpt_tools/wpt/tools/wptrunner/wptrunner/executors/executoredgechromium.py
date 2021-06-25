@@ -1,10 +1,10 @@
-from ..webdriver_server import EdgeChromiumDriverServer
+from ..webdriver_server import EdgeMonyharDriverServer
 from .base import WdspecExecutor, WdspecProtocol
 
 
-class EdgeChromiumDriverProtocol(WdspecProtocol):
-    server_cls = EdgeChromiumDriverServer
+class EdgeMonyharDriverProtocol(WdspecProtocol):
+    server_cls = EdgeMonyharDriverServer
 
 
-class EdgeChromiumDriverWdspecExecutor(WdspecExecutor):
-    protocol_cls = EdgeChromiumDriverProtocol
+class EdgeMonyharDriverWdspecExecutor(WdspecExecutor):
+    protocol_cls = EdgeMonyharDriverProtocol

@@ -1,4 +1,4 @@
-// Copyright (c) 2014 The Chromium Authors. All rights reserved.
+// Copyright (c) 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -91,7 +91,7 @@ void WaitForDebugger(const std::string& label) {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
   std::string title = "Google Chrome";
 #else   // BUILDFLAG(CHROMIUM_BRANDING)
-  std::string title = "Chromium";
+  std::string title = "Monyhar";
 #endif  // BUILDFLAG(CHROMIUM_BRANDING)
   title += " ";
   title += label;  // makes attaching to process easier

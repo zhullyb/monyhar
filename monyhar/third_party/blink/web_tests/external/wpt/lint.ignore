@@ -726,7 +726,7 @@ WEB-PLATFORM.TEST:web-bundle/resources/nested/*.wbn
 WEB-PLATFORM.TEST:web-bundle/resources/wbn/*.wbn
 WEB-PLATFORM.TEST:web-bundle/subresource-loading/*.html
 
-# Tests that depend on resources in /gen/ in Chromium:
+# Tests that depend on resources in /gen/ in Monyhar:
 # https://github.com/web-platform-tests/wpt/issues/16455
 # Please consult with ecosystem-infra@monyhar.org before adding more.
 MISSING DEPENDENCY: credential-management/support/otpcredential-helper.js

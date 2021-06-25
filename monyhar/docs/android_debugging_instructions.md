@@ -20,7 +20,7 @@ out/Default/bin/chrome_public_apk launch --args='--disable-fre' 'data:text/html;
 ```
 
 ## Logging
-[Chromium logging from LOG(INFO)](https://monyhar.googlesource.com/monyhar/src/+/main/docs/android_logging.md)
+[Monyhar logging from LOG(INFO)](https://monyhar.googlesource.com/monyhar/src/+/main/docs/android_logging.md)
 etc., is directed to the Android logcat logging facility. You can filter the
 messages, e.g. view monyhar verbose logging, everything else at warning level
 with:

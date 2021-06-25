@@ -40,7 +40,7 @@ Note: All SHA-256 hashes are stored as hex-encoded strings.
 The choice of this format was to allow for the following scenarios:
 
 * Easy generation of histogram enumerations for associated SPKIs
-* The ability to prune certificates (and SPKIs) as Chromium platforms are
+* The ability to prune certificates (and SPKIs) as Monyhar platforms are
   deprecated.
 * The ability to update the root store metadata effectively, such as via JSON
   Patch, while maintaining the stable ordering necessary for histogram code.

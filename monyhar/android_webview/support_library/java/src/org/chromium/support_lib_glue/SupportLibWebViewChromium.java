@@ -1,17 +1,17 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 package org.monyhar.support_lib_glue;
 
-import static org.monyhar.support_lib_glue.SupportLibWebViewChromiumFactory.recordApiCall;
+import static org.monyhar.support_lib_glue.SupportLibWebViewMonyharFactory.recordApiCall;
 
 import android.net.Uri;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.android.webview.monyhar.SharedWebViewChromium;
+import com.android.webview.monyhar.SharedWebViewMonyhar;
 import com.android.webview.monyhar.SharedWebViewRendererClientAdapter;
 import com.android.webview.monyhar.WebkitToSharedGlueConverter;
 
@@ -20,23 +20,23 @@ import org.monyhar.support_lib_boundary.VisualStateCallbackBoundaryInterface;
 import org.monyhar.support_lib_boundary.WebMessageBoundaryInterface;
 import org.monyhar.support_lib_boundary.WebViewProviderBoundaryInterface;
 import org.monyhar.support_lib_boundary.util.BoundaryInterfaceReflectionUtil;
-import org.monyhar.support_lib_glue.SupportLibWebViewChromiumFactory.ApiCall;
+import org.monyhar.support_lib_glue.SupportLibWebViewMonyharFactory.ApiCall;
 
 import java.lang.reflect.InvocationHandler;
 
 /**
- * Support library glue version of WebViewChromium.
+ * Support library glue version of WebViewMonyhar.
  *
  * A new instance of this class is created transiently for every shared library
  * WebViewCompat call. Do not store state here.
  */
-class SupportLibWebViewChromium implements WebViewProviderBoundaryInterface {
+class SupportLibWebViewMonyhar implements WebViewProviderBoundaryInterface {
     private final WebView mWebView;
-    private final SharedWebViewChromium mSharedWebViewChromium;
+    private final SharedWebViewMonyhar mSharedWebViewMonyhar;
 
-    public SupportLibWebViewChromium(WebView webView) {
+    public SupportLibWebViewMonyhar(WebView webView) {
         mWebView = webView;
-        mSharedWebViewChromium = WebkitToSharedGlueConverter.getSharedWebViewChromium(webView);
+        mSharedWebViewMonyhar = WebkitToSharedGlueConverter.getSharedWebViewMonyhar(webView);
     }
 
     @Override
@@ -46,7 +46,7 @@ class SupportLibWebViewChromium implements WebViewProviderBoundaryInterface {
                 BoundaryInterfaceReflectionUtil.castToSuppLibClass(
                         VisualStateCallbackBoundaryInterface.class, callbackInvoHandler);
 
-        mSharedWebViewChromium.insertVisualStateCallback(
+        mSharedWebViewMonyhar.insertVisualStateCallback(
                 requestId, new AwContents.VisualStateCallback() {
                     @Override
                     public void onComplete(long requestId) {
@@ -58,7 +58,7 @@ class SupportLibWebViewChromium implements WebViewProviderBoundaryInterface {
     @Override
     public /* WebMessagePort */ InvocationHandler[] createWebMessageChannel() {
         return SupportLibWebMessagePortAdapter.fromMessagePorts(
-                mSharedWebViewChromium.createWebMessageChannel());
+                mSharedWebViewMonyhar.createWebMessageChannel());
     }
 
     @Override
@@ -68,7 +68,7 @@ class SupportLibWebViewChromium implements WebViewProviderBoundaryInterface {
         WebMessageBoundaryInterface messageBoundaryInterface =
                 BoundaryInterfaceReflectionUtil.castToSuppLibClass(
                         WebMessageBoundaryInterface.class, message);
-        mSharedWebViewChromium.postMessageToMainFrame(messageBoundaryInterface.getData(),
+        mSharedWebViewMonyhar.postMessageToMainFrame(messageBoundaryInterface.getData(),
                 targetOrigin.toString(),
                 SupportLibWebMessagePortAdapter.toMessagePorts(
                         messageBoundaryInterface.getPorts()));
@@ -78,14 +78,14 @@ class SupportLibWebViewChromium implements WebViewProviderBoundaryInterface {
     public void addWebMessageListener(String jsObjectName, String[] allowedOriginRules,
             /* WebMessageListener */ InvocationHandler listener) {
         recordApiCall(ApiCall.ADD_WEB_MESSAGE_LISTENER);
-        mSharedWebViewChromium.addWebMessageListener(jsObjectName, allowedOriginRules,
+        mSharedWebViewMonyhar.addWebMessageListener(jsObjectName, allowedOriginRules,
                 new SupportLibWebMessageListenerAdapter(mWebView, listener));
     }
 
     @Override
     public void removeWebMessageListener(final String jsObjectName) {
         recordApiCall(ApiCall.REMOVE_WEB_MESSAGE_LISTENER);
-        mSharedWebViewChromium.removeWebMessageListener(jsObjectName);
+        mSharedWebViewMonyhar.removeWebMessageListener(jsObjectName);
     }
 
     @Override
@@ -94,34 +94,34 @@ class SupportLibWebViewChromium implements WebViewProviderBoundaryInterface {
         recordApiCall(ApiCall.ADD_DOCUMENT_START_SCRIPT);
         return BoundaryInterfaceReflectionUtil.createInvocationHandlerFor(
                 new SupportLibScriptHandlerAdapter(
-                        mSharedWebViewChromium.addDocumentStartJavaScript(
+                        mSharedWebViewMonyhar.addDocumentStartJavaScript(
                                 script, allowedOriginRules)));
     }
 
     @Override
     public WebViewClient getWebViewClient() {
         recordApiCall(ApiCall.GET_WEBVIEW_CLIENT);
-        return mSharedWebViewChromium.getWebViewClient();
+        return mSharedWebViewMonyhar.getWebViewClient();
     }
 
     @Override
     public WebChromeClient getWebChromeClient() {
         recordApiCall(ApiCall.GET_WEBCHROME_CLIENT);
-        return mSharedWebViewChromium.getWebChromeClient();
+        return mSharedWebViewMonyhar.getWebChromeClient();
     }
 
     @Override
     public /* WebViewRenderer */ InvocationHandler getWebViewRenderer() {
         recordApiCall(ApiCall.GET_WEBVIEW_RENDERER);
         return BoundaryInterfaceReflectionUtil.createInvocationHandlerFor(
-                new SupportLibWebViewRendererAdapter(mSharedWebViewChromium.getRenderProcess()));
+                new SupportLibWebViewRendererAdapter(mSharedWebViewMonyhar.getRenderProcess()));
     }
 
     @Override
     public /* WebViewRendererClient */ InvocationHandler getWebViewRendererClient() {
         recordApiCall(ApiCall.GET_WEBVIEW_RENDERER_CLIENT);
         SharedWebViewRendererClientAdapter webViewRendererClientAdapter =
-                mSharedWebViewChromium.getWebViewRendererClientAdapter();
+                mSharedWebViewMonyhar.getWebViewRendererClientAdapter();
         return webViewRendererClientAdapter != null
                 ? webViewRendererClientAdapter.getSupportLibInvocationHandler()
                 : null;
@@ -131,7 +131,7 @@ class SupportLibWebViewChromium implements WebViewProviderBoundaryInterface {
     public void setWebViewRendererClient(
             /* WebViewRendererClient */ InvocationHandler webViewRendererClient) {
         recordApiCall(ApiCall.SET_WEBVIEW_RENDERER_CLIENT);
-        mSharedWebViewChromium.setWebViewRendererClientAdapter(webViewRendererClient != null
+        mSharedWebViewMonyhar.setWebViewRendererClientAdapter(webViewRendererClient != null
                         ? new SupportLibWebViewRendererClientAdapter(webViewRendererClient)
                         : null);
     }

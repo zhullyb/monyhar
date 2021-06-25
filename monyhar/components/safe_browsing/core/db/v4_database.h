@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -130,7 +130,7 @@ class V4Database {
   // Returns false if any of |stores_to_check| don't have valid data.
   // A store may be unavailble if either it hasn't yet gotten a proper
   // full-update (just after install, or corrupted/missing file), or if it's
-  // not supported in this build (i.e. Chromium).
+  // not supported in this build (i.e. Monyhar).
   virtual bool AreAllStoresAvailable(
       const StoresToCheck& stores_to_check) const;
 

@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -256,7 +256,7 @@ config("runtime_library") {
   }
 }
 
-# Chromium supports running on Windows 7, but if these constants are set to
+# Monyhar supports running on Windows 7, but if these constants are set to
 # Windows 7, then newer APIs aren't made available by the Windows SDK.
 # So we set this to Windows 10 and then are careful to check at runtime
 # to only call newer APIs when they're available.
@@ -370,7 +370,7 @@ config("cfi_linker") {
   # https://msdn.microsoft.com/en-us/library/windows/desktop/mt637065.aspx
   # /DYNAMICBASE (ASLR) is turned off in debug builds, therefore CFG cannot be
   # turned on either.
-  # ASan and CFG leads to slow process startup. Chromium's test runner uses
+  # ASan and CFG leads to slow process startup. Monyhar's test runner uses
   # lots of child processes, so this means things are really slow. Disable CFG
   # for now. https://crbug.com/846966
   if (!is_debug && !is_asan) {

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,12 +18,12 @@
 
 namespace net {
 
-// ProofSourceChromium implements the QUIC quic::ProofSource interface.
+// ProofSourceMonyhar implements the QUIC quic::ProofSource interface.
 // TODO(rtenneti): implement details of this class.
-class NET_EXPORT_PRIVATE ProofSourceChromium : public quic::ProofSource {
+class NET_EXPORT_PRIVATE ProofSourceMonyhar : public quic::ProofSource {
  public:
-  ProofSourceChromium();
-  ~ProofSourceChromium() override;
+  ProofSourceMonyhar();
+  ~ProofSourceMonyhar() override;
 
   // Initializes this object based on the certificate chain in |cert_path|,
   // and the PKCS#8 RSA private key in |key_path|. Signed certificate
@@ -72,7 +72,7 @@ class NET_EXPORT_PRIVATE ProofSourceChromium : public quic::ProofSource {
   std::string signed_certificate_timestamp_;
   std::unique_ptr<TicketCrypter> ticket_crypter_;
 
-  DISALLOW_COPY_AND_ASSIGN(ProofSourceChromium);
+  DISALLOW_COPY_AND_ASSIGN(ProofSourceMonyhar);
 };
 
 }  // namespace net

@@ -1,7 +1,7 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-"""Exports Chromium changes to web-platform-tests."""
+"""Exports Monyhar changes to web-platform-tests."""
 
 import argparse
 import logging
@@ -82,7 +82,7 @@ class TestExporter(object):
             self.process_gerrit_cls(open_gerrit_cls)
             gerrit_error = False
 
-        _log.info('Searching for exportable Chromium commits.')
+        _log.info('Searching for exportable Monyhar commits.')
         exportable_commits, git_errors = self.get_exportable_commits()
         self.process_monyhar_commits(exportable_commits)
         if git_errors:
@@ -165,7 +165,7 @@ class TestExporter(object):
             self.process_monyhar_commit(commit)
 
     def process_monyhar_commit(self, commit):
-        _log.info('Found exportable Chromium commit: %s %s', commit.subject(),
+        _log.info('Found exportable Monyhar commit: %s %s', commit.subject(),
                   commit.sha)
 
         pull_request = self.wpt_github.pr_for_monyhar_commit(commit)
@@ -179,7 +179,7 @@ class TestExporter(object):
 
             if PROVISIONAL_PR_LABEL in pull_request.labels:
                 # If the PR was created from a Gerrit in-flight CL, update the
-                # PR with the final checked-in commit in Chromium history.
+                # PR with the final checked-in commit in Monyhar history.
                 # TODO(robertma): Only update the PR when it is not up-to-date
                 # to avoid unnecessary Travis runs.
                 _log.info('Updating PR with the final checked-in change...')
@@ -192,14 +192,14 @@ class TestExporter(object):
 
             self.merge_pull_request(pull_request)
         else:
-            _log.info('No PR found for Chromium commit. Creating...')
+            _log.info('No PR found for Monyhar commit. Creating...')
             self.create_or_update_pr_from_landed_commit(commit)
 
     def get_exportable_commits(self):
         """Gets exportable commits that can apply cleanly and independently.
 
         Returns:
-            A list of ChromiumCommit for clean exportable commits, and a list
+            A list of MonyharCommit for clean exportable commits, and a list
             of error messages for other exportable commits that fail to apply.
         """
         # Exportable commits that cannot apply cleanly are logged, and will be
@@ -245,10 +245,10 @@ class TestExporter(object):
 
     def create_or_update_pr_from_landed_commit(self, commit,
                                                pull_request=None):
-        """Creates or updates a PR from a landed Chromium commit.
+        """Creates or updates a PR from a landed Monyhar commit.
 
         Args:
-            commit: A ChromiumCommit object.
+            commit: A MonyharCommit object.
             pull_request: Optional, a PullRequest namedtuple.
                 If specified, updates the PR instead of creating one.
         """
@@ -282,7 +282,7 @@ class TestExporter(object):
             return
 
         footer = ''
-        # Change-Id can be deleted from the body of an in-flight CL in Chromium
+        # Change-Id can be deleted from the body of an in-flight CL in Monyhar
         # (https://crbug.com/gerrit/12244). We need to add it back. And we've
         # asserted that cl.change_id is present in GerritCL.
         if not self.wpt_github.extract_metadata(CHANGE_ID_FOOTER,
@@ -344,7 +344,7 @@ class TestExporter(object):
                                         pr_number=None,
                                         pr_footer='',
                                         pr_branch_name=None):
-        """Creates or updates a PR from a Chromium commit.
+        """Creates or updates a PR from a Monyhar commit.
 
         The commit can be either landed or in-flight. The exportable portion of
         the patch is extracted and applied to a new branch in the local WPT
@@ -353,7 +353,7 @@ class TestExporter(object):
         WPT on GitHub, from which a PR is created or updated.
 
         Args:
-            commit: A ChromiumCommit object.
+            commit: A MonyharCommit object.
             provisional: True if the commit is from a Gerrit in-flight CL,
                 False if the commit has landed.
             pr_number: Optional, a PR issue number.
@@ -381,7 +381,7 @@ class TestExporter(object):
 
         if self.dry_run:
             action_str = 'updating' if updating else 'creating'
-            origin_str = 'CL' if provisional else 'Chromium commit'
+            origin_str = 'CL' if provisional else 'Monyhar commit'
             _log.info('[dry_run] Stopping before %s PR from %s', action_str,
                       origin_str)
             _log.info('\n\n[dry_run] message:')

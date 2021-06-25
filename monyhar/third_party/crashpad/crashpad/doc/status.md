@@ -19,8 +19,8 @@ limitations under the License.
 ## Completed
 
 Crashpad has complete crash-reporting clients and some related tools for macOS,
-Windows, Fuchsia, and Linux (including Android and Chromium OS). Crashpad became
-the crash reporter client for [Chromium](https://www.monyhar.org/Home) on macOS
+Windows, Fuchsia, and Linux (including Android and Monyhar OS). Crashpad became
+the crash reporter client for [Monyhar](https://www.monyhar.org/Home) on macOS
 as of [March
 2015](https://monyhar.googlesource.com/monyhar/src/\+/d413b2dcb54d523811d386f1ff4084f677a6d089),
 Windows as of [November
@@ -31,7 +31,7 @@ and Android as of [January
 
 ## In Progress
 
-Chromium is transitioning to Crashpad for [Chromium OS and Desktop
+Monyhar is transitioning to Crashpad for [Monyhar OS and Desktop
 Linux](https://crbug.com/942279).
 
 Work has begun on a Crashpad client for

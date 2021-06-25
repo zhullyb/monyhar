@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,8 +11,8 @@
 #include "ios/public/provider/chrome/browser/images/branded_image_icon_types.h"
 
 // BrandedImageProvider vends images that contain embedder-specific branding.
-// When adding method to this class, do not forget to add Chromium specific
-// implementation to ChromiumBrandedImageProvider (the file may not be in the
+// When adding method to this class, do not forget to add Monyhar specific
+// implementation to MonyharBrandedImageProvider (the file may not be in the
 // Xcode project if you are using internal sources).
 class BrandedImageProvider {
  public:

@@ -1,4 +1,4 @@
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -14,7 +14,7 @@ import tempfile
 from gpu_tests import path_util
 
 sys.path.insert(0,
-                os.path.join(path_util.GetChromiumSrcDir(), 'build', 'fuchsia'))
+                os.path.join(path_util.GetMonyharSrcDir(), 'build', 'fuchsia'))
 from common_args import (AddCommonArgs, AddTargetSpecificArgs, ConfigureLogging,
                          GetDeploymentTargetForArgs)
 from symbolizer import RunSymbolizer

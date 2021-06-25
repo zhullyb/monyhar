@@ -1,4 +1,4 @@
-// Copyright (c) 2015 The Chromium Authors. All rights reserved.
+// Copyright (c) 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -21,12 +21,12 @@ class QuicClock;
 namespace net {
 
 // If more than this many packets have been read or more than that many
-// milliseconds have passed, QuicChromiumPacketReader::StartReading() yields by
-// doing a QuicChromiumPacketReader::PostTask().
+// milliseconds have passed, QuicMonyharPacketReader::StartReading() yields by
+// doing a QuicMonyharPacketReader::PostTask().
 const int kQuicYieldAfterPacketsRead = 32;
 const int kQuicYieldAfterDurationMilliseconds = 2;
 
-class NET_EXPORT_PRIVATE QuicChromiumPacketReader {
+class NET_EXPORT_PRIVATE QuicMonyharPacketReader {
  public:
   class NET_EXPORT_PRIVATE Visitor {
    public:
@@ -40,13 +40,13 @@ class NET_EXPORT_PRIVATE QuicChromiumPacketReader {
                           const quic::QuicSocketAddress& peer_address) = 0;
   };
 
-  QuicChromiumPacketReader(DatagramClientSocket* socket,
+  QuicMonyharPacketReader(DatagramClientSocket* socket,
                            const quic::QuicClock* clock,
                            Visitor* visitor,
                            int yield_after_packets,
                            quic::QuicTime::Delta yield_after_duration,
                            const NetLogWithSource& net_log);
-  virtual ~QuicChromiumPacketReader();
+  virtual ~QuicMonyharPacketReader();
 
   // Causes the QuicConnectionHelper to start reading from the socket
   // and passing the data along to the quic::QuicConnection.
@@ -73,9 +73,9 @@ class NET_EXPORT_PRIVATE QuicChromiumPacketReader {
   scoped_refptr<IOBufferWithSize> read_buffer_;
   NetLogWithSource net_log_;
 
-  base::WeakPtrFactory<QuicChromiumPacketReader> weak_factory_{this};
+  base::WeakPtrFactory<QuicMonyharPacketReader> weak_factory_{this};
 
-  DISALLOW_COPY_AND_ASSIGN(QuicChromiumPacketReader);
+  DISALLOW_COPY_AND_ASSIGN(QuicMonyharPacketReader);
 };
 
 }  // namespace net

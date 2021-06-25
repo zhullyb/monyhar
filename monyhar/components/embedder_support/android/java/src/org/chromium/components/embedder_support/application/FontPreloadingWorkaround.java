@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,7 +27,7 @@ import java.lang.reflect.Proxy;
  * to do font preloading in the WebView renderer process, which will fail as the resource will not
  * exist in the WebView APK, resulting in a crash.
  *
- * If Chromium has a preloaded_fonts metadata key in its manifest and the framework's font
+ * If Monyhar has a preloaded_fonts metadata key in its manifest and the framework's font
  * preloading code attempts to use load it from a renderer process, it will fail on a
  * SecurityException.
  *

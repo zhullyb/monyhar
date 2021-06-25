@@ -1,7 +1,7 @@
 From 3f179bf13081f9dde0535a17864ceeba685ab907 Mon Sep 17 00:00:00 2001
 From: Tom Anderson <thomasanderson@monyhar.org>
 Date: Wed, 8 Jan 2020 12:11:56 -0800
-Subject: [PATCH 2/2] Fix compatibility for Chromium
+Subject: [PATCH 2/2] Fix compatibility for Monyhar
 
 * Add debug() and g_() functions in case the system dpkg doesn't have it.
 * Implement List::Util::any and List::Util::none for older versions of perl.

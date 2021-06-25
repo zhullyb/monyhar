@@ -49,7 +49,7 @@ void SQLTransactionClient::DidCommitWriteTransaction(Database* database) {
 }
 
 bool SQLTransactionClient::DidExceedQuota(Database* database) {
-  // Chromium does not allow users to manually change the quota for an origin
+  // Monyhar does not allow users to manually change the quota for an origin
   // (for now, at least).  Don't do anything.
   DCHECK(
       database->GetDatabaseContext()->GetExecutionContext()->IsContextThread());

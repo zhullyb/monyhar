@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -692,7 +692,7 @@ bool TestRecipeReplayer::StartWebPageReplayServer(
   std::vector<std::string> args;
   base::FilePath src_dir;
   if (!base::PathService::Get(base::DIR_SOURCE_ROOT, &src_dir)) {
-    ADD_FAILURE() << "Failed to extract the Chromium source directory!";
+    ADD_FAILURE() << "Failed to extract the Monyhar source directory!";
     return false;
   }
 
@@ -782,7 +782,7 @@ bool TestRecipeReplayer::RunWebPageReplayCmd(
   base::LaunchOptions options = base::LaunchOptionsForTest();
   base::FilePath exe_dir;
   if (!base::PathService::Get(base::DIR_SOURCE_ROOT, &exe_dir)) {
-    ADD_FAILURE() << "Failed to extract the Chromium source directory!";
+    ADD_FAILURE() << "Failed to extract the Monyhar source directory!";
     return false;
   }
 
@@ -823,7 +823,7 @@ bool TestRecipeReplayer::RunWebPageReplayCmd(
   // WPR releases. The custom files are made to work on iOS.
   base::FilePath src_dir;
   if (!base::PathService::Get(base::DIR_SOURCE_ROOT, &src_dir)) {
-    ADD_FAILURE() << "Failed to extract the Chromium source directory!";
+    ADD_FAILURE() << "Failed to extract the Monyhar source directory!";
     return false;
   }
 

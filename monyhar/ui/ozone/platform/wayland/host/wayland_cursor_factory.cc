@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -129,7 +129,7 @@ void WaylandCursorFactory::ReloadThemeCursors() {
   // the next theme, we will destroy it (see OnCursorBufferAttached() above).
   // If more than one theme has been changed but we didn't take any cursors from
   // them (which is possible if the user played with settings but didn't switch
-  // into Chromium), we don't need to track them all.
+  // into Monyhar), we don't need to track them all.
   if (!unloaded_theme_ && current_theme_ && current_theme_->cache.size() > 0)
     unloaded_theme_ = std::move(current_theme_);
 

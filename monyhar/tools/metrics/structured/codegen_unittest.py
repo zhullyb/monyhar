@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Tests for codegen.py.
@@ -30,13 +30,13 @@ class CodegenTest(unittest.TestCase):
     check('AcronymAtEndHTTP', 'acronym_at_end_http')
 
   def test_hash_name(self):
-    # This was generated using the function in Chromium's
+    # This was generated using the function in Monyhar's
     # //base/metrics/metrics_hashes.cc.
     known_good_hash = 11096769389970233700
     self.assertEqual(Util.hash_name('known good hash'), known_good_hash)
 
   def test_event_name_hash(self):
-    # This was generated using the function in Chromium's
+    # This was generated using the function in Monyhar's
     # //base/metrics/metrics_hashes.cc for the string
     # chrome::TestProjectOne::TestEventOne
     event_name_hash = 13593049295042080097

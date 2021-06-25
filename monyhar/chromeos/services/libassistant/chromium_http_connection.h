@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -32,13 +32,13 @@ namespace chromeos {
 namespace libassistant {
 
 // Implements libassistant's HttpConnection.
-class ChromiumHttpConnection
+class MonyharHttpConnection
     : public assistant_client::HttpConnection,
       public network::mojom::ChunkedDataPipeGetter,
       public network::SimpleURLLoaderStreamConsumer,
-      public base::RefCountedThreadSafe<ChromiumHttpConnection> {
+      public base::RefCountedThreadSafe<MonyharHttpConnection> {
  public:
-  ChromiumHttpConnection(std::unique_ptr<network::PendingSharedURLLoaderFactory>
+  MonyharHttpConnection(std::unique_ptr<network::PendingSharedURLLoaderFactory>
                              pending_url_loader_factory,
                          Delegate* delegate);
 
@@ -67,10 +67,10 @@ class ChromiumHttpConnection
   void OnRetry(base::OnceClosure start_retry) override;
 
  protected:
-  ~ChromiumHttpConnection() override;
+  ~MonyharHttpConnection() override;
 
  private:
-  friend class base::RefCountedThreadSafe<ChromiumHttpConnection>;
+  friend class base::RefCountedThreadSafe<MonyharHttpConnection>;
 
   enum class State {
     NEW,
@@ -127,16 +127,16 @@ class ChromiumHttpConnection
   base::OnceClosure on_resume_callback_;
   std::string partial_response_cache_;
 
-  DISALLOW_COPY_AND_ASSIGN(ChromiumHttpConnection);
+  DISALLOW_COPY_AND_ASSIGN(MonyharHttpConnection);
 };
 
-class ChromiumHttpConnectionFactory
+class MonyharHttpConnectionFactory
     : public assistant_client::HttpConnectionFactory {
  public:
-  explicit ChromiumHttpConnectionFactory(
+  explicit MonyharHttpConnectionFactory(
       std::unique_ptr<network::PendingSharedURLLoaderFactory>
           pending_url_loader_factory);
-  ~ChromiumHttpConnectionFactory() override;
+  ~MonyharHttpConnectionFactory() override;
 
   // assistant_client::HttpConnectionFactory implementation:
   assistant_client::HttpConnection* Create(
@@ -145,7 +145,7 @@ class ChromiumHttpConnectionFactory
  private:
   scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory_;
 
-  DISALLOW_COPY_AND_ASSIGN(ChromiumHttpConnectionFactory);
+  DISALLOW_COPY_AND_ASSIGN(MonyharHttpConnectionFactory);
 };
 
 }  // namespace libassistant

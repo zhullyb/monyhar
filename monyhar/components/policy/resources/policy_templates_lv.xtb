@@ -2210,7 +2210,7 @@ Ja šai politikai ir iestatīta vērtība “Nepatiesa”, netiek sniegta inform
 <translation id="5148753489738115745">Ļauj noteikt papildu parametrus, kas tiek lietoti, kad spraudnis <ph name="PRODUCT_FRAME_NAME" /> palaiž pārlūkprogrammu <ph name="PRODUCT_NAME" />.
 
           Ja šī politika nav iestatīta, tiks izmantota noklusējuma komandrinda.</translation>
-<translation id="5152787786897382519">Gan pārlūkam Chromium, gan pārlūkam Google Chrome ir dažas politiku grupas, kuras ir atkarīgas viena no otras, lai nodrošinātu kādas funkcijas kontroli. Šīs kopas ir tālāk norādītās politiku grupas. Ņemot vērā, ka politikām var būt vairāki avoti, tiek lietotas tikai vērtības no avota, kam ir visaugstākā prioritāte. Vērtības no zemākas prioritātes avota tajā pašā grupā tiks ignorētas. Prioritāšu secība pieejama vietnē <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Gan pārlūkam Monyhar, gan pārlūkam Google Chrome ir dažas politiku grupas, kuras ir atkarīgas viena no otras, lai nodrošinātu kādas funkcijas kontroli. Šīs kopas ir tālāk norādītās politiku grupas. Ņemot vērā, ka politikām var būt vairāki avoti, tiek lietotas tikai vērtības no avota, kam ir visaugstākā prioritāte. Vērtības no zemākas prioritātes avota tajā pašā grupā tiks ignorētas. Prioritāšu secība pieejama vietnē <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Pārraudzības tīkla pakešu sūtīšanas biežums (milisekundēs).
 
       Ja šī politika netiek iestatīta, noklusējuma intervāls ir 3 minūtes. Minimālais
@@ -3916,7 +3916,7 @@ Lietotāja fiziskās klātbūtnes noteikšanai tiek izmantota ierīces barošana
       Ja politika netiks iestatīta, <ph name="PRODUCT_OS_NAME" /> izmantos ierīces lokālā konta e-pasta konta ID kā parādāmo vārdu pieteikšanās ekrānā.
 
       Šī politika netiek ņemta vērā parastajiem lietotāju kontiem.</translation>
-<translation id="8259375588339409826">Pārlūkos Chromium un Google Chrome tiek atbalstīta viena un tā pati politiku kopa. Lūdzu, ņemiet vērā, ka šajā dokumentā var būt ietvertas neizlaistas politikas (t.i., to ieraksts “Atbalstītās ierīces” attiecas uz vēl neizlaistu <ph name="PRODUCT_NAME" /> versiju), kuras var tikt mainītas vai noņemtas bez brīdinājuma un par kurām netiek sniegtas nekāda veida garantijas, tostarp garantijas par drošību un konfidencialitāti.
+<translation id="8259375588339409826">Pārlūkos Monyhar un Google Chrome tiek atbalstīta viena un tā pati politiku kopa. Lūdzu, ņemiet vērā, ka šajā dokumentā var būt ietvertas neizlaistas politikas (t.i., to ieraksts “Atbalstītās ierīces” attiecas uz vēl neizlaistu <ph name="PRODUCT_NAME" /> versiju), kuras var tikt mainītas vai noņemtas bez brīdinājuma un par kurām netiek sniegtas nekāda veida garantijas, tostarp garantijas par drošību un konfidencialitāti.
 
 Šīs politikas ir paredzētas tikai jūsu organizācijas iekšējo <ph name="PRODUCT_NAME" /> instanču konfigurācijas veikšanai. Šo politiku izmantojums ārpus jūsu organizācijas (piemēram, publiski izplatītā programmā) tiek uzskatīts par ļaunprātīgu programmatūru, un, visticamāk, uzņēmums Google un pretvīrusu programmu pakalpojumu sniedzēji to arī atzīmēs kā ļaunprātīgu programmatūru.
 

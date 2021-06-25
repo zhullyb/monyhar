@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -92,11 +92,11 @@ def CheckRepoIsNotAtMasterBranch(path):
     raise Exception('%s is at master branch - refusing to copy there.' % path)
 
 
-def CheckRepoIsChromiumCheckout(path):
+def CheckRepoIsMonyharCheckout(path):
   os.chdir(path)
   if (RunCmd(['git', 'config', '--get', 'remote.origin.url']).strip() !=
       'https://monyhar.googlesource.com/monyhar/src.git'):
-    raise Exception('%s is not a proper Chromium checkout.' % path)
+    raise Exception('%s is not a proper Monyhar checkout.' % path)
 
 
 def CheckRepoIsInspectorProtocolCheckout(path):
@@ -127,17 +127,17 @@ def GetHeadRevision(path):
 
 def main(argv):
   parser = argparse.ArgumentParser(description=(
-      "Rolls the inspector_protocol project (upstream) into Chromium's "
+      "Rolls the inspector_protocol project (upstream) into Monyhar's "
       "third_party (downstream)."))
   parser.add_argument("--ip_src_upstream",
                       help="The inspector_protocol (upstream) tree.",
                       default="~/ip/src")
   parser.add_argument("--monyhar_src_downstream",
-                      help="The Chromium src tree.",
+                      help="The Monyhar src tree.",
                       default="~/monyhar/src")
   parser.add_argument('--reverse', dest='reverse', action='store_true',
                       help=("Whether to roll the opposite direction, from "
-                            "Chromium (downstream) to inspector_protocol "
+                            "Monyhar (downstream) to inspector_protocol "
                             "(upstream)."))
   parser.set_defaults(reverse=False)
   parser.add_argument('--force', dest='force', action='store_true',
@@ -152,7 +152,7 @@ def main(argv):
   CheckRepoIsClean(upstream)
   CheckRepoIsClean(downstream)
   CheckRepoIsInspectorProtocolCheckout(upstream)
-  CheckRepoIsChromiumCheckout(downstream)
+  CheckRepoIsMonyharCheckout(downstream)
   # Check that the destination Git repo isn't at the master branch - it's
   # generally a bad idea to check into the master branch, so we catch this
   # common pilot error here early.

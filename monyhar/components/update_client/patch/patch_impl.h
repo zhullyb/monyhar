@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,21 +14,21 @@
 
 namespace update_client {
 
-class PatchChromiumFactory : public PatcherFactory {
+class PatchMonyharFactory : public PatcherFactory {
  public:
   using Callback =
       base::RepeatingCallback<mojo::PendingRemote<patch::mojom::FilePatcher>()>;
-  explicit PatchChromiumFactory(Callback callback);
+  explicit PatchMonyharFactory(Callback callback);
 
   scoped_refptr<Patcher> Create() const override;
 
  protected:
-  ~PatchChromiumFactory() override;
+  ~PatchMonyharFactory() override;
 
  private:
   const Callback callback_;
 
-  DISALLOW_COPY_AND_ASSIGN(PatchChromiumFactory);
+  DISALLOW_COPY_AND_ASSIGN(PatchMonyharFactory);
 };
 
 }  // namespace update_client

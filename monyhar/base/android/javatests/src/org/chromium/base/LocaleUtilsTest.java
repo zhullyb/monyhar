@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,25 +28,25 @@ public class LocaleUtilsTest {
     // This is also a part of test for toLanguageTag when API level is lower than 24
     @Test
     @SmallTest
-    public void testGetUpdatedLanguageForChromium() {
+    public void testGetUpdatedLanguageForMonyhar() {
         String language = "en";
-        String updatedLanguage = LocaleUtils.getUpdatedLanguageForChromium(language);
+        String updatedLanguage = LocaleUtils.getUpdatedLanguageForMonyhar(language);
         Assert.assertEquals(language, updatedLanguage);
 
         language = "iw";
-        updatedLanguage = LocaleUtils.getUpdatedLanguageForChromium(language);
+        updatedLanguage = LocaleUtils.getUpdatedLanguageForMonyhar(language);
         Assert.assertEquals("he", updatedLanguage);
 
         language = "ji";
-        updatedLanguage = LocaleUtils.getUpdatedLanguageForChromium(language);
+        updatedLanguage = LocaleUtils.getUpdatedLanguageForMonyhar(language);
         Assert.assertEquals("yi", updatedLanguage);
 
         language = "in";
-        updatedLanguage = LocaleUtils.getUpdatedLanguageForChromium(language);
+        updatedLanguage = LocaleUtils.getUpdatedLanguageForMonyhar(language);
         Assert.assertEquals("id", updatedLanguage);
 
         language = "tl";
-        updatedLanguage = LocaleUtils.getUpdatedLanguageForChromium(language);
+        updatedLanguage = LocaleUtils.getUpdatedLanguageForMonyhar(language);
         Assert.assertEquals("fil", updatedLanguage);
     }
 
@@ -54,25 +54,25 @@ public class LocaleUtilsTest {
     @Test
     @SmallTest
     @MinAndroidSdkLevel(Build.VERSION_CODES.LOLLIPOP)
-    public void testGetUpdatedLocaleForChromium() {
+    public void testGetUpdatedLocaleForMonyhar() {
         Locale locale = new Locale("jp");
-        Locale updatedLocale = LocaleUtils.getUpdatedLocaleForChromium(locale);
+        Locale updatedLocale = LocaleUtils.getUpdatedLocaleForMonyhar(locale);
         Assert.assertEquals(locale, updatedLocale);
 
         locale = new Locale("iw");
-        updatedLocale = LocaleUtils.getUpdatedLocaleForChromium(locale);
+        updatedLocale = LocaleUtils.getUpdatedLocaleForMonyhar(locale);
         Assert.assertEquals(new Locale("he"), updatedLocale);
 
         locale = new Locale("ji");
-        updatedLocale = LocaleUtils.getUpdatedLocaleForChromium(locale);
+        updatedLocale = LocaleUtils.getUpdatedLocaleForMonyhar(locale);
         Assert.assertEquals(new Locale("yi"), updatedLocale);
 
         locale = new Locale("in");
-        updatedLocale = LocaleUtils.getUpdatedLocaleForChromium(locale);
+        updatedLocale = LocaleUtils.getUpdatedLocaleForMonyhar(locale);
         Assert.assertEquals(new Locale("id"), updatedLocale);
 
         locale = new Locale("tl");
-        updatedLocale = LocaleUtils.getUpdatedLocaleForChromium(locale);
+        updatedLocale = LocaleUtils.getUpdatedLocaleForMonyhar(locale);
         Assert.assertEquals(new Locale("fil"), updatedLocale);
     }
 
@@ -216,7 +216,7 @@ public class LocaleUtilsTest {
         locale = new Locale("es", "419");
         Assert.assertEquals(locale, LocaleUtils.forLanguageTagCompat(languageTag));
 
-        // Tests if updated Chromium language code and deprecated language code
+        // Tests if updated Monyhar language code and deprecated language code
         // are pointing to the same Locale Object.
         languageTag = "he";
         locale = new Locale("iw");
@@ -242,7 +242,7 @@ public class LocaleUtilsTest {
         locale = new Locale("in");
         Assert.assertEquals(locale, LocaleUtils.forLanguageTagCompat(languageTag));
 
-        // Tests for Tagalog/Filipino if updated Chromium language code and
+        // Tests for Tagalog/Filipino if updated Monyhar language code and
         // language code are pointing to the same Locale Object.
         languageTag = "tl";
         locale = new Locale("tl");

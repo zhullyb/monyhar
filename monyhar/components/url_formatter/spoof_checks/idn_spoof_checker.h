@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -59,8 +59,8 @@ struct TopDomainEntry {
 };
 
 // A helper class for IDN Spoof checking, used to ensure that no IDN input is
-// spoofable per Chromium's standard of spoofability. For a more thorough
-// explanation of how spoof checking works in Chromium, see
+// spoofable per Monyhar's standard of spoofability. For a more thorough
+// explanation of how spoof checking works in Monyhar, see
 // http://dev.monyhar.org/developers/design-documents/idn-in-google-chrome .
 class IDNSpoofChecker {
  public:

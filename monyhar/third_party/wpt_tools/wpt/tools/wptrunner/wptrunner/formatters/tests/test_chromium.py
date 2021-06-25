@@ -6,7 +6,7 @@ from io import StringIO
 from mozlog import handlers, structuredlog
 
 sys.path.insert(0, join(dirname(__file__), "..", ".."))
-from formatters.monyhar import ChromiumFormatter
+from formatters.monyhar import MonyharFormatter
 
 
 def test_monyhar_required_fields(capfd):
@@ -15,7 +15,7 @@ def test_monyhar_required_fields(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # output a bunch of stuff
     logger.suite_start(["test-id-1"], run_info={}, time=123)
@@ -52,7 +52,7 @@ def test_monyhar_test_name_trie(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # output a bunch of stuff
     logger.suite_start(["/foo/bar/test-id-1", "/foo/test-id-2"], run_info={},
@@ -80,7 +80,7 @@ def test_monyhar_test_name_trie(capfd):
     assert test_obj["expected"] == "FAIL"
 
     test_obj = output_obj["tests"]["foo"]["test-id-2"]
-    # The ERROR status is mapped to FAIL for Chromium
+    # The ERROR status is mapped to FAIL for Monyhar
     assert test_obj["actual"] == "FAIL"
     assert test_obj["expected"] == "TIMEOUT"
 
@@ -91,7 +91,7 @@ def test_num_failures_by_type(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run some tests with different statuses: 3 passes, 1 timeout
     logger.suite_start(["t1", "t2", "t3", "t4"], run_info={}, time=123)
@@ -127,7 +127,7 @@ def test_subtest_messages(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run two tests with subtest messages. The subtest name should be included
     # in the output. We should also tolerate missing messages.
@@ -184,7 +184,7 @@ def test_subtest_failure(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    formatter = ChromiumFormatter()
+    formatter = MonyharFormatter()
     logger.add_handler(handlers.StreamHandler(output, formatter))
 
     # Run a test with some subtest failures.
@@ -246,7 +246,7 @@ def test_expected_subtest_failure(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    formatter = ChromiumFormatter()
+    formatter = MonyharFormatter()
     logger.add_handler(handlers.StreamHandler(output, formatter))
 
     # Run a test with some expected subtest failures.
@@ -302,7 +302,7 @@ def test_unexpected_subtest_pass(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    formatter = ChromiumFormatter()
+    formatter = MonyharFormatter()
     logger.add_handler(handlers.StreamHandler(output, formatter))
 
     # Run a test with a subtest that is expected to fail but passes.
@@ -355,7 +355,7 @@ def test_expected_test_fail(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run some tests with different statuses: 3 passes, 1 timeout
     logger.suite_start(["t1"], run_info={}, time=123)
@@ -389,7 +389,7 @@ def test_unexpected_test_fail(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run some tests with different statuses: 3 passes, 1 timeout
     logger.suite_start(["t1"], run_info={}, time=123)
@@ -424,7 +424,7 @@ def test_flaky_test_expected(capfd):
     # set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run a test that is known to be flaky
     logger.suite_start(["t1"], run_info={}, time=123)
@@ -460,7 +460,7 @@ def test_flaky_test_unexpected(capfd):
     # set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run a test that is known to be flaky
     logger.suite_start(["t1"], run_info={}, time=123)
@@ -495,7 +495,7 @@ def test_precondition_failed(capfd):
     # set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run a test with a precondition failure
     logger.suite_start(["t1"], run_info={}, time=123)
@@ -530,7 +530,7 @@ def test_known_intermittent_empty(capfd):
     # set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run a test and include an empty known_intermittent list
     logger.suite_start(["t1"], run_info={}, time=123)
@@ -561,12 +561,12 @@ def test_known_intermittent_duplicate(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # There are two duplications in this input:
     # 1. known_intermittent already contains expected;
-    # 2. both statuses in known_intermittent map to FAIL in Chromium.
-    # In the end, we should only get one FAIL in Chromium "expected".
+    # 2. both statuses in known_intermittent map to FAIL in Monyhar.
+    # In the end, we should only get one FAIL in Monyhar "expected".
     logger.suite_start(["t1"], run_info={}, time=123)
     logger.test_start("t1")
     logger.test_end("t1", status="ERROR", expected="ERROR", known_intermittent=["FAIL", "ERROR"])
@@ -594,7 +594,7 @@ def test_reftest_screenshots(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     # Run a reftest with reftest_screenshots.
     logger.suite_start(["t1"], run_info={}, time=123)
@@ -631,7 +631,7 @@ def test_process_output_crashing_test(capfd):
     # Set up the handler.
     output = StringIO()
     logger = structuredlog.StructuredLogger("test_a")
-    logger.add_handler(handlers.StreamHandler(output, ChromiumFormatter()))
+    logger.add_handler(handlers.StreamHandler(output, MonyharFormatter()))
 
     logger.suite_start(["t1", "t2", "t3"], run_info={}, time=123)
 

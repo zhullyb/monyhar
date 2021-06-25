@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -175,7 +175,7 @@ void UnitTests::RunTestInProcess(SandboxTestRunner* test_runner,
 #if defined(OS_ANDROID)
     // On Android Oreo and higher, the system applies a seccomp filter to all
     // processes. It has its own SIGSYS handler that is un-hooked here in the
-    // test child process, so that the Chromium handler can be used. This
+    // test child process, so that the Monyhar handler can be used. This
     // is performed by SeccompStarterAndroid in normal builds.
     signal(SIGSYS, SIG_DFL);
     // In addition, libsigchain will install a SEGV handler that is normally

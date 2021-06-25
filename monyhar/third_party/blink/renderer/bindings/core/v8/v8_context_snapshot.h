@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -64,7 +64,7 @@ class CORE_EXPORT V8ContextSnapshot {
 
 // This class contains helper functions to take and use a V8 context snapshot.
 //
-// The V8 context snapshot is taken by tools/v8_context_snapshot/ when Chromium
+// The V8 context snapshot is taken by tools/v8_context_snapshot/ when Monyhar
 // is built, and is used when Blink creates a new V8 context. When to build or
 // to use the V8 context snapshot, you have a table of references of C++
 // callbacks exposed to V8.

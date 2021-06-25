@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -57,7 +57,7 @@ public class ScreenshotShareSheetDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder =
-                new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_Fullscreen);
+                new AlertDialog.Builder(getActivity(), R.style.Theme_Monyhar_Fullscreen);
         ScreenshotShareSheetView screenshotShareSheetView =
                 (ScreenshotShareSheetView) getActivity().getLayoutInflater().inflate(
                         R.layout.screenshot_share_sheet, null);

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -74,7 +74,7 @@ class NET_EXPORT WindowsSystemProxyResolutionRequest
 
   // Callback for when the WinHttp request has completed. This is the main way
   // that proxy resolutions will complete. The |proxy_list| is the list of
-  // proxies returned by WinHttp translated into Chromium-friendly terms. The
+  // proxies returned by WinHttp translated into Monyhar-friendly terms. The
   // |net_error| describes the status of the proxy resolution request. If
   // WinHttp fails for some reason, |windows_error| contains the specific error
   // returned by WinHttp.
@@ -84,7 +84,7 @@ class NET_EXPORT WindowsSystemProxyResolutionRequest
 
  protected:
   // The resolver will do the work of talking to system APIs and translating the
-  // results into something Chromium understands.
+  // results into something Monyhar understands.
   scoped_refptr<WindowsSystemProxyResolver> windows_system_proxy_resolver_;
 
  private:

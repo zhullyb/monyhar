@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ import org.monyhar.base.annotations.JNINamespace;
  */
 @JNINamespace("weblayer")
 public final class WebLayerExceptionFilter {
-    // The filename prefix used by Chromium proguarding, which we use to
+    // The filename prefix used by Monyhar proguarding, which we use to
     // recognise stack frames that reference WebLayer.
     private static final String CHROMIUM_PREFIX = "monyhar-";
 

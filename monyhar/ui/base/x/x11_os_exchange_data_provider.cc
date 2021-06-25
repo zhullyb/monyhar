@@ -1,4 +1,4 @@
-// Copyright (c) 2020 The Chromium Authors. All rights reserved.
+// Copyright (c) 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -51,7 +51,7 @@ XOSExchangeDataProvider::XOSExchangeDataProvider()
     : connection_(x11::Connection::Get()),
       x_root_window_(ui::GetX11RootWindow()),
       own_window_(true),
-      x_window_(x11::CreateDummyWindow("Chromium Drag & Drop Window")),
+      x_window_(x11::CreateDummyWindow("Monyhar Drag & Drop Window")),
       selection_owner_(connection_, x_window_, x11::GetAtom(kDndSelection)) {}
 
 XOSExchangeDataProvider::~XOSExchangeDataProvider() {

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -62,18 +62,18 @@ const net::NetworkTrafficAnnotationTag kTrafficAnnotation =
         comments:
           "All requests that are received by QUIC streams have network traffic "
           "annotation, but the annotation is not passed to the writer function "
-          "due to technial overheads. Please see QuicChromiumClientSession and "
-          "QuicChromiumClientStream classes for references."
+          "due to technial overheads. Please see QuicMonyharClientSession and "
+          "QuicMonyharClientStream classes for references."
     )");
 
 }  // namespace
 
-QuicChromiumPacketWriter::ReusableIOBuffer::ReusableIOBuffer(size_t capacity)
+QuicMonyharPacketWriter::ReusableIOBuffer::ReusableIOBuffer(size_t capacity)
     : IOBuffer(capacity), capacity_(capacity), size_(0) {}
 
-QuicChromiumPacketWriter::ReusableIOBuffer::~ReusableIOBuffer() {}
+QuicMonyharPacketWriter::ReusableIOBuffer::~ReusableIOBuffer() {}
 
-void QuicChromiumPacketWriter::ReusableIOBuffer::Set(const char* buffer,
+void QuicMonyharPacketWriter::ReusableIOBuffer::Set(const char* buffer,
                                                      size_t buf_len) {
   CHECK_LE(buf_len, capacity_);
   CHECK(HasOneRef());
@@ -81,9 +81,9 @@ void QuicChromiumPacketWriter::ReusableIOBuffer::Set(const char* buffer,
   std::memcpy(data(), buffer, buf_len);
 }
 
-QuicChromiumPacketWriter::QuicChromiumPacketWriter() {}
+QuicMonyharPacketWriter::QuicMonyharPacketWriter() {}
 
-QuicChromiumPacketWriter::QuicChromiumPacketWriter(
+QuicMonyharPacketWriter::QuicMonyharPacketWriter(
     DatagramClientSocket* socket,
     base::SequencedTaskRunner* task_runner)
     : socket_(socket),
@@ -95,19 +95,19 @@ QuicChromiumPacketWriter::QuicChromiumPacketWriter(
       retry_count_(0) {
   retry_timer_.SetTaskRunner(task_runner);
   write_callback_ = base::BindRepeating(
-      &QuicChromiumPacketWriter::OnWriteComplete, weak_factory_.GetWeakPtr());
+      &QuicMonyharPacketWriter::OnWriteComplete, weak_factory_.GetWeakPtr());
 }
 
-QuicChromiumPacketWriter::~QuicChromiumPacketWriter() {}
+QuicMonyharPacketWriter::~QuicMonyharPacketWriter() {}
 
-void QuicChromiumPacketWriter::set_force_write_blocked(
+void QuicMonyharPacketWriter::set_force_write_blocked(
     bool force_write_blocked) {
   force_write_blocked_ = force_write_blocked;
   if (!IsWriteBlocked() && delegate_ != nullptr)
     delegate_->OnWriteUnblocked();
 }
 
-void QuicChromiumPacketWriter::SetPacket(const char* buffer, size_t buf_len) {
+void QuicMonyharPacketWriter::SetPacket(const char* buffer, size_t buf_len) {
   if (UNLIKELY(!packet_)) {
     packet_ = base::MakeRefCounted<ReusableIOBuffer>(
         std::max(buf_len, static_cast<size_t>(quic::kMaxOutgoingPacketSize)));
@@ -125,7 +125,7 @@ void QuicChromiumPacketWriter::SetPacket(const char* buffer, size_t buf_len) {
   packet_->Set(buffer, buf_len);
 }
 
-quic::WriteResult QuicChromiumPacketWriter::WritePacket(
+quic::WriteResult QuicMonyharPacketWriter::WritePacket(
     const char* buffer,
     size_t buf_len,
     const quic::QuicIpAddress& self_address,
@@ -136,7 +136,7 @@ quic::WriteResult QuicChromiumPacketWriter::WritePacket(
   return WritePacketToSocketImpl();
 }
 
-void QuicChromiumPacketWriter::WritePacketToSocket(
+void QuicMonyharPacketWriter::WritePacketToSocket(
     scoped_refptr<ReusableIOBuffer> packet) {
   DCHECK(!force_write_blocked_);
   packet_ = std::move(packet);
@@ -145,7 +145,7 @@ void QuicChromiumPacketWriter::WritePacketToSocket(
     OnWriteComplete(result.error_code);
 }
 
-quic::WriteResult QuicChromiumPacketWriter::WritePacketToSocketImpl() {
+quic::WriteResult QuicMonyharPacketWriter::WritePacketToSocketImpl() {
   base::TimeTicks now = base::TimeTicks::Now();
 
   int rv = socket_->Write(packet_.get(), packet_->size(), write_callback_,
@@ -183,22 +183,22 @@ quic::WriteResult QuicChromiumPacketWriter::WritePacketToSocketImpl() {
   return quic::WriteResult(status, rv);
 }
 
-void QuicChromiumPacketWriter::RetryPacketAfterNoBuffers() {
+void QuicMonyharPacketWriter::RetryPacketAfterNoBuffers() {
   DCHECK_GT(retry_count_, 0);
   quic::WriteResult result = WritePacketToSocketImpl();
   if (result.error_code != ERR_IO_PENDING)
     OnWriteComplete(result.error_code);
 }
 
-bool QuicChromiumPacketWriter::IsWriteBlocked() const {
+bool QuicMonyharPacketWriter::IsWriteBlocked() const {
   return (force_write_blocked_ || write_in_progress_);
 }
 
-void QuicChromiumPacketWriter::SetWritable() {
+void QuicMonyharPacketWriter::SetWritable() {
   write_in_progress_ = false;
 }
 
-void QuicChromiumPacketWriter::OnWriteComplete(int rv) {
+void QuicMonyharPacketWriter::OnWriteComplete(int rv) {
   DCHECK_NE(rv, ERR_IO_PENDING);
   write_in_progress_ = false;
   if (delegate_ == nullptr)
@@ -232,7 +232,7 @@ void QuicChromiumPacketWriter::OnWriteComplete(int rv) {
     delegate_->OnWriteUnblocked();
 }
 
-bool QuicChromiumPacketWriter::MaybeRetryAfterWriteError(int rv) {
+bool QuicMonyharPacketWriter::MaybeRetryAfterWriteError(int rv) {
   if (rv != ERR_NO_BUFFER_SPACE)
     return false;
 
@@ -243,33 +243,33 @@ bool QuicChromiumPacketWriter::MaybeRetryAfterWriteError(int rv) {
 
   retry_timer_.Start(
       FROM_HERE, base::TimeDelta::FromMilliseconds(UINT64_C(1) << retry_count_),
-      base::BindOnce(&QuicChromiumPacketWriter::RetryPacketAfterNoBuffers,
+      base::BindOnce(&QuicMonyharPacketWriter::RetryPacketAfterNoBuffers,
                      weak_factory_.GetWeakPtr()));
   retry_count_++;
   write_in_progress_ = true;
   return true;
 }
 
-quic::QuicByteCount QuicChromiumPacketWriter::GetMaxPacketSize(
+quic::QuicByteCount QuicMonyharPacketWriter::GetMaxPacketSize(
     const quic::QuicSocketAddress& peer_address) const {
   return quic::kMaxOutgoingPacketSize;
 }
 
-bool QuicChromiumPacketWriter::SupportsReleaseTime() const {
+bool QuicMonyharPacketWriter::SupportsReleaseTime() const {
   return false;
 }
 
-bool QuicChromiumPacketWriter::IsBatchMode() const {
+bool QuicMonyharPacketWriter::IsBatchMode() const {
   return false;
 }
 
-quic::QuicPacketBuffer QuicChromiumPacketWriter::GetNextWriteLocation(
+quic::QuicPacketBuffer QuicMonyharPacketWriter::GetNextWriteLocation(
     const quic::QuicIpAddress& self_address,
     const quic::QuicSocketAddress& peer_address) {
   return {nullptr, nullptr};
 }
 
-quic::WriteResult QuicChromiumPacketWriter::Flush() {
+quic::WriteResult QuicMonyharPacketWriter::Flush() {
   return quic::WriteResult(quic::WRITE_STATUS_OK, 0);
 }
 

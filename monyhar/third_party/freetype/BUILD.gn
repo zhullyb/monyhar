@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -102,7 +102,7 @@ source_set("freetype_source") {
   ]
 
   # ftsystem.c provides implementations of FT_Memory and FT_Stream_Open.
-  # While Chromium itself avoids using this code, any build of Chromium which
+  # While Monyhar itself avoids using this code, any build of Monyhar which
   # depends on //third_party/fontconfig:fontconfig with use_bundled_fontconfig
   # will make heavy use of these implementations, so use the best available.
   if (is_posix || is_fuchsia) {

@@ -17,15 +17,15 @@ Dependencies
 Overview
 
     This extension allows for more efficiently uploading of buffer or texture
-    data through Chromium's OpenGL ES 2.0 implementation.
+    data through Monyhar's OpenGL ES 2.0 implementation.
 
-    For security reasons Chromium accesses the GPU from a separate process. User
+    For security reasons Monyhar accesses the GPU from a separate process. User
     processes are not allowed to access the GPU directly. This multi-process
     architechure has the advantage that GPU operations can be secured and
     pipelined but it has the disadvantage that all data that is going to be
     passed to GPU must first be made available to the separate GPU process.
 
-    Chromium's OpenGL ES 2.0 implementation hides this issue when using the
+    Monyhar's OpenGL ES 2.0 implementation hides this issue when using the
     standard OpenGL functions BufferData, BufferSubData, TexImage2D, and
     TexSubImage2D by first copying the user's data to shared memory and then
     telling the GPU process to use that shared memory to upload the data.

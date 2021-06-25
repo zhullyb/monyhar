@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,10 +18,10 @@ bool RegisterAppWithLaunchServices() {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
   const char kAppSuffix[] = "Google Chrome.app";
 #else
-  const char kAppSuffix[] = "Chromium.app";
+  const char kAppSuffix[] = "Monyhar.app";
 #endif
 
-  // Try to guess the path to the real org.monyhar.Chromium and/or
+  // Try to guess the path to the real org.monyhar.Monyhar and/or
   // org.google.Chrome bundle if the current main bundle's path isn't already a
   // .app directory:
   NSURL* bundleURL = [[NSBundle mainBundle] bundleURL];

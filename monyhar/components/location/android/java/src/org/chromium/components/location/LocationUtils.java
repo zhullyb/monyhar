@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,10 +56,10 @@ public class LocationUtils {
     }
 
     /**
-     * Returns true if Chromium has permission to access location.
+     * Returns true if Monyhar has permission to access location.
      *
      * Check both hasAndroidLocationPermission() and isSystemLocationSettingEnabled() to determine
-     * if Chromium's location requests will return results.
+     * if Monyhar's location requests will return results.
      */
     public boolean hasAndroidLocationPermission() {
         return hasPermission(Manifest.permission.ACCESS_COARSE_LOCATION)

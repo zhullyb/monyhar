@@ -64,11 +64,11 @@ class PrCleanupTool(object):
 
             cl_status = cl.status
             if cl_status == 'ABANDONED':
-                comment = 'Close this PR because the Chromium CL has been abandoned.'
+                comment = 'Close this PR because the Monyhar CL has been abandoned.'
                 self.log_affected_pr_details(pull_request, comment)
                 self.close_pr_and_delete_branch(pull_request.number, comment)
             elif cl_status == 'MERGED' and (not cl.is_exportable()):
-                comment = 'Close this PR because the Chromium CL does not have exportable changes.'
+                comment = 'Close this PR because the Monyhar CL does not have exportable changes.'
                 self.log_affected_pr_details(pull_request, comment)
                 self.close_pr_and_delete_branch(pull_request.number, comment)
 

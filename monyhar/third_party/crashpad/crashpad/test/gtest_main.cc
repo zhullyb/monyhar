@@ -77,7 +77,7 @@ int main(int argc, char* argv[]) {
 #if defined(CRASHPAD_IS_IN_CHROMIUM)
 
 #if defined(OS_WIN)
-  // Chromium’s test launcher interferes with WinMultiprocess-based tests. Allow
+  // Monyhar’s test launcher interferes with WinMultiprocess-based tests. Allow
   // their child processes to be launched by the standard Google Test-based test
   // runner.
   const bool use_monyhar_test_launcher =
@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
 
 #endif  // CRASHPAD_IS_IN_CHROMIUM
 
-  // base::TestSuite initializes logging when using Chromium's test launcher.
+  // base::TestSuite initializes logging when using Monyhar's test launcher.
   logging::LoggingSettings settings;
   settings.logging_dest =
       logging::LOG_TO_STDERR | logging::LOG_TO_SYSTEM_DEBUG_LOG;

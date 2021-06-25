@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -974,7 +974,7 @@ public class ExternalNavigationHandler {
             final ExternalNavigationParams params, final Intent intent, final GURL fallbackUrl,
             final boolean proxy) {
         boolean closeTab = params.shouldCloseContentsOnOverrideUrlLoadingAndLaunchIntent();
-        return new AlertDialog.Builder(context, R.style.Theme_Chromium_AlertDialog)
+        return new AlertDialog.Builder(context, R.style.Theme_Monyhar_AlertDialog)
                 .setTitle(R.string.external_app_leave_incognito_warning_title)
                 .setMessage(R.string.external_app_leave_incognito_warning)
                 .setPositiveButton(R.string.external_app_leave_incognito_leave,
@@ -1756,7 +1756,7 @@ public class ExternalNavigationHandler {
         // If the tab is null, then do not attempt to prompt for access.
         if (!mDelegate.hasValidTab()) return false;
         assert url.getScheme().equals(UrlConstants.FILE_SCHEME);
-        // If the url points inside of Chromium's data directory, no permissions are necessary.
+        // If the url points inside of Monyhar's data directory, no permissions are necessary.
         // This is required to prevent permission prompt when uses wants to access offline pages.
         if (url.getPath().startsWith(PathUtils.getDataDirectory())) return false;
 

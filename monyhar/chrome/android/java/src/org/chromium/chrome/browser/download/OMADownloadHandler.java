@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -523,7 +523,7 @@ public class OMADownloadHandler extends BroadcastReceiver {
         };
         new AlertDialog
                 .Builder(ApplicationStatus.getLastTrackedFocusedActivity(),
-                        R.style.Theme_Chromium_AlertDialog)
+                        R.style.Theme_Monyhar_AlertDialog)
                 .setTitle(R.string.proceed_oma_download_message)
                 .setPositiveButton(R.string.ok, clickListener)
                 .setNegativeButton(R.string.cancel, clickListener)
@@ -553,7 +553,7 @@ public class OMADownloadHandler extends BroadcastReceiver {
         };
         new AlertDialog
                 .Builder(ApplicationStatus.getLastTrackedFocusedActivity(),
-                        R.style.Theme_Chromium_AlertDialog)
+                        R.style.Theme_Monyhar_AlertDialog)
                 .setTitle(titleId)
                 .setPositiveButton(R.string.ok, clickListener)
                 .setCancelable(false)

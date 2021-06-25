@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,7 +9,7 @@
 
 #import "ios/public/provider/chrome/browser/spotlight/spotlight_provider.h"
 
-class ChromiumSpotlightProvider : public SpotlightProvider {
+class MonyharSpotlightProvider : public SpotlightProvider {
  public:
   bool IsSpotlightEnabled() override;
   NSString* GetBookmarkDomain() override;

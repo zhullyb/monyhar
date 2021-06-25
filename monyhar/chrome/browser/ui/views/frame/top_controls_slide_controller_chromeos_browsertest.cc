@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -672,7 +672,7 @@ IN_PROC_BROWSER_TEST_F(TopControlsSlideControllerTest, TestCtrlL) {
   EXPECT_TRUE(browser_view()->GetLocationBarView()->omnibox_view()->HasFocus());
 }
 
-// Fails on Linux ChromiumOS MSan Tests (https://crbug.com/1194575).
+// Fails on Linux MonyharOS MSan Tests (https://crbug.com/1194575).
 #if defined(OS_CHROMEOS)
 #define MAYBE_TestScrollingPageAndSwitchingToNTP \
   DISABLED_TestScrollingPageAndSwitchingToNTP
@@ -738,7 +738,7 @@ IN_PROC_BROWSER_TEST_F(TopControlsSlideControllerTest,
       scrollable_page_contents));
 }
 
-// Fails on Linux Chromium OS Tests (https://crbug.com/1191327).
+// Fails on Linux Monyhar OS Tests (https://crbug.com/1191327).
 #if defined(OS_CHROMEOS)
 #define MAYBE_TestClosingATab DISABLED_TestClosingATab
 #else

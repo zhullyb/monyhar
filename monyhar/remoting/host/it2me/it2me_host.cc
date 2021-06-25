@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -199,7 +199,7 @@ void It2MeHost::ConnectOnNetworkThread(
 
   scoped_refptr<protocol::TransportContext> transport_context =
       new protocol::TransportContext(
-          std::make_unique<protocol::ChromiumPortAllocatorFactory>(),
+          std::make_unique<protocol::MonyharPortAllocatorFactory>(),
           host_context_->url_loader_factory(), network_settings,
           protocol::TransportRole::SERVER);
   if (!ice_config.is_null()) {

@@ -13,7 +13,7 @@ from .browsers.base import OutputHandler
 
 
 __all__ = ["SeleniumServer", "ChromeDriverServer", "CWTChromeDriverServer",
-           "EdgeChromiumDriverServer", "OperaDriverServer",
+           "EdgeMonyharDriverServer", "OperaDriverServer",
            "InternetExplorerDriverServer", "EdgeDriverServer",
            "ServoDriverServer", "WebKitDriverServer", "WebDriverServer"]
 
@@ -152,7 +152,7 @@ class CWTChromeDriverServer(WebDriverServer):
                 "--port=%s" % str(self.port)] + self._args
 
 
-class EdgeChromiumDriverServer(WebDriverServer):
+class EdgeMonyharDriverServer(WebDriverServer):
     def make_command(self):
         return [self.binary,
                 cmd_arg("port", str(self.port)),

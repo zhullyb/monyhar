@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -174,14 +174,14 @@ class DocWriter(xml_formatted_writer.XMLFormattedWriter):
     self.AddText(mac, '\n'.join(mac_text))
 
   def _AddListExampleWindowsChromeOS(self, parent, policy, is_win):
-    '''Adds an example value for Windows or Chromium/Google Chrome OS of a
+    '''Adds an example value for Windows or Monyhar/Google Chrome OS of a
     'list' policy to a DOM node.
 
     Args:
       parent: The DOM node for which the example will be added.
       policy: A policy of type 'list', for which the Windows example value
         is generated.
-      is_win: True for Windows, False for Chromium/Google Chrome OS.
+      is_win: True for Windows, False for Monyhar/Google Chrome OS.
     '''
     example_value = policy['example_value']
     os_header = self.GetLocalizedMessage('win_example_value') if is_win else \
@@ -231,13 +231,13 @@ class DocWriter(xml_formatted_writer.XMLFormattedWriter):
     <dl>
       <dt>Windows (Windows clients):</dt>
       <dd>
-        Software\Policies\Chromium\URLAllowlist\0 = "www.example.com"
-        Software\Policies\Chromium\URLAllowlist\1 = "www.google.com"
+        Software\Policies\Monyhar\URLAllowlist\0 = "www.example.com"
+        Software\Policies\Monyhar\URLAllowlist\1 = "www.google.com"
       </dd>
-      <dt>Windows (Chromium OS clients):</dt>
+      <dt>Windows (Monyhar OS clients):</dt>
       <dd>
-        Software\Policies\ChromiumOS\URLAllowlist\0 = "www.example.com"
-        Software\Policies\ChromiumOS\URLAllowlist\1 = "www.google.com"
+        Software\Policies\MonyharOS\URLAllowlist\0 = "www.example.com"
+        Software\Policies\MonyharOS\URLAllowlist\1 = "www.google.com"
       </dd>
       <dt>Android/Linux:</dt>
       <dd>
@@ -360,13 +360,13 @@ class DocWriter(xml_formatted_writer.XMLFormattedWriter):
     <dl>
       <dt>Windows (Windows clients):</dt>
       <dd>
-        Software\Policies\Chromium\ProxySettings = {
+        Software\Policies\Monyhar\ProxySettings = {
           "ProxyMode": "direct"
         }
       </dd>
-      <dt>Windows (Chromium OS clients):</dt>
+      <dt>Windows (Monyhar OS clients):</dt>
       <dd>
-        Software\Policies\ChromiumOS\ProxySettings = {
+        Software\Policies\MonyharOS\ProxySettings = {
           "ProxyMode": "direct"
         }
       </dd>
@@ -759,9 +759,9 @@ class DocWriter(xml_formatted_writer.XMLFormattedWriter):
 
   def _BeginTemplate(self, intro_message_id, banner_message_id):
     # Add a <div> for the summary section.
-    if self._GetChromiumVersionString() is not None:
+    if self._GetMonyharVersionString() is not None:
       self.AddComment(self._main_div, self.config['build'] + \
-          ' version: ' + self._GetChromiumVersionString())
+          ' version: ' + self._GetMonyharVersionString())
 
     banner_div = self._AddStyledElement(self._main_div, 'div', ['div.banner'],
                                         {}, '')

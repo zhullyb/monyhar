@@ -101,7 +101,7 @@ self.BarcodeDetectionTest = (() => {
     MockBarcodeDetectionProvider: null
   }
 
-  class BarcodeDetectionTestChromium {
+  class BarcodeDetectionTestMonyhar {
     constructor() {
       Object.freeze(this); // Make it immutable.
     }
@@ -130,7 +130,7 @@ self.BarcodeDetectionTest = (() => {
     }
   }
 
-  return BarcodeDetectionTestChromium;
+  return BarcodeDetectionTestMonyhar;
 })();
 
 self.BarcodeFormat = BarcodeFormat;

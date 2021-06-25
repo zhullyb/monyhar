@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -44,7 +44,7 @@ inline uint64_t ByteSwap(uint64_t x) {
   //
   // This matters in practice, because on x86(_64), this is a single "bswap"
   // instruction. MSVC correctly replaces the call with an inlined bswap at /O2
-  // as of 2021, but clang as we use it in Chromium doesn't, keeping a function
+  // as of 2021, but clang as we use it in Monyhar doesn't, keeping a function
   // call for a single instruction.
 #if defined(COMPILER_MSVC) && !defined(__clang__)
   return _byteswap_uint64(x);

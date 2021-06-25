@@ -3,7 +3,7 @@
 It is possible to debug Fuchsia binaries using `zxdb`. For the sake of this
 example, we will be using `base_unittests` as the test suite we wish to execute:
 
-1. (From Chromium) Install your package(s) and its symbols onto the device.
+1. (From Monyhar) Install your package(s) and its symbols onto the device.
 
    ```bash
    $ out/fuchsia/bin/install_base_unittests

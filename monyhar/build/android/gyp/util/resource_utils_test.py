@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -58,7 +58,7 @@ _TEST_NAMESPACES_1 = {'android': 'http://schemas.android.com/apk/res/android'}
 
 _TEST_RESOURCES_ALLOWLIST_1 = ['low_memory_error', 'structured_text']
 
-# Extracted from one generated Chromium R.txt file, with string resource
+# Extracted from one generated Monyhar R.txt file, with string resource
 # names shuffled randomly.
 _TEST_R_TXT = r'''int anim abc_fade_in 0x7f050000
 int anim abc_fade_out 0x7f050001
@@ -175,7 +175,7 @@ class ResourceUtilsTest(unittest.TestCase):
       result = resource_utils.ToAndroidLocaleName(monyhar_locale)
       self.assertEqual(result, android_locale)
 
-  def test_ToChromiumLocaleName(self):
+  def test_ToMonyharLocaleName(self):
     _TEST_ANDROID_TO_CHROMIUM_LOCALE_MAP = {
         'foo': 'foo',
         'foo-rBAR': 'foo-BAR',
@@ -210,7 +210,7 @@ class ResourceUtilsTest(unittest.TestCase):
     }
     for android_locale, monyhar_locale in \
         _TEST_ANDROID_TO_CHROMIUM_LOCALE_MAP.items():
-      result = resource_utils.ToChromiumLocaleName(android_locale)
+      result = resource_utils.ToMonyharLocaleName(android_locale)
       self.assertEqual(result, monyhar_locale)
 
   def test_FindLocaleInStringResourceFilePath(self):

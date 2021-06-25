@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -40,7 +40,7 @@ class ServiceWorkerContextWrapper;
 // The BackgroundFetchContext is the central moderator of ongoing background
 // fetch requests from the Mojo service and from other callers.
 // Background Fetch requests function similarly to normal fetches except that
-// they are persistent across Chromium or service worker shutdown.
+// they are persistent across Monyhar or service worker shutdown.
 //
 // Deleted on the service worker core thread.
 // TODO(crbug.com/824858): Make this single-threaded after the service worker

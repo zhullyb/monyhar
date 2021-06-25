@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -359,7 +359,7 @@ class NET_EXPORT URLFetcher {
   // |url| is the URL to send the request to. It must be valid.
   // |request_type| is the type of request to make.
   // |d| the object that will receive the callback on fetch completion.
-  // This function should not be used in Chromium, please use the version with
+  // This function should not be used in Monyhar, please use the version with
   // NetworkTrafficAnnotationTag below instead.
   static std::unique_ptr<URLFetcher> Create(
       const GURL& url,
@@ -369,7 +369,7 @@ class NET_EXPORT URLFetcher {
   // Like above, but if there's a URLFetcherFactory registered with the
   // implementation it will be used. |id| may be used during testing to identify
   // who is creating the URLFetcher.
-  // This function should not be used in Chromium, please use the version with
+  // This function should not be used in Monyhar, please use the version with
   // NetworkTrafficAnnotationTag below instead.
   static std::unique_ptr<URLFetcher> Create(
       int id,

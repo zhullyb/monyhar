@@ -11,7 +11,7 @@ code, see [//docs/speed/binary_size/optimization_advice.md#optimizing-java-code]
 ProGuard is the original open-source tool used by many Android applications to
 perform whole-program bytecode optimization. [R8](https://r8.googlesource.com/r8),
 is a re-implementation that is used by Chrome (and the default for Android Studio).
-The terms "ProGuard" and "R8" are used interchangeably within Chromium but
+The terms "ProGuard" and "R8" are used interchangeably within Monyhar but
 generally they're meant to refer to the tool providing Java code optimizations.
 
 ## What does ProGuard do?

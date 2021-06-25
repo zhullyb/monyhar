@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -173,7 +173,7 @@ class SelectToSpeakTestWithLanguageDetection : public SelectToSpeakTest {
 };
 
 // The status tray is not active on official builds.
-// Disable the test on Chromium due to flaky: crbug.com/1165749
+// Disable the test on Monyhar due to flaky: crbug.com/1165749
 IN_PROC_BROWSER_TEST_F(SelectToSpeakTest, DISABLED_SpeakStatusTray) {
   gfx::Rect tray_bounds = Shell::Get()
                               ->GetPrimaryRootWindowController()

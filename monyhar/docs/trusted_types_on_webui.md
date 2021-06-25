@@ -21,7 +21,7 @@ in the WebUI renderer such as memory corruption bugs.
 
 ## How can I "Trusted Type" my code?
 
-**Note: If your JS code will also run on Chromium for iOS (i.e. WebKit), you
+**Note: If your JS code will also run on Monyhar for iOS (i.e. WebKit), you
 should have an if statement to check the Trusted Types support before using
 methods/properties under `window.trustedTypes` :**
 

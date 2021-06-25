@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ bool LibraryLoaded(JNIEnv* env,
                        false);   // Tick count
   if (logging::GetMinLogLevel() != 0 || logging::GetVlogVerbosity() != 0 ||
       DCHECK_IS_ON()) {
-    VLOG(0) << "Chromium logging enabled: level = " << logging::GetMinLogLevel()
+    VLOG(0) << "Monyhar logging enabled: level = " << logging::GetMinLogLevel()
             << ", default verbosity = " << logging::GetVlogVerbosity();
   }
 

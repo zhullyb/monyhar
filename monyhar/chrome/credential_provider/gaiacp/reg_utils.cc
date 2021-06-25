@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ namespace credential_provider {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 #define CREDENTIAL_PROVIDER_REGISTRY_KEY L"Software\\Google\\GCPW"
 #else
-#define CREDENTIAL_PROVIDER_REGISTRY_KEY L"Software\\Chromium\\GCPW"
+#define CREDENTIAL_PROVIDER_REGISTRY_KEY L"Software\\Monyhar\\GCPW"
 #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
 
 const wchar_t kGcpRootKeyName[] = CREDENTIAL_PROVIDER_REGISTRY_KEY;

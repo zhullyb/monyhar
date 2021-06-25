@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -108,10 +108,10 @@ sudo apt-get build-dep -y --force-yes $packages
 
 if test "$ubuntu_release" = "trusty" ; then
   # On Trusty, build deps for some of the instrumented packages above conflict
-  # with Chromium's build deps. In particular:
+  # with Monyhar's build deps. In particular:
   # zlib1g and libffi remove gcc-4.8 in favor of gcc-multilib,
   # libglib2.0-0 removes libelf in favor of libelfg0.
-  # We let Chromium's build deps take priority. So, run Chromium's
+  # We let Monyhar's build deps take priority. So, run Monyhar's
   # install-build-deps.sh to reinstall those that have been removed.
   $(dirname ${BASH_SOURCE[0]})/../../../build/install-build-deps.sh --no-prompt
 fi

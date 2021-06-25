@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors.All rights reserved.
+# Copyright 2019 The Monyhar Authors.All rights reserved.
 # Use of this source code is governed by a BSD - style license that can be
 # found in the LICENSE file.
 
@@ -457,7 +457,7 @@ if (!incremental_install) {
     testonly = true
     inputs = [
       "$root_build_dir/test_runner/ChromePublicTest.apk",
-      "$root_build_dir/test_runner/ChromiumNetTestSupport.apk",
+      "$root_build_dir/test_runner/MonyharNetTestSupport.apk",
       "$root_build_dir/test_runner/config_example.cfg",
       "$root_build_dir/test_runner/parse_logs.py",
       "$root_build_dir/test_runner/runner.py",
@@ -470,7 +470,7 @@ if (!incremental_install) {
     testonly = true
     sources = [
       "$root_build_dir/apks/ChromePublicTest.apk",
-      "$root_build_dir/apks/ChromiumNetTestSupport.apk",
+      "$root_build_dir/apks/MonyharNetTestSupport.apk",
       "tools/password_change_tests_runner/config_example.cfg",
       "tools/password_change_tests_runner/parse_logs.py",
       "tools/password_change_tests_runner/runner.py",

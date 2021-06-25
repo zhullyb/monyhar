@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1430,7 +1430,7 @@ void ReportOutOfSyncURLInDidStartProvisionalNavigation(
 // Returns YES if the given |action| should be allowed to continue for app
 // specific URL. If this returns NO, the navigation should be cancelled.
 // App specific pages have elevated privileges and WKWebView uses the same
-// renderer process for all page frames. With that Chromium does not allow
+// renderer process for all page frames. With that Monyhar does not allow
 // running App specific pages in the same process as a web site from the
 // internet. Allows navigation to app specific URL in the following cases:
 //   - last committed URL is app specific

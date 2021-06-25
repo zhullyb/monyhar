@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -61,7 +61,7 @@ public final class LaunchTest {
     private static final String CATEGORY_LAUNCH_WEBAPK_SITE_SETTINGS =
             "androidx.browser.trusted.category.LaunchWebApkSiteSettings";
 
-    /** Chromium version which does not support showing the splash screen within WebAPK. */
+    /** Monyhar version which does not support showing the splash screen within WebAPK. */
     private static final int BROWSER_H2O_INCOMPATIBLE_VERSION = 57;
     public static final int SITE_SETTINGS_COMPATIBLE_BROWSER_VERSION = 87;
 
@@ -617,7 +617,7 @@ public final class LaunchTest {
      *        beginning of the test case.
      * @param launchIntent Intent to launch.
      * @param launchActivity Activity which should receive the launch intent.
-     * @param browserVersion The version of the Chromium browser to install.
+     * @param browserVersion The version of the Monyhar browser to install.
      * @return List of launched activity intents (including the host browser launch intent).
      */
     private ArrayList<Intent> launchAndCheckBrowserLaunched(

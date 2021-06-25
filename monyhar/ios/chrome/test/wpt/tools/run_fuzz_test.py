@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -12,13 +12,13 @@ import requests
 import subprocess
 import time
 
-def GetChromiumSrcDir():
+def GetMonyharSrcDir():
   return os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir,
                                       os.pardir, os.pardir, os.pardir,
                                       os.pardir))
 
 def GetDefaultBuildDir():
-  return os.path.join(GetChromiumSrcDir(), 'out', 'Release-iphonesimulator')
+  return os.path.join(GetMonyharSrcDir(), 'out', 'Release-iphonesimulator')
 
 def StartServer(port, build_dir):
   cwt_chromedriver_path = os.path.join(os.path.dirname(__file__),

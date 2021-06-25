@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -479,7 +479,7 @@ bool DeleteUserRegistryKeys(const std::vector<const std::wstring*>* key_paths,
 // Removes Active Setup entries from the registry. This cannot be done through
 // a work items list as usual because of different paths based on conditionals,
 // but otherwise respects the no rollback/best effort uninstall mentality.
-// This will only apply for system-level installs of Chrome/Chromium and will be
+// This will only apply for system-level installs of Chrome/Monyhar and will be
 // a no-op for all other types of installs.
 void UninstallActiveSetupEntries(const InstallerState& installer_state) {
   VLOG(1) << "Uninstalling registry entries for Active Setup.";
@@ -554,7 +554,7 @@ DeleteResult DeleteChromeDirectoriesIfEmpty(
   DeleteResult result(DeleteEmptyDir(application_directory));
   if (result == DELETE_SUCCEEDED) {
     // Now check and delete if the parent directories are empty
-    // For example Google\Chrome or Chromium
+    // For example Google\Chrome or Monyhar
     const base::FilePath product_directory(application_directory.DirName());
     if (!product_directory.empty()) {
       result = DeleteEmptyDir(product_directory);
@@ -653,7 +653,7 @@ bool DeleteChromeRegistrationKeys(const InstallerState& installer_state,
     }
   }
 
-  // Delete Software\RegisteredApplications\Chromium
+  // Delete Software\RegisteredApplications\Monyhar
   InstallUtil::DeleteRegistryValue(
       root, ShellUtil::kRegRegisteredApplications, WorkItem::kWow64Default,
       install_static::GetBaseAppName().append(browser_entry_suffix));
@@ -738,7 +738,7 @@ void RemoveChromeLegacyRegistryKeys(const base::FilePath& chrome_exe) {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
   const wchar_t kChromeExtProgId[] = L"ChromeExt";
 #else
-  const wchar_t kChromeExtProgId[] = L"ChromiumExt";
+  const wchar_t kChromeExtProgId[] = L"MonyharExt";
 #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING
 
   HKEY roots[] = {HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER};

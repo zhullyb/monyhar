@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -91,12 +91,12 @@ import java.util.concurrent.Executor;
  * and a small set of no-op deprecated APIs.
  */
 @SuppressWarnings("deprecation")
-class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate,
+class WebViewMonyhar implements WebViewProvider, WebViewProvider.ScrollDelegate,
                                  WebViewProvider.ViewDelegate, SmartClipProvider {
 
-    private static final String TAG = WebViewChromium.class.getSimpleName();
+    private static final String TAG = WebViewMonyhar.class.getSimpleName();
 
-    // The WebView that this WebViewChromium is the provider for.
+    // The WebView that this WebViewMonyhar is the provider for.
     WebView mWebView;
     // Lets us access protected View-derived methods on the WebView instance we're backing.
     WebView.PrivateAccess mWebViewPrivate;
@@ -114,9 +114,9 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
 
     private final int mAppTargetSdkVersion;
 
-    protected WebViewChromiumFactoryProvider mFactory;
+    protected WebViewMonyharFactoryProvider mFactory;
 
-    protected final SharedWebViewChromium mSharedWebViewChromium;
+    protected final SharedWebViewMonyhar mSharedWebViewMonyhar;
 
     private final boolean mShouldDisableThreadChecking;
 
@@ -244,10 +244,10 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
 
     // This does not touch any global / non-threadsafe state, but note that
     // init is ofter called right after and is NOT threadsafe.
-    public WebViewChromium(WebViewChromiumFactoryProvider factory, WebView webView,
+    public WebViewMonyhar(WebViewMonyharFactoryProvider factory, WebView webView,
             WebView.PrivateAccess webViewPrivate, boolean shouldDisableThreadChecking) {
-        try (ScopedSysTraceEvent e1 = ScopedSysTraceEvent.scoped("WebViewChromium.constructor")) {
-            WebViewChromiumFactoryProvider.checkStorageIsNotDeviceProtected(webView.getContext());
+        try (ScopedSysTraceEvent e1 = ScopedSysTraceEvent.scoped("WebViewMonyhar.constructor")) {
+            WebViewMonyharFactoryProvider.checkStorageIsNotDeviceProtected(webView.getContext());
             mWebView = webView;
             mWebViewPrivate = webViewPrivate;
             mHitTestResult = new WebView.HitTestResult();
@@ -256,16 +256,16 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
             mFactory = factory;
             mShouldDisableThreadChecking = shouldDisableThreadChecking;
             factory.getWebViewDelegate().addWebViewAssetPath(mWebView.getContext());
-            mSharedWebViewChromium =
-                    new SharedWebViewChromium(mFactory.getRunQueue(), mFactory.getAwInit());
+            mSharedWebViewMonyhar =
+                    new SharedWebViewMonyhar(mFactory.getRunQueue(), mFactory.getAwInit());
         }
     }
 
     // See //android_webview/docs/how-does-on-create-window-work.md for more details.
     static void completeWindowCreation(WebView parent, WebView child) {
-        AwContents parentContents = ((WebViewChromium) parent.getWebViewProvider()).mAwContents;
+        AwContents parentContents = ((WebViewMonyhar) parent.getWebViewProvider()).mAwContents;
         AwContents childContents =
-                child == null ? null : ((WebViewChromium) child.getWebViewProvider()).mAwContents;
+                child == null ? null : ((WebViewMonyhar) child.getWebViewProvider()).mAwContents;
         parentContents.supplyContentsForPopup(childContents);
     }
 
@@ -278,7 +278,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
             final boolean privateBrowsing) {
         long startTime = SystemClock.uptimeMillis();
         boolean isFirstWebViewInit = !mFactory.hasStarted();
-        try (ScopedSysTraceEvent e1 = ScopedSysTraceEvent.scoped("WebViewChromium.init")) {
+        try (ScopedSysTraceEvent e1 = ScopedSysTraceEvent.scoped("WebViewMonyhar.init")) {
             if (privateBrowsing) {
                 mFactory.startYourEngines(true);
                 final String msg = "Private browsing is not supported in WebView.";
@@ -296,7 +296,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
             if (mAppTargetSdkVersion >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                 // If the app targets >= JB MR2 then we require that WebView is only used from a
                 // single thread. So, we:
-                // 1) start Chromium using the current thread as the UI thread (this is a no-op if
+                // 1) start Monyhar using the current thread as the UI thread (this is a no-op if
                 //    it was already started).
                 mFactory.startYourEngines(false);
                 // 2) check that the current thread is the UI thread, which will throw if it was
@@ -315,7 +315,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
                 // WebView on a background thread and then attach it to the view hierarchy on the
                 // main looper.
                 //
-                // So, we just start Chromium using the main looper as the UI thread, which works
+                // So, we just start Monyhar using the main looper as the UI thread, which works
                 // for virtually every old app, and accept that a very tiny number of them will
                 // break.
                 mFactory.startYourEngines(true);
@@ -337,7 +337,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
             mContentsClientAdapter =
                     mFactory.createWebViewContentsClientAdapter(mWebView, mContext);
             try (ScopedSysTraceEvent e2 =
-                            ScopedSysTraceEvent.scoped("WebViewChromium.ContentSettingsAdapter")) {
+                            ScopedSysTraceEvent.scoped("WebViewMonyhar.ContentSettingsAdapter")) {
                 mWebSettings = mFactory.createContentSettingsAdapter(new AwSettings(mContext,
                         isAccessFromFileURLsGrantedByDefault, areLegacyQuirksEnabled,
                         allowEmptyDocumentPersistence, allowGeolocationOnInsecureOrigins,
@@ -358,7 +358,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
 
             if (mShouldDisableThreadChecking) disableThreadChecking();
 
-            mSharedWebViewChromium.init(mContentsClientAdapter);
+            mSharedWebViewMonyhar.init(mContentsClientAdapter);
 
             mFactory.addTask(new Runnable() {
                 @Override
@@ -406,7 +406,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     }
 
     private void initForReal() {
-        try (ScopedSysTraceEvent e1 = ScopedSysTraceEvent.scoped("WebViewChromium.initForReal")) {
+        try (ScopedSysTraceEvent e1 = ScopedSysTraceEvent.scoped("WebViewMonyhar.initForReal")) {
             AwContentsStatics.setRecordFullDocument(sRecordWholeDocumentEnabledByApi
                     || mAppTargetSdkVersion < Build.VERSION_CODES.LOLLIPOP);
 
@@ -429,7 +429,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
             // TODO: This assumes AwContents ignores second Paint param.
             mAwContents.setLayerType(mWebView.getLayerType(), null);
 
-            mSharedWebViewChromium.initForReal(mAwContents);
+            mSharedWebViewMonyhar.initForReal(mAwContents);
         }
     }
 
@@ -439,7 +439,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     }
 
     protected boolean checkNeedsPost() {
-        return mSharedWebViewChromium.checkNeedsPost();
+        return mSharedWebViewMonyhar.checkNeedsPost();
     }
 
     //  Intentionally not static, as no need to check thread on static methods
@@ -970,7 +970,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     public void insertVisualStateCallback(
             final long requestId, final VisualStateCallback callback) {
         recordWebViewApiCall(ApiCall.INSERT_VISUAL_STATE_CALLBACK);
-        mSharedWebViewChromium.insertVisualStateCallback(
+        mSharedWebViewMonyhar.insertVisualStateCallback(
                 requestId, callback == null ? null : new AwContents.VisualStateCallback() {
                     @Override
                     public void onComplete(long requestId) {
@@ -1263,7 +1263,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
 
     @Override
     public void freeMemory() {
-        // Intentional no-op. Memory is managed automatically by Chromium.
+        // Intentional no-op. Memory is managed automatically by Monyhar.
     }
 
     @Override
@@ -1344,10 +1344,10 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
         }
         recordWebViewApiCall(ApiCall.COPY_BACK_FORWARD_LIST);
         // mAwContents.getNavigationHistory() can be null here if mAwContents has been destroyed,
-        // and we do not handle passing null to the WebBackForwardListChromium constructor.
+        // and we do not handle passing null to the WebBackForwardListMonyhar constructor.
         NavigationHistory navHistory = mAwContents.getNavigationHistory();
         if (navHistory == null) navHistory = new NavigationHistory();
-        return new WebBackForwardListChromium(navHistory);
+        return new WebBackForwardListMonyhar(navHistory);
     }
 
     @Override
@@ -1469,39 +1469,39 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     @Override
     public void setWebViewClient(WebViewClient client) {
         recordWebViewApiCall(ApiCall.SET_WEBVIEW_CLIENT);
-        mSharedWebViewChromium.setWebViewClient(client);
-        mContentsClientAdapter.setWebViewClient(mSharedWebViewChromium.getWebViewClient());
+        mSharedWebViewMonyhar.setWebViewClient(client);
+        mContentsClientAdapter.setWebViewClient(mSharedWebViewMonyhar.getWebViewClient());
     }
 
     @Override
     public WebViewClient getWebViewClient() {
         recordWebViewApiCall(ApiCall.GET_WEBVIEW_CLIENT);
-        return mSharedWebViewChromium.getWebViewClient();
+        return mSharedWebViewMonyhar.getWebViewClient();
     }
 
     @Override
     public WebViewRenderProcess getWebViewRenderProcess() {
-        return GlueApiHelperForQ.getWebViewRenderProcess(mSharedWebViewChromium.getRenderProcess());
+        return GlueApiHelperForQ.getWebViewRenderProcess(mSharedWebViewMonyhar.getRenderProcess());
     }
 
     @Override
     public void setWebViewRenderProcessClient(
             Executor executor, WebViewRenderProcessClient webViewRenderProcessClient) {
         if (webViewRenderProcessClient == null) {
-            mSharedWebViewChromium.setWebViewRendererClientAdapter(null);
+            mSharedWebViewMonyhar.setWebViewRendererClientAdapter(null);
         } else {
             if (executor == null) {
                 executor = (Runnable r) -> r.run();
             }
             GlueApiHelperForQ.setWebViewRenderProcessClient(
-                    mSharedWebViewChromium, executor, webViewRenderProcessClient);
+                    mSharedWebViewMonyhar, executor, webViewRenderProcessClient);
         }
     }
 
     @Override
     public WebViewRenderProcessClient getWebViewRenderProcessClient() {
         SharedWebViewRendererClientAdapter adapter =
-                mSharedWebViewChromium.getWebViewRendererClientAdapter();
+                mSharedWebViewMonyhar.getWebViewRendererClientAdapter();
         if (adapter == null || !(adapter instanceof WebViewRenderProcessClientAdapter)) {
             return null;
         }
@@ -1518,14 +1518,14 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     public void setWebChromeClient(WebChromeClient client) {
         recordWebViewApiCall(ApiCall.SET_WEBCHROME_CLIENT);
         mWebSettings.getAwSettings().setFullscreenSupported(doesSupportFullscreen(client));
-        mSharedWebViewChromium.setWebChromeClient(client);
-        mContentsClientAdapter.setWebChromeClient(mSharedWebViewChromium.getWebChromeClient());
+        mSharedWebViewMonyhar.setWebChromeClient(client);
+        mContentsClientAdapter.setWebChromeClient(mSharedWebViewMonyhar.getWebChromeClient());
     }
 
     @Override
     public WebChromeClient getWebChromeClient() {
         recordWebViewApiCall(ApiCall.GET_WEBCHROME_CLIENT);
-        return mSharedWebViewChromium.getWebChromeClient();
+        return mSharedWebViewMonyhar.getWebChromeClient();
     }
 
     /**
@@ -1618,14 +1618,14 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     public WebMessagePort[] createWebMessageChannel() {
         recordWebViewApiCall(ApiCall.CREATE_WEBMESSAGE_CHANNEL);
         return WebMessagePortAdapter.fromMessagePorts(
-                mSharedWebViewChromium.createWebMessageChannel());
+                mSharedWebViewMonyhar.createWebMessageChannel());
     }
 
     @Override
     @TargetApi(Build.VERSION_CODES.M)
     public void postMessageToMainFrame(final WebMessage message, final Uri targetOrigin) {
         recordWebViewApiCall(ApiCall.POST_MESSAGE_TO_MAIN_FRAME);
-        mSharedWebViewChromium.postMessageToMainFrame(message.getData(), targetOrigin.toString(),
+        mSharedWebViewMonyhar.postMessageToMainFrame(message.getData(), targetOrigin.toString(),
                 WebMessagePortAdapter.toMessagePorts(message.getPorts()));
     }
 
@@ -1897,13 +1897,13 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
 
     @Override
     public void onInitializeAccessibilityNodeInfo(final AccessibilityNodeInfo info) {
-        // Intentional no-op. Chromium accessibility implementation currently does not need this
+        // Intentional no-op. Monyhar accessibility implementation currently does not need this
         // calls.
     }
 
     @Override
     public void onInitializeAccessibilityEvent(final AccessibilityEvent event) {
-        // Intentional no-op. Chromium accessibility implementation currently does not need this
+        // Intentional no-op. Monyhar accessibility implementation currently does not need this
         // calls.
     }
 
@@ -1963,7 +1963,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     public void onDrawVerticalScrollBar(final Canvas canvas, final Drawable scrollBar, final int l,
             final int t, final int r, final int b) {
         // WebViewClassic was overriding this method to handle rubberband over-scroll. Since
-        // WebViewChromium doesn't support that the vanilla implementation of this method can be
+        // WebViewMonyhar doesn't support that the vanilla implementation of this method can be
         // used.
         mWebViewPrivate.super_onDrawVerticalScrollBar(canvas, scrollBar, l, t, r, b);
     }
@@ -2017,7 +2017,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     public void setLayoutParams(final ViewGroup.LayoutParams layoutParams) {
         // This API is our strongest signal from the View system that this
         // WebView is going to be bound to a View hierarchy and so at this
-        // point we must bind Chromium's UI thread to the current thread.
+        // point we must bind Monyhar's UI thread to the current thread.
         mFactory.startYourEngines(false);
         checkThread();
         mWebViewPrivate.super_setLayoutParams(layoutParams);
@@ -2140,7 +2140,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
     public void onAttachedToWindow() {
         // This API is our strongest signal from the View system that this
         // WebView is going to be bound to a View hierarchy and so at this
-        // point we must bind Chromium's UI thread to the current thread.
+        // point we must bind Monyhar's UI thread to the current thread.
         mFactory.startYourEngines(false);
         checkThread();
         mAwContents.onAttachedToWindow();
@@ -2593,7 +2593,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
         @Override
         public void onScrollChanged(int l, int t, int oldl, int oldt) {
             // Intentional no-op.
-            // Chromium calls this directly to trigger accessibility events. That isn't needed
+            // Monyhar calls this directly to trigger accessibility events. That isn't needed
             // for WebView since super_scrollTo invokes onScrollChanged for us.
         }
 
@@ -2636,7 +2636,7 @@ class WebViewChromium implements WebViewProvider, WebViewProvider.ScrollDelegate
         mAwContents.setSmartClipResultHandler(resultHandler);
     }
 
-    SharedWebViewChromium getSharedWebViewChromium() {
-        return mSharedWebViewChromium;
+    SharedWebViewMonyhar getSharedWebViewMonyhar() {
+        return mSharedWebViewMonyhar;
     }
 }

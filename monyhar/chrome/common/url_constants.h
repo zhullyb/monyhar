@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -116,8 +116,8 @@ extern const char kChromeSearchScheme[];
 // can include content that is from an external source.
 extern const char kChromeUIUntrustedNewTabPageUrl[];
 
-// The URL for the Chromium project used in the About dialog.
-extern const char kChromiumProjectURL[];
+// The URL for the Monyhar project used in the About dialog.
+extern const char kMonyharProjectURL[];
 
 // "Learn more" URL for the Cloud Print section under Options.
 extern const char kCloudPrintLearnMoreURL[];

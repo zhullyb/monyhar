@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -27,8 +27,8 @@
 
 namespace net {
 
-class QuicChromiumAlarmFactory;
-class QuicChromiumConnectionHelper;
+class QuicMonyharAlarmFactory;
+class QuicMonyharConnectionHelper;
 
 namespace test {
 class QuicClientPeer;
@@ -52,11 +52,11 @@ class QuicSimpleClient : public quic::QuicSpdyClientBase {
  private:
   friend class net::test::QuicClientPeer;
 
-  QuicChromiumAlarmFactory* CreateQuicAlarmFactory();
-  QuicChromiumConnectionHelper* CreateQuicConnectionHelper();
+  QuicMonyharAlarmFactory* CreateQuicAlarmFactory();
+  QuicMonyharConnectionHelper* CreateQuicConnectionHelper();
 
   //  Used by |helper_| to time alarms.
-  quic::QuicChromiumClock clock_;
+  quic::QuicMonyharClock clock_;
 
   // Tracks if the client is initialized to connect.
   bool initialized_;

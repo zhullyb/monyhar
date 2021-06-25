@@ -781,7 +781,7 @@ class CORE_EXPORT HTMLMediaElement
   Member<AudioSourceProviderClient> audio_source_node_;
 
   // AudioClientImpl wraps an AudioSourceProviderClient.
-  // When the audio format is known, Chromium calls setFormat().
+  // When the audio format is known, Monyhar calls setFormat().
   class AudioClientImpl final : public GarbageCollected<AudioClientImpl>,
                                 public WebAudioSourceProviderClient {
    public:
@@ -800,7 +800,7 @@ class CORE_EXPORT HTMLMediaElement
   };
 
   // AudioSourceProviderImpl wraps a WebAudioSourceProvider.
-  // provideInput() calls into Chromium to get a rendered audio stream.
+  // provideInput() calls into Monyhar to get a rendered audio stream.
   class AudioSourceProviderImpl final : public AudioSourceProvider {
     DISALLOW_NEW();
 

@@ -18,8 +18,8 @@ documentation.
 
 [Gold][gold documentation] is an image diff service developed by the Skia team.
 It was originally developed solely for Skia's usage and only supported
-post-submit tests, but has been picked up by other projects such as Chromium and
-PDFium and now supports trybots. Unlike other image diff solutions in Chromium,
+post-submit tests, but has been picked up by other projects such as Monyhar and
+PDFium and now supports trybots. Unlike other image diff solutions in Monyhar,
 comparisons are done in an external service instead of locally on the testing
 machine.
 
@@ -28,7 +28,7 @@ machine.
 ### Why Gold
 
 Gold has three main advantages over the traditional local image comparison
-historically used by Chromium:
+historically used by Monyhar:
 
 1. Triage time can be much lower. Because triaging is handled by an external
 service, new golden images don't need to go through the CQ and wait for
@@ -208,7 +208,7 @@ but in general:
 Although uncommon, changes to the Gold service and `goldctl` binary may be
 needed. To do so, simply get a checkout of the
 [Skia infrastructure repo][skia infra repo] and go through the same steps as
-a Chromium CL (`git cl upload`, etc.).
+a Monyhar CL (`git cl upload`, etc.).
 
 [skia infra repo]: https://skia.googlesource.com/buildbot/
 
@@ -216,12 +216,12 @@ The Gold service code is located in the `//golden/` directory, while `goldctl`
 is  located in `//gold-client/`. Once your change is merged, you will have to
 either contact kjlubick@google.com to roll the service version or follow the
 steps in [Rolling goldctl](#Rolling-goldctl) to roll the `goldctl` version used
-by Chromium.
+by Monyhar.
 
 ### Rolling goldctl
 
 `goldctl` is available as a CIPD package and is DEPSed in as part of `gclient
-sync` To update the binary used in Chromium, perform the following steps:
+sync` To update the binary used in Monyhar, perform the following steps:
 
 1. (One-time only) get an [infra checkout][infra repo]
 2. Run `infra $ ./go/env.py` and run each of the commands it outputs to change

@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython3
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -41,7 +41,7 @@ WPT_OVERRIDE_EXPECTATIONS_PATH = os.path.join(
 
 CHROME_BINARY = os.path.join(OUT_DIR, "chrome")
 CHROME_BINARY_MAC = os.path.join(
-    OUT_DIR, "Chromium.app", "Contents", "MacOS", "Chromium")
+    OUT_DIR, "Monyhar.app", "Contents", "MacOS", "Monyhar")
 CHROMEDRIVER_BINARY = os.path.join(OUT_DIR, "chromedriver")
 
 DEFAULT_ISOLATED_SCRIPT_TEST_OUTPUT = os.path.join(OUT_DIR, "results.json")
@@ -93,7 +93,7 @@ class WPTTestAdapter(wpt_common.BaseWptScriptAdapter):
             "--exclude=webdriver",
             "--exclude=infrastructure/webdriver",
             # By default, WPT will treat unexpected passes as errors, so we
-            # disable that to be consistent with Chromium CI.
+            # disable that to be consistent with Monyhar CI.
             "--no-fail-on-unexpected-pass",
             "--metadata", WPT_METADATA_OUTPUT_DIR.format(self.options.target),
             # By specifying metadata above, WPT will try to find manifest in the

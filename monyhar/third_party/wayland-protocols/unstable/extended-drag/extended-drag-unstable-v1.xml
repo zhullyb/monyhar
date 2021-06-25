@@ -2,7 +2,7 @@
 <protocol name="extended_drag_unstable_v1">
 
   <copyright>
-    Copyright 2020 The Chromium Authors.
+    Copyright 2020 The Monyhar Authors.
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -31,7 +31,7 @@
       surfaces "draggable", as well as making them "snappable" into and out of
       other surfaces as they are dragged around.
 
-      A common use case for this is a Chromium-like tab/window dragging UX,
+      A common use case for this is a Monyhar-like tab/window dragging UX,
       where the user is able to drag a tab (or any other kind of UI piece) out
       of its original window, into a new surface anchored to the pointer cursor,
       similar to a regular drag icon but with enhanced and more configurable
@@ -54,7 +54,7 @@
 
         Source client might set allow_swallow option to tell the compositor that
         the dragged UI item can be snapped out and into other surfaces
-        (swallowed/unswallowed), eg: Chromium's tab dragging UX.
+        (swallowed/unswallowed), eg: Monyhar's tab dragging UX.
 
         allow_drop_no_target controls how source and destination clients are
         notified when the drop happens, if it is set the DnD operation is

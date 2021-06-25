@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -299,7 +299,7 @@ bool PathProvider(int key, base::FilePath* result) {
         // If we're called from chrome, it's beside the app (outside the
         // app bundle), if we're called from a unittest, we'll already be
         // outside the bundle so use the exe dir.
-        // exe_dir gave us .../Chromium.app/Contents/MacOS/Chromium.
+        // exe_dir gave us .../Monyhar.app/Contents/MacOS/Monyhar.
         cur = cur.DirName();
         cur = cur.DirName();
         cur = cur.DirName();
@@ -478,7 +478,7 @@ bool PathProvider(int key, base::FilePath* result) {
            "/Library/Google/Chrome/NativeMessagingHosts"));
 #else
       cur = base::FilePath(FILE_PATH_LITERAL(
-          "/Library/Application Support/Chromium/NativeMessagingHosts"));
+          "/Library/Application Support/Monyhar/NativeMessagingHosts"));
 #endif
 #else  // defined(OS_MAC)
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)

@@ -132,7 +132,7 @@ Ensure that the client behaves reasonably if the length of the URL exceeds any l
 
 * Rendering a URL as an empty string in edge cases is not ideal, but truncating poorly (or crashing unexpectedly and insecurely) could be worse.
 
-* Attackers may use long URLs to abuse other parts of the system. [DNS syntax](https://en.wikipedia.org/wiki/Domain_Name_System#Domain_name_syntax) limits fully-qualified hostnames to **253 characters** and each [label](#label) in the hostname to **63 characters**, but Chromium's GURL class does not enforce this limit.
+* Attackers may use long URLs to abuse other parts of the system. [DNS syntax](https://en.wikipedia.org/wiki/Domain_Name_System#Domain_name_syntax) limits fully-qualified hostnames to **253 characters** and each [label](#label) in the hostname to **63 characters**, but Monyhar's GURL class does not enforce this limit.
 
 ### Display Font
 
@@ -192,7 +192,7 @@ An attacker may abuse whitespace and line-wrapping characters in order to push t
 
 * Use of [Combining characters](https://blog.emojipedia.org/fun-emoji-hacks/) to create look-alikes.
 
-In Chromium, this is handled by routines in `net/base/escape.h`. Outside of Chromium, consult `ShouldUnescapeCodePoint` in `net/base/escape.cc` for guidance.
+In Monyhar, this is handled by routines in `net/base/escape.h`. Outside of Monyhar, consult `ShouldUnescapeCodePoint` in `net/base/escape.cc` for guidance.
 
 ### Literal IP Addresses
 
@@ -327,7 +327,7 @@ This is, generally, outside of the client threat-model, although in some cases (
 
 ## Testing URL Displays
 
-Chromium's open-source [Trickuri](https://github.com/monyhar/trickuri) tool is a Go-based proxy server designed to enable manual testing of URL display behavior.
+Monyhar's open-source [Trickuri](https://github.com/monyhar/trickuri) tool is a Go-based proxy server designed to enable manual testing of URL display behavior.
 
 ## Further Reading
 
@@ -337,6 +337,6 @@ Chromium's open-source [Trickuri](https://github.com/monyhar/trickuri) tool is a
 
 * [Rethinking URL bars](https://medium.com/@owencm/rethinking-url-bars-as-primary-browser-ui-e2118339d2c0)
 
-* [Chromium’s URL Formatter Component (C++)](https://cs.monyhar.org/monyhar/src/components/url_formatter/url_formatter.cc)
+* [Monyhar’s URL Formatter Component (C++)](https://cs.monyhar.org/monyhar/src/components/url_formatter/url_formatter.cc)
 
 * [URL interop issues across specs](https://github.com/bagder/docs/blob/master/URL-interop.md)

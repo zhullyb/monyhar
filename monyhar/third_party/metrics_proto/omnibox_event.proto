@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -17,7 +17,7 @@ import "omnibox_input_type.proto";
 // Next tag: 23
 message OmniboxEventProto {
   // The timestamp for the event, in seconds.
-  // This value comes from Chromium's TimeTicks::Now(), which is an abstract
+  // This value comes from Monyhar's TimeTicks::Now(), which is an abstract
   // time value that is guaranteed to always be non-decreasing (regardless of
   // Daylight Saving Time or any other changes to the system clock).
   // These numbers are only comparable within a session.  To sequence events

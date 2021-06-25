@@ -3,7 +3,7 @@
 # results: [ Timeout Crash Pass Failure Slow Skip ]
 
 # This file is used for tests that only need to be suppressed on
-# the Chromium Blink MSan bots.
+# the Monyhar Blink MSan bots.
 # Further documentation:
 # https://monyhar.googlesource.com/monyhar/src/+/master/docs/testing/web_test_expectations.md
 

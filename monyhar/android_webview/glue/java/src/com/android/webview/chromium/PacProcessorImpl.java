@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,10 +12,10 @@ import org.monyhar.base.library_loader.LibraryLoader;
 
 final class PacProcessorImpl implements PacProcessor {
     private PacProcessorImpl() {
-        JNIUtils.setClassLoader(WebViewChromiumFactoryProvider.class.getClassLoader());
+        JNIUtils.setClassLoader(WebViewMonyharFactoryProvider.class.getClassLoader());
         LibraryLoader.getInstance().ensureInitialized();
 
-        // This will set up Chromium environment to run proxy resolver.
+        // This will set up Monyhar environment to run proxy resolver.
         AwPacProcessor.initializeEnvironment();
     }
 

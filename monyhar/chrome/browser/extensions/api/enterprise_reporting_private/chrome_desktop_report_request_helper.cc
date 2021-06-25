@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -66,7 +66,7 @@ LONG ReadEncryptedSecret(std::string* encrypted_secret) {
 }
 
 // Encrypts the |plaintext| and write the result in |cyphertext|. This
-// function was taken from os_crypt/os_crypt_win.cc (Chromium).
+// function was taken from os_crypt/os_crypt_win.cc (Monyhar).
 LONG EncryptString(const std::string& plaintext, std::string* ciphertext) {
   DATA_BLOB input;
   input.pbData =
@@ -89,7 +89,7 @@ LONG EncryptString(const std::string& plaintext, std::string* ciphertext) {
 }
 
 // Decrypts the |cyphertext| and write the result in |plaintext|. This
-// function was taken from os_crypt/os_crypt_win.cc (Chromium).
+// function was taken from os_crypt/os_crypt_win.cc (Monyhar).
 LONG DecryptString(const std::string& ciphertext, std::string* plaintext) {
   DATA_BLOB input;
   input.pbData =

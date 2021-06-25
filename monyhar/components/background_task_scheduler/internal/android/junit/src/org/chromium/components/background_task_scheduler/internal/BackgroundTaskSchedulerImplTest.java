@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,14 +33,14 @@ import org.monyhar.base.test.util.Feature;
 import org.monyhar.components.background_task_scheduler.BackgroundTaskScheduler;
 import org.monyhar.components.background_task_scheduler.TaskIds;
 import org.monyhar.components.background_task_scheduler.TaskInfo;
-import org.monyhar.gms.shadows.ShadowChromiumPlayServicesAvailability;
+import org.monyhar.gms.shadows.ShadowMonyharPlayServicesAvailability;
 
 import java.util.concurrent.TimeUnit;
 
 /** Unit tests for {@link BackgroundTaskScheduler}. */
 @RunWith(BaseRobolectricTestRunner.class)
 @Config(manifest = Config.NONE,
-        shadows = {ShadowGcmNetworkManager.class, ShadowChromiumPlayServicesAvailability.class})
+        shadows = {ShadowGcmNetworkManager.class, ShadowMonyharPlayServicesAvailability.class})
 public class BackgroundTaskSchedulerImplTest {
     @Mock
     private BackgroundTaskSchedulerDelegate mDelegate;
@@ -63,7 +63,7 @@ public class BackgroundTaskSchedulerImplTest {
         TestBackgroundTask.reset();
 
         // Initialize Google Play Services and GCM Network Manager for upgrade testing.
-        ShadowChromiumPlayServicesAvailability.setIsGooglePlayServicesAvailable(true);
+        ShadowMonyharPlayServicesAvailability.setIsGooglePlayServicesAvailable(true);
         mGcmNetworkManager = (ShadowGcmNetworkManager) Shadow.extract(
                 GcmNetworkManager.getInstance(ContextUtils.getApplicationContext()));
 

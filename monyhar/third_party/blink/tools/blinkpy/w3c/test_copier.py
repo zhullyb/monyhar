@@ -127,7 +127,7 @@ class TestCopier(object):
                 if is_basename_skipped(filename):
                     _log.debug('Skipping: %s', path_full)
                     _log.debug(
-                        '  Reason: This file may cause Chromium presubmit to fail.'
+                        '  Reason: This file may cause Monyhar presubmit to fail.'
                     )
                     continue
 

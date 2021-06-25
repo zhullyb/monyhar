@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -82,7 +82,7 @@ class ExtensionsClient {
   virtual const PermissionMessageProvider& GetPermissionMessageProvider()
       const = 0;
 
-  // Returns the application name. For example, "Chromium" or "app_shell".
+  // Returns the application name. For example, "Monyhar" or "app_shell".
   virtual const std::string GetProductName() = 0;
 
   // Takes the list of all hosts and filters out those with special

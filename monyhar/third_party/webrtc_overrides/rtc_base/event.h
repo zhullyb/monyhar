@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@
 
 namespace rtc {
 
-// Overrides WebRTC's internal event implementation to use Chromium's.
+// Overrides WebRTC's internal event implementation to use Monyhar's.
 class RTC_EXPORT Event {
  public:
   static const int kForever = -1;

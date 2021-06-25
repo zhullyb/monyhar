@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -45,7 +45,7 @@ class UpdateQueryParams {
   // "arm", "mips32", and "ppc64".
   static const char* GetNaclArch();
 
-  // Returns the current version of Chrome/Chromium.
+  // Returns the current version of Chrome/Monyhar.
   static std::string GetProdVersion();
 
   // Use this delegate.

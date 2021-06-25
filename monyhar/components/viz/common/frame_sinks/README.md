@@ -109,7 +109,7 @@ changes, or the scale ratio changes; a full "refresh CopyOutputRequest"
 consisting of all the source→output pixels must be made before any successive
 "patching only" requests can be made.
 
-Further background: [Design Doc: Dynamic Screen Capture in Chromium](https://docs.google.com/document/d/1YNYaP22fepgP_MXrFXytbo0LOyx29mdCKAsQ2TZAckg/edit?usp=sharing)
+Further background: [Design Doc: Dynamic Screen Capture in Monyhar](https://docs.google.com/document/d/1YNYaP22fepgP_MXrFXytbo0LOyx29mdCKAsQ2TZAckg/edit?usp=sharing)
 
 *NOTE:* The implementation of CopyOutputRequests is migrating to
 [SkiaRenderer](../../service/display/skia_renderer.h) on all platforms (as of

@@ -5,7 +5,7 @@ backends.
 The `ScreenEnumerationTest` interface is defined as:
 
 ```
-  class ScreenEnumerationTestChromium {
+  class ScreenEnumerationTestMonyhar {
     initialize();  // Sets up the testing environment.
     async reset(); // Frees the resources.
     getMockScreenEnumeration(); // Returns `MockScreenEnumeration` interface.
@@ -28,7 +28,7 @@ Other helper-functions are located in screenenumeration-helpers.js
 makeDisplay(id, bounds, work_area, scale_factor); // Create display object.
 ```
 
-The Chromium implementation of the `ScreenEnumerationTest` interface is located
+The Monyhar implementation of the `ScreenEnumerationTest` interface is located
 in [mock-screenenumeration.js](../resources/monyhar/mock-screenenumeration.js).
 
 Other browser vendors should provide their own implementations of

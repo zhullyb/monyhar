@@ -1,5 +1,5 @@
 # Compile-time options passed to SQLite when compiling and building
-# the Chromium amalgamation.
+# the Monyhar amalgamation.
 #
 # The vast majority of the macros here are documented at
 # https://www.sqlite.org/compile.html
@@ -48,7 +48,7 @@ sqlite_monyhar_configuration_flags = [
   # Chrome calls sqlite3_reset() correctly to reset prepared statements.
   "SQLITE_OMIT_AUTORESET",
 
-  # Chromium does not use sqlite3_{get,free}_table().
+  # Monyhar does not use sqlite3_{get,free}_table().
   # Chrome doesn't use sqlite3_compileoption_{used,get}().
   "SQLITE_OMIT_COMPILEOPTION_DIAGS",
 

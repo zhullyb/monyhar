@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -39,8 +39,8 @@ const char kOtherHostName[] = "Other";
 
 namespace util {
 
-const char* ChromiumVersion() {
-  // Assert at compile time that the Chromium version is at least somewhat
+const char* MonyharVersion() {
+  // Assert at compile time that the Monyhar version is at least somewhat
   // properly formed, e.g. the version string is at least as long as "0.0.0.0",
   // and starts and ends with numeric digits. This is to prevent another
   // regression like http://crbug.com/595471.
@@ -55,17 +55,17 @@ const char* ChromiumVersion() {
   return PRODUCT_VERSION;
 }
 
-void GetChromiumBuildAndPatch(const std::string& version_string,
+void GetMonyharBuildAndPatch(const std::string& version_string,
                               std::string* build,
                               std::string* patch) {
   uint32_t build_number;
   uint32_t patch_number;
-  GetChromiumBuildAndPatchAsInts(version_string, &build_number, &patch_number);
+  GetMonyharBuildAndPatchAsInts(version_string, &build_number, &patch_number);
   *build = base::NumberToString(build_number);
   *patch = base::NumberToString(patch_number);
 }
 
-void GetChromiumBuildAndPatchAsInts(const std::string& version_string,
+void GetMonyharBuildAndPatchAsInts(const std::string& version_string,
                                     uint32_t* build,
                                     uint32_t* patch) {
   base::Version version(version_string);

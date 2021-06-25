@@ -14,9 +14,9 @@
 
 {
   'variables': {
-    # When building as a part of Chromium, this variable sets up the build to
-    # treat Crashpad as Chromium code. This enables warnings at an appropriate
-    # level and applies Chromium’s build/filename_rules.gypi. In a standalone
+    # When building as a part of Monyhar, this variable sets up the build to
+    # treat Crashpad as Monyhar code. This enables warnings at an appropriate
+    # level and applies Monyhar’s build/filename_rules.gypi. In a standalone
     # build, this variable has no effect.
     'monyhar_code': 1,
   },

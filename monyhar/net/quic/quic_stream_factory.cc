@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -337,7 +337,7 @@ class QuicStreamFactory::Job {
 
   void OnResolveHostComplete(int rv);
   void OnConnectComplete(int rv);
-  void OnSessionClosed(QuicChromiumClientSession* session);
+  void OnSessionClosed(QuicMonyharClientSession* session);
 
   const QuicSessionAliasKey& key() const { return key_; }
 
@@ -394,7 +394,7 @@ class QuicStreamFactory::Job {
   void CloseStaleHostConnection() {
     DVLOG(1) << "Closing connection from stale host.";
     if (session_) {
-      QuicChromiumClientSession* session = session_;
+      QuicMonyharClientSession* session = session_;
       session_ = nullptr;
       // Use ERR_FAILED instead of ERR_ABORTED out of paranoia - ERR_ABORTED
       // should only be used when the next layer up cancels a request, and has
@@ -463,7 +463,7 @@ class QuicStreamFactory::Job {
   const NetLogWithSource net_log_;
   bool host_resolution_finished_;
   bool connection_retried_;
-  QuicChromiumClientSession* session_;
+  QuicMonyharClientSession* session_;
   // If connection migraiton is supported, |network_| denotes the network on
   // which |session_| is created.
   NetworkChangeNotifier::NetworkHandle network_;
@@ -577,7 +577,7 @@ int QuicStreamFactory::Job::DoLoop(int rv) {
 }
 
 void QuicStreamFactory::Job::OnSessionClosed(
-    QuicChromiumClientSession* session) {
+    QuicMonyharClientSession* session) {
   // When dns racing experiment is on, the job needs to know that the stale
   // session is closed so that it will start the fresh session without matching
   // dns results.
@@ -1055,7 +1055,7 @@ void QuicStreamRequest::SetPriority(RequestPriority priority) {
     factory_->SetRequestPriority(this, priority);
 }
 
-std::unique_ptr<QuicChromiumClientSession::Handle>
+std::unique_ptr<QuicMonyharClientSession::Handle>
 QuicStreamRequest::ReleaseSessionHandle() {
   if (!session_ || !session_->IsConnected())
     return nullptr;
@@ -1064,7 +1064,7 @@ QuicStreamRequest::ReleaseSessionHandle() {
 }
 
 void QuicStreamRequest::SetSession(
-    std::unique_ptr<QuicChromiumClientSession::Handle> session) {
+    std::unique_ptr<QuicMonyharClientSession::Handle> session) {
   session_ = move(session);
 }
 
@@ -1176,7 +1176,7 @@ bool QuicStreamFactory::CanUseExistingSession(const QuicSessionKey& session_key,
     return true;
 
   for (const auto& key_value : active_sessions_) {
-    QuicChromiumClientSession* session = key_value.second;
+    QuicMonyharClientSession* session = key_value.second;
     if (destination.Equals(all_sessions_[session].destination()) &&
         session->CanPool(session_key.host(), session_key)) {
       return true;
@@ -1218,7 +1218,7 @@ int QuicStreamFactory::Create(const QuicSessionKey& session_key,
   // Use active session for |session_key| if such exists.
   auto active_session = active_sessions_.find(session_key);
   if (active_session != active_sessions_.end()) {
-    QuicChromiumClientSession* session = active_session->second;
+    QuicMonyharClientSession* session = active_session->second;
     request->SetSession(session->CreateHandle(destination));
     return OK;
   }
@@ -1240,7 +1240,7 @@ int QuicStreamFactory::Create(const QuicSessionKey& session_key,
   // Pool to active session to |destination| if possible.
   if (!active_sessions_.empty()) {
     for (const auto& key_value : active_sessions_) {
-      QuicChromiumClientSession* session = key_value.second;
+      QuicMonyharClientSession* session = key_value.second;
       if (destination.Equals(all_sessions_[session].destination()) &&
           session->CanPool(session_key.server_id().host(), session_key)) {
         request->SetSession(session->CreateHandle(destination));
@@ -1277,13 +1277,13 @@ int QuicStreamFactory::Create(const QuicSessionKey& session_key,
     DCHECK(it != active_sessions_.end());
     if (it == active_sessions_.end())
       return ERR_QUIC_PROTOCOL_ERROR;
-    QuicChromiumClientSession* session = it->second;
+    QuicMonyharClientSession* session = it->second;
     request->SetSession(session->CreateHandle(destination));
   }
   return rv;
 }
 
-void QuicStreamFactory::OnSessionGoingAway(QuicChromiumClientSession* session) {
+void QuicStreamFactory::OnSessionGoingAway(QuicMonyharClientSession* session) {
   const AliasSet& aliases = session_aliases_[session];
   for (auto it = aliases.begin(); it != aliases.end(); ++it) {
     const QuicSessionKey& session_key = it->session_key();
@@ -1309,7 +1309,7 @@ void QuicStreamFactory::OnSessionGoingAway(QuicChromiumClientSession* session) {
   UnmapSessionFromSessionAliases(session);
 }
 
-void QuicStreamFactory::OnSessionClosed(QuicChromiumClientSession* session) {
+void QuicStreamFactory::OnSessionClosed(QuicMonyharClientSession* session) {
   DCHECK_EQ(0u, session->GetNumActiveStreams());
   OnSessionGoingAway(session);
   for (const auto& iter : active_jobs_) {
@@ -1322,7 +1322,7 @@ void QuicStreamFactory::OnSessionClosed(QuicChromiumClientSession* session) {
 }
 
 void QuicStreamFactory::OnBlackholeAfterHandshakeConfirmed(
-    QuicChromiumClientSession* session) {
+    QuicMonyharClientSession* session) {
   // Reduce PING timeout when connection blackholes after the handshake.
   if (ping_timeout_ > reduced_ping_timeout_)
     ping_timeout_ = reduced_ping_timeout_;
@@ -1368,7 +1368,7 @@ std::unique_ptr<base::Value> QuicStreamFactory::QuicStreamFactoryInfoToValue()
 
   for (auto it = active_sessions_.begin(); it != active_sessions_.end(); ++it) {
     const quic::QuicServerId& server_id = it->first.server_id();
-    QuicChromiumClientSession* session = it->second;
+    QuicMonyharClientSession* session = it->second;
     const AliasSet& aliases = session_aliases_.find(session)->second;
     // Only add a session to the list once.
     if (server_id == aliases.begin()->server_id()) {
@@ -1516,7 +1516,7 @@ void QuicStreamFactory::OnNetworkConnected(NetworkHandle network) {
   auto it = all_sessions_.begin();
   // Sessions may be deleted while iterating through the map.
   while (it != all_sessions_.end()) {
-    QuicChromiumClientSession* session = it->first;
+    QuicMonyharClientSession* session = it->first;
     ++it;
     session->OnNetworkConnected(network);
   }
@@ -1536,7 +1536,7 @@ void QuicStreamFactory::OnNetworkDisconnected(NetworkHandle network) {
   auto it = all_sessions_.begin();
   // Sessions may be deleted while iterating through the map.
   while (it != all_sessions_.end()) {
-    QuicChromiumClientSession* session = it->first;
+    QuicMonyharClientSession* session = it->first;
     ++it;
     session->OnNetworkDisconnectedV2(/*disconnected_network*/ network);
   }
@@ -1574,7 +1574,7 @@ void QuicStreamFactory::OnNetworkMadeDefault(NetworkHandle network) {
   auto it = all_sessions_.begin();
   // Sessions may be deleted while iterating through the map.
   while (it != all_sessions_.end()) {
-    QuicChromiumClientSession* session = it->first;
+    QuicMonyharClientSession* session = it->first;
     ++it;
     session->OnNetworkMadeDefault(network);
   }
@@ -1683,7 +1683,7 @@ bool QuicStreamFactory::HasMatchingIpSession(const QuicSessionAliasKey& key,
       continue;
 
     const SessionSet& sessions = ip_aliases_[address];
-    for (QuicChromiumClientSession* session : sessions) {
+    for (QuicMonyharClientSession* session : sessions) {
       if (!session->CanPool(server_id.host(), key.session_key()))
         continue;
       active_sessions_[key.session_key()] = session;
@@ -1708,7 +1708,7 @@ void QuicStreamFactory::OnJobComplete(Job* job, int rv) {
 
     auto session_it = active_sessions_.find(job->key().session_key());
     CHECK(session_it != active_sessions_.end());
-    QuicChromiumClientSession* session = session_it->second;
+    QuicMonyharClientSession* session = session_it->second;
     for (auto* request : iter->second->stream_requests()) {
       // Do not notify |request| yet.
       request->SetSession(session->CreateHandle(job->key().destination()));
@@ -1745,7 +1745,7 @@ int QuicStreamFactory::CreateSession(
     base::TimeTicks dns_resolution_start_time,
     base::TimeTicks dns_resolution_end_time,
     const NetLogWithSource& net_log,
-    QuicChromiumClientSession** session,
+    QuicMonyharClientSession** session,
     NetworkChangeNotifier::NetworkHandle* network) {
   TRACE_EVENT0(NetTracingCategory(), "QuicStreamFactory::CreateSession");
   IPEndPoint addr = *address_list.begin();
@@ -1775,12 +1775,12 @@ int QuicStreamFactory::CreateSession(
   }
 
   if (!helper_.get()) {
-    helper_ = std::make_unique<QuicChromiumConnectionHelper>(clock_,
+    helper_ = std::make_unique<QuicMonyharConnectionHelper>(clock_,
                                                              random_generator_);
   }
 
   if (!alarm_factory_.get()) {
-    alarm_factory_ = std::make_unique<QuicChromiumAlarmFactory>(
+    alarm_factory_ = std::make_unique<QuicMonyharAlarmFactory>(
         base::ThreadTaskRunnerHandle::Get().get(), clock_);
   }
 
@@ -1797,8 +1797,8 @@ int QuicStreamFactory::CreateSession(
   InitializeCachedStateInCryptoConfig(*crypto_config_handle, server_id,
                                       server_info, &connection_id);
 
-  QuicChromiumPacketWriter* writer =
-      new QuicChromiumPacketWriter(socket.get(), task_runner_);
+  QuicMonyharPacketWriter* writer =
+      new QuicMonyharPacketWriter(socket.get(), task_runner_);
   quic::QuicConnection* connection = new quic::QuicConnection(
       connection_id, quic::QuicSocketAddress(), ToQuicSocketAddress(addr),
       helper_.get(), alarm_factory_.get(), writer, true /* owns_writer */,
@@ -1821,7 +1821,7 @@ int QuicStreamFactory::CreateSession(
   }
 
   // Use the factory to create a new socket performance watcher, and pass the
-  // ownership to QuicChromiumClientSession.
+  // ownership to QuicMonyharClientSession.
   std::unique_ptr<SocketPerformanceWatcher> socket_performance_watcher;
   if (socket_performance_watcher_factory_) {
     socket_performance_watcher =
@@ -1834,7 +1834,7 @@ int QuicStreamFactory::CreateSession(
   if (!is_quic_known_to_work_on_current_network_)
     require_confirmation = true;
 
-  *session = new QuicChromiumClientSession(
+  *session = new QuicMonyharClientSession(
       connection, std::move(socket), this, quic_crypto_client_stream_factory_,
       clock_, transport_security_state_, ssl_config_service_,
       std::move(server_info), key.session_key(), require_confirmation,
@@ -1873,7 +1873,7 @@ int QuicStreamFactory::CreateSession(
 }
 
 void QuicStreamFactory::ActivateSession(const QuicSessionAliasKey& key,
-                                        QuicChromiumClientSession* session,
+                                        QuicMonyharClientSession* session,
                                         std::vector<std::string> dns_aliases) {
   DCHECK(!HasActiveSession(key.session_key()));
   UMA_HISTOGRAM_COUNTS_1M("Net.QuicActiveSessions", active_sessions_.size());
@@ -1890,7 +1890,7 @@ void QuicStreamFactory::ActivateSession(const QuicSessionAliasKey& key,
 void QuicStreamFactory::MarkAllActiveSessionsGoingAway(
     AllActiveSessionsGoingAwayReason reason) {
   while (!active_sessions_.empty()) {
-    QuicChromiumClientSession* session = active_sessions_.begin()->second;
+    QuicMonyharClientSession* session = active_sessions_.begin()->second;
     // If IP address change is detected, disable session's connectivity
     // monitoring by remove the Delegate.
     if (reason == kIPAddressChanged)
@@ -2069,7 +2069,7 @@ void QuicStreamFactory::InitializeCachedStateInCryptoConfig(
 }
 
 void QuicStreamFactory::ProcessGoingAwaySession(
-    QuicChromiumClientSession* session,
+    QuicMonyharClientSession* session,
     const quic::QuicServerId& server_id,
     bool session_was_active) {
   if (!http_server_properties_)
@@ -2125,7 +2125,7 @@ void QuicStreamFactory::ProcessGoingAwaySession(
 }
 
 void QuicStreamFactory::MapSessionToAliasKey(
-    QuicChromiumClientSession* session,
+    QuicMonyharClientSession* session,
     const QuicSessionAliasKey& key,
     std::vector<std::string> dns_aliases) {
   session_aliases_[session].insert(key);
@@ -2133,7 +2133,7 @@ void QuicStreamFactory::MapSessionToAliasKey(
 }
 
 void QuicStreamFactory::UnmapSessionFromSessionAliases(
-    QuicChromiumClientSession* session) {
+    QuicMonyharClientSession* session) {
   for (const auto& key : session_aliases_[session])
     dns_aliases_by_session_key_.erase(key.session_key());
   session_aliases_.erase(session);
@@ -2180,7 +2180,7 @@ QuicStreamFactory::CreateCryptoConfigHandle(
   // |active_crypto_config_map_|.
   std::unique_ptr<QuicCryptoClientConfigOwner> crypto_config_owner =
       std::make_unique<QuicCryptoClientConfigOwner>(
-          std::make_unique<ProofVerifierChromium>(
+          std::make_unique<ProofVerifierMonyhar>(
               cert_verifier_, ct_policy_enforcer_, transport_security_state_,
               sct_auditing_delegate_,
               HostsFromOrigins(params_.origins_to_force_quic_on),

@@ -1,8 +1,8 @@
-# Using upstream wptrunner in Chromium (experimental)
+# Using upstream wptrunner in Monyhar (experimental)
 
 This page documents the *experimental* support for using the upstream
 [`wptrunner`](https://github.com/web-platform-tests/wpt/tree/master/tools/wptrunner/)
-tooling for running WPT tests in Chromium (vs the [current
+tooling for running WPT tests in Monyhar (vs the [current
 approach](web_platform_tests.md#Running-tests) that uses `run_web_tests.py`).
 
 It is written as a user guide. For technical details on the project, see the
@@ -63,7 +63,7 @@ Useful flags:
 
 ## The MVP bots
 
-As of Q4 2020, an MVP of wptrunner in Chromium is being run with two customer
+As of Q4 2020, an MVP of wptrunner in Monyhar is being run with two customer
 teams: Web Payments and Web Identity. For these teams, two **Linux-only** bots
 have been brought up:
 
@@ -110,7 +110,7 @@ external/wpt/folder/my-test.html.ini <-- wptrunner baseline
 
 We currently do not support the full ini-like format that upstream WPT does;
 most notably we have chosen not to support dynamic conditionals (such as
-platform checks). Most `.ini` baseline files in Chromium should have the form:
+platform checks). Most `.ini` baseline files in Monyhar should have the form:
 
 ```
 [my-test.html]

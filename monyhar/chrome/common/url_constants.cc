@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -98,7 +98,7 @@ const char kChromeSearchScheme[] = "chrome-search";
 const char kChromeUIUntrustedNewTabPageUrl[] =
     "chrome-untrusted://new-tab-page/";
 
-const char kChromiumProjectURL[] = "https://www.monyhar.org/";
+const char kMonyharProjectURL[] = "https://www.monyhar.org/";
 
 const char kCloudPrintCertificateErrorLearnMoreURL[] =
 #if BUILDFLAG(IS_CHROMEOS_ASH)

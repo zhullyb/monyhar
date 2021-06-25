@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -55,7 +55,7 @@ def binary_name(cmd):
 
   # On Windows, the "subprocess" execution requires a name with extension.
   # Since we just need a couple of commands, use a simple replacement that
-  # work for Chromium build environments. This isn't a general solution.
+  # work for Monyhar build environments. This isn't a general solution.
   if sys.platform != 'win32':
     return cmd
   if cmd in WINDOWS_EXES:

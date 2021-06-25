@@ -1,6 +1,6 @@
 # Initialization of Blink runtime features in content layer
 This document outlines how to initialize your Blink runtime features in the
-Chromium content layer, more specifically in
+Monyhar content layer, more specifically in
 [content/child/runtime_features.cc][runtime_features]. To learn more on how to
 set up features in blink, see
 [Runtime Enabled Features][RuntimeEnabledFeatures].
@@ -21,7 +21,7 @@ Add your code for controlling the Blink feature in
 using the appropriate OS macros.
 ### 2) Depends on the status of a base::Feature:
 Add your code to the function
-[SetRuntimeFeaturesFromChromiumFeatures()][SetRuntimeFeaturesFromChromiumFeatures].
+[SetRuntimeFeaturesFromMonyharFeatures()][SetRuntimeFeaturesFromMonyharFeatures].
 
 If your Blink feature has a custom enabler function, add a new entry to
 `blinkFeatureToBaseFeatureMapping`. For example, a new entry like this:
@@ -33,7 +33,7 @@ is enabled, or to set it to the same status as `features::kNewFeatureX` if its
 default status is overridden by any field trial or command line switch.
 
 If your Blink feature does not have a custom enabler function, you need to add
-the entry to `runtimeFeatureNameToChromiumFeatureMapping`. For example, a new
+the entry to `runtimeFeatureNameToMonyharFeatureMapping`. For example, a new
 entry like this:
 ```
 {"NewFeatureY", features::kNewFeatureY, kDefault},
@@ -42,7 +42,7 @@ will call `wf::EnableFeatureFromString` with your feature name instead of
 `wf::EnableNewFeatureX` in the same cases as above.
 
 The following table summarizes the relationship between the default status of
-the Chromium feature and the status of the blink feature, when `kDefault` is
+the Monyhar feature and the status of the blink feature, when `kDefault` is
 specified, if **not overridden** by field trial or command line switches
 (horizontal headers: blink feature status; vertical headers: monyhar feature
 default status):
@@ -55,15 +55,15 @@ default status):
 \[1]: `base::FeatureList::IsEnabled(features::kNewFeatureX)` is still
 false. These combinations are suitable for features there are fully implemented
 at blink side. Otherwise normally the blink feature should not have a status so
-that the Chromium feature can fully controll the feature.
+that the Monyhar feature can fully controll the feature.
 
 \[2]: This combination is counter-intuitive and should be avoided.
 
-Field trial and command line switches can always override the Chromium feature
+Field trial and command line switches can always override the Monyhar feature
 status and the blink feature status.
 
 Besides `kDefault`, there are also other options for the relationship
-between the Chromium feature and the blink feature. These other options should
+between the Monyhar feature and the blink feature. These other options should
 only be used in rare cases when the default relationship doesn't work.
 
 For more detailed explanation on the options you have, read the comment in enum
@@ -101,6 +101,6 @@ command line switch. In this case, your custom logic should live here in
 [EnableFeatureFromString]:<https://monyhar.googlesource.com/monyhar/src/+/HEAD/third_party/blink/public/platform/web_runtime_features.h#56>
 [SetRuntimeFeatureDefaultsForPlatform]:<https://monyhar.googlesource.com/monyhar/src/+/HEAD/content/child/runtime_features.cc#46>
 [SetCustomizedRuntimeFeaturesFromCombinedArgs]:<https://monyhar.googlesource.com/monyhar/src/+/HEAD/content/child/runtime_features.cc#487>
-[SetRuntimeFeaturesFromChromiumFeatures]:<https://monyhar.googlesource.com/monyhar/src/+/HEAD/content/child/runtime_features.cc#160>
+[SetRuntimeFeaturesFromMonyharFeatures]:<https://monyhar.googlesource.com/monyhar/src/+/HEAD/content/child/runtime_features.cc#160>
 [SetRuntimeFeaturesFromCommandLine]:<https://monyhar.googlesource.com/monyhar/src/+/HEAD/content/child/runtime_features.cc#390>
 [SetRuntimeFeaturesFromFieldTrialParams]:<https://monyhar.googlesource.com/monyhar/src/+/HEAD/content/child/runtime_features.cc#448>

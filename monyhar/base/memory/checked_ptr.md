@@ -82,11 +82,11 @@ TODO: Expand the raw notes below:
 ## Fields should use CheckedPtr rather than raw pointers
 
 Eventually, once CheckedPtr is no longer **experimental**,
-fields (aka member variables) in Chromium code
+fields (aka member variables) in Monyhar code
 should use `CheckedPtr<SomeClass>` rather than raw pointers.
 
 TODO: Expand the raw notes below:
-- Chromium-only (V8, Skia, etc. excluded)
+- Monyhar-only (V8, Skia, etc. excluded)
 - Renderer-only code excluded for performance reasons (Blink,
   any code path with "/renderer/" substring).
 - Fields-only

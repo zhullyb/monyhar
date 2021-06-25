@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -44,7 +44,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
- * CronetEngine using Chromium HTTP stack implementation.
+ * CronetEngine using Monyhar HTTP stack implementation.
  */
 @JNINamespace("cronet")
 @UsedByReflection("CronetEngine.java")
@@ -174,7 +174,7 @@ public class CronetUrlRequestContext extends CronetEngineBase {
             }
         }
 
-        // Init native Chromium URLRequestContext on init thread.
+        // Init native Monyhar URLRequestContext on init thread.
         CronetLibraryLoader.postToInitThread(new Runnable() {
             @Override
             public void run() {
@@ -599,7 +599,7 @@ public class CronetUrlRequestContext extends CronetEngineBase {
         if (!IntegratedModeState.INTEGRATED_MODE_ENABLED) {
             // In integrated mode, network thread is shared from the host.
             // Cronet shouldn't change the property of the thread.
-            Thread.currentThread().setName("ChromiumNet");
+            Thread.currentThread().setName("MonyharNet");
         }
     }
 

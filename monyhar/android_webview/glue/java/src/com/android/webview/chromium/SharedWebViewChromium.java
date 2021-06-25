@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,19 +11,19 @@ import org.monyhar.android_webview.AwContents;
 import org.monyhar.android_webview.AwRenderProcess;
 import org.monyhar.android_webview.ScriptHandler;
 import org.monyhar.android_webview.WebMessageListener;
-import org.monyhar.android_webview.WebViewChromiumRunQueue;
+import org.monyhar.android_webview.WebViewMonyharRunQueue;
 import org.monyhar.base.ThreadUtils;
 import org.monyhar.content_public.browser.MessagePort;
 
 import java.util.concurrent.Callable;
 
 /**
- * This class contains the parts of WebViewChromium that should be shared between the webkit-glue
+ * This class contains the parts of WebViewMonyhar that should be shared between the webkit-glue
  * layer and the support library glue layer.
  */
-public class SharedWebViewChromium {
-    private final WebViewChromiumRunQueue mRunQueue;
-    private final WebViewChromiumAwInit mAwInit;
+public class SharedWebViewMonyhar {
+    private final WebViewMonyharRunQueue mRunQueue;
+    private final WebViewMonyharAwInit mAwInit;
     // The WebView wrapper for WebContents and required browser components.
     private AwContents mAwContents;
 
@@ -35,7 +35,7 @@ public class SharedWebViewChromium {
     private WebViewClient mWebViewClient = sNullWebViewClient;
     private WebChromeClient mWebChromeClient;
 
-    public SharedWebViewChromium(WebViewChromiumRunQueue runQueue, WebViewChromiumAwInit awInit) {
+    public SharedWebViewMonyhar(WebViewMonyharRunQueue runQueue, WebViewMonyharAwInit awInit) {
         mRunQueue = runQueue;
         mAwInit = awInit;
     }
@@ -73,7 +73,7 @@ public class SharedWebViewChromium {
 
         if (mAwContents != null) {
             throw new RuntimeException(
-                    "Cannot create multiple AwContents for the same SharedWebViewChromium");
+                    "Cannot create multiple AwContents for the same SharedWebViewMonyhar");
         }
         mAwContents = awContents;
     }

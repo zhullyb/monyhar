@@ -1,10 +1,10 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // Next MinVersion: 5
 
-// This file defines the mojo interface between Android and Chromium for video
+// This file defines the mojo interface between Android and Monyhar for video
 // decoding. Any Mojo callee that returns a value does so by callback.
 // However, the caller may receive it by out-param (for sync calls) or
 // via callback (for async calls).

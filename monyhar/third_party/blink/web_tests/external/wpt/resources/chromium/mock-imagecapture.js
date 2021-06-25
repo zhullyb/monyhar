@@ -255,7 +255,7 @@ self.ImageCaptureTest = (() => {
     mockImageCapture: null
   }
 
-  class ImageCaptureTestChromium {
+  class ImageCaptureTestMonyhar {
 
     constructor() {
       Object.freeze(this); // Make it immutable.
@@ -283,5 +283,5 @@ self.ImageCaptureTest = (() => {
     }
   }
 
-  return ImageCaptureTestChromium;
+  return ImageCaptureTestMonyhar;
 })();

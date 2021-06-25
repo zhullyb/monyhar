@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 #ifndef LEGACY_IFACE
@@ -20,11 +20,11 @@ LEGACY_IFACE(
     PPB_OPENGLES2_FRAMEBUFFERMULTISAMPLE_INTERFACE,
     ::ppapi::PPB_OpenGLES2_Shared::GetFramebufferMultisampleInterface())
 LEGACY_IFACE(PPB_OPENGLES2_CHROMIUMENABLEFEATURE_INTERFACE,
-             ::ppapi::PPB_OpenGLES2_Shared::GetChromiumEnableFeatureInterface())
+             ::ppapi::PPB_OpenGLES2_Shared::GetMonyharEnableFeatureInterface())
 LEGACY_IFACE(PPB_OPENGLES2_CHROMIUMMAPSUB_INTERFACE,
-             ::ppapi::PPB_OpenGLES2_Shared::GetChromiumMapSubInterface())
+             ::ppapi::PPB_OpenGLES2_Shared::GetMonyharMapSubInterface())
 LEGACY_IFACE(PPB_OPENGLES2_CHROMIUMMAPSUB_DEV_INTERFACE_1_0,
-             ::ppapi::PPB_OpenGLES2_Shared::GetChromiumMapSubInterface())
+             ::ppapi::PPB_OpenGLES2_Shared::GetMonyharMapSubInterface())
 LEGACY_IFACE(PPB_OPENGLES2_QUERY_INTERFACE,
              ::ppapi::PPB_OpenGLES2_Shared::GetQueryInterface())
 LEGACY_IFACE(PPB_OPENGLES2_DRAWBUFFERS_DEV_INTERFACE,

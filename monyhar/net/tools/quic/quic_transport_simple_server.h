@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The Chromium Authors. All rights reserved.
+// Copyright (c) 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -54,7 +54,7 @@ class QuicTransportSimpleServer {
   ReadErrorCallback read_error_callback_;
 
   quic::QuicVersionManager version_manager_;
-  quic::QuicChromiumClock* clock_;  // Not owned.
+  quic::QuicMonyharClock* clock_;  // Not owned.
   quic::QuicConfig config_;
   quic::QuicCryptoServerConfig crypto_config_;
 

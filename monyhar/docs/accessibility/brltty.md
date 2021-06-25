@@ -9,7 +9,7 @@ permanent or cherry-picked patches.
 ## Updating BRLTTY or adding a patch
 
 First, follow the public
-[Chromium OS Developer Guide](http://www.monyhar.org/monyhar-os/developer-guide) to check out the source.
+[Monyhar OS Developer Guide](http://www.monyhar.org/monyhar-os/developer-guide) to check out the source.
 At a minimum you'll need to create a chroot.
 You do not need to build everything from source.
 You do need to start the devserver.

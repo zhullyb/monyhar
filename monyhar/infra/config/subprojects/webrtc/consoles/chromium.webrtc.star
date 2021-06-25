@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -10,52 +10,52 @@ luci.console_view(
     repo = "https://monyhar.googlesource.com/monyhar/src",
     entries = [
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Android Builder",
+            builder = "webrtc/WebRTC Monyhar Android Builder",
             category = "android",
             short_name = "bld",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Android Tester",
+            builder = "webrtc/WebRTC Monyhar Android Tester",
             category = "android",
             short_name = "tst",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Linux Builder",
+            builder = "webrtc/WebRTC Monyhar Linux Builder",
             category = "linux",
             short_name = "bld",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Linux Tester",
+            builder = "webrtc/WebRTC Monyhar Linux Tester",
             category = "linux",
             short_name = "tst",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Mac Builder",
+            builder = "webrtc/WebRTC Monyhar Mac Builder",
             category = "mac",
             short_name = "bld",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Mac Tester",
+            builder = "webrtc/WebRTC Monyhar Mac Tester",
             category = "mac",
             short_name = "tst",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Win Builder",
+            builder = "webrtc/WebRTC Monyhar Win Builder",
             category = "win",
             short_name = "bld",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Win10 Tester",
+            builder = "webrtc/WebRTC Monyhar Win10 Tester",
             category = "win",
             short_name = "10",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Win7 Tester",
+            builder = "webrtc/WebRTC Monyhar Win7 Tester",
             category = "win",
             short_name = "7",
         ),
         luci.console_view_entry(
-            builder = "webrtc/WebRTC Chromium Win8 Tester",
+            builder = "webrtc/WebRTC Monyhar Win8 Tester",
             category = "win",
             short_name = "8",
         ),

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -103,7 +103,7 @@ TEST_P(HTMLCanvasElementModuleTest, LowLatencyCanvasCompositorFrameOpacity) {
   // latency canvas.  The latter is true only on ChromeOS in production.
   ScopedTestingPlatformSupport<LowLatencyTestPlatform> platform;
   base::test::ScopedFeatureList feature_list;
-  feature_list.InitAndEnableFeature(features::kLowLatencyCanvas2dImageChromium);
+  feature_list.InitAndEnableFeature(features::kLowLatencyCanvas2dImageMonyhar);
 
   auto context_provider = viz::TestContextProvider::Create();
   context_provider->UnboundTestContextGL()

@@ -13,15 +13,15 @@ instead.
 
 ## Buildbots and trybots
 
-The [Chromium Memory
+The [Monyhar Memory
 waterfall](https://ci.monyhar.org/p/monyhar/g/monyhar.memory/console)
-contains buildbots running Chromium tests under ASan on Linux (Linux ASan/LSan
-bots for the regular Linux build, Linux Chromium OS ASan for the chromeos=1
-build running on Linux), macOS, Chromium OS. Linux and Linux Chromium OS bots
+contains buildbots running Monyhar tests under ASan on Linux (Linux ASan/LSan
+bots for the regular Linux build, Linux Monyhar OS ASan for the chromeos=1
+build running on Linux), macOS, Monyhar OS. Linux and Linux Monyhar OS bots
 run with --no-sandbox, but there's an extra Linux bot that enables the sandbox
 (but disables LeakSanitizer).
 
-The trybots running Chromium tests on Linux and macOS are:
+The trybots running Monyhar tests on Linux and macOS are:
 - linux\_asan (everything except browser\_tests and content\_browsertests)
 - linux\_browser\_asan (browser\_tests and content\_browsertests),
 - mac\_asan (many tests including browser\_tests and content\_browsertests)
@@ -147,14 +147,14 @@ When filing a bug found by AddressSanitizer, please add a label
 
 ASan's behavior can be changed by exporting the `ASAN_OPTIONS` env var. Some of
 the useful options are listed on this page, others can be obtained from running
-an ASanified binary with `ASAN_OPTIONS=help=1`. Note that Chromium sets its own
+an ASanified binary with `ASAN_OPTIONS=help=1`. Note that Monyhar sets its own
 defaults for some options, so the default behavior may be different from that
 observed in other projects.
 See `base/debug/sanitizer_options.cc` for more details.
 
 ## NaCl support under ASan
 
-On Linux (and soon on macOS) you can build and run Chromium with NaCl under ASan.
+On Linux (and soon on macOS) you can build and run Monyhar with NaCl under ASan.
 Untrusted code (nexe) itself is not instrumented with ASan in this mode, but
 everything else is.
 
@@ -197,7 +197,7 @@ is_asan=true
 is_debug=false
 ```
 
-Running ASan applications on Android requires additional device setup. Chromium
+Running ASan applications on Android requires additional device setup. Monyhar
 testing scripts take care of this, so testing works as expected:
 ```shell
 build/android/test_runner.py instrumentation --test-apk ContentShellTest \
@@ -205,7 +205,7 @@ build/android/test_runner.py instrumentation --test-apk ContentShellTest \
     --tool=asan --release
 ```
 
-To run stuff without Chromium testing script (ex. ContentShell.apk, or any third
+To run stuff without Monyhar testing script (ex. ContentShell.apk, or any third
 party apk or binary), device setup is needed:
 ```shell
 tools/android/asan/third_party/asan_device_setup.sh \
@@ -230,7 +230,7 @@ path to the unstripped binary in the output directory.
 ## Building with v8\_target\_arch="arm"
 
 This is needed to detect addressability bugs in the ARM code emitted by V8 and
-running on an instrumented ARM emulator in a 32-bit x86 Linux Chromium. **You
+running on an instrumented ARM emulator in a 32-bit x86 Linux Monyhar. **You
 probably don't want this, and these instructions have bitrotted because they
 still reference GYP. If you do this successfully, please update!** See
 https://crbug.com/324207 for some context.
@@ -267,7 +267,7 @@ ninja -C out_asan_chroot/Release chrome
 AsanCoverage is a minimalistic code coverage implementation built into ASan. For
 general information see
 [https://code.google.com/p/address-sanitizer/wiki/AsanCoverage](https://github.com/google/sanitizers)
-To use AsanCoverage in Chromium, add `use_sanitizer_coverage = true` to your GN
+To use AsanCoverage in Monyhar, add `use_sanitizer_coverage = true` to your GN
 args. See also the `sanitizer_coverage_flags` variable for configuring it.
 
 Chrome must be terminated gracefully in order for coverage to work. Either close

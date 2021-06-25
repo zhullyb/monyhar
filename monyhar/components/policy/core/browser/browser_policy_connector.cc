@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -172,8 +172,8 @@ std::string BrowserPolicyConnector::GetEncryptedReportingUrl() const {
 bool BrowserPolicyConnector::IsNonEnterpriseUser(const std::string& username) {
   TRACE_EVENT0("browser", "BrowserPolicyConnector::IsNonEnterpriseUser");
   if (username.empty() || username.find('@') == std::string::npos) {
-    // An empty username means incognito user in case of ChromiumOS and
-    // no logged-in user in case of Chromium (SigninService). Many tests use
+    // An empty username means incognito user in case of MonyharOS and
+    // no logged-in user in case of Monyhar (SigninService). Many tests use
     // nonsense email addresses (e.g. 'test') so treat those as non-enterprise
     // users.
     return true;

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ void* AlignedAlloc(size_t size, size_t alignment) {
   ptr = _aligned_malloc(size, alignment);
 #elif defined(OS_ANDROID)
   // Android technically supports posix_memalign(), but does not expose it in
-  // the current version of the library headers used by Chromium.  Luckily,
+  // the current version of the library headers used by Monyhar.  Luckily,
   // memalign() on Android returns pointers which can safely be used with
   // free(), so we can use it instead.  Issue filed to document this:
   // http://code.google.com/p/android/issues/detail?id=35391

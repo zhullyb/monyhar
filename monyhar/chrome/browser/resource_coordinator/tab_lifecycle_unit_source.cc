@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -188,7 +188,7 @@ void TabLifecycleUnitSource::UpdateFocusedTab() {
                            : nullptr;
 
   // TODO(sangwoo.ko) We are refactoring TabStripModel API and this is
-  // workaround to avoid DCHECK failure on Chromium os. This DCHECK is supposing
+  // workaround to avoid DCHECK failure on Monyhar os. This DCHECK is supposing
   // that OnTabInserted() is always called before OnBrowserSetLastActive is
   // called but it's not. After replacing old API use in BrowserView,
   // restore this to DCHECK(!focused_web_contents || focused_lifecycle_unit);

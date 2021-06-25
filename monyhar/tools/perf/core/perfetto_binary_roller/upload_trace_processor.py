@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -23,7 +23,7 @@ from core.tbmv3 import trace_processor
 def _PerfettoRevision():
   deps_line_re = re.compile(
       r".*'/platform/external/perfetto.git' \+ '@' \+ '([a-f0-9]+)'")
-  deps_file = os.path.join(path_util.GetChromiumSrcDir(), 'DEPS')
+  deps_file = os.path.join(path_util.GetMonyharSrcDir(), 'DEPS')
   with open(deps_file) as deps:
     for line in deps:
       match = deps_line_re.match(line)

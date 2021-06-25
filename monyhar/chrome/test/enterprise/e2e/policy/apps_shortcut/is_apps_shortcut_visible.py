@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -11,7 +11,7 @@ def main(argv):
   driver = test_util.create_chrome_webdriver()
   try:
     application = Application(backend="uia")
-    application.connect(title_re='.*Chrome|.*Chromium')
+    application.connect(title_re='.*Chrome|.*Monyhar')
 
     print("Looking for apps shortcut...")
     for desc in application.top_window().descendants():

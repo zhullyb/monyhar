@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -68,7 +68,7 @@ TEST(WebAppProtoUtilsTest, M85SpecificsProtoParse) {
 
 // Test that a minimal M85 proto (ie. only fields that would always be set in
 // M85) is correctly parsed to a WebApp::SyncFallbackData in the current
-// Chromium version.
+// Monyhar version.
 TEST(WebAppProtoUtilsTest, M85SpecificsProtoToWebApp_Minimal) {
   // Set the minimal proto fields.
   sync_pb::WebAppSpecifics sync_proto;
@@ -87,7 +87,7 @@ TEST(WebAppProtoUtilsTest, M85SpecificsProtoToWebApp_Minimal) {
 }
 
 // Test that a M85 proto with all fields populated is correctly parsed to a
-// WebApp::SyncFallbackData in the current Chromium version.
+// WebApp::SyncFallbackData in the current Monyhar version.
 TEST(WebAppProtoUtilsTest, M85SpecificsProtoToWebApp_FullyPopulated) {
   // Set all proto fields.
   sync_pb::WebAppSpecifics sync_proto;

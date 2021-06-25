@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ class AutoThreadTaskRunner;
 
 // A custom version of |CAtlModuleT<>| that registers only those classes which
 // registration entries are passed to the constructor. |ChromotingModule| runs
-// |MessageLoop| allowing Chromium code to post tasks to it. Unlike
+// |MessageLoop| allowing Monyhar code to post tasks to it. Unlike
 // |CAtlExeModuleT<>|, |ChromotingModule| shuts itself down immediately once
 // the last COM object is released.
 class ChromotingModule : public ATL::CAtlModuleT<ChromotingModule> {

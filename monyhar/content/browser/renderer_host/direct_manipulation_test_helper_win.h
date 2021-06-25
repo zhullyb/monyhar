@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The Chromium Authors. All rights reserved.
+// Copyright (c) 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -70,7 +70,7 @@ class MockDirectManipulationContent
   // flatly as M = [(1,1), (1,2), (2,1), (2,2), (3,1), (3,2)].
   // Each element stores the following information:
   // (1,1) - x scale
-  // (1,2) - y rotation (0 when rotation is not allowed, such as in Chromium)
+  // (1,2) - y rotation (0 when rotation is not allowed, such as in Monyhar)
   // (2,1) - x rotation (0 when rotation is not allowed)
   // (2,2) - y scale
   // (3,1) - x offset

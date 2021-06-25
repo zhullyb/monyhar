@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,7 +37,7 @@ public class MediaCaptureNotificationUtil {
      * Creates a notification for the provided parameters.
      * @param mediaType Media type of the notification.
      * @param url Url of the current webrtc call, or null if no URL should be displayed.
-     * @param appName the display name for the app, e.g. "Chromium".
+     * @param appName the display name for the app, e.g. "Monyhar".
      * @param contentIntent the intent to be sent when the notification is clicked.
      * @param stopIntent if non-null, a stop button that triggers this intent will be added.
      */

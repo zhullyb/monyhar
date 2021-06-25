@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ namespace {
 
 class PatcherImpl : public Patcher {
  public:
-  explicit PatcherImpl(PatchChromiumFactory::Callback callback)
+  explicit PatcherImpl(PatchMonyharFactory::Callback callback)
       : callback_(std::move(callback)) {}
 
   void PatchBsdiff(const base::FilePath& old_file,
@@ -36,18 +36,18 @@ class PatcherImpl : public Patcher {
   ~PatcherImpl() override = default;
 
  private:
-  const PatchChromiumFactory::Callback callback_;
+  const PatchMonyharFactory::Callback callback_;
 };
 
 }  // namespace
 
-PatchChromiumFactory::PatchChromiumFactory(Callback callback)
+PatchMonyharFactory::PatchMonyharFactory(Callback callback)
     : callback_(std::move(callback)) {}
 
-scoped_refptr<Patcher> PatchChromiumFactory::Create() const {
+scoped_refptr<Patcher> PatchMonyharFactory::Create() const {
   return base::MakeRefCounted<PatcherImpl>(callback_);
 }
 
-PatchChromiumFactory::~PatchChromiumFactory() = default;
+PatchMonyharFactory::~PatchMonyharFactory() = default;
 
 }  // namespace update_client

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,7 +37,7 @@ const char kXdndActionMove[] = "XdndActionMove";
 const char kXdndActionLink[] = "XdndActionLink";
 
 // Window property that will receive the drag and drop selection data.
-const char kChromiumDragReciever[] = "_CHROMIUM_DRAG_RECEIVER";
+const char kMonyharDragReciever[] = "_CHROMIUM_DRAG_RECEIVER";
 
 }  // namespace
 
@@ -120,7 +120,7 @@ void XDragContext::RequestNextTarget() {
 
   x11::Connection::Get()->ConvertSelection(
       {local_window_, x11::GetAtom(kXdndSelection), target,
-       x11::GetAtom(kChromiumDragReciever), position_time_stamp_});
+       x11::GetAtom(kMonyharDragReciever), position_time_stamp_});
 }
 
 void XDragContext::OnSelectionNotify(const x11::SelectionNotifyEvent& event) {
@@ -137,7 +137,7 @@ void XDragContext::OnSelectionNotify(const x11::SelectionNotifyEvent& event) {
   auto target = static_cast<x11::Atom>(event.target);
 
   if (event.property != x11::Atom::None) {
-    DCHECK_EQ(property, x11::GetAtom(kChromiumDragReciever));
+    DCHECK_EQ(property, x11::GetAtom(kMonyharDragReciever));
 
     scoped_refptr<base::RefCountedMemory> data;
     x11::Atom type = x11::Atom::None;

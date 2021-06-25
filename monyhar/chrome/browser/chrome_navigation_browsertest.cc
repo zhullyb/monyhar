@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -120,7 +120,7 @@ class ChromeNavigationBrowserTest : public InProcessBrowserTest {
 };
 
 #if defined(OS_LINUX) || defined(OS_CHROMEOS)
-// Fails on monyhar.memory/Linux Chromium OS ASan LSan:
+// Fails on monyhar.memory/Linux Monyhar OS ASan LSan:
 // https://crbug.com/897879
 #define MAYBE_TransientEntryPreservedOnMultipleNavigationsDuringInterstitial \
   DISABLED_TransientEntryPreservedOnMultipleNavigationsDuringInterstitial

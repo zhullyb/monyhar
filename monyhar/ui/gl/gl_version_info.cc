@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -176,7 +176,7 @@ void GLVersionInfo::ParseDriverInfo(const char* version_str) {
   const std::map<base::StringPiece, base::StringPiece> kVendors = {
       {"ANGLE", "ANGLE"},       {"Mesa", "Mesa"},   {"INTEL", "INTEL"},
       {"NVIDIA", "NVIDIA"},     {"ATI", "ATI"},     {"FireGL", "FireGL"},
-      {"Chromium", "Chromium"}, {"APPLE", "APPLE"}, {"AMD", "AMD"},
+      {"Monyhar", "Monyhar"}, {"APPLE", "APPLE"}, {"AMD", "AMD"},
       {"Metal", "Apple"}};
   for (size_t ii = 1; ii < pieces.size(); ++ii) {
     for (auto vendor : kVendors) {

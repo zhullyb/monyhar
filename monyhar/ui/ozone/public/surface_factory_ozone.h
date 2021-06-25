@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -38,7 +38,7 @@ class SurfaceOzoneCanvas;
 class OverlaySurface;
 class PlatformWindowSurface;
 
-// The Ozone interface allows external implementations to hook into Chromium to
+// The Ozone interface allows external implementations to hook into Monyhar to
 // provide a system specific implementation. The Ozone interface supports two
 // drawing modes: 1) accelerated drawing using GL and 2) software drawing
 // through Skia.

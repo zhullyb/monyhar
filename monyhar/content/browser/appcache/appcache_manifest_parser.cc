@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -350,17 +350,17 @@ bool ParseManifest(const GURL& manifest_url,
 
   // The manifest has to start with a well-defined signature.
   static constexpr base::StringPiece kSignature("CACHE MANIFEST");
-  static constexpr base::StringPiece kChromiumSignature(
+  static constexpr base::StringPiece kMonyharSignature(
       "CHROMIUM CACHE MANIFEST");
   if (base::StartsWith(data, kSignature)) {
     data = data.substr(kSignature.length());
-  } else if (base::StartsWith(data, kChromiumSignature)) {
+  } else if (base::StartsWith(data, kMonyharSignature)) {
     // Chrome recognizes a separate signature, CHROMIUM CACHE MANIFEST. This was
     // built so that manifests that use the Chrome-only feature
     // CHROMIUM-INTERCEPT will be ignored by other browsers.
     // See https://crbug.com/101565
 
-    data = data.substr(kChromiumSignature.length());
+    data = data.substr(kMonyharSignature.length());
     parse_metrics.RecordChromeHeader();
   } else {
     return false;

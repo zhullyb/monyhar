@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -150,7 +150,7 @@ enum DnsResolveStatus {
 
 // ICANN uses this localhost address to indicate a name collision.
 //
-// The policy in Chromium is to fail host resolving if it resolves to
+// The policy in Monyhar is to fail host resolving if it resolves to
 // this special address.
 //
 // Not however that IP literals are exempt from this policy, so it is still

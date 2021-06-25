@@ -19,5 +19,5 @@ to implement the privilege reduction. At a high-level:
 
 Built on top of the low-level sandboxing library is the
 [`//sandbox/policy`](policy/README.md) component, which provides concrete
-policies and helper utilities for sandboxing specific Chromium processes and
+policies and helper utilities for sandboxing specific Monyhar processes and
 services. The core sandbox library cannot depend on the policy component.

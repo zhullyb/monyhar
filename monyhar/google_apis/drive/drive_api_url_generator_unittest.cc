@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@
 
 namespace google_apis {
 namespace {
-// The URLs used for production may be different for Chromium OS and Chrome
+// The URLs used for production may be different for Monyhar OS and Chrome
 // OS, so use testing base urls.
 const char kBaseUrlForTesting[] = "https://www.example.com";
 const char kBaseThumbnailUrlForTesting[] = "https://thumbnail.example.com";

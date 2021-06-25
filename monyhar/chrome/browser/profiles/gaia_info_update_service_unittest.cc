@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -60,7 +60,7 @@ AccountInfo GetValidAccountInfo(std::string email,
 }
 
 #if BUILDFLAG(ENABLE_DICE_SUPPORT)
-const char kChromiumOrgDomain[] = "monyhar.org";
+const char kMonyharOrgDomain[] = "monyhar.org";
 #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
 
 #endif  // !BUILDFLAG(IS_CHROMEOS_ASH)
@@ -308,7 +308,7 @@ TEST_F(GAIAInfoUpdateServiceTest, LogInLogOutLogIn) {
       email2, signin::GetTestGaiaIdForEmail(email2));
   base::RunLoop().RunUntilIdle();
   info2 = GetValidAccountInfo(info2.email, info2.account_id, "Pat 2",
-                              "Pat Foo The Second", kChromiumOrgDomain);
+                              "Pat Foo The Second", kMonyharOrgDomain);
   signin::UpdateAccountInfoForAccount(identity_test_env()->identity_manager(),
                                       info2);
   base::RunLoop().RunUntilIdle();
@@ -345,7 +345,7 @@ TEST_F(GAIAInfoUpdateServiceTest, MultiLoginAndLogOut) {
                               "Pat Foo The First", kNoHostedDomainFound);
   // Make the second account an enterprise account by setting a hosted domain.
   info2 = GetValidAccountInfo(info2.email, info2.account_id, "Pat 2",
-                              "Pat Foo The Second", kChromiumOrgDomain);
+                              "Pat Foo The Second", kMonyharOrgDomain);
   signin::UpdateAccountInfoForAccount(identity_test_env()->identity_manager(),
                                       info1);
   signin::UpdateAccountInfoForAccount(identity_test_env()->identity_manager(),

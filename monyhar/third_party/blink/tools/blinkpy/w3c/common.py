@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Utility functions used both when importing and exporting."""
@@ -21,7 +21,7 @@ PROVISIONAL_PR_LABEL = 'do not merge yet'
 
 # These are only set in a new WPT checkout, and they should be consistent with
 # the bot's GitHub account (monyhar-wpt-export-bot).
-DEFAULT_WPT_COMMITTER_NAME = 'Chromium WPT Sync'
+DEFAULT_WPT_COMMITTER_NAME = 'Monyhar WPT Sync'
 DEFAULT_WPT_COMMITTER_EMAIL = 'blink-w3c-test-autoroller@monyhar.org'
 
 CHROMIUM_WPT_DIR = RELATIVE_WEB_TESTS + 'external/wpt/'
@@ -71,7 +71,7 @@ def is_disallowed_ini(filename):
     """Checks whether the file is a disallowed (.ini) file.
 
     This is primarily intended to skip WPT metadata .ini files, which are used
-    in WPT to set expected statuses for tests. Chromium maintains its own list
+    in WPT to set expected statuses for tests. Monyhar maintains its own list
     of such files and we don't want those to be shared with upstream.
 
     There are a few .ini files that we do allow, which are mostly configuration
@@ -116,10 +116,10 @@ def is_basename_skipped(basename):
 
 
 def is_file_exportable(path):
-    """Checks whether a file in Chromium WPT should be exported to upstream.
+    """Checks whether a file in Monyhar WPT should be exported to upstream.
 
     Args:
-        path: A relative path from the root of Chromium repository.
+        path: A relative path from the root of Monyhar repository.
     """
     assert path.startswith(CHROMIUM_WPT_DIR)
     basename = path[path.rfind('/') + 1:]

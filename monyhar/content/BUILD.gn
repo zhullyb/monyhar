@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -15,7 +15,7 @@ config("content_implementation") {
   ]
 }
 
-assert(!is_ios, "Chromium/iOS shouldn't use anything in //content")
+assert(!is_ios, "Monyhar/iOS shouldn't use anything in //content")
 
 # When targets depend on, e.g. //content/public/browser, what happens? To
 # facilitate the complexity here, the "public" targets are groups that forward

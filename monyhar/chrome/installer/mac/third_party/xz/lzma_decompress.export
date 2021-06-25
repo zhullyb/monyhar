@@ -1,11 +1,11 @@
-# Copyright (c) 2010 The Chromium Authors. All rights reserved.
+# Copyright (c) 2010 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 # This is a list of symbols to export from liblzma_decompress.dylib. It is not
 # a complete list of symbols ordinarily exported by liblzma for decompression.
 # It's limited to the set of symbols actually needed by targets that depend
-# on liblzma_decompress in Chromium. Currently, this only includes xzdec and
+# on liblzma_decompress in Monyhar. Currently, this only includes xzdec and
 # goobspatch.
 #
 # Trimming the set of exported symbols reduces the number of "roots" used for

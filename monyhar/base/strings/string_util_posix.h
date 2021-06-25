@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@
 
 namespace base {
 
-// Chromium code style is to not use malloc'd strings; this is only for use
+// Monyhar code style is to not use malloc'd strings; this is only for use
 // for interaction with APIs that require it.
 inline char* strdup(const char* str) {
   return ::strdup(str);

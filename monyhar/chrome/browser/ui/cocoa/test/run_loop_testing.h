@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -8,7 +8,7 @@
 namespace chrome {
 namespace testing {
 
-// A common pattern in Chromium is to get a selector to execute on the next
+// A common pattern in Monyhar is to get a selector to execute on the next
 // iteration of the outermost run loop, done like so:
 //
 //    [someObj performSelector:@selector(someSel:) withObject:nil afterDelay:0];

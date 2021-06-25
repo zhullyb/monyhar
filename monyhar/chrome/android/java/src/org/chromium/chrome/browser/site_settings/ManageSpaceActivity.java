@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -99,7 +99,7 @@ public class ManageSpaceActivity extends AppCompatActivity implements View.OnCli
         // We initially disable all of our buttons except for the 'Clear All Data' button, and wait
         // until the browser is finished initializing to enable them. We want to make sure the
         // 'Clear All Data' button is enabled so users can do this even if it's taking forever for
-        // the Chromium process to boot up.
+        // the Monyhar process to boot up.
         mManageSiteDataButton.setEnabled(false);
         mClearUnimportantButton.setEnabled(false);
         mManageSiteDataButton.setOnClickListener(this);

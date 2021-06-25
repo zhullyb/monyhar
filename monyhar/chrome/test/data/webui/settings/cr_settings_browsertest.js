@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -553,7 +553,7 @@ TEST_F('CrSettingsRouteV3Test', 'DynamicParameters', function() {
 });
 
 // Copied from Polymer 2 test:
-// Failing on ChromiumOS dbg. https://crbug.com/709442
+// Failing on MonyharOS dbg. https://crbug.com/709442
 GEN('#if (defined(OS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)) && !defined(NDEBUG)');
 GEN('#define MAYBE_NonExistentRoute DISABLED_NonExistentRoute');
 GEN('#else');

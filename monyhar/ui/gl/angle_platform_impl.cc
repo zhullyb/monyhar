@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -174,7 +174,7 @@ bool InitializePlatform(EGLDisplay display) {
   platformMethods->updateTraceEventDuration =
       ANGLEPlatformImpl_updateTraceEventDuration;
 
-  // Initialize the delegate to allow posting tasks in the Chromium thread pool.
+  // Initialize the delegate to allow posting tasks in the Monyhar thread pool.
   // The thread pool is not available in some unittests.
   if (base::ThreadPoolInstance::Get())
     platformMethods->postWorkerTask = ANGLEPlatformImpl_postWorkerTask;

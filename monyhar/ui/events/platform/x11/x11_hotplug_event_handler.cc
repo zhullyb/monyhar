@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -412,7 +412,7 @@ void X11HotplugEventHandler::OnHotplugEvent() {
     // rather X11 and Wayland uses wayland protocol to communicate
     // devices.
 
-    // So, xinput that Chromium uses to enumerate devices prepends
+    // So, xinput that Monyhar uses to enumerate devices prepends
     // "xwayland-" to each device name. Though, Wayland doesn't expose TOUCHPAD
     // directly. Instead, it's part of xwayland-pointer.
     x11::Atom type = device.device_type;

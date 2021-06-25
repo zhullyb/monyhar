@@ -59,7 +59,7 @@ Changes from Version 4 to Version 5
 
 Removed duplicate line in random seed code, and changed the name of
 the Object.prototype.inherits function in the DeltaBlue benchmark to
-inheritsFrom to avoid name clashes when running in Chromium with
+inheritsFrom to avoid name clashes when running in Monyhar with
 extensions enabled.
 
 

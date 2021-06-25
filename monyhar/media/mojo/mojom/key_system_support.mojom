@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@ import "media/mojo/mojom/media_types.mojom";
 // TODO(xhwang): Use "set" instead of "array" if supported by mojom.
 struct CdmCapability {
   // List of audio codecs supported by the CDM (e.g. opus). This does not
-  // include codec profiles, as in general Chromium doesn't handle audio
+  // include codec profiles, as in general Monyhar doesn't handle audio
   // codec profiles separately. The list of supported codecs should be unique.
   array<AudioCodec> audio_codecs;
 

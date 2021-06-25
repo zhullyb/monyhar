@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@
 
 namespace skia {
 
-class SkChromiumEventTracer: public SkEventTracer {
+class SkMonyharEventTracer: public SkEventTracer {
   const uint8_t* getCategoryGroupEnabled(const char* name) override;
   const char* getCategoryGroupName(const uint8_t* categoryEnabledFlag) override;
   SkEventTracer::Handle addTraceEvent(char phase,
@@ -28,17 +28,17 @@ class SkChromiumEventTracer: public SkEventTracer {
 };
 
 const uint8_t*
-  SkChromiumEventTracer::getCategoryGroupEnabled(const char* name) {
+  SkMonyharEventTracer::getCategoryGroupEnabled(const char* name) {
     return TRACE_EVENT_API_GET_CATEGORY_GROUP_ENABLED(name);
 }
 
-const char* SkChromiumEventTracer::getCategoryGroupName(
+const char* SkMonyharEventTracer::getCategoryGroupName(
       const uint8_t* categoryEnabledFlag) {
   return base::trace_event::TraceLog::GetCategoryGroupName(categoryEnabledFlag);
 }
 
 SkEventTracer::Handle
-    SkChromiumEventTracer::addTraceEvent(char phase,
+    SkMonyharEventTracer::addTraceEvent(char phase,
                                          const uint8_t* categoryEnabledFlag,
                                          const char* name,
                                          uint64_t id,
@@ -59,7 +59,7 @@ SkEventTracer::Handle
 }
 
 void
-    SkChromiumEventTracer::updateTraceEventDuration(
+    SkMonyharEventTracer::updateTraceEventDuration(
         const uint8_t* categoryEnabledFlag,
         const char *name,
         SkEventTracer::Handle handle) {
@@ -75,5 +75,5 @@ void
 void InitSkiaEventTracer() {
   // Initialize the binding to Skia's tracing events. Skia will
   // take ownership of and clean up the memory allocated here.
-  SkEventTracer::SetInstance(new skia::SkChromiumEventTracer());
+  SkEventTracer::SetInstance(new skia::SkMonyharEventTracer());
 }

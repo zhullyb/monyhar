@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -430,7 +430,7 @@ class PolicyLoaderWinTest : public PolicyTestBase {
 };
 
 const wchar_t PolicyLoaderWinTest::kTestPolicyKey[] =
-    L"SOFTWARE\\Policies\\Chromium";
+    L"SOFTWARE\\Policies\\Monyhar";
 
 TEST_F(PolicyLoaderWinTest, HKLMOverHKCU) {
   RegKey hklm_key(HKEY_LOCAL_MACHINE, kTestPolicyKey, KEY_ALL_ACCESS);

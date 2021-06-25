@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -29,7 +29,7 @@ namespace net {
 // partial packets may be sent back to back.  For a browser, it is NEVER
 // a benefit to delay for an RTT before the second packet is sent.
 //
-// As a practical example in Chromium today, consider the case of a small
+// As a practical example in Monyhar today, consider the case of a small
 // POST.  I have verified this:
 //     Client writes 649 bytes of header  (partial packet #1)
 //     Client writes 50 bytes of POST data (partial packet #2)

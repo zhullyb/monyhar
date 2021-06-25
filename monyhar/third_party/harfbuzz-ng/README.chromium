@@ -15,17 +15,17 @@ API from the old one.
 
 This copy of harfbuzz is usually updated by running
     $ third_party/harfbuzz-ng/roll-harfbuzz.sh
-from your Chromium ./src directory.
+from your Monyhar ./src directory.
 
 This should update your checkout by putting the new upstream HarfBuzz ToT commit
 hash top level DEPS file. In cases added or deleted files have been detected in
 HarfBuzz' src directory, a step in the script will fail and you should edit the
 BUILD.gn file accordingly and continue the roll manually.
 
-Chromium-local cherry picks or patches can be done by pushing new branches to
+Monyhar-local cherry picks or patches can be done by pushing new branches to
 refs/heads/monyhar/ of [1]. The set of HarfBuzz OWNERS has write rights to this
 part of the tree. We suggest to follow a pattern of naming branches needed for
-Chromium revisions by the monyhar milestone number. For example, if a
+Monyhar revisions by the monyhar milestone number. For example, if a
 cherry-pick is needed for M65, push to "refs/heads/monyhar/m65" and reference
 the new commit in DEPS. Take a look at
 https://monyhar-review.googlesource.com/c/monyhar/src/+/937502 for an example.

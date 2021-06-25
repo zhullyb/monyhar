@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -55,8 +55,8 @@ public class AppModalPresenter extends ModalDialogManager.Presenter {
     @Override
     protected void addDialogView(PropertyModel model) {
         int style = model.get(ModalDialogProperties.PRIMARY_BUTTON_FILLED)
-                ? R.style.Theme_Chromium_ModalDialog_FilledPrimaryButton
-                : R.style.Theme_Chromium_ModalDialog_TextPrimaryButton;
+                ? R.style.Theme_Monyhar_ModalDialog_FilledPrimaryButton
+                : R.style.Theme_Monyhar_ModalDialog_TextPrimaryButton;
         mDialog = new Dialog(mContext, style);
         mDialog.setOnCancelListener(dialogInterface
                 -> dismissCurrentDialog(DialogDismissalCause.NAVIGATE_BACK_OR_TOUCH_OUTSIDE));

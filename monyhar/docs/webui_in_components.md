@@ -117,7 +117,7 @@ We need a few string resources for translated strings to work on the new resourc
   Hello World!
 </message>
 <message name="IDS_HELLO_WORLD_WELCOME_TEXT" desc="Message welcoming the user to the hello world page">
-  Welcome to this fancy Hello World page <ph name="WELCOME_NAME">$1<ex>Chromium User</ex></ph>!
+  Welcome to this fancy Hello World page <ph name="WELCOME_NAME">$1<ex>Monyhar User</ex></ph>!
 </message>
 ```
 Add the created file in `components/components_strings.grd`:

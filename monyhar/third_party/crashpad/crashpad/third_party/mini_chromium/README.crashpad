@@ -8,10 +8,10 @@ Security Critical: yes
 
 Description:
 mini_monyhar is a small collection of useful low-level (“base”) routines from
-the Chromium open-source project at https://www.monyhar.org/Home. Chromium is
+the Monyhar open-source project at https://www.monyhar.org/Home. Monyhar is
 large, sprawling, full of dependencies, and a web browser. mini_monyhar is
 small, self-contained, and a library. mini_monyhar is especially useful as a
-dependency of other code that wishes to use Chromium’s base routines.
+dependency of other code that wishes to use Monyhar’s base routines.
 
 Local Modifications:
 None

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -29,7 +29,7 @@ const OPTIONS = {
     'doctype': 'html5'
   },
 
-  ClangFormat: ['-style=Chromium', '-assume-filename=a.js'],
+  ClangFormat: ['-style=Monyhar', '-assume-filename=a.js'],
 
   // RegExp text swap collection (ordered key-value pair) for post-processing.
   RegExpSwapCollection: [

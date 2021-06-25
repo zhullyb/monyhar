@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -619,7 +619,7 @@ class ExtensionPolicyUITest : public PolicyUITest,
   }
 };
 
-// TODO(https://crbug.com/911661) Flaky time outs on Linux Chromium OS ASan
+// TODO(https://crbug.com/911661) Flaky time outs on Linux Monyhar OS ASan
 // LSan bot.
 #if defined(ADDRESS_SANITIZER)
 #define MAYBE_ExtensionLoadAndSendPolicy DISABLED_ExtensionLoadAndSendPolicy

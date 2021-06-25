@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -256,7 +256,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <summary>
     This metric is only recorded on iOS. This measures the sum of
     PrivateMemoryFootprint and SharedMemoryFootprint, which is possible because
-    Chromium on iOS is single-process. Note that this does not include memory
+    Monyhar on iOS is single-process. Note that this does not include memory
     consumed by WebKit-launched processes, such as the WebContent and Network
     processes.
 
@@ -268,7 +268,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     shutdown.
 
     Many changes in memory usage on iOS come from changes to WebKit, rather than
-    changes within Chromium code. To assess whether a change in this metric is
+    changes within Monyhar code. To assess whether a change in this metric is
     caused by a WebKit change, split by OS version. WebKit changes always come
     with an OS version change.
 

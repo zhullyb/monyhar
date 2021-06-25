@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -15,7 +15,7 @@ from gpu_tests import path_util
 
 from telemetry.core import exceptions
 
-data_path = os.path.join(path_util.GetChromiumSrcDir(), 'content', 'test',
+data_path = os.path.join(path_util.GetMonyharSrcDir(), 'content', 'test',
                          'data', 'gpu')
 
 wait_timeout = 60  # seconds
@@ -136,7 +136,7 @@ class ContextLostIntegrationTest(gpu_integration_test.GpuIntegrationTest):
         # Required to call crashGpuProcess.
         cba.ENABLE_GPU_BENCHMARKING,
         # Disable:
-        #   Do you want the application "Chromium Helper.app" to accept incoming
+        #   Do you want the application "Monyhar Helper.app" to accept incoming
         #   network connections?
         # dialogs on macOS. crbug.com/969559
         cba.DISABLE_DEVICE_DISCOVERY_NOTIFICATIONS,

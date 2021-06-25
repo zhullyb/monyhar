@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -67,7 +67,7 @@ bool GetUserVideosDirectory(base::FilePath* result);
 // resides in the Frameworks directory of the top-level Contents folder. The
 // framework is versioned with the full product version. This function returns
 // the full path to the versioned sub-directory of the framework, i.e.:
-// Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/X.
+// Monyhar.app/Contents/Frameworks/Monyhar Framework.framework/Versions/X.
 base::FilePath GetFrameworkBundlePath();
 
 // Get the local library directory.

@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Methods related to querying builder information from Buildbucket."""
@@ -71,9 +71,9 @@ for try_builder, ci_builder_list in FAKE_TRY_BUILDERS.iteritems():
   for ci in ci_builder_list:
     FAKE_CI_BUILDERS[ci] = try_builder
 
-# There are some builders that aren't under the Chromium Buildbucket project
-# but are listed in the Chromium //testing/buildbot files. These don't use the
-# same recipes as Chromium builders, and thus don't have the list of trybot
+# There are some builders that aren't under the Monyhar Buildbucket project
+# but are listed in the Monyhar //testing/buildbot files. These don't use the
+# same recipes as Monyhar builders, and thus don't have the list of trybot
 # mirrors.
 NON_CHROMIUM_BUILDERS = {
     'Win V8 FYI Release (NVIDIA)',
@@ -93,7 +93,7 @@ def GetCiBuilders(suite):
         in question.
 
   Returns:
-    A set of strings, each element being the name of a Chromium CI builder to
+    A set of strings, each element being the name of a Monyhar CI builder to
     query results from.
   """
   logging.info('Getting CI builders')
@@ -147,10 +147,10 @@ def GetTryBuilders(ci_builders):
 
   Args:
     ci_builders: An iterable of strings, each element being the name of a
-        Chromium CI builder that results will be/were queried from.
+        Monyhar CI builder that results will be/were queried from.
 
   Returns:
-    A set of strings, each element being the name of a Chromium try builder to
+    A set of strings, each element being the name of a Monyhar try builder to
     query results from.
   """
   logging.info('Getting try builders')
@@ -179,7 +179,7 @@ def _GetMirroredBuildersForCiBuilder(ci_builder):
   """Gets the set of try builders that mirror a CI builder.
 
   Args:
-    ci_builder: A string containing the name of a Chromium CI builder.
+    ci_builder: A string containing the name of a Monyhar CI builder.
 
   Returns:
     A tuple (builders, found_mirror). |builders| is a set of strings, either the
@@ -190,7 +190,7 @@ def _GetMirroredBuildersForCiBuilder(ci_builder):
   """
   mirrored_builders = set()
   if ci_builder in NON_CHROMIUM_BUILDERS:
-    logging.debug('%s is a non-Chromium CI builder', ci_builder)
+    logging.debug('%s is a non-Monyhar CI builder', ci_builder)
     return mirrored_builders, True
 
   if ci_builder in FAKE_CI_BUILDERS:

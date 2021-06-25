@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -42,8 +42,8 @@ public class VrModalPresenter extends ModalDialogManager.Presenter {
 
         mVrDialog = new VrDialog(mContext, mVrDialogManager);
         int style = model.get(ModalDialogProperties.PRIMARY_BUTTON_FILLED)
-                ? R.style.Theme_Chromium_ModalDialog_FilledPrimaryButton
-                : R.style.Theme_Chromium_ModalDialog_TextPrimaryButton;
+                ? R.style.Theme_Monyhar_ModalDialog_FilledPrimaryButton
+                : R.style.Theme_Monyhar_ModalDialog_TextPrimaryButton;
         ModalDialogView dialogView =
                 (ModalDialogView) LayoutInflater.from(new ContextThemeWrapper(mContext, style))
                         .inflate(R.layout.modal_dialog_view, null);

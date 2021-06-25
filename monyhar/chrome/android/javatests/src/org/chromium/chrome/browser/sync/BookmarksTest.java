@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -53,8 +53,8 @@ public class BookmarksTest {
     private static final String BOOKMARKS_TYPE_STRING = "Bookmarks";
 
     private static final GURL URL = new GURL("http://monyhar.org/");
-    private static final String TITLE = "Chromium";
-    private static final String MODIFIED_TITLE = "Chromium2";
+    private static final String TITLE = "Monyhar";
+    private static final String MODIFIED_TITLE = "Monyhar2";
     private static final String FOLDER_TITLE = "Tech";
 
     private BookmarkBridge mBookmarkBridge;

@@ -147,7 +147,7 @@ Given identical inputs, they should produce byte-for-byte identical outputs.
   * Writing absolute paths in outputs.
 
 ## Style Guide
-Chromium GN files follow
+Monyhar GN files follow
 [GN's Style Guide](https://gn.googlesource.com/gn/+/master/docs/style_guide.md)
 with a few additions.
 

@@ -19,7 +19,7 @@ It supports two main functions:
    desired targets and reports which targets will need to be rebuilt.
 
 We also use MB as a forcing function to collect all of the different 
-build configurations that we actually support for Chromium builds into
+build configurations that we actually support for Monyhar builds into
 one place, in `//tools/mb/mb_config.pyl`.
 
 For more information, see:

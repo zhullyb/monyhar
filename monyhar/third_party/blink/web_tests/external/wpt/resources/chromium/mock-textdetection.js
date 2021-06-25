@@ -58,7 +58,7 @@ self.TextDetectionTest = (() => {
     MockTextDetection: null
   }
 
-  class TextDetectionTestChromium {
+  class TextDetectionTestMonyhar {
     constructor() {
       Object.freeze(this); // Make it immutable.
     }
@@ -87,6 +87,6 @@ self.TextDetectionTest = (() => {
     }
   }
 
-  return TextDetectionTestChromium;
+  return TextDetectionTestMonyhar;
 
 })();

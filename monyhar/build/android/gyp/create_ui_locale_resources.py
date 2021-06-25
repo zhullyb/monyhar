@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -11,7 +11,7 @@ This script takes a list of input Chrome-specific locale names, as well as an
 output zip file path.
 
 Each output file will contain the definition of a single string resource,
-named 'current_locale', whose value will be the matching Chromium locale name.
+named 'current_locale', whose value will be the matching Monyhar locale name.
 E.g. values-en-rUS/strings.xml will define 'current_locale' as 'en-US'.
 """
 

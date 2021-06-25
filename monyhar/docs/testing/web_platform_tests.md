@@ -1,14 +1,14 @@
 # web-platform-tests
 
 Interoperability between browsers is
-[critical](https://www.monyhar.org/blink/platform-predictability) to Chromium's
+[critical](https://www.monyhar.org/blink/platform-predictability) to Monyhar's
 mission of improving the web. We believe that leveraging and contributing to a
 shared test suite is one of the most important tools in achieving
 interoperability between browsers. The [web-platform-tests
 repository](https://github.com/web-platform-tests/wpt) is the primary shared
 test suite where all browser engines are collaborating.
 
-Chromium has a 2-way import/export process with the upstream web-platform-tests
+Monyhar has a 2-way import/export process with the upstream web-platform-tests
 repository, where tests are imported into
 [web_tests/external/wpt](../../third_party/blink/web_tests/external/wpt)
 and any changes to the imported tests are also exported to web-platform-tests.
@@ -63,7 +63,7 @@ If no testdriver.js API exists, check if it's a
 [known issue](https://github.com/web-platform-tests/wpt/labels/testdriver.js)
 and otherwise consider filing a new issue. For instructions on how to add a new
 testing API, see [WPT Test Automation for
-Chromium](https://docs.google.com/document/d/18BpD41vyX1cFZ77CE0a_DJYlGpdvyLlx3pwXVRxUzvI/preview#)
+Monyhar](https://docs.google.com/document/d/18BpD41vyX1cFZ77CE0a_DJYlGpdvyLlx3pwXVRxUzvI/preview#)
 
 #### MojoJS
 
@@ -81,7 +81,7 @@ test-only API:
  2. Check [FILES.cfg](../../chrome/tools/build/linux/FILES.cfg) and add any
     missing `*.mojom.m.js` files to the `mojojs.zip` archive. Globs are
     supported in `filename`. Do not copy Mojom bindings into WPT.
- 3. Meanwhile in Chromium, you can create a helper for your WPT tests to do
+ 3. Meanwhile in Monyhar, you can create a helper for your WPT tests to do
     browser-specific setup using
     [test-only-api.js](../../third_party/blink/web_tests/external/wpt/resources/test-only-api.js).
     See
@@ -121,12 +121,12 @@ Entirely new top-level directories should generally be added upstream, since
 that's the only way to add an OWNERS file upstream. After adding a new top-level
 directory upstream, you should add a line for it in `W3CImportExpectations`.
 
-Adding the new directory (and `W3CImportExpectations` entry) in Chromium and
+Adding the new directory (and `W3CImportExpectations` entry) in Monyhar and
 later adding an OWNERS file upstream also works.
 
 ### `wpt_internal`
 
-It is sometimes desirable to write WPT tests that either test Chromium-specific
+It is sometimes desirable to write WPT tests that either test Monyhar-specific
 behaviors, or that cannot yet be upstreamed to WPT (e.g. because the spec is
 very nascent). For these cases, we maintain a separate directory,
 [wpt_internal](../third_party/blink/web_tests/wpt_internal) that runs under the
@@ -155,7 +155,7 @@ for debugging etc.
 
 ## Reviewing tests
 
-Anyone who can review code and tests in Chromium can also review changes in
+Anyone who can review code and tests in Monyhar can also review changes in
 [external/wpt](../../third_party/blink/web_tests/external/wpt)
 that will be automatically upstreamed. There will be no additional review in
 web-platform-tests as part of the export process.
@@ -170,7 +170,7 @@ may not fully match the implementation. See also
 
 ## Importing tests
 
-Chromium has a [mirror](https://monyhar.googlesource.com/external/w3c/web-platform-tests/)
+Monyhar has a [mirror](https://monyhar.googlesource.com/external/w3c/web-platform-tests/)
 of the GitHub repo and periodically imports a subset of the tests to
 run as part of the regular Blink web test testing process.
 
@@ -181,7 +181,7 @@ possible, and running as many of the tests as possible.
 
 ### Automatic import process
 
-There is an automatic process for updating the Chromium copy of
+There is an automatic process for updating the Monyhar copy of
 web-platform-tests. The import is done by the builder [wpt-importer
 builder][wpt-importer].
 
@@ -205,7 +205,7 @@ For maintainers:
 
 Test owners can elect to have the importer automatically file bugs against a
 component when imported changes introduce failures. This includes new tests that
-fail in Chromium, as well as new failures introduced to an existing test. To
+fail in Monyhar, as well as new failures introduced to an existing test. To
 opt-in to this functionality, create an `DIR_METADATA` file in the appropriate
 `external/wpt/` subdirectory that contains at least `wpt.notify` and
 `monorail.component` fields. For example, `external/wpt/css/css-grid/DIR_METADATA`
@@ -289,14 +289,14 @@ Additional things to note:
 -   CLs that change over 1000 files will not be exported.
 -   All PRs use the
     [`monyhar-export`](https://github.com/web-platform-tests/wpt/pulls?utf8=%E2%9C%93&q=is%3Apr%20label%3Amonyhar-export) label.
--   All PRs for CLs that haven't yet been landed in Chromium also use the
+-   All PRs for CLs that haven't yet been landed in Monyhar also use the
     [`do not merge yet`](https://github.com/web-platform-tests/wpt/pulls?q=is%3Apr+is%3Aopen+label%3A%22do+not+merge+yet%22) label.
 -   The exporter cannot create upstream PRs for in-flight CLs with binary files
     (e.g. webm files). An export PR will still be made after the CL lands.
 
 ### Will the exported commits be linked to my GitHub profile?
 
-The email you commit with in Chromium will be the author of the commit on
+The email you commit with in Monyhar will be the author of the commit on
 GitHub. You can [add it as a secondary address on your GitHub
 account](https://help.github.com/articles/adding-an-email-address-to-your-github-account/)
 to link your exported commits to your GitHub profile.

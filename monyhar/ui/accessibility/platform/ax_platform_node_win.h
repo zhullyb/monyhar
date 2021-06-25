@@ -1,5 +1,5 @@
 //
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1155,9 +1155,9 @@ class AX_EXPORT __declspec(uuid("26f5641a-246d-457b-a96d-07f3fae6acf2"))
       ax::mojom::Event event);
 
  protected:
-  // This is hard-coded; all products based on the Chromium engine will have the
+  // This is hard-coded; all products based on the Monyhar engine will have the
   // same framework name, so that assistive technology can detect any
-  // Chromium-based product.
+  // Monyhar-based product.
   static constexpr const wchar_t* FRAMEWORK_ID = L"Chrome";
 
   AXPlatformNodeWin();

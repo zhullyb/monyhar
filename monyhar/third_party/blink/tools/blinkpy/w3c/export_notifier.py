@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Sends notifications after automatic exports.
@@ -200,7 +200,7 @@ class PRStatusInfo(object):
             'They may represent new or existing problems; please take '
             'a look at the output and see if it can be fixed. '
             'Unresolved failures will be looked at by the Ecosystem-Infra '
-            'sheriff after this CL has been landed in Chromium; if you '
+            'sheriff after this CL has been landed in Monyhar; if you '
             'need earlier help please contact ecosystem-infra@monyhar.org.\n\n'
             'Any suggestions to improve this service are welcome; '
             'crbug.com/1027618.').format(

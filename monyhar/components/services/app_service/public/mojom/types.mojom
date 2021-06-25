@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -174,7 +174,7 @@ struct IconKey {
   // app's version is unchanged.
   uint64 timeline;
   // If non-zero (or equivalently, not equal to kInvalidResourceId), the
-  // compressed icon is compiled into the Chromium binary as a statically
+  // compressed icon is compiled into the Monyhar binary as a statically
   // available, int-keyed resource.
   int32 resource_id;
   // A bitmask of icon post-processing effects, such as desaturation to gray

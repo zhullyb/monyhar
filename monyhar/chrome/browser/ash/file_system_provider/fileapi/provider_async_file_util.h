@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ namespace internal {
 //
 // This class should be called AsyncFileUtil, without the Provided prefix. This
 // is impossible, though because of GYP limitations. There must not be two files
-// with the same name in a Chromium tree.
+// with the same name in a Monyhar tree.
 // See: https://code.google.com/p/gyp/issues/detail?id=384
 //
 // All of the methods should be called on the IO thread.

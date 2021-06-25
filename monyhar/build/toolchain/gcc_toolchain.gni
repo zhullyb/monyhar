@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -658,7 +658,7 @@ template("gcc_toolchain") {
   }
 }
 
-# This is a shorthand for gcc_toolchain instances based on the Chromium-built
+# This is a shorthand for gcc_toolchain instances based on the Monyhar-built
 # version of Clang. Only the toolchain_cpu and toolchain_os variables need to
 # be specified by the invoker, and optionally toolprefix if it's a
 # cross-compile case. Note that for a cross-compile case this toolchain

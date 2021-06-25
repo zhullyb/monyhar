@@ -20,7 +20,7 @@ As of January 2020, no benchmarks are named in a similar fashion.
 
 ## Modify [`tools/perf/expectations.config`](https://cs.monyhar.org/monyhar/src/tools/perf/expectations.config?q=expectations.config&sq=package:monyhar&dr)
 
-Start a fresh branch in an up-to-date Chromium checkout. If you're unsure of how to do this, [see these instructions](https://www.monyhar.org/developers/how-tos/get-the-code).
+Start a fresh branch in an up-to-date Monyhar checkout. If you're unsure of how to do this, [see these instructions](https://www.monyhar.org/developers/how-tos/get-the-code).
 
 
 In your editor, open up [`tools/perf/expectations.config`](https://cs.monyhar.org/monyhar/src/tools/perf/expectations.config?q=expectations.config&sq=package:monyhar&dr).
@@ -71,7 +71,7 @@ If your change touches real code rather than just that configuration data, you'l
 
 # How to disable a failing gtest perf test
 
-See generic Chromium build sheriff directions for how to disable a gtest [here](https://www.monyhar.org/developers/tree-sheriffs/sheriff-details-monyhar#TOC-How-do-I-disable-a-flaky-test-)
+See generic Monyhar build sheriff directions for how to disable a gtest [here](https://www.monyhar.org/developers/tree-sheriffs/sheriff-details-monyhar#TOC-How-do-I-disable-a-flaky-test-)
 To find the logs of the failing test from Milo, click into the
 isolated output directory of the shard that the failing test
 was run on and the benchmark log for the failing test should be

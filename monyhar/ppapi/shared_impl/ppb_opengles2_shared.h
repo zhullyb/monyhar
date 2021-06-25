@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,9 +18,9 @@ class PPAPI_SHARED_EXPORT PPB_OpenGLES2_Shared {
   static const PPB_OpenGLES2FramebufferBlit* GetFramebufferBlitInterface();
   static const PPB_OpenGLES2FramebufferMultisample*
       GetFramebufferMultisampleInterface();
-  static const PPB_OpenGLES2ChromiumEnableFeature*
-      GetChromiumEnableFeatureInterface();
-  static const PPB_OpenGLES2ChromiumMapSub* GetChromiumMapSubInterface();
+  static const PPB_OpenGLES2MonyharEnableFeature*
+      GetMonyharEnableFeatureInterface();
+  static const PPB_OpenGLES2MonyharMapSub* GetMonyharMapSubInterface();
   static const PPB_OpenGLES2Query* GetQueryInterface();
   static const PPB_OpenGLES2VertexArrayObject* GetVertexArrayObjectInterface();
   static const PPB_OpenGLES2DrawBuffers_Dev* GetDrawBuffersInterface();

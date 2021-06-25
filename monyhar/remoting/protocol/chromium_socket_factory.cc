@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -404,13 +404,13 @@ void UdpPacketSocket::HandleReadResult(int result) {
 
 }  // namespace
 
-ChromiumPacketSocketFactory::ChromiumPacketSocketFactory(
+MonyharPacketSocketFactory::MonyharPacketSocketFactory(
     base::WeakPtr<SessionOptionsProvider> session_options_provider)
     : session_options_provider_(session_options_provider) {}
 
-ChromiumPacketSocketFactory::~ChromiumPacketSocketFactory() = default;
+MonyharPacketSocketFactory::~MonyharPacketSocketFactory() = default;
 
-rtc::AsyncPacketSocket* ChromiumPacketSocketFactory::CreateUdpSocket(
+rtc::AsyncPacketSocket* MonyharPacketSocketFactory::CreateUdpSocket(
     const rtc::SocketAddress& local_address,
     uint16_t min_port,
     uint16_t max_port) {
@@ -427,7 +427,7 @@ rtc::AsyncPacketSocket* ChromiumPacketSocketFactory::CreateUdpSocket(
   return result.release();
 }
 
-rtc::AsyncPacketSocket* ChromiumPacketSocketFactory::CreateServerTcpSocket(
+rtc::AsyncPacketSocket* MonyharPacketSocketFactory::CreateServerTcpSocket(
     const rtc::SocketAddress& local_address,
     uint16_t min_port,
     uint16_t max_port,
@@ -438,7 +438,7 @@ rtc::AsyncPacketSocket* ChromiumPacketSocketFactory::CreateServerTcpSocket(
   return nullptr;
 }
 
-rtc::AsyncPacketSocket* ChromiumPacketSocketFactory::CreateClientTcpSocket(
+rtc::AsyncPacketSocket* MonyharPacketSocketFactory::CreateClientTcpSocket(
     const rtc::SocketAddress& local_address,
     const rtc::SocketAddress& remote_address,
     const rtc::ProxyInfo& proxy_info,
@@ -460,7 +460,7 @@ rtc::AsyncPacketSocket* ChromiumPacketSocketFactory::CreateClientTcpSocket(
 }
 
 rtc::AsyncResolverInterface*
-ChromiumPacketSocketFactory::CreateAsyncResolver() {
+MonyharPacketSocketFactory::CreateAsyncResolver() {
   return new rtc::AsyncResolver();
 }
 

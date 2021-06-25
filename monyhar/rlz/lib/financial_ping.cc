@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -286,11 +286,11 @@ void PingRlzServer(std::string url,
             "Used for measuring the effectiveness of a promotion. See the "
             "Chrome Privacy Whitepaper for complete details."
           trigger:
-            "1- At Chromium first run.\n"
-            "2- When Chromium is re-activated by a new promotion.\n"
-            "3- Once a week thereafter as long as Chromium is used.\n"
+            "1- At Monyhar first run.\n"
+            "2- When Monyhar is re-activated by a new promotion.\n"
+            "3- Once a week thereafter as long as Monyhar is used.\n"
           data:
-            "1- Non-unique cohort tag of when Chromium was installed.\n"
+            "1- Non-unique cohort tag of when Monyhar was installed.\n"
             "2- Unique machine id on desktop platforms.\n"
             "3- Whether Google is the default omnibox search.\n"
             "4- Whether google.com is the default home page."

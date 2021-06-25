@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -71,7 +71,7 @@ void ChromeMetadataSource::Download(const std::string& key,
             "Address format metadata assists in handling postal addresses from "
             "all over the world."
           trigger:
-            "User edits an address in Chromium settings, or shipping address "
+            "User edits an address in Monyhar settings, or shipping address "
             "in Android's 'web payments'."
           data:
             "The country code for the address being edited. No user identifier "
@@ -83,8 +83,8 @@ void ChromeMetadataSource::Download(const std::string& key,
           setting:
             "This feature cannot be disabled in settings. It can only be "
             "prevented if user does not edit the address in Android 'Web "
-            "Payments' settings, Android's Chromium settings ('Autofill and "
-            "payments' -> 'Addresses'), and Chromium settings on desktop ("
+            "Payments' settings, Android's Monyhar settings ('Autofill and "
+            "payments' -> 'Addresses'), and Monyhar settings on desktop ("
             "'Manage Autofill Settings' -> 'Addresses')."
           policy_exception_justification: "Not implemented."
         })");

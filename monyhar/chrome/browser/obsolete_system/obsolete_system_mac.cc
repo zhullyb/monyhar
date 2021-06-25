@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ bool IsObsoleteOsVersion() {
   // Use base::SysInfo::OperatingSystemVersionNumbers() here rather than the
   // preferred base::mac::IsOS*() function because the IsOS functions for
   // obsolete system versions are removed to help prevent obsolete code from
-  // existing in the Chromium codebase.
+  // existing in the Monyhar codebase.
   int32_t major, minor, bugfix;
   base::SysInfo::OperatingSystemVersionNumbers(&major, &minor, &bugfix);
 

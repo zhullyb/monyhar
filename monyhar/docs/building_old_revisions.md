@@ -1,6 +1,6 @@
 # Building old revisions
 
-Occasionally you may want to check out and build old versions of Chromium, such
+Occasionally you may want to check out and build old versions of Monyhar, such
 as when bisecting a regression or simply building an older release tag. Though
 this is not officially supported, these tips address some common complications.
 

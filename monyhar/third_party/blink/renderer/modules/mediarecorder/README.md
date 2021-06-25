@@ -51,7 +51,7 @@ recorded `Blob`.
 [`MediaRecorderOptions`]: https://w3c.github.io/mediacapture-record/#mediarecorderoptions-section
 [isTypeSupported()]: https://monyhar.googlesource.com/monyhar/src/+/master/third_party/blink/web_tests/fast/mediarecorder/MediaRecorder-isTypeSupported.html
 
-## Implementation in Chromium
+## Implementation in Monyhar
 
 This API is structured around the [MediaRecorder class], which owns a
 [`MediaRecorderHandler`] which in turn owns a number of

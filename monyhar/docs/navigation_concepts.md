@@ -9,7 +9,7 @@ Navigation](navigation.md).
 
 ## Same-Document and Cross-Document Navigations
 
-Chromium defines two types of navigations based on whether the navigation
+Monyhar defines two types of navigations based on whether the navigation
 results in a new document or not. A _cross-document_ navigation is one that
 results in creating a new document to replace an existing document. This is
 the type of navigation that most users are familiar with. A _same-document_
@@ -29,7 +29,7 @@ can be the result of one of the following cases:
 
 ## Browser-Initiated and Renderer-Initiated Navigations
 
-Chromium also defines two types of navigations based on which process started
+Monyhar also defines two types of navigations based on which process started
 the navigation: _browser-initiated_ and _renderer-initiated_. This distinction
 is useful when making decisions about navigations, for example whether an
 ongoing navigation needs to be cancelled or not when a new navigation is
@@ -185,15 +185,15 @@ to the site (and go into an appropriate process for that site), but the error
 code is available and `NavigationHandle::IsErrorPage()` is true.
 
 If the navigation fails to get a response from the server (e.g., the DNS lookup
-fails), then Chromium will display an error page. For main frames, this error
+fails), then Monyhar will display an error page. For main frames, this error
 page will be in a special error page process, not affiliated with any site or
 containing any untrustworthy content from the web. In these failed cases,
 NetErrorHelperCore may try to reload the URL at a later time (e.g., if a network
 connection comes back online), to load the document in an appropriate process.
 
 If instead the navigation is blocked (e.g., by an extension API or a
-NavigationThrottle), then Chromium will similarly display an error page in a
-special error page process. However, in blocked cases, Chromium will not attempt
+NavigationThrottle), then Monyhar will similarly display an error page in a
+special error page process. However, in blocked cases, Monyhar will not attempt
 to reload the URL at a later time.
 
 
@@ -202,10 +202,10 @@ to reload the URL at a later time.
 Interstitial pages are implemented as committed error pages. (Prior to
 [issue 448486](https://crbug.com/448486), they were implemented as overlays.)
 The original in-progress navigation is canceled when the interstitial is
-displayed, and Chromium repeats the navigation if the user chooses to proceed.
+displayed, and Monyhar repeats the navigation if the user chooses to proceed.
 
 Note that some interstitials can be shown after a page has committed (e.g., when
-a subresource load triggers a Safe Browsing error). In this case, Chromium
+a subresource load triggers a Safe Browsing error). In this case, Monyhar
 navigates away from the original page to the interstitial page, with the intent
 of replacing the original NavigationEntry. However, the original NavigationEntry
 is preserved in `NavigationControllerImpl::entry_replaced_by_post_commit_error_`

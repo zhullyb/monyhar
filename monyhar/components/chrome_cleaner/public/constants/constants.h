@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,7 +9,7 @@
 
 #include "components/chrome_cleaner/public/constants/result_codes.h"
 
-// Constants shared by the Chromium and the Chrome Cleanaup tool repos.
+// Constants shared by the Monyhar and the Chrome Cleanaup tool repos.
 
 namespace chrome_cleaner {
 
@@ -126,7 +126,7 @@ enum class ChromePromptValue {
   // The user started the cleanup from the Settings page.
   kUserInitiated = 5,
 
-  // Legacy values that shouldn't be used in Chromium code.
+  // Legacy values that shouldn't be used in Monyhar code.
   kLegacyNotPrompted = 1,
   kLegacyUnknown = 2,
   kLegacyShownFromMenu = 4,

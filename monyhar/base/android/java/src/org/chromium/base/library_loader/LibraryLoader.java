@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -95,15 +95,15 @@ public class LibraryLoader {
     }
     private volatile @LoadState int mLoadState;
 
-    // Whether to use the Chromium linker vs. the system linker.
+    // Whether to use the Monyhar linker vs. the system linker.
     // Avoids locking: should be initialized very early.
-    private boolean mUseChromiumLinker;
+    private boolean mUseMonyharLinker;
 
     // Whether to use ModernLinker vs. LegacyLinker.
     // Avoids locking: should be initialized very early.
     private boolean mUseModernLinker;
 
-    // Whether the |mUseChromiumLinker| and |mUseModernLinker| configuration has been set.
+    // Whether the |mUseMonyharLinker| and |mUseModernLinker| configuration has been set.
     // Avoids locking: should be initialized very early.
     private boolean mConfigurationSet;
 
@@ -121,7 +121,7 @@ public class LibraryLoader {
     // Guards all the fields below.
     private final Object mLock = new Object();
 
-    // When a Chromium linker is used, this field represents the concrete class serving as a Linker.
+    // When a Monyhar linker is used, this field represents the concrete class serving as a Linker.
     // Always accessed via getLinker() because the choice of the class can be influenced by
     // public setLinkerImplementation() below.
     @GuardedBy("mLock")
@@ -197,7 +197,7 @@ public class LibraryLoader {
          */
         public void ensureInitializedInMainProcess() {
             if (mInitDone) return;
-            if (useChromiumLinker()) {
+            if (useMonyharLinker()) {
                 getLinker().initAsRelroProducer();
             }
             mInitDone = true;
@@ -210,7 +210,7 @@ public class LibraryLoader {
          */
         public void putLoadAddressToBundle(Bundle bundle) {
             assert mInitDone;
-            if (useChromiumLinker()) {
+            if (useMonyharLinker()) {
                 getLinker().putLoadAddressToBundle(bundle);
             }
         }
@@ -219,7 +219,7 @@ public class LibraryLoader {
          * Initializes in processes other than "Main".
          */
         public void initInChildProcess() {
-            if (useChromiumLinker()) {
+            if (useMonyharLinker()) {
                 synchronized (mLock) {
                     getLinker().initAsRelroConsumer(mLoadAddress);
                 }
@@ -233,7 +233,7 @@ public class LibraryLoader {
          * @param bundle Where to deserialize from.
          */
         public void takeSharedRelrosFromBundle(Bundle bundle) {
-            if (useChromiumLinker() && !isLoadedByZygote()) {
+            if (useMonyharLinker() && !isLoadedByZygote()) {
                 getLinker().takeSharedRelrosFromBundle(bundle);
             }
         }
@@ -245,7 +245,7 @@ public class LibraryLoader {
          */
         public void putSharedRelrosToBundle(Bundle bundle) {
             assert mInitDone;
-            if (useChromiumLinker()) {
+            if (useMonyharLinker()) {
                 getLinker().putSharedRelrosToBundle(bundle);
             }
         }
@@ -311,18 +311,18 @@ public class LibraryLoader {
      * Must be called before loading the library. Since this function is called extremely early on
      * in startup, locking is not required.
      *
-     * @param useChromiumLinker Whether to use a monyhar linker.
-     * @param useModernLinker Given that one of the Chromium linkers is used, whether to use
+     * @param useMonyharLinker Whether to use a monyhar linker.
+     * @param useModernLinker Given that one of the Monyhar linkers is used, whether to use
      *                        ModernLinker instead of the LegacyLinker.
      */
-    public void setLinkerImplementation(boolean useChromiumLinker, boolean useModernLinker) {
+    public void setLinkerImplementation(boolean useMonyharLinker, boolean useModernLinker) {
         assert !mInitialized;
 
-        mUseChromiumLinker = useChromiumLinker;
+        mUseMonyharLinker = useMonyharLinker;
         mUseModernLinker = useModernLinker;
 
-        Log.d(TAG, "Configuration: useChromiumLinker() = %b, mUseModernLinker = %b",
-                useChromiumLinker(), mUseModernLinker);
+        Log.d(TAG, "Configuration: useMonyharLinker() = %b, mUseModernLinker = %b",
+                useMonyharLinker(), mUseModernLinker);
         mConfigurationSet = true;
     }
 
@@ -332,7 +332,7 @@ public class LibraryLoader {
 
         // Cannot use initial values for the fields below, as this makes robolectric tests fail,
         // since they don't have a NativeLibraries class.
-        mUseChromiumLinker = NativeLibraries.sUseLinker;
+        mUseMonyharLinker = NativeLibraries.sUseLinker;
         mUseModernLinker = NativeLibraries.sUseModernLinker;
         mConfigurationSet = true;
     }
@@ -348,7 +348,7 @@ public class LibraryLoader {
     // both be used as the basis to ship on L, and the default APK used by developers on 10+.
     private boolean forceSystemLinker() {
         boolean result =
-                mUseChromiumLinker && !mUseModernLinker && Build.VERSION.SDK_INT >= VERSION_CODES.Q;
+                mUseMonyharLinker && !mUseModernLinker && Build.VERSION.SDK_INT >= VERSION_CODES.Q;
         if (result) {
             Log.d(TAG,
                     "Forcing system linker, relocations will not be shared. "
@@ -357,8 +357,8 @@ public class LibraryLoader {
         return result;
     }
 
-    private boolean useChromiumLinker() {
-        return mUseChromiumLinker && !forceSystemLinker();
+    private boolean useMonyharLinker() {
+        return mUseMonyharLinker && !forceSystemLinker();
     }
 
     /**
@@ -392,14 +392,14 @@ public class LibraryLoader {
         // * after OTA from M to N
         // * side-installing Chrome (possibly from another release channel)
         // * Play Store bugs leading to incorrect APK flavor being installed
-        // * installing other Chromium-based browsers
+        // * installing other Monyhar-based browsers
         //
         // For Chrome builds regularly shipped to users on N+, the system linker (or the Android
         // Framework) provides the necessary functionality to load without crazylinker. The
         // LegacyLinker is risky to auto-enable on newer Android releases, as it may interfere with
         // regular library loading. See http://crbug.com/980304 as example.
         //
-        // This is only called if LibraryLoader.useChromiumLinker() returns true, meaning this is
+        // This is only called if LibraryLoader.useMonyharLinker() returns true, meaning this is
         // either Chrome{,Modern} or Trichrome.
         synchronized (mLock) {
             if (mLinker == null) {
@@ -481,7 +481,7 @@ public class LibraryLoader {
     public void preloadNowOverridePackageName(String packageName) {
         synchronized (mLock) {
             setLinkerImplementationIfNeededAlreadyLocked();
-            if (useChromiumLinker()) return;
+            if (useMonyharLinker()) return;
             preloadAlreadyLocked(packageName, false /* inZygote */);
         }
     }
@@ -489,8 +489,8 @@ public class LibraryLoader {
     @GuardedBy("mLock")
     private void preloadAlreadyLocked(String packageName, boolean inZygote) {
         try (TraceEvent te = TraceEvent.scoped("LibraryLoader.preloadAlreadyLocked")) {
-            // Preloader uses system linker, we shouldn't preload if Chromium linker is used.
-            assert !useChromiumLinker() || inZygote;
+            // Preloader uses system linker, we shouldn't preload if Monyhar linker is used.
+            assert !useMonyharLinker() || inZygote;
             if (mLibraryPreloader != null && !mLibraryPreloaderCalled) {
                 mLibraryPreloader.loadLibrary(packageName);
                 mLibraryPreloaderCalled = true;
@@ -619,7 +619,7 @@ public class LibraryLoader {
         }
     }
 
-    private void loadWithChromiumLinker(ApplicationInfo appInfo, String library) {
+    private void loadWithMonyharLinker(ApplicationInfo appInfo, String library) {
         Linker linker = getLinker();
 
         if (isInZipFile()) {
@@ -673,13 +673,13 @@ public class LibraryLoader {
 
             long startTime = SystemClock.uptimeMillis();
 
-            if (useChromiumLinker() && !inZygote) {
-                Log.d(TAG, "Loading with the Chromium linker.");
+            if (useMonyharLinker() && !inZygote) {
+                Log.d(TAG, "Loading with the Monyhar linker.");
                 // See base/android/linker/config.gni, the monyhar linker is only enabled when
                 // we have a single library.
                 assert NativeLibraries.LIBRARIES.length == 1;
                 String library = NativeLibraries.LIBRARIES[0];
-                loadWithChromiumLinker(appInfo, library);
+                loadWithMonyharLinker(appInfo, library);
             } else {
                 Log.d(TAG, "Loading with the System linker.");
                 loadWithSystemLinkerAlreadyLocked(appInfo, inZygote);
@@ -739,12 +739,12 @@ public class LibraryLoader {
                 throw new RuntimeException("Unknown CPU ABI for native libraries");
         }
 
-        // When both the Chromium linker and zip-uncompressed native libraries are used,
+        // When both the Monyhar linker and zip-uncompressed native libraries are used,
         // the build system renames the native shared libraries with a 'crazy.' prefix
         // (e.g. "/lib/armeabi-v7a/libfoo.so" -> "/lib/armeabi-v7a/crazy.libfoo.so").
         //
         // This prevents the package manager from extracting them at installation/update time
-        // to the /data directory. The libraries can still be accessed directly by the Chromium
+        // to the /data directory. The libraries can still be accessed directly by the Monyhar
         // linker from the APK.
         String crazyPart = crazyPrefix ? "crazy." : "";
         return String.format(
@@ -830,19 +830,19 @@ public class LibraryLoader {
     // Called after all native initializations are complete.
     public void onBrowserNativeInitializationComplete() {
         synchronized (mLock) {
-            if (useChromiumLinker()) {
+            if (useMonyharLinker()) {
                 RecordHistogram.recordTimesHistogram(
-                        "ChromiumAndroidLinker.BrowserLoadTime", mLibraryLoadTimeMs);
+                        "MonyharAndroidLinker.BrowserLoadTime", mLibraryLoadTimeMs);
             }
         }
     }
 
-    // Records pending Chromium linker histogram state for renderer process. This cannot be
+    // Records pending Monyhar linker histogram state for renderer process. This cannot be
     // recorded as a histogram immediately because histograms and IPCs are not ready at the
     // time they are captured. This function stores a pending value, so that a later call to
-    // RecordChromiumAndroidLinkerRendererHistogram() will record it correctly.
+    // RecordMonyharAndroidLinkerRendererHistogram() will record it correctly.
     public void registerRendererProcessHistogram() {
-        if (!useChromiumLinker()) return;
+        if (!useMonyharLinker()) return;
         synchronized (mLock) {
             LibraryLoaderJni.get().recordRendererLibraryLoadTime(mLibraryLoadTimeMs);
         }

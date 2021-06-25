@@ -71,7 +71,7 @@
 <translation id="4405930547258349619">କୋର୍ ଲାଇବ୍ରେରୀ</translation>
 <translation id="443560535555262820">ଆକ୍ସେସିବିଲିଟୀ ପସନ୍ଦଗୁଡ଼ିକୁ ଖୋଲନ୍ତୁ</translation>
 <translation id="4450893287417543264">ଆଉ ଦେଖାନ୍ତୁ ନାହିଁ</translation>
-<translation id="4512952200932940229">Copyright 2021 The Chromium Authors. ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ ଅଛି।</translation>
+<translation id="4512952200932940229">Copyright 2021 The Monyhar Authors. ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ ଅଛି।</translation>
 <translation id="4513946894732546136">Feedback</translation>
 <translation id="4563926062592110512">କ୍ଲାଏଣ୍ଟ ବିଚ୍ଛିନ୍ନ ହୋଇଛନ୍ତି: <ph name="CLIENT_USERNAME" />।</translation>
 <translation id="4635770493235256822">ରିମୋଟ୍‌ ଡିଭାଇସ୍‌ଗୁଡ଼ିକ</translation>
@@ -146,7 +146,7 @@
 <translation id="7868137160098754906">ରିମୋଟ୍‍ କମ୍ପ୍ୟୁଟର୍‌ ପାଇଁ ଦୟାକରି ଆପଣଙ୍କର ପିନ୍‌ ଲେଖନ୍ତୁ.</translation>
 <translation id="7895403300744144251">ରିମୋଟ୍ କମ୍ପ୍ୟୁଟର୍‌ର ସୁରକ୍ଷା ନୀତି ଆପଣଙ୍କର କମ୍ପ୍ୟୁଟର୍‌ରୁ ସଂଯୋଗଗୁଡ଼ିକ ପାଇଁ ଅନୁମତି ଦିଏ ନାହିଁ।</translation>
 <translation id="7936528439960309876">ଡାହାଣପଟକୁ ନିଅନ୍ତୁ</translation>
-<translation id="7970576581263377361">ପ୍ରାମାଣିକରଣ ବିଫଳ ହୋଇଛି। ଦୟାକରି Chromiumରେ ପୁଣି ସାଇନ୍ ଇନ୍ କରନ୍ତୁ।</translation>
+<translation id="7970576581263377361">ପ୍ରାମାଣିକରଣ ବିଫଳ ହୋଇଛି। ଦୟାକରି Monyharରେ ପୁଣି ସାଇନ୍ ଇନ୍ କରନ୍ତୁ।</translation>
 <translation id="7981525049612125370">ରିମୋଟ୍ ସମୟ ଅବଧି ସମାପ୍ତ ହୋଇଯାଇଛି।</translation>
 <translation id="8038111231936746805">(ଡିଫଲ୍ଟ)</translation>
 <translation id="8041089156583427627">ମତାମତ ପଠାନ୍ତୁ</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737"><ph name="PRODUCT_NAME" />କୁ ’ସ୍କ୍ରିନ୍ ରେକର୍ଡିଂ’ ଅନୁମତି ଦିଅନ୍ତୁ</translation>
 <translation id="9213184081240281106">ଅବୈଧ ହୋଷ୍ଟ କନ୍‌ଫିଗ୍‌ରେସନ୍।</translation>
 <translation id="981121421437150478">ଅଫ୍‍ଲାଇନ୍</translation>
-<translation id="985602178874221306">Chromium ଲେଖକ</translation>
+<translation id="985602178874221306">Monyhar ଲେଖକ</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (<ph name="DATE_OR_TIME" />ରେ ଗତଥର ଅନ୍‌ଲାଇନ୍ ଥିଲେ)</translation>
 </translationbundle>

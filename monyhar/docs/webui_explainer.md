@@ -20,7 +20,7 @@
 "WebUI" is a term used to loosely describe **parts of Chrome's UI
 implemented with web technologies** (i.e. HTML, CSS, JavaScript).
 
-Examples of WebUI in Chromium:
+Examples of WebUI in Monyhar:
 
 * Settings (chrome://settings)
 * History (chrome://history)
@@ -914,8 +914,8 @@ therefore it is not advisable to use for any sensitive content.
 
 ## See also
 
-* WebUI's C++ code follows the [Chromium C++ styleguide](../styleguide/c++/c++.md).
-* WebUI's HTML/CSS/JS code follows the [Chromium Web
+* WebUI's C++ code follows the [Monyhar C++ styleguide](../styleguide/c++/c++.md).
+* WebUI's HTML/CSS/JS code follows the [Monyhar Web
   Development Style Guide](../styleguide/web/web.md)
 
 

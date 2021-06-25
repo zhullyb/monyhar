@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -342,7 +342,7 @@ void ProcessRedirection(nt::ROOT_KEY root,
     return;
 
   // No redirection during testing when there's already an override.
-  // Otherwise, the testing redirect directory Software\Chromium\TempTestKeys
+  // Otherwise, the testing redirect directory Software\Monyhar\TempTestKeys
   // would get WOW64 redirected if root_key == HKLM in this function.
   if (root == nt::HKCU ? *g_HKCU_override : *g_HKLM_override)
     return;
@@ -511,7 +511,7 @@ bool ParseFullRegPath(const std::wstring& converted_root,
     // Why process |converted_root|?  To handle reg redirection used by tests.
     // E.g.:
     // |converted_root| = "\REGISTRY\USER\S-1-5-21-39260824-743453154-142223018-
-    // 716772\Software\Chromium\TempTestKeys\13110669370890870$94c6ed9d-bc34-
+    // 716772\Software\Monyhar\TempTestKeys\13110669370890870$94c6ed9d-bc34-
     // 44f3-a0b3-9eee2d3f2f82\".
     // |subkey_path| = "SOFTWARE\Google\Chrome\BrowserSec".
     //

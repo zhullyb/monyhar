@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -107,7 +107,7 @@ ResultExpr NaClBPFSandboxPolicy::EvaluateSyscall(int sysno) const {
 #endif
     // NaCl uses custom signal stacks.
     case __NR_sigaltstack:
-    // Below is fairly similar to the policy for a Chromium renderer.
+    // Below is fairly similar to the policy for a Monyhar renderer.
 #if defined(__i386__) || defined(__x86_64__) || defined(__mips__) || \
     defined(__aarch64__)
     case __NR_getrlimit:

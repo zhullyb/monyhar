@@ -1492,7 +1492,7 @@ class CppStyleTest(CppStyleTestBase):
         # Verify that we don't blindly suggest the WTF prefix for all headers.
         self.assertFalse(expected_guard.startswith('WTF_'))
 
-        # Verify that the Chromium-style header guard is allowed.
+        # Verify that the Monyhar-style header guard is allowed.
         header_guard_filter = FilterConfiguration(('-', '+build/header_guard'))
         error_collector = ErrorCollector(self.assertTrue, header_guard_filter)
         self.process_file_data('Source/foo/testname.h', 'h', [
@@ -1501,7 +1501,7 @@ class CppStyleTest(CppStyleTestBase):
         self.assertEqual(0, len(error_collector.result_list()),
                          error_collector.result_list())
 
-        # Verify that we suggest the Chromium-style header guard.
+        # Verify that we suggest the Monyhar-style header guard.
         error_collector = ErrorCollector(self.assertTrue, header_guard_filter)
         self.process_file_data(
             'renderer/platform/wtf/auto_reset.h', 'h',

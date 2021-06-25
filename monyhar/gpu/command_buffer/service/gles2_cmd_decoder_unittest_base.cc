@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1839,15 +1839,15 @@ const uint32_t GLES2DecoderTestBase::kInvalidClientId;
 const GLuint GLES2DecoderTestBase::kServiceVertexShaderId;
 const GLuint GLES2DecoderTestBase::kServiceFragmentShaderId;
 
-const GLuint GLES2DecoderTestBase::kServiceCopyTextureChromiumShaderId;
-const GLuint GLES2DecoderTestBase::kServiceCopyTextureChromiumProgramId;
+const GLuint GLES2DecoderTestBase::kServiceCopyTextureMonyharShaderId;
+const GLuint GLES2DecoderTestBase::kServiceCopyTextureMonyharProgramId;
 
-const GLuint GLES2DecoderTestBase::kServiceCopyTextureChromiumTextureBufferId;
-const GLuint GLES2DecoderTestBase::kServiceCopyTextureChromiumVertexBufferId;
-const GLuint GLES2DecoderTestBase::kServiceCopyTextureChromiumFBOId;
-const GLuint GLES2DecoderTestBase::kServiceCopyTextureChromiumPositionAttrib;
-const GLuint GLES2DecoderTestBase::kServiceCopyTextureChromiumTexAttrib;
-const GLuint GLES2DecoderTestBase::kServiceCopyTextureChromiumSamplerLocation;
+const GLuint GLES2DecoderTestBase::kServiceCopyTextureMonyharTextureBufferId;
+const GLuint GLES2DecoderTestBase::kServiceCopyTextureMonyharVertexBufferId;
+const GLuint GLES2DecoderTestBase::kServiceCopyTextureMonyharFBOId;
+const GLuint GLES2DecoderTestBase::kServiceCopyTextureMonyharPositionAttrib;
+const GLuint GLES2DecoderTestBase::kServiceCopyTextureMonyharTexAttrib;
+const GLuint GLES2DecoderTestBase::kServiceCopyTextureMonyharSamplerLocation;
 
 const GLsizei GLES2DecoderTestBase::kNumVertices;
 const GLsizei GLES2DecoderTestBase::kNumIndices;

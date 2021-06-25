@@ -1,8 +1,8 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Presubmit script for Chromium browser resources.
+"""Presubmit script for Monyhar browser resources.
 
 See http://dev.monyhar.org/developers/how-tos/depottools/presubmit-scripts
 for more details about the presubmit API built into depot_tools, and see
@@ -20,7 +20,7 @@ class InvalidPNGException(Exception):
 
 
 class ResourceScaleFactors(object):
-  """Verifier of image dimensions for Chromium resources.
+  """Verifier of image dimensions for Monyhar resources.
 
   This class verifies the image dimensions of resources in the various
   resource subdirectories.

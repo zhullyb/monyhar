@@ -2168,7 +2168,7 @@ otvorene kartice. Zato će se neke kartice možda i dalje ponašati u skladu s p
 <translation id="5148753489738115745">Omogućuje vam da odredite dodatne parametre koji se upotrebljavaju kada <ph name="PRODUCT_FRAME_NAME" /> pokreće uslugu <ph name="PRODUCT_NAME" />.
 
           Ako se to pravilo ne postavi, upotrebljavat će se zadani naredbeni redak.</translation>
-<translation id="5152787786897382519">Chromium i Google Chrome imaju neke grupe međusobno ovisnih pravila koja omogućuju upravljanje značajkom. Te su skupine predstavljene sljedećim grupama pravila. S obzirom da pravila mogu imati više izvora, primjenjuju se samo vrijednosti koje potječu iz izvora pravila najvišeg prioriteta. Vrijednosti koje potječu iz izvora nižeg prioriteta u istoj grupi zanemarit će se. Redoslijed prioriteta definiran je u pravilu <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Monyhar i Google Chrome imaju neke grupe međusobno ovisnih pravila koja omogućuju upravljanje značajkom. Te su skupine predstavljene sljedećim grupama pravila. S obzirom da pravila mogu imati više izvora, primjenjuju se samo vrijednosti koje potječu iz izvora pravila najvišeg prioriteta. Vrijednosti koje potječu iz izvora nižeg prioriteta u istoj grupi zanemarit će se. Redoslijed prioriteta definiran je u pravilu <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Učestalost slanja mrežnih paketa za praćenje u milisekundama.
 
       Ako se to pravilo ne postavi, zadani interval iznosi 3 minute. Minimalni
@@ -3825,7 +3825,7 @@ onemogućene. Korisnici će još uvijek moći ručno omogućiti SitePerProcess.
       Ako pravilo nije postavljeno, proizvod <ph name="PRODUCT_OS_NAME" /> upotrijebit će ID računa e-pošte lokalnog računa uređaja kao naziv za prikaz na zaslonu prijave.
 
       Ovo se pravilo zanemaruje za redovite korisničke račune.</translation>
-<translation id="8259375588339409826">Chromium i Google Chrome podržavaju isti skup pravila. Napominjemo da ovaj dokument može sadržavati neobjavljena pravila (to jest, unos "podržano na" odnosi se na neobjavljene verzije proizvoda <ph name="PRODUCT_NAME" />) podložna promjeni ili uklanjanju bez prethodne najave i za koja se ne pružaju nikakva jamstva, što znači da nema jamstava ni za sigurnost ni privatnost.
+<translation id="8259375588339409826">Monyhar i Google Chrome podržavaju isti skup pravila. Napominjemo da ovaj dokument može sadržavati neobjavljena pravila (to jest, unos "podržano na" odnosi se na neobjavljene verzije proizvoda <ph name="PRODUCT_NAME" />) podložna promjeni ili uklanjanju bez prethodne najave i za koja se ne pružaju nikakva jamstva, što znači da nema jamstava ni za sigurnost ni privatnost.
 
 Ta su pravila namijenjena isključivo konfiguriranju instanci preglednika <ph name="PRODUCT_NAME" /> za unutarnju upotrebu u vašoj organizaciji. Upotreba tih pravila izvan vaše organizacije (na primjer u javno distribuiranom programu) smatra se zlonamjernim softverom, pa će je Google i dobavljači antivirusnih programa vjerojatno označiti kao takvu.
 

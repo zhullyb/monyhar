@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -72,7 +72,7 @@ AXNodeDataToSemanticNode(const ui::AXNodeData& node,
 
 // Converts Fuchsia action of type |fuchsia_action| to an ax::mojom::Action of
 // type |mojom_action|. Function will return true if |fuchsia_action| is
-// supported in Chromium.
+// supported in Monyhar.
 bool ConvertAction(fuchsia::accessibility::semantics::Action fuchsia_action,
                    ax::mojom::Action* mojom_action);
 

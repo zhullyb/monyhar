@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Creates the Chromium SQLite amalgamation.
+"""Creates the Monyhar SQLite amalgamation.
 
 The amalgamation is a single large source file (sqlite3.c) containing all
 of the SQLite code. More at https://www.sqlite.org/amalgamation.html.
@@ -17,10 +17,10 @@ import tempfile
 from shutil import copyfile, rmtree
 from extract_sqlite_api import ProcessSourceFile, header_line, footer_line
 
-# The Chromium SQLite third party directory (i.e. //third_party/sqlite).
+# The Monyhar SQLite third party directory (i.e. //third_party/sqlite).
 _SQLITE_ROOT_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
-# The Chromium SQLite source directory (i.e. //third_party/sqlite/src).
+# The Monyhar SQLite source directory (i.e. //third_party/sqlite/src).
 _SQLITE_SRC_DIR = os.path.join(_SQLITE_ROOT_DIR, 'src')
 
 # The .gni file (also used by BUILD.gn when building) which contains all
@@ -76,7 +76,7 @@ def _strip_flags_for_testing(flags):
     incompatible with the SQLite tests.
 
     When configuring SQLite to run tests this script uses a configuration
-    as close to what Chromium ships as possible. Some flags need to be
+    as close to what Monyhar ships as possible. Some flags need to be
     omitted for the tests to link and run correct. See comments below.
     """
     test_flags = []
@@ -235,7 +235,7 @@ if __name__ == '__main__':
     desc = \
     ('Create the SQLite amalgamation. The SQLite amalgamation is documented at '
      'https://www.sqlite.org/amalgamation.html and is a single large file '
-     'containing the SQLite source code. Chromium generates the amalgamation with'
+     'containing the SQLite source code. Monyhar generates the amalgamation with'
      ' this script to ensure that the configuration parameters are identical to '
      'those in the Ninja build file.')
 

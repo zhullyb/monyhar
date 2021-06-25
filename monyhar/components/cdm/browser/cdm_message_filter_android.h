@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ namespace cdm {
 // Message filter for EME on Android. It is responsible for getting the
 // SupportedKeySystems information and passing it back to renderer.
 // TODO(xhwang): Convert this to a mojo interface or merge this with
-// desktop Chromium's IsPepperCdmAvailable() path.
+// desktop Monyhar's IsPepperCdmAvailable() path.
 class CdmMessageFilterAndroid : public content::BrowserMessageFilter {
  public:
   CdmMessageFilterAndroid(bool can_persist_data,
@@ -42,7 +42,7 @@ class CdmMessageFilterAndroid : public content::BrowserMessageFilter {
 
   const scoped_refptr<base::SequencedTaskRunner> task_runner_;
 
-  // Whether any data can be persisted by Chromium or by MediaDrm (e.g. false in
+  // Whether any data can be persisted by Monyhar or by MediaDrm (e.g. false in
   // incognito mode).
   const bool can_persist_data_;
 

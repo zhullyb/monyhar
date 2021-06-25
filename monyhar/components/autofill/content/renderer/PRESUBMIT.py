@@ -1,8 +1,8 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Chromium presubmit script for src/components/autofill/content/renderer.
+"""Monyhar presubmit script for src/components/autofill/content/renderer.
 
 See http://dev.monyhar.org/developers/how-tos/depottools/presubmit-scripts
 for more details on the presubmit API built into depot_tools.

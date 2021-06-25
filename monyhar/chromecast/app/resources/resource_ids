@@ -1,9 +1,9 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
 # This file is used to assign starting resource ids for resources and strings
-# used by Chromium.  This is done to ensure that resource ids are unique
+# used by Monyhar.  This is done to ensure that resource ids are unique
 # across all the grd files.  If you are adding a new grd file, please add
 # a new entry to this file.
 #

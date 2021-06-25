@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -262,7 +262,7 @@ VISIT_PROTO_FIELDS(const sync_pb::BookmarkSpecifics& proto) {
   VISIT(full_title);
 }
 
-VISIT_PROTO_FIELDS(const sync_pb::ChromiumExtensionsActivity& proto) {
+VISIT_PROTO_FIELDS(const sync_pb::MonyharExtensionsActivity& proto) {
   VISIT(extension_id);
   VISIT(bookmark_writes_since_last_commit);
 }

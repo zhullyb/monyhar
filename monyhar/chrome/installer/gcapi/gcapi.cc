@@ -1,10 +1,10 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // NOTE: This code is a legacy utility API for partners to check whether
 //       Chrome can be installed and launched. Recent updates are being made
-//       to add new functionality. These updates use code from Chromium, the old
+//       to add new functionality. These updates use code from Monyhar, the old
 //       coded against the win32 api directly. If you have an itch to shave a
 //       yak, feel free to re-write the old code too.
 

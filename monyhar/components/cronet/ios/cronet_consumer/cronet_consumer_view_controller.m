@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@
   [button setTitle:@"monyhar.org" forState:UIControlStateNormal];
   [button setFrame:CGRectMake(5, 0, 95, 50)];
   [button addTarget:self
-                action:@selector(loadChromium)
+                action:@selector(loadMonyhar)
       forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:button];
 
@@ -30,7 +30,7 @@
   _webView.autoresizingMask =
       UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-  [self loadChromium];
+  [self loadMonyhar];
 }
 
 // Disable the status bar to sidestep all the iOS7 status bar issues.
@@ -38,7 +38,7 @@
   return YES;
 }
 
-- (void)loadChromium {
+- (void)loadMonyhar {
   [_webView
       loadRequest:[NSURLRequest
                       requestWithURL:

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -131,10 +131,10 @@ namespace {
 // set a low write buffer size to trigger compaction more often.
 constexpr size_t kWriteBufferSize = 512 * 1024;
 
-class ServiceWorkerEnv : public leveldb_env::ChromiumEnv {
+class ServiceWorkerEnv : public leveldb_env::MonyharEnv {
  public:
   ServiceWorkerEnv()
-      : ChromiumEnv("LevelDBEnv.ServiceWorker",
+      : MonyharEnv("LevelDBEnv.ServiceWorker",
                     storage::CreateFilesystemProxy()) {}
 
   // Returns a shared instance of ServiceWorkerEnv. This is thread-safe.

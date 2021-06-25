@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -53,7 +53,7 @@ def merge_test_results(shard_results_list):
 
   Args:
     shard_results_list: list of results to merge. All the results must have the
-      same format. Supported format are simplified JSON format & Chromium JSON
+      same format. Supported format are simplified JSON format & Monyhar JSON
       test results format version 3 (see
       https://www.monyhar.org/developers/the-json-test-results-format)
 
@@ -99,7 +99,7 @@ def _merge_simplified_json_format(shard_results_list):
 
 
 def _merge_json_test_result_format(shard_results_list):
-  # This code is specialized to the Chromium JSON test results format version 3:
+  # This code is specialized to the Monyhar JSON test results format version 3:
   # https://www.monyhar.org/developers/the-json-test-results-format
 
   # These are required fields for the JSON test result format version 3.

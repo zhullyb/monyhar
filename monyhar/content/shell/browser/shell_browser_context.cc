@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -114,7 +114,7 @@ void ShellBrowserContext::InitWhileIOAllowed() {
   path_ = config_dir.Append("content_shell");
 #elif defined(OS_MAC)
   CHECK(base::PathService::Get(base::DIR_APP_DATA, &path_));
-  path_ = path_.Append("Chromium Content Shell");
+  path_ = path_.Append("Monyhar Content Shell");
 #elif defined(OS_ANDROID)
   CHECK(base::PathService::Get(base::DIR_ANDROID_APP_DATA, &path_));
   path_ = path_.Append(FILE_PATH_LITERAL("content_shell"));

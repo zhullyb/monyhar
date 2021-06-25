@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">ዋና ቤተ መጽሐፍት</translation>
 <translation id="443560535555262820">የተደራሽነት ምርጫዎችን ክፈት</translation>
 <translation id="4450893287417543264">ዳግም አታሳይ</translation>
-<translation id="4512952200932940229">የቅጂ መብት 2021 የChromium አዘጋጆች። ሁሉም መብቶች የተጠበቁ ናቸው።</translation>
+<translation id="4512952200932940229">የቅጂ መብት 2021 የMonyhar አዘጋጆች። ሁሉም መብቶች የተጠበቁ ናቸው።</translation>
 <translation id="4513946894732546136">ግብረ መልስ</translation>
 <translation id="4563926062592110512">የደንበኛው ግንኙነት ተቋርጧል፦ <ph name="CLIENT_USERNAME" />።</translation>
 <translation id="4635770493235256822">የርቀት መሣሪያዎች</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">እባክዎ የእርስዎን ፒን ለርቀት ኮምፒውተር ያስገቡ</translation>
 <translation id="7895403300744144251">በርቀት ኮምፒውተሩ ላይ ያሉ የደህንነት መመሪያዎች ከእርስዎ መለያ ጋር ግንኙነቶችን አይፈቅዱም።</translation>
 <translation id="7936528439960309876">መትከያ ወደ ቀኝ</translation>
-<translation id="7970576581263377361">ማረጋገጥ አልተሳካም። እባክዎ እንደገና ወደ Chromium ይግቡ።</translation>
+<translation id="7970576581263377361">ማረጋገጥ አልተሳካም። እባክዎ እንደገና ወደ Monyhar ይግቡ።</translation>
 <translation id="7981525049612125370">የርቀት ክፍለጊዜውን ጊዜው አልፎበታል።</translation>
 <translation id="8038111231936746805">(ነባሪ)</translation>
 <translation id="8041089156583427627">ግብረ መልስ ላክ</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737">ለ<ph name="PRODUCT_NAME" /> የ«ማያ ገጽ ቀረጻ» ፈቃዱን ይስጡ</translation>
 <translation id="9213184081240281106">ልክ ያልሆነ የአስተናጋጅ ውቅር።</translation>
 <translation id="981121421437150478">ከመስመር ውጪ</translation>
-<translation id="985602178874221306">የChromium ደራሲዎች</translation>
+<translation id="985602178874221306">የMonyhar ደራሲዎች</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (መስመር ላይ የነበረበት <ph name="DATE_OR_TIME" /> መጨረሻ ጊዜ)</translation>
 </translationbundle>

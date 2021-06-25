@@ -128,7 +128,7 @@ Usually you need a policy when
         check whether the policy takes effect.
 8.  Manually testing your policy.
     -   Windows: The simplest way to test is to write the registry keys manually
-        to `Software\Policies\Chromium` (for Chromium builds) or
+        to `Software\Policies\Monyhar` (for Monyhar builds) or
         `Software\Policies\Google\Chrome` (for Google Chrome branded builds). If
         you want to test policy refresh, you need to use group policy tools and
         gpupdate; see
@@ -360,7 +360,7 @@ on how to update the Cloud Policy.
 ## Post policy update
 
 Once the policy is added or modified, nothing else needs to be taken
-care of by the Chromium developers. However, there are a few things that will be
+care of by the Monyhar developers. However, there are a few things that will be
 updated based on the json file. Please note that there is no ETA for
 everything listed below.
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Scans the Chromium source of UseCounter, formats the Feature enum for
+"""Scans the Monyhar source of UseCounter, formats the Feature enum for
 histograms.xml and merges it. This script can also generate a python code
-snippet to put in uma.py of Chromium Dashboard. Make sure that you review the
+snippet to put in uma.py of Monyhar Dashboard. Make sure that you review the
 output for correctness.
 """
 
@@ -20,7 +20,7 @@ from update_histogram_enum import UpdateHistogramEnum
 
 
 def PrintEnumForDashboard(enum_dict):
-  """Prints enum_items formatted for use in uma.py of Chromium dashboard."""
+  """Prints enum_items formatted for use in uma.py of Monyhar dashboard."""
   for key in sorted(enum_dict.iterkeys()):
     print('  %d: \'%s\',' % (key, enum_dict[key]))
 
@@ -30,7 +30,7 @@ if __name__ == '__main__':
   parser.add_option('--for-dashboard', action='store_true', dest='dashboard',
                     default=False,
                     help='Print enum definition formatted for use in uma.py of '
-                    'Chromium dashboard developed at '
+                    'Monyhar dashboard developed at '
                     'https://github.com/GoogleChrome/monyhar-dashboard')
   options, args = parser.parse_args()
 

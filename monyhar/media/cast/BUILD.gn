@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -367,7 +367,7 @@ test("cast_unittests") {
 
 if (is_win || is_mac || is_linux || is_chromeos_lacros) {
   # This is a target for the collection of cast development tools.  They are
-  # not built/linked into the Chromium browser.
+  # not built/linked into the Monyhar browser.
   group("testing_tools") {
     testonly = true
     deps = [
@@ -486,8 +486,8 @@ if (is_linux || is_chromeos_lacros) {
   }
 }
 
-# Projects external to Chromium can build cast_sender and/or cast_receiver to
-# produce libraries to link with their applications.  Chromium targets should
+# Projects external to Monyhar can build cast_sender and/or cast_receiver to
+# produce libraries to link with their applications.  Monyhar targets should
 # not reference these.
 
 static_library("cast_sender") {

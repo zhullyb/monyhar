@@ -1,10 +1,10 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This is the Android-specific Chromium linker, a tiny shared library
+// This is the Android-specific Monyhar linker, a tiny shared library
 // implementing a custom dynamic linker that can be used to load the
-// real Chromium libraries.
+// real Monyhar libraries.
 
 // The main point of this linker is to be able to share the RELRO
 // section of libchrome.so (or equivalent) between renderer processes.
@@ -36,7 +36,7 @@ String::String(JNIEnv* env, jstring str) {
   //
   // GetStringUTFChars() suffices because the only strings used here are
   // paths to APK files or names of shared libraries, all of which are
-  // plain ASCII, defined and hard-coded by the Chromium Android build.
+  // plain ASCII, defined and hard-coded by the Monyhar Android build.
   //
   // For more: see
   //   https://crbug.com/508876

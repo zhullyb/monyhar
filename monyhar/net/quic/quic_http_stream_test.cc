@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -161,8 +161,8 @@ class TestQuicConnection : public quic::QuicConnection {
   TestQuicConnection(const quic::ParsedQuicVersionVector& versions,
                      quic::QuicConnectionId connection_id,
                      IPEndPoint address,
-                     QuicChromiumConnectionHelper* helper,
-                     QuicChromiumAlarmFactory* alarm_factory,
+                     QuicMonyharConnectionHelper* helper,
+                     QuicMonyharAlarmFactory* alarm_factory,
                      quic::QuicPacketWriter* writer)
       : quic::QuicConnection(connection_id,
                              quic::QuicSocketAddress(),
@@ -237,7 +237,7 @@ class DeleteStreamCallback : public TestCompletionCallbackBase {
 
 class QuicHttpStreamPeer {
  public:
-  static QuicChromiumClientStream::Handle* GetQuicChromiumClientStream(
+  static QuicMonyharClientStream::Handle* GetQuicMonyharClientStream(
       QuicHttpStream* stream) {
     return stream->stream_.get();
   }
@@ -368,15 +368,15 @@ class QuicHttpStreamTest : public ::testing::TestWithParam<TestParams>,
     EXPECT_CALL(*send_algorithm_, OnApplicationLimited(_)).Times(AnyNumber());
     EXPECT_CALL(*send_algorithm_, GetCongestionControlType())
         .Times(AnyNumber());
-    helper_ = std::make_unique<QuicChromiumConnectionHelper>(
+    helper_ = std::make_unique<QuicMonyharConnectionHelper>(
         &clock_, &random_generator_);
     alarm_factory_ =
-        std::make_unique<QuicChromiumAlarmFactory>(runner_.get(), &clock_);
+        std::make_unique<QuicMonyharAlarmFactory>(runner_.get(), &clock_);
 
     connection_ = new TestQuicConnection(
         quic::test::SupportedVersions(version_), connection_id_, peer_addr_,
         helper_.get(), alarm_factory_.get(),
-        new QuicChromiumPacketWriter(
+        new QuicMonyharPacketWriter(
             socket.get(), base::ThreadTaskRunnerHandle::Get().get()));
     connection_->set_visitor(&visitor_);
     connection_->SetSendAlgorithm(send_algorithm_);
@@ -392,7 +392,7 @@ class QuicHttpStreamTest : public ::testing::TestWithParam<TestParams>,
 
     base::TimeTicks dns_end = base::TimeTicks::Now();
     base::TimeTicks dns_start = dns_end - base::TimeDelta::FromMilliseconds(1);
-    session_ = std::make_unique<QuicChromiumClientSession>(
+    session_ = std::make_unique<QuicMonyharClientSession>(
         connection_, std::move(socket),
         /*stream_factory=*/nullptr, &crypto_client_stream_factory_, &clock_,
         &transport_security_state_, /*ssl_config_service=*/nullptr,
@@ -624,8 +624,8 @@ class QuicHttpStreamTest : public ::testing::TestWithParam<TestParams>,
 
   void ReceivePromise(quic::QuicStreamId id) {
     auto headers = quic::test::AsHeaderList(push_promise_);
-    QuicChromiumClientStream::Handle* stream =
-        QuicHttpStreamPeer::GetQuicChromiumClientStream(stream_.get());
+    QuicMonyharClientStream::Handle* stream =
+        QuicHttpStreamPeer::GetQuicMonyharClientStream(stream_.get());
     stream->OnPromiseHeaderList(id, headers.uncompressed_header_bytes(),
                                 headers);
   }
@@ -664,13 +664,13 @@ class QuicHttpStreamTest : public ::testing::TestWithParam<TestParams>,
   std::unique_ptr<MockWrite[]> mock_writes_;
   quic::MockClock clock_;
   TestQuicConnection* connection_;
-  std::unique_ptr<QuicChromiumConnectionHelper> helper_;
-  std::unique_ptr<QuicChromiumAlarmFactory> alarm_factory_;
+  std::unique_ptr<QuicMonyharConnectionHelper> helper_;
+  std::unique_ptr<QuicMonyharAlarmFactory> alarm_factory_;
   testing::StrictMock<quic::test::MockQuicConnectionVisitor> visitor_;
   std::unique_ptr<UploadDataStream> upload_data_stream_;
   std::unique_ptr<QuicHttpStream> stream_;
   TransportSecurityState transport_security_state_;
-  std::unique_ptr<QuicChromiumClientSession> session_;
+  std::unique_ptr<QuicMonyharClientSession> session_;
   quic::QuicCryptoClientConfig crypto_config_;
   TestCompletionCallback callback_;
   HttpRequestInfo request_;
@@ -696,7 +696,7 @@ class QuicHttpStreamTest : public ::testing::TestWithParam<TestParams>,
   IPEndPoint self_addr_;
   IPEndPoint peer_addr_;
   quic::test::MockRandom random_generator_;
-  ProofVerifyDetailsChromium verify_details_;
+  ProofVerifyDetailsMonyhar verify_details_;
   MockCryptoClientStreamFactory crypto_client_stream_factory_;
   std::unique_ptr<StaticSocketDataProvider> socket_data_;
   QuicPacketPrinter printer_;
@@ -725,8 +725,8 @@ TEST_P(QuicHttpStreamTest, DisableConnectionMigrationForStream) {
   EXPECT_EQ(OK,
             stream_->InitializeStream(&request_, false, DEFAULT_PRIORITY,
                                       net_log_.bound(), callback_.callback()));
-  QuicChromiumClientStream::Handle* client_stream =
-      QuicHttpStreamPeer::GetQuicChromiumClientStream(stream_.get());
+  QuicMonyharClientStream::Handle* client_stream =
+      QuicHttpStreamPeer::GetQuicMonyharClientStream(stream_.get());
   EXPECT_FALSE(client_stream->can_migrate_to_cellular_network());
 }
 
@@ -2190,7 +2190,7 @@ TEST_P(QuicHttpStreamTest, ServerPushGetRequest) {
                                               callback_.callback()));
 
   EXPECT_EQ(
-      QuicHttpStreamPeer::GetQuicChromiumClientStream(promised_stream_.get())
+      QuicHttpStreamPeer::GetQuicMonyharClientStream(promised_stream_.get())
           ->id(),
       promise_id_);
 
@@ -2264,7 +2264,7 @@ TEST_P(QuicHttpStreamTest, ServerPushGetRequestSlowResponse) {
   EXPECT_THAT(callback_.WaitForResult(), IsOk());
 
   EXPECT_EQ(
-      QuicHttpStreamPeer::GetQuicChromiumClientStream(promised_stream_.get())
+      QuicHttpStreamPeer::GetQuicMonyharClientStream(promised_stream_.get())
           ->id(),
       promise_id_);
 
@@ -2381,7 +2381,7 @@ TEST_P(QuicHttpStreamTest, ServerPushCrossOriginOK) {
                                               callback_.callback()));
 
   EXPECT_EQ(
-      QuicHttpStreamPeer::GetQuicChromiumClientStream(promised_stream_.get())
+      QuicHttpStreamPeer::GetQuicMonyharClientStream(promised_stream_.get())
           ->id(),
       promise_id_);
 
@@ -2486,7 +2486,7 @@ TEST_P(QuicHttpStreamTest, ServerPushVaryCheckOK) {
   EXPECT_THAT(callback_.WaitForResult(), IsOk());
 
   EXPECT_EQ(
-      QuicHttpStreamPeer::GetQuicChromiumClientStream(promised_stream_.get())
+      QuicHttpStreamPeer::GetQuicMonyharClientStream(promised_stream_.get())
           ->id(),
       promise_id_);
 
@@ -2564,13 +2564,13 @@ TEST_P(QuicHttpStreamTest, ServerPushVaryCheckFail) {
 
   // Not a server-initiated stream.
   EXPECT_NE(
-      QuicHttpStreamPeer::GetQuicChromiumClientStream(promised_stream_.get())
+      QuicHttpStreamPeer::GetQuicMonyharClientStream(promised_stream_.get())
           ->id(),
       promise_id_);
 
   // Instead, a new client-initiated stream.
   EXPECT_EQ(
-      QuicHttpStreamPeer::GetQuicChromiumClientStream(promised_stream_.get())
+      QuicHttpStreamPeer::GetQuicMonyharClientStream(promised_stream_.get())
           ->id(),
       stream_id_ + quic::QuicUtils::StreamIdDelta(version_.transport_version));
 

@@ -71,7 +71,7 @@ New Procedures and Functions
     all the results.
 
 
-    NOTE: This function is not intended to be used directly. Chromium uses it
+    NOTE: This function is not intended to be used directly. Monyhar uses it
     internally to cache data.
 
 

@@ -310,7 +310,7 @@ is running within. It has the following members:
      values:
      *   "android": Android.
      *   "chromeos": Chrome OS.
-     *   "monyharos": Chromium OS.
+     *   "monyharos": Monyhar OS.
      *   "dragonfly": DragonFly BSD.
      *   "freebsd": FreeBSD.
      *   "ios": Apple iOS.
@@ -847,7 +847,7 @@ For `type == 14` events:
      values:
      *   "" (empty string): Unknown downloader.
      *   "bits": Microsoft BITS.
-     *   "direct": The Chromium network stack.
+     *   "direct": The Monyhar network stack.
  *   `expected_bytes`: The number of bytes expected to be downloaded. Default:
      0.
  *   `url`: The URL from which the download was attempted.

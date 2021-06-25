@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -101,8 +101,8 @@ class RegWriter(template_writer.TemplateWriter):
 
   def GetTemplateText(self):
     self._prefix.append('Windows Registry Editor Version 5.00')
-    if self._GetChromiumVersionString() is not None:
+    if self._GetMonyharVersionString() is not None:
       self.WriteComment(self.config['build'] + ' version: ' + \
-          self._GetChromiumVersionString())
+          self._GetMonyharVersionString())
     all = self._prefix + self._mandatory + self._recommended
     return self.NEWLINE.join(all)

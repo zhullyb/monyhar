@@ -1,16 +1,16 @@
 # Lint
 
 Android's [**lint**](https://developer.android.com/tools/help/lint.html) is a
-static analysis tool that Chromium uses to catch possible issues in Java code.
+static analysis tool that Monyhar uses to catch possible issues in Java code.
 
 This is a list of [**checks**](http://tools.android.com/tips/lint-checks) that
 you might encounter.
 
 [TOC]
 
-## How Chromium uses lint
+## How Monyhar uses lint
 
-Chromium only runs lint on apk or bundle targets that explicitly set
+Monyhar only runs lint on apk or bundle targets that explicitly set
 `enable_lint = true`. Some example targets that have this set are:
 
  - `//chrome/android:monochrome_public_bundle`
@@ -33,7 +33,7 @@ Java provides an annotation,
 [`@SuppressWarnings`](https://developer.android.com/reference/java/lang/SuppressWarnings),
 that tells lint to ignore the annotated element. It can be used on classes,
 constructors, methods, parameters, fields, or local variables, though usage in
-Chromium is typically limited to the first three. You do not need to import it
+Monyhar is typically limited to the first three. You do not need to import it
 since it is in the `java.lang` package.
 
 Like many suppression annotations, `@SuppressWarnings` takes a value that tells

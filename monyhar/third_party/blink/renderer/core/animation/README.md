@@ -10,7 +10,7 @@ the Web Animations API (e.g. `element.animate()`) to Javascript.
 
 * [Animations OWNERS](
 https://cs.monyhar.org/search?&q=file:blink/renderer/core/animation/OWNERS)
-* [Chromium #animations channel on Slack](
+* [Monyhar #animations channel on Slack](
 https://monyhar.slack.com#animations)
 
 ## Specifications implemented
@@ -1351,7 +1351,7 @@ new effect are included in the set.
 [css-transforms-1 - interpolations of transforms]: https://www.w3.org/TR/css-transforms-1/#interpolation-of-transforms
 
 
-## Integration with Chromium
+## Integration with Monyhar
 
 The Blink animation engine interacts with Blink/Chrome in the following ways:
 
@@ -1384,9 +1384,9 @@ The Blink animation engine interacts with Blink/Chrome in the following ways:
 [set of mutations]: https://cs.monyhar.org/search/?q=class:CSSAnimationUpdate
 [applied later]: https://cs.monyhar.org/search/?q=function:Element::StyleForLayoutObject+MaybeApplyPendingUpdate
 
-*   ### [Chromium's Compositor](../../../../../cc/README.md)
+*   ### [Monyhar's Compositor](../../../../../cc/README.md)
 
-    Chromium's compositor has a separate, more lightweight [animation
+    Monyhar's compositor has a separate, more lightweight [animation
     engine](../../../../../cc/animation/README.md) that runs separate to the
     main thread. Blink's animation engine delegates animations to the compositor
     where possible for better performance and power utilisation.

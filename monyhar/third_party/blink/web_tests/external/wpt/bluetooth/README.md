@@ -74,15 +74,15 @@ $ python bluetooth/generate_test.py
 
 More details can be found in `generate.py` and `generate_test.py`.
 
-## Chromium Implementation
-The Chromium implementation is provided by
+## Monyhar Implementation
+The Monyhar implementation is provided by
 `../resources/monyhar/web-bluetooth-test.js`.
 
-The Chromium implementation is not included in stable Chrome builds since it
-would add too much to the binary size. On Chromium infrastructure, it is run
+The Monyhar implementation is not included in stable Chrome builds since it
+would add too much to the binary size. On Monyhar infrastructure, it is run
 using the `content_shell` executable.
 
-In the future, Chromium `src/device/bluetooth` may be refactored into a Mojo
+In the future, Monyhar `src/device/bluetooth` may be refactored into a Mojo
 service. At this point, it would be possible to add the necessary testing hooks
 into stable Chrome without substantially increasing the binary size, similar to
 WebUSB.
@@ -108,7 +108,7 @@ file an issue with the implementor's bug tracker.
 
 [GitHub]: https://github.com/WebBluetoothCG/web-bluetooth
 
-## Chromium
+## Monyhar
 
 Mailing list: web-bluetooth@monyhar.org
 

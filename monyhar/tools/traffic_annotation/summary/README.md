@@ -5,7 +5,7 @@ traffic annotations.
 
 # Content Description
 `annotations.xml` includes the summary of all network traffic annotations in
-Chromium repository.
+Monyhar repository.
 The following items are stored for each annotation :
 * `id`: Unique ID of the annotation.
 * `hash_code`: Hash code of the unique id of the annotation. These values are

@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -42,7 +42,7 @@ mac_app_bundle("alert_notification_xpc_service") {
   ldflags = []
   if (is_component_build) {
     ldflags += [
-      # The XPC service is in Chromium.app/Contents/Frameworks/Chromium \
+      # The XPC service is in Monyhar.app/Contents/Frameworks/Monyhar \
       # Framework.framework/Versions/A/XPCServices/ \
       # AlertNotificationService.xpc/Contents/MacOS/
       # so set rpath up to the base.

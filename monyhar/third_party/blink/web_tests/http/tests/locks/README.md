@@ -5,4 +5,4 @@ Explainer: https://github.com/inexorabletash/web-locks
 Spec: https://inexorabletash.github.io/web-locks/
 
 Most tests are upstreamed to web-platform-tests (external/wpt/web-locks);
-tests that remain here depend on Chromium facilities (e.g. GC observation).
+tests that remain here depend on Monyhar facilities (e.g. GC observation).

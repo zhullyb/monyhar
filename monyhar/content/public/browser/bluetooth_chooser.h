@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -45,9 +45,9 @@ class CONTENT_EXPORT BluetoothChooser {
   BluetoothChooser() {}
   virtual ~BluetoothChooser();
 
-  // Some platforms (especially Android) require Chromium to have permission
+  // Some platforms (especially Android) require Monyhar to have permission
   // from the user before it can scan for Bluetooth devices. This function
-  // returns false if Chromium isn't even allowed to ask. It defaults to true.
+  // returns false if Monyhar isn't even allowed to ask. It defaults to true.
   virtual bool CanAskForScanningPermission();
 
   // Lets the chooser tell the user the state of the Bluetooth adapter. This

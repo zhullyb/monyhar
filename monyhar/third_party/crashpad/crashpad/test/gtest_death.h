@@ -90,7 +90,7 @@
 //! \brief Wraps the ASSERT_DEATH_CRASH() macro to make assertions about death
 //!     caused by `CHECK()` failures.
 //!
-//! In an in-Chromium build in the official configuration, `CHECK()` does not
+//! In an in-Monyhar build in the official configuration, `CHECK()` does not
 //! print its condition or streamed messages. In that case, this macro uses an
 //! empty \a regex pattern when calling ASSERT_DEATH_CRASH() to avoid looking
 //! for any particular output on the standard error stream. In other build
@@ -108,7 +108,7 @@
 //! \brief Wraps the EXPECT_DEATH_CRASH() macro to make assertions about death
 //!     caused by `CHECK()` failures.
 //!
-//! In an in-Chromium build in the official configuration, `CHECK()` does not
+//! In an in-Monyhar build in the official configuration, `CHECK()` does not
 //! print its condition or streamed messages. In that case, this macro uses an
 //! empty \a regex pattern when calling EXPECT_DEATH_CRASH() to avoid looking
 //! for any particular output on the standard error stream. In other build

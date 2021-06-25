@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,22 +8,22 @@ from blinkpy.common.host_mock import MockHost
 from blinkpy.common.path_finder import RELATIVE_WEB_TESTS
 from blinkpy.common.system.executive import ScriptError
 from blinkpy.common.system.executive_mock import MockExecutive, mock_git_commands
-from blinkpy.w3c.monyhar_commit import ChromiumCommit
+from blinkpy.w3c.monyhar_commit import MonyharCommit
 
 CHROMIUM_WPT_DIR = RELATIVE_WEB_TESTS + 'external/wpt/'
 
 
-class ChromiumCommitTest(unittest.TestCase):
+class MonyharCommitTest(unittest.TestCase):
     def test_validates_sha(self):
         with self.assertRaises(AssertionError):
-            ChromiumCommit(MockHost(), sha='rutabaga')
+            MonyharCommit(MockHost(), sha='rutabaga')
 
     def test_derives_sha_from_position(self):
         host = MockHost()
         host.executive = MockExecutive(
             output='c881563d734a86f7d9cd57ac509653a61c45c240')
         pos = 'Cr-Commit-Position: refs/heads/main@{#789}'
-        monyhar_commit = ChromiumCommit(host, position=pos)
+        monyhar_commit = MonyharCommit(host, position=pos)
 
         self.assertEqual(monyhar_commit.position, 'refs/heads/main@{#789}')
         self.assertEqual(monyhar_commit.sha,
@@ -35,7 +35,7 @@ class ChromiumCommitTest(unittest.TestCase):
             'footers':
             'refs/heads/main@{#789}'
         })
-        monyhar_commit = ChromiumCommit(
+        monyhar_commit = MonyharCommit(
             host, sha='c881563d734a86f7d9cd57ac509653a61c45c240')
 
         self.assertEqual(monyhar_commit.position, 'refs/heads/main@{#789}')
@@ -50,7 +50,7 @@ class ChromiumCommitTest(unittest.TestCase):
                 'Unable to infer commit position from footers rutabaga')
 
         host.executive = MockExecutive(run_command_fn=run_command)
-        monyhar_commit = ChromiumCommit(
+        monyhar_commit = MonyharCommit(
             host, sha='c881563d734a86f7d9cd57ac509653a61c45c240')
 
         self.assertEqual(monyhar_commit.position, 'no-commit-position-yet')
@@ -71,7 +71,7 @@ class ChromiumCommitTest(unittest.TestCase):
         })
 
         position_footer = 'Cr-Commit-Position: refs/heads/main@{#789}'
-        monyhar_commit = ChromiumCommit(host, position=position_footer)
+        monyhar_commit = MonyharCommit(host, position=position_footer)
 
         files = monyhar_commit.filtered_changed_files()
 
@@ -83,12 +83,12 @@ class ChromiumCommitTest(unittest.TestCase):
         self.assertEqual(files, qualified_expected_files)
 
     def test_short_sha(self):
-        monyhar_commit = ChromiumCommit(
+        monyhar_commit = MonyharCommit(
             MockHost(), sha='c881563d734a86f7d9cd57ac509653a61c45c240')
         self.assertEqual(monyhar_commit.short_sha, 'c881563d73')
 
     def test_url(self):
-        monyhar_commit = ChromiumCommit(
+        monyhar_commit = MonyharCommit(
             MockHost(), sha='c881563d734a86f7d9cd57ac509653a61c45c240')
         self.assertEqual(
             monyhar_commit.url(),

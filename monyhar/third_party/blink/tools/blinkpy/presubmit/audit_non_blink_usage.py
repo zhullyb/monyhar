@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Utilities for checking for disallowed usage of non-Blink declarations.
@@ -273,7 +273,7 @@ _CONFIG = [
             'cc::NodeInfo',
             'cc::UsePaintCache',
 
-            # Chromium geometry types.
+            # Monyhar geometry types.
             'gfx::Insets',
             'gfx::InsetsF',
             'gfx::Point',
@@ -292,7 +292,7 @@ _CONFIG = [
             'gfx::Vector2d',
             'gfx::Vector2dF',
 
-            # Chromium geometry operations.
+            # Monyhar geometry operations.
             'cc::MathUtil',
             'gfx::ComputeApproximateMaxScale',
             'gfx::ComputeTransform2dScaleComponents',
@@ -301,7 +301,7 @@ _CONFIG = [
             # Range type.
             'gfx::Range',
 
-            # Wrapper of SkRegion used in Chromium.
+            # Wrapper of SkRegion used in Monyhar.
             'cc::Region',
 
             # A geometric set of TouchActions associated with areas, and only
@@ -557,7 +557,7 @@ _CONFIG = [
              'Use WTF::Bind or WTF::BindRepeating.'),
             ('std::(deque|map|multimap|set|vector|unordered_set|unordered_map)',
              'Use WTF containers like WTF::Deque, WTF::HashMap, WTF::HashSet or WTF::Vector instead of the banned std containers. '
-             'However, it is fine to use std containers at the boundary layer between Blink and Chromium. '
+             'However, it is fine to use std containers at the boundary layer between Blink and Monyhar. '
              'If you are in this case, you can use --bypass-hooks option to avoid the presubmit check when uploading your CL.'
              ),
             # network::mojom::Foo is allowed to use as non-blink mojom type.

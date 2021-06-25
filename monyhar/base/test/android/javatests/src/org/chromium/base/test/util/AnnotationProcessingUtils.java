@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -62,7 +62,7 @@ public abstract class AnnotationProcessingUtils {
                 .getMatchingAnnotations(annotatedElement);
     }
 
-    private static boolean isChromiumAnnotation(Annotation annotation) {
+    private static boolean isMonyharAnnotation(Annotation annotation) {
         Package pkg = annotation.annotationType().getPackage();
         return pkg != null && pkg.getName().startsWith("org.monyhar");
     }
@@ -179,7 +179,7 @@ public abstract class AnnotationProcessingUtils {
 
             // 3. Check if we can get skip some redundant iterations and avoid cycles.
             if (!visited.add(annotation.annotationType())) return;
-            if (!isChromiumAnnotation(annotation)) return;
+            if (!isMonyharAnnotation(annotation)) return;
 
             // 4. Expand the working set
             queueAnnotations(Arrays.asList(annotation.annotationType().getDeclaredAnnotations()),

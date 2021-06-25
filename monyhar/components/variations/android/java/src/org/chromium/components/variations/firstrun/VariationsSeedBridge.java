@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ import org.monyhar.base.metrics.RecordHistogram;
 
 /**
  * VariationsSeedBridge is a class which is used to pass variations first run seed that was fetched
- * before the actual Chrome first run to Chromium core. Class provides methods to store the seed
+ * before the actual Chrome first run to Monyhar core. Class provides methods to store the seed
  * in SharedPreferences and to get the seed from there. To store raw seed data class serializes
  * byte[] to Base64 encoded string and decodes this string before passing to C++ side.
  */

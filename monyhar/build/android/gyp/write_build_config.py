@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -38,7 +38,7 @@ The .build_config file format
 # Introduction
 
 This document tries to explain the format of `.build_config` generated during
-the Android build of Chromium. For a higher-level explanation of these files,
+the Android build of Monyhar. For a higher-level explanation of these files,
 please read
 [build/android/docs/build_config.md](build/android/docs/build_config.md).
 
@@ -406,7 +406,7 @@ APK.
 
 * `native['loadable_modules']`
 A list of native libraries to store within the APK, in addition to those from
-`native['libraries']`. These correspond to things like the Chromium linker
+`native['libraries']`. These correspond to things like the Monyhar linker
 or instrumentation libraries.
 
 * `native['secondary_abi_loadable_modules']`

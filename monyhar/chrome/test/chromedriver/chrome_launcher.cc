@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1178,7 +1178,7 @@ Status RemoveOldDevToolsActivePortFile(const base::FilePath& user_data_dir) {
       base::StringPrintf(
           "Could not remove old devtools port file. Perhaps the given "
           "user-data-dir at %s is still attached to a running %s or "
-          "Chromium process",
+          "Monyhar process",
           user_data_dir.AsUTF8Unsafe().c_str(), kBrowserShortName));
 }
 

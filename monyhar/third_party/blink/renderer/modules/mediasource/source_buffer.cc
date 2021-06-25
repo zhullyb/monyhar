@@ -1043,7 +1043,7 @@ void SourceBuffer::ChangeType_Locked(
   ContentType content_type(type);
   String codecs = content_type.Parameter("codecs");
   // TODO(wolenetz): Refactor and use a less-strict version of isTypeSupported
-  // here. As part of that, CanChangeType in Chromium should inherit relaxation
+  // here. As part of that, CanChangeType in Monyhar should inherit relaxation
   // of impl's StreamParserFactory (since it returns true iff a stream parser
   // can be constructed with |type|). See https://crbug.com/535738.
   if (!MediaSource::IsTypeSupportedInternal(
@@ -1657,11 +1657,11 @@ bool SourceBuffer::InitializationSegmentReceived(
     }
 
     // 3.2 Add the appropriate track descriptions from this initialization
-    //     segment to each of the track buffers.  This is done in Chromium code
+    //     segment to each of the track buffers.  This is done in Monyhar code
     //     in stream parsers and demuxer implementations.
 
     // 3.3 Set the need random access point flag on all track buffers to true.
-    // This is done in Chromium code, see MediaSourceState::OnNewConfigs.
+    // This is done in Monyhar code, see MediaSourceState::OnNewConfigs.
   }
 
   // 4. Let active track flag equal false.
@@ -1673,7 +1673,7 @@ bool SourceBuffer::InitializationSegmentReceived(
     // 5.1 If the initialization segment contains tracks with codecs the user
     //     agent does not support, then run the append error algorithm with the
     //     decode error parameter set to true and abort these steps.
-    // This is done in Chromium code, see MediaSourceState::OnNewConfigs.
+    // This is done in Monyhar code, see MediaSourceState::OnNewConfigs.
 
     // 5.2 For each audio track in the initialization segment, run following
     //     steps:

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -76,7 +76,7 @@ public class CrashBugUrlFactoryTest {
                 + "\n"
                 + "****DO NOT CHANGE BELOW THIS LINE****\n"
                 + "Crash ID: http://crash/a1b2c3d4\n"
-                + "Instructions for triaging this report (Chromium members only): "
+                + "Instructions for triaging this report (Monyhar members only): "
                 + "https://bit.ly/2SM1Y9t\n";
 
         Intent intent = new CrashBugUrlFactory(crashInfo).getReportIntent();

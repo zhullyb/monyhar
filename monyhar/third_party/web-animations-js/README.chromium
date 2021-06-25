@@ -21,4 +21,4 @@ number in third_party/polymer/v1_0/bower.json.
 Local modifications:
 The source mapping directives at the end of the minified files have been
 removed so the inspector does not try to load the maps, which are not compiled
-and would cause Chromium to crash in Debug builds.
+and would cause Monyhar to crash in Debug builds.

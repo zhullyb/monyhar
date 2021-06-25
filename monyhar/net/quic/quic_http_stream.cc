@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -57,7 +57,7 @@ void NetLogQuicPushStream(const NetLogWithSource& net_log1,
 }  // namespace
 
 QuicHttpStream::QuicHttpStream(
-    std::unique_ptr<QuicChromiumClientSession::Handle> session,
+    std::unique_ptr<QuicMonyharClientSession::Handle> session,
     std::vector<std::string> dns_aliases)
     : MultiplexedHttpStream(std::move(session)),
       next_state_(STATE_NONE),

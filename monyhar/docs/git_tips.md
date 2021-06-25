@@ -1,7 +1,7 @@
 # Git Tips
 
 When using Git, there are a few tips that are particularly useful when working
-on the Chromium codebase, especially due to its size.
+on the Monyhar codebase, especially due to its size.
 
 [TOC]
 
@@ -31,17 +31,17 @@ The following resources can provide background on how Git works:
 
 ## Configuring the output of "git log"
 
-By default, the date that "git log" displays is the "author date." In Chromium,
+By default, the date that "git log" displays is the "author date." In Monyhar,
 this generally corresponds to the date that the committed patch was last
 uploaded. In most cases, however, the date that is of interest is the date that
 the patch was committed in the tree. To configure "git log" to instead display
-the latter date for your Chromium checkout, execute the following command:
+the latter date for your Monyhar checkout, execute the following command:
 
 ```shell
 git config format.pretty 'format:%C(auto,yellow)commit %H%C(auto)%d%nAuthor:    %an <%ae>%nCommitted: %cd%n%n%w(0,4,4)%B%-%n'
 ```
 
-If you want to change *all* your repos (e.g., because you have multiple Chromium
+If you want to change *all* your repos (e.g., because you have multiple Monyhar
 checkouts and don't care about having the default for other repos), add
 "--global" after "config" in the above command.
 

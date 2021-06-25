@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -1667,7 +1667,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
     expires_after="2022-05-07">
   <owner>xhwang@monyhar.org</owner>
   <owner>media-dev@monyhar.org</owner>
-  <summary>Result of EME promises that were handled by Chromium code.</summary>
+  <summary>Result of EME promises that were handled by Monyhar code.</summary>
 </histogram>
 
 <histogram name="Media.EME.CdmFileIO.FileSizeKBOnError" units="KB"
@@ -1715,8 +1715,8 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>xhwang@monyhar.org</owner>
   <owner>media-dev@monyhar.org</owner>
   <summary>
-    Chromium could support multiple versions of CDM interface. This metric
-    records the CDM interface version that the CDM created by Chromium uses.
+    Monyhar could support multiple versions of CDM interface. This metric
+    records the CDM interface version that the CDM created by Monyhar uses.
     This is recorded once per CDM instance.
   </summary>
 </histogram>

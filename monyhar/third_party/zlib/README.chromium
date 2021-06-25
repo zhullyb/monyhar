@@ -21,7 +21,7 @@ Local Modifications:
    minizip libraries are present. Many other files have been omitted. Only *.c
    and *.h files from the upstream root directory and contrib/minizip were
    imported.
- - The contents of the google directory are original Chromium-specific
+ - The contents of the google directory are original Monyhar-specific
    additions.
  - Added chromeconf.h
  - Plus the changes in 'patches' folder.

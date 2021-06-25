@@ -1,6 +1,6 @@
-# Get the code: check out, build, and run Chromium. 
+# Get the code: check out, build, and run Monyhar. 
 
-Chromium supports building on Windows, Mac and Linux host systems.
+Monyhar supports building on Windows, Mac and Linux host systems.
 
 Linux is required for building Android, and a Mac is required for building iOS.
 

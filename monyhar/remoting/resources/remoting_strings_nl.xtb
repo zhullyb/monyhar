@@ -72,7 +72,7 @@ Als <ph name="SERVICE_SCRIPT_NAME" /> al is aangevinkt, vink je dit eerst uit en
 <translation id="4405930547258349619">Basisbibliotheek</translation>
 <translation id="443560535555262820">Voorkeuren voor toegankelijkheid openen</translation>
 <translation id="4450893287417543264">Niet meer tonen</translation>
-<translation id="4512952200932940229">Copyright 2021 De auteurs van Chromium. Alle rechten voorbehouden.</translation>
+<translation id="4512952200932940229">Copyright 2021 De auteurs van Monyhar. Alle rechten voorbehouden.</translation>
 <translation id="4513946894732546136">Feedback</translation>
 <translation id="4563926062592110512">Verbinding met client verbroken: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Externe apparaten</translation>
@@ -147,7 +147,7 @@ Als <ph name="SERVICE_SCRIPT_NAME" /> al is aangevinkt, vink je dit eerst uit en
 <translation id="7868137160098754906">Voer je pincode voor de externe computer in.</translation>
 <translation id="7895403300744144251">Beveiligingsbeleid op de externe computer staat verbindingen vanuit je account niet toe.</translation>
 <translation id="7936528439960309876">Rechts docken</translation>
-<translation id="7970576581263377361">Verificatie mislukt. Log opnieuw in bij Chromium.</translation>
+<translation id="7970576581263377361">Verificatie mislukt. Log opnieuw in bij Monyhar.</translation>
 <translation id="7981525049612125370">De externe sessie is verlopen.</translation>
 <translation id="8038111231936746805">(standaard)</translation>
 <translation id="8041089156583427627">Feedback sturen</translation>
@@ -181,6 +181,6 @@ Als '<ph name="SERVICE_SCRIPT_NAME" />' al is aangevinkt, moet je dit uitvinken 
 <translation id="9187628920394877737">Schermopnamerechten verlenen aan <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Ongeldige hostconfiguratie.</translation>
 <translation id="981121421437150478">Offline</translation>
-<translation id="985602178874221306">De auteurs van Chromium</translation>
+<translation id="985602178874221306">De auteurs van Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (laatst online: <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

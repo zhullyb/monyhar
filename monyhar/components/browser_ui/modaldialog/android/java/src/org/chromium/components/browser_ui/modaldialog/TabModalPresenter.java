@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -112,8 +112,8 @@ public abstract class TabModalPresenter extends ModalDialogManager.Presenter {
         if (mDialogContainer == null) mDialogContainer = createDialogContainer();
 
         int style = model.get(ModalDialogProperties.PRIMARY_BUTTON_FILLED)
-                ? R.style.Theme_Chromium_ModalDialog_FilledPrimaryButton
-                : R.style.Theme_Chromium_ModalDialog_TextPrimaryButton;
+                ? R.style.Theme_Monyhar_ModalDialog_FilledPrimaryButton
+                : R.style.Theme_Monyhar_ModalDialog_TextPrimaryButton;
         mDialogView = loadDialogView(style);
         mModelChangeProcessor =
                 PropertyModelChangeProcessor.create(model, mDialogView, new ViewBinder());

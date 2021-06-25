@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ namespace {
 
 struct SupportedFormat {
   cros::mojom::HalPixelFormat hal_format;
-  ChromiumPixelFormat cr_format;
+  MonyharPixelFormat cr_format;
 } const kSupportedFormats[] = {
     // The Android camera HAL v3 has three types of mandatory pixel formats:
     //
@@ -39,9 +39,9 @@ struct SupportedFormat {
 
 }  // namespace
 
-std::vector<ChromiumPixelFormat> PixFormatHalToChromium(
+std::vector<MonyharPixelFormat> PixFormatHalToMonyhar(
     cros::mojom::HalPixelFormat from) {
-  std::vector<ChromiumPixelFormat> ret;
+  std::vector<MonyharPixelFormat> ret;
   for (const auto& it : kSupportedFormats) {
     if (it.hal_format == from) {
       ret.push_back(it.cr_format);

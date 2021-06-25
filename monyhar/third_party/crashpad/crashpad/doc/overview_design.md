@@ -525,16 +525,16 @@ or other resource duress at the time of crash.
 
 ### Dependencies
 
-Aside from system headers and APIs, when used outside of Chromium, Crashpad has
-a dependency on “mini_monyhar”, which is a subset of the Chromium base library.
-This is to allow non-Chromium clients to use Crashpad, without taking a direct
-dependency on the Chromium base, while allowing Chromium projects to use
+Aside from system headers and APIs, when used outside of Monyhar, Crashpad has
+a dependency on “mini_monyhar”, which is a subset of the Monyhar base library.
+This is to allow non-Monyhar clients to use Crashpad, without taking a direct
+dependency on the Monyhar base, while allowing Monyhar projects to use
 Crashpad with minimum code duplication or hassle. When using Crashpad as part of
-Chromium, Chromium’s own copy of the base library is used instead of
+Monyhar, Monyhar’s own copy of the base library is used instead of
 mini_monyhar.
 
 The downside to this is that mini_monyhar must be kept up to date with
-interface and implementation changes in Chromium base, for the subset of
+interface and implementation changes in Monyhar base, for the subset of
 functionality used by Crashpad.
 
 ## Caveats

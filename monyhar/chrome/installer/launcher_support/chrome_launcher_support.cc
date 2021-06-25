@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ const wchar_t kUpdateClientsRegKey[] = L"Software\\Google\\Update\\Clients";
 const wchar_t kBrowserAppGuid[] = L"{8A69D345-D564-463c-AFF1-A69D9E530F96}";
 const wchar_t kSxSBrowserAppGuid[] = L"{4ea16ac7-fd5a-47c3-875b-dbf4a2008c20}";
 #else
-const wchar_t kInstallationRegKey[] = L"Software\\Chromium";
+const wchar_t kInstallationRegKey[] = L"Software\\Monyhar";
 #endif
 
 // Copied from util_constants.cc.
@@ -100,7 +100,7 @@ base::FilePath GetSetupExeForInstallationLevel(InstallationLevel level) {
   // Look in the registry for Chrome.
   return GetSetupExeFromRegistry(level, kBrowserAppGuid);
 #else
-  // For Chromium, there are no GUIDs. Just look in the Chromium registry key.
+  // For Monyhar, there are no GUIDs. Just look in the Monyhar registry key.
   return GetSetupExeFromRegistry(level, nullptr);
 #endif
 }
@@ -136,7 +136,7 @@ base::FilePath GetChromePathForInstallationLevel(InstallationLevel level,
     return FindExeRelativeToSetupExe(
         GetSetupExeFromRegistry(level, kSxSBrowserAppGuid), kChromeExe);
 #else
-    // There is no SxS build for Chromium.
+    // There is no SxS build for Monyhar.
     return base::FilePath();
 #endif
   } else {
@@ -155,11 +155,11 @@ base::FilePath GetAnyChromePath(bool is_sxs) {
 
 base::Version GetChromeVersionForInstallationLevel(InstallationLevel level,
                                                    bool is_sxs) {
-  const wchar_t* app_guid = nullptr;  // Chromium doesn't use App GUIDs.
+  const wchar_t* app_guid = nullptr;  // Monyhar doesn't use App GUIDs.
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
   app_guid = is_sxs ? kSxSBrowserAppGuid : kBrowserAppGuid;
 #else
-  // There is no SxS build for Chromium.
+  // There is no SxS build for Monyhar.
   if (is_sxs)
     return base::Version();
 #endif

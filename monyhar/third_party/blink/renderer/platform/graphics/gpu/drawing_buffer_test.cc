@@ -346,10 +346,10 @@ TEST_F(DrawingBufferTest, verifyInsertAndWaitSyncTokenCorrectly) {
   testing::Mock::VerifyAndClearExpectations(gl_);
 }
 
-class DrawingBufferImageChromiumTest : public DrawingBufferTest,
-                                       private ScopedWebGLImageChromiumForTest {
+class DrawingBufferImageMonyharTest : public DrawingBufferTest,
+                                       private ScopedWebGLImageMonyharForTest {
  public:
-  DrawingBufferImageChromiumTest() : ScopedWebGLImageChromiumForTest(true) {}
+  DrawingBufferImageMonyharTest() : ScopedWebGLImageMonyharForTest(true) {}
 
  protected:
   void SetUp() override {
@@ -382,7 +382,7 @@ class DrawingBufferImageChromiumTest : public DrawingBufferTest,
       platform_;
 };
 
-TEST_F(DrawingBufferImageChromiumTest, VerifyResizingReallocatesImages) {
+TEST_F(DrawingBufferImageMonyharTest, VerifyResizingReallocatesImages) {
   GLES2InterfaceForTests* gl_ = drawing_buffer_->ContextGLForTests();
   viz::TestSharedImageInterface* sii =
       drawing_buffer_->SharedImageInterfaceForTests();
@@ -511,7 +511,7 @@ TEST_F(DrawingBufferImageChromiumTest, VerifyResizingReallocatesImages) {
   EXPECT_EQ(0u, sii->shared_image_count());
 }
 
-TEST_F(DrawingBufferImageChromiumTest, AllocationFailure) {
+TEST_F(DrawingBufferImageMonyharTest, AllocationFailure) {
   GLES2InterfaceForTests* gl_ = drawing_buffer_->ContextGLForTests();
   viz::TestGpuMemoryBufferManager* gmb_manager =
       static_cast<viz::TestGpuMemoryBufferManager*>(
@@ -686,7 +686,7 @@ TEST(DrawingBufferDepthStencilTest, packedDepthStencilSupported) {
         std::move(provider), graphics_info, using_swap_chain, nullptr,
         IntSize(10, 10), premultiplied_alpha, want_alpha_channel,
         want_depth_buffer, want_stencil_buffer, want_antialiasing, preserve,
-        DrawingBuffer::kWebGL1, DrawingBuffer::kAllowChromiumImage,
+        DrawingBuffer::kWebGL1, DrawingBuffer::kAllowMonyharImage,
         kLow_SkFilterQuality, CanvasColorParams(),
         gl::GpuPreference::kHighPerformance);
 
@@ -758,7 +758,7 @@ TEST_F(DrawingBufferTest,
   scoped_refptr<DrawingBuffer> too_big_drawing_buffer = DrawingBuffer::Create(
       nullptr, graphics_info, false /* using_swap_chain */, nullptr,
       too_big_size, false, false, false, false, false, DrawingBuffer::kDiscard,
-      DrawingBuffer::kWebGL1, DrawingBuffer::kAllowChromiumImage,
+      DrawingBuffer::kWebGL1, DrawingBuffer::kAllowMonyharImage,
       kLow_SkFilterQuality, CanvasColorParams(),
       gl::GpuPreference::kHighPerformance);
   EXPECT_EQ(too_big_drawing_buffer, nullptr);

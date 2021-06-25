@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -69,7 +69,7 @@ TEST_F(BlockTest, BlockAndCPlusPlus) {
 #ifdef XCODE_CLANG
       // TODO(crbug.com/939749): With newer Clang versions, the expected value
       // is 3. Remove this ifdef when moving to a newer xcode. Note:
-      // XCODE_CLANG is a Chromium-specific define local to this build target.
+      // XCODE_CLANG is a Monyhar-specific define local to this build target.
       stack_block(4);
 #else
       stack_block(3);

@@ -1,11 +1,11 @@
 @echo off
 
-REM Copyright 2021 The Chromium Authors. All rights reserved.
+REM Copyright 2021 The Monyhar Authors. All rights reserved.
 REM Use of this source code is governed by a BSD-style license that can be
 REM found in the LICENSE file.
 
 REM Helper batch file to launch windbg, either from a local install or from the
-REM packaged Chromium toolchain.
+REM packaged Monyhar toolchain.
 REM There are windbg32.bat and windbg64.bat flavors of this batch file - keep
 REM them synchronized when making changes.
 

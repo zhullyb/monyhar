@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -474,7 +474,7 @@ void MimeWriter::AddItemWithoutTrailingSpaces(const void* base, size_t size) {
 }
 
 #if BUILDFLAG(IS_CHROMEOS_ASH)
-// This subclass is used on Chromium OS to report crashes in a format easy for
+// This subclass is used on Monyhar OS to report crashes in a format easy for
 // the central crash reporting facility to understand.
 // Format is <name>:<data length in decimal>:<data>
 class CrashReporterWriter : public MimeWriter {

@@ -1,8 +1,8 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-'''Chromium presubmit script for fetch API layout tests.
+'''Monyhar presubmit script for fetch API layout tests.
 
 See http://dev.monyhar.org/developers/how-tos/depottools/presubmit-scripts.
 '''

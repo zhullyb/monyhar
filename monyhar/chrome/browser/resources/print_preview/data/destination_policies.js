@@ -1,9 +1,9 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 /**
- * Enumeration of color mode restrictions used by Chromium.
+ * Enumeration of color mode restrictions used by Monyhar.
  * This has to coincide with |printing::ColorModeRestriction| as defined in
  * printing/backend/printing_restrictions.h
  * @enum {number}
@@ -15,7 +15,7 @@ export const ColorModeRestriction = {
 };
 
 /**
- * Enumeration of duplex mode restrictions used by Chromium.
+ * Enumeration of duplex mode restrictions used by Monyhar.
  * This has to coincide with |printing::DuplexModeRestriction| as defined in
  * printing/backend/printing_restrictions.h
  * @enum {number}
@@ -29,7 +29,7 @@ export const DuplexModeRestriction = {
 };
 
 /**
- * Enumeration of PIN printing mode restrictions used by Chromium.
+ * Enumeration of PIN printing mode restrictions used by Monyhar.
  * This has to coincide with |printing::PinModeRestriction| as defined in
  * printing/backend/printing_restrictions.h
  * @enum {number}

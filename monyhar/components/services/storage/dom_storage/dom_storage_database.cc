@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,10 +27,10 @@ namespace {
 // which has been invalidated (e.g. by a failed |RewriteDB()| operation).
 const char kInvalidDatabaseMessage[] = "DomStorageDatabase no longer valid.";
 
-class DomStorageDatabaseEnv : public leveldb_env::ChromiumEnv {
+class DomStorageDatabaseEnv : public leveldb_env::MonyharEnv {
  public:
   DomStorageDatabaseEnv()
-      : ChromiumEnv("ChromiumEnv.StorageService", CreateFilesystemProxy()) {}
+      : MonyharEnv("MonyharEnv.StorageService", CreateFilesystemProxy()) {}
 
  private:
   DISALLOW_COPY_AND_ASSIGN(DomStorageDatabaseEnv);
@@ -43,7 +43,7 @@ DomStorageDatabaseEnv* GetDomStorageDatabaseEnv() {
 
 std::string MakeFullPersistentDBName(const base::FilePath& directory,
                                      const std::string& db_name) {
-  // ChromiumEnv treats DB name strings as UTF-8 file paths.
+  // MonyharEnv treats DB name strings as UTF-8 file paths.
   return directory.Append(base::FilePath::FromUTF8Unsafe(db_name))
       .AsUTF8Unsafe();
 }

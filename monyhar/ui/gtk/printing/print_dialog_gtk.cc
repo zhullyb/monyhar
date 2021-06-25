@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -262,7 +262,7 @@ void PrintDialogGtk::UpdateSettings(
     // makes the most sense here.
     //
     // TODO(crbug.com/1119956): Since PrintBackendCUPS parses the PPD file in
-    // Chromium, it should be possible to store the resolution attribute name
+    // Monyhar, it should be possible to store the resolution attribute name
     // as well as a map from the gfx::Size resolution to the std::string
     // serialized value (in case a non-standard value such as 500x500dpi is
     // present) in the PrinterCapsAndDefaults object. This object then needs to

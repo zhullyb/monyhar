@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@
 
 TEST(AutocompleteMatchTypeTest, AccessibilityLabelHistory) {
   const std::u16string& kTestUrl = u"https://www.monyhar.org";
-  const std::u16string& kTestTitle = u"The Chromium Projects";
+  const std::u16string& kTestTitle = u"The Monyhar Projects";
 
   // Test plain url.
   AutocompleteMatch match;

@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -103,8 +103,8 @@ public class ImeAdapterImpl
 
     private long mNativeImeAdapterAndroid;
     private InputMethodManagerWrapper mInputMethodManagerWrapper;
-    private ChromiumBaseInputConnection mInputConnection;
-    private ChromiumBaseInputConnection.Factory mInputConnectionFactory;
+    private MonyharBaseInputConnection mInputConnection;
+    private MonyharBaseInputConnection.Factory mInputConnectionFactory;
 
     // NOTE: This object will not be released by Android framework until the matching
     // ResultReceiver in the InputMethodService (IME app) gets gc'ed.
@@ -312,7 +312,7 @@ public class ImeAdapterImpl
      * @see View#onCreateInputConnection(EditorInfo)
      * @param allowKeyboardLearning Whether to allow keyboard (IME) app to do personalized learning.
      */
-    public ChromiumBaseInputConnection onCreateInputConnection(
+    public MonyharBaseInputConnection onCreateInputConnection(
             EditorInfo outAttrs, boolean allowKeyboardLearning) {
         // InputMethodService evaluates fullscreen mode even when the new input connection is
         // null. This makes sure IME doesn't enter fullscreen mode or open custom UI.
@@ -352,7 +352,7 @@ public class ImeAdapterImpl
         return mInputConnection;
     }
 
-    private void setInputConnection(ChromiumBaseInputConnection inputConnection) {
+    private void setInputConnection(MonyharBaseInputConnection inputConnection) {
         if (mInputConnection == inputConnection) return;
         // The previous input connection might be waiting for state update.
         if (mInputConnection != null) mInputConnection.unblockOnUiThread();
@@ -373,12 +373,12 @@ public class ImeAdapterImpl
     }
 
     @VisibleForTesting
-    void setInputConnectionFactory(ChromiumBaseInputConnection.Factory factory) {
+    void setInputConnectionFactory(MonyharBaseInputConnection.Factory factory) {
         mInputConnectionFactory = factory;
     }
 
     @VisibleForTesting
-    ChromiumBaseInputConnection.Factory getInputConnectionFactoryForTest() {
+    MonyharBaseInputConnection.Factory getInputConnectionFactoryForTest() {
         return mInputConnectionFactory;
     }
 
@@ -615,7 +615,7 @@ public class ImeAdapterImpl
         }
         // Detach input connection by returning null from onCreateInputConnection().
         if (!focusedNodeEditable() && mInputConnection != null) {
-            ChromiumBaseInputConnection inputConnection = mInputConnection;
+            MonyharBaseInputConnection inputConnection = mInputConnection;
             restartInput(); // resets mInputConnection
             // crbug.com/666982: Restart input may not happen if view is detached from window, but
             // we need to unblock in any case. We want to call this after restartInput() to

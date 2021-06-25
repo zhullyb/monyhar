@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@ namespace blink {
 class VideoTrackAdapterSettings;
 
 // This class encapsulates creation of a Blink MediaStream having inside the
-// necessary Blink and Chromium, track and source. The Chrome Video source is
+// necessary Blink and Monyhar, track and source. The Chrome Video source is
 // a mock.
 class MockMediaStreamRegistry final {
  public:

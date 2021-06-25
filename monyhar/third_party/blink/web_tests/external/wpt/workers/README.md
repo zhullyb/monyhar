@@ -49,7 +49,7 @@ and its assertion failures (if any) are all reported in the final results.
 
 `console.log()` might not appear in the test results and
 thus might not be useful for printf debugging.
-For example, in Chromium, this message
+For example, in Monyhar, this message
 
 - Appears (in stderr) on a window or a dedicated worker, but
 - Does NOT appear on a shared worker or a service worker.

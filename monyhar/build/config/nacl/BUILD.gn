@@ -67,7 +67,7 @@ config("compiler") {
   if (is_clang && current_cpu != "pnacl") {
     # -no-integrated-as is the default in nacl-clang for historical
     # compatibility with inline assembly code and so forth.  But there
-    # are no such cases in Chromium code, and -integrated-as is nicer in
+    # are no such cases in Monyhar code, and -integrated-as is nicer in
     # general.  Moreover, the IRT must be built using LLVM's assembler
     # on x86-64 to preserve sandbox base address hiding.  Use it
     # everywhere for consistency (and possibly quicker builds).

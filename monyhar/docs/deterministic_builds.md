@@ -1,7 +1,7 @@
 Deterministic builds
 ====================
 
-Chromium's build is deterministic. This means that building Chromium at the
+Monyhar's build is deterministic. This means that building Monyhar at the
 same revision will produce exactly the same binary in two builds, even if
 these builds are on different machines, in build directories with different
 names, or if one build is a clobber build and the other build is an incremental
@@ -12,7 +12,7 @@ Furthermore, even if a binary is built at two different revisions but none of
 the revisions in between logically affect a binary, then builds at those two
 revisions should produce exactly the same binary too (imagine a revision that
 modifies code `chrome/` while we're looking at `base_unittests`). This isn't
-enforced by bots, and it's currently not always true in Chromium's build -- but
+enforced by bots, and it's currently not always true in Monyhar's build -- but
 it's true for some binaries at least, and it's supposed to become more true
 over time.
 

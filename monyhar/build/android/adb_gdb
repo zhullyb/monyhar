@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
 
-# A generic script used to attach to a running Chromium process and
+# A generic script used to attach to a running Monyhar process and
 # debug it. Most users should not use this directly, but one of the
 # wrapper scripts like adb_gdb_content_shell
 #
@@ -18,7 +18,7 @@ PROGDIR=$(dirname "$0")
 # Force locale to C to allow recognizing output from subprocesses.
 LC_ALL=C
 
-# Location of Chromium-top-level sources.
+# Location of Monyhar-top-level sources.
 CHROMIUM_SRC=$(cd "$PROGDIR"/../.. >/dev/null && pwd 2>/dev/null)
 
 TMPDIR=
@@ -457,7 +457,7 @@ if [ -z "$TARGET_ARCH" ]; then
     TARGET_ARCH=arm
   fi
 else
-  # Nit: accept Chromium's 'ia32' as a valid target architecture. This
+  # Nit: accept Monyhar's 'ia32' as a valid target architecture. This
   # script prefers the NDK 'x86' name instead because it uses it to find
   # NDK-specific files (host gdb) with it.
   if [ "$TARGET_ARCH" = "ia32" ]; then

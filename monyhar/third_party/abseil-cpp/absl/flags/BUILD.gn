@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -28,7 +28,7 @@ absl_source_set("program_name") {
 
 # Since absl/flags are only used by some test binaries (e.g. in WebRTC),
 # there is no need to strip flags from mobile platforms binaries.
-# This does not affect Chromium.
+# This does not affect Monyhar.
 config("absl_flags_config") {
   defines = [ "ABSL_FLAGS_STRIP_NAMES=0" ]
 }

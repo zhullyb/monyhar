@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -45,7 +45,7 @@
   // was added implicitly by adding flavors to the owned pasteboard of
   // OwningProvider, so call -types to actually get data.
   //
-  // Merge in the ui::kChromeDragDummyPboardType type, so that all of Chromium
+  // Merge in the ui::kChromeDragDummyPboardType type, so that all of Monyhar
   // is marked to receive the drags. TODO(avi): Wire up MacViews so that
   // BridgedContentView properly registers the result of View::GetDropFormats()
   // rather than OSExchangeDataProviderMac::SupportedPasteboardTypes().

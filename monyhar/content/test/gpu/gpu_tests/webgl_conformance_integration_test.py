@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -407,12 +407,12 @@ class WebGLConformanceIntegrationTest(gpu_integration_test.GpuIntegrationTest):
     cls.CustomizeBrowserArgs([])
     cls.StartBrowser()
     # By setting multiple server directories, the root of the server
-    # implicitly becomes the common base directory, i.e., the Chromium
+    # implicitly becomes the common base directory, i.e., the Monyhar
     # src dir, and all URLs have to be specified relative to that.
     cls.SetStaticServerDirs([
-        os.path.join(path_util.GetChromiumSrcDir(),
+        os.path.join(path_util.GetMonyharSrcDir(),
                      webgl_test_util.conformance_relpath),
-        os.path.join(path_util.GetChromiumSrcDir(),
+        os.path.join(path_util.GetMonyharSrcDir(),
                      webgl_test_util.extensions_relpath)
     ])
 

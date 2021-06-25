@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -65,7 +65,7 @@ if (prebuilt_instrumented_libraries_available) {
 
   config("prebuilt_ldflags") {
     ldflags = [
-      # Add a relative RPATH entry to Chromium binaries. This puts instrumented
+      # Add a relative RPATH entry to Monyhar binaries. This puts instrumented
       # DSOs before system-installed versions in library search path.
       "-Wl,-R,\$ORIGIN/instrumented_libraries_prebuilt/$sanitizer_type/lib",
       "-Wl,-z,origin",
@@ -166,7 +166,7 @@ if (use_locally_built_instrumented_libraries) {
 
   config("locally_built_ldflags") {
     ldflags = [
-      # Add a relative RPATH entry to Chromium binaries. This puts instrumented
+      # Add a relative RPATH entry to Monyhar binaries. This puts instrumented
       # DSOs before system-installed versions in library search path.
       "-Wl,-R,\$ORIGIN/instrumented_libraries/${sanitizer_type}/lib",
       "-Wl,-z,origin",

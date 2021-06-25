@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@ import android.widget.ImageView;
  */
 public class ImageZoomView extends AlertDialog {
     public ImageZoomView(Context context, Bitmap bitmap) {
-        super(context, R.style.Theme_Chromium_Fullscreen);
+        super(context, R.style.Theme_Monyhar_Fullscreen);
 
         View view = LayoutInflater.from(context).inflate(R.layout.image_zoom_view, null);
         view.setOnClickListener(v -> dismiss());

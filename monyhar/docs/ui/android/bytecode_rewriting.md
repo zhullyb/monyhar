@@ -41,7 +41,7 @@ ClassLoader.
 To fix this second issue, we modify the bytecode of `Fragment.getActivity()` in the AndroidX
 prebuilt .aar files to return a plain Activity instead of a FragmentActivity. This allows us to
 continue calling getActivity() as normal. Note that this does mean FragmentActivity-specific methods
-can no longer be used in Fragments, but there were no uses of them in Chromium that couldn't be
+can no longer be used in Fragments, but there were no uses of them in Monyhar that couldn't be
 trivially removed as of late 2020.
 
 ## How does it work?

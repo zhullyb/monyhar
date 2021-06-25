@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -84,7 +84,7 @@ class COMPONENT_EXPORT(KERBEROS) KerberosClient {
   static KerberosClient* Get();
 
   // Kerberos daemon D-Bus method calls. See org.monyhar.Kerberos.xml and
-  // kerberos_service.proto in Chromium OS code for the documentation of the
+  // kerberos_service.proto in Monyhar OS code for the documentation of the
   // methods and request/response messages.
   virtual void AddAccount(const kerberos::AddAccountRequest& request,
                           AddAccountCallback callback) = 0;

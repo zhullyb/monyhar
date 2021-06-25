@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -61,7 +61,7 @@ void PrintIceConfig(const IceConfig& ice_config) {
 scoped_refptr<TransportContext> TransportContext::ForTests(TransportRole role) {
   jingle_glue::JingleThreadWrapper::EnsureForCurrentMessageLoop();
   return new protocol::TransportContext(
-      std::make_unique<protocol::ChromiumPortAllocatorFactory>(), nullptr,
+      std::make_unique<protocol::MonyharPortAllocatorFactory>(), nullptr,
       protocol::NetworkSettings(
           protocol::NetworkSettings::NAT_TRAVERSAL_OUTGOING),
       role);

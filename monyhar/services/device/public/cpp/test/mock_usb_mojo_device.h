@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ class MockUsbMojoDevice : public mojom::UsbDevice {
   MockUsbMojoDevice();
   ~MockUsbMojoDevice() override;
 
-  // As current version of gmock in Chromium doesn't support move-only types,
+  // As current version of gmock in Monyhar doesn't support move-only types,
   // so it needs mock methods with OnceCallback pointer as parameter here.
   void Open(OpenCallback callback) override { OpenInternal(&callback); }
   MOCK_METHOD1(OpenInternal, void(OpenCallback*));

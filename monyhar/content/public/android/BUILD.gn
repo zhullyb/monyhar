@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -251,7 +251,7 @@ android_library("content_full_java") {
     "java/src/org/monyhar/content/browser/framehost/NavigationControllerImpl.java",
     "java/src/org/monyhar/content/browser/framehost/RenderFrameHostDelegate.java",
     "java/src/org/monyhar/content/browser/framehost/RenderFrameHostImpl.java",
-    "java/src/org/monyhar/content/browser/input/ChromiumBaseInputConnection.java",
+    "java/src/org/monyhar/content/browser/input/MonyharBaseInputConnection.java",
     "java/src/org/monyhar/content/browser/input/CursorAnchorInfoController.java",
     "java/src/org/monyhar/content/browser/input/DateTimeChooserAndroid.java",
     "java/src/org/monyhar/content/browser/input/ImeAdapterImpl.java",

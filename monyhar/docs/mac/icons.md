@@ -1,9 +1,9 @@
-# Chromium's .icns files
+# Monyhar's .icns files
 
 ## Sizes
 
 `.icns` files contain multiple sizes of icons. The standard `.icns` files for
-Chromium contain icons of the following sizes:
+Monyhar contain icons of the following sizes:
 
 | Size    | Type              |
 |---------|-------------------|

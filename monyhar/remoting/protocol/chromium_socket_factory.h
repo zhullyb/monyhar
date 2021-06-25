@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -17,11 +17,11 @@ namespace protocol {
 
 class SessionOptionsProvider;
 
-class ChromiumPacketSocketFactory : public rtc::PacketSocketFactory {
+class MonyharPacketSocketFactory : public rtc::PacketSocketFactory {
  public:
-  explicit ChromiumPacketSocketFactory(
+  explicit MonyharPacketSocketFactory(
       base::WeakPtr<SessionOptionsProvider> session_options_provider);
-  ~ChromiumPacketSocketFactory() override;
+  ~MonyharPacketSocketFactory() override;
 
   rtc::AsyncPacketSocket* CreateUdpSocket(
       const rtc::SocketAddress& local_address,
@@ -43,7 +43,7 @@ class ChromiumPacketSocketFactory : public rtc::PacketSocketFactory {
  private:
   base::WeakPtr<SessionOptionsProvider> session_options_provider_;
 
-  DISALLOW_COPY_AND_ASSIGN(ChromiumPacketSocketFactory);
+  DISALLOW_COPY_AND_ASSIGN(MonyharPacketSocketFactory);
 };
 
 }  // namespace protocol

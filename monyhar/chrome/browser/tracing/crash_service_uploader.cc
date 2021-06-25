@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -320,9 +320,9 @@ void TraceCrashServiceUploader::CreateAndStartURLLoader(
         semantics {
           sender: "Background Performance Traces"
           description:
-            "Under certain conditions, Chromium will send anonymized "
+            "Under certain conditions, Monyhar will send anonymized "
             "performance timeline data to Google for the purposes of improving "
-            "Chromium performance. We can set up a percentage of the "
+            "Monyhar performance. We can set up a percentage of the "
             "population to send back trace reports when a certain UMA "
             "histogram bucket is incremented, for example, 'For 1% of the Beta "
             "population, send us a trace if it ever takes more than 1 seconds "
@@ -333,14 +333,14 @@ void TraceCrashServiceUploader::CreateAndStartURLLoader(
           trigger:
             "Google-controlled triggering conditions, usually when a bad "
             "performance situation occurs."
-          data: "An anonymized Chromium trace (see about://tracing)."
+          data: "An anonymized Monyhar trace (see about://tracing)."
           destination: GOOGLE_OWNED_SERVICE
         }
         policy {
           cookies_allowed: NO
           setting:
             "You can enable or disable this feature via 'Automatically send "
-            "usage statistics and crash reports to Google' in Chromium's "
+            "usage statistics and crash reports to Google' in Monyhar's "
             "settings under Advanced, Privacy. This feature is enabled by "
             "default."
           chrome_policy {

@@ -187,7 +187,7 @@ and it will also verify that the `dragend` event is fired as specified. An even
 better test suite will also verify that the `drop` event is fired *before* the
 `dragend` event.
 
-In September of 2019, [Chromium accidentally changed the ordering of the `drop`
+In September of 2019, [Monyhar accidentally changed the ordering of the `drop`
 and `dragend`
 events](https://bugs.monyhar.org/p/monyhar/issues/detail?id=1005747), and as
 a result, real web applications stopped functioning. If there had been a test

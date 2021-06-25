@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,7 +33,7 @@ enum NetworkQualityObservationSource {
   // at the HTTP layer.
   NETWORK_QUALITY_OBSERVATION_SOURCE_DEFAULT_HTTP_FROM_PLATFORM = 4,
 
-  // The observation came from a Chromium-external source. The metric was
+  // The observation came from a Monyhar-external source. The metric was
   // computed by the external source at the HTTP layer.
   // Deprecated since external estimate provider is not currently queried.
   DEPRECATED_NETWORK_QUALITY_OBSERVATION_SOURCE_HTTP_EXTERNAL_ESTIMATE = 5,

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -276,7 +276,7 @@ TEST_F(InstallWorkerTest, TestInstallChromeSystem) {
   NiceMock<MockWorkItemList> work_item_list;
 
   const HKEY kRegRoot = system_level ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER;
-  static const wchar_t kRegKeyPath[] = L"Software\\Chromium\\test";
+  static const wchar_t kRegKeyPath[] = L"Software\\Monyhar\\test";
   std::unique_ptr<CreateRegKeyWorkItem> create_reg_key_work_item(
       WorkItem::CreateCreateRegKeyWorkItem(kRegRoot, kRegKeyPath,
                                            WorkItem::kWow64Default));

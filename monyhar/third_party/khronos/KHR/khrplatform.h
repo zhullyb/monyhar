@@ -122,7 +122,7 @@
 #endif
 
 /*-------------------------------------------------------------------------
- * Chromium-specific overrides of KHRONOS_APICALL and KHRONOS_APIENTRY
+ * Monyhar-specific overrides of KHRONOS_APICALL and KHRONOS_APIENTRY
  *-----------------------------------------------------------------------*/
 #undef KHRONOS_APICALL
 #if defined(GLES2_USE_MOJO)

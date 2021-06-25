@@ -101,7 +101,7 @@ The latest code coverage (from Feb 14 2017) can be found [here](https://glebl.us
 Here is the instruction how to generate a new result.
 
 #### Environment setup ####
- 1. Set up Chromium development environment for Windows
+ 1. Set up Monyhar development environment for Windows
  2. Download DynamoRIO from [www.dynamorio.org](www.dynamorio.org)
  3. Extract downloaded DynamoRIO package into your monyhar/src folder.
  4. Get dynamorio.git and extract it into your monyhar/src folder `git clone https://github.com/DynamoRIO/dynamorio.git`

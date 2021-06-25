@@ -44,7 +44,7 @@ namespace cctz {
 namespace {
 // Android 'L' removes __system_property_get() from the NDK, however
 // it is still a hidden symbol in libc so we use dlsym() to access it.
-// See Chromium's base/sys_info_android.cc for a similar example.
+// See Monyhar's base/sys_info_android.cc for a similar example.
 
 using property_get_func = int (*)(const char*, char*);
 

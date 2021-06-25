@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -46,7 +46,7 @@ class BASE_EXPORT PlatformThreadLocalStorage {
   enum : unsigned { TLS_KEY_OUT_OF_INDEXES = TLS_OUT_OF_INDEXES };
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
   typedef pthread_key_t TLSKey;
-  // The following is a "reserved key" which is used in our generic Chromium
+  // The following is a "reserved key" which is used in our generic Monyhar
   // ThreadLocalStorage implementation.  We expect that an OS will not return
   // such a key, but if it is returned (i.e., the OS tries to allocate it) we
   // will just request another key.
@@ -54,9 +54,9 @@ class BASE_EXPORT PlatformThreadLocalStorage {
 #endif
 
   // The following methods need to be supported on each OS platform, so that
-  // the Chromium ThreadLocalStore functionality can be constructed.
-  // Chromium will use these methods to acquire a single OS slot, and then use
-  // that to support a much larger number of Chromium slots (independent of the
+  // the Monyhar ThreadLocalStore functionality can be constructed.
+  // Monyhar will use these methods to acquire a single OS slot, and then use
+  // that to support a much larger number of Monyhar slots (independent of the
   // OS restrictions).
   // The following returns true if it successfully is able to return an OS
   // key in |key|.
@@ -76,7 +76,7 @@ class BASE_EXPORT PlatformThreadLocalStorage {
 
   // Each platform (OS implementation) is required to call this method on each
   // terminating thread when the thread is about to terminate.  This method
-  // will then call all registered destructors for slots in Chromium
+  // will then call all registered destructors for slots in Monyhar
   // ThreadLocalStorage, until there are no slot values remaining as having
   // been set on this thread.
   // Destructors may end up being called multiple times on a terminating

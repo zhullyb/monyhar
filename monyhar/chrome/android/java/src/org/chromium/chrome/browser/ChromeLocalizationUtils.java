@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,13 +56,13 @@ public class ChromeLocalizationUtils {
     }
 
     /**
-     * @return the current Chromium locale used to display UI elements.
+     * @return the current Monyhar locale used to display UI elements.
      *
      * This matches what the Android framework resolves localized string resources to, using the
      * system locale and the application's resources. For example, if the system uses a locale
-     * that is not supported by Chromium resources (e.g. 'fur-rIT'), Android will likely fallback
+     * that is not supported by Monyhar resources (e.g. 'fur-rIT'), Android will likely fallback
      * to 'en-rUS' strings when Resources.getString() is called, and this method will return the
-     * matching Chromium name (i.e. 'en-US').
+     * matching Monyhar name (i.e. 'en-US').
      *
      * Using this value is necessary to ensure that the strings accessed from the locale .pak files
      * from C++ match the resources displayed by the Java-based UI views.
@@ -74,11 +74,11 @@ public class ChromeLocalizationUtils {
 
     /**
      * Records the status of the current UI language under "LanguageUsage.UI.Android.*". Tracks if
-     * the Android system language is available and if the Chromium UI language is correct.
+     * the Android system language is available and if the Monyhar UI language is correct.
      *
      * On N+ both the top Android language and default Android language are checked for
      * availability. The default language is the one used by the JVM for localization. These will be
-     * different if the top Android is not available for localization in Chromium. Otherwise they
+     * different if the top Android is not available for localization in Monyhar. Otherwise they
      * are the same.
      *
      * For correctness both the Java and native UI languages are checked. These can be different if
@@ -87,8 +87,8 @@ public class ChromeLocalizationUtils {
     public static void recordUiLanguageStatus() {
         String defaultLanguage = LocaleUtils.toLanguage(Locale.getDefault().toLanguageTag());
 
-        // The default locale is the first Android locale with translated Chromium resources. On N+
-        // the top system language can be retrieved, even if it is not an option for Chromium's UI.
+        // The default locale is the first Android locale with translated Monyhar resources. On N+
+        // the top system language can be retrieved, even if it is not an option for Monyhar's UI.
         String topAndroidLanguage = defaultLanguage;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             topAndroidLanguage =
@@ -105,7 +105,7 @@ public class ChromeLocalizationUtils {
         boolean isJavaUiCorrect = TextUtils.equals(defaultLanguage, javaUiLanguage);
         boolean isNativeUiCorrect = TextUtils.equals(defaultLanguage, nativeUiLanguage);
 
-        // The Android Chromium UI language can be overridden at the device level by users.
+        // The Android Monyhar UI language can be overridden at the device level by users.
         boolean isOverridden = GlobalAppLocaleController.getInstance().isOverridden();
 
         @UiAvailableTypes
@@ -138,12 +138,12 @@ public class ChromeLocalizationUtils {
     }
 
     /**
-     * Return the status of Android system languages for use as the Chromium UI language.
+     * Return the status of Android system languages for use as the Monyhar UI language.
      * The default language is the one used by the JVM for localization. This will be different from
      * the top Android language if the top Android language is not available for localization in
-     * Chromium. See {@link LocaleList#getDefault()}. If the Chromium UI is overridden the language
+     * Monyhar. See {@link LocaleList#getDefault()}. If the Monyhar UI is overridden the language
      * set will always be available.
-     * @param isOverridden Boolean indicating if the Chromium UI is overridden.
+     * @param isOverridden Boolean indicating if the Monyhar UI is overridden.
      * @param isTopAndroidLanguageAvailable Boolean indicating if the top Android language can be
      *         the UI language.
      * @param isDefaultLanguageAvailable Boolean indicating if the default Android language can be
@@ -166,10 +166,10 @@ public class ChromeLocalizationUtils {
     }
 
     /**
-     * Return the correctness status of the current Chromium UI.  The Ui language is correct when it
+     * Return the correctness status of the current Monyhar UI.  The Ui language is correct when it
      * matches the default Android system language. The native UI language can be different from the
      * Java UI language if Play Store daily hygiene has not run since setting an override language.
-     * @param noLanguageAvailable Boolean indicating no Android system language is a Chromium
+     * @param noLanguageAvailable Boolean indicating no Android system language is a Monyhar
      *         language.
      * @param isJavaUiCorrect Boolean indicating if the Java UI language is correct.
      * @param isNativeUiCorrect Boolean indicating if the native UI language is correct.
@@ -191,10 +191,10 @@ public class ChromeLocalizationUtils {
     }
 
     /**
-     * Return the status of the current Chromium UI when the UI language is not overridden. The UI
+     * Return the status of the current Monyhar UI when the UI language is not overridden. The UI
      * language is correct when it matches the default Android system language. If no Android
-     * language is available as the Chromium language then the UI is by definition incorrect.
-     * @param isCorrect Boolean indicating the Chromium UI language matches the Android default.
+     * language is available as the Monyhar language then the UI is by definition incorrect.
+     * @param isCorrect Boolean indicating the Monyhar UI language matches the Android default.
      * @return The @UiCorrectnessTypes status of the UI.
      */
     @VisibleForTesting
@@ -210,7 +210,7 @@ public class ChromeLocalizationUtils {
     }
 
     /**
-     * Return the status of the current Chromium UI when the UI language is overridden. The UI
+     * Return the status of the current Monyhar UI when the UI language is overridden. The UI
      * language is correct when it matches the override UI value set as the default locale. The
      * native UI language can be different from the Java UI language if Play Store daily hygiene has
      * not run since setting an override language.

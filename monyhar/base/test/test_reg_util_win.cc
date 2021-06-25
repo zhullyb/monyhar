@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ namespace registry_util {
 namespace {
 
 constexpr char16_t kTimestampDelimiter[] = u"$";
-constexpr wchar_t kTempTestKeyPath[] = L"Software\\Chromium\\TempTestKeys";
+constexpr wchar_t kTempTestKeyPath[] = L"Software\\Monyhar\\TempTestKeys";
 
 void DeleteStaleTestKeys(const base::Time& now,
                          const std::wstring& test_key_root) {

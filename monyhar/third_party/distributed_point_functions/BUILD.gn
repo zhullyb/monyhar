@@ -1,4 +1,4 @@
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -40,7 +40,7 @@ source_set("distributed_point_functions") {
     "//third_party/boringssl",
   ]
 
-  # Do not apply Chromium code rules to this third-party code.
+  # Do not apply Monyhar code rules to this third-party code.
   configs -= [ "//build/config/compiler:monyhar_code" ]
   configs += [ "//build/config/compiler:no_monyhar_code" ]
 

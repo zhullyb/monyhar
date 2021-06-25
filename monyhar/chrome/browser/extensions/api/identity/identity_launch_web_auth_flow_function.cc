@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@ namespace extensions {
 
 namespace {
 
-static const char kChromiumDomainRedirectUrlPattern[] =
+static const char kMonyharDomainRedirectUrlPattern[] =
     "https://%s.monyharapp.org/";
 
 }  // namespace
@@ -64,7 +64,7 @@ void IdentityLaunchWebAuthFlowFunction::InitFinalRedirectURLPrefix(
     const std::string& extension_id) {
   if (final_url_prefix_.is_empty()) {
     final_url_prefix_ = GURL(base::StringPrintf(
-        kChromiumDomainRedirectUrlPattern, extension_id.c_str()));
+        kMonyharDomainRedirectUrlPattern, extension_id.c_str()));
   }
 }
 

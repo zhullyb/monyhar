@@ -14,7 +14,7 @@ Some of the `.icon` files have multiple variants of the same icon (contained wit
 
 [This tool](http://evanstade.github.io/skiafy/) generates `.icon` file output from SVGs. (If you want to contribute improvements, [here's the project](https://github.com/evanstade/skiafy).)
 
-It handles only a small subset of SVG (paths, circles, etc.) and it's finicky about what it expects as the format, but with a minor amount of manual intervention beforehand, it mostly spits out usable `.icon` output. It will often work better if you run the SVG through SVGO first, which is a separate project (an SVG minifier). [Jake Archibald's SVGOMG](https://jakearchibald.github.io/svgomg/) is a web interface to SVGO. If any manual adjustments need to be made to the output, the [SVG Path spec](https://www.w3.org/TR/SVG/paths.html) is a helpful reference; compare with the relevant [Chromium drawing commands](https://cs.monyhar.org/monyhar/src/ui/gfx/vector_icon_types.h?rcl=b9bf332694f083c6767416b69d0f8539d1c44707&l=22).
+It handles only a small subset of SVG (paths, circles, etc.) and it's finicky about what it expects as the format, but with a minor amount of manual intervention beforehand, it mostly spits out usable `.icon` output. It will often work better if you run the SVG through SVGO first, which is a separate project (an SVG minifier). [Jake Archibald's SVGOMG](https://jakearchibald.github.io/svgomg/) is a web interface to SVGO. If any manual adjustments need to be made to the output, the [SVG Path spec](https://www.w3.org/TR/SVG/paths.html) is a helpful reference; compare with the relevant [Monyhar drawing commands](https://cs.monyhar.org/monyhar/src/ui/gfx/vector_icon_types.h?rcl=b9bf332694f083c6767416b69d0f8539d1c44707&l=22).
 
 Some SVGs are already pretty minimal, like the ones at [the Material Design Icon repository](https://material.io/icons/) so they don't require much if any adjustment, but some SVG editing tools like Sketch leave a lot of random cruft so SVGOMG helps a lot. Take the output and insert into a `.icon` file.
 
@@ -28,7 +28,7 @@ Some SVGs are already pretty minimal, like the ones at [the Material Design Icon
 
 Once you have created an `.icon` file, place it in an appropriate `vector_icon` subdirectory and add the filename to the corresponding `BUILD.gn`. A constant is automatically generated so that the icon can be referenced at runtime. The icon file `foo_bar.icon` is mapped to the constant name of `kFooBarIcon` ('k' + camel-cased filename + 'Icon'), which you can use to reference that icon in code. The icon's name should match its identifier on [the MD icons site](https://material.io/icons/) if that's where it came from. For example, `ic_accessibility` would become `accessibility.icon`.
 
-Make sure not to add [trademarked resources](../../docs/google_chrome_branded_builds.md) such as Google product logos to the Chromium repo.
+Make sure not to add [trademarked resources](../../docs/google_chrome_branded_builds.md) such as Google product logos to the Monyhar repo.
 
 ### Icons with multiple definitions
 

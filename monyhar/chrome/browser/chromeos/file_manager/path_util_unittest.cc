@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -234,7 +234,7 @@ TEST_F(FileManagerPathUtilTest, MultiProfileDownloadsFolderMigration) {
   // /home/chronos/u-${HASH}/MyFiles/
   const FilePath kMyFilesFolder = GetMyFilesFolderForProfile(profile_.get());
   // In the device: /home/chronos/user
-  // In browser tests: /tmp/.org.monyhar.Chromium.F0Ejp5
+  // In browser tests: /tmp/.org.monyhar.Monyhar.F0Ejp5
   const FilePath old_base = DownloadPrefs::GetDefaultDownloadDirectory();
 
   FilePath path;

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -39,10 +39,10 @@ enum {
   // The Chrome Beta application icon.
   kBetaApplicationIndex = 9,
 #else   // BUILDFLAG(GOOGLE_CHROME_BRANDING)
-  // The Chromium App Launcher icon.
+  // The Monyhar App Launcher icon.
   kAppLauncherIndex = 1,
 
-  // The Chromium incognito icon.
+  // The Monyhar incognito icon.
   kIncognitoIndex = 2,
 #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
 };

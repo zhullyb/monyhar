@@ -27,7 +27,7 @@ Run tests: they must PASS
   npm run test
 ```
 
-Release: submit piex.js.wasm piex.out.wasm to the Chromium repository
+Release: submit piex.js.wasm piex.out.wasm to the Monyhar repository
 
 ```shell
   git commit -a -m "Release piexwasm at emscripten <version> ..."

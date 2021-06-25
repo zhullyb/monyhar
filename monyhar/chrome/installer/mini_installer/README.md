@@ -1,10 +1,10 @@
 # mini_installer.exe
 
 This folder contains files to build `mini_installer.exe`, the Windows installer
-for Chromium.
+for Monyhar.
 
-By default, running `mini_installer.exe` will do a per-user install of Chromium
-into `%LOCALAPPDATA%\Chromium\Application`. You can use `--system-level` for a
+By default, running `mini_installer.exe` will do a per-user install of Monyhar
+into `%LOCALAPPDATA%\Monyhar\Application`. You can use `--system-level` for a
 per-machine install into `%ProgramFiles%`. Per-user installs are blocked if a
 per-machine install is already present.
 

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -255,7 +255,7 @@ bool ChromeContentBrowserClientPluginsPart::IsPluginAllowedToUseDevChannelAPIs(
   version_info::Channel channel = chrome::GetChannel();
   // Allow dev channel APIs to be used on "Canary", "Dev", and "Unknown"
   // releases of Chrome. Permitting "Unknown" allows these APIs to be used on
-  // Chromium builds as well.
+  // Monyhar builds as well.
   return channel <= version_info::Channel::DEV;
 }
 

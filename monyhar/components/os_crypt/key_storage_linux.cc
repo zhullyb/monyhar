@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,8 +33,8 @@
 const char KeyStorageLinux::kFolderName[] = "Chrome Keys";
 const char KeyStorageLinux::kKey[] = "Chrome Safe Storage";
 #else
-const char KeyStorageLinux::kFolderName[] = "Chromium Keys";
-const char KeyStorageLinux::kKey[] = "Chromium Safe Storage";
+const char KeyStorageLinux::kFolderName[] = "Monyhar Keys";
+const char KeyStorageLinux::kKey[] = "Monyhar Safe Storage";
 #endif
 
 namespace {

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -50,7 +50,7 @@ void GetApplicationDirs(std::vector<base::FilePath>* locations) {
   }
   for (size_t i = 0; i < installation_locations.size(); ++i) {
     locations->push_back(
-        installation_locations[i].Append(L"Chromium\\Application"));
+        installation_locations[i].Append(L"Monyhar\\Application"));
   }
 }
 #elif defined(OS_LINUX) || defined(OS_CHROMEOS)

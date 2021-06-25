@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -294,7 +294,7 @@ void VideoCaptureDeviceFactoryLinux::GetSupportedFormatsForV4L2BufferType(
   for (; DoIoctl(fd, VIDIOC_ENUM_FMT, &v4l2_format) == 0; ++v4l2_format.index) {
     VideoCaptureFormat supported_format;
     supported_format.pixel_format =
-        VideoCaptureDeviceLinux::V4l2FourCcToChromiumPixelFormat(
+        VideoCaptureDeviceLinux::V4l2FourCcToMonyharPixelFormat(
             v4l2_format.pixelformat);
 
     if (supported_format.pixel_format == PIXEL_FORMAT_UNKNOWN)

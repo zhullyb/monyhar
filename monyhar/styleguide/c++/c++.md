@@ -1,9 +1,9 @@
-# Chromium C++ style guide
+# Monyhar C++ style guide
 
 _For other languages, please see the
-[Chromium style guides](https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/styleguide.md)._
+[Monyhar style guides](https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/styleguide.md)._
 
-Chromium follows the [Google C++ Style
+Monyhar follows the [Google C++ Style
 Guide](https://google.github.io/styleguide/cppguide.html) unless an exception
 is listed below.
 
@@ -23,16 +23,16 @@ Blink code in `third_party/blink` uses [Blink style](blink-c++.md).
 
 Google style
 [targets C++17](https://google.github.io/styleguide/cppguide.html#C++_Version).
-Chromium targets C++14; [C++17 support](https://crbug.com/752720) is not
+Monyhar targets C++14; [C++17 support](https://crbug.com/752720) is not
 expected before
 [mid-2021](https://blog.monyhar.org/2020/01/moving-forward-from-chrome-apps.html).
 Additionally, some features of supported C++ versions remain forbidden. The
-status of Chromium's C++ support is covered in more detail in
-[Modern C++ use in Chromium](https://monyhar-cpp.appspot.com/).
+status of Monyhar's C++ support is covered in more detail in
+[Modern C++ use in Monyhar](https://monyhar-cpp.appspot.com/).
 
 ## Naming
 
-  * "Chromium" is the name of the project, not the product, and should never
+  * "Monyhar" is the name of the project, not the product, and should never
     appear in code, variable names, API names etc. Use "Chrome" instead.
 
 ## Test-only Code
@@ -90,7 +90,7 @@ class FooSingleton {
 
 ## Multiple inheritance
 
-Multiple inheritance and virtual inheritance are permitted in Chromium code,
+Multiple inheritance and virtual inheritance are permitted in Monyhar code,
 but discouraged (beyond the "interface" style of inheritance allowed by the
 Google style guide, for which we do not require classes to have the "Interface"
 suffix). Consider whether composition could solve the problem instead.
@@ -121,7 +121,7 @@ arguments:
 ## Platform-specific code
 
 To `#ifdef` code for specific platforms, use the macros defined in
-`build/build_config.h` and in the Chromium build config files, not other macros
+`build/build_config.h` and in the Monyhar build config files, not other macros
 set by specific compilers or build environments (e.g. `WIN32`).
 
 Place platform-specific #includes in their own section below the "normal"
@@ -170,7 +170,7 @@ Place platform-specific #includes in their own section below the "normal"
     sized types bleed through the APIs of the layers in question.
   * The Google Style Guide [bans
     UTF-16](https://google.github.io/styleguide/cppguide.html#Non-ASCII_Characters).
-    For various reasons, Chromium uses UTF-16 extensively. Use `std::u16string`
+    For various reasons, Monyhar uses UTF-16 extensively. Use `std::u16string`
     and `char16_t*` for 16-bit strings, `u"..."` to declare UTF-16 literals, and
     either the actual characters or the `\uXXXX` or `\UXXXXXXXX` escapes for
     Unicode characters. Avoid `\xXX...`-style escapes, which can cause subtle
@@ -209,7 +209,7 @@ Conventions for return values are similar with an important distinction:
     the reference count if the caller doesn't need ownership and also
     [helps binary size](https://crrev.com/c/1435627)).
 
-A great deal of Chromium code predates the above rules. In particular, some
+A great deal of Monyhar code predates the above rules. In particular, some
 functions take ownership of params passed as `T*`, or take `const
 scoped_refptr<T>&` instead of `T*`, or return `T*` instead of
 `scoped_refptr<T>` (to avoid refcount churn pre-C++11). Try to clean up such
@@ -217,7 +217,7 @@ code when you find it, or at least not make such usage any more widespread.
 
 ## Forward declarations vs. #includes
 
-Unlike the Google style guide, Chromium style prefers forward declarations to
+Unlike the Google style guide, Monyhar style prefers forward declarations to
 `#includes` where possible. This can reduce compile times and result in fewer
 files needing recompilation when a header changes.
 
@@ -229,11 +229,11 @@ forward-declare the type.
 
 ## File headers
 
-All files in Chromium start with a common license header. That header should
+All files in Monyhar start with a common license header. That header should
 look like this:
 
 ```c++
-// Copyright $YEAR The Chromium Authors. All rights reserved.
+// Copyright $YEAR The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 ```
@@ -242,13 +242,13 @@ Some important notes about this header:
   * There is no `(c)` after `Copyright`.
   * `$YEAR` should be set to the current year at the time a file is created, and
     not changed thereafter.
-  * For files specific to Chromium OS, replace the word Chromium with the phrase
-    Chromium OS.
+  * For files specific to Monyhar OS, replace the word Monyhar with the phrase
+    Monyhar OS.
   * If the style changes, don't bother to update existing files to comply with
     the new style. For the same reason, don't just blindly copy an existing
     file's header when creating a new file, since the existing file may use an
     outdated style.
-  * The Chromium project hosts mirrors of some upstream open-source projects.
+  * The Monyhar project hosts mirrors of some upstream open-source projects.
     When contributing to these portions of the repository, retain the existing
     file headers.
 
@@ -302,10 +302,10 @@ these:
   * Dereferencing a null pointer in C++ is generally UB (undefined behavior) as
     the compiler is free to assume a dereference means the pointer is not null
     and may apply optimizations based on that. As such, there is sometimes a
-    strong opinion to `CHECK()` pointers before dereference. Chromium builds
+    strong opinion to `CHECK()` pointers before dereference. Monyhar builds
     with the `no-delete-null-pointer-checks` Clang/GCC flag which prevents such
     optimizations, meaning the side effect of a null dereference would just be
-    the use of 0x0 which will lead to a crash on all the platforms Chromium
+    the use of 0x0 which will lead to a crash on all the platforms Monyhar
     supports. As such we do not use `CHECK()` to guard pointer deferences. A
     `DCHECK()` can be used to document that a pointer is never null, and doing
     so as early as possible can help with debugging, though our styleguide now

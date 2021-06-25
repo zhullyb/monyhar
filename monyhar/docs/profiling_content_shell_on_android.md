@@ -84,7 +84,7 @@ Telemetry" steps below).
 
 ## Install `/system/bin/perf` on your device (not needed for Telemetry)
 
-    # From inside the Android source tree (not inside Chromium)
+    # From inside the Android source tree (not inside Monyhar)
     mmm external/linux-tools-perf/
     adb remount # (allows you to write to the system image)
     adb sync

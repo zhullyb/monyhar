@@ -12,7 +12,7 @@
       "use_goma": true
     }
   },
-  "Mojo ChromiumOS": {
+  "Mojo MonyharOS": {
     "gn_args": {
       "dcheck_always_on": true,
       "ffmpeg_branding": "ChromeOS",

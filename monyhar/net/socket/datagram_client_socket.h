@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -122,7 +122,7 @@ class NET_EXPORT_PRIVATE DatagramClientSocket : public DatagramSocket,
   virtual void SetSendmmsgEnabled(bool enabled) = 0;
 
   // This is to (de-)activate batching in |WriteAsync|, e.g. in
-  // |QuicChromiumClientSession| based on whether there are large
+  // |QuicMonyharClientSession| based on whether there are large
   // upload stream(s) active.
   virtual void SetWriteBatchingActive(bool active) = 0;
 

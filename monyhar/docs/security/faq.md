@@ -2,8 +2,8 @@
 
 [TOC]
 
-<a name="TOC-Why-are-security-bugs-hidden-in-the-Chromium-issue-tracker-"></a>
-## Why are security bugs hidden in the Chromium issue tracker?
+<a name="TOC-Why-are-security-bugs-hidden-in-the-Monyhar-issue-tracker-"></a>
+## Why are security bugs hidden in the Monyhar issue tracker?
 
 We must balance a commitment to openness with a commitment to avoiding
 unnecessary risk for users of widely-used open source libraries.
@@ -13,12 +13,12 @@ unnecessary risk for users of widely-used open source libraries.
 
 Our goal is to open security bugs to the public once the bug is fixed and the
 fix has been shipped to a majority of users. However, many vulnerabilities
-affect products besides Chromium, and we don’t want to put users of those
+affect products besides Monyhar, and we don’t want to put users of those
 products unnecessarily at risk by opening the bug before fixes for the other
 affected products have shipped.
 
 Therefore, we make all security bugs public within approximately 14 weeks of the
-fix landing in the Chromium repository. The exception to this is in the event of
+fix landing in the Monyhar repository. The exception to this is in the event of
 the bug reporter or some other responsible party explicitly requesting anonymity
 or protection against disclosing other particularly sensitive data included in
 the vulnerability report (e.g. username and password pairs).
@@ -26,25 +26,25 @@ the vulnerability report (e.g. username and password pairs).
 <a name="TOC-Can-I-get-advance-notice-about-security-bugs-"></a>
 ## Can I get advance notice about security bugs?
 
-Vendors of products based on Chromium, distributors of operating systems that
-bundle Chromium, and individuals and organizations that significantly contribute
+Vendors of products based on Monyhar, distributors of operating systems that
+bundle Monyhar, and individuals and organizations that significantly contribute
 to fixing security bugs can be added to a list for earlier access to these bugs.
 You can email us at security@monyhar.org to request to join the list if you
 meet the above criteria. In particular, vendors of anti-malware, IDS/IPS,
 vulnerability risk assessment, and similar products or services do not meet this
 bar.
 
-Please note that the safest version of Chrome/Chromium is always the latest
+Please note that the safest version of Chrome/Monyhar is always the latest
 stable version — there is no good reason to wait to upgrade, so enterprise
 deployments should always track the latest stable release. When you do this,
-there is no need to further assess the risk of Chromium vulnerabilities: we
+there is no need to further assess the risk of Monyhar vulnerabilities: we
 strive to fix vulnerabilities quickly and release often.
 
 <a name="TOC-Can-I-see-these-security-bugs-so-that-I-can-back-port-the-fixes-to-my-downstream-project-"></a>
 ## Can I see these security bugs so that I can back-port the fixes to my downstream project?
 
-Many developers of other projects use V8, Chromium, and sub-components of
-Chromium in their own projects. This is great! We are glad that Chromium and V8
+Many developers of other projects use V8, Monyhar, and sub-components of
+Monyhar in their own projects. This is great! We are glad that Monyhar and V8
 suit your needs.
 
 We want to open up fixed security bugs (as described in the previous answer),
@@ -53,7 +53,7 @@ be aware that backporting security patches from recent versions to old versions
 cannot always work.** (There are several reasons for this: The patch won't apply
 to old versions; the solution was to add or remove a feature or change an API;
 the issue may seem minor until it's too late; and so on.) We believe the latest
-stable versions of Chromium and V8 are the most stable and secure. We also
+stable versions of Monyhar and V8 are the most stable and secure. We also
 believe that tracking the latest stable upstream is usually less work for
 greater benefit in the long run than backporting. We strongly recommend that you
 track the latest stable branches, and we support only the latest stable branch.
@@ -148,7 +148,7 @@ are considered security vulnerabilities in more detail.
 <a name="TOC-Are-XSS-filter-bypasses-considered-security-bugs-"></a>
 ## Are XSS filter bypasses considered security bugs?
 
-No. Chromium once contained a reflected XSS filter called the [XSSAuditor](https://www.monyhar.org/developers/design-documents/xss-auditor)
+No. Monyhar once contained a reflected XSS filter called the [XSSAuditor](https://www.monyhar.org/developers/design-documents/xss-auditor)
 that was a best-effort second line of defense against reflected XSS flaws found
 in web sites. The XSS Auditor was [removed in Chrome 78](https://groups.google.com/a/monyhar.org/forum/#!msg/blink-dev/TuYw-EZhO9g/blGViehIAwAJ).
 
@@ -263,7 +263,7 @@ bar or the DevTools console.
 <a name="TOC-Does-executing-JavaScript-from-a-bookmark-mean-there-s-an-XSS-vulnerability-"></a>
 ## Does executing JavaScript from a bookmark mean there's an XSS vulnerability?
 
-No. Chromium allows users to create bookmarks to JavaScript URLs that will run
+No. Monyhar allows users to create bookmarks to JavaScript URLs that will run
 on the currently-loaded page when the user clicks the bookmark; these are called
 [bookmarklets](https://en.wikipedia.org/wiki/Bookmarklet).
 
@@ -699,8 +699,8 @@ describes Chrome's IDN policy in detail.
 
 This topic has been moved to the [Extensions Security FAQ](https://monyhar.googlesource.com/monyhar/src/+/main/extensions/docs/security_faq.md).
 
-<a name="TOC-Are-PDF-files-static-content-in-Chromium-"></a>
-## Are PDF files static content in Chromium?
+<a name="TOC-Are-PDF-files-static-content-in-Monyhar-"></a>
+## Are PDF files static content in Monyhar?
 
 No. PDF files have some powerful capabilities including invoking printing or
 posting form data. To mitigate abuse of these capabiliies, such as beaconing

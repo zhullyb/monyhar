@@ -111,7 +111,7 @@ testSuite({
     assertTrue(userAgent.OPERA);
     assertEquals('11.10', userAgent.VERSION);
 
-    // Check Opera + Blink versions are detected as Chromium
+    // Check Opera + Blink versions are detected as Monyhar
     mockGlobal = {
       'navigator': {'userAgent': testAgents.OPERA_15},
     };

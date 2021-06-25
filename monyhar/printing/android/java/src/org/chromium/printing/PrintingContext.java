@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -99,9 +99,9 @@ public class PrintingContext {
     @CalledByNative
     public void askUserForSettings(final int maxPages) {
         ThreadUtils.assertOnUiThread();
-        // If the printing dialog has already finished, tell Chromium that operation is cancelled.
+        // If the printing dialog has already finished, tell Monyhar that operation is cancelled.
         if (mController.hasPrintingFinished()) {
-            // NOTE: We don't call PrintingContextJni.get().askUserForSettingsReply (hence Chromium
+            // NOTE: We don't call PrintingContextJni.get().askUserForSettingsReply (hence Monyhar
             // callback in AskUserForSettings callback) twice.
             askUserForSettingsReply(false);
         } else {

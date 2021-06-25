@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -2096,10 +2096,10 @@ TEST_P(WaylandWindowTest, AdjustPopupBounds) {
 
   // Case 4: imagine the top level window was moved down to the bottom edge of a
   // display and only tab strip with 3-dot menu buttons left visible. In this
-  // case, Chromium also does not know about that and positions the window
+  // case, Monyhar also does not know about that and positions the window
   // normally (normal bounds are sent), but the Wayland compositor flips the top
   // menu window along y-axis and fixes bounds of a top level window so that it
-  // is located (from the Chromium point of view) below origin of the menu
+  // is located (from the Monyhar point of view) below origin of the menu
   // window.
   EXPECT_CALL(
       delegate_,
@@ -2113,7 +2113,7 @@ TEST_P(WaylandWindowTest, AdjustPopupBounds) {
   Sync();
 
   // The nested menu window is also repositioned accordingly, but it's not
-  // Wayland compositor reposition, but rather reposition from the Chromium
+  // Wayland compositor reposition, but rather reposition from the Monyhar
   // side. Thus, we have to check that anchor rect is correct.
   nested_menu_window.reset();
   nested_menu_window_bounds.set_origin({723, 258});
@@ -2156,7 +2156,7 @@ TEST_P(WaylandWindowTest, AdjustPopupBounds) {
   // this case, the Wayland compositor positions the menu window normally and
   // the WaylandWindow repositions the top level window back to 0,0 (which had
   // an offset to compensate the position of the menu window fliped along
-  // y-axis. It just has had negative y value, which is wrong for Chromium.
+  // y-axis. It just has had negative y value, which is wrong for Monyhar.
   EXPECT_CALL(
       delegate_,
       OnBoundsChanged(Eq(gfx::Rect({0, 0}, window_->GetBounds().size()))));

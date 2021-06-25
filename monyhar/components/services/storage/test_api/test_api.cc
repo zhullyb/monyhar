@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,10 +22,10 @@ namespace storage {
 
 namespace {
 
-class TestApiDatabaseEnv : public leveldb_env::ChromiumEnv {
+class TestApiDatabaseEnv : public leveldb_env::MonyharEnv {
  public:
   TestApiDatabaseEnv()
-      : ChromiumEnv("ChromiumEnv.TestApi", CreateFilesystemProxy()) {}
+      : MonyharEnv("MonyharEnv.TestApi", CreateFilesystemProxy()) {}
   TestApiDatabaseEnv(const TestApiDatabaseEnv&) = delete;
   TestApiDatabaseEnv& operator=(const TestApiDatabaseEnv&) = delete;
 };

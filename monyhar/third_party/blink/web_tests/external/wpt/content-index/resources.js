@@ -41,7 +41,7 @@ async function waitForMessageFromServiceWorker() {
 
 // Returns a promise if the monyhar based browser fetches icons for
 // content-index.
-async function fetchesIconsChromium() {
+async function fetchesIconsMonyhar() {
   const {fetchesIcons} =
       await import('/resources/monyhar/content-index-helpers.js');
   return fetchesIcons();
@@ -50,8 +50,8 @@ async function fetchesIconsChromium() {
 // Returns a promise if the browser fetches icons for content-index and should
 // therefore validate them.
 async function fetchesIcons() {
-  if (isChromiumBased) {
-    return fetchesIconsChromium();
+  if (isMonyharBased) {
+    return fetchesIconsMonyhar();
   }
   return false;
 }

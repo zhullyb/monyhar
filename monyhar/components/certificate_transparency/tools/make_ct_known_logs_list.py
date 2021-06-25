@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Generate a C++ file containing information on all accepted CT logs."""
@@ -160,11 +160,11 @@ def _is_log_once_or_currently_qualified(log):
 
 
 def generate_cpp_file(input_file, f):
-  """Generate a header file of known logs to be included by Chromium."""
+  """Generate a header file of known logs to be included by Monyhar."""
   json_log_list = json.load(input_file)
   _write_cpp_header(f)
 
-  # Logs with pending/rejected should not be considered by Chromium
+  # Logs with pending/rejected should not be considered by Monyhar
   logs_by_operator = json_log_list["operators"]
   logs = []
   for operator in logs_by_operator:

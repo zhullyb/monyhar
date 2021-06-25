@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -278,7 +278,7 @@ class HookManager {
       DWORD dwClsContext,
       REFIID riid,
       void** ppv) {
-    // Chromium COM callers need to make sure that their thread is configured to
+    // Monyhar COM callers need to make sure that their thread is configured to
     // process COM objects to avoid creating an implicit MTA or silently failing
     // STA object creation call due to the SUCCEEDED() pattern for COM calls.
     //
@@ -288,7 +288,7 @@ class HookManager {
     //
     // If you need MTA support, ping //base/task/thread_pool/OWNERS.
     AssertComInitialized(
-        "CoCreateInstance calls in Chromium require explicit COM "
+        "CoCreateInstance calls in Monyhar require explicit COM "
         "initialization via base::CreateCOMSTATaskRunner() or "
         "ScopedCOMInitializer. See the comment in DCheckedCoCreateInstance for "
         "more details.");

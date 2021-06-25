@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 #define PRODUCT_STRING "Google Chrome"
 #elif BUILDFLAG(CHROMIUM_BRANDING)
-#define PRODUCT_STRING "Chromium"
+#define PRODUCT_STRING "Monyhar"
 #else
 #error Unknown branding
 #endif
@@ -36,9 +36,9 @@ const char kChromeVersion[] = CHROME_VERSION_STRING;
 //     kHelperProcessExecutablePath
 //
 // In one condition, our tests will be built using the Chrome branding
-// though we want to actually execute a Chromium branded application.
+// though we want to actually execute a Monyhar branded application.
 // This happens for the reference build on Mac.  To support that case,
-// we also include a Chromium version of each of the four constants and
+// we also include a Monyhar version of each of the four constants and
 // in the UITest class we support switching to that version when told to
 // do so.
 

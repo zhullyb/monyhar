@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ import android.graphics.Paint;
 
 import org.monyhar.base.ContextUtils;
 import org.monyhar.base.test.util.UrlUtils;
-import org.monyhar.gms.ChromiumPlayServicesAvailability;
+import org.monyhar.gms.MonyharPlayServicesAvailability;
 import org.monyhar.skia.mojom.BitmapN32ImageInfo;
 
 import java.nio.ByteBuffer;
@@ -26,7 +26,7 @@ public class TestUtils {
     public static final boolean IS_GMS_CORE_SUPPORTED = isGmsCoreSupported();
 
     private static boolean isGmsCoreSupported() {
-        return ChromiumPlayServicesAvailability.isGooglePlayServicesAvailable(
+        return MonyharPlayServicesAvailability.isGooglePlayServicesAvailable(
                 ContextUtils.getApplicationContext());
     }
 

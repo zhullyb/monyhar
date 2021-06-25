@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -39,7 +39,7 @@ def disable_buffering():
 
 
 def set_symbolizer_path():
-  """Set the path to the llvm-symbolize binary in the Chromium source tree."""
+  """Set the path to the llvm-symbolize binary in the Monyhar source tree."""
   if not os.environ.get('LLVM_SYMBOLIZER_PATH'):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     # Assume this script resides three levels below src/ (i.e.
@@ -92,8 +92,8 @@ def find_inode_at_path(inode, path):
   lines = find_line.split('\n')
   ret = None
   if lines:
-    # `find` may give us several paths (e.g. 'Chromium Framework' in the
-    # product dir and 'Chromium Framework' inside 'Chromium.app',
+    # `find` may give us several paths (e.g. 'Monyhar Framework' in the
+    # product dir and 'Monyhar Framework' inside 'Monyhar.app',
     # chrome_dsym_hints() will produce correct .dSYM path for any of them.
     ret = lines[0]
   inode_path_cache[inode] = ret
@@ -125,7 +125,7 @@ def make_sysroot_filter(sysroot):
 
 
 # Construct a path to the .dSYM bundle for the given binary.
-# There are three possible cases for binary location in Chromium:
+# There are three possible cases for binary location in Monyhar:
 # 1. The binary is a standalone executable or dynamic library in the product
 #    dir, the debug info is in "binary.dSYM" in the product dir.
 # 2. The binary is a standalone framework or .app bundle, the debug info is in
@@ -230,7 +230,7 @@ def main():
   set_symbolizer_path()
   asan_symbolize.demangle = True
   asan_symbolize.fix_filename_patterns = args.strip_path_prefix
-  # Most source paths for Chromium binaries start with
+  # Most source paths for Monyhar binaries start with
   # /path/to/src/out/Release/../../
   asan_symbolize.fix_filename_patterns.append('Release/../../')
   binary_name_filter = None

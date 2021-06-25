@@ -51,7 +51,7 @@ For each bug try to:
     and they need to do the debugging to demonstrate it is an actual Chrome bug.
     * Point them to `chrome://net-export` and the
       [NetLog Viewer](https://netlog-viewer.appspot.com/).
-    * Ask them to confirm whether it is a Chromium regression. (Regressions are
+    * Ask them to confirm whether it is a Monyhar regression. (Regressions are
       treated as high priority)
 * Request a NetLog that captures the problem. You can paste this on the bug:
   ```
@@ -151,8 +151,8 @@ Internals>Network>VPN
 generating and modifying shifts
 [here (internal-only)](https://goto.google.com/pflvb).
 
-* An overview of bug trends can be seen on [Chromium
-  Dashboard](https://monyhardash.appspot.com/components/Internals/Network?project=Chromium)
+* An overview of bug trends can be seen on [Monyhar
+  Dashboard](https://monyhardash.appspot.com/components/Internals/Network?project=Monyhar)
 
 * There is also an [internal dashboard with bug trends for Web
   Platform](https://goto.google.com/vufyq) that includes network issues.

@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -87,7 +87,7 @@ TEST_F(TextDetectionImplWinTest, ScanOnce) {
       base::BindOnce(&DetectTextCallback, run_loop.QuitClosure(), &results));
   run_loop.Run();
   ASSERT_EQ(2u, results.size());
-  EXPECT_EQ("The Chromium Project website is:", results[0]->raw_value);
+  EXPECT_EQ("The Monyhar Project website is:", results[0]->raw_value);
   EXPECT_EQ(gfx::RectF(51, 38, 272, 17), results[0]->bounding_box);
   EXPECT_EQ("https://www.monyhar.org", results[1]->raw_value);
   EXPECT_EQ(gfx::RectF(51, 63, 209, 17), results[1]->bounding_box);

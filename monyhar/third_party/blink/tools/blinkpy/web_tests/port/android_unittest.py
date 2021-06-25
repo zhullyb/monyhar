@@ -145,7 +145,7 @@ class AndroidPortTest(port_testcase.PortTestCase):
     def test_requires_http_server(self):
         self.assertTrue(self.make_port(device_count=1).requires_http_server())
 
-    # Tests the default timeouts for Android, which are different than the rest of Chromium.
+    # Tests the default timeouts for Android, which are different than the rest of Monyhar.
     def test_default_timeout_ms(self):
         self.assertEqual(self.make_port().timeout_ms(), 10000)
 
@@ -156,7 +156,7 @@ class AndroidPortTest(port_testcase.PortTestCase):
                          '/host/apache/conf')
 
 
-class ChromiumAndroidDriverTest(unittest.TestCase):
+class MonyharAndroidDriverTest(unittest.TestCase):
     def setUp(self):
         self._mock_devices = mock.patch(
             'devil.android.device_utils.DeviceUtils.HealthyDevices',
@@ -174,14 +174,14 @@ class ChromiumAndroidDriverTest(unittest.TestCase):
 
         self._port = android.AndroidPort(
             MockSystemHost(executive=MockExecutive()), 'android')
-        self._driver = android.ChromiumAndroidDriver(
+        self._driver = android.MonyharAndroidDriver(
             self._port,
             worker_number=0,
             driver_details=android.ContentShellDriverDetails(),
             android_devices=self._port._devices)  # pylint: disable=protected-access
 
     def tearDown(self):
-        # Make ChromiumAndroidDriver.__del__ run before we stop the mocks.
+        # Make MonyharAndroidDriver.__del__ run before we stop the mocks.
         del self._driver
         self._mock_battery.stop()
         self._mock_devices.stop()
@@ -192,7 +192,7 @@ class ChromiumAndroidDriverTest(unittest.TestCase):
         self.assertEquals(['adb', '-s', '123456789ABCDEF0', 'shell'],
                           self._driver.cmd_line([]))
 
-    # Test that the Chromium Android port can interpret Android's shell output.
+    # Test that the Monyhar Android port can interpret Android's shell output.
     def test_read_prompt(self):
         self._driver._server_process = driver_unittest.MockServerProcess(
             lines=['root@android:/ # '])
@@ -202,7 +202,7 @@ class ChromiumAndroidDriverTest(unittest.TestCase):
         self.assertIsNone(self._driver._read_prompt(time.time() + 1))
 
 
-class ChromiumAndroidDriverTwoDriversTest(unittest.TestCase):
+class MonyharAndroidDriverTwoDriversTest(unittest.TestCase):
     # Test two drivers getting the right serial numbers, and that we disregard per-test arguments.
 
     def setUp(self):
@@ -228,12 +228,12 @@ class ChromiumAndroidDriverTwoDriversTest(unittest.TestCase):
     def test_two_drivers(self):
         port = android.AndroidPort(
             MockSystemHost(executive=MockExecutive()), 'android')
-        driver0 = android.ChromiumAndroidDriver(
+        driver0 = android.MonyharAndroidDriver(
             port,
             worker_number=0,
             driver_details=android.ContentShellDriverDetails(),
             android_devices=port._devices)
-        driver1 = android.ChromiumAndroidDriver(
+        driver1 = android.MonyharAndroidDriver(
             port,
             worker_number=1,
             driver_details=android.ContentShellDriverDetails(),
@@ -245,7 +245,7 @@ class ChromiumAndroidDriverTwoDriversTest(unittest.TestCase):
                          driver1.cmd_line(['anything']))
 
 
-class ChromiumAndroidTwoPortsTest(unittest.TestCase):
+class MonyharAndroidTwoPortsTest(unittest.TestCase):
     # Test that the driver's command line indeed goes through to the driver.
 
     def setUp(self):
@@ -287,7 +287,7 @@ class ChromiumAndroidTwoPortsTest(unittest.TestCase):
                          port1.driver_cmd_line().count('--create-stdin-fifo'))
 
 
-class ChromiumAndroidDriverTombstoneTest(unittest.TestCase):
+class MonyharAndroidDriverTombstoneTest(unittest.TestCase):
     EXPECTED_STACKTRACE = '-rw------- 1000 1000 3604 2013-11-19 16:16 tombstone_10\ntombstone content'
 
     def setUp(self):
@@ -303,7 +303,7 @@ class ChromiumAndroidDriverTombstoneTest(unittest.TestCase):
 
         self._port = android.AndroidPort(
             MockSystemHost(executive=MockExecutive()), 'android')
-        self._driver = android.ChromiumAndroidDriver(
+        self._driver = android.MonyharAndroidDriver(
             self._port,
             worker_number=0,
             driver_details=android.ContentShellDriverDetails(),
@@ -357,7 +357,7 @@ class ChromiumAndroidDriverTombstoneTest(unittest.TestCase):
 
         self.assertEqual(1, len(self._warnings))
         self.assertEqual(
-            ChromiumAndroidDriverTombstoneTest.EXPECTED_STACKTRACE, stacktrace)
+            MonyharAndroidDriverTombstoneTest.EXPECTED_STACKTRACE, stacktrace)
 
     # Tests the case in which we can't find any valid tombstone entries at all. The tombstone
     # output used for the mock misses the permission part.
@@ -392,4 +392,4 @@ class ChromiumAndroidDriverTombstoneTest(unittest.TestCase):
         self.assertEqual(0, len(self._warnings))
         self.assertEqual(0, len(self._errors))
         self.assertEqual(
-            ChromiumAndroidDriverTombstoneTest.EXPECTED_STACKTRACE, stacktrace)
+            MonyharAndroidDriverTombstoneTest.EXPECTED_STACKTRACE, stacktrace)

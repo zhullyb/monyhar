@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">Βασική βιβλιοθήκη</translation>
 <translation id="443560535555262820">Άνοιγμα προτιμήσεων προσβασιμότητας</translation>
 <translation id="4450893287417543264">Να μην εμφανιστεί ξανά</translation>
-<translation id="4512952200932940229">Copyright 2021 Οι συντάκτες του Chromium. Με επιφύλαξη παντός δικαιώματος.</translation>
+<translation id="4512952200932940229">Copyright 2021 Οι συντάκτες του Monyhar. Με επιφύλαξη παντός δικαιώματος.</translation>
 <translation id="4513946894732546136">Σχόλια</translation>
 <translation id="4563926062592110512">Ο υπολογιστής-πελάτης αποσυνδέθηκε: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Απομακρυσμένες συσκευές</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">Καταχωρίστε το PIN σας για τον απομακρυσμένο υπολογιστή.</translation>
 <translation id="7895403300744144251">Οι πολιτικές ασφάλειας στον απομακρυσμένο υπολογιστή δεν επιτρέπουν τις συνδέσεις από τον λογαριασμό σας.</translation>
 <translation id="7936528439960309876">Αγκύρωση δεξιά</translation>
-<translation id="7970576581263377361">Ο έλεγχος ταυτότητας απέτυχε. Συνδεθείτε ξανά στο Chromium.</translation>
+<translation id="7970576581263377361">Ο έλεγχος ταυτότητας απέτυχε. Συνδεθείτε ξανά στο Monyhar.</translation>
 <translation id="7981525049612125370">Η απομακρυσμένη περίοδος σύνδεσης έχει λήξει.</translation>
 <translation id="8038111231936746805">(προεπιλογή)</translation>
 <translation id="8041089156583427627">Αποστολή σχολίων</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737">Παραχώρηση άδειας Εγγραφή οθόνης στο <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Μη έγκυρη διαμόρφωση κεντρικού υπολογιστή.</translation>
 <translation id="981121421437150478">Εκτός σύνδεσης</translation>
-<translation id="985602178874221306">Οι συντάκτες του Chromium</translation>
+<translation id="985602178874221306">Οι συντάκτες του Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (τελευταία σύνδεση <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

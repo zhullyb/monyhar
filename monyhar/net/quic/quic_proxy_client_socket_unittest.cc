@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Chromium Authors. All rights reserved.
+// Copyright (c) 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -222,12 +222,12 @@ class QuicProxyClientSocketTest : public ::testing::TestWithParam<TestParams>,
     EXPECT_CALL(*send_algorithm_, OnApplicationLimited(_)).Times(AnyNumber());
     EXPECT_CALL(*send_algorithm_, GetCongestionControlType())
         .Times(AnyNumber());
-    helper_ = std::make_unique<QuicChromiumConnectionHelper>(
+    helper_ = std::make_unique<QuicMonyharConnectionHelper>(
         &clock_, &random_generator_);
     alarm_factory_ =
-        std::make_unique<QuicChromiumAlarmFactory>(runner_.get(), &clock_);
+        std::make_unique<QuicMonyharAlarmFactory>(runner_.get(), &clock_);
 
-    QuicChromiumPacketWriter* writer = new QuicChromiumPacketWriter(
+    QuicMonyharPacketWriter* writer = new QuicMonyharPacketWriter(
         socket.get(), base::ThreadTaskRunnerHandle::Get().get());
     quic::QuicConnection* connection = new quic::QuicConnection(
         connection_id_, quic::QuicSocketAddress(),
@@ -250,7 +250,7 @@ class QuicProxyClientSocketTest : public ::testing::TestWithParam<TestParams>,
     base::TimeTicks dns_end = base::TimeTicks::Now();
     base::TimeTicks dns_start = dns_end - base::TimeDelta::FromMilliseconds(1);
 
-    session_ = std::make_unique<QuicChromiumClientSession>(
+    session_ = std::make_unique<QuicMonyharClientSession>(
         connection, std::move(socket),
         /*stream_factory=*/nullptr, &crypto_client_stream_factory_, &clock_,
         &transport_security_state_, /*ssl_config_service=*/nullptr,
@@ -301,7 +301,7 @@ class QuicProxyClientSocketTest : public ::testing::TestWithParam<TestParams>,
     EXPECT_THAT(session_handle_->RequestStream(true, callback.callback(),
                                                TRAFFIC_ANNOTATION_FOR_TESTS),
                 IsOk());
-    std::unique_ptr<QuicChromiumClientStream::Handle> stream_handle =
+    std::unique_ptr<QuicMonyharClientStream::Handle> stream_handle =
         session_handle_->ReleaseStream();
     EXPECT_TRUE(stream_handle->IsOpen());
 
@@ -602,16 +602,16 @@ class QuicProxyClientSocketTest : public ::testing::TestWithParam<TestParams>,
   // order of destruction of these members matter
   quic::MockClock clock_;
   MockQuicData mock_quic_data_;
-  std::unique_ptr<QuicChromiumConnectionHelper> helper_;
-  std::unique_ptr<QuicChromiumClientSession> session_;
-  std::unique_ptr<QuicChromiumClientSession::Handle> session_handle_;
+  std::unique_ptr<QuicMonyharConnectionHelper> helper_;
+  std::unique_ptr<QuicMonyharClientSession> session_;
+  std::unique_ptr<QuicMonyharClientSession::Handle> session_handle_;
   std::unique_ptr<QuicProxyClientSocket> sock_;
   std::unique_ptr<TestProxyDelegate> proxy_delegate_;
 
   quic::test::MockSendAlgorithm* send_algorithm_;
   scoped_refptr<TestTaskRunner> runner_;
 
-  std::unique_ptr<QuicChromiumAlarmFactory> alarm_factory_;
+  std::unique_ptr<QuicMonyharAlarmFactory> alarm_factory_;
   testing::StrictMock<quic::test::MockQuicConnectionVisitor> visitor_;
   TransportSecurityState transport_security_state_;
   quic::QuicCryptoClientConfig crypto_config_;
@@ -621,7 +621,7 @@ class QuicProxyClientSocketTest : public ::testing::TestWithParam<TestParams>,
   QuicTestPacketMaker server_maker_;
   IPEndPoint peer_addr_;
   quic::test::MockRandom random_generator_;
-  ProofVerifyDetailsChromium verify_details_;
+  ProofVerifyDetailsMonyhar verify_details_;
   MockCryptoClientStreamFactory crypto_client_stream_factory_;
 
   std::string user_agent_;
@@ -1572,7 +1572,7 @@ TEST_P(QuicProxyClientSocketTest, AsyncWriteAroundReads) {
   AssertSyncReadEquals(kMsg1, kLen1);
 
   // Write should block until the next read completes.
-  // QuicChromiumClientStream::Handle::WriteStreamData() will only be
+  // QuicMonyharClientStream::Handle::WriteStreamData() will only be
   // asynchronous starting with the second time it's called while the UDP socket
   // is write-blocked. Therefore, at least two writes need to be called on
   // |sock_| to get an asynchronous one.
@@ -1767,7 +1767,7 @@ TEST_P(QuicProxyClientSocketTest, WritePendingOnClose) {
 
   AssertConnectSucceeds();
 
-  // QuicChromiumClientStream::Handle::WriteStreamData() will only be
+  // QuicMonyharClientStream::Handle::WriteStreamData() will only be
   // asynchronous starting with the second time it's called while the UDP socket
   // is write-blocked. Therefore, at least two writes need to be called on
   // |sock_| to get an asynchronous one.
@@ -1803,7 +1803,7 @@ TEST_P(QuicProxyClientSocketTest, DisconnectWithWritePending) {
 
   AssertConnectSucceeds();
 
-  // QuicChromiumClientStream::Handle::WriteStreamData() will only be
+  // QuicMonyharClientStream::Handle::WriteStreamData() will only be
   // asynchronous starting with the second time it's called while the UDP socket
   // is write-blocked. Therefore, at least two writes need to be called on
   // |sock_| to get an asynchronous one.
@@ -1901,7 +1901,7 @@ TEST_P(QuicProxyClientSocketTest, RstWithReadAndWritePending) {
   AssertReadStarts(kMsg1, kLen1);
 
   // Write should block until the next read completes.
-  // QuicChromiumClientStream::Handle::WriteStreamData() will only be
+  // QuicMonyharClientStream::Handle::WriteStreamData() will only be
   // asynchronous starting with the second time it's called while the UDP socket
   // is write-blocked. Therefore, at least two writes need to be called on
   // |sock_| to get an asynchronous one.
@@ -2048,7 +2048,7 @@ TEST_P(QuicProxyClientSocketTest, RstWithReadAndWritePendingDelete) {
   ASSERT_EQ(ERR_IO_PENDING,
             sock_->Read(read_buf.get(), kLen1, read_callback.callback()));
 
-  // QuicChromiumClientStream::Handle::WriteStreamData() will only be
+  // QuicMonyharClientStream::Handle::WriteStreamData() will only be
   // asynchronous starting with the second time it's called while the UDP socket
   // is write-blocked. Therefore, at least two writes need to be called on
   // |sock_| to get an asynchronous one.

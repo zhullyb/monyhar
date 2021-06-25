@@ -4,7 +4,7 @@
   "Mojo Android": {
     "gtest_tests": []
   },
-  "Mojo ChromiumOS": {
+  "Mojo MonyharOS": {
     "gtest_tests": [
       {
         "merge": {

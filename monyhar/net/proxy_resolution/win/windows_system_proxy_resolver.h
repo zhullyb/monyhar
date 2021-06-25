@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -98,7 +98,7 @@ class NET_EXPORT WindowsSystemProxyResolver
                                int windows_error);
 
   // On a successful call to WinHttpGetProxyForUrlEx(), this translates WinHttp
-  // results into Chromium-friendly structures before notifying the right
+  // results into Monyhar-friendly structures before notifying the right
   // WindowsSystemProxyResolutionRequest.
   void GetProxyResultForCallbackTarget(
       WindowsSystemProxyResolutionRequest* callback_target,

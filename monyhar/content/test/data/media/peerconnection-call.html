@@ -168,7 +168,7 @@
   // First makes a call between pc1 and pc2, and then construct a new media
   // stream using the remote audio and video tracks, connect the new media
   // stream to a video element. These operations should not crash Chrome.
-  function ConnectChromiumSinkToRemoteAudioTrack() {
+  function ConnectMonyharSinkToRemoteAudioTrack() {
     createConnections(null);
     navigator.mediaDevices.getUserMedia({audio: true, video: true})
         .then(addStreamToBothConnectionsAndNegotiate)

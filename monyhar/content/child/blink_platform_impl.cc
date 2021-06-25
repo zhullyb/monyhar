@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -238,7 +238,7 @@ size_t BlinkPlatformImpl::MaxDecodedImageBytes() {
   }
   // For other devices, limit decoded image size based on the amount of physical
   // memory.
-  // In some cases all physical memory is not accessible by Chromium, as it can
+  // In some cases all physical memory is not accessible by Monyhar, as it can
   // be reserved for direct use by certain hardware. Thus, we set the limit so
   // that 1.6GB of reported physical memory on a 2GB device is enough to set the
   // limit at 16M pixels, which is a desirable value since 4K*4K is a relatively

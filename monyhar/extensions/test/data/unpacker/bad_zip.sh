@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
-## Copyright (c) 2012 The Chromium Authors. All rights reserved.
+## Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# Purpose: Create a corrupt (invalid ZIP) version of a Chromium crx.
+# Purpose: Create a corrupt (invalid ZIP) version of a Monyhar crx.
 if test $# -ne 2; then
   echo "Usage: bad_zip.sh <extension dir> <pem path>"
   exit 1

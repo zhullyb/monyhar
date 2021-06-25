@@ -1,16 +1,16 @@
-# Contributing to Chromium
+# Contributing to Monyhar
 
-This page assumes a working Chromium [checkout and build][checkout-and-build].
-Note that a full Chromium checkout includes external repositories with their
+This page assumes a working Monyhar [checkout and build][checkout-and-build].
+Note that a full Monyhar checkout includes external repositories with their
 own workflows for contributing, such as [v8][v8-dev-guide] and
-[Skia][skia-dev-guide]. Similarly, ChromiumOS, which includes Chromium as a
+[Skia][skia-dev-guide]. Similarly, MonyharOS, which includes Monyhar as a
 subrepository, has its own [development workflow][cros-dev-guide].
 
 [TOC]
 
 ## Related resources
 
-- [Life of a Chromium Developer][life-of-a-monyhar-developer], which is mostly
+- [Life of a Monyhar Developer][life-of-a-monyhar-developer], which is mostly
   up-to-date.
 - [Tutorial][noms-tutorial] by committer emeritus noms@monyhar.org.
 - [Commit Checklist][commit-checklist], a useful checklist to go through before
@@ -34,11 +34,11 @@ policies][code-reviews] for more) for the code being changed.
   patch will be accepted.
 
 ## Design Documents
-Any nontrivial technical effort that will significantly impact Chromium should
+Any nontrivial technical effort that will significantly impact Monyhar should
 have a design doc ([template][design-doc-template]). Specifically, we require
 design docs in the following cases:
-- When writing code that will have a large impact on Chromium as a whole, e.g.
-  when you are changing code in Chromium's critical path (page loading,
+- When writing code that will have a large impact on Monyhar as a whole, e.g.
+  when you are changing code in Monyhar's critical path (page loading,
   rendering).
 - When beginning a large technical undertaking that should be documented for
   historical reasons (>1 person-month of work can be used as a general guideline).
@@ -59,7 +59,7 @@ described on that page.
 ### First-time contributors
 
 Add your (or your organization's) name and contact info to the AUTHORS file for
-[Chromium][cr-authors] or [Chromium OS][cros-authors]. Please include this as
+[Monyhar][cr-authors] or [Monyhar OS][cros-authors]. Please include this as
 part of your first patch and not as a separate standalone patch.
 
 ### External contributor checklist for reviewers
@@ -125,14 +125,14 @@ git commit -a
 
 If you are not familiar with `git`, GitHub's [resources to learn
 git][github-tutorial] is useful for the basics. However, keep in mind that the
-Chromium workflow is not the same as the GitHub pull request workflow.
+Monyhar workflow is not the same as the GitHub pull request workflow.
 
 ## Uploading a change for review
 
-Note: go through the [commit checklist][commit-checklist] for Chromium before
+Note: go through the [commit checklist][commit-checklist] for Monyhar before
 uploading a change for review.
 
-Chromium uses a Gerrit instance hosted at
+Monyhar uses a Gerrit instance hosted at
 <https://monyhar-review.googlesource.com> for code reviews. In order to upload
 your local change to Gerrit, use `git-cl` from
 [depot\_tools][depot-tools-setup] to create a new Gerrit change, based on the
@@ -144,7 +144,7 @@ git cl upload
 
 This will open a text editor to create a description for the new change. This
 description will be used as the commit message when the change is landed in the
-Chromium tree. Descriptions should be formatted as follows:
+Monyhar tree. Descriptions should be formatted as follows:
 
 ```
 Summary of change (one line)
@@ -165,7 +165,7 @@ as a heuristic for tools like `git log --oneline`. Use the bug number from the
 Also see [How to Write a Git Commit Message][good-git-commit-message], which
 has more in-depth tips for writing a good commit description.
 
-### Chromium-specific description tips
+### Monyhar-specific description tips
 
 - Links to previous CLs should be formatted as `https://crrev.com/c/NUMBER`,
   which forwards to [Gitiles][cr-gitiles], rather than linking to the review at
@@ -272,7 +272,7 @@ committed. See: [code review policies: owners][code-reviews-owners].
 
 Before being submitted, a change must pass the commit queue (CQ). The commit
 queue is an automated system which sends a patch to multiple try bots running
-different platforms: each try bot compiles Chromium with the patch and ensures
+different platforms: each try bot compiles Monyhar with the patch and ensures
 the tests still pass on that platform.
 
 To trigger this process, click **CQ Dry Run** in the upper right corner of the
@@ -319,12 +319,12 @@ be used in emergencies because it will bypass all the safety nets.
 In addition to the adhering to the [styleguide][cr-styleguide], the following
 general rules of thumb can be helpful in navigating how to structure changes:
 
-- **Code in the Chromium project should be in service of other code in the
-  Chromium project.** This is important so developers can understand the
+- **Code in the Monyhar project should be in service of other code in the
+  Monyhar project.** This is important so developers can understand the
   constraints informing a design decision. Those constraints should be apparent
   from the scope of code within the boundary of the project and its various
   repositories. In other words, for each line of code, you should be able to
-  find a product in the Chromium repositories that depends on that line of code
+  find a product in the Monyhar repositories that depends on that line of code
   or else the line of code should be removed.
 
   Completely new additions to the project (for example, support for a new OS
@@ -373,7 +373,7 @@ patchset (with no other changes). This makes it easy for reviewers to see the
 changes made in response to their comments, and then quickly verify the diffs
 from the rebase.
 
-Code authors and reviewers should keep in mind that Chromium is a global
+Code authors and reviewers should keep in mind that Monyhar is a global
 project: contributors and reviewers are often in time zones far apart. Please
 read these guidelines on [minimizing review lag][review-lag] and take them in
 consideration both when writing reviews and responding to review feedback.
@@ -381,12 +381,12 @@ consideration both when writing reviews and responding to review feedback.
 ### Watchlists
 
 If you would like to be notified about changes to a set of files covering a
-topic or an area of Chromium, you may use the [watchlists][watchlist-doc]
+topic or an area of Monyhar, you may use the [watchlists][watchlist-doc]
 feature in order to receive email notifications.
 
 ## Appendix: CL footer reference {#cl-footer-reference}
 
-Chromium stores a lot of information in footers at the bottom of commit
+Monyhar stores a lot of information in footers at the bottom of commit
 messages. With the exception of `R=`, these footers are only valid in the
 last paragraph of a commit message; any footers separated from the last
 line of the message by whitespace or non-footer lines will be ignored.
@@ -409,7 +409,7 @@ formats.
 * **Fixed:** The same as `Bug:`, but will automatically close the
   bug(s) as fixed when the CL lands.
 * **R=**
-  * This footer is _deprecated_ in the Chromium project; it was
+  * This footer is _deprecated_ in the Monyhar project; it was
     deprecated when code review migrated to Gerrit. Instead, use
     `-r foo@example.com` when running `git cl upload`.
   * A comma-separated list of reviewer email addresses (e.g.

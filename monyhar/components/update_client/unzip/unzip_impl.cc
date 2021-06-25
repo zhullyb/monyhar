@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ namespace {
 
 class UnzipperImpl : public Unzipper {
  public:
-  explicit UnzipperImpl(UnzipChromiumFactory::Callback callback)
+  explicit UnzipperImpl(UnzipMonyharFactory::Callback callback)
       : callback_(std::move(callback)) {}
 
   void Unzip(const base::FilePath& zip_file,
@@ -22,18 +22,18 @@ class UnzipperImpl : public Unzipper {
   }
 
  private:
-  const UnzipChromiumFactory::Callback callback_;
+  const UnzipMonyharFactory::Callback callback_;
 };
 
 }  // namespace
 
-UnzipChromiumFactory::UnzipChromiumFactory(Callback callback)
+UnzipMonyharFactory::UnzipMonyharFactory(Callback callback)
     : callback_(std::move(callback)) {}
 
-std::unique_ptr<Unzipper> UnzipChromiumFactory::Create() const {
+std::unique_ptr<Unzipper> UnzipMonyharFactory::Create() const {
   return std::make_unique<UnzipperImpl>(callback_);
 }
 
-UnzipChromiumFactory::~UnzipChromiumFactory() = default;
+UnzipMonyharFactory::~UnzipMonyharFactory() = default;
 
 }  // namespace update_client

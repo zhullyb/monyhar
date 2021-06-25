@@ -1,16 +1,16 @@
 #!/usr/bin/env python
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# This file isn't officially supported by the Chromium project. It's maintained
+# This file isn't officially supported by the Monyhar project. It's maintained
 # on a best-effort basis by volunteers, so some things may be broken from time
 # to time. If you encounter errors, it's most often due to files in base that
 # have been added or moved since somebody last tried this script. Generally
 # such errors are easy to diagnose.
-"""Builds gn and generates Chromium's build files.
+"""Builds gn and generates Monyhar's build files.
 
-This script should only be run from a Chromium tarball.  It will not work in a
+This script should only be run from a Monyhar tarball.  It will not work in a
 regular git checkout.  In a regular git checkout, a gn binary is pulled via
 DEPS.  To build gn from source in a regular checkout, see
 https://gn.googlesource.com/gn/

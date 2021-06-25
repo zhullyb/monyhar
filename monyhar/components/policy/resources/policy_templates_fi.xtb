@@ -2182,7 +2182,7 @@ Jos asetus ei ole käytössä, käyttäjät eivät voi ottaa välityspalvelinta 
 <translation id="5148753489738115745">Voit määrittää muita parametreja, joita käytetään, kun <ph name="PRODUCT_FRAME_NAME" /> käynnistää tuotteen <ph name="PRODUCT_NAME" />.
 
           Jos käytäntöä ei ole määritetty, käytetään oletuskomentoriviä.</translation>
-<translation id="5152787786897382519">Sekä Chromiumilla että Google Chromella on joitain käytäntöryhmiä, jotka tarvitsevat toisiaan voidakseen antaa käyttäjän hallita ominaisuutta. Seuraavat käytäntöryhmät edustavat näitä joukkoja. Koska käytännöillä voi olla useita lähteitä, vain korkeimman prioriteetin lähteestä tulevia arvoja käytetään. Saman ryhmän matalamman prioriteetin ryhmästä tulevat arvot jätetään huomiotta. Prioriteettijärjestys on määritelty täällä: <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Sekä Monyharilla että Google Chromella on joitain käytäntöryhmiä, jotka tarvitsevat toisiaan voidakseen antaa käyttäjän hallita ominaisuutta. Seuraavat käytäntöryhmät edustavat näitä joukkoja. Koska käytännöillä voi olla useita lähteitä, vain korkeimman prioriteetin lähteestä tulevia arvoja käytetään. Saman ryhmän matalamman prioriteetin ryhmästä tulevat arvot jätetään huomiotta. Prioriteettijärjestys on määritelty täällä: <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Valvontapakettien lähetystiheys millisekunteina.
 
       Jos tätä käytäntöä ei ole määritetty, oletusaikaväli on 3 minuuttia. Pienin
@@ -3839,7 +3839,7 @@ Jos tämä käytäntö on määritetty, kirjautumisruudussa käytetään kunkin 
 Jos tätä käytäntöä ei määritetä, <ph name="PRODUCT_OS_NAME" /> näyttää kirjautumisruudulla laitteeseen lisätyn tilin sähköpostitilin tunnuksen.
 
 Tämä käytäntö ei ole käytössä tavallisilla käyttäjätileillä.</translation>
-<translation id="8259375588339409826">Chromium ja Google Chrome tukevat samoja käytäntöjä. Huomaa, että tämä dokumentti voi sisältää julkaisemattomia käytäntöjä (joiden tuettu-merkintä viittaa julkaisemattomaan <ph name="PRODUCT_NAME" /> ‑versioon), joita voidaan muuttaa tai poistaa ilman erillistä ilmoitusta ja joille ei tarjota minkäänlaisia takuita, ei edes tietoturva- tai tietosuojaominaisuuksiin liittyviä takuita.
+<translation id="8259375588339409826">Monyhar ja Google Chrome tukevat samoja käytäntöjä. Huomaa, että tämä dokumentti voi sisältää julkaisemattomia käytäntöjä (joiden tuettu-merkintä viittaa julkaisemattomaan <ph name="PRODUCT_NAME" /> ‑versioon), joita voidaan muuttaa tai poistaa ilman erillistä ilmoitusta ja joille ei tarjota minkäänlaisia takuita, ei edes tietoturva- tai tietosuojaominaisuuksiin liittyviä takuita.
 
 Näiden käytäntöjen tarkoituksena on vain <ph name="PRODUCT_NAME" /> ‑esiintymien määrittäminen organisaation sisäistä käyttöä varten. Näiden käytäntöjen käyttöä organisaation ulkopuolella (esimerkiksi julkisesti jaeltavassa ohjelmassa) käsitellään samalla tavoin kuin haittaohjelmia, ja Google ja virustorjuntapalvelujen tarjoajat todennäköisesti merkitsevät tällaisen käytön haitalliseksi.
 

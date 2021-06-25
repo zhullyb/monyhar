@@ -292,9 +292,9 @@ index 8f036bf..c57c79f 100644
  
  Dromaeo was developed and released by John Resig (jresig at mozilla.com)/
  
--This benchmark was slightly modified to enable Chromium automation.
+-This benchmark was slightly modified to enable Monyhar automation.
 +This benchmark was slightly modified to: 
-+ - Enable Chromium automation.
++ - Enable Monyhar automation.
 + - Avoid grabbing javascript libraries from the Web.
 +
  

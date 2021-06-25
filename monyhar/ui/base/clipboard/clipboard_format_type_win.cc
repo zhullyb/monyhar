@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -278,7 +278,7 @@ const ClipboardFormatType& ClipboardFormatType::GetFileDescriptorType() {
 // static
 const ClipboardFormatType& ClipboardFormatType::GetFileContentZeroType() {
   // This uses a storage media type of TYMED_HGLOBAL, which is not commonly
-  // used with CFSTR_FILECONTENTS (but used in Chromium--see
+  // used with CFSTR_FILECONTENTS (but used in Monyhar--see
   // OSExchangeDataProviderWin::SetFileContents). Use GetFileContentAtIndexType
   // if TYMED_ISTREAM and TYMED_ISTORAGE are needed.
   // TODO(https://crbug.com/950756): Should TYMED_ISTREAM / TYMED_ISTORAGE be
@@ -343,7 +343,7 @@ const ClipboardFormatType& ClipboardFormatType::GetWebKitSmartPasteType() {
 const ClipboardFormatType& ClipboardFormatType::GetWebCustomDataType() {
   // TODO(http://crbug.com/106449): Standardize this name.
   static base::NoDestructor<ClipboardFormatType> format(
-      ::RegisterClipboardFormat(L"Chromium Web Custom MIME Data Format"));
+      ::RegisterClipboardFormat(L"Monyhar Web Custom MIME Data Format"));
   return *format;
 }
 

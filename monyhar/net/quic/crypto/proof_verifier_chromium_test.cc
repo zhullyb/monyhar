@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -165,10 +165,10 @@ class MockCertificateReportSender
   NetworkIsolationKey latest_network_isolation_key_;
 };
 
-class ProofVerifierChromiumTest : public ::testing::Test {
+class ProofVerifierMonyharTest : public ::testing::Test {
  public:
-  ProofVerifierChromiumTest()
-      : verify_context_(new ProofVerifyContextChromium(0 /*cert_verify_flags*/,
+  ProofVerifierMonyharTest()
+      : verify_context_(new ProofVerifyContextMonyhar(0 /*cert_verify_flags*/,
                                                        NetLogWithSource())) {}
 
   void SetUp() override {
@@ -188,7 +188,7 @@ class ProofVerifierChromiumTest : public ::testing::Test {
   }
 
   std::string GetTestSignature() {
-    ProofSourceChromium source;
+    ProofSourceMonyhar source;
     source.Initialize(GetTestCertsDirectory().AppendASCII("quic-chain.pem"),
                       GetTestCertsDirectory().AppendASCII("quic-leaf-cert.key"),
                       base::FilePath());
@@ -212,8 +212,8 @@ class ProofVerifierChromiumTest : public ::testing::Test {
   }
 
   void CheckSCT(bool sct_expected_ok) {
-    ProofVerifyDetailsChromium* proof_details =
-        reinterpret_cast<ProofVerifyDetailsChromium*>(details_.get());
+    ProofVerifyDetailsMonyhar* proof_details =
+        reinterpret_cast<ProofVerifyDetailsMonyhar*>(details_.get());
     const CertVerifyResult& cert_verify_result =
         proof_details->cert_verify_result;
     if (sct_expected_ok) {
@@ -241,11 +241,11 @@ class ProofVerifierChromiumTest : public ::testing::Test {
   scoped_refptr<X509Certificate> test_cert_;
 };
 
-TEST_F(ProofVerifierChromiumTest, VerifyProof) {
+TEST_F(ProofVerifierMonyharTest, VerifyProof) {
   MockCertVerifier dummy_verifier;
   dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -258,8 +258,8 @@ TEST_F(ProofVerifierChromiumTest, VerifyProof) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(dummy_result_.cert_status,
             verify_details->cert_verify_result.cert_status);
 
@@ -271,16 +271,16 @@ TEST_F(ProofVerifierChromiumTest, VerifyProof) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(dummy_result_.cert_status,
             verify_details->cert_verify_result.cert_status);
 }
 
 // Tests that the quic::ProofVerifier fails verification if certificate
 // verification fails.
-TEST_F(ProofVerifierChromiumTest, FailsIfCertFails) {
+TEST_F(ProofVerifierMonyharTest, FailsIfCertFails) {
   MockCertVerifier dummy_verifier;
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -307,7 +307,7 @@ class DoNothingLogNotifier : public MultiLogCTVerifier::CTLogProvider {
 };
 
 // Valid SCT and cert
-TEST_F(ProofVerifierChromiumTest, ValidSCTList) {
+TEST_F(ProofVerifierMonyharTest, ValidSCTList) {
   // Use different certificates for SCT tests.
   ASSERT_NO_FATAL_FAILURE(GetSCTTestCertificates(&certs_));
 
@@ -335,7 +335,7 @@ TEST_F(ProofVerifierChromiumTest, ValidSCTList) {
   CertAndCTVerifier cert_verifier(std::move(dummy_verifier),
                                   std::move(ct_verifier));
 
-  ProofVerifierChromium proof_verifier(&cert_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&cert_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -350,7 +350,7 @@ TEST_F(ProofVerifierChromiumTest, ValidSCTList) {
 }
 
 // Invalid SCT, but valid cert
-TEST_F(ProofVerifierChromiumTest, InvalidSCTList) {
+TEST_F(ProofVerifierMonyharTest, InvalidSCTList) {
   // Use different certificates for SCT tests.
   ASSERT_NO_FATAL_FAILURE(GetSCTTestCertificates(&certs_));
 
@@ -378,7 +378,7 @@ TEST_F(ProofVerifierChromiumTest, InvalidSCTList) {
   CertAndCTVerifier cert_verifier(std::move(dummy_verifier),
                                   std::move(ct_verifier));
 
-  ProofVerifierChromium proof_verifier(&cert_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&cert_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -394,9 +394,9 @@ TEST_F(ProofVerifierChromiumTest, InvalidSCTList) {
 
 // Tests that the quic::ProofVerifier doesn't verify certificates if the config
 // signature fails.
-TEST_F(ProofVerifierChromiumTest, FailsIfSignatureFails) {
+TEST_F(ProofVerifierMonyharTest, FailsIfSignatureFails) {
   FailsTestCertVerifier cert_verifier;
-  ProofVerifierChromium proof_verifier(&cert_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&cert_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -411,7 +411,7 @@ TEST_F(ProofVerifierChromiumTest, FailsIfSignatureFails) {
 
 // Tests that the certificate policy enforcer is consulted for EV
 // and the certificate is allowed to be EV.
-TEST_F(ProofVerifierChromiumTest, PreservesEVIfAllowed) {
+TEST_F(ProofVerifierMonyharTest, PreservesEVIfAllowed) {
   dummy_result_.cert_status = CERT_STATUS_IS_EV;
 
   MockCertVerifier dummy_verifier;
@@ -421,7 +421,7 @@ TEST_F(ProofVerifierChromiumTest, PreservesEVIfAllowed) {
       .WillRepeatedly(
           Return(ct::CTPolicyCompliance::CT_POLICY_COMPLIES_VIA_SCTS));
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -434,8 +434,8 @@ TEST_F(ProofVerifierChromiumTest, PreservesEVIfAllowed) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(dummy_result_.cert_status,
             verify_details->cert_verify_result.cert_status);
 
@@ -448,14 +448,14 @@ TEST_F(ProofVerifierChromiumTest, PreservesEVIfAllowed) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(dummy_result_.cert_status,
             verify_details->cert_verify_result.cert_status);
 }
 
 // Tests that the certificate policy enforcer is consulted for EV
 // and the certificate is not allowed to be EV.
-TEST_F(ProofVerifierChromiumTest, StripsEVIfNotAllowed) {
+TEST_F(ProofVerifierMonyharTest, StripsEVIfNotAllowed) {
   dummy_result_.cert_status = CERT_STATUS_IS_EV;
 
   MockCertVerifier dummy_verifier;
@@ -465,7 +465,7 @@ TEST_F(ProofVerifierChromiumTest, StripsEVIfNotAllowed) {
       .WillRepeatedly(
           Return(ct::CTPolicyCompliance::CT_POLICY_NOT_ENOUGH_SCTS));
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -478,8 +478,8 @@ TEST_F(ProofVerifierChromiumTest, StripsEVIfNotAllowed) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(CERT_STATUS_CT_COMPLIANCE_FAILED,
             verify_details->cert_verify_result.cert_status &
                 (CERT_STATUS_CT_COMPLIANCE_FAILED | CERT_STATUS_IS_EV));
@@ -492,7 +492,7 @@ TEST_F(ProofVerifierChromiumTest, StripsEVIfNotAllowed) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(CERT_STATUS_CT_COMPLIANCE_FAILED,
             verify_details->cert_verify_result.cert_status &
                 (CERT_STATUS_CT_COMPLIANCE_FAILED | CERT_STATUS_IS_EV));
@@ -500,7 +500,7 @@ TEST_F(ProofVerifierChromiumTest, StripsEVIfNotAllowed) {
 
 // Tests that the when a certificate's EV status is stripped to EV
 // non-compliance, the correct histogram is recorded.
-TEST_F(ProofVerifierChromiumTest, CTEVHistogramNonCompliant) {
+TEST_F(ProofVerifierMonyharTest, CTEVHistogramNonCompliant) {
   const char kHistogramName[] =
       "Net.CertificateTransparency.EVCompliance2.QUIC";
   base::HistogramTester histograms;
@@ -515,7 +515,7 @@ TEST_F(ProofVerifierChromiumTest, CTEVHistogramNonCompliant) {
       .WillRepeatedly(
           Return(ct::CTPolicyCompliance::CT_POLICY_NOT_ENOUGH_SCTS));
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -528,8 +528,8 @@ TEST_F(ProofVerifierChromiumTest, CTEVHistogramNonCompliant) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(CERT_STATUS_CT_COMPLIANCE_FAILED,
             verify_details->cert_verify_result.cert_status &
                 (CERT_STATUS_CT_COMPLIANCE_FAILED | CERT_STATUS_IS_EV));
@@ -545,7 +545,7 @@ TEST_F(ProofVerifierChromiumTest, CTEVHistogramNonCompliant) {
       std::move(callback));
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(CERT_STATUS_CT_COMPLIANCE_FAILED,
             verify_details->cert_verify_result.cert_status &
                 (CERT_STATUS_CT_COMPLIANCE_FAILED | CERT_STATUS_IS_EV));
@@ -557,7 +557,7 @@ TEST_F(ProofVerifierChromiumTest, CTEVHistogramNonCompliant) {
 
 // Tests that when a connection is CT-compliant and its EV status is preserved,
 // the correct histogram is recorded.
-TEST_F(ProofVerifierChromiumTest, CTEVHistogramCompliant) {
+TEST_F(ProofVerifierMonyharTest, CTEVHistogramCompliant) {
   const char kHistogramName[] =
       "Net.CertificateTransparency.EVCompliance2.QUIC";
   base::HistogramTester histograms;
@@ -572,7 +572,7 @@ TEST_F(ProofVerifierChromiumTest, CTEVHistogramCompliant) {
       .WillRepeatedly(
           Return(ct::CTPolicyCompliance::CT_POLICY_COMPLIES_VIA_SCTS));
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -585,8 +585,8 @@ TEST_F(ProofVerifierChromiumTest, CTEVHistogramCompliant) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_IS_EV);
 
@@ -601,7 +601,7 @@ TEST_F(ProofVerifierChromiumTest, CTEVHistogramCompliant) {
       std::move(callback));
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_IS_EV);
 
@@ -618,14 +618,14 @@ HashValueVector MakeHashValueVector(uint8_t tag) {
   return hashes;
 }
 
-TEST_F(ProofVerifierChromiumTest, IsFatalErrorNotSetForNonFatalError) {
+TEST_F(ProofVerifierMonyharTest, IsFatalErrorNotSetForNonFatalError) {
   dummy_result_.cert_status = CERT_STATUS_DATE_INVALID;
 
   MockCertVerifier dummy_verifier;
   dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_,
                                   ERR_CERT_DATE_INVALID);
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -637,8 +637,8 @@ TEST_F(ProofVerifierChromiumTest, IsFatalErrorNotSetForNonFatalError) {
       verify_context_.get(), &error_details_, &details_, std::move(callback));
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_FALSE(verify_details->is_fatal_cert_error);
 
   callback = std::make_unique<DummyProofVerifierCallback>();
@@ -648,11 +648,11 @@ TEST_F(ProofVerifierChromiumTest, IsFatalErrorNotSetForNonFatalError) {
       std::move(callback));
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_FALSE(verify_details->is_fatal_cert_error);
 }
 
-TEST_F(ProofVerifierChromiumTest, IsFatalErrorSetForFatalError) {
+TEST_F(ProofVerifierMonyharTest, IsFatalErrorSetForFatalError) {
   dummy_result_.cert_status = CERT_STATUS_DATE_INVALID;
 
   MockCertVerifier dummy_verifier;
@@ -663,7 +663,7 @@ TEST_F(ProofVerifierChromiumTest, IsFatalErrorSetForFatalError) {
       base::Time::Now() + base::TimeDelta::FromSeconds(1000);
   transport_security_state_.AddHSTS(kTestHostname, expiry, true);
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -674,8 +674,8 @@ TEST_F(ProofVerifierChromiumTest, IsFatalErrorSetForFatalError) {
       kTestChloHash, certs_, kTestEmptySCT, GetTestSignature(),
       verify_context_.get(), &error_details_, &details_, std::move(callback));
   ASSERT_EQ(quic::QUIC_FAILURE, status);
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->is_fatal_cert_error);
 
   callback = std::make_unique<DummyProofVerifierCallback>();
@@ -684,12 +684,12 @@ TEST_F(ProofVerifierChromiumTest, IsFatalErrorSetForFatalError) {
       verify_context_.get(), &error_details_, &details_, &tls_alert_,
       std::move(callback));
   ASSERT_EQ(quic::QUIC_FAILURE, status);
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->is_fatal_cert_error);
 }
 
 // Test that PKP is enforced for certificates that chain up to known roots.
-TEST_F(ProofVerifierChromiumTest, PKPEnforced) {
+TEST_F(ProofVerifierMonyharTest, PKPEnforced) {
   dummy_result_.is_issued_by_known_root = true;
   dummy_result_.public_key_hashes = MakeHashValueVector(0x01);
 
@@ -699,7 +699,7 @@ TEST_F(ProofVerifierChromiumTest, PKPEnforced) {
   transport_security_state_.EnableStaticPinsForTesting();
   ScopedTransportSecurityStateSource scoped_security_state_source;
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -712,8 +712,8 @@ TEST_F(ProofVerifierChromiumTest, PKPEnforced) {
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_PINNED_KEY_MISSING);
   EXPECT_FALSE(verify_details->pkp_bypassed);
@@ -727,7 +727,7 @@ TEST_F(ProofVerifierChromiumTest, PKPEnforced) {
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_PINNED_KEY_MISSING);
   EXPECT_FALSE(verify_details->pkp_bypassed);
@@ -736,7 +736,7 @@ TEST_F(ProofVerifierChromiumTest, PKPEnforced) {
 
 // Test |pkp_bypassed| is set when PKP is bypassed due to a local
 // trust anchor
-TEST_F(ProofVerifierChromiumTest, PKPBypassFlagSet) {
+TEST_F(ProofVerifierMonyharTest, PKPBypassFlagSet) {
   dummy_result_.is_issued_by_known_root = false;
   dummy_result_.public_key_hashes = MakeHashValueVector(0x01);
 
@@ -746,7 +746,7 @@ TEST_F(ProofVerifierChromiumTest, PKPBypassFlagSet) {
   transport_security_state_.EnableStaticPinsForTesting();
   ScopedTransportSecurityStateSource scoped_security_state_source;
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr,
                                        {kCTAndPKPHost}, NetworkIsolationKey());
 
@@ -759,8 +759,8 @@ TEST_F(ProofVerifierChromiumTest, PKPBypassFlagSet) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->pkp_bypassed);
 
   callback = std::make_unique<DummyProofVerifierCallback>();
@@ -771,12 +771,12 @@ TEST_F(ProofVerifierChromiumTest, PKPBypassFlagSet) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->pkp_bypassed);
 }
 
 // Test that PKP errors result in sending reports.
-TEST_F(ProofVerifierChromiumTest, PKPReport) {
+TEST_F(ProofVerifierMonyharTest, PKPReport) {
   NetworkIsolationKey network_isolation_key =
       NetworkIsolationKey::CreateTransient();
 
@@ -800,7 +800,7 @@ TEST_F(ProofVerifierChromiumTest, PKPReport) {
   MockCertVerifier dummy_verifier;
   dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        network_isolation_key);
 
@@ -813,8 +813,8 @@ TEST_F(ProofVerifierChromiumTest, PKPReport) {
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_PINNED_KEY_MISSING);
   EXPECT_FALSE(verify_details->pkp_bypassed);
@@ -828,7 +828,7 @@ TEST_F(ProofVerifierChromiumTest, PKPReport) {
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_PINNED_KEY_MISSING);
   EXPECT_FALSE(verify_details->pkp_bypassed);
@@ -841,7 +841,7 @@ TEST_F(ProofVerifierChromiumTest, PKPReport) {
 
 // Test that when CT is required (in this case, by the delegate), the
 // absence of CT information is a socket error.
-TEST_F(ProofVerifierChromiumTest, CTIsRequired) {
+TEST_F(ProofVerifierMonyharTest, CTIsRequired) {
   dummy_result_.is_issued_by_known_root = true;
   dummy_result_.public_key_hashes = MakeHashValueVector(0x01);
 
@@ -861,7 +861,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequired) {
       .WillRepeatedly(
           Return(ct::CTPolicyCompliance::CT_POLICY_NOT_ENOUGH_SCTS));
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -874,8 +874,8 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequired) {
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_CERTIFICATE_TRANSPARENCY_REQUIRED);
 
@@ -887,7 +887,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequired) {
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_CERTIFICATE_TRANSPARENCY_REQUIRED);
 }
@@ -895,7 +895,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequired) {
 // Test that when CT is required (in this case, by the delegate) and CT
 // information is not compliant, then the CT-required histogram is recorded
 // properly.
-TEST_F(ProofVerifierChromiumTest, CTIsRequiredHistogramNonCompliant) {
+TEST_F(ProofVerifierMonyharTest, CTIsRequiredHistogramNonCompliant) {
   const char kHistogramName[] =
       "Net.CertificateTransparency.CTRequiredConnectionComplianceStatus2.QUIC";
   base::HistogramTester histograms;
@@ -919,7 +919,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequiredHistogramNonCompliant) {
       .WillRepeatedly(
           Return(ct::CTPolicyCompliance::CT_POLICY_NOT_ENOUGH_SCTS));
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -950,7 +950,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequiredHistogramNonCompliant) {
 // Test that when CT is required (in this case, by the delegate) and CT
 // information is compliant, then the CT-required histogram is recorded
 // properly.
-TEST_F(ProofVerifierChromiumTest, CTIsRequiredHistogramCompliant) {
+TEST_F(ProofVerifierMonyharTest, CTIsRequiredHistogramCompliant) {
   const char kHistogramName[] =
       "Net.CertificateTransparency.CTRequiredConnectionComplianceStatus2.QUIC";
   base::HistogramTester histograms;
@@ -975,7 +975,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequiredHistogramCompliant) {
   {
     MockCertVerifier dummy_verifier;
     dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
-    ProofVerifierChromium proof_verifier(
+    ProofVerifierMonyhar proof_verifier(
         &dummy_verifier, &ct_policy_enforcer_, &transport_security_state_,
         nullptr, {kTestHostname}, NetworkIsolationKey());
 
@@ -1001,7 +1001,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequiredHistogramCompliant) {
     dummy_result_.is_issued_by_known_root = true;
     MockCertVerifier dummy_verifier;
     dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
-    ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+    ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                          &transport_security_state_, nullptr,
                                          {}, NetworkIsolationKey());
 
@@ -1034,7 +1034,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsRequiredHistogramCompliant) {
 
 // Test that when CT is not required (because of a private root, in this case),
 // the CT-required histogram is not recorded.
-TEST_F(ProofVerifierChromiumTest, CTIsNotRequiredHistogram) {
+TEST_F(ProofVerifierMonyharTest, CTIsNotRequiredHistogram) {
   const char kHistogramName[] =
       "Net.CertificateTransparency.CTRequiredConnectionComplianceStatus2.QUIC";
   base::HistogramTester histograms;
@@ -1045,7 +1045,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsNotRequiredHistogram) {
   MockCertVerifier dummy_verifier;
   dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr,
                                        {kTestHostname}, NetworkIsolationKey());
 
@@ -1068,7 +1068,7 @@ TEST_F(ProofVerifierChromiumTest, CTIsNotRequiredHistogram) {
 }
 
 // Test that CT is considered even when PKP fails.
-TEST_F(ProofVerifierChromiumTest, PKPAndCTBothTested) {
+TEST_F(ProofVerifierMonyharTest, PKPAndCTBothTested) {
   dummy_result_.is_issued_by_known_root = true;
   dummy_result_.public_key_hashes = MakeHashValueVector(0x01);
 
@@ -1092,7 +1092,7 @@ TEST_F(ProofVerifierChromiumTest, PKPAndCTBothTested) {
       .WillRepeatedly(
           Return(ct::CTPolicyCompliance::CT_POLICY_NOT_ENOUGH_SCTS));
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -1105,8 +1105,8 @@ TEST_F(ProofVerifierChromiumTest, PKPAndCTBothTested) {
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_PINNED_KEY_MISSING);
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
@@ -1120,7 +1120,7 @@ TEST_F(ProofVerifierChromiumTest, PKPAndCTBothTested) {
   ASSERT_EQ(quic::QUIC_FAILURE, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
               CERT_STATUS_PINNED_KEY_MISSING);
   EXPECT_TRUE(verify_details->cert_verify_result.cert_status &
@@ -1128,7 +1128,7 @@ TEST_F(ProofVerifierChromiumTest, PKPAndCTBothTested) {
 }
 
 // Test that CT compliance status is recorded in a histogram.
-TEST_F(ProofVerifierChromiumTest, CTComplianceStatusHistogram) {
+TEST_F(ProofVerifierMonyharTest, CTComplianceStatusHistogram) {
   const char kHistogramName[] =
       "Net.CertificateTransparency.ConnectionComplianceStatus2.QUIC";
   base::HistogramTester histograms;
@@ -1144,7 +1144,7 @@ TEST_F(ProofVerifierChromiumTest, CTComplianceStatusHistogram) {
   {
     MockCertVerifier dummy_verifier;
     dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
-    ProofVerifierChromium proof_verifier(
+    ProofVerifierMonyhar proof_verifier(
         &dummy_verifier, &ct_policy_enforcer_, &transport_security_state_,
         nullptr, {kTestHostname}, NetworkIsolationKey());
 
@@ -1172,7 +1172,7 @@ TEST_F(ProofVerifierChromiumTest, CTComplianceStatusHistogram) {
     dummy_result_.is_issued_by_known_root = true;
     MockCertVerifier dummy_verifier;
     dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
-    ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+    ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                          &transport_security_state_, nullptr,
                                          {}, NetworkIsolationKey());
 
@@ -1205,13 +1205,13 @@ TEST_F(ProofVerifierChromiumTest, CTComplianceStatusHistogram) {
   }
 }
 
-TEST_F(ProofVerifierChromiumTest, UnknownRootRejected) {
+TEST_F(ProofVerifierMonyharTest, UnknownRootRejected) {
   dummy_result_.is_issued_by_known_root = false;
 
   MockCertVerifier dummy_verifier;
   dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr, {},
                                        NetworkIsolationKey());
 
@@ -1237,13 +1237,13 @@ TEST_F(ProofVerifierChromiumTest, UnknownRootRejected) {
       error_details_);
 }
 
-TEST_F(ProofVerifierChromiumTest, UnknownRootAcceptedWithOverride) {
+TEST_F(ProofVerifierMonyharTest, UnknownRootAcceptedWithOverride) {
   dummy_result_.is_issued_by_known_root = false;
 
   MockCertVerifier dummy_verifier;
   dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr,
                                        {kTestHostname}, NetworkIsolationKey());
 
@@ -1256,8 +1256,8 @@ TEST_F(ProofVerifierChromiumTest, UnknownRootAcceptedWithOverride) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(dummy_result_.cert_status,
             verify_details->cert_verify_result.cert_status);
 
@@ -1269,18 +1269,18 @@ TEST_F(ProofVerifierChromiumTest, UnknownRootAcceptedWithOverride) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(dummy_result_.cert_status,
             verify_details->cert_verify_result.cert_status);
 }
 
-TEST_F(ProofVerifierChromiumTest, UnknownRootAcceptedWithWildcardOverride) {
+TEST_F(ProofVerifierMonyharTest, UnknownRootAcceptedWithWildcardOverride) {
   dummy_result_.is_issued_by_known_root = false;
 
   MockCertVerifier dummy_verifier;
   dummy_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
 
-  ProofVerifierChromium proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
+  ProofVerifierMonyhar proof_verifier(&dummy_verifier, &ct_policy_enforcer_,
                                        &transport_security_state_, nullptr,
                                        {""}, NetworkIsolationKey());
 
@@ -1293,8 +1293,8 @@ TEST_F(ProofVerifierChromiumTest, UnknownRootAcceptedWithWildcardOverride) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  ProofVerifyDetailsChromium* verify_details =
-      static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  ProofVerifyDetailsMonyhar* verify_details =
+      static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(dummy_result_.cert_status,
             verify_details->cert_verify_result.cert_status);
 
@@ -1306,14 +1306,14 @@ TEST_F(ProofVerifierChromiumTest, UnknownRootAcceptedWithWildcardOverride) {
   ASSERT_EQ(quic::QUIC_SUCCESS, status);
 
   ASSERT_TRUE(details_.get());
-  verify_details = static_cast<ProofVerifyDetailsChromium*>(details_.get());
+  verify_details = static_cast<ProofVerifyDetailsMonyhar*>(details_.get());
   EXPECT_EQ(dummy_result_.cert_status,
             verify_details->cert_verify_result.cert_status);
 }
 
 // Tests that the SCTAuditingDelegate is called to enqueue SCT reports when
 // verifying a good proof and cert.
-TEST_F(ProofVerifierChromiumTest, SCTAuditingReportCollected) {
+TEST_F(ProofVerifierMonyharTest, SCTAuditingReportCollected) {
   MockCertVerifier cert_verifier;
   cert_verifier.AddResultForCert(test_cert_.get(), dummy_result_, OK);
 
@@ -1330,7 +1330,7 @@ TEST_F(ProofVerifierChromiumTest, SCTAuditingReportCollected) {
   EXPECT_CALL(sct_auditing_delegate, MaybeEnqueueReport(host_port_pair, _, _))
       .Times(2);
 
-  ProofVerifierChromium proof_verifier(
+  ProofVerifierMonyhar proof_verifier(
       &cert_verifier, &ct_policy_enforcer_, &transport_security_state_,
       &sct_auditing_delegate, {}, NetworkIsolationKey());
 

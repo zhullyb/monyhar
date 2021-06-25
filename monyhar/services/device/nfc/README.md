@@ -2,7 +2,7 @@
 
 ### High level Overview
 
-The implementation of Web NFC in Chromium consists of two main parts:
+The implementation of Web NFC in Monyhar consists of two main parts:
 
 - The NFC module in Blink located at `third_party/blink/renderer/modules/nfc/`
   which contains Blink JavaScript bindings for Web NFC.

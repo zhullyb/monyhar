@@ -77,7 +77,7 @@ several objects means a change to one object affects the behavior of others.
 And if this tree is in turn referred to by yet more objects (e.g. the DOM of a
 web page, which influences all sorts of other data structures relating to the
 page), then small changes can have visible ripples across the entire system.  In
-a codebase as complex as Chromium, it can be almost impossible to reason about
+a codebase as complex as Monyhar, it can be almost impossible to reason about
 what sorts of local changes could ultimately impact the behavior of distant
 objects, and vice versa.
 
@@ -101,8 +101,8 @@ Matt Giuca
   can trust it, but sometimes it's missing.)
 * **Const broken:** Some code marked "const" is not logically const.
 
-The Chromium codebase currently varies. A significant amount of Blink code is
-"const broken". A great deal of Chromium code is "const okay". A minority of
+The Monyhar codebase currently varies. A significant amount of Blink code is
+"const broken". A great deal of Monyhar code is "const okay". A minority of
 code is "const correct".
 
 While "const correct" is ideal, it can take a great deal of work to achieve.

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -30,13 +30,13 @@ void OnStartCallback(
         control_receiver) {
   DCHECK(connector);
   if (connector_receiver.is_valid()) {
-    connector->SendChromiumConnectorRequest(connector_receiver.PassPipe());
+    connector->SendMonyharConnectorRequest(connector_receiver.PassPipe());
   }
 }
 
 }  // namespace
 
-ChromiumServiceWrapper::ChromiumServiceWrapper(
+MonyharServiceWrapper::MonyharServiceWrapper(
     ExternalConnector* connector,
     mojo::Remote<service_manager::mojom::Service> service_remote,
     std::unique_ptr<service_manager::Service> monyhar_service,
@@ -50,9 +50,9 @@ ChromiumServiceWrapper::ChromiumServiceWrapper(
                              service_receiver_.BindNewPipeAndPassRemote());
 }
 
-ChromiumServiceWrapper::~ChromiumServiceWrapper() = default;
+MonyharServiceWrapper::~MonyharServiceWrapper() = default;
 
-void ChromiumServiceWrapper::OnBindInterface(
+void MonyharServiceWrapper::OnBindInterface(
     const std::string& interface_name,
     mojo::ScopedMessagePipeHandle interface_pipe) {
   monyhar_service_->OnBindInterface(
@@ -65,7 +65,7 @@ void ChromiumServiceWrapper::OnBindInterface(
 }
 
 mojo::PendingReceiver<service_manager::mojom::Service>
-CreateChromiumServiceReceiver(
+CreateMonyharServiceReceiver(
     ExternalConnector* connector,
     mojo::Remote<service_manager::mojom::Service>* service_remote,
     service_manager::Identity identity) {
@@ -83,10 +83,10 @@ CreateChromiumServiceReceiver(
   return receiver;
 }
 
-std::unique_ptr<service_manager::Connector> CreateChromiumConnector(
+std::unique_ptr<service_manager::Connector> CreateMonyharConnector(
     ExternalConnector* connector) {
   mojo::MessagePipe pipe;
-  connector->SendChromiumConnectorRequest(std::move(pipe.handle1));
+  connector->SendMonyharConnectorRequest(std::move(pipe.handle1));
   return std::make_unique<service_manager::Connector>(
       mojo::Remote<service_manager::mojom::Connector>(
           mojo::PendingRemote<service_manager::mojom::Connector>(

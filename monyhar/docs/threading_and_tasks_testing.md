@@ -360,7 +360,7 @@ The downside is that you don't have fine-grained control over it like you would
 with all the `TaskEnvironment` methods.
 
 The favored paradigm is `RunLoop::Run()` + `QuitClosure()`. The asynchronous
-nature of Chromium code makes this the most reliable way to wait for an event.
+nature of Monyhar code makes this the most reliable way to wait for an event.
 
 There are fancy versions of this to perform common actions, e.g.
 [content/public/test/browser_test_utils.h]

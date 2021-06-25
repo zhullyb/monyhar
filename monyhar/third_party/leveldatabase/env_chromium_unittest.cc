@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -36,7 +36,7 @@ using leveldb::Slice;
 using leveldb::Status;
 using leveldb::WritableFile;
 using leveldb::WriteOptions;
-using leveldb_env::ChromiumEnv;
+using leveldb_env::MonyharEnv;
 using leveldb_env::DBTracker;
 using leveldb_env::MethodID;
 using leveldb_env::Options;
@@ -77,13 +77,13 @@ TEST(ErrorEncoding, NoEncodedMessage) {
 }
 
 template <typename T>
-class ChromiumEnvMultiPlatformTests : public ::testing::Test {
+class MonyharEnvMultiPlatformTests : public ::testing::Test {
  public:
 };
 
-typedef ::testing::Types<ChromiumEnv> ChromiumEnvMultiPlatformTestsTypes;
-TYPED_TEST_SUITE(ChromiumEnvMultiPlatformTests,
-                 ChromiumEnvMultiPlatformTestsTypes);
+typedef ::testing::Types<MonyharEnv> MonyharEnvMultiPlatformTestsTypes;
+TYPED_TEST_SUITE(MonyharEnvMultiPlatformTests,
+                 MonyharEnvMultiPlatformTestsTypes);
 
 int CountFilesWithExtension(const base::FilePath& dir,
                             const base::FilePath::StringType& extension) {
@@ -111,7 +111,7 @@ bool GetFirstLDBFile(const base::FilePath& dir, base::FilePath* ldb_file) {
   return false;
 }
 
-TEST(ChromiumEnv, RemoveBackupTables) {
+TEST(MonyharEnv, RemoveBackupTables) {
   base::test::TaskEnvironment env(
       base::test::TaskEnvironment::MainThreadType::UI);
   Options options;
@@ -133,7 +133,7 @@ TEST(ChromiumEnv, RemoveBackupTables) {
   delete db;
   db = nullptr;
 
-  // Current ChromiumEnv no longer makes backup tables - verify for sanity.
+  // Current MonyharEnv no longer makes backup tables - verify for sanity.
   EXPECT_EQ(1, CountFilesWithExtension(dir, FPL(".ldb")));
   EXPECT_EQ(0, CountFilesWithExtension(dir, FPL(".bak")));
 
@@ -154,7 +154,7 @@ TEST(ChromiumEnv, RemoveBackupTables) {
   EXPECT_EQ(0, CountFilesWithExtension(dir, FPL(".bak")));
 }
 
-TEST(ChromiumEnv, GetChildrenEmptyDir) {
+TEST(MonyharEnv, GetChildrenEmptyDir) {
   base::ScopedTempDir scoped_temp_dir;
   ASSERT_TRUE(scoped_temp_dir.CreateUniqueTempDir());
   base::FilePath dir = scoped_temp_dir.GetPath();
@@ -166,7 +166,7 @@ TEST(ChromiumEnv, GetChildrenEmptyDir) {
   EXPECT_EQ(0U, result.size());
 }
 
-TEST(ChromiumEnv, GetChildrenPriorResults) {
+TEST(MonyharEnv, GetChildrenPriorResults) {
   base::ScopedTempDir scoped_temp_dir;
   ASSERT_TRUE(scoped_temp_dir.CreateUniqueTempDir());
   base::FilePath dir = scoped_temp_dir.GetPath();
@@ -190,7 +190,7 @@ TEST(ChromiumEnv, GetChildrenPriorResults) {
   EXPECT_EQ(1U, result.size());
 }
 
-TEST(ChromiumEnv, TestWriteBufferSize) {
+TEST(MonyharEnv, TestWriteBufferSize) {
   // If can't get disk size, use leveldb defaults.
   const int64_t MB = 1024 * 1024;
   EXPECT_EQ(size_t(4 * MB), leveldb_env::WriteBufferSize(-1));
@@ -211,7 +211,7 @@ TEST(ChromiumEnv, TestWriteBufferSize) {
   EXPECT_EQ(size_t(4 * MB), leveldb_env::WriteBufferSize(100 * MB * MB));
 }
 
-TEST(ChromiumEnv, LockFile) {
+TEST(MonyharEnv, LockFile) {
   base::FilePath tmp_file_path;
   base::CreateTemporaryFile(&tmp_file_path);
   leveldb::FileLock* lock = nullptr;
@@ -229,7 +229,7 @@ TEST(ChromiumEnv, LockFile) {
   EXPECT_TRUE(env->UnlockFile(lock).ok());
 }
 
-TEST(ChromiumEnvTest, TestOpenOnRead) {
+TEST(MonyharEnvTest, TestOpenOnRead) {
   // Write some test data to a single file that will be opened |n| times.
   base::FilePath tmp_file_path;
   ASSERT_TRUE(base::CreateTemporaryFile(&tmp_file_path));
@@ -240,7 +240,7 @@ TEST(ChromiumEnvTest, TestOpenOnRead) {
   fputs(kFileData, f);
   fclose(f);
 
-  std::unique_ptr<ChromiumEnv> env(new ChromiumEnv());
+  std::unique_ptr<MonyharEnv> env(new MonyharEnv());
   env->SetReadOnlyFileLimitForTesting(kReadOnlyFileLimit);
 
   // Open test file some number greater than kReadOnlyFileLimit to force the
@@ -263,9 +263,9 @@ TEST(ChromiumEnvTest, TestOpenOnRead) {
   ASSERT_TRUE(env->RemoveFile(tmp_file_path.AsUTF8Unsafe()).ok());
 }
 
-class ChromiumEnvDBTrackerTest : public ::testing::Test {
+class MonyharEnvDBTrackerTest : public ::testing::Test {
  protected:
-  ChromiumEnvDBTrackerTest()
+  MonyharEnvDBTrackerTest()
       : task_environment_(base::test::TaskEnvironment::MainThreadType::UI) {}
   void SetUp() override {
     testing::Test::SetUp();
@@ -304,7 +304,7 @@ class ChromiumEnvDBTrackerTest : public ::testing::Test {
   base::test::TaskEnvironment task_environment_;
 };
 
-TEST_F(ChromiumEnvDBTrackerTest, OpenDatabase) {
+TEST_F(MonyharEnvDBTrackerTest, OpenDatabase) {
   struct KeyValue {
     const char* key;
     const char* value;
@@ -343,7 +343,7 @@ TEST_F(ChromiumEnvDBTrackerTest, OpenDatabase) {
   delete plain_db;
 }
 
-TEST_F(ChromiumEnvDBTrackerTest, TrackedDBInfo) {
+TEST_F(MonyharEnvDBTrackerTest, TrackedDBInfo) {
   Options options;
   options.create_if_missing = true;
   std::string name = temp_path().AsUTF8Unsafe();
@@ -357,7 +357,7 @@ TEST_F(ChromiumEnvDBTrackerTest, TrackedDBInfo) {
   delete db;
 }
 
-TEST_F(ChromiumEnvDBTrackerTest, VisitDatabases) {
+TEST_F(MonyharEnvDBTrackerTest, VisitDatabases) {
   LiveDBSet live_dbs;
 
   // Open several databases.
@@ -382,7 +382,7 @@ TEST_F(ChromiumEnvDBTrackerTest, VisitDatabases) {
   AssertEqualSets(live_dbs, VisitDatabases());
 }
 
-TEST_F(ChromiumEnvDBTrackerTest, OpenDBTracking) {
+TEST_F(MonyharEnvDBTrackerTest, OpenDBTracking) {
   Options options;
   options.create_if_missing = true;
   std::unique_ptr<leveldb::DB> db;
@@ -396,7 +396,7 @@ TEST_F(ChromiumEnvDBTrackerTest, OpenDBTracking) {
   ASSERT_EQ(db.get(), *visited_dbs.begin());
 }
 
-TEST_F(ChromiumEnvDBTrackerTest, IsTrackedDB) {
+TEST_F(MonyharEnvDBTrackerTest, IsTrackedDB) {
   leveldb_env::Options options;
   options.create_if_missing = true;
   leveldb::DB* untracked_db;
@@ -419,7 +419,7 @@ TEST_F(ChromiumEnvDBTrackerTest, IsTrackedDB) {
   delete untracked_db;
 }
 
-TEST_F(ChromiumEnvDBTrackerTest, CheckMemEnv) {
+TEST_F(MonyharEnvDBTrackerTest, CheckMemEnv) {
   Env* env = leveldb::Env::Default();
   ASSERT_TRUE(env != nullptr);
   EXPECT_FALSE(leveldb_chrome::IsMemEnv(env));
@@ -429,7 +429,7 @@ TEST_F(ChromiumEnvDBTrackerTest, CheckMemEnv) {
   EXPECT_TRUE(leveldb_chrome::IsMemEnv(memenv.get()));
 }
 
-TEST_F(ChromiumEnvDBTrackerTest, MemoryDumpCreation) {
+TEST_F(MonyharEnvDBTrackerTest, MemoryDumpCreation) {
   Options options;
   options.create_if_missing = true;
   leveldb::Cache* web_cache = leveldb_chrome::GetSharedWebBlockCache();
@@ -488,7 +488,7 @@ TEST_F(ChromiumEnvDBTrackerTest, MemoryDumpCreation) {
   EXPECT_EQ(db_size, mad3->GetSizeInternal());
 }
 
-TEST_F(ChromiumEnvDBTrackerTest, MemEnvMemoryDumpCreation) {
+TEST_F(MonyharEnvDBTrackerTest, MemEnvMemoryDumpCreation) {
   std::unique_ptr<leveldb::Env> memenv = leveldb_chrome::NewMemEnv("test");
 
   Status s;
@@ -523,7 +523,7 @@ TEST_F(ChromiumEnvDBTrackerTest, MemEnvMemoryDumpCreation) {
   EXPECT_EQ(mad->GetSizeInternal(), 0ul);
 }
 
-TEST(ChromiumLevelDB, PossiblyValidDB) {
+TEST(MonyharLevelDB, PossiblyValidDB) {
   base::ScopedTempDir scoped_temp_dir;
   ASSERT_TRUE(scoped_temp_dir.CreateUniqueTempDir());
 
@@ -546,7 +546,7 @@ TEST(ChromiumLevelDB, PossiblyValidDB) {
   EXPECT_FALSE(leveldb_chrome::PossiblyValidDB(db_path, default_env));
 }
 
-TEST(ChromiumLevelDB, DeleteOnDiskDB) {
+TEST(MonyharLevelDB, DeleteOnDiskDB) {
   base::ScopedTempDir scoped_temp_dir;
   ASSERT_TRUE(scoped_temp_dir.CreateUniqueTempDir());
 
@@ -589,7 +589,7 @@ TEST(ChromiumLevelDB, DeleteOnDiskDB) {
   EXPECT_FALSE(base::PathExists(db_path));
 }
 
-TEST(ChromiumLevelDB, DeleteInMemoryDB) {
+TEST(MonyharLevelDB, DeleteInMemoryDB) {
   base::ScopedTempDir scoped_temp_dir;
   ASSERT_TRUE(scoped_temp_dir.CreateUniqueTempDir());
 
@@ -654,9 +654,9 @@ TEST(ChromiumLevelDB, DeleteInMemoryDB) {
   EXPECT_TRUE(leveldb_chrome::PossiblyValidDB(db_path, on_disk_options.env));
 }
 
-class ChromiumLevelDBRebuildTest : public ::testing::Test {
+class MonyharLevelDBRebuildTest : public ::testing::Test {
  protected:
-  ChromiumLevelDBRebuildTest() = default;
+  MonyharLevelDBRebuildTest() = default;
 
   void SetUp() override {
     testing::Test::SetUp();
@@ -670,7 +670,7 @@ class ChromiumLevelDBRebuildTest : public ::testing::Test {
   base::ScopedTempDir scoped_temp_dir_;
 };
 
-TEST_F(ChromiumLevelDBRebuildTest, RebuildDb) {
+TEST_F(MonyharLevelDBRebuildTest, RebuildDb) {
   std::unique_ptr<leveldb::DB> db;
   base::FilePath db_path = temp_path().AppendASCII("db");
   leveldb_env::Options options;
@@ -696,7 +696,7 @@ TEST_F(ChromiumLevelDBRebuildTest, RebuildDb) {
   EXPECT_EQ("value2", value);
 }
 
-TEST_F(ChromiumLevelDBRebuildTest, RecoverMissingDB) {
+TEST_F(MonyharLevelDBRebuildTest, RecoverMissingDB) {
   std::unique_ptr<leveldb::DB> db;
   base::FilePath db_path = temp_path().AppendASCII("db");
   base::FilePath tmp_path =
@@ -725,7 +725,7 @@ TEST_F(ChromiumLevelDBRebuildTest, RecoverMissingDB) {
   EXPECT_FALSE(base::DirectoryExists(tmp_path));
 }
 
-TEST_F(ChromiumLevelDBRebuildTest, RecoverCorruptDB) {
+TEST_F(MonyharLevelDBRebuildTest, RecoverCorruptDB) {
   std::unique_ptr<leveldb::DB> db;
   base::FilePath db_path = temp_path().AppendASCII("db");
   base::FilePath tmp_path =
@@ -754,7 +754,7 @@ TEST_F(ChromiumLevelDBRebuildTest, RecoverCorruptDB) {
   EXPECT_FALSE(base::DirectoryExists(tmp_path));
 }
 
-TEST_F(ChromiumLevelDBRebuildTest, FinishCleanup) {
+TEST_F(MonyharLevelDBRebuildTest, FinishCleanup) {
   std::unique_ptr<leveldb::DB> db;
   base::FilePath db_path = temp_path().AppendASCII("db");
   base::FilePath tmp_path =

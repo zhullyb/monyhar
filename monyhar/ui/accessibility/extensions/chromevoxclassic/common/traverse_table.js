@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -416,18 +416,18 @@ cvox.TraverseTable.prototype.buildShadowTable_ = function() {
             // integer, including 0:
             // http://dev.w3.org/html5/spec/Overview.html#attr-tdth-rowspan
             //
-            // However, Chromium treats rowspan=0 as rowspan=1. This appears
+            // However, Monyhar treats rowspan=0 as rowspan=1. This appears
             // to be a bug from WebKit:
             // https://bugs.webkit.org/show_bug.cgi?id=10300
             // Inherited from a bug (since fixed) in KDE:
             // http://bugs.kde.org/show_bug.cgi?id=41063
             //
-            // We will follow Chromium and treat rowspan=0 as equivalent to
+            // We will follow Monyhar and treat rowspan=0 as equivalent to
             // rowspan=1.
             //
             // Tested in method testRowSpan0 in rowColSpanTable_test.js
             //
-            // Filed as a bug in Chromium: http://crbug.com/58223
+            // Filed as a bug in Monyhar: http://crbug.com/58223
             rowsSpanned = 1;
           }
         }

@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -41,8 +41,8 @@ public final class ActivityUtils {
     /** @return the theme ID to use. */
     public static int getThemeId() {
         boolean useLowEndTheme = SysUtils.isLowEndDevice();
-        return (useLowEndTheme ? R.style.Theme_Chromium_WithWindowAnimation_LowEnd
-                               : R.style.Theme_Chromium_WithWindowAnimation);
+        return (useLowEndTheme ? R.style.Theme_Monyhar_WithWindowAnimation_LowEnd
+                               : R.style.Theme_Monyhar_WithWindowAnimation);
     }
 
     /**

@@ -40,7 +40,7 @@ we may also share the per-site metrics with the sites who have participated.
 
 ## Metrics
 
-This section is mainly written for Chromium developers.
+This section is mainly written for Monyhar developers.
 
 Chrome will record the following metrics. These intervals indicate how much
 earlier we could start preloading with Early Hints. For example, we could

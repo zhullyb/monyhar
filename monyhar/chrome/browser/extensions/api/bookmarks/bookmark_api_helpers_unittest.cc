@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -124,12 +124,12 @@ TEST_F(ExtensionBookmarksTest, GetModifiableNode) {
 
 TEST_F(ExtensionBookmarksTest, GetManagedNode) {
   const BookmarkNode* managed_bookmark =
-      model_->AddURL(managed_->managed_node(), 0, u"Chromium",
+      model_->AddURL(managed_->managed_node(), 0, u"Monyhar",
                      GURL("http://www.monyhar.org/"));
   BookmarkTreeNode tree = GetBookmarkTreeNode(managed_, managed_bookmark,
                                               false,   // Recurse.
                                               false);  // Only folders.
-  EXPECT_EQ("Chromium", tree.title);
+  EXPECT_EQ("Monyhar", tree.title);
   EXPECT_EQ("http://www.monyhar.org/", *tree.url);
   EXPECT_EQ(api::bookmarks::BOOKMARK_TREE_NODE_UNMODIFIABLE_MANAGED,
             tree.unmodifiable);
@@ -151,7 +151,7 @@ TEST_F(ExtensionBookmarksTest, RemoveNodePermanent) {
 
 TEST_F(ExtensionBookmarksTest, RemoveNodeManaged) {
   const BookmarkNode* managed_bookmark =
-      model_->AddURL(managed_->managed_node(), 0, u"Chromium",
+      model_->AddURL(managed_->managed_node(), 0, u"Monyhar",
                      GURL("http://www.monyhar.org"));
   std::string error;
   EXPECT_FALSE(

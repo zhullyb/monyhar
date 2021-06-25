@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -105,7 +105,7 @@ void ServiceConnectionImpl::CfMContextServiceStarted(
 
   mojo::PlatformChannel channel;
 
-  // Invite the Chromium OS service to the Chromium IPC network
+  // Invite the Monyhar OS service to the Monyhar IPC network
   // Prepare a Mojo invitation to send through |platform_channel|.
   mojo::OutgoingInvitation invitation;
   // Include an initial Mojo pipe in the invitation.

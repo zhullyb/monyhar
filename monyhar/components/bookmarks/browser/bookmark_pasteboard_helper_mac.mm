@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,23 +20,23 @@
 
 namespace bookmarks {
 
-NSString* const kUTTypeChromiumBookmarkDictionaryList =
+NSString* const kUTTypeMonyharBookmarkDictionaryList =
     @"org.monyhar.bookmark-dictionary-list";
 
 namespace {
 
 // UTI used to store profile path to determine which profile a set of bookmarks
 // came from.
-NSString* const kUTTypeChromiumProfilePath = @"org.monyhar.profile-path";
+NSString* const kUTTypeMonyharProfilePath = @"org.monyhar.profile-path";
 
 // Internal bookmark ID for a bookmark node.  Used only when moving inside of
 // one profile.
-NSString* const kChromiumBookmarkIdKey = @"ChromiumBookmarkId";
+NSString* const kMonyharBookmarkIdKey = @"MonyharBookmarkId";
 
 // Internal bookmark meta info dictionary for a bookmark node.
-NSString* const kChromiumBookmarkMetaInfoKey = @"ChromiumBookmarkMetaInfo";
+NSString* const kMonyharBookmarkMetaInfoKey = @"MonyharBookmarkMetaInfo";
 
-// Keys for the type of node in kUTTypeChromiumBookmarkDictionaryList.
+// Keys for the type of node in kUTTypeMonyharBookmarkDictionaryList.
 NSString* const kWebBookmarkTypeKey = @"WebBookmarkType";
 NSString* const kWebBookmarkTypeList = @"WebBookmarkTypeList";
 NSString* const kWebBookmarkTypeLeaf = @"WebBookmarkTypeLeaf";
@@ -98,12 +98,12 @@ void ConvertNSArrayToElements(
         /*id=*/0, base::GUID::GenerateRandomV4(), url);
 
     NSNumber* node_id =
-        base::mac::ObjCCast<NSNumber>(bookmark_dict[kChromiumBookmarkIdKey]);
+        base::mac::ObjCCast<NSNumber>(bookmark_dict[kMonyharBookmarkIdKey]);
     if (node_id)
       new_node->set_id([node_id longLongValue]);
 
     NSDictionary* meta_info = base::mac::ObjCCast<NSDictionary>(
-        bookmark_dict[kChromiumBookmarkMetaInfoKey]);
+        bookmark_dict[kMonyharBookmarkMetaInfoKey]);
     if (meta_info)
       new_node->SetMetaInfoMap(MetaInfoMapFromDictionary(meta_info));
 
@@ -129,7 +129,7 @@ void ConvertNSArrayToElements(
 bool ReadBookmarkDictionaryListType(
     NSPasteboard* pb,
     std::vector<BookmarkNodeData::Element>* elements) {
-  id bookmarks = [pb propertyListForType:kUTTypeChromiumBookmarkDictionaryList];
+  id bookmarks = [pb propertyListForType:kUTTypeMonyharBookmarkDictionaryList];
   if (!bookmarks)
     return false;
   NSArray* bookmarks_array = base::mac::ObjCCast<NSArray>(bookmarks);
@@ -179,8 +179,8 @@ NSArray* GetNSArrayForBookmarkList(
         kTitleKey : title,
         kURLStringKey : url,
         kWebBookmarkTypeKey : kWebBookmarkTypeLeaf,
-        kChromiumBookmarkIdKey : element_id,
-        kChromiumBookmarkMetaInfoKey : meta_info
+        kMonyharBookmarkIdKey : element_id,
+        kMonyharBookmarkMetaInfoKey : meta_info
       };
     } else {
       NSArray* children = GetNSArrayForBookmarkList(element.children);
@@ -188,8 +188,8 @@ NSArray* GetNSArrayForBookmarkList(
         kTitleKey : title,
         kChildrenKey : children,
         kWebBookmarkTypeKey : kWebBookmarkTypeList,
-        kChromiumBookmarkIdKey : element_id,
-        kChromiumBookmarkMetaInfoKey : meta_info
+        kMonyharBookmarkIdKey : element_id,
+        kMonyharBookmarkMetaInfoKey : meta_info
       };
     }
     [array addObject:object];
@@ -201,7 +201,7 @@ void WriteBookmarkDictionaryListType(
     NSPasteboardItem* item,
     const std::vector<BookmarkNodeData::Element>& elements) {
   NSArray* array = GetNSArrayForBookmarkList(elements);
-  [item setPropertyList:array forType:kUTTypeChromiumBookmarkDictionaryList];
+  [item setPropertyList:array forType:kUTTypeMonyharBookmarkDictionaryList];
 }
 
 void FillFlattenedArraysForBookmarks(
@@ -261,7 +261,7 @@ NSPasteboardItem* PasteboardItemFromBookmarks(
   WriteBookmarkDictionaryListType(item, elements);
 
   [item setString:base::SysUTF8ToNSString(profile_path.value())
-          forType:kUTTypeChromiumProfilePath];
+          forType:kUTTypeMonyharProfilePath];
   return item.autorelease();
 }
 
@@ -284,7 +284,7 @@ bool ReadBookmarksFromPasteboard(
     std::vector<BookmarkNodeData::Element>* elements,
     base::FilePath* profile_path) {
   elements->clear();
-  NSString* profile = [pb stringForType:kUTTypeChromiumProfilePath];
+  NSString* profile = [pb stringForType:kUTTypeMonyharProfilePath];
   *profile_path = base::FilePath(base::SysNSStringToUTF8(profile));
   return ReadBookmarkDictionaryListType(pb, elements) ||
          ReadWebURLsWithTitlesPboardType(pb, elements);
@@ -293,7 +293,7 @@ bool ReadBookmarksFromPasteboard(
 bool PasteboardContainsBookmarks(NSPasteboard* pb) {
   NSArray* availableTypes = @[
     ui::ClipboardUtil::UTIForWebURLsAndTitles(),
-    kUTTypeChromiumBookmarkDictionaryList
+    kUTTypeMonyharBookmarkDictionaryList
   ];
   return [pb availableTypeFromArray:availableTypes] != nil;
 }

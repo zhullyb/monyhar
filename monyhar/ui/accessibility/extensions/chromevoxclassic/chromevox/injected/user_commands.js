@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -178,7 +178,7 @@ cvox.ChromeVoxUserCommands.handleTabAction_ = function() {
  * If a lingering tab dummy span exists, remove it.
  */
 cvox.ChromeVoxUserCommands.removeTabDummySpan = function() {
-  // Break the following line to get around a Chromium js linter warning.
+  // Break the following line to get around a Monyhar js linter warning.
   // TODO(plundblad): Find a better solution.
   var previousDummySpan = document.
       getElementById('ChromeVoxTabDummySpan');

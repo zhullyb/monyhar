@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1060,7 +1060,7 @@ public class SingleCategorySettings extends SiteSettingsPreferenceFragment
         descriptions[1] =
                 getString(ContentSettingsResources.getSiteSummary(ContentSettingValues.BLOCK));
 
-        return new AlertDialog.Builder(getContext(), R.style.Theme_Chromium_AlertDialog)
+        return new AlertDialog.Builder(getContext(), R.style.Theme_Monyhar_AlertDialog)
                 .setPositiveButton(R.string.cancel, null)
                 .setNegativeButton(R.string.remove,
                         (dialog, which) -> {

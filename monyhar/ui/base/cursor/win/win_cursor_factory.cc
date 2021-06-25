@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -137,7 +137,7 @@ scoped_refptr<PlatformCursor> WinCursorFactory::GetDefaultCursor(
     if (type != mojom::CursorType::kNone) {
       const wchar_t* id = GetCursorId(type);
       hcursor = LoadCursor(nullptr, id);
-      // Try loading the cursor from the Chromium resources.
+      // Try loading the cursor from the Monyhar resources.
       if (!hcursor)
         hcursor = LoadCursorFromResourcesDataDLL(id);
       if (!hcursor)

@@ -4,7 +4,7 @@ The easy way to manage certificates is navigate to chrome://settings/search#ssl.
 Then click on the "Manage Certificates" button. This will load a built-in
 interface for managing certificates.
 
-On Linux, Chromium uses the
+On Linux, Monyhar uses the
 [NSS Shared DB](https://wiki.mozilla.org/NSS_Shared_DB_And_LINUX). If the
 built-in manager does not work for you then you can configure certificates with
 the

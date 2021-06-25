@@ -1,31 +1,31 @@
-This is the top folder for Chromium's SQLite. The actual SQLite source is not
+This is the top folder for Monyhar's SQLite. The actual SQLite source is not
 in this repository, but instead cloned into the `src` directory from
 https://monyhar.googlesource.com/monyhar/deps/sqlite.
 
 The directory structure is as follows. Files common to all third_party projects
 (BUILD.GN, OWNERS, LICENSE) are omitted.
 
-* `src/`     The Chromium fork of SQLite (cloned via top level DEPS file).
+* `src/`     The Monyhar fork of SQLite (cloned via top level DEPS file).
 * `scripts/` Scripts that generate the files in the amalgamations in src/.
-* `sqlite.h` The header used by the rest of Chromium to include SQLite. This
+* `sqlite.h` The header used by the rest of Monyhar to include SQLite. This
              forwards to src/amalgamation/sqlite3.h
-* `fuzz/`    Google OSS-Fuzz (ClusterFuzz) testing for Chromium's SQLite
+* `fuzz/`    Google OSS-Fuzz (ClusterFuzz) testing for Monyhar's SQLite
              build This directory contains:
 
-The SQLite amalgamation is committed to the SQLite Chromium repository (in
-`src`), but it is created by a script that lives in the Chromium repository.
+The SQLite amalgamation is committed to the SQLite Monyhar repository (in
+`src`), but it is created by a script that lives in the Monyhar repository.
 This is because the configuration variables for building and amalgamation
 generation are shared.
 
 There are two amalgamations. The one in //third_party/sqlite/src/amalgamation
-is used by Chromium. A second, located at
-//third_party/sqlite/src/amalgamation_dev is used for some Chromium developer
+is used by Monyhar. A second, located at
+//third_party/sqlite/src/amalgamation_dev is used for some Monyhar developer
 tools and is not distributed.
 
 # Upgrade to a new SQLite release.
 
 **Note** SQLite tags all releases `version-<release number>`, e.g.
-`version-3.33.0`. The Chromium project prefixes all tags/branches with
+`version-3.33.0`. The Monyhar project prefixes all tags/branches with
 "monyhar-", e.g.  `monyhar-version-3.33.0`.
 
 1. Create new release branch
@@ -40,7 +40,7 @@ tools and is not distributed.
    Create the branch at
    [Gerrit/branches](https://monyhar-review.googlesource.com/admin/repos/monyhar/deps/sqlite,branches).
 
-2. Checkout the new Chromium release branch.
+2. Checkout the new Monyhar release branch.
 
     Get the version from the [README.monyhar](https://source.monyhar.org/monyhar/monyhar/src/+/main:third_party/sqlite/README.monyhar).
 
@@ -72,7 +72,7 @@ tools and is not distributed.
     git cl upload
     ```
 
-6. Roll the Chromium DEPS file.
+6. Roll the Monyhar DEPS file.
 
     Once review above has merged:
 
@@ -146,7 +146,7 @@ following:
     git cl upload
     ```
 
-5. Update the Chromium DEPS file.
+5. Update the Monyhar DEPS file.
 
     Once review above has merged, roll the `monyhar/src/DEPS` file to
     reference that new commit ID.
@@ -180,7 +180,7 @@ out/Default/sql_unittests
 third_party/blink/tools/run_web_tests.py -t Default storage/websql/
 ```
 
-## Running SQLite's TCL test suite within the Chromium checkout.
+## Running SQLite's TCL test suite within the Monyhar checkout.
 
 This is one of the [SQLite test suites](https://www.sqlite.org/testing.html).
 They take approximately 3 minutes to build and run on a fast workstation.
@@ -191,7 +191,7 @@ cd //third_party/sqlite
 make --directory=src test | tee /tmp/test.log
 ```
 
-**Note**: Tests may fail on Chromium release branches. This is because some
+**Note**: Tests may fail on Monyhar release branches. This is because some
 tests rely on SQLite databases (binary files) which are committed to the
 source and are likely not merged down when cherry picked. It is safe to
 ignore these errors which should be reasonably easy to identify based on the

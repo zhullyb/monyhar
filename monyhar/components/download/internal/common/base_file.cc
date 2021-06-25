@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -584,7 +584,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
       return source_url;
 
     // If the download source is file:// ideally we should copy the MOTW from
-    // the original file, but given that Chrome/Chromium places strict
+    // the original file, but given that Chrome/Monyhar places strict
     // restrictions on which schemes can reference file:// URLs, this code is
     // going to assume that at this point it's okay to treat this download as
     // being from the local system.

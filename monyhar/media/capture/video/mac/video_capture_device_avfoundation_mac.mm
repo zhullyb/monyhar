@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -81,7 +81,7 @@ AVCaptureDeviceFormat* FindBestCaptureFormat(
     const FourCharCode fourcc =
         CMFormatDescriptionGetMediaSubType([captureFormat formatDescription]);
     VideoPixelFormat pixelFormat =
-        [VideoCaptureDeviceAVFoundation FourCCToChromiumPixelFormat:fourcc];
+        [VideoCaptureDeviceAVFoundation FourCCToMonyharPixelFormat:fourcc];
     CMVideoDimensions dimensions = CMVideoFormatDescriptionGetDimensions(
         [captureFormat formatDescription]);
     Float64 maxFrameRate = 0;
@@ -120,7 +120,7 @@ AVCaptureDeviceFormat* FindBestCaptureFormat(
         bestCaptureFormat = nil;
     }
 
-    // Finally, compare according to Chromium preference.
+    // Finally, compare according to Monyhar preference.
     if (bestCaptureFormat) {
       if (VideoCaptureFormat::ComparePixelFormatPreference(bestPixelFormat,
                                                            pixelFormat)) {
@@ -145,7 +145,7 @@ AVCaptureDeviceFormat* FindBestCaptureFormat(
 
 #pragma mark Class methods
 
-+ (media::VideoPixelFormat)FourCCToChromiumPixelFormat:(FourCharCode)code {
++ (media::VideoPixelFormat)FourCCToMonyharPixelFormat:(FourCharCode)code {
   switch (code) {
     case kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange:
       return media::PIXEL_FORMAT_NV12;  // Mac fourcc: "420v".
@@ -961,7 +961,7 @@ AVCaptureDeviceFormat* FindBestCaptureFormat(
   OSType sampleBufferPixelFormat =
       CMFormatDescriptionGetMediaSubType(formatDescription);
   media::VideoPixelFormat videoPixelFormat = [VideoCaptureDeviceAVFoundation
-      FourCCToChromiumPixelFormat:sampleBufferPixelFormat];
+      FourCCToMonyharPixelFormat:sampleBufferPixelFormat];
 
   const media::VideoCaptureFormat captureFormat(
       gfx::Size(dimensions.width, dimensions.height), _frameRate,

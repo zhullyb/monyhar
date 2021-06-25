@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,12 +10,12 @@
 
 #import "remoting/ios/app/remoting_theme.h"
 
-@interface RemotingRefreshControlChromium : NSObject<RemotingRefreshControl>
+@interface RemotingRefreshControlMonyhar : NSObject<RemotingRefreshControl>
 - (instancetype)initWithScrollView:(UIScrollView*)scrollView
                        actionBlock:(RemotingRefreshAction)actionBlock;
 @end
 
-@implementation RemotingRefreshControlChromium {
+@implementation RemotingRefreshControlMonyhar {
   UIRefreshControl* _refreshControl;
   RemotingRefreshAction _refreshAction;
 }
@@ -46,12 +46,12 @@
 
 @end
 
-@implementation RefreshControlProviderChromium
+@implementation RefreshControlProviderMonyhar
 
 - (id<RemotingRefreshControl>)createForScrollView:(UIScrollView*)scrollView
                                       actionBlock:
                                           (RemotingRefreshAction)action {
-  return [[RemotingRefreshControlChromium alloc] initWithScrollView:scrollView
+  return [[RemotingRefreshControlMonyhar alloc] initWithScrollView:scrollView
                                                         actionBlock:action];
 }
 

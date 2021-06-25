@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -152,10 +152,10 @@ TEST_F(ScriptingPermissionsModifierUnitTest, WithholdHostPermissionsOnInstall) {
   InitializeEmptyExtensionService();
 
   constexpr char kHostGoogle[] = "https://google.com/*";
-  constexpr char kHostChromium[] = "https://monyhar.org/*";
+  constexpr char kHostMonyhar[] = "https://monyhar.org/*";
   scoped_refptr<const Extension> extension =
       ExtensionBuilder("a")
-          .AddPermissions({kHostGoogle, kHostChromium})
+          .AddPermissions({kHostGoogle, kHostMonyhar})
           .AddContentScript("foo.js", {kHostGoogle})
           .SetLocation(ManifestLocation::kInternal)
           .AddFlags(Extension::WITHHOLD_PERMISSIONS)
@@ -173,16 +173,16 @@ TEST_F(ScriptingPermissionsModifierUnitTest, WithholdHostPermissionsOnInstall) {
   {
     SCOPED_TRACE("Initial state");
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium},
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar},
                                  {kHostGoogle});
   }
 
   // Grant one of the permissions manually.
-  modifier.GrantHostPermission(GURL(kHostChromium));
+  modifier.GrantHostPermission(GURL(kHostMonyhar));
 
   {
     SCOPED_TRACE("After granting single");
-    CheckActiveHostPermissions(*extension, {kHostChromium}, {});
+    CheckActiveHostPermissions(*extension, {kHostMonyhar}, {});
     CheckWithheldHostPermissions(*extension, {kHostGoogle}, {kHostGoogle});
   }
 
@@ -192,7 +192,7 @@ TEST_F(ScriptingPermissionsModifierUnitTest, WithholdHostPermissionsOnInstall) {
   // All requested permissions should now be granted granted.
   {
     SCOPED_TRACE("After setting to not withhold");
-    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostChromium},
+    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostMonyhar},
                                {kHostGoogle});
     CheckWithheldHostPermissions(*extension, {}, {});
   }
@@ -206,7 +206,7 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   InitializeEmptyExtensionService();
 
   constexpr char kHostGoogle[] = "https://google.com/*";
-  constexpr char kHostChromium[] = "https://monyhar.org/*";
+  constexpr char kHostMonyhar[] = "https://monyhar.org/*";
   TestExtensionDir test_extension_dir;
   test_extension_dir.WriteManifest(
       R"({
@@ -234,14 +234,14 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   {
     SCOPED_TRACE("Initial state");
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
   }
 
   {
     SCOPED_TRACE("Reload after initial state");
     extension = reload_extension();
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
   }
 
   // Grant one of the permissions and check it persists after reload.
@@ -250,14 +250,14 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   {
     SCOPED_TRACE("Granting single");
     CheckActiveHostPermissions(*extension, {kHostGoogle}, {});
-    CheckWithheldHostPermissions(*extension, {kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostMonyhar}, {});
   }
 
   {
     SCOPED_TRACE("Reload after granting single");
     extension = reload_extension();
     CheckActiveHostPermissions(*extension, {kHostGoogle}, {});
-    CheckWithheldHostPermissions(*extension, {kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostMonyhar}, {});
   }
 
   // Set permissions not to be withheld at all and check it persists after
@@ -266,14 +266,14 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
       .SetWithholdHostPermissions(false);
   {
     SCOPED_TRACE("Setting to not withhold");
-    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
     CheckWithheldHostPermissions(*extension, {}, {});
   }
 
   {
     SCOPED_TRACE("Reload after setting to not withhold");
     extension = reload_extension();
-    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
     CheckWithheldHostPermissions(*extension, {}, {});
   }
 
@@ -284,14 +284,14 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   {
     SCOPED_TRACE("Setting back to withhold");
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
   }
 
   {
     SCOPED_TRACE("Reload after setting back to withhold");
     extension = reload_extension();
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
   }
 }
 
@@ -303,7 +303,7 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   InitializeEmptyExtensionService();
 
   constexpr char kHostGoogle[] = "https://google.com/*";
-  constexpr char kHostChromium[] = "https://monyhar.org/*";
+  constexpr char kHostMonyhar[] = "https://monyhar.org/*";
   TestExtensionDir test_extension_dir;
   constexpr char kManifestTemplate[] =
       R"({
@@ -346,14 +346,14 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   {
     SCOPED_TRACE("Initial state");
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
   }
 
   {
     SCOPED_TRACE("Update after initial state");
     extension = update_extension("2");
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
   }
 
   // Grant one of the permissions and check it persists after update.
@@ -362,14 +362,14 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   {
     SCOPED_TRACE("Granting single");
     CheckActiveHostPermissions(*extension, {kHostGoogle}, {});
-    CheckWithheldHostPermissions(*extension, {kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostMonyhar}, {});
   }
 
   {
     SCOPED_TRACE("Update after granting single");
     extension = update_extension("3");
     CheckActiveHostPermissions(*extension, {kHostGoogle}, {});
-    CheckWithheldHostPermissions(*extension, {kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostMonyhar}, {});
   }
 
   // Set permissions not to be withheld at all and check it persists after
@@ -378,14 +378,14 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
       .SetWithholdHostPermissions(false);
   {
     SCOPED_TRACE("Setting to not withhold");
-    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
     CheckWithheldHostPermissions(*extension, {}, {});
   }
 
   {
     SCOPED_TRACE("Update after setting to not withhold");
     extension = update_extension("4");
-    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckActiveHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
     CheckWithheldHostPermissions(*extension, {}, {});
   }
 
@@ -396,14 +396,14 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   {
     SCOPED_TRACE("Setting back to withhold");
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
   }
 
   {
     SCOPED_TRACE("Update after setting back to withhold");
     extension = update_extension("5");
     CheckActiveHostPermissions(*extension, {}, {});
-    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostChromium}, {});
+    CheckWithheldHostPermissions(*extension, {kHostGoogle, kHostMonyhar}, {});
   }
 }
 
@@ -529,7 +529,7 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   InitializeEmptyExtensionService();
 
   const GURL kExampleCom("https://example.com/");
-  const GURL kChromiumOrg("https://monyhar.org/");
+  const GURL kMonyharOrg("https://monyhar.org/");
   const URLPatternSet kExampleComPatternSet({URLPattern(
       Extension::kValidHostPermissionSchemes, "https://example.com/")});
 
@@ -553,7 +553,7 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   EXPECT_TRUE(extension->permissions_data()
                   ->active_permissions()
                   .explicit_hosts()
-                  .MatchesURL(kChromiumOrg));
+                  .MatchesURL(kMonyharOrg));
 
   ScriptingPermissionsModifier(profile(), extension)
       .SetWithholdHostPermissions(true);
@@ -564,7 +564,7 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   EXPECT_FALSE(extension->permissions_data()
                    ->active_permissions()
                    .explicit_hosts()
-                   .MatchesURL(kChromiumOrg));
+                   .MatchesURL(kMonyharOrg));
 
   ScriptingPermissionsModifier(profile(), extension)
       .GrantHostPermission(kExampleCom);
@@ -575,7 +575,7 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   EXPECT_FALSE(extension->permissions_data()
                    ->active_permissions()
                    .explicit_hosts()
-                   .MatchesURL(kChromiumOrg));
+                   .MatchesURL(kMonyharOrg));
 
   {
     TestExtensionRegistryObserver observer(ExtensionRegistry::Get(profile()));
@@ -589,7 +589,7 @@ TEST_F(ScriptingPermissionsModifierUnitTest,
   EXPECT_FALSE(extension->permissions_data()
                    ->active_permissions()
                    .explicit_hosts()
-                   .MatchesURL(kChromiumOrg));
+                   .MatchesURL(kMonyharOrg));
 }
 
 // Test ScriptingPermissionsModifier::RemoveAllGrantedHostPermissions() revokes

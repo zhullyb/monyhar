@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -18,7 +18,7 @@ with path_util.SysPath(path_util.GetAndroidPylibDir()):
   from pylib.constants import host_paths
 
 
-class ChromiumConfig(project_config.ProjectConfig):
+class MonyharConfig(project_config.ProjectConfig):
 
   def __init__(self, top_level_dir=None, benchmark_dirs=None,
                client_configs=None, default_chrome_root=None,
@@ -26,14 +26,14 @@ class ChromiumConfig(project_config.ProjectConfig):
     if client_configs is None:
       client_configs = [CLIENT_CONFIG_PATH]
     if default_chrome_root is None:
-      default_chrome_root = path_util.GetChromiumSrcDir()
+      default_chrome_root = path_util.GetMonyharSrcDir()
     # Some android utilities in Catapult expect a java binary available on PATH,
     # so place monyhar's heremetic JDK on PATH if we have it checked out.
     if os.path.exists(host_paths.JAVA_PATH):
       os.environ['PATH'] = (host_paths.JAVA_PATH + os.pathsep +
                             os.environ['PATH'])
 
-    super(ChromiumConfig, self).__init__(
+    super(MonyharConfig, self).__init__(
         top_level_dir=top_level_dir, benchmark_dirs=benchmark_dirs,
         client_configs=client_configs, default_chrome_root=default_chrome_root,
         expectations_files=expectations_files)
@@ -42,8 +42,8 @@ class ChromiumConfig(project_config.ProjectConfig):
     return fieldtrial_util.MergeFeaturesAndFieldTrialsArgs(args)
 
 
-def GetDefaultChromiumConfig():
-  return ChromiumConfig(
+def GetDefaultMonyharConfig():
+  return MonyharConfig(
       benchmark_dirs=[path_util.GetOfficialBenchmarksDir(),
                       path_util.GetContribDir()],
       top_level_dir=path_util.GetPerfDir(),

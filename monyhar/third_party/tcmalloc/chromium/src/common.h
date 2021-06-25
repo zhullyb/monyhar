@@ -76,7 +76,7 @@ static const size_t kMinAlign   = 16;
 
 static const size_t kAlignment = 8;
 
-// Constants dependent on tcmalloc configuration and architecture.  Chromium
+// Constants dependent on tcmalloc configuration and architecture.  Monyhar
 // tunes these constants.
 // We need to guarantee the smallest class size is big enough to hold the
 // pointers that form the free list.
@@ -91,7 +91,7 @@ static const size_t kPageShift  = 15;
 #elif defined(TCMALLOC_64K_PAGES)
 static const size_t kPageShift  = 16;
 #else
-// Original TCMalloc code used kPageShift == 13.  In Chromium, we changed
+// Original TCMalloc code used kPageShift == 13.  In Monyhar, we changed
 // this to 12 (as was done in prior versions of TCMalloc).
 static const size_t kPageShift = 12;
 #endif
@@ -101,7 +101,7 @@ static const size_t kClassSizesMax = 96;
 static const size_t kMaxThreadCacheSize = 4 << 20;
 
 static const size_t kPageSize   = 1 << kPageShift;
-// Original TCMalloc code used kMaxSize == 256 * 1024.  In Chromium, we
+// Original TCMalloc code used kMaxSize == 256 * 1024.  In Monyhar, we
 // changed this to 32K.
 static const size_t kMaxSize = 32u * 1024;
 // For all span-lengths <= kMaxPages we keep an exact-size list in PageHeap.

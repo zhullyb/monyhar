@@ -3,7 +3,7 @@
 # results: [ Timeout Crash Pass Failure Slow Skip ]
 
 # This file lists test expectations for WPT tests running ONLY under the wptrunner code path in
-# Chromium. This file is used in two ways:
+# Monyhar. This file is used in two ways:
 # 1) To set failure expectations for wptrunner tests, exactly as TestExpectations are used but
 #    which affect wptrunner instead of run_web_tests
 # 2) To explicitly state that TestExpectations entries for a wptrunner test should be ignored

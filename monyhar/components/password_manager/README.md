@@ -65,7 +65,7 @@ Here is a summary of the core responsibilities of the classes and interfaces:
 
 * [`PasswordManagerClient`] interface (1 per tab)
 
-  Abstracts operations that depend on the embedder environment (e.g. Chromium).
+  Abstracts operations that depend on the embedder environment (e.g. Monyhar).
   Manages settings (which features are enabled?), UI (popup bubbles, etc.),
   provides access to the password store, etc.
 

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ class ConversionStorageSql;
 // conversion_storage_sql.cc.
 //
 // Generate a new sql file which will hold the new database schema:
-//  * Build and open the Chromium executable
+//  * Build and open the Monyhar executable
 //  * Go to a site which registers an impression to init the database.
 //  * Build the sqlite_shell executable:
 //      > autoninja -C out/Default sqlite_shell

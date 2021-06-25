@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -6,9 +6,9 @@ import("//build/config/android/config.gni")
 import("//build/config/compiler/compiler.gni")
 import("//build/config/sanitizers/sanitizers.gni")
 
-# Chromium linker doesn't reliably support loading multiple libraries;
+# Monyhar linker doesn't reliably support loading multiple libraries;
 # disable for component builds, see crbug.com/657093.
-# Chromium linker causes instrumentation to return incorrect results.
+# Monyhar linker causes instrumentation to return incorrect results.
 # Incompatible with incremental_install because it causes LibraryLoader to not
 # look for the .so files in their side-loaded location.
 monyhar_linker_supported =

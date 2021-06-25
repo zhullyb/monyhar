@@ -1,8 +1,8 @@
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Chromium cr tool main module.
+"""Monyhar cr tool main module.
 
 Holds the main function and all it's support code.
 """
@@ -17,7 +17,7 @@ _CONTACT = 'iancottrell@monyhar.org'
 
 
 def Main():
-  """Chromium cr tool main function.
+  """Monyhar cr tool main function.
 
   This is the main entry point of the cr tool, it finds and loads all the
   plugins, creates the context and then activates and runs the specified

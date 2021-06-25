@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,7 +33,7 @@
 #include "third_party/boringssl/src/include/openssl/obj.h"
 
 // This "header" actually contains function definitions and thus can only be
-// included once across Chromium.
+// included once across Monyhar.
 #include "chrome/browser/webauthn/android/jni_headers/CableAuthenticatorModuleProvider_jni.h"
 
 using device::cablev2::authenticator::Registration;

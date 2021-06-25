@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ constexpr net::NetworkTrafficAnnotationTag traffic_annotation =
         semantics {
           sender: "Omnibox"
           description:
-            "Chromium provides answers in the suggestion list for "
+            "Monyhar provides answers in the suggestion list for "
             "certain queries that user types in the omnibox. This request "
             "retrieves a small image (for example, an icon illustrating "
             "the current weather conditions) when this can add information "
@@ -69,7 +69,7 @@ constexpr net::NetworkTrafficAnnotationTag traffic_annotation =
           setting:
             "You can enable or disable this feature via 'Use a prediction "
             "service to help complete searches and URLs typed in the "
-            "address bar.' in Chromium's settings under Advanced. The "
+            "address bar.' in Monyhar's settings under Advanced. The "
             "feature is enabled by default."
           chrome_policy {
             SearchSuggestEnabled {

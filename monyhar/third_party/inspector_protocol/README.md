@@ -1,12 +1,12 @@
-# Chromium inspector (devtools) protocol
+# Monyhar inspector (devtools) protocol
 
-This package contains code generators and templates for the Chromium
+This package contains code generators and templates for the Monyhar
 inspector protocol.
 
 The canonical location of this package is at
 https://monyhar.googlesource.com/deps/inspector_protocol/
 
-In the Chromium tree, it's rolled into
+In the Monyhar tree, it's rolled into
 https://cs.monyhar.org/monyhar/src/third_party/inspector_protocol/
 
 In the V8 tree, it's rolled into

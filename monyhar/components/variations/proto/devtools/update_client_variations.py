@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -6,7 +6,7 @@
 
 If this script happens not to run correctly in your environment, it should be
 easy to perform the steps manually. This script simply builds a generated file,
-and then copies it into the Chromium checkout, making some simple modifications.
+and then copies it into the Monyhar checkout, making some simple modifications.
 """
 
 import argparse
@@ -14,7 +14,7 @@ import os
 
 OUTPUT_TEMPLATE = """\
 /* eslint-disable */
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 

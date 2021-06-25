@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -57,13 +57,13 @@ void ExpectError(Remote<T>* proxy, base::OnceClosure callback) {
   proxy->set_disconnect_handler(std::move(callback));
 }
 
-// This implements the generated Chromium variant of RectService.
-class ChromiumRectServiceImpl : public RectService {
+// This implements the generated Monyhar variant of RectService.
+class MonyharRectServiceImpl : public RectService {
  public:
-  ChromiumRectServiceImpl() {}
+  MonyharRectServiceImpl() {}
 
   // mojo::test::RectService:
-  void AddRect(const RectChromium& r) override {
+  void AddRect(const RectMonyhar& r) override {
     if (r.GetArea() > largest_rect_.GetArea())
       largest_rect_ = r;
   }
@@ -78,7 +78,7 @@ class ChromiumRectServiceImpl : public RectService {
   }
 
  private:
-  RectChromium largest_rect_;
+  RectMonyhar largest_rect_;
 };
 
 // This implements the generated Blink variant of RectService.
@@ -109,17 +109,17 @@ class BlinkRectServiceImpl : public blink::RectService {
   RectBlink largest_rect_;
 };
 
-// A test which runs both Chromium and Blink implementations of a RectService.
+// A test which runs both Monyhar and Blink implementations of a RectService.
 class StructTraitsTest : public testing::Test,
                          public TraitsTestService {
  public:
   StructTraitsTest() = default;
 
  protected:
-  void BindToChromiumService(PendingReceiver<RectService> receiver) {
+  void BindToMonyharService(PendingReceiver<RectService> receiver) {
     monyhar_receivers_.Add(&monyhar_service_, std::move(receiver));
   }
-  void BindToChromiumService(PendingReceiver<blink::RectService> receiver) {
+  void BindToMonyharService(PendingReceiver<blink::RectService> receiver) {
     monyhar_receivers_.Add(
         &monyhar_service_,
         ConvertPendingReceiver<RectService>(std::move(receiver)));
@@ -189,7 +189,7 @@ class StructTraitsTest : public testing::Test,
 
   base::test::SingleThreadTaskEnvironment task_environment_;
 
-  ChromiumRectServiceImpl monyhar_service_;
+  MonyharRectServiceImpl monyhar_service_;
   ReceiverSet<RectService> monyhar_receivers_;
 
   BlinkRectServiceImpl blink_service_;
@@ -200,15 +200,15 @@ class StructTraitsTest : public testing::Test,
 
 }  // namespace
 
-TEST_F(StructTraitsTest, ChromiumProxyToChromiumService) {
+TEST_F(StructTraitsTest, MonyharProxyToMonyharService) {
   Remote<RectService> monyhar_proxy;
-  BindToChromiumService(monyhar_proxy.BindNewPipeAndPassReceiver());
+  BindToMonyharService(monyhar_proxy.BindNewPipeAndPassReceiver());
   {
     base::RunLoop loop;
-    monyhar_proxy->AddRect(RectChromium(1, 1, 4, 5));
-    monyhar_proxy->AddRect(RectChromium(-1, -1, 2, 2));
+    monyhar_proxy->AddRect(RectMonyhar(1, 1, 4, 5));
+    monyhar_proxy->AddRect(RectMonyhar(-1, -1, 2, 2));
     monyhar_proxy->GetLargestRect(
-        ExpectResult(RectChromium(1, 1, 4, 5), loop.QuitClosure()));
+        ExpectResult(RectMonyhar(1, 1, 4, 5), loop.QuitClosure()));
     loop.Run();
   }
   {
@@ -220,15 +220,15 @@ TEST_F(StructTraitsTest, ChromiumProxyToChromiumService) {
   }
 }
 
-TEST_F(StructTraitsTest, ChromiumToBlinkService) {
+TEST_F(StructTraitsTest, MonyharToBlinkService) {
   Remote<RectService> monyhar_proxy;
   BindToBlinkService(monyhar_proxy.BindNewPipeAndPassReceiver());
   {
     base::RunLoop loop;
-    monyhar_proxy->AddRect(RectChromium(1, 1, 4, 5));
-    monyhar_proxy->AddRect(RectChromium(2, 2, 5, 5));
+    monyhar_proxy->AddRect(RectMonyhar(1, 1, 4, 5));
+    monyhar_proxy->AddRect(RectMonyhar(2, 2, 5, 5));
     monyhar_proxy->GetLargestRect(
-        ExpectResult(RectChromium(2, 2, 5, 5), loop.QuitClosure()));
+        ExpectResult(RectMonyhar(2, 2, 5, 5), loop.QuitClosure()));
     loop.Run();
   }
   {
@@ -243,9 +243,9 @@ TEST_F(StructTraitsTest, ChromiumToBlinkService) {
   {
     base::RunLoop loop;
     ExpectError(&monyhar_proxy, loop.QuitClosure());
-    monyhar_proxy->AddRect(RectChromium(-1, -1, 2, 2));
+    monyhar_proxy->AddRect(RectMonyhar(-1, -1, 2, 2));
     monyhar_proxy->GetLargestRect(
-        Fail<RectChromium>("The pipe should have been closed."));
+        Fail<RectMonyhar>("The pipe should have been closed."));
     loop.Run();
   }
 }
@@ -270,9 +270,9 @@ TEST_F(StructTraitsTest, BlinkProxyToBlinkService) {
   }
 }
 
-TEST_F(StructTraitsTest, BlinkProxyToChromiumService) {
+TEST_F(StructTraitsTest, BlinkProxyToMonyharService) {
   Remote<blink::RectService> blink_proxy;
-  BindToChromiumService(blink_proxy.BindNewPipeAndPassReceiver());
+  BindToMonyharService(blink_proxy.BindNewPipeAndPassReceiver());
   {
     base::RunLoop loop;
     blink_proxy->AddRect(RectBlink(1, 1, 4, 5));

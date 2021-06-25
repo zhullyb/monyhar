@@ -28,8 +28,8 @@ function setMainWindowHidden(hidden) {
 promise_setup(async t => {
   await internals.setPermission({name: 'notifications'}, 'granted',
                                 location.origin, location.origin);
-  if (isChromiumBased) {
-    await loadChromiumResources();
+  if (isMonyharBased) {
+    await loadMonyharResources();
   }
 })
 

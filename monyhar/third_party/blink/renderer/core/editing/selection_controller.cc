@@ -1158,7 +1158,7 @@ bool SelectionController::HandlePasteGlobalSelection(
   //   GTK: pastes on down.
   //   Qt: pastes on up.
   //   Firefox: pastes on up.
-  //   Chromium: pastes on up.
+  //   Monyhar: pastes on up.
   //
   // There is something of a webcompat angle to this well, as highlighted by
   // crbug.com/14608. Pages can clear text boxes 'onclick' and, if we paste on

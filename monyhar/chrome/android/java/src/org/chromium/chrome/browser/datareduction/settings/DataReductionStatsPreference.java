@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -367,7 +367,7 @@ public class DataReductionStatsPreference extends Preference {
                         R.string.data_reduction_usage_reset_statistics_confirmation_title_lite_mode;
                 final int message =
                         R.string.data_reduction_usage_reset_statistics_confirmation_dialog_lite_mode;
-                new AlertDialog.Builder(getContext(), R.style.Theme_Chromium_AlertDialog)
+                new AlertDialog.Builder(getContext(), R.style.Theme_Monyhar_AlertDialog)
                         .setTitle(title)
                         .setMessage(message)
                         .setPositiveButton(

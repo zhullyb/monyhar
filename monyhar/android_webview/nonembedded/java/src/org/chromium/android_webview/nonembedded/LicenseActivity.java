@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ import org.monyhar.base.Log;
 
 /**
  * Activity for displaying WebView OSS licenses.
- * This is compiled into the stub WebView and so should not depend on any classes from Chromium
+ * This is compiled into the stub WebView and so should not depend on any classes from Monyhar
  * other than LicenseContentProvider.
  */
 public class LicenseActivity extends Activity {

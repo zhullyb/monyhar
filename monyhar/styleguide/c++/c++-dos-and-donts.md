@@ -8,7 +8,7 @@ author/reviewer/OWNERS agree that another course is better.
 
 ## Minimize Code in Headers
 
-* Remove #includes you don't use.  Unfortunately, Chromium lacks
+* Remove #includes you don't use.  Unfortunately, Monyhar lacks
   include-what-you-use ("IWYU") support, so there's no tooling to do this
   automatically.  Look carefully when refactoring.
 * Where possible, forward-declare nested classes, then give the full declaration
@@ -21,7 +21,7 @@ author/reviewer/OWNERS agree that another course is better.
 ## Static variables
 
 Dynamic initialization of function-scope static variables is **thread-safe** in
-Chromium (per standard C++11 behavior). Before 2017, this was thread-unsafe, and
+Monyhar (per standard C++11 behavior). Before 2017, this was thread-unsafe, and
 base::LazyInstance was widely used. This is no longer necessary.
 Background can be found in
 [this thread](https://groups.google.com/a/monyhar.org/forum/#!msg/monyhar-dev/p6h3HC8Wro4/HHBMg7fYiMYJ)

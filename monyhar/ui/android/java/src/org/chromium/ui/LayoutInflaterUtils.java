@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@ import org.monyhar.base.StrictModeContext;
  * {@link LayoutInflater} wrapper class which suppresses strict mode violations. A helper class is
  * used for strict mode suppression instead of
  * {@link org.monyhar.components.strictmode.browser.ThreadStrictModeInterceptor.Builder}
- * because we only want to suppress strict mode violations caused by Chromium usage of
+ * because we only want to suppress strict mode violations caused by Monyhar usage of
  * LayoutInflater and not usage by embedders of Web Layer or Web View.
  */
 public class LayoutInflaterUtils {

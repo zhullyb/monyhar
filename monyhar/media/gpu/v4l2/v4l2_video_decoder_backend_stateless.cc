@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -668,7 +668,7 @@ bool V4L2StatelessVideoDecoderBackend::CreateAvd() {
   } else if (profile_ >= VP9PROFILE_MIN && profile_ <= VP9PROFILE_MAX) {
     if (input_queue_->SupportsRequests()) {
       avd_ = std::make_unique<VP9Decoder>(
-          std::make_unique<V4L2ChromiumVP9Accelerator>(this, device_.get()),
+          std::make_unique<V4L2MonyharVP9Accelerator>(this, device_.get()),
           profile_);
     } else {
       avd_ = std::make_unique<VP9Decoder>(

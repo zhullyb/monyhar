@@ -109,7 +109,7 @@ This is the scroller to which position: fixed elements remain fixed to.
 Contact: arakeri@microsoft.com
 
 ### Introduction
-Scrollbar scrolling using the mouse happens on the main thread in Chromium. If
+Scrollbar scrolling using the mouse happens on the main thread in Monyhar. If
 the main thread is busy (due to reasons like long running JS, etc), scrolling
 by clicking on the scrollbar will appear to be janky. To provide a better user
 experience, we have enabled off-main-thread scrollbar interaction for composited

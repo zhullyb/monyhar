@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,8 +48,8 @@ message ChromeUserMetricsExtension {
     ANDROID_WEBLAYER = 56;
   }
   // The product corresponding to this log. The field type is int32 instead of
-  // Product so that downstream users of the Chromium metrics component can
-  // introduce products without needing to make changes to the Chromium code
+  // Product so that downstream users of the Monyhar metrics component can
+  // introduce products without needing to make changes to the Monyhar code
   // (though they still need to add the new product to the server-side enum).
   // Note: The default value is Chrome, so Chrome products will not transmit
   // this field.

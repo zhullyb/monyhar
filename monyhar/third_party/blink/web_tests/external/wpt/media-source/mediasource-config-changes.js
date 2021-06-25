@@ -1,4 +1,4 @@
-// Copyright © 2016 Chromium authors and World Wide Web Consortium, (Massachusetts Institute of Technology, ERCIM, Keio University, Beihang).
+// Copyright © 2016 Monyhar authors and World Wide Web Consortium, (Massachusetts Institute of Technology, ERCIM, Keio University, Beihang).
 
 // Extract & return the resolution string from a filename, if any.
 function resolutionFromFilename(filename)

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ class SkiaGoldPixelDiff {
   // Args:
   // screenshot_prefix The prefix for your screenshot name on GCS.
   //   For every screenshot you take, it should have a unique name
-  //   across Chromium, because all screenshots (aka golden images) stores
+  //   across Monyhar, because all screenshots (aka golden images) stores
   //   in one bucket on GCS. The standard convention is to use the browser
   //   test class name as the prefix. The name will be
   //   |screenshot_prefix| + "_" + |screenshot_name|.'
@@ -80,7 +80,7 @@ class SkiaGoldPixelDiff {
   std::string patchset_;
   // Buildbucket build id.
   std::string job_id_;
-  // Which code review system is being used, typically "gerrit" for Chromium
+  // Which code review system is being used, typically "gerrit" for Monyhar
   // and "gerrit-internal" for Chrome.
   std::string code_review_system_;
   // The working dir for goldctl. It's the dir for storing temporary files.

@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1101,7 +1101,7 @@ absl::optional<CtapDeviceResponseCode> VirtualCtap2Device::OnMakeCredential(
   if (request.hmac_secret) {
     if (!config_.hmac_secret_support) {
       // Should not have been sent. Authenticators will normally ignore unknown
-      // extensions but Chromium should not make this mistake.
+      // extensions but Monyhar should not make this mistake.
       DLOG(ERROR)
           << "Rejecting makeCredential due to unexpected hmac_secret extension";
       return CtapDeviceResponseCode::kCtap2ErrUnsupportedExtension;
@@ -1146,7 +1146,7 @@ absl::optional<CtapDeviceResponseCode> VirtualCtap2Device::OnMakeCredential(
     if (request.cred_blob->size() > kMaxCredBlob) {
       DLOG(ERROR) << "Rejecting makeCredential because credBlob is too large: "
                   << request.cred_blob->size();
-      // This is stricter than the spec requires because Chromium should not
+      // This is stricter than the spec requires because Monyhar should not
       // send credBlob requests that will be rejected. But the spec says that
       // an authenticator should report credBlob=false in this case.
       return CtapDeviceResponseCode::kCtap2ErrUnsupportedExtension;

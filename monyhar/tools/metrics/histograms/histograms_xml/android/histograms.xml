@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -3444,8 +3444,8 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>changwan@monyhar.org</owner>
   <owner>src/android_webview/OWNERS</owner>
   <summary>
-    How long it takes to initialize a WebViewChromiumFactoryProvider. This is
-    the first major phase of the WebViewChromium construction.
+    How long it takes to initialize a WebViewMonyharFactoryProvider. This is
+    the first major phase of the WebViewMonyhar construction.
   </summary>
 </histogram>
 
@@ -3456,7 +3456,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <summary>
     How long it takes to initialize a WebViewProvider, the first time that one
     is initialized. WebViewProvider initialization is the second major phase of
-    WebViewChromium construction. The first initialization is recorded
+    WebViewMonyhar construction. The first initialization is recorded
     separately because it is usually much slower than subsequent ones.
   </summary>
 </histogram>
@@ -3468,16 +3468,16 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <summary>
     How long it takes to initialize a WebViewProvider, the first time that one
     is initialized. WebViewProvider initialization is the second major phase of
-    WebViewChromium construction. When it is not the first time, it is faster
+    WebViewMonyhar construction. When it is not the first time, it is faster
     and thus recorded separately.
   </summary>
 </histogram>
 
-<histogram name="Android.WebView.Startup.CreationTime.StartChromiumLocked"
+<histogram name="Android.WebView.Startup.CreationTime.StartMonyharLocked"
     units="ms" expires_after="2022-02-26">
   <owner>amalova@monyhar.org</owner>
   <owner>src/android_webview/OWNERS</owner>
-  <summary>How long it takes to run startChromiumLocked.</summary>
+  <summary>How long it takes to run startMonyharLocked.</summary>
 </histogram>
 
 <histogram name="Android.WebView.Startup.CreationTime.TotalFactoryInitTime"
@@ -3485,7 +3485,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>amalova@monyhar.org</owner>
   <owner>src/android_webview/OWNERS</owner>
   <summary>
-    The total time to initialize WebViewChromiumFactoryProvider.
+    The total time to initialize WebViewMonyharFactoryProvider.
 
     This measurement is different from Stage1.FactoryInit as it takes into
     accout time spent in framework.
@@ -3527,7 +3527,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>src/android_webview/OWNERS</owner>
   <summary>
     Records which thread WebView initialization started from. The metric is
-    recorded during the first startChromiumLocked call.
+    recorded during the first startMonyharLocked call.
   </summary>
 </histogram>
 

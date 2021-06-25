@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -306,7 +306,7 @@ def _RenameLocaleResourceDirs(resource_dirs, path_info):
     * BCP 47 langauge tags will be renamed to an equivalent ISO 639-1
       locale qualifier if possible (e.g. 'values-b+en+US/ -> values-en-rUS').
       Though this is not necessary at the moment, because no third-party
-      package that Chromium links against uses these for the current list of
+      package that Monyhar links against uses these for the current list of
       supported locales, this may change when the list is extended in the
       future).
 
@@ -318,7 +318,7 @@ def _RenameLocaleResourceDirs(resource_dirs, path_info):
       locale = resource_utils.FindLocaleInStringResourceFilePath(path)
       if not locale:
         continue
-      cr_locale = resource_utils.ToChromiumLocaleName(locale)
+      cr_locale = resource_utils.ToMonyharLocaleName(locale)
       if not cr_locale:
         continue  # Unsupported Android locale qualifier!?
       locale2 = resource_utils.ToAndroidLocaleName(cr_locale)
@@ -342,7 +342,7 @@ def _ToAndroidLocales(locale_allowlist):
   """Converts the list of Chrome locales to Android config locale qualifiers.
 
   Args:
-    locale_allowlist: A list of Chromium locale names.
+    locale_allowlist: A list of Monyhar locale names.
   Returns:
     A set of matching Android config locale qualifier names.
   """
@@ -350,7 +350,7 @@ def _ToAndroidLocales(locale_allowlist):
   for locale in locale_allowlist:
     locale = resource_utils.ToAndroidLocaleName(locale)
     if locale is None or ('-' in locale and '-r' not in locale):
-      raise Exception('Unsupported Chromium locale name: %s' % locale)
+      raise Exception('Unsupported Monyhar locale name: %s' % locale)
     ret.add(locale)
     # Always keep non-regional fall-backs.
     language = locale.split('-')[0]

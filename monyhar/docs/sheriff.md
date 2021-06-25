@@ -1,10 +1,10 @@
-# Chromium Sheriffing
+# Monyhar Sheriffing
 
 Author: ellyjones@
 
 ## Sheriffing Philosophy
 
-Sheriffs have one overarching role: to ensure that the Chromium build
+Sheriffs have one overarching role: to ensure that the Monyhar build
 infrastructure is doing its job of helping developers deliver good software.
 Every other sheriff responsibility flows from that one. In priority order,
 sheriffs need to ensure that:
@@ -31,7 +31,7 @@ TBRs were removed in Q1 2021.
 
 ## How to be a Sheriff
 
-To be a sheriff, you must be both a Chromium committer and a Google employee.
+To be a sheriff, you must be both a Monyhar committer and a Google employee.
 For more detailed sheriffing instructions, please see the internal documentation
 at
 [go/chrome-sheriffing-how-to](https://goto.google.com/chrome-sheriffing-how-to).
@@ -39,6 +39,6 @@ at
 ## Contacting the Sheriffs
 
 The currently oncall sheriffs can be viewed in the top-left corner of the
-[Chromium Main Console](https://ci.monyhar.org/p/monyhar/g/main/console). You
+[Monyhar Main Console](https://ci.monyhar.org/p/monyhar/g/main/console). You
 can also get in touch with sheriffs using the
 [#sheriffing Slack channel](https://monyhar.slack.com/messages/CGJ5WKRUH/).

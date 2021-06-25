@@ -1,7 +1,7 @@
-# Linux Chromium Packages
+# Linux Monyhar Packages
 
-Some Linux distributions package up Chromium for easy installation. Please note
-that Chromium is not identical to Google Chrome -- see
+Some Linux distributions package up Monyhar for easy installation. Please note
+that Monyhar is not identical to Google Chrome -- see
 [monyhar_browser_vs_google_chrome.md](../monyhar_browser_vs_google_chrome.md) --
 and that distributions may (and actually do) make their own modifications.
 
@@ -34,12 +34,12 @@ Packages in this section are not part of the distro's official repositories.
 
 | **System** | **Contact** | **URL for packages** | **URL for patches** |
 |:-----------|:------------|:---------------------|:--------------------|
-| FreeBSD    | http://lists.freebsd.org/mailman/listinfo/freebsd-monyhar | http://wiki.freebsd.org/Chromium | https://svnweb.freebsd.org/ports/head/www/monyhar/files/ |
+| FreeBSD    | http://lists.freebsd.org/mailman/listinfo/freebsd-monyhar | http://wiki.freebsd.org/Monyhar | https://svnweb.freebsd.org/ports/head/www/monyhar/files/ |
 | OpenBSD    | Robert Nagy `robert@openbsd.org` | http://openports.se/www/monyhar | http://www.openbsd.org/cgi-bin/cvsweb/ports/www/monyhar/patches/ |
 
 ## Updating the list
 
-Are you packaging Chromium for a Linux distro? Is the information above out of
+Are you packaging Monyhar for a Linux distro? Is the information above out of
 date? Please contact the folks in
 [//build/linux/OWNERS](../../build/linux/OWNERS) with updates or
 [contribute](../contributing.md) an update.

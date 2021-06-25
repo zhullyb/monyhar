@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -65,7 +65,7 @@ def DoMain(argv):
         continue
 
       # Deleting gyp files almost always leads to gyp failures.
-      # These files come from Chromium project, and can be replaced if needed.
+      # These files come from Monyhar project, and can be replaced if needed.
       if f.endswith('.gyp') or f.endswith('.gypi'):
         continue
 

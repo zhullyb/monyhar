@@ -1,6 +1,6 @@
 # Web Crypto
 
-This directory contains the cryptographic code for Chromium's [Web
+This directory contains the cryptographic code for Monyhar's [Web
 Crypto](https://www.w3.org/TR/WebCryptoAPI/) implementation.
 
 The Web Crypto implementation is split between Blink and this directory.

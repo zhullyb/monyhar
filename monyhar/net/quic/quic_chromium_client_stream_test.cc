@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -60,8 +60,8 @@ class MockQuicClientSessionBase : public quic::QuicSpdyClientSessionBase {
                quic::QuicSpdyStream*(quic::QuicStreamId id));
   MOCK_METHOD1(CreateIncomingStream,
                quic::QuicSpdyStream*(quic::PendingStream* pending));
-  MOCK_METHOD0(CreateOutgoingBidirectionalStream, QuicChromiumClientStream*());
-  MOCK_METHOD0(CreateOutgoingUnidirectionalStream, QuicChromiumClientStream*());
+  MOCK_METHOD0(CreateOutgoingBidirectionalStream, QuicMonyharClientStream*());
+  MOCK_METHOD0(CreateOutgoingUnidirectionalStream, QuicMonyharClientStream*());
   MOCK_METHOD6(
       WritevData,
       quic::QuicConsumedData(quic::QuicStreamId id,
@@ -158,11 +158,11 @@ MockQuicClientSessionBase::MockQuicClientSessionBase(
 
 MockQuicClientSessionBase::~MockQuicClientSessionBase() {}
 
-class QuicChromiumClientStreamTest
+class QuicMonyharClientStreamTest
     : public ::testing::TestWithParam<quic::ParsedQuicVersion>,
       public WithTaskEnvironment {
  public:
-  QuicChromiumClientStreamTest()
+  QuicMonyharClientStreamTest()
       : version_(GetParam()),
         crypto_config_(
             quic::test::crypto_test_utils::ProofVerifierForTesting()),
@@ -180,7 +180,7 @@ class QuicChromiumClientStreamTest
     quic::test::QuicConfigPeer::SetReceivedMaxUnidirectionalStreams(
         session_.config(), 10);
     session_.OnConfigNegotiated();
-    stream_ = new QuicChromiumClientStream(
+    stream_ = new QuicMonyharClientStream(
         quic::test::GetNthClientInitiatedBidirectionalStreamId(
             version_.transport_version, 0),
         &session_, quic::BIDIRECTIONAL, NetLogWithSource(),
@@ -272,7 +272,7 @@ class QuicChromiumClientStreamTest
         session_.connection()->transport_version(), n);
   }
 
-  void ResetStreamCallback(QuicChromiumClientStream* stream, int /*rv*/) {
+  void ResetStreamCallback(QuicMonyharClientStream* stream, int /*rv*/) {
     stream->Reset(quic::QUIC_STREAM_CANCELLED);
   }
 
@@ -287,23 +287,23 @@ class QuicChromiumClientStreamTest
 
   const quic::ParsedQuicVersion version_;
   quic::QuicCryptoClientConfig crypto_config_;
-  std::unique_ptr<QuicChromiumClientStream::Handle> handle_;
-  std::unique_ptr<QuicChromiumClientStream::Handle> handle2_;
+  std::unique_ptr<QuicMonyharClientStream::Handle> handle_;
+  std::unique_ptr<QuicMonyharClientStream::Handle> handle2_;
   quic::test::MockQuicConnectionHelper helper_;
   quic::test::MockAlarmFactory alarm_factory_;
   MockQuicClientSessionBase session_;
-  QuicChromiumClientStream* stream_;
+  QuicMonyharClientStream* stream_;
   spdy::Http2HeaderBlock headers_;
   spdy::Http2HeaderBlock trailers_;
   quic::QuicClientPushPromiseIndex push_promise_index_;
 };
 
 INSTANTIATE_TEST_SUITE_P(Version,
-                         QuicChromiumClientStreamTest,
+                         QuicMonyharClientStreamTest,
                          ::testing::ValuesIn(quic::AllSupportedVersions()),
                          ::testing::PrintToStringParamName());
 
-TEST_P(QuicChromiumClientStreamTest, Handle) {
+TEST_P(QuicMonyharClientStreamTest, Handle) {
   testing::InSequence seq;
   EXPECT_TRUE(handle_->IsOpen());
   EXPECT_EQ(quic::test::GetNthClientInitiatedBidirectionalStreamId(
@@ -376,7 +376,7 @@ TEST_P(QuicChromiumClientStreamTest, Handle) {
   EXPECT_EQ(0, handle_->WriteHeaders(std::move(headers), true, nullptr));
 }
 
-TEST_P(QuicChromiumClientStreamTest, HandleAfterConnectionClose) {
+TEST_P(QuicMonyharClientStreamTest, HandleAfterConnectionClose) {
   quic::test::QuicConnectionPeer::TearDownLocalConnectionState(
       session_.connection());
   stream_->OnConnectionClosed(quic::QUIC_INVALID_FRAME_DATA,
@@ -386,7 +386,7 @@ TEST_P(QuicChromiumClientStreamTest, HandleAfterConnectionClose) {
   EXPECT_EQ(quic::QUIC_INVALID_FRAME_DATA, handle_->connection_error());
 }
 
-TEST_P(QuicChromiumClientStreamTest, HandleAfterStreamReset) {
+TEST_P(QuicMonyharClientStreamTest, HandleAfterStreamReset) {
   if (version_.HasIetfQuicFrames()) {
     // Make a STOP_SENDING frame and pass it to QUIC. For V99/IETF QUIC,
     // we need both a REST_STREAM and a STOP_SENDING to effect a closed
@@ -411,7 +411,7 @@ TEST_P(QuicChromiumClientStreamTest, HandleAfterStreamReset) {
   EXPECT_EQ(quic::QUIC_STREAM_CANCELLED, handle_->stream_error());
 }
 
-TEST_P(QuicChromiumClientStreamTest, OnFinRead) {
+TEST_P(QuicMonyharClientStreamTest, OnFinRead) {
   InitializeHeaders();
   quic::QuicStreamOffset offset = 0;
   ProcessHeadersFull(headers_);
@@ -422,7 +422,7 @@ TEST_P(QuicChromiumClientStreamTest, OnFinRead) {
   stream_->OnStreamFrame(frame2);
 }
 
-TEST_P(QuicChromiumClientStreamTest, OnDataAvailable) {
+TEST_P(QuicMonyharClientStreamTest, OnDataAvailable) {
   InitializeHeaders();
   ProcessHeadersFull(headers_);
 
@@ -453,7 +453,7 @@ TEST_P(QuicChromiumClientStreamTest, OnDataAvailable) {
             absl::string_view(buffer->data(), data_len));
 }
 
-TEST_P(QuicChromiumClientStreamTest, OnDataAvailableAfterReadBody) {
+TEST_P(QuicMonyharClientStreamTest, OnDataAvailableAfterReadBody) {
   InitializeHeaders();
   ProcessHeadersFull(headers_);
 
@@ -489,7 +489,7 @@ TEST_P(QuicChromiumClientStreamTest, OnDataAvailableAfterReadBody) {
   base::RunLoop().RunUntilIdle();
 }
 
-TEST_P(QuicChromiumClientStreamTest, ProcessHeadersWithError) {
+TEST_P(QuicMonyharClientStreamTest, ProcessHeadersWithError) {
   spdy::Http2HeaderBlock bad_headers;
   bad_headers["NAME"] = "...";
 
@@ -506,7 +506,7 @@ TEST_P(QuicChromiumClientStreamTest, ProcessHeadersWithError) {
   base::RunLoop().RunUntilIdle();
 }
 
-TEST_P(QuicChromiumClientStreamTest, OnDataAvailableWithError) {
+TEST_P(QuicMonyharClientStreamTest, OnDataAvailableWithError) {
   InitializeHeaders();
   auto headers = quic::test::AsHeaderList(headers_);
   ProcessHeadersFull(headers_);
@@ -521,7 +521,7 @@ TEST_P(QuicChromiumClientStreamTest, OnDataAvailableWithError) {
       ERR_IO_PENDING,
       handle_->ReadBody(
           buffer.get(), 2 * data_len,
-          base::BindOnce(&QuicChromiumClientStreamTest::ResetStreamCallback,
+          base::BindOnce(&QuicMonyharClientStreamTest::ResetStreamCallback,
                          base::Unretained(this), stream_)));
 
   EXPECT_CALL(
@@ -550,14 +550,14 @@ TEST_P(QuicChromiumClientStreamTest, OnDataAvailableWithError) {
   base::RunLoop().RunUntilIdle();
 }
 
-TEST_P(QuicChromiumClientStreamTest, OnError) {
+TEST_P(QuicMonyharClientStreamTest, OnError) {
   //  EXPECT_CALL(delegate_, OnError(ERR_INTERNET_DISCONNECTED)).Times(1);
 
   stream_->OnError(ERR_INTERNET_DISCONNECTED);
   stream_->OnError(ERR_INTERNET_DISCONNECTED);
 }
 
-TEST_P(QuicChromiumClientStreamTest, OnTrailers) {
+TEST_P(QuicMonyharClientStreamTest, OnTrailers) {
   InitializeHeaders();
   ProcessHeadersFull(headers_);
 
@@ -613,7 +613,7 @@ TEST_P(QuicChromiumClientStreamTest, OnTrailers) {
 
 // Tests that trailers are marked as consumed only before delegate is to be
 // immediately notified about trailers.
-TEST_P(QuicChromiumClientStreamTest, MarkTrailersConsumedWhenNotifyDelegate) {
+TEST_P(QuicMonyharClientStreamTest, MarkTrailersConsumedWhenNotifyDelegate) {
   InitializeHeaders();
   ProcessHeadersFull(headers_);
 
@@ -676,7 +676,7 @@ TEST_P(QuicChromiumClientStreamTest, MarkTrailersConsumedWhenNotifyDelegate) {
 // Test that if Read() is called after response body is read and after trailers
 // are received but not yet delivered, Read() will return ERR_IO_PENDING instead
 // of 0 (EOF).
-TEST_P(QuicChromiumClientStreamTest, ReadAfterTrailersReceivedButNotDelivered) {
+TEST_P(QuicMonyharClientStreamTest, ReadAfterTrailersReceivedButNotDelivered) {
   InitializeHeaders();
   ProcessHeadersFull(headers_);
 
@@ -744,7 +744,7 @@ TEST_P(QuicChromiumClientStreamTest, ReadAfterTrailersReceivedButNotDelivered) {
   base::RunLoop().RunUntilIdle();
 }
 
-TEST_P(QuicChromiumClientStreamTest, WriteStreamData) {
+TEST_P(QuicMonyharClientStreamTest, WriteStreamData) {
   testing::InSequence seq;
   const char kData1[] = "hello world";
   const size_t kDataLen = base::size(kData1);
@@ -764,7 +764,7 @@ TEST_P(QuicChromiumClientStreamTest, WriteStreamData) {
                                          true, callback.callback()));
 }
 
-TEST_P(QuicChromiumClientStreamTest, WriteStreamDataAsync) {
+TEST_P(QuicMonyharClientStreamTest, WriteStreamDataAsync) {
   testing::InSequence seq;
   const char kData1[] = "hello world";
   const size_t kDataLen = base::size(kData1);
@@ -798,7 +798,7 @@ TEST_P(QuicChromiumClientStreamTest, WriteStreamDataAsync) {
   EXPECT_THAT(callback.WaitForResult(), IsOk());
 }
 
-TEST_P(QuicChromiumClientStreamTest, WritevStreamData) {
+TEST_P(QuicMonyharClientStreamTest, WritevStreamData) {
   testing::InSequence seq;
   scoped_refptr<StringIOBuffer> buf1 =
       base::MakeRefCounted<StringIOBuffer>("hello world!");
@@ -830,7 +830,7 @@ TEST_P(QuicChromiumClientStreamTest, WritevStreamData) {
                                     true, callback.callback()));
 }
 
-TEST_P(QuicChromiumClientStreamTest, WritevStreamDataAsync) {
+TEST_P(QuicMonyharClientStreamTest, WritevStreamDataAsync) {
   testing::InSequence seq;
   scoped_refptr<StringIOBuffer> buf1 =
       base::MakeRefCounted<StringIOBuffer>("hello world!");
@@ -877,11 +877,11 @@ TEST_P(QuicChromiumClientStreamTest, WritevStreamDataAsync) {
   EXPECT_THAT(callback.WaitForResult(), IsOk());
 }
 
-TEST_P(QuicChromiumClientStreamTest, HeadersBeforeHandle) {
+TEST_P(QuicMonyharClientStreamTest, HeadersBeforeHandle) {
   // We don't use stream_ because we want an incoming server push
   // stream.
   quic::QuicStreamId stream_id = GetNthServerInitiatedUnidirectionalStreamId(0);
-  QuicChromiumClientStream* stream2 = new QuicChromiumClientStream(
+  QuicMonyharClientStream* stream2 = new QuicMonyharClientStream(
       stream_id, &session_, quic::READ_UNIDIRECTIONAL, NetLogWithSource(),
       TRAFFIC_ANNOTATION_FOR_TESTS);
   session_.ActivateStream(base::WrapUnique(stream2));
@@ -901,11 +901,11 @@ TEST_P(QuicChromiumClientStreamTest, HeadersBeforeHandle) {
   EXPECT_EQ(headers_, headers_);
 }
 
-TEST_P(QuicChromiumClientStreamTest, HeadersAndDataBeforeHandle) {
+TEST_P(QuicMonyharClientStreamTest, HeadersAndDataBeforeHandle) {
   // We don't use stream_ because we want an incoming server push
   // stream.
   quic::QuicStreamId stream_id = GetNthServerInitiatedUnidirectionalStreamId(0);
-  QuicChromiumClientStream* stream2 = new QuicChromiumClientStream(
+  QuicMonyharClientStream* stream2 = new QuicMonyharClientStream(
       stream_id, &session_, quic::READ_UNIDIRECTIONAL, NetLogWithSource(),
       TRAFFIC_ANNOTATION_FOR_TESTS);
   session_.ActivateStream(base::WrapUnique(stream2));
@@ -947,7 +947,7 @@ TEST_P(QuicChromiumClientStreamTest, HeadersAndDataBeforeHandle) {
 }
 
 // Regression test for https://crbug.com/1043531.
-TEST_P(QuicChromiumClientStreamTest, ResetOnEmptyResponseHeaders) {
+TEST_P(QuicMonyharClientStreamTest, ResetOnEmptyResponseHeaders) {
   if (!VersionUsesHttp3(version_.transport_version)) {
     // QuicSpdyStream resets itself on empty headers,
     // because it is used to signal that headers were too large.
@@ -961,7 +961,7 @@ TEST_P(QuicChromiumClientStreamTest, ResetOnEmptyResponseHeaders) {
 
   if (VersionUsesHttp3(version_.transport_version)) {
     // Empty headers are allowed by QuicSpdyStream,
-    // but an error is generated by QuicChromiumClientStream.
+    // but an error is generated by QuicMonyharClientStream.
     int rv = handle_->ReadInitialHeaders(&headers_, CompletionOnceCallback());
     EXPECT_THAT(rv, IsError(net::ERR_QUIC_PROTOCOL_ERROR));
   }
@@ -969,7 +969,7 @@ TEST_P(QuicChromiumClientStreamTest, ResetOnEmptyResponseHeaders) {
 
 // Tests that the stream resets when it receives an invalid ":status"
 // pseudo-header value.
-TEST_P(QuicChromiumClientStreamTest, InvalidStatus) {
+TEST_P(QuicMonyharClientStreamTest, InvalidStatus) {
   spdy::Http2HeaderBlock headers = CreateResponseHeaders("xxx");
 
   EXPECT_CALL(
@@ -984,7 +984,7 @@ TEST_P(QuicChromiumClientStreamTest, InvalidStatus) {
 }
 
 // Tests that the stream resets when it receives 101 Switching Protocols.
-TEST_P(QuicChromiumClientStreamTest, SwitchingProtocolsResponse) {
+TEST_P(QuicMonyharClientStreamTest, SwitchingProtocolsResponse) {
   spdy::Http2HeaderBlock informational_headers = CreateResponseHeaders("101");
 
   EXPECT_CALL(
@@ -999,7 +999,7 @@ TEST_P(QuicChromiumClientStreamTest, SwitchingProtocolsResponse) {
 }
 
 // Tests that the stream ignores 100 Continue response.
-TEST_P(QuicChromiumClientStreamTest, ContinueResponse) {
+TEST_P(QuicMonyharClientStreamTest, ContinueResponse) {
   spdy::Http2HeaderBlock informational_headers = CreateResponseHeaders("100");
 
   // This informational headers should be ignored.
@@ -1021,7 +1021,7 @@ TEST_P(QuicChromiumClientStreamTest, ContinueResponse) {
 }
 
 // Tests that the stream handles 103 Early Hints responses.
-TEST_P(QuicChromiumClientStreamTest, EarlyHintsResponses) {
+TEST_P(QuicMonyharClientStreamTest, EarlyHintsResponses) {
   // Pass Two Early Hints responses to the stream.
   spdy::Http2HeaderBlock hints1_headers = CreateResponseHeaders("103");
   hints1_headers["x-header1"] = "foo";
@@ -1062,7 +1062,7 @@ TEST_P(QuicChromiumClientStreamTest, EarlyHintsResponses) {
 }
 
 // Tests that pending reads for Early Hints work.
-TEST_P(QuicChromiumClientStreamTest, EarlyHintsAsync) {
+TEST_P(QuicMonyharClientStreamTest, EarlyHintsAsync) {
   spdy::Http2HeaderBlock headers;
   TestCompletionCallback hints_callback;
 
@@ -1091,7 +1091,7 @@ TEST_P(QuicChromiumClientStreamTest, EarlyHintsAsync) {
 }
 
 // Tests that Early Hints after the initial headers is treated as an error.
-TEST_P(QuicChromiumClientStreamTest, EarlyHintsAfterInitialHeaders) {
+TEST_P(QuicMonyharClientStreamTest, EarlyHintsAfterInitialHeaders) {
   InitializeHeaders();
   ProcessHeadersFull(headers_);
 
@@ -1111,7 +1111,7 @@ TEST_P(QuicChromiumClientStreamTest, EarlyHintsAfterInitialHeaders) {
 }
 
 // Similar to the above test but don't read the initial headers.
-TEST_P(QuicChromiumClientStreamTest, EarlyHintsAfterInitialHeadersWithoutRead) {
+TEST_P(QuicMonyharClientStreamTest, EarlyHintsAfterInitialHeadersWithoutRead) {
   InitializeHeaders();
   ProcessHeaders(headers_);
 

@@ -1,8 +1,8 @@
 # Automated testing for Chrome for iOS
 
-See the [instructions] for how to check out and build Chromium for iOS.
+See the [instructions] for how to check out and build Monyhar for iOS.
 
-Automated testing is a crucial part of ensuring the quality of Chromium.
+Automated testing is a crucial part of ensuring the quality of Monyhar.
 
 ## Unit testing
 
@@ -11,7 +11,7 @@ target (ending in _unittest).
 
 ## Integration testing
 
-[EarlGrey] (EG2) is the integration testing framework used by Chromium for iOS.
+[EarlGrey] (EG2) is the integration testing framework used by Monyhar for iOS.
 
 ### Writing EarlGrey tests
 

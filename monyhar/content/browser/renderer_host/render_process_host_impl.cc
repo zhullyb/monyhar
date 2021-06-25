@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -3310,7 +3310,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLineToRenderer(
     switches::kAudioBufferSize,
     switches::kAutoplayPolicy,
     switches::kMojoCoreLibraryPath,
-    switches::kDisable2dCanvasImageChromium,
+    switches::kDisable2dCanvasImageMonyhar,
     switches::kDisableYUVImageDecoding,
     switches::kDisableAXMenuList,
     switches::kDisableAcceleratedVideoDecode,
@@ -3330,7 +3330,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLineToRenderer(
     switches::kDisableOopRasterization,
     switches::kEnableDeJelly,
     switches::kDisableOriginTrialControlledBlinkFeatures,
-    switches::kDisablePepper3DImageChromium,
+    switches::kDisablePepper3DImageMonyhar,
     switches::kDisablePermissionsAPI,
     switches::kDisablePresentationAPI,
     switches::kDisableRTCSmoothnessAlgorithm,
@@ -3342,7 +3342,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLineToRenderer(
     switches::kDisableTouchDragDrop,
     switches::kDisableV8IdleTasks,
     switches::kDisableVideoCaptureUseGpuMemoryBuffer,
-    switches::kDisableWebGLImageChromium,
+    switches::kDisableWebGLImageMonyhar,
     switches::kDomAutomationController,
     switches::kEnableAccessibilityObjectModel,
     switches::kEnableAutomation,
@@ -3370,7 +3370,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLineToRenderer(
     switches::kEnableViewport,
     switches::kEnableVtune,
     switches::kEnableWebGLDraftExtensions,
-    switches::kEnableWebGLImageChromium,
+    switches::kEnableWebGLImageMonyhar,
     switches::kFileUrlPathAlias,
     switches::kForceDeviceScaleFactor,
     switches::kForceDisplayColorProfile,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -72,7 +72,7 @@ def run_process(command):
 
 
 def main_mac(src_dir, allow_coverage_initializer = False):
-  base_names = ('Chromium', 'Google Chrome')
+  base_names = ('Monyhar', 'Google Chrome')
   ret = 0
   for base_name in base_names:
     app_bundle = base_name + '.app'

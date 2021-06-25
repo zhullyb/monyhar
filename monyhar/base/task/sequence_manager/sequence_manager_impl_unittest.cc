@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -2660,7 +2660,7 @@ TEST_P(SequenceManagerTest, CancelledDelayedTaskShutsDownQueue) {
 
 namespace {
 
-void ChromiumRunloopInspectionTask(
+void MonyharRunloopInspectionTask(
     scoped_refptr<TestMockTimeTaskRunner> test_task_runner) {
   // We don't expect more than 1 pending task at any time.
   EXPECT_GE(1u, test_task_runner->GetPendingTaskCount());
@@ -2669,7 +2669,7 @@ void ChromiumRunloopInspectionTask(
 }  // namespace
 
 TEST(SequenceManagerTestWithMockTaskRunner,
-     NumberOfPendingTasksOnChromiumRunLoop) {
+     NumberOfPendingTasksOnMonyharRunLoop) {
   FixtureWithMockTaskRunner fixture;
   auto queue =
       fixture.sequence_manager()->CreateTaskQueue(TaskQueue::Spec("test"));
@@ -2681,7 +2681,7 @@ TEST(SequenceManagerTestWithMockTaskRunner,
   for (int i = 1; i < 100; i++) {
     queue->task_runner()->PostDelayedTask(
         FROM_HERE,
-        BindOnce(&ChromiumRunloopInspectionTask, fixture.test_task_runner()),
+        BindOnce(&MonyharRunloopInspectionTask, fixture.test_task_runner()),
         TimeDelta::FromMilliseconds(i));
   }
   fixture.FastForwardUntilNoTasksRemain();

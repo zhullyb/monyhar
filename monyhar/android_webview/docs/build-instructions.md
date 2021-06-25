@@ -57,7 +57,7 @@ use_goma = true
 
 ### Figuring out target\_cpu
 
-Please see the [Chromium
+Please see the [Monyhar
 instructions](/docs/android_build_instructions.md#Figuring-out-target_cpu).
 
 ## Building WebView
@@ -192,8 +192,8 @@ adb shell cmd webviewupdate enable-redundant-packages
 
 ## Installing WebView and switching provider
 
-For help connecting your Android device, see the [Chromium
-instructions](/docs/android_build_instructions.md#Installing-and-Running-Chromium-on-a-device).
+For help connecting your Android device, see the [Monyhar
+instructions](/docs/android_build_instructions.md#Installing-and-Running-Monyhar-on-a-device).
 
 You can install a locally compiled APK like so (substitute `system_webview_apk`
 with the chosen build target name):

@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -62,7 +62,7 @@ def launch_dbus(env):
   machines, because they have an active desktop session and the
   DBUS_SESSION_BUS_ADDRESS environment variable set, but it can happen on
   headless environments. This is fixed by glib commit [1], but this workaround
-  will be necessary until the fix rolls into Chromium's CI.
+  will be necessary until the fix rolls into Monyhar's CI.
 
   [1] f2917459f745bebf931bccd5cc2c33aa81ef4d12
 
@@ -377,7 +377,7 @@ def _get_display_from_weston(weston_proc_pid):
       if process.name() == "weston-desktop-shell":
         weston_proc_display = process.environ().get('WAYLAND_DISPLAY')
         # If display is set, Weston could start successfully and we can use
-        # that display for Wayland connection in Chromium.
+        # that display for Wayland connection in Monyhar.
         if weston_proc_display is not None:
           return weston_proc_display
   return None

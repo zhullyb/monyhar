@@ -2216,7 +2216,7 @@
 <translation id="5148753489738115745">Allows you to specify additional parameters that are used when <ph name="PRODUCT_FRAME_NAME" /> launches <ph name="PRODUCT_NAME" />.
 
           If this policy is not set the default command line will be used.</translation>
-<translation id="5152787786897382519">Both Chromium and Google Chrome have some groups of policies that depend on each other to provide control over a feature. These sets are represented by the following policy groups. Given that policies can have multiple sources, only values coming from the highest priority source will be applied. Values coming from a lower priority source in the same group will be ignored. The order of priority is defined in <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Both Monyhar and Google Chrome have some groups of policies that depend on each other to provide control over a feature. These sets are represented by the following policy groups. Given that policies can have multiple sources, only values coming from the highest priority source will be applied. Values coming from a lower priority source in the same group will be ignored. The order of priority is defined in <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">How frequently monitoring network packets are sent, in milliseconds.
 
       If this policy is unset, the default interval is 3 minutes. The minimum
@@ -3925,7 +3925,7 @@
       If the policy is left not set, <ph name="PRODUCT_OS_NAME" /> will use the device-local account's email account ID as the display name on the login screen.
 
       This policy is ignored for regular user accounts.</translation>
-<translation id="8259375588339409826">Both Chromium and Google Chrome support the same set of policies. Please note that this document may include unreleased policies (i.e. their 'Supported on' entry refers to a not-yet released version of <ph name="PRODUCT_NAME" />) which are subject to change or removal without notice and for which no guarantees of any kind are provided, including no guarantees with respect to their security and privacy properties.
+<translation id="8259375588339409826">Both Monyhar and Google Chrome support the same set of policies. Please note that this document may include unreleased policies (i.e. their 'Supported on' entry refers to a not-yet released version of <ph name="PRODUCT_NAME" />) which are subject to change or removal without notice and for which no guarantees of any kind are provided, including no guarantees with respect to their security and privacy properties.
 
 These policies are strictly intended to be used to configure instances of <ph name="PRODUCT_NAME" /> internal to your organisation. Use of these policies outside of your organisation (for example, in a publicly distributed program) is considered malware and will likely be labelled as malware by Google and anti-virus vendors.
 

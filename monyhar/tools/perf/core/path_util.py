@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -22,28 +22,28 @@ def SysPath(path, position=None):
       sys.path.remove(path)
 
 
-def GetChromiumSrcDir():
+def GetMonyharSrcDir():
   return os.path.abspath(os.path.join(
       os.path.dirname(__file__), '..', '..', '..'))
 
 
 def GetTelemetryDir():
   return os.path.join(
-      GetChromiumSrcDir(), 'third_party', 'catapult', 'telemetry')
+      GetMonyharSrcDir(), 'third_party', 'catapult', 'telemetry')
 
 
 def GetTracingDir():
   return os.path.join(
-      GetChromiumSrcDir(), 'third_party', 'catapult', 'tracing')
+      GetMonyharSrcDir(), 'third_party', 'catapult', 'tracing')
 
 
 def GetPyUtilsDir():
   return os.path.join(
-      GetChromiumSrcDir(), 'third_party', 'catapult', 'common', 'py_utils')
+      GetMonyharSrcDir(), 'third_party', 'catapult', 'common', 'py_utils')
 
 
 def GetPerfDir():
-  return os.path.join(GetChromiumSrcDir(), 'tools', 'perf')
+  return os.path.join(GetMonyharSrcDir(), 'tools', 'perf')
 
 
 def GetPerfStorySetsDir():
@@ -59,11 +59,11 @@ def GetContribDir():
 
 
 def GetAndroidPylibDir():
-  return os.path.join(GetChromiumSrcDir(), 'build', 'android')
+  return os.path.join(GetMonyharSrcDir(), 'build', 'android')
 
 
 def GetVariationsDir():
-  return os.path.join(GetChromiumSrcDir(), 'tools', 'variations')
+  return os.path.join(GetMonyharSrcDir(), 'tools', 'variations')
 
 
 def AddTelemetryToPath():

@@ -1,4 +1,4 @@
-// Copyright (c) 2021 The Chromium Authors. All rights reserved.
+// Copyright (c) 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -156,7 +156,7 @@ class BASE_EXPORT PCScanScheduler final {
   friend PCScanSchedulingBackend;
 };
 
-// To please Chromium's clang plugin.
+// To please Monyhar's clang plugin.
 constexpr PCScanScheduler::PCScanScheduler() = default;
 constexpr QuarantineData::QuarantineData() = default;
 

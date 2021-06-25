@@ -1,4 +1,4 @@
-# Testing Chrome Custom Tabs with Chromium
+# Testing Chrome Custom Tabs with Monyhar
 
 [TOC]
 
@@ -15,8 +15,8 @@ If you want to use Chrome Custom Tabs in your own app, the instructions are
 
 ## Building
 
-These instruction assume that you have already built Chromium for Android. If
-not, instructions for building Chromium for Android are
+These instruction assume that you have already built Monyhar for Android. If
+not, instructions for building Monyhar for Android are
 [here](/docs/android_build_instructions.md). Details below assume that the
 build is setup in out/Default.
 
@@ -37,6 +37,6 @@ $ out/Default/bin/custom_tabs_client_example_apk install
 
 **That it!** The example app should be installed and available. Once you
 launch "Chrome Custom Tabs Example" ("Chrome C..." in apps), you should be
-able to switch to use Chromium by changing "Package" to Chromium (or any
+able to switch to use Monyhar by changing "Package" to Monyhar (or any
 version of Chrome installed on the device). Then simply click "Launch URL
 in a Chrome Custom Tab"

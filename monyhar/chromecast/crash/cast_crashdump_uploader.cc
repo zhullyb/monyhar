@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,7 +9,7 @@
 #include "base/files/file_path.h"
 #include "base/files/file_util.h"
 #include "base/logging.h"
-// TODO(slan): Find a replacement for LibcurlWrapper in Chromium to remove the
+// TODO(slan): Find a replacement for LibcurlWrapper in Monyhar to remove the
 // breakpad dependency.
 #include "third_party/breakpad/breakpad/src/common/linux/libcurl_wrapper.h"
 

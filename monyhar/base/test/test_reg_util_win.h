@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,10 +22,10 @@ namespace registry_util {
 // lifetime of the override manager. Destroy the manager to undo the overrides.
 //
 // Overridden hives use keys stored at, for instance:
-//   HKCU\Software\Chromium\TempTestKeys\
+//   HKCU\Software\Monyhar\TempTestKeys\
 //       13028145911617809$02AB211C-CF73-478D-8D91-618E11998AED
 // The key path are comprises of:
-//   - The test key root, HKCU\Software\Chromium\TempTestKeys\
+//   - The test key root, HKCU\Software\Monyhar\TempTestKeys\
 //   - The base::Time::ToInternalValue of the creation time. This is used to
 //     delete stale keys left over from crashed tests.
 //   - A GUID used for preventing name collisions (although unlikely) between

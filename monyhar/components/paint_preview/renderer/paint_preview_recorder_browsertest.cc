@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -685,7 +685,7 @@ TEST_P(PaintPreviewRecorderRenderViewTest, CaptureSaveRestore) {
             <a href="http://www.monyhar.org" style="display: block;
                                                      width: 80px;
                                                      height: 20px;">
-              <div>Chromium</div>
+              <div>Monyhar</div>
             </a>
           </div>
         </div>

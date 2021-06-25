@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,9 +34,9 @@ ProfileAvatarDownloader::ProfileAvatarDownloader(size_t icon_index,
         semantics {
           sender: "Profile Avatar Downloader"
           description:
-            "The Chromium binary comes with a bundle of low-resolution "
+            "The Monyhar binary comes with a bundle of low-resolution "
             "versions of avatar images. When the user selects an avatar in "
-            "chrome://settings, Chromium will download a high-resolution "
+            "chrome://settings, Monyhar will download a high-resolution "
             "version from Google's static content servers for use in the "
             "people manager UI."
           trigger:

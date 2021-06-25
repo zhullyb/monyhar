@@ -1,4 +1,4 @@
-# Fuzz testing in Chromium
+# Fuzz testing in Monyhar
 
 [go/chrome-fuzzing](https://goto.google.com/chrome-fuzzing)
 
@@ -17,7 +17,7 @@ ClusterFuzz documentation.
 
 ## Getting Started
 
-In Chromium, you can easily create and submit fuzz targets. The targets are
+In Monyhar, you can easily create and submit fuzz targets. The targets are
 automatically discovered by buildbots, built with different fuzzing engines,
 then uploaded to the distributed [ClusterFuzz] fuzzing system to run at scale.
 
@@ -40,8 +40,8 @@ Started Guide].
 
 ## Further Reading
 
-* [LibFuzzer integration] with Chromium and ClusterFuzz.
-* [AFL integration] with Chromium and ClusterFuzz.
+* [LibFuzzer integration] with Monyhar and ClusterFuzz.
+* [AFL integration] with Monyhar and ClusterFuzz.
 * [Detailed references] for other integration parts.
 * Writing fuzzers for the [non-browser parts of Chrome OS].
 

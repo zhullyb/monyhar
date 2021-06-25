@@ -1,6 +1,6 @@
 # Usage of tools/lldb/lldbinit.py
 
-Usage of Chromium's [lldbinit.py](../tools/lldb/lldbinit.py) is recommended when
+Usage of Monyhar's [lldbinit.py](../tools/lldb/lldbinit.py) is recommended when
 debugging with lldb. This is necessary for source-level debugging when
 `strip_absolute_paths_from_debug_symbols` is enabled [this is the default].
 
@@ -14,14 +14,14 @@ script import lldbinit
 
 ## How to attach to a process with lldb and start debugging
 
-- Follow the instructions above to create your `~/.lldbinit` file, don't forget to put the correct path to Chromium source in there.
-- Inside of your Chromium checkout, run `lldb out/Default/chrome` (or `out/Debug/chrome`)
-    - On Mac, most likely, `lldb out/Default/Chromium.app/Contents/MacOS/Chromium`
-- Keep lldb running and start Chromium separately with `--no-sandbox` flag:
+- Follow the instructions above to create your `~/.lldbinit` file, don't forget to put the correct path to Monyhar source in there.
+- Inside of your Monyhar checkout, run `lldb out/Default/chrome` (or `out/Debug/chrome`)
+    - On Mac, most likely, `lldb out/Default/Monyhar.app/Contents/MacOS/Monyhar`
+- Keep lldb running and start Monyhar separately with `--no-sandbox` flag:
     - On Linux, `out/Default/chrome --no-sandbox`
-    - On Mac, `out/Default/Chromium.app/Contents/MacOS/Chromium --no-sandbox`
+    - On Mac, `out/Default/Monyhar.app/Contents/MacOS/Monyhar --no-sandbox`
     - Note: if you start the process from lldb using `process launch -- --no-sandbox`, you will attach to the main browser process and will not be able to debug tab processes.
-- In Chromium, go to Customize and Control Chromium (three dots) -> More Tools -> Task Manager
+- In Monyhar, go to Customize and Control Monyhar (three dots) -> More Tools -> Task Manager
 - Depending on what tab or process you want to debug, note the process ID.
 - In the lldb shell:
     - Execute `process attach -p PID`. PID is the process ID of the tab (process) you want to debug.

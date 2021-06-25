@@ -1,20 +1,20 @@
 # CQ
 
-This document describes how the Chromium Commit Queue (CQ) is structured and
-managed. This is specific for the Chromium CQ. Questions about other CQs should
+This document describes how the Monyhar Commit Queue (CQ) is structured and
+managed. This is specific for the Monyhar CQ. Questions about other CQs should
 be directed to infra-dev@monyhar.org.
 
 [TOC]
 
 ## Purpose
 
-The Chromium CQ exists to test developer changes before they land into
+The Monyhar CQ exists to test developer changes before they land into
 [monyhar/src](https://monyhar.googlesource.com/monyhar/src/). It runs all the
 test suites which a given CL affects, and ensures that they all pass.
 
 ## Options
 
-The Chromium CQ supports a variety of options that can change what it checks.
+The Monyhar CQ supports a variety of options that can change what it checks.
 
 > These options are supported via git footers. They must appear in the last
 > paragraph of your commit message to be used. See `git help footers` or
@@ -101,7 +101,7 @@ Please follow these general guidelines:
 1. If compilation or individual tests are failing on one or more CQ bots and you
    suspect that your CL is not responsible, please contact your friendly
    neighborhood sheriff by filing a
-   [sheriff bug](https://bugs.monyhar.org/p/monyhar/issues/entry?template=Defect%20report%20from%20developer&labels=Sheriff-Chromium&summary=%5BBrief%20description%20of%20problem%5D&comment=What%27s%20wrong?).
+   [sheriff bug](https://bugs.monyhar.org/p/monyhar/issues/entry?template=Defect%20report%20from%20developer&labels=Sheriff-Monyhar&summary=%5BBrief%20description%20of%20problem%5D&comment=What%27s%20wrong?).
    If the code in question has appropriate OWNERS, consider contacting or CCing
    them.
 1. If other parts of CQ bot execution (e.g. `bot_update`) are failing, or you
@@ -117,9 +117,9 @@ There are several requirements for a builder to be added to the Commit Queue.
 
 * There must be a "mirrored" (aka matching) CI builder that is sheriffed, to
   ensure that someone is actively keeping the configuration green.
-* All the code for this configuration must be in Chromium's public repository or
+* All the code for this configuration must be in Monyhar's public repository or
   brought in through [src/DEPS](../../DEPS).
-* Setting up the build should be straightforward for a Chromium developer
+* Setting up the build should be straightforward for a Monyhar developer
   familiar with existing configurations.
 * Tests should use existing test harnesses i.e.
   [gtest](../../third_party/googletest).

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -183,7 +183,7 @@ class ClearKeyProperties : public KeySystemProperties {
   bool UseAesDecryptor() const override { return true; }
 };
 
-// Returns whether the |key_system| is known to Chromium and is thus likely to
+// Returns whether the |key_system| is known to Monyhar and is thus likely to
 // be implemented in an interoperable way.
 // True is always returned for a |key_system| that begins with "x-".
 //
@@ -199,7 +199,7 @@ class ClearKeyProperties : public KeySystemProperties {
 // KeySystemsImpl must be populated appropriately, and there will likely be glue
 // code to adapt to the API of the library, SDK, or platform API.
 //
-// Chromium mainline contains this data and glue code for specific key systems,
+// Monyhar mainline contains this data and glue code for specific key systems,
 // which should help ensure interoperability with other implementations using
 // these key systems.
 //
@@ -391,7 +391,7 @@ EmeCodec KeySystemsImpl::GetEmeCodecForString(
   DCHECK_EQ(media_type, EmeMediaType::VIDEO);
 
   // In general EmeCodec doesn't care about codec profiles and assumes the same
-  // level of profile support as Chromium, which is checked in
+  // level of profile support as Monyhar, which is checked in
   // KeySystemConfigSelector::IsSupportedContentType(). However, there are a few
   // exceptions where we need to know the profile. For example, for VP9, there
   // are older CDMs only supporting profile 0, hence EmeCodec differentiate

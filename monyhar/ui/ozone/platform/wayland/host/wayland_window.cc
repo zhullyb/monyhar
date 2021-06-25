@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -274,7 +274,7 @@ void WaylandWindow::SetTitle(const std::u16string& title) {}
 void WaylandWindow::SetCapture() {
   // Wayland doesn't allow explicit grabs. Instead, it sends events to "entered"
   // windows. That is, if user enters their mouse pointer to a window, that
-  // window starts to receive events. However, Chromium may want to reroute
+  // window starts to receive events. However, Monyhar may want to reroute
   // these events to another window. In this case, tell the window manager that
   // this specific window has grabbed the events, and they will be rerouted in
   // WaylandWindow::DispatchEvent method.
@@ -591,14 +591,14 @@ void WaylandWindow::UpdateCursorPositionFromEvent(
   DCHECK(event->IsLocatedEvent());
 
   // This is a tricky part. Initially, Wayland sends events to surfaces the
-  // events are targeted for. But, in order to fulfill Chromium's assumptions
+  // events are targeted for. But, in order to fulfill Monyhar's assumptions
   // about event targets, some of the events are rerouted and their locations
   // are converted. The event we got here is rerouted and it has had its
   // location fixed.
   //
   // Basically, this method must translate coordinates of all events
   // in regards to top-level windows' coordinates as it's always located at
-  // origin (0,0) from Chromium point of view (remember that Wayland doesn't
+  // origin (0,0) from Monyhar point of view (remember that Wayland doesn't
   // provide global coordinates to its clients). And it's totally fine to use it
   // as the target. Thus, the location of the |event| is always converted using
   // the top-level window's bounds as the target excluding cases, when the

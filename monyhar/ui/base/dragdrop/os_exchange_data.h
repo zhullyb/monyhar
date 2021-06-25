@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -162,7 +162,7 @@ class COMPONENT_EXPORT(UI_BASE) OSExchangeData {
   bool GetVirtualFilenames(std::vector<FileInfo>* file_names) const;
 
   // Retrieves "virtual file" contents via creation of intermediary temp files.
-  // Method is called on dropping on the Chromium drop target. Since creating
+  // Method is called on dropping on the Monyhar drop target. Since creating
   // the temp files involves file I/O, the method is asynchronous and the caller
   // must provide a callback function that receives a vector of pairs of temp
   // file paths and display names. Method immediately returns false if there are

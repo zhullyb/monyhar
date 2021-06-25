@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -43,7 +43,7 @@ abstract class SharedWebViewContentsClientAdapter extends AwContentsClient {
     // The Context to use. This is different from mWebView.getContext(), which should not be used.
     protected final Context mContext;
     // A reference to the current WebViewClient associated with this WebView.
-    protected WebViewClient mWebViewClient = SharedWebViewChromium.sNullWebViewClient;
+    protected WebViewClient mWebViewClient = SharedWebViewMonyhar.sNullWebViewClient;
     // Some callbacks will be forwarded to this client for apps using the support library.
     private final SupportLibWebViewContentsClientAdapter mSupportLibClient;
 
@@ -82,7 +82,7 @@ abstract class SharedWebViewContentsClientAdapter extends AwContentsClient {
      */
     @Override
     public final boolean hasWebViewClient() {
-        return mWebViewClient != SharedWebViewChromium.sNullWebViewClient;
+        return mWebViewClient != SharedWebViewMonyhar.sNullWebViewClient;
     }
 
     /**

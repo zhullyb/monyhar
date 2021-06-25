@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -43,7 +43,7 @@ public class DataReductionPreferenceFragment extends PreferenceFragmentCompat {
     public static final String PREF_DATA_REDUCTION_SWITCH = "data_reduction_switch";
     public static final String PREF_LEARN_MORE_KEY = "data_reduction_learn_more";
 
-    // This is the same as Chromium data_reduction_proxy::switches::kEnableDataReductionProxy.
+    // This is the same as Monyhar data_reduction_proxy::switches::kEnableDataReductionProxy.
     private static final String ENABLE_DATA_REDUCTION_PROXY = "enable-spdy-proxy-auth";
 
     private boolean mIsEnabled;

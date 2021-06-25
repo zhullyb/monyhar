@@ -502,7 +502,7 @@ class MissingDepsRegexp(Regexp):
     pattern = br"[^\w]/gen/"
     name = "MISSING DEPENDENCY"
     file_extensions = [".html", ".htm", ".js", ".xht", ".xhtml", ".svg"]
-    description = "Chromium-specific content referenced"
+    description = "Monyhar-specific content referenced"
     to_fix = "Reimplement the test to use well-documented testing interfaces"
 
 

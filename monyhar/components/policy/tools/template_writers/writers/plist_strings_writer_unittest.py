@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 '''Unit tests for writers.plist_strings_writer'''
@@ -26,7 +26,7 @@ class PListStringsWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'placeholders': [],
         'messages': {
           'mac_chrome_preferences': {
-            'text': 'Chromium preferen"ces',
+            'text': 'Monyhar preferen"ces',
             'desc': 'blah'
           }
         }
@@ -35,8 +35,8 @@ class PListStringsWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         '_monyhar': '1',
         'mac_bundle_id': 'com.example.Test'
     }, 'plist_strings')
-    expected_output = ('Chromium.pfm_title = "Chromium";\n'
-                       'Chromium.pfm_description = "Chromium preferen\\"ces";')
+    expected_output = ('Monyhar.pfm_title = "Monyhar";\n'
+                       'Monyhar.pfm_description = "Monyhar preferen\\"ces";')
     self.assertEquals(output.strip(), expected_output.strip())
 
   def testEmptyVersion(self):
@@ -48,7 +48,7 @@ class PListStringsWriterUnittest(writer_unittest_common.WriterUnittestCommon):
         'placeholders': [],
         'messages': {
           'mac_chrome_preferences': {
-            'text': 'Chromium preferen"ces',
+            'text': 'Monyhar preferen"ces',
             'desc': 'blah'
           }
         }
@@ -60,8 +60,8 @@ class PListStringsWriterUnittest(writer_unittest_common.WriterUnittestCommon):
             'version': '39.0.0.0'
         }, 'plist_strings')
     expected_output = ('/* monyhar version: 39.0.0.0 */\n'
-                       'Chromium.pfm_title = "Chromium";\n'
-                       'Chromium.pfm_description = "Chromium preferen\\"ces";')
+                       'Monyhar.pfm_title = "Monyhar";\n'
+                       'Monyhar.pfm_description = "Monyhar preferen\\"ces";')
     self.assertEquals(output.strip(), expected_output.strip())
 
   def testMainPolicy(self):
@@ -131,7 +131,7 @@ With a newline.""",
         'placeholders': [],
         'messages': {
           'mac_chrome_preferences': {
-            'text': 'Preferences of Chromium',
+            'text': 'Preferences of Monyhar',
             'desc': 'blah'
           }
         }
@@ -140,8 +140,8 @@ With a newline.""",
         '_monyhar': '1',
         'mac_bundle_id': 'com.example.Test'
     }, 'plist_strings')
-    expected_output = ('Chromium.pfm_title = "Chromium";\n'
-                       'Chromium.pfm_description = "Preferences of Chromium";\n'
+    expected_output = ('Monyhar.pfm_title = "Monyhar";\n'
+                       'Monyhar.pfm_description = "Preferences of Monyhar";\n'
                        'StringPolicy.pfm_title = "Caption of policy.";\n'
                        'StringPolicy.pfm_description = '
                        '"Description of policy.\\nWith a newline.";')
@@ -176,7 +176,7 @@ With a newline.""",
         'placeholders': [],
         'messages': {
           'mac_chrome_preferences': {
-            'text': 'Preferences of Chromium',
+            'text': 'Preferences of Monyhar',
             'desc': 'blah'
           }
         }
@@ -185,8 +185,8 @@ With a newline.""",
         '_monyhar': '1',
         'mac_bundle_id': 'com.example.Test'
     }, 'plist_strings')
-    expected_output = ('Chromium.pfm_title = "Chromium";\n'
-                       'Chromium.pfm_description = "Preferences of Chromium";\n'
+    expected_output = ('Monyhar.pfm_title = "Monyhar";\n'
+                       'Monyhar.pfm_description = "Preferences of Monyhar";\n'
                        'ListPolicy.pfm_title = "Caption of policy.";\n'
                        'ListPolicy.pfm_description = '
                        '"Description of policy.\\nWith a newline.";')
@@ -233,7 +233,7 @@ With a newline.""",
         'placeholders': [],
         'messages': {
           'mac_chrome_preferences': {
-            'text': 'Preferences of Chromium',
+            'text': 'Preferences of Monyhar',
             'desc': 'blah'
           }
         }
@@ -242,8 +242,8 @@ With a newline.""",
         '_monyhar': '1',
         'mac_bundle_id': 'com.example.Test'
     }, 'plist_strings')
-    expected_output = ('Chromium.pfm_title = "Chromium";\n'
-                       'Chromium.pfm_description = "Preferences of Chromium";\n'
+    expected_output = ('Monyhar.pfm_title = "Monyhar";\n'
+                       'Monyhar.pfm_description = "Preferences of Monyhar";\n'
                        'EnumPolicy.pfm_title = "Caption of policy.";\n'
                        'EnumPolicy.pfm_description = '
                        '"one - Option1\\ntwo - Option2\\n'

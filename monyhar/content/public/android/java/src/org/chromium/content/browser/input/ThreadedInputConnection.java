@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -40,7 +40,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * so 'extends' here should have no functional effect at all. See crbug.com/616334 for more
  * details.
  */
-class ThreadedInputConnection extends BaseInputConnection implements ChromiumBaseInputConnection {
+class ThreadedInputConnection extends BaseInputConnection implements MonyharBaseInputConnection {
     private static final String TAG = "Ime";
     private static final boolean DEBUG_LOGS = false;
 
@@ -133,7 +133,7 @@ class ThreadedInputConnection extends BaseInputConnection implements ChromiumBas
     }
 
     /**
-     * @see ChromiumBaseInputConnection#getHandler()
+     * @see MonyharBaseInputConnection#getHandler()
      */
     @Override
     public Handler getHandler() {
@@ -141,13 +141,13 @@ class ThreadedInputConnection extends BaseInputConnection implements ChromiumBas
     }
 
     /**
-     * @see ChromiumBaseInputConnection#onRestartInputOnUiThread()
+     * @see MonyharBaseInputConnection#onRestartInputOnUiThread()
      */
     @Override
     public void onRestartInputOnUiThread() {}
 
     /**
-     * @see ChromiumBaseInputConnection#sendKeyEventOnUiThread(KeyEvent)
+     * @see MonyharBaseInputConnection#sendKeyEventOnUiThread(KeyEvent)
      */
     @Override
     public boolean sendKeyEventOnUiThread(final KeyEvent event) {

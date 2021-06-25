@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -150,7 +150,7 @@ TEST_F(TransactionalLevelDBDatabaseTest, CorruptionTest) {
 }
 
 TEST(LevelDB, Locking) {
-  static base::NoDestructor<leveldb_env::ChromiumEnv> gTestEnv;
+  static base::NoDestructor<leveldb_env::MonyharEnv> gTestEnv;
   base::ScopedTempDir temp_directory;
   ASSERT_TRUE(temp_directory.CreateUniqueTempDir());
 

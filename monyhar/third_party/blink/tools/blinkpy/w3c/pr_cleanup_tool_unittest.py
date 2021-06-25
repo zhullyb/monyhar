@@ -57,7 +57,7 @@ class PrCleanupToolTest(LoggingTestCase):
         self.assertEqual(pr_cleanup.gerrit.cls_queried, ['88'])
         self.assertEqual(pr_cleanup.wpt_github.calls, [
             'all_pull_requests',
-            'add_comment "Close this PR because the Chromium CL has been abandoned."',
+            'add_comment "Close this PR because the Monyhar CL has been abandoned."',
             'update_pr', 'get_pr_branch', 'delete_remote_branch'
         ])
 
@@ -97,7 +97,7 @@ class PrCleanupToolTest(LoggingTestCase):
         self.assertEqual(pr_cleanup.gerrit.cls_queried, ['99'])
         self.assertEqual(pr_cleanup.wpt_github.calls, [
             'all_pull_requests',
-            'add_comment "Close this PR because the Chromium'
+            'add_comment "Close this PR because the Monyhar'
             ' CL does not have exportable changes."', 'update_pr',
             'get_pr_branch', 'delete_remote_branch'
         ])

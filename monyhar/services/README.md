@@ -24,17 +24,17 @@ slightly-less-than-foundational service definitions, such as services specific
 to the Chrome browser defined in `//chrome/services` or reusable services for
 Content or its embedders, defined in `//components/services`. The motivations,
 advice, and standards discussed in this document apply to all service
-definitions in the Chromium tree.
+definitions in the Monyhar tree.
 ***
 
-One of the main motivations for expressing Chromium as a collection of services
+One of the main motivations for expressing Monyhar as a collection of services
 is long-term maintainability and code health. Because service API boundaries are
 strictly limited to Mojo interfaces, state owned and managed by each service is
 strongly isolated from other components in the system.
 
 Another key motivation is general modularity and reusability: in the past there
 have been a number of missed opportunities for potential new features or
-Chromium-based products due to the browser's generally monolothic and inflexible
+Monyhar-based products due to the browser's generally monolothic and inflexible
 system design. With the services providing scaffolding for system components, it
 becomes progressively easier to build out newer use cases with *e.g.* a smaller
 resource footprint, or a different process model, or even a more granular binary
@@ -46,7 +46,7 @@ As outlined above, individual services are intended for graceful reusability
 across a broad variety of use cases. To enable this goal, we have rigorous
 standards on services' structure and public API design. Before doing significant
 work in `//services` (or other places where services are defined), please
-internalize these standards. All Chromium developers are responsible for
+internalize these standards. All Monyhar developers are responsible for
 upholding them!
 
 ### Public Service APIs
@@ -205,13 +205,13 @@ Please start a thread on
 [services-dev@monyhar.org](https://groups.google.com/a/monyhar.org/forum/#!forum/services-dev)
 if you want to propose the introduction of a new service.
 
-If you are servicifying an existing Chromium feature, please check out
-[Servicifying Chromium Features](/docs/servicification.md).
+If you are servicifying an existing Monyhar feature, please check out
+[Servicifying Monyhar Features](/docs/servicification.md).
 
 ## Other Docs
 
 Here are some other external documents that aren't quite fully captured by any
-documents in the Chromium tree. Beware of obsolete information:
+documents in the Monyhar tree. Beware of obsolete information:
 
 - [High-level Design Doc](https://docs.google.com/document/d/15I7sQyQo6zsqXVNAlVd520tdGaS8FCicZHrN0yRu-oU)
 - [Servicification Homepage](https://sites.google.com/a/monyhar.org/dev/servicification)

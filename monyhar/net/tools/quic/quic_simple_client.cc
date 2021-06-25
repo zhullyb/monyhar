@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -69,13 +69,13 @@ std::unique_ptr<quic::QuicSession> QuicSimpleClient::CreateQuicClientSession(
       push_promise_index(), drop_response_body());
 }
 
-QuicChromiumConnectionHelper* QuicSimpleClient::CreateQuicConnectionHelper() {
-  return new QuicChromiumConnectionHelper(&clock_,
+QuicMonyharConnectionHelper* QuicSimpleClient::CreateQuicConnectionHelper() {
+  return new QuicMonyharConnectionHelper(&clock_,
                                           quic::QuicRandom::GetInstance());
 }
 
-QuicChromiumAlarmFactory* QuicSimpleClient::CreateQuicAlarmFactory() {
-  return new QuicChromiumAlarmFactory(base::ThreadTaskRunnerHandle::Get().get(),
+QuicMonyharAlarmFactory* QuicSimpleClient::CreateQuicAlarmFactory() {
+  return new QuicMonyharAlarmFactory(base::ThreadTaskRunnerHandle::Get().get(),
                                       &clock_);
 }
 

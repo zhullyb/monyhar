@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -638,7 +638,7 @@ void WebstoreInstaller::StartDownload(const std::string& extension_id,
           data:
             "The id of the extension to be installed and information about the "
             "user's installation, including version, language, distribution "
-            "(Chrome vs Chromium), NaCl architecture, installation source (as "
+            "(Chrome vs Monyhar), NaCl architecture, installation source (as "
             "an enum), and accepted crx formats."
           destination: GOOGLE_OWNED_SERVICE
         }

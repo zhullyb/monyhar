@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ enum class PageTag {
   kFirst = 240,           // Minimum tag value.
   kBlinkGC = 252,         // Blink GC pages.
   kPartitionAlloc = 253,  // PartitionAlloc, no matter the partition.
-  kChromium = 254,        // Chromium page.
+  kMonyhar = 254,        // Monyhar page.
   kV8 = 255,              // V8 heap pages.
   kLast = kV8             // Maximum tag value.
 };
@@ -74,7 +74,7 @@ BASE_EXPORT uintptr_t NextAlignedWithOffset(uintptr_t ptr,
 // PageInaccessible means uncommitted.
 //
 // |page_tag| is used on some platforms to identify the source of the
-// allocation. Use PageTag::kChromium as a catch-all category.
+// allocation. Use PageTag::kMonyhar as a catch-all category.
 //
 // This call will return null if the allocation cannot be satisfied.
 BASE_EXPORT void* AllocPages(void* address,

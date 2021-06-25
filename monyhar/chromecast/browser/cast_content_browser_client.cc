@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -476,7 +476,7 @@ void CastContentBrowserClient::AppendExtraCommandLineSwitches(
     }
   } else if (process_type == switches::kGpuProcess) {
 #if defined(OS_LINUX) || defined(OS_CHROMEOS)
-    // Necessary for accelerated 2d canvas.  By default on Linux, Chromium
+    // Necessary for accelerated 2d canvas.  By default on Linux, Monyhar
     // assumes GLES2 contexts can be lost to a power-save mode, which breaks GPU
     // canvas apps.
     command_line->AppendSwitch(switches::kGpuNoContextLost);

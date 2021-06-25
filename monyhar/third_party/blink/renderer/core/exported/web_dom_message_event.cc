@@ -60,7 +60,7 @@ WebDOMMessageEvent::WebDOMMessageEvent(
     ports = MessagePort::EntanglePorts(*core_document->GetExecutionContext(),
                                        std::move(channels));
   }
-  // TODO(esprehn): Chromium always passes empty string for lastEventId, is that
+  // TODO(esprehn): Monyhar always passes empty string for lastEventId, is that
   // right?
   Unwrap<MessageEvent>()->initMessageEvent(
       "message", false, false, message_data, origin, "" /*lastEventId*/, window,

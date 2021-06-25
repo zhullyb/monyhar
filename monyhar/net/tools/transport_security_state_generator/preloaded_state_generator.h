@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Chromium Authors. All rights reserved.
+// Copyright (c) 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ namespace net {
 namespace transport_security_state {
 
 // PreloadedStateGenerator generates C++ code that contains the preloaded
-// entries in a way the Chromium code understands. The code that reads the
+// entries in a way the Monyhar code understands. The code that reads the
 // output can be found in net/http/transport_security_state.cc. The output gets
 // compiled into the binary.
 class PreloadedStateGenerator {

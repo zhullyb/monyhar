@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -151,7 +151,7 @@ class FileManagerBrowserTestBase : public content::DevToolsAgentHostObserver,
 
   // Launches the test extension with manifest |manifest_name|. The extension
   // manifest_name file should reside in the specified |path| relative to the
-  // Chromium src directory.
+  // Monyhar src directory.
   void LaunchExtension(const base::FilePath& path, const char* manifest_name);
 
   // Runs the test: awaits chrome.test messsage commands and chrome.test PASS

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -88,14 +88,14 @@ class QuicChromeAlarm : public quic::QuicAlarm {
 
 }  // namespace
 
-QuicChromiumAlarmFactory::QuicChromiumAlarmFactory(
+QuicMonyharAlarmFactory::QuicMonyharAlarmFactory(
     base::TaskRunner* task_runner,
     const quic::QuicClock* clock)
     : task_runner_(task_runner), clock_(clock) {}
 
-QuicChromiumAlarmFactory::~QuicChromiumAlarmFactory() {}
+QuicMonyharAlarmFactory::~QuicMonyharAlarmFactory() {}
 
-quic::QuicArenaScopedPtr<quic::QuicAlarm> QuicChromiumAlarmFactory::CreateAlarm(
+quic::QuicArenaScopedPtr<quic::QuicAlarm> QuicMonyharAlarmFactory::CreateAlarm(
     quic::QuicArenaScopedPtr<quic::QuicAlarm::Delegate> delegate,
     quic::QuicConnectionArena* arena) {
   if (arena != nullptr) {
@@ -107,7 +107,7 @@ quic::QuicArenaScopedPtr<quic::QuicAlarm> QuicChromiumAlarmFactory::CreateAlarm(
   }
 }
 
-quic::QuicAlarm* QuicChromiumAlarmFactory::CreateAlarm(
+quic::QuicAlarm* QuicMonyharAlarmFactory::CreateAlarm(
     quic::QuicAlarm::Delegate* delegate) {
   return new QuicChromeAlarm(
       clock_, task_runner_,

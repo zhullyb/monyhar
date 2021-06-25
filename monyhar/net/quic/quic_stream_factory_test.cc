@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -91,7 +91,7 @@ namespace test {
 
 class QuicHttpStreamPeer {
  public:
-  static QuicChromiumClientSession::Handle* GetSessionHandle(
+  static QuicMonyharClientSession::Handle* GetSessionHandle(
       HttpStream* stream) {
     return static_cast<QuicHttpStream*>(stream)->quic_session();
   }
@@ -289,7 +289,7 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
   }
 
   std::unique_ptr<HttpStream> CreateStream(QuicStreamRequest* request) {
-    std::unique_ptr<QuicChromiumClientSession::Handle> session =
+    std::unique_ptr<QuicMonyharClientSession::Handle> session =
         request->ReleaseSessionHandle();
     if (!session || !session->IsConnected())
       return nullptr;
@@ -324,7 +324,7 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
   }
 
   // Get the pending, not activated session, if there is only one session alive.
-  QuicChromiumClientSession* GetPendingSession(
+  QuicMonyharClientSession* GetPendingSession(
       const HostPortPair& host_port_pair) {
     quic::QuicServerId server_id(host_port_pair.host(), host_port_pair.port(),
                                  false);
@@ -332,7 +332,7 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
                                                     host_port_pair);
   }
 
-  QuicChromiumClientSession* GetActiveSession(
+  QuicMonyharClientSession* GetActiveSession(
       const HostPortPair& host_port_pair,
       const NetworkIsolationKey& network_isolation_key =
           NetworkIsolationKey()) {
@@ -377,7 +377,7 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
     EXPECT_TRUE(stream.get());
     stream.reset();
 
-    QuicChromiumClientSession* session = GetActiveSession(destination);
+    QuicMonyharClientSession* session = GetActiveSession(destination);
 
     if (socket_count + 1 != socket_factory_->udp_client_socket_ports().size()) {
       ADD_FAILURE();
@@ -412,12 +412,12 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
                                        error_code);
   }
 
-  static ProofVerifyDetailsChromium DefaultProofVerifyDetails() {
+  static ProofVerifyDetailsMonyhar DefaultProofVerifyDetails() {
     // Load a certificate that is valid for *.example.org
     scoped_refptr<X509Certificate> test_cert(
         ImportCertFromFile(GetTestCertsDirectory(), "wildcard.pem"));
     EXPECT_TRUE(test_cert.get());
-    ProofVerifyDetailsChromium verify_details;
+    ProofVerifyDetailsMonyhar verify_details;
     verify_details.cert_verify_result.verified_cert = test_cert;
     verify_details.cert_verify_result.is_issued_by_known_root = true;
     return verify_details;
@@ -487,7 +487,7 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
     quic_params_->allow_server_migration = true;
     Initialize();
 
-    ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+    ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
     crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
     crypto_client_stream_factory_.SetConfig(config);
 
@@ -540,8 +540,8 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
 
     EXPECT_EQ(OK, callback_.WaitForResult());
 
-    // Run QuicChromiumClientSession::WriteToNewSocket()
-    // posted by QuicChromiumClientSession::MigrateToSocket().
+    // Run QuicMonyharClientSession::WriteToNewSocket()
+    // posted by QuicMonyharClientSession::MigrateToSocket().
     base::RunLoop().RunUntilIdle();
 
     std::unique_ptr<HttpStream> stream = CreateStream(&request);
@@ -557,7 +557,7 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
               stream->InitializeStream(&request_info, true, DEFAULT_PRIORITY,
                                        net_log_, CompletionOnceCallback()));
     // Ensure that session is alive and active.
-    QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+    QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
     EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
     EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -603,7 +603,7 @@ class QuicStreamFactoryTestBase : public WithTaskEnvironment {
     quic_params_->idle_connection_timeout = base::TimeDelta::FromSeconds(500);
     Initialize();
     factory_->set_is_quic_known_to_work_on_current_network(true);
-    ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+    ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
     crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
     crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
     crypto_client_stream_factory_.set_handshake_mode(
@@ -965,7 +965,7 @@ INSTANTIATE_TEST_SUITE_P(VersionIncludeStreamDependencySequence,
 
 TEST_P(QuicStreamFactoryTest, Create) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1022,7 +1022,7 @@ TEST_P(QuicStreamFactoryTest, Create) {
 TEST_P(QuicStreamFactoryTest, CreateZeroRtt) {
   Initialize();
   factory_->set_is_quic_known_to_work_on_current_network(true);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1061,7 +1061,7 @@ TEST_P(QuicStreamFactoryTest, AsyncZeroRtt) {
     return;
 
   factory_->set_is_quic_known_to_work_on_current_network(true);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1101,7 +1101,7 @@ TEST_P(QuicStreamFactoryTest, AsyncZeroRtt) {
 
 TEST_P(QuicStreamFactoryTest, DefaultInitialRtt) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1123,7 +1123,7 @@ TEST_P(QuicStreamFactoryTest, DefaultInitialRtt) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(session->require_confirmation());
   EXPECT_EQ(100000u, session->connection()->GetStats().srtt_us);
   ASSERT_FALSE(session->config()->HasInitialRoundTripTimeUsToSend());
@@ -1131,7 +1131,7 @@ TEST_P(QuicStreamFactoryTest, DefaultInitialRtt) {
 
 TEST_P(QuicStreamFactoryTest, FactoryDestroyedWhenJobPending) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1163,7 +1163,7 @@ TEST_P(QuicStreamFactoryTest, RequireConfirmation) {
                                             "192.168.0.1", "");
   Initialize();
   factory_->set_is_quic_known_to_work_on_current_network(false);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1193,7 +1193,7 @@ TEST_P(QuicStreamFactoryTest, RequireConfirmation) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(session->require_confirmation());
 }
 
@@ -1208,7 +1208,7 @@ TEST_P(QuicStreamFactoryTest, DontRequireConfirmationFromSameIP) {
   http_server_properties_->SetLastLocalAddressWhenQuicWorked(
       IPAddress(192, 0, 2, 33));
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1232,7 +1232,7 @@ TEST_P(QuicStreamFactoryTest, DontRequireConfirmationFromSameIP) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_FALSE(session->require_confirmation());
 
   crypto_client_stream_factory_.last_stream()
@@ -1249,7 +1249,7 @@ TEST_P(QuicStreamFactoryTest, CachedInitialRtt) {
   quic_params_->estimate_initial_rtt = true;
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1271,7 +1271,7 @@ TEST_P(QuicStreamFactoryTest, CachedInitialRtt) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(10000u, session->connection()->GetStats().srtt_us);
   ASSERT_TRUE(session->config()->HasInitialRoundTripTimeUsToSend());
   EXPECT_EQ(10000u, session->config()->GetInitialRoundTripTimeUsToSend());
@@ -1309,7 +1309,7 @@ TEST_P(QuicStreamFactoryTest, CachedInitialRttWithNetworkIsolationKey) {
        {kNetworkIsolationKey1, kNetworkIsolationKey2, NetworkIsolationKey()}) {
     SCOPED_TRACE(network_isolation_key.ToString());
 
-    ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+    ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
     crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
     QuicTestPacketMaker packet_maker(
@@ -1339,7 +1339,7 @@ TEST_P(QuicStreamFactoryTest, CachedInitialRttWithNetworkIsolationKey) {
     std::unique_ptr<HttpStream> stream = CreateStream(&request);
     EXPECT_TRUE(stream.get());
 
-    QuicChromiumClientSession* session =
+    QuicMonyharClientSession* session =
         GetActiveSession(host_port_pair_, network_isolation_key);
     if (network_isolation_key == kNetworkIsolationKey1) {
       EXPECT_EQ(10000, session->connection()->GetStats().srtt_us);
@@ -1360,7 +1360,7 @@ TEST_P(QuicStreamFactoryTest, 2gInitialRtt) {
   quic_params_->estimate_initial_rtt = true;
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1382,7 +1382,7 @@ TEST_P(QuicStreamFactoryTest, 2gInitialRtt) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(1000000u, session->connection()->GetStats().srtt_us);
   ASSERT_TRUE(session->config()->HasInitialRoundTripTimeUsToSend());
   EXPECT_EQ(1200000u, session->config()->GetInitialRoundTripTimeUsToSend());
@@ -1395,7 +1395,7 @@ TEST_P(QuicStreamFactoryTest, 3gInitialRtt) {
   quic_params_->estimate_initial_rtt = true;
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1417,7 +1417,7 @@ TEST_P(QuicStreamFactoryTest, 3gInitialRtt) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(400000u, session->connection()->GetStats().srtt_us);
   ASSERT_TRUE(session->config()->HasInitialRoundTripTimeUsToSend());
   EXPECT_EQ(400000u, session->config()->GetInitialRoundTripTimeUsToSend());
@@ -1425,7 +1425,7 @@ TEST_P(QuicStreamFactoryTest, 3gInitialRtt) {
 
 TEST_P(QuicStreamFactoryTest, GoAway) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1447,7 +1447,7 @@ TEST_P(QuicStreamFactoryTest, GoAway) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   if (version_.UsesHttp3()) {
     session->OnHttp3GoAway(0);
@@ -1468,7 +1468,7 @@ TEST_P(QuicStreamFactoryTest, GoAwayForConnectionMigrationWithPortOnly) {
   if (version_.UsesHttp3()) {
     return;
   }
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1490,7 +1490,7 @@ TEST_P(QuicStreamFactoryTest, GoAwayForConnectionMigrationWithPortOnly) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   session->OnGoAway(quic::QuicGoAwayFrame(
       quic::kInvalidControlFrameId, quic::QUIC_ERROR_MIGRATING_PORT, 0,
@@ -1540,7 +1540,7 @@ TEST_P(QuicStreamFactoryTest, ServerNetworkStatsWithNetworkIsolationKey) {
   for (size_t i = 0; i < base::size(kNetworkIsolationKeys); ++i) {
     SCOPED_TRACE(i);
 
-    ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+    ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
     crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
     QuicTestPacketMaker packet_maker(
@@ -1570,7 +1570,7 @@ TEST_P(QuicStreamFactoryTest, ServerNetworkStatsWithNetworkIsolationKey) {
     std::unique_ptr<HttpStream> stream = CreateStream(&request);
     EXPECT_TRUE(stream.get());
 
-    QuicChromiumClientSession* session =
+    QuicMonyharClientSession* session =
         GetActiveSession(host_port_pair_, kNetworkIsolationKeys[i]);
 
     if (version_.UsesHttp3()) {
@@ -1643,7 +1643,7 @@ TEST_P(QuicStreamFactoryTest, ServerNetworkStatsWithNetworkIsolationKey) {
 
 TEST_P(QuicStreamFactoryTest, Pooling) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -1706,7 +1706,7 @@ TEST_P(QuicStreamFactoryTest, PoolingWithServerMigration) {
   VerifyServerMigration(config, alt_address);
 
   // Close server-migrated session.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   session->CloseSessionOnError(0u, quic::QUIC_NO_ERROR,
                                quic::ConnectionCloseBehavior::SILENT_CLOSE);
 
@@ -1723,7 +1723,7 @@ TEST_P(QuicStreamFactoryTest, PoolingWithServerMigration) {
   }
   socket_data1.AddSocketDataToFactory(socket_factory_.get());
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   quic::QuicConfig config2;
   crypto_client_stream_factory_.SetConfig(config2);
@@ -1749,7 +1749,7 @@ TEST_P(QuicStreamFactoryTest, PoolingWithServerMigration) {
 
 TEST_P(QuicStreamFactoryTest, NoPoolingAfterGoAway) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -1828,7 +1828,7 @@ TEST_P(QuicStreamFactoryTest, HttpsPooling) {
   HostPortPair server1(kDefaultServerHostName, 443);
   HostPortPair server2(kServer2HostName, 443);
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   host_resolver_->set_synchronous_mode(true);
@@ -1878,7 +1878,7 @@ TEST_P(QuicStreamFactoryTest, HttpsPoolingWithMatchingPins) {
   HashValue primary_pin(HASH_VALUE_SHA256);
   EXPECT_TRUE(primary_pin.FromString(
       "sha256/Nn8jk5By4Vkq6BeOVZ7R7AC6XUUBZsWmUbJR1f1Y5FY="));
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   verify_details.cert_verify_result.public_key_hashes.push_back(primary_pin);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -1933,7 +1933,7 @@ TEST_P(QuicStreamFactoryTest, NoHttpsPoolingWithDifferentPins) {
   transport_security_state_.EnableStaticPinsForTesting();
   ScopedTransportSecurityStateSource scoped_security_state_source;
 
-  ProofVerifyDetailsChromium verify_details1 = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details1 = DefaultProofVerifyDetails();
   uint8_t bad_pin = 3;
   verify_details1.cert_verify_result.public_key_hashes.push_back(
       test::GetTestHashValue(bad_pin));
@@ -1942,7 +1942,7 @@ TEST_P(QuicStreamFactoryTest, NoHttpsPoolingWithDifferentPins) {
   HashValue primary_pin(HASH_VALUE_SHA256);
   EXPECT_TRUE(primary_pin.FromString(
       "sha256/Nn8jk5By4Vkq6BeOVZ7R7AC6XUUBZsWmUbJR1f1Y5FY="));
-  ProofVerifyDetailsChromium verify_details2 = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details2 = DefaultProofVerifyDetails();
   verify_details2.cert_verify_result.public_key_hashes.push_back(primary_pin);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details2);
 
@@ -1981,7 +1981,7 @@ TEST_P(QuicStreamFactoryTest, NoHttpsPoolingWithDifferentPins) {
 
 TEST_P(QuicStreamFactoryTest, Goaway) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -2012,7 +2012,7 @@ TEST_P(QuicStreamFactoryTest, Goaway) {
 
   // Mark the session as going away.  Ensure that while it is still alive
   // that it is no longer active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   factory_->OnSessionGoingAway(session);
   EXPECT_EQ(true,
             QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
@@ -2048,7 +2048,7 @@ TEST_P(QuicStreamFactoryTest, Goaway) {
 
 TEST_P(QuicStreamFactoryTest, MaxOpenStream) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   quic::QuicStreamId stream_id = GetNthClientInitiatedBidirectionalStreamId(0);
@@ -2140,7 +2140,7 @@ TEST_P(QuicStreamFactoryTest, MaxOpenStream) {
   // Force close of the connection to suppress the generation of RST
   // packets when streams are torn down, which wouldn't be relevant to
   // this test anyway.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   session->connection()->CloseConnection(
       quic::QUIC_PUBLIC_RESET, "test",
       quic::ConnectionCloseBehavior::SILENT_CLOSE);
@@ -2229,7 +2229,7 @@ TEST_P(QuicStreamFactoryTest, CancelCreate) {
 
 TEST_P(QuicStreamFactoryTest, CloseAllSessions) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -2331,7 +2331,7 @@ TEST_P(QuicStreamFactoryTest,
   // Verify new requests can be sent normally without hanging.
   crypto_client_stream_factory_.set_handshake_mode(
       MockCryptoClientStream::COLD_START);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.Reset();
   MockQuicData socket_data2(version_);
@@ -2401,7 +2401,7 @@ TEST_P(QuicStreamFactoryTest, WriteErrorInCryptoConnectWithSyncHostResolution) {
   // Verify new requests can be sent normally without hanging.
   crypto_client_stream_factory_.set_handshake_mode(
       MockCryptoClientStream::COLD_START);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.Reset();
   MockQuicData socket_data2(version_);
@@ -2441,7 +2441,7 @@ TEST_P(QuicStreamFactoryTest, WriteErrorInCryptoConnectWithSyncHostResolution) {
 TEST_P(QuicStreamFactoryTest, CloseSessionsOnIPAddressChanged) {
   quic_params_->close_sessions_on_ip_change = true;
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -2484,7 +2484,7 @@ TEST_P(QuicStreamFactoryTest, CloseSessionsOnIPAddressChanged) {
 
   // Check an active session exists for the destination.
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
 
   EXPECT_TRUE(http_server_properties_->HasLastLocalAddressWhenQuicWorked());
@@ -2515,7 +2515,7 @@ TEST_P(QuicStreamFactoryTest, CloseSessionsOnIPAddressChanged) {
   // Check a new active session exisits for the destination and the old session
   // is no longer live.
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
-  QuicChromiumClientSession* session2 = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session2 = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session2));
 
   stream.reset();  // Will reset stream 3.
@@ -2531,7 +2531,7 @@ TEST_P(QuicStreamFactoryTest, CloseSessionsOnIPAddressChanged) {
 TEST_P(QuicStreamFactoryTest, GoAwaySessionsOnIPAddressChanged) {
   quic_params_->goaway_sessions_on_ip_change = true;
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -2584,7 +2584,7 @@ TEST_P(QuicStreamFactoryTest, GoAwaySessionsOnIPAddressChanged) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -2624,7 +2624,7 @@ TEST_P(QuicStreamFactoryTest, GoAwaySessionsOnIPAddressChanged) {
   // Check an active session exisits for the destination.
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
-  QuicChromiumClientSession* session2 = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session2 = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session2));
 
   stream.reset();
@@ -2638,7 +2638,7 @@ TEST_P(QuicStreamFactoryTest, GoAwaySessionsOnIPAddressChanged) {
 TEST_P(QuicStreamFactoryTest, OnIPAddressChangedWithConnectionMigration) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -2713,7 +2713,7 @@ TEST_P(QuicStreamFactoryTest, MigrateOnNetworkMadeDefaultWithAsyncWrite) {
 void QuicStreamFactoryTestBase::TestMigrationOnNetworkMadeDefault(
     IoMode write_mode) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -2811,7 +2811,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnNetworkMadeDefault(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -2931,7 +2931,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnNetworkMadeDefault(
 // will not attempt to write new packets until the socket level is unblocked.
 TEST_P(QuicStreamFactoryTest, MigratedToBlockedSocketAfterProbing) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -3033,7 +3033,7 @@ TEST_P(QuicStreamFactoryTest, MigratedToBlockedSocketAfterProbing) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -3158,7 +3158,7 @@ TEST_P(QuicStreamFactoryTest, MigratedToBlockedSocketAfterProbing) {
 // - no new network is connected, migration times out. Session is closed.
 TEST_P(QuicStreamFactoryTest, MigrationTimeoutWithNoNewNetwork) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Using a testing task runner so that we can control time.
@@ -3192,7 +3192,7 @@ TEST_P(QuicStreamFactoryTest, MigrationTimeoutWithNoNewNetwork) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -3247,7 +3247,7 @@ void QuicStreamFactoryTestBase::TestOnNetworkMadeDefaultNonMigratableStream(
   quic_params_->migrate_idle_sessions = migrate_idle_sessions;
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
 
@@ -3377,7 +3377,7 @@ void QuicStreamFactoryTestBase::TestOnNetworkMadeDefaultNonMigratableStream(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -3410,7 +3410,7 @@ void QuicStreamFactoryTestBase::TestOnNetworkMadeDefaultNonMigratableStream(
 TEST_P(QuicStreamFactoryTest, OnNetworkMadeDefaultConnectionMigrationDisabled) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -3452,7 +3452,7 @@ TEST_P(QuicStreamFactoryTest, OnNetworkMadeDefaultConnectionMigrationDisabled) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -3491,7 +3491,7 @@ void QuicStreamFactoryTestBase::TestOnNetworkDisconnectedNonMigratableStream(
   quic_params_->migrate_idle_sessions = migrate_idle_sessions;
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
 
@@ -3586,7 +3586,7 @@ void QuicStreamFactoryTestBase::TestOnNetworkDisconnectedNonMigratableStream(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -3618,7 +3618,7 @@ TEST_P(QuicStreamFactoryTest,
        OnNetworkDisconnectedConnectionMigrationDisabled) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -3651,7 +3651,7 @@ TEST_P(QuicStreamFactoryTest,
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -3686,7 +3686,7 @@ void QuicStreamFactoryTestBase::TestOnNetworkMadeDefaultNoOpenStreams(
   quic_params_->migrate_idle_sessions = migrate_idle_sessions;
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
 
@@ -3753,7 +3753,7 @@ void QuicStreamFactoryTestBase::TestOnNetworkMadeDefaultNoOpenStreams(
   EXPECT_TRUE(stream.get());
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_FALSE(session->HasActiveRequestStreams());
@@ -3789,7 +3789,7 @@ void QuicStreamFactoryTestBase::TestOnNetworkDisconnectedNoOpenStreams(
   quic_params_->migrate_idle_sessions = migrate_idle_sessions;
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
 
@@ -3882,7 +3882,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnNetworkDisconnected(
       {kDefaultNetworkForTests, kNewNetworkForTests});
   scoped_mock_network_change_notifier_->mock_network_change_notifier()
       ->NotifyNetworkMadeDefault(kDefaultNetworkForTests);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -3931,7 +3931,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnNetworkDisconnected(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -4041,7 +4041,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnNetworkDisconnected(
 // - new network is made default.
 TEST_P(QuicStreamFactoryTest, NewNetworkConnectedAfterNoNetwork) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -4086,7 +4086,7 @@ TEST_P(QuicStreamFactoryTest, NewNetworkConnectedAfterNoNetwork) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -4203,7 +4203,7 @@ TEST_P(QuicStreamFactoryTest, NewNetworkConnectedAfterNoNetwork) {
 TEST_P(QuicStreamFactoryTest, MigrateToProbingSocket) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -4310,7 +4310,7 @@ TEST_P(QuicStreamFactoryTest, MigrateToProbingSocket) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -4424,7 +4424,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnPathDegrading(
     bool async_write_before) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -4529,7 +4529,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnPathDegrading(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -4638,7 +4638,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnPathDegrading(
 TEST_P(QuicStreamFactoryTest, MigrateSessionEarlyProbingWriterError) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -4719,7 +4719,7 @@ TEST_P(QuicStreamFactoryTest, MigrateSessionEarlyProbingWriterError) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -4781,7 +4781,7 @@ TEST_P(QuicStreamFactoryTest,
   if (!version_.HasIetfQuicFrames())
     return;
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -4864,7 +4864,7 @@ TEST_P(QuicStreamFactoryTest,
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_path2, session);
@@ -4965,7 +4965,7 @@ TEST_P(QuicStreamFactoryTest, PortMigrationProbingReceivedStatelessReset) {
   FLAGS_quic_reloadable_flag_quic_send_path_response2 = false;
   socket_factory_ = std::make_unique<TestPortMigrationSocketFactory>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -5038,7 +5038,7 @@ TEST_P(QuicStreamFactoryTest, PortMigrationProbingReceivedStatelessReset) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -5079,7 +5079,7 @@ TEST_P(QuicStreamFactoryTest, PortMigrationProbingReceivedStatelessReset) {
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_EQ(1u, session->GetNumActiveStreams());
   EXPECT_FALSE(
-      QuicChromiumClientSessionPeer::DoesSessionAllowPortMigration(session));
+      QuicMonyharClientSessionPeer::DoesSessionAllowPortMigration(session));
 
   // The task to resend connectivity probe is cancelled due to probe failure.
   task_runner->FastForwardBy(next_task_delay);
@@ -5102,7 +5102,7 @@ TEST_P(QuicStreamFactoryTest,
   SetIetfConnectionMigrationFlagsAndConnectionOptions();
   socket_factory_ = std::make_unique<TestPortMigrationSocketFactory>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -5169,7 +5169,7 @@ TEST_P(QuicStreamFactoryTest,
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -5323,7 +5323,7 @@ TEST_P(QuicStreamFactoryTest,
 }
 
 void QuicStreamFactoryTestBase::TestSimplePortMigrationOnPathDegrading() {
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -5428,7 +5428,7 @@ void QuicStreamFactoryTestBase::TestSimplePortMigrationOnPathDegrading() {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -5440,8 +5440,8 @@ void QuicStreamFactoryTestBase::TestSimplePortMigrationOnPathDegrading() {
                                     callback_.callback()));
   // Disable connection migration on the request streams.
   // This should have no effect for port migration.
-  QuicChromiumClientStream* chrome_stream =
-      static_cast<QuicChromiumClientStream*>(
+  QuicMonyharClientStream* chrome_stream =
+      static_cast<QuicMonyharClientStream*>(
           quic::test::QuicSessionPeer::GetStream(
               session, GetNthClientInitiatedBidirectionalStreamId(0)));
   EXPECT_TRUE(chrome_stream);
@@ -5525,7 +5525,7 @@ void QuicStreamFactoryTestBase::TestSimplePortMigrationOnPathDegrading() {
   // alive.
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
-  chrome_stream = static_cast<QuicChromiumClientStream*>(
+  chrome_stream = static_cast<QuicMonyharClientStream*>(
       quic::test::QuicSessionPeer::GetStream(
           session, GetNthClientInitiatedBidirectionalStreamId(0)));
   EXPECT_TRUE(chrome_stream);
@@ -5545,7 +5545,7 @@ TEST_P(QuicStreamFactoryTest, MultiplePortMigrationsExceedsMaxLimit) {
   socket_factory_ = std::make_unique<TestPortMigrationSocketFactory>();
   Initialize();
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -5590,7 +5590,7 @@ TEST_P(QuicStreamFactoryTest, MultiplePortMigrationsExceedsMaxLimit) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -5721,7 +5721,7 @@ TEST_P(QuicStreamFactoryTest, MultiplePortMigrationsExceedsMaxLimit) {
 TEST_P(QuicStreamFactoryTest, GoawayOnPathDegrading) {
   quic_params_->go_away_on_path_degrading = true;
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -5774,7 +5774,7 @@ TEST_P(QuicStreamFactoryTest, GoawayOnPathDegrading) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -5822,7 +5822,7 @@ TEST_P(QuicStreamFactoryTest, GoawayOnPathDegrading) {
   // Check an active session exists for the destination.
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
-  QuicChromiumClientSession* session2 = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session2 = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session2));
   EXPECT_NE(session, session2);
 
@@ -5839,7 +5839,7 @@ TEST_P(QuicStreamFactoryTest, GoawayOnPathDegrading) {
 TEST_P(QuicStreamFactoryTest, DoNotMigrateToBadSocketOnPathDegrading) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -5915,7 +5915,7 @@ TEST_P(QuicStreamFactoryTest, DoNotMigrateToBadSocketOnPathDegrading) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -5976,7 +5976,7 @@ void QuicStreamFactoryTestBase::TestMigrateSessionWithDrainingStream(
     IoMode write_mode_for_queued_packet) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -6071,7 +6071,7 @@ void QuicStreamFactoryTestBase::TestMigrateSessionWithDrainingStream(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -6171,7 +6171,7 @@ void QuicStreamFactoryTestBase::TestMigrateSessionWithDrainingStream(
 // when the alternate network is connected after path has been degrading.
 TEST_P(QuicStreamFactoryTest, MigrateOnNewNetworkConnectAfterPathDegrading) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -6271,7 +6271,7 @@ TEST_P(QuicStreamFactoryTest, MigrateOnNewNetworkConnectAfterPathDegrading) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -6404,7 +6404,7 @@ TEST_P(QuicStreamFactoryTest,
   HostPortPair server1(kDefaultServerHostName, 443);
   HostPortPair server2(kServer2HostName, 443);
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -6434,8 +6434,8 @@ TEST_P(QuicStreamFactoryTest,
   std::unique_ptr<HttpStream> stream2 = CreateStream(&request2);
   EXPECT_TRUE(stream2.get());
 
-  QuicChromiumClientSession* session1 = GetActiveSession(server1);
-  QuicChromiumClientSession* session2 = GetActiveSession(server2);
+  QuicMonyharClientSession* session1 = GetActiveSession(server1);
+  QuicMonyharClientSession* session2 = GetActiveSession(server2);
   EXPECT_NE(session1, session2);
 
   // Cause QUIC stream to be created and send GET so session1 has an open
@@ -6512,7 +6512,7 @@ TEST_P(QuicStreamFactoryTest,
 //   session is not marked as going away.
 TEST_P(QuicStreamFactoryTest, MigrateOnPathDegradingWithNoNewNetwork) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData quic_data(version_);
@@ -6576,7 +6576,7 @@ TEST_P(QuicStreamFactoryTest, MigrateOnPathDegradingWithNoNewNetwork) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -6629,7 +6629,7 @@ void QuicStreamFactoryTestBase::TestMigrateSessionEarlyNonMigratableStream(
   quic_params_->migrate_idle_sessions = migrate_idle_sessions;
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
 
@@ -6759,7 +6759,7 @@ void QuicStreamFactoryTestBase::TestMigrateSessionEarlyNonMigratableStream(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -6793,7 +6793,7 @@ void QuicStreamFactoryTestBase::TestMigrateSessionEarlyNonMigratableStream(
 TEST_P(QuicStreamFactoryTest, MigrateSessionEarlyConnectionMigrationDisabled) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -6837,7 +6837,7 @@ TEST_P(QuicStreamFactoryTest, MigrateSessionEarlyConnectionMigrationDisabled) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -6872,7 +6872,7 @@ TEST_P(QuicStreamFactoryTest, MigrateSessionEarlyConnectionMigrationDisabled) {
 TEST_P(QuicStreamFactoryTest, MigrateSessionOnAsyncWriteError) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -7020,7 +7020,7 @@ TEST_P(QuicStreamFactoryTest, MigrateSessionOnAsyncWriteError) {
                                       net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_EQ(2u, session->GetNumActiveStreams());
@@ -7086,7 +7086,7 @@ TEST_P(QuicStreamFactoryTest, MigrateSessionOnAsyncWriteError) {
 TEST_P(QuicStreamFactoryTest, MigrateBackToDefaultPostMigrationOnWriteError) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -7174,7 +7174,7 @@ TEST_P(QuicStreamFactoryTest, MigrateBackToDefaultPostMigrationOnWriteError) {
                                       net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_EQ(1u, session->GetNumActiveStreams());
@@ -7313,7 +7313,7 @@ TEST_P(QuicStreamFactoryTest,
   // Ensure that session is alive but not active.
   EXPECT_FALSE(HasActiveSession(host_port_pair_));
   EXPECT_TRUE(HasActiveJob(host_port_pair_, privacy_mode_));
-  QuicChromiumClientSession* session = GetPendingSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetPendingSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_EQ(0u, task_runner->GetPendingTaskCount());
 
@@ -7377,7 +7377,7 @@ void QuicStreamFactoryTestBase::TestNoAlternateNetworkBeforeHandshake(
   // Ensure that session is alive but not active.
   EXPECT_FALSE(HasActiveSession(host_port_pair_));
   EXPECT_TRUE(HasActiveJob(host_port_pair_, privacy_mode_));
-  QuicChromiumClientSession* session = GetPendingSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetPendingSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_EQ(0u, task_runner->GetPendingTaskCount());
 
@@ -7530,7 +7530,7 @@ void QuicStreamFactoryTestBase::
   // Ensure that session is alive but not active.
   EXPECT_FALSE(HasActiveSession(host_port_pair_));
   EXPECT_TRUE(HasActiveJob(host_port_pair_, privacy_mode_));
-  QuicChromiumClientSession* session = GetPendingSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetPendingSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_EQ(0u, task_runner->GetPendingTaskCount());
   EXPECT_FALSE(failed_on_default_network_);
@@ -7551,7 +7551,7 @@ void QuicStreamFactoryTestBase::
   // Verify a new session is created on the alternate network.
   EXPECT_TRUE(HasActiveJob(host_port_pair_, privacy_mode_));
   EXPECT_FALSE(HasActiveSession(host_port_pair_));
-  QuicChromiumClientSession* session2 = GetPendingSession(host_port_pair_);
+  QuicMonyharClientSession* session2 = GetPendingSession(host_port_pair_);
   EXPECT_NE(session, session2);
   EXPECT_TRUE(failed_on_default_network_);
 
@@ -7652,7 +7652,7 @@ TEST_P(QuicStreamFactoryTest, MigrationOnWriteErrorBeforeHandshakeConfirmed) {
   // Verify new requests can be sent normally.
   crypto_client_stream_factory_.set_handshake_mode(
       MockCryptoClientStream::COLD_START);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.Reset();
   MockQuicData socket_data2(version_);
@@ -7762,7 +7762,7 @@ TEST_P(QuicStreamFactoryTest,
   EXPECT_FALSE(HasActiveSession(host_port_pair_));
   EXPECT_TRUE(HasActiveJob(host_port_pair_, privacy_mode_));
   base::RunLoop().RunUntilIdle();
-  QuicChromiumClientSession* session = GetPendingSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetPendingSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
 
   // Confirm the handshake on the alternate network.
@@ -7806,7 +7806,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteError(
     IoMode write_error_mode) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -7846,7 +7846,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteError(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -7947,7 +7947,7 @@ TEST_P(QuicStreamFactoryTest, MigrateSessionOnWriteErrorAsync) {
 void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorNoNewNetwork(
     IoMode write_error_mode) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Use the test task runner, to force the migration alarm timeout later.
@@ -7983,7 +7983,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorNoNewNetwork(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -8061,7 +8061,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorWithMultipleRequests(
     IoMode write_error_mode) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -8192,7 +8192,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorWithMultipleRequests(
                                       net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_EQ(2u, session->GetNumActiveStreams());
@@ -8246,7 +8246,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorMixedStreams(
     IoMode write_error_mode) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -8376,7 +8376,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorMixedStreams(
                                       net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_EQ(2u, session->GetNumActiveStreams());
@@ -8431,7 +8431,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorMixedStreams2(
     IoMode write_error_mode) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -8568,7 +8568,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorMixedStreams2(
                                       net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_EQ(2u, session->GetNumActiveStreams());
@@ -8622,7 +8622,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorNonMigratableStream(
   quic_params_->migrate_idle_sessions = migrate_idle_sessions;
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
 
@@ -8718,7 +8718,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorNonMigratableStream(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -8774,7 +8774,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorMigrationDisabled(
     IoMode write_error_mode) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -8807,7 +8807,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorMigrationDisabled(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -8875,7 +8875,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnMultipleWriteErrors(
     IoMode write_error_mode_on_new_network) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -8958,7 +8958,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnMultipleWriteErrors(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
@@ -9066,7 +9066,7 @@ void QuicStreamFactoryTestBase::
         bool disconnected) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -9104,7 +9104,7 @@ void QuicStreamFactoryTestBase::
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -9242,7 +9242,7 @@ void QuicStreamFactoryTestBase::
     TestMigrationOnWriteErrorWithNotificationQueuedLater(bool disconnected) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -9280,7 +9280,7 @@ void QuicStreamFactoryTestBase::
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -9421,7 +9421,7 @@ TEST_P(QuicStreamFactoryTest,
 void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorPauseBeforeConnected(
     IoMode write_error_mode) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -9462,7 +9462,7 @@ void QuicStreamFactoryTestBase::TestMigrationOnWriteErrorPauseBeforeConnected(
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -9592,7 +9592,7 @@ TEST_P(QuicStreamFactoryTest,
 TEST_P(QuicStreamFactoryTest, IgnoreWriteErrorFromOldWriterAfterMigration) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -9640,7 +9640,7 @@ TEST_P(QuicStreamFactoryTest, IgnoreWriteErrorFromOldWriterAfterMigration) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -9733,7 +9733,7 @@ TEST_P(QuicStreamFactoryTest, IgnoreWriteErrorFromOldWriterAfterMigration) {
 TEST_P(QuicStreamFactoryTest, IgnoreReadErrorFromOldReaderAfterMigration) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -9775,7 +9775,7 @@ TEST_P(QuicStreamFactoryTest, IgnoreReadErrorFromOldReaderAfterMigration) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -9884,7 +9884,7 @@ TEST_P(QuicStreamFactoryTest, IgnoreReadErrorFromOldReaderAfterMigration) {
 TEST_P(QuicStreamFactoryTest, IgnoreReadErrorOnOldReaderDuringMigration) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -9926,7 +9926,7 @@ TEST_P(QuicStreamFactoryTest, IgnoreReadErrorOnOldReaderDuringMigration) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -10034,7 +10034,7 @@ TEST_P(QuicStreamFactoryTest, IgnoreReadErrorOnOldReaderDuringMigration) {
 TEST_P(QuicStreamFactoryTest, DefaultRetransmittableOnWireTimeoutForMigration) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -10043,7 +10043,7 @@ TEST_P(QuicStreamFactoryTest, DefaultRetransmittableOnWireTimeoutForMigration) {
   auto task_runner = base::MakeRefCounted<base::TestMockTimeTaskRunner>();
   QuicStreamFactoryPeer::SetTaskRunner(factory_.get(), task_runner.get());
   QuicStreamFactoryPeer::SetAlarmFactory(
-      factory_.get(), std::make_unique<QuicChromiumAlarmFactory>(
+      factory_.get(), std::make_unique<QuicMonyharAlarmFactory>(
                           task_runner.get(), context_.clock()));
 
   MockQuicData socket_data(version_);
@@ -10142,7 +10142,7 @@ TEST_P(QuicStreamFactoryTest, DefaultRetransmittableOnWireTimeoutForMigration) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
 
@@ -10211,7 +10211,7 @@ TEST_P(QuicStreamFactoryTest, CustomRetransmittableOnWireTimeoutForMigration) {
   quic_params_->retransmittable_on_wire_timeout = custom_timeout_value;
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -10220,7 +10220,7 @@ TEST_P(QuicStreamFactoryTest, CustomRetransmittableOnWireTimeoutForMigration) {
   auto task_runner = base::MakeRefCounted<base::TestMockTimeTaskRunner>();
   QuicStreamFactoryPeer::SetTaskRunner(factory_.get(), task_runner.get());
   QuicStreamFactoryPeer::SetAlarmFactory(
-      factory_.get(), std::make_unique<QuicChromiumAlarmFactory>(
+      factory_.get(), std::make_unique<QuicMonyharAlarmFactory>(
                           task_runner.get(), context_.clock()));
 
   MockQuicData socket_data(version_);
@@ -10318,7 +10318,7 @@ TEST_P(QuicStreamFactoryTest, CustomRetransmittableOnWireTimeoutForMigration) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   MaybeMakeNewConnectionIdAvailableToSession(cid_on_new_path, session);
 
@@ -10386,7 +10386,7 @@ TEST_P(QuicStreamFactoryTest, CustomRetransmittableOnWireTimeout) {
       base::TimeDelta::FromMilliseconds(200);
   quic_params_->retransmittable_on_wire_timeout = custom_timeout_value;
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -10394,7 +10394,7 @@ TEST_P(QuicStreamFactoryTest, CustomRetransmittableOnWireTimeout) {
   auto task_runner = base::MakeRefCounted<base::TestMockTimeTaskRunner>();
   QuicStreamFactoryPeer::SetTaskRunner(factory_.get(), task_runner.get());
   QuicStreamFactoryPeer::SetAlarmFactory(
-      factory_.get(), std::make_unique<QuicChromiumAlarmFactory>(
+      factory_.get(), std::make_unique<QuicMonyharAlarmFactory>(
                           task_runner.get(), context_.clock()));
 
   MockQuicData socket_data1(version_);
@@ -10467,7 +10467,7 @@ TEST_P(QuicStreamFactoryTest, CustomRetransmittableOnWireTimeout) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
   // Complete migration.
@@ -10532,7 +10532,7 @@ TEST_P(QuicStreamFactoryTest, NoRetransmittableOnWireTimeout) {
   quic_params_->estimate_initial_rtt = true;
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -10540,7 +10540,7 @@ TEST_P(QuicStreamFactoryTest, NoRetransmittableOnWireTimeout) {
   auto task_runner = base::MakeRefCounted<base::TestMockTimeTaskRunner>();
   QuicStreamFactoryPeer::SetTaskRunner(factory_.get(), task_runner.get());
   QuicStreamFactoryPeer::SetAlarmFactory(
-      factory_.get(), std::make_unique<QuicChromiumAlarmFactory>(
+      factory_.get(), std::make_unique<QuicMonyharAlarmFactory>(
                           task_runner.get(), context_.clock()));
 
   MockQuicData socket_data1(version_);
@@ -10609,7 +10609,7 @@ TEST_P(QuicStreamFactoryTest, NoRetransmittableOnWireTimeout) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
   // Complete migration.
@@ -10669,7 +10669,7 @@ TEST_P(QuicStreamFactoryTest,
   quic_params_->retransmittable_on_wire_timeout = custom_timeout_value;
   quic_params_->migrate_sessions_on_network_change_v2 = true;
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -10677,7 +10677,7 @@ TEST_P(QuicStreamFactoryTest,
   auto task_runner = base::MakeRefCounted<base::TestMockTimeTaskRunner>();
   QuicStreamFactoryPeer::SetTaskRunner(factory_.get(), task_runner.get());
   QuicStreamFactoryPeer::SetAlarmFactory(
-      factory_.get(), std::make_unique<QuicChromiumAlarmFactory>(
+      factory_.get(), std::make_unique<QuicMonyharAlarmFactory>(
                           task_runner.get(), context_.clock()));
 
   MockQuicData socket_data1(version_);
@@ -10750,7 +10750,7 @@ TEST_P(QuicStreamFactoryTest,
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
   // Complete migration.
@@ -10817,7 +10817,7 @@ TEST_P(QuicStreamFactoryTest,
   quic_params_->migrate_sessions_on_network_change_v2 = true;
   Initialize();
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -10825,7 +10825,7 @@ TEST_P(QuicStreamFactoryTest,
   auto task_runner = base::MakeRefCounted<base::TestMockTimeTaskRunner>();
   QuicStreamFactoryPeer::SetTaskRunner(factory_.get(), task_runner.get());
   QuicStreamFactoryPeer::SetAlarmFactory(
-      factory_.get(), std::make_unique<QuicChromiumAlarmFactory>(
+      factory_.get(), std::make_unique<QuicMonyharAlarmFactory>(
                           task_runner.get(), context_.clock()));
 
   MockQuicData socket_data1(version_);
@@ -10894,7 +10894,7 @@ TEST_P(QuicStreamFactoryTest,
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
   // Complete migration.
@@ -10951,7 +10951,7 @@ TEST_P(QuicStreamFactoryTest,
        IgnoreReadErrorOnOldReaderDuringPendingMigrationOnWriteError) {
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -10993,7 +10993,7 @@ TEST_P(QuicStreamFactoryTest,
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -11119,7 +11119,7 @@ void QuicStreamFactoryTestBase::
         IoMode write_error_mode,
         bool disconnect_before_connect) {
   InitializeConnectionMigrationV2Test({kDefaultNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -11157,7 +11157,7 @@ void QuicStreamFactoryTestBase::
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -11300,7 +11300,7 @@ TEST_P(QuicStreamFactoryTest, DefaultIdleMigrationPeriod) {
   quic_params_->migrate_idle_sessions = true;
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
 
@@ -11525,7 +11525,7 @@ TEST_P(QuicStreamFactoryTest, CustomIdleMigrationPeriod) {
       base::TimeDelta::FromSeconds(15);
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
 
@@ -11721,7 +11721,7 @@ TEST_P(QuicStreamFactoryTest, ServerMigration) {
   SetIetfConnectionMigrationFlagsAndConnectionOptions();
   Initialize();
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   client_maker_.set_save_packet_frames(true);
@@ -11763,7 +11763,7 @@ TEST_P(QuicStreamFactoryTest, ServerMigration) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   quic::QuicConnectionId cid_on_new_path =
@@ -11903,7 +11903,7 @@ TEST_P(QuicStreamFactoryTest, ServerMigrationIPv6ToIPv4Fails) {
   quic::QuicConfig config;
   config.SetIPv4AlternateServerAddressToSend(ToQuicSocketAddress(alt_address));
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -11951,7 +11951,7 @@ TEST_P(QuicStreamFactoryTest, ServerMigrationIPv6ToIPv4Fails) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -11986,7 +11986,7 @@ TEST_P(QuicStreamFactoryTest, ServerMigrationIPv4ToIPv6Fails) {
   quic::QuicConfig config;
   config.SetIPv6AlternateServerAddressToSend(ToQuicSocketAddress(alt_address));
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -12034,7 +12034,7 @@ TEST_P(QuicStreamFactoryTest, ServerMigrationIPv4ToIPv6Fails) {
                                          net_log_, CompletionOnceCallback()));
 
   // Ensure that session is alive and active.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -12056,7 +12056,7 @@ TEST_P(QuicStreamFactoryTest, ServerMigrationIPv4ToIPv6Fails) {
 
 TEST_P(QuicStreamFactoryTest, OnCertDBChanged) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -12085,7 +12085,7 @@ TEST_P(QuicStreamFactoryTest, OnCertDBChanged) {
   EXPECT_THAT(callback_.WaitForResult(), IsOk());
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream);
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   // Change the CA cert and verify that stream saw the event.
   factory_->OnCertDBChanged();
@@ -12109,7 +12109,7 @@ TEST_P(QuicStreamFactoryTest, OnCertDBChanged) {
   EXPECT_THAT(callback_.WaitForResult(), IsOk());
   std::unique_ptr<HttpStream> stream2 = CreateStream(&request2);
   EXPECT_TRUE(stream2);
-  QuicChromiumClientSession* session2 = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session2 = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
   EXPECT_NE(session, session2);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
@@ -12209,7 +12209,7 @@ TEST_P(QuicStreamFactoryTest, CryptoConfigWhenProofIsInvalid) {
 TEST_P(QuicStreamFactoryTest, EnableNotLoadFromDiskCache) {
   Initialize();
   factory_->set_is_quic_known_to_work_on_current_network(true);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   QuicStreamFactoryPeer::SetTaskRunner(factory_.get(), runner_.get());
@@ -12249,7 +12249,7 @@ TEST_P(QuicStreamFactoryTest, EnableNotLoadFromDiskCache) {
 TEST_P(QuicStreamFactoryTest, ReducePingTimeoutOnConnectionTimeOutOpenStreams) {
   quic_params_->reduced_ping_timeout = base::TimeDelta::FromSeconds(10);
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -12290,7 +12290,7 @@ TEST_P(QuicStreamFactoryTest, ReducePingTimeoutOnConnectionTimeOutOpenStreams) {
                 /*cert_verify_flags=*/0, url_, net_log_, &net_error_details_,
                 failed_on_default_network_callback_, callback_.callback()));
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(quic::QuicTime::Delta::FromSeconds(quic::kPingTimeoutSecs),
             session->connection()->ping_timeout());
 
@@ -12327,7 +12327,7 @@ TEST_P(QuicStreamFactoryTest, ReducePingTimeoutOnConnectionTimeOutOpenStreams) {
                     true /* use_dns_aliases */, /*cert_verify_flags=*/0, url2_,
                     net_log_, &net_error_details_,
                     failed_on_default_network_callback_, callback2.callback()));
-  QuicChromiumClientSession* session2 = GetActiveSession(server2);
+  QuicMonyharClientSession* session2 = GetActiveSession(server2);
   EXPECT_EQ(quic::QuicTime::Delta::FromSeconds(10),
             session2->connection()->ping_timeout());
 
@@ -12618,7 +12618,7 @@ TEST_P(QuicStreamFactoryTest,
   const quic::QuicConfig* config =
       QuicStreamFactoryPeer::GetConfig(factory_.get());
   EXPECT_EQ(500, config->IdleNetworkTimeout().ToSeconds());
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
 
   for (int i = 0; i < kNumSessionsToMake; ++i) {
     SCOPED_TRACE(i);
@@ -12727,7 +12727,7 @@ TEST_P(QuicStreamFactoryTest,
 TEST_P(QuicStreamFactoryTest, YieldAfterPackets) {
   Initialize();
   factory_->set_is_quic_known_to_work_on_current_network(true);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   QuicStreamFactoryPeer::SetYieldAfterPackets(factory_.get(), 0);
 
@@ -12745,7 +12745,7 @@ TEST_P(QuicStreamFactoryTest, YieldAfterPackets) {
   host_resolver_->rules()->AddIPLiteralRule(host_port_pair_.host(),
                                             "192.168.0.1", "");
 
-  // Set up the TaskObserver to verify QuicChromiumPacketReader::StartReading
+  // Set up the TaskObserver to verify QuicMonyharPacketReader::StartReading
   // posts a task.
   // TODO(rtenneti): Change SpdySessionTestTaskObserver to NetTestTaskObserver??
   SpdySessionTestTaskObserver observer("quic_monyhar_packet_reader.cc",
@@ -12760,13 +12760,13 @@ TEST_P(QuicStreamFactoryTest, YieldAfterPackets) {
                 /*cert_verify_flags=*/0, url_, net_log_, &net_error_details_,
                 failed_on_default_network_callback_, callback_.callback()));
 
-  // Call run_loop so that QuicChromiumPacketReader::OnReadComplete() gets
+  // Call run_loop so that QuicMonyharPacketReader::OnReadComplete() gets
   // called.
   base::RunLoop run_loop;
   run_loop.RunUntilIdle();
 
   // Verify task that the observer's executed_count is 1, which indicates
-  // QuicChromiumPacketReader::StartReading() has posted only one task and
+  // QuicMonyharPacketReader::StartReading() has posted only one task and
   // yielded the read.
   EXPECT_EQ(1u, observer.executed_count());
 
@@ -12779,7 +12779,7 @@ TEST_P(QuicStreamFactoryTest, YieldAfterPackets) {
 TEST_P(QuicStreamFactoryTest, YieldAfterDuration) {
   Initialize();
   factory_->set_is_quic_known_to_work_on_current_network(true);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   QuicStreamFactoryPeer::SetYieldAfterDuration(
       factory_.get(), quic::QuicTime::Delta::FromMilliseconds(-1));
@@ -12798,7 +12798,7 @@ TEST_P(QuicStreamFactoryTest, YieldAfterDuration) {
   host_resolver_->rules()->AddIPLiteralRule(host_port_pair_.host(),
                                             "192.168.0.1", "");
 
-  // Set up the TaskObserver to verify QuicChromiumPacketReader::StartReading
+  // Set up the TaskObserver to verify QuicMonyharPacketReader::StartReading
   // posts a task.
   // TODO(rtenneti): Change SpdySessionTestTaskObserver to NetTestTaskObserver??
   SpdySessionTestTaskObserver observer("quic_monyhar_packet_reader.cc",
@@ -12813,13 +12813,13 @@ TEST_P(QuicStreamFactoryTest, YieldAfterDuration) {
                 /*cert_verify_flags=*/0, url_, net_log_, &net_error_details_,
                 failed_on_default_network_callback_, callback_.callback()));
 
-  // Call run_loop so that QuicChromiumPacketReader::OnReadComplete() gets
+  // Call run_loop so that QuicMonyharPacketReader::OnReadComplete() gets
   // called.
   base::RunLoop run_loop;
   run_loop.RunUntilIdle();
 
   // Verify task that the observer's executed_count is 1, which indicates
-  // QuicChromiumPacketReader::StartReading() has posted only one task and
+  // QuicMonyharPacketReader::StartReading() has posted only one task and
   // yielded the read.
   EXPECT_EQ(1u, observer.executed_count());
 
@@ -12831,7 +12831,7 @@ TEST_P(QuicStreamFactoryTest, YieldAfterDuration) {
 
 TEST_P(QuicStreamFactoryTest, ServerPushSessionAffinity) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -12857,7 +12857,7 @@ TEST_P(QuicStreamFactoryTest, ServerPushSessionAffinity) {
 
   string url = "https://www.example.org/";
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   quic::QuicClientPromisedInfo promised(
       session, GetNthServerInitiatedUnidirectionalStreamId(0), kDefaultUrl);
@@ -12877,7 +12877,7 @@ TEST_P(QuicStreamFactoryTest, ServerPushSessionAffinity) {
 
 TEST_P(QuicStreamFactoryTest, ServerPushPrivacyModeMismatch) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -12911,7 +12911,7 @@ TEST_P(QuicStreamFactoryTest, ServerPushPrivacyModeMismatch) {
   EXPECT_EQ(0, QuicStreamFactoryPeer::GetNumPushStreamsCreated(factory_.get()));
 
   string url = "https://www.example.org/";
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   quic::QuicClientPromisedInfo promised(
       session, GetNthServerInitiatedUnidirectionalStreamId(0), kDefaultUrl);
@@ -12958,7 +12958,7 @@ TEST_P(QuicStreamFactoryTest, ServerPushNetworkIsolationKeyMismatch) {
       {});
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -12992,7 +12992,7 @@ TEST_P(QuicStreamFactoryTest, ServerPushNetworkIsolationKeyMismatch) {
   EXPECT_EQ(0, QuicStreamFactoryPeer::GetNumPushStreamsCreated(factory_.get()));
 
   string url = "https://www.example.org/";
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   quic::QuicClientPromisedInfo promised(
       session, GetNthServerInitiatedUnidirectionalStreamId(0), kDefaultUrl);
@@ -13035,7 +13035,7 @@ TEST_P(QuicStreamFactoryTest, PoolByOrigin) {
   HostPortPair destination1("first.example.com", 443);
   HostPortPair destination2("second.example.com", 443);
 
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -13070,9 +13070,9 @@ TEST_P(QuicStreamFactoryTest, PoolByOrigin) {
   std::unique_ptr<HttpStream> stream2 = CreateStream(&request2);
   EXPECT_TRUE(stream2.get());
 
-  QuicChromiumClientSession::Handle* session1 =
+  QuicMonyharClientSession::Handle* session1 =
       QuicHttpStreamPeer::GetSessionHandle(stream1.get());
-  QuicChromiumClientSession::Handle* session2 =
+  QuicMonyharClientSession::Handle* session2 =
       QuicHttpStreamPeer::GetSessionHandle(stream2.get());
   EXPECT_TRUE(session1->SharesSameSession(*session2));
   EXPECT_EQ(quic::QuicServerId(host_port_pair_.host(), host_port_pair_.port(),
@@ -13216,7 +13216,7 @@ TEST_P(QuicStreamFactoryWithDestinationTest, InvalidCertificate) {
   ASSERT_FALSE(cert->VerifyNameMatch(origin1_.host()));
   ASSERT_TRUE(cert->VerifyNameMatch(origin2_.host()));
 
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   verify_details.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
@@ -13254,7 +13254,7 @@ TEST_P(QuicStreamFactoryWithDestinationTest, SharedCertificate) {
   ASSERT_TRUE(cert->VerifyNameMatch(origin2_.host()));
   ASSERT_FALSE(cert->VerifyNameMatch(kDifferentHostname));
 
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   verify_details.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
@@ -13292,9 +13292,9 @@ TEST_P(QuicStreamFactoryWithDestinationTest, SharedCertificate) {
   std::unique_ptr<HttpStream> stream2 = CreateStream(&request2);
   EXPECT_TRUE(stream2.get());
 
-  QuicChromiumClientSession::Handle* session1 =
+  QuicMonyharClientSession::Handle* session1 =
       QuicHttpStreamPeer::GetSessionHandle(stream1.get());
-  QuicChromiumClientSession::Handle* session2 =
+  QuicMonyharClientSession::Handle* session2 =
       QuicHttpStreamPeer::GetSessionHandle(stream2.get());
   EXPECT_TRUE(session1->SharesSameSession(*session2));
 
@@ -13323,12 +13323,12 @@ TEST_P(QuicStreamFactoryWithDestinationTest, DifferentPrivacyMode) {
   ASSERT_TRUE(cert->VerifyNameMatch(origin2_.host()));
   ASSERT_FALSE(cert->VerifyNameMatch(kDifferentHostname));
 
-  ProofVerifyDetailsChromium verify_details1;
+  ProofVerifyDetailsMonyhar verify_details1;
   verify_details1.cert_verify_result.verified_cert = cert;
   verify_details1.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details1);
 
-  ProofVerifyDetailsChromium verify_details2;
+  ProofVerifyDetailsMonyhar verify_details2;
   verify_details2.cert_verify_result.verified_cert = cert;
   verify_details2.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details2);
@@ -13374,9 +13374,9 @@ TEST_P(QuicStreamFactoryWithDestinationTest, DifferentPrivacyMode) {
   // |request2| does not pool to the first session, because PrivacyMode does not
   // match.  Instead, another session is opened to the same destination, but
   // with a different quic::QuicServerId.
-  QuicChromiumClientSession::Handle* session1 =
+  QuicMonyharClientSession::Handle* session1 =
       QuicHttpStreamPeer::GetSessionHandle(stream1.get());
-  QuicChromiumClientSession::Handle* session2 =
+  QuicMonyharClientSession::Handle* session2 =
       QuicHttpStreamPeer::GetSessionHandle(stream2.get());
   EXPECT_FALSE(session1->SharesSameSession(*session2));
 
@@ -13408,12 +13408,12 @@ TEST_P(QuicStreamFactoryWithDestinationTest, DifferentSecureDnsPolicy) {
   ASSERT_TRUE(cert->VerifyNameMatch(origin2_.host()));
   ASSERT_FALSE(cert->VerifyNameMatch(kDifferentHostname));
 
-  ProofVerifyDetailsChromium verify_details1;
+  ProofVerifyDetailsMonyhar verify_details1;
   verify_details1.cert_verify_result.verified_cert = cert;
   verify_details1.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details1);
 
-  ProofVerifyDetailsChromium verify_details2;
+  ProofVerifyDetailsMonyhar verify_details2;
   verify_details2.cert_verify_result.verified_cert = cert;
   verify_details2.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details2);
@@ -13458,9 +13458,9 @@ TEST_P(QuicStreamFactoryWithDestinationTest, DifferentSecureDnsPolicy) {
 
   // |request2| does not pool to the first session, because |secure_dns_policy|
   // does not match.
-  QuicChromiumClientSession::Handle* session1 =
+  QuicMonyharClientSession::Handle* session1 =
       QuicHttpStreamPeer::GetSessionHandle(stream1.get());
-  QuicChromiumClientSession::Handle* session2 =
+  QuicMonyharClientSession::Handle* session2 =
       QuicHttpStreamPeer::GetSessionHandle(stream2.get());
   EXPECT_FALSE(session1->SharesSameSession(*session2));
 
@@ -13487,7 +13487,7 @@ TEST_P(QuicStreamFactoryWithDestinationTest, DisjointCertificate) {
   ASSERT_FALSE(cert1->VerifyNameMatch(origin2_.host()));
   ASSERT_FALSE(cert1->VerifyNameMatch(kDifferentHostname));
 
-  ProofVerifyDetailsChromium verify_details1;
+  ProofVerifyDetailsMonyhar verify_details1;
   verify_details1.cert_verify_result.verified_cert = cert1;
   verify_details1.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details1);
@@ -13497,7 +13497,7 @@ TEST_P(QuicStreamFactoryWithDestinationTest, DisjointCertificate) {
   ASSERT_TRUE(cert2->VerifyNameMatch(origin2_.host()));
   ASSERT_FALSE(cert2->VerifyNameMatch(kDifferentHostname));
 
-  ProofVerifyDetailsChromium verify_details2;
+  ProofVerifyDetailsMonyhar verify_details2;
   verify_details2.cert_verify_result.verified_cert = cert2;
   verify_details2.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details2);
@@ -13543,9 +13543,9 @@ TEST_P(QuicStreamFactoryWithDestinationTest, DisjointCertificate) {
   // |request2| does not pool to the first session, because the certificate does
   // not match.  Instead, another session is opened to the same destination, but
   // with a different quic::QuicServerId.
-  QuicChromiumClientSession::Handle* session1 =
+  QuicMonyharClientSession::Handle* session1 =
       QuicHttpStreamPeer::GetSessionHandle(stream1.get());
-  QuicChromiumClientSession::Handle* session2 =
+  QuicMonyharClientSession::Handle* session2 =
       QuicHttpStreamPeer::GetSessionHandle(stream2.get());
   EXPECT_FALSE(session1->SharesSameSession(*session2));
 
@@ -13639,7 +13639,7 @@ TEST_P(QuicStreamFactoryTest, ConfigConnectionOptions) {
 // QuicStreamRequest::Request().
 TEST_P(QuicStreamFactoryTest, HostResolverUsesRequestPriority) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -13669,7 +13669,7 @@ TEST_P(QuicStreamFactoryTest, HostResolverUsesRequestPriority) {
 
 TEST_P(QuicStreamFactoryTest, HostResolverRequestReprioritizedOnSetPriority) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -13721,7 +13721,7 @@ TEST_P(QuicStreamFactoryTest, HostResolverUsesParams) {
       {});
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -13775,7 +13775,7 @@ TEST_P(QuicStreamFactoryTest, ConfigMaxTimeBeforeCryptoHandshake) {
 // succeeds asynchronously, then crypto handshake fails synchronously.
 TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackAsyncSync) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   host_resolver_->set_ondemand_mode(true);
@@ -13826,7 +13826,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackAsyncSync) {
 // succeeds asynchronously, then crypto handshake fails asynchronously.
 TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackAsyncAsync) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   host_resolver_->set_ondemand_mode(true);
@@ -13882,7 +13882,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackAsyncAsync) {
 // succeeds synchronously, then crypto handshake fails synchronously.
 TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackSyncSync) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   host_resolver_->set_synchronous_mode(true);
@@ -13915,7 +13915,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackSyncSync) {
 // succeeds synchronously, then crypto handshake fails asynchronously.
 TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackSyncAsync) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Host resolution will succeed synchronously, but Request() as a whole
@@ -13959,7 +13959,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackSyncAsync) {
 // synchronously.
 TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackFailSync) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Host resolution will fail synchronously.
@@ -13988,7 +13988,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackFailSync) {
 // asynchronously.
 TEST_P(QuicStreamFactoryTest, ResultAfterHostResolutionCallbackFailAsync) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   host_resolver_->rules()->AddSimulatedFailure(host_port_pair_.host());
@@ -14024,7 +14024,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceAndHostResolutionSync) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for synchronous return.
@@ -14060,7 +14060,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceAndHostResolutionSync) {
               IsOk());
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(session->peer_address().host().ToString(), kNonCachedIPAddress);
 
   EXPECT_TRUE(quic_data.AllReadDataConsumed());
@@ -14073,7 +14073,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceAndHostResolutionSync) {
 TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceAndHostResolutionAsync) {
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -14108,7 +14108,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceAndHostResolutionAsync) {
 
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   EXPECT_EQ(session->peer_address().host().ToString(), kNonCachedIPAddress);
 
@@ -14122,7 +14122,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceHostResolveAsyncStaleMatch) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -14167,7 +14167,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceHostResolveAsyncStaleMatch) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   EXPECT_EQ(session->peer_address().host().ToString(),
             kCachedIPAddress.ToString());
@@ -14183,7 +14183,7 @@ TEST_P(QuicStreamFactoryTest,
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -14238,7 +14238,7 @@ TEST_P(QuicStreamFactoryTest,
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   EXPECT_EQ(session->peer_address().host().ToString(),
             kCachedIPAddress.ToString());
@@ -14254,7 +14254,7 @@ TEST_P(QuicStreamFactoryTest,
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -14306,7 +14306,7 @@ TEST_P(QuicStreamFactoryTest,
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(session->peer_address().host().ToString(),
             kCachedIPAddress.ToString());
 
@@ -14321,7 +14321,7 @@ TEST_P(QuicStreamFactoryTest,
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -14383,7 +14383,7 @@ TEST_P(QuicStreamFactoryTest,
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   EXPECT_EQ(session->peer_address().host().ToString(), kNonCachedIPAddress);
 
@@ -14399,7 +14399,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceStaleAsyncResolveAsyncNoMatch) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -14469,7 +14469,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceStaleAsyncResolveAsyncNoMatch) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(session->peer_address().host().ToString(), kNonCachedIPAddress);
 
   EXPECT_TRUE(quic_data.AllReadDataConsumed());
@@ -14484,7 +14484,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceResolveAsyncStaleAsyncNoMatch) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -14545,7 +14545,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceResolveAsyncStaleAsyncNoMatch) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(session->peer_address().host().ToString(), kNonCachedIPAddress);
 
   EXPECT_TRUE(quic_data.AllReadDataConsumed());
@@ -14560,7 +14560,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceHostResolveError) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set synchronous failure in resolver.
@@ -14586,7 +14586,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceHostResolveAsyncError) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set asynchronous failure in resolver.
@@ -14616,7 +14616,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceStaleSyncHostResolveError) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set asynchronous failure in resolver.
@@ -14677,7 +14677,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceStaleErrorDNSMatches) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in host resolver for asynchronous return.
@@ -14727,7 +14727,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceStaleErrorDNSNoMatch) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in host resolver.
@@ -14779,7 +14779,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceStaleErrorDNSNoMatch) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   EXPECT_EQ(session->peer_address().host().ToString(), kNonCachedIPAddress);
 
@@ -14793,7 +14793,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceStaleErrorDNSNoMatchError) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in host resolver asynchronously.
@@ -14847,7 +14847,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceResolveAsyncErrorStaleAsync) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Add asynchronous failure in host resolver.
@@ -14905,7 +14905,7 @@ TEST_P(QuicStreamFactoryTest,
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Add asynchronous failure to host resolver.
@@ -14962,7 +14962,7 @@ TEST_P(QuicStreamFactoryTest, ResultAfterDNSRaceHostResolveAsync) {
   quic_params_->race_stale_dns_on_connection = true;
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   host_resolver_->set_ondemand_mode(true);
@@ -15010,7 +15010,7 @@ TEST_P(QuicStreamFactoryTest, StaleNetworkFailedAfterHandshake) {
 
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -15067,7 +15067,7 @@ TEST_P(QuicStreamFactoryTest, StaleNetworkFailedAfterHandshake) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
 
   EXPECT_EQ(session->peer_address().host().ToString(), kNonCachedIPAddress);
 
@@ -15084,7 +15084,7 @@ TEST_P(QuicStreamFactoryTest, StaleNetworkFailedBeforeHandshake) {
   host_resolver_ = std::make_unique<MockCachingHostResolver>();
   InitializeConnectionMigrationV2Test(
       {kDefaultNetworkForTests, kNewNetworkForTests});
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Set an address in resolver for asynchronous return.
@@ -15148,7 +15148,7 @@ TEST_P(QuicStreamFactoryTest, StaleNetworkFailedBeforeHandshake) {
   std::unique_ptr<HttpStream> stream = CreateStream(&request);
   EXPECT_TRUE(stream.get());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(session->peer_address().host().ToString(), kNonCachedIPAddress);
 
   EXPECT_TRUE(quic_data.AllReadDataConsumed());
@@ -15169,7 +15169,7 @@ TEST_P(QuicStreamFactoryTest, ConfigInitialRttForHandshake) {
       MockCryptoClientStream::COLD_START_WITH_CHLO_SENT);
   Initialize();
   factory_->set_is_quic_known_to_work_on_current_network(false);
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Using a testing task runner so that we can control time.
@@ -15177,7 +15177,7 @@ TEST_P(QuicStreamFactoryTest, ConfigInitialRttForHandshake) {
 
   QuicStreamFactoryPeer::SetTaskRunner(factory_.get(), task_runner.get());
   QuicStreamFactoryPeer::SetAlarmFactory(
-      factory_.get(), std::make_unique<QuicChromiumAlarmFactory>(
+      factory_.get(), std::make_unique<QuicMonyharAlarmFactory>(
                           task_runner.get(), context_.clock()));
 
   MockQuicData socket_data(version_);
@@ -15223,7 +15223,7 @@ TEST_P(QuicStreamFactoryTest, ConfigInitialRttForHandshake) {
 
   EXPECT_THAT(callback_.WaitForResult(), IsOk());
 
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_EQ(400000u, session->config()->GetInitialRoundTripTimeUsToSend());
   EXPECT_TRUE(socket_data.AllReadDataConsumed());
   EXPECT_TRUE(socket_data.AllWriteDataConsumed());
@@ -15236,7 +15236,7 @@ TEST_P(QuicStreamFactoryTest, Tag) {
   auto* socket_factory =
       static_cast<MockTaggingClientSocketFactory*>(socket_factory_.get());
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   // Prepare to establish two QUIC sessions.
@@ -15272,7 +15272,7 @@ TEST_P(QuicStreamFactoryTest, Tag) {
   EXPECT_EQ(socket_factory->GetLastProducedUDPSocket()->tag(), tag1);
   EXPECT_TRUE(socket_factory->GetLastProducedUDPSocket()
                   ->tagged_before_data_transferred());
-  std::unique_ptr<QuicChromiumClientSession::Handle> stream1 =
+  std::unique_ptr<QuicMonyharClientSession::Handle> stream1 =
       request1.ReleaseSessionHandle();
   EXPECT_TRUE(stream1);
   EXPECT_TRUE(stream1->IsConnected());
@@ -15286,7 +15286,7 @@ TEST_P(QuicStreamFactoryTest, Tag) {
       /*cert_verify_flags=*/0, url_, net_log_, &net_error_details_,
       failed_on_default_network_callback_, callback_.callback());
   EXPECT_THAT(callback_.GetResult(rv), IsOk());
-  std::unique_ptr<QuicChromiumClientSession::Handle> stream2 =
+  std::unique_ptr<QuicMonyharClientSession::Handle> stream2 =
       request2.ReleaseSessionHandle();
   EXPECT_TRUE(stream2);
   EXPECT_TRUE(stream2->IsConnected());
@@ -15304,7 +15304,7 @@ TEST_P(QuicStreamFactoryTest, Tag) {
   EXPECT_EQ(socket_factory->GetLastProducedUDPSocket()->tag(), tag2);
   EXPECT_TRUE(socket_factory->GetLastProducedUDPSocket()
                   ->tagged_before_data_transferred());
-  std::unique_ptr<QuicChromiumClientSession::Handle> stream3 =
+  std::unique_ptr<QuicMonyharClientSession::Handle> stream3 =
       request3.ReleaseSessionHandle();
   EXPECT_TRUE(stream3);
   EXPECT_TRUE(stream3->IsConnected());
@@ -15318,7 +15318,7 @@ TEST_P(QuicStreamFactoryTest, Tag) {
 
 TEST_P(QuicStreamFactoryTest, ReadErrorClosesConnection) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -15343,7 +15343,7 @@ TEST_P(QuicStreamFactoryTest, ReadErrorClosesConnection) {
   EXPECT_TRUE(stream.get());
 
   // Ensure that the session is alive and active before we read the error.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -15355,7 +15355,7 @@ TEST_P(QuicStreamFactoryTest, ReadErrorClosesConnection) {
 
 TEST_P(QuicStreamFactoryTest, MessageTooBigReadErrorDoesNotCloseConnection) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -15380,7 +15380,7 @@ TEST_P(QuicStreamFactoryTest, MessageTooBigReadErrorDoesNotCloseConnection) {
   EXPECT_TRUE(stream.get());
 
   // Ensure that the session is alive and active before we read the error.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -15392,7 +15392,7 @@ TEST_P(QuicStreamFactoryTest, MessageTooBigReadErrorDoesNotCloseConnection) {
 
 TEST_P(QuicStreamFactoryTest, ZeroLengthReadDoesNotCloseConnection) {
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -15417,7 +15417,7 @@ TEST_P(QuicStreamFactoryTest, ZeroLengthReadDoesNotCloseConnection) {
   EXPECT_TRUE(stream.get());
 
   // Ensure that the session is alive and active before we read the error.
-  QuicChromiumClientSession* session = GetActiveSession(host_port_pair_);
+  QuicMonyharClientSession* session = GetActiveSession(host_port_pair_);
   EXPECT_TRUE(QuicStreamFactoryPeer::IsLiveSession(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(host_port_pair_));
 
@@ -15434,7 +15434,7 @@ TEST_P(QuicStreamFactoryTest, DnsAliasesCanBeAccessedFromStream) {
       host_port_pair_.host(), "192.168.0.1", std::move(dns_aliases));
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -15471,7 +15471,7 @@ TEST_P(QuicStreamFactoryTest, NoAdditionalDnsAliases) {
       host_port_pair_.host(), "192.168.0.1", std::move(dns_aliases));
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -15508,7 +15508,7 @@ TEST_P(QuicStreamFactoryTest, DoNotUseDnsAliases) {
       host_port_pair_.host(), "192.168.0.1", std::move(dns_aliases));
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -15544,7 +15544,7 @@ TEST_P(QuicStreamFactoryTest, ConnectErrorInCreateWithDnsAliases) {
       host_port_pair_.host(), "192.168.0.1", std::move(dns_aliases));
 
   Initialize();
-  ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
+  ProofVerifyDetailsMonyhar verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -15713,7 +15713,7 @@ TEST_P(QuicStreamFactoryDnsAliasPoolingTest, IPPooling) {
   ASSERT_TRUE(cert->VerifyNameMatch(kOrigin1.host()));
   ASSERT_TRUE(cert->VerifyNameMatch(kOrigin2.host()));
 
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   verify_details.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
@@ -15753,9 +15753,9 @@ TEST_P(QuicStreamFactoryDnsAliasPoolingTest, IPPooling) {
   EXPECT_TRUE(stream2.get());
   EXPECT_TRUE(HasActiveSession(kOrigin2));
 
-  QuicChromiumClientSession::Handle* session1 =
+  QuicMonyharClientSession::Handle* session1 =
       QuicHttpStreamPeer::GetSessionHandle(stream1.get());
-  QuicChromiumClientSession::Handle* session2 =
+  QuicMonyharClientSession::Handle* session2 =
       QuicHttpStreamPeer::GetSessionHandle(stream2.get());
   EXPECT_TRUE(session1->SharesSameSession(*session2));
 

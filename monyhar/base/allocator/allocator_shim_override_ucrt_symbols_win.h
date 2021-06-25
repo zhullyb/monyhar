@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -133,7 +133,7 @@ __declspec(restrict) void* _recalloc(void* block, size_t count, size_t size) {
   return _recalloc_base(block, count, size);
 }
 
-// The following uncommon _aligned_* routines are not used in Chromium and have
+// The following uncommon _aligned_* routines are not used in Monyhar and have
 // been shimmed to immediately crash to ensure that implementations are added if
 // uses are introduced.
 __declspec(restrict) void* _aligned_recalloc(void* address,

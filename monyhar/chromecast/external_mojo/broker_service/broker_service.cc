@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -77,7 +77,7 @@ BrokerService::BrokerService(service_manager::Connector* connector) {
                                         base::Unretained(this)));
   broker_ = base::SequenceBound<ExternalMojoBroker>(io_thread_->task_runner(),
                                                     GetBrokerPath());
-  broker_.AsyncCall(&ExternalMojoBroker::InitializeChromium)
+  broker_.AsyncCall(&ExternalMojoBroker::InitializeMonyhar)
       .WithArgs(connector->Clone(), external_services_to_proxy);
 }
 

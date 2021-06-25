@@ -1,6 +1,6 @@
-# Developing web standards within Chromium
+# Developing web standards within Monyhar
 
-The [Chromium process for launching
+The [Monyhar process for launching
 features](https://www.monyhar.org/blink/launching-features) requires that
 web-exposed features go through (though not always complete) a public
 standardization process.

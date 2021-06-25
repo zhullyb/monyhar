@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -148,7 +148,7 @@ TEST_F(ComponentPatcherOperationTest, CheckCourgetteOperation) {
   command_args->SetString("patch", "binary_courgette_patch.bin");
 
   scoped_refptr<Patcher> patcher =
-      base::MakeRefCounted<PatchChromiumFactory>(
+      base::MakeRefCounted<PatchMonyharFactory>(
           base::BindRepeating(&patch::LaunchInProcessFilePatcher))
           ->Create();
 
@@ -186,7 +186,7 @@ TEST_F(ComponentPatcherOperationTest, CheckBsdiffOperation) {
 
   // The operation needs a Patcher to access the PatchService.
   scoped_refptr<Patcher> patcher =
-      base::MakeRefCounted<PatchChromiumFactory>(
+      base::MakeRefCounted<PatchMonyharFactory>(
           base::BindRepeating(&patch::LaunchInProcessFilePatcher))
           ->Create();
 

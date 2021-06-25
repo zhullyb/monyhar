@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -197,7 +197,7 @@ def GetCppFiltPath(tool_prefix):
 
 
 def GetStripPath(tool_prefix):
-  # Chromium's toolchain uses //buildtools/third_party/eu-strip, but first
+  # Monyhar's toolchain uses //buildtools/third_party/eu-strip, but first
   # look for the test-only "fakestrip" for the sake of tests.
   fake_strip = tool_prefix + 'fakestrip'
   if os.path.exists(fake_strip):

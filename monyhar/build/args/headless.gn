@@ -15,7 +15,7 @@ ozone_platform_headless = true
 # Embed resource.pak into binary to simplify deployment.
 headless_use_embedded_resources = true
 
-# Expose headless bindings for freetype library bundled with Chromium.
+# Expose headless bindings for freetype library bundled with Monyhar.
 headless_fontconfig_utils = true
 
 # Don't use Prefs component, disabling access to Local State prefs.

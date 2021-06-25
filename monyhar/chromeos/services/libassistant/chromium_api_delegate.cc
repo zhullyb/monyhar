@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,15 +12,15 @@
 namespace chromeos {
 namespace libassistant {
 
-ChromiumApiDelegate::ChromiumApiDelegate(
+MonyharApiDelegate::MonyharApiDelegate(
     std::unique_ptr<network::PendingSharedURLLoaderFactory>
         pending_url_loader_factory)
     : http_connection_factory_(std::move(pending_url_loader_factory)) {}
 
-ChromiumApiDelegate::~ChromiumApiDelegate() = default;
+MonyharApiDelegate::~MonyharApiDelegate() = default;
 
 assistant_client::HttpConnectionFactory*
-ChromiumApiDelegate::GetHttpConnectionFactory() {
+MonyharApiDelegate::GetHttpConnectionFactory() {
   return &http_connection_factory_;
 }
 

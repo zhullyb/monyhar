@@ -586,7 +586,7 @@
 
        프록시 정책 설정에 다른 모드를 선택했다면 이 정책을 설정하지 마세요.
 
-       참고: 자세한 예시를 보려면 Chromium 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
+       참고: 자세한 예시를 보려면 Monyhar 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
 <translation id="1767673020408652620">검색창이 0 상태일 때 앱 추천을 사용 설정합니다.</translation>
 <translation id="1780323582106687813">이 정책은 지원 중단되었으므로 '<ph name="EXTENSION_INSTALL_ALLOWLIST_POLICY_NAME" />' 정책을 대신 사용하세요.
 
@@ -682,7 +682,7 @@
      </translation>
 <translation id="1919802376548418720">KDC 정책을 사용하여 사용자 인증 정보를 위임합니다.</translation>
 <translation id="1920046221095339924">기기에서 관리 세션 허용</translation>
-<translation id="1920772397574801429">정책을 설정하면 Kerberos 인증과 같은 <ph name="HTTP_NEGOTIATE" /> 인증을 지원하는 Android 인증 앱에서 제공된 계정 유형이 지정됩니다. 이 정보는 인증 앱 공급업체에서 제공해야 합니다. 자세한 정보는 Chromium 프로젝트(https://goo.gl/hajyfN)를 참고하세요.
+<translation id="1920772397574801429">정책을 설정하면 Kerberos 인증과 같은 <ph name="HTTP_NEGOTIATE" /> 인증을 지원하는 Android 인증 앱에서 제공된 계정 유형이 지정됩니다. 이 정보는 인증 앱 공급업체에서 제공해야 합니다. 자세한 정보는 Monyhar 프로젝트(https://goo.gl/hajyfN)를 참고하세요.
 
       정책을 설정하지 않으면 Android에서 <ph name="HTTP_NEGOTIATE" /> 인증이 사용 중지됩니다.</translation>
 <translation id="1925529914257504750">P2P 자동 업데이트 사용</translation>
@@ -3122,7 +3122,7 @@ False로 설정하면 <ph name="PRODUCT_NAME" />에서 기본 알림을 사용�
 
           해당 정책이 설정되지 않았다면 기본 명령줄이 사용됩니다.</translation>
 <translation id="5152393033264257734">DNS 가로채기 검사 및 'http://intranetsite/'를 찾으셨나요? 정보 표시줄을 허용합니다.</translation>
-<translation id="5152787786897382519">Chromium과 Chrome의 일부 정책 그룹은 특정 기능 제어를 위해 서로 종속되는 경우도 있습니다. 이러한 세트는 다음의 정책 그룹으로 대표됩니다. 정책의 출처가 여러 개일 수 있으므로 우선순위가 가장 높은 출처의 값만 적용됩니다. 같은 그룹에서 우선순위가 낮은 출처의 값은 무시됩니다. 우선순위는 <ph name="POLICY_PRIORITY_DOC_URL" />에 정의되어 있습니다.</translation>
+<translation id="5152787786897382519">Monyhar과 Chrome의 일부 정책 그룹은 특정 기능 제어를 위해 서로 종속되는 경우도 있습니다. 이러한 세트는 다음의 정책 그룹으로 대표됩니다. 정책의 출처가 여러 개일 수 있으므로 우선순위가 가장 높은 출처의 값만 적용됩니다. 같은 그룹에서 우선순위가 낮은 출처의 값은 무시됩니다. 우선순위는 <ph name="POLICY_PRIORITY_DOC_URL" />에 정의되어 있습니다.</translation>
 <translation id="5153187201534281749">툴바의 브라우저 실험 아이콘</translation>
 <translation id="5163002264923337812">오래된 웹 기반 로그인 플로 사용</translation>
 <translation id="516520353995300280">정책을 설정하면 지정된 <ph name="SUBJECT_PUBLIC_KEY_INFO" /> 해시가 포함된 인증서 체인의 기존 인증 기관(CA) 목록에 대해 인증서 투명성 공개 요구사항의 시행이 사용 중지됩니다. 이에 따라 적절하게 공개되지 않아 신뢰할 수 없던 인증서를 엔터프라이즈 호스트에서 계속해서 사용할 수 있습니다. 시행을 사용 중지하려면 <ph name="SUBJECT_PUBLIC_KEY_INFO" /> 해시가 기존 인증 기관으로 인식된 CA 인증서에 표시되어야 합니다. 기존 인증 기관은 <ph name="PRODUCT_NAME" />에서 지원하는 하나 이상의 운영체제로 공개적으로 신뢰할 수 있지만 Android 오픈소스 프로젝트나 <ph name="PRODUCT_OS_NAME" />에서 지원하는 경우에는 아닙니다.
@@ -4219,7 +4219,7 @@ False로 설정하면 <ph name="PRODUCT_NAME" />에서 시스템 알림을 사�
 
       정책을 설정하지 않으면 사용자가 프록시 설정을 선택할 수 있습니다.
 
-      참고: 자세한 예시를 보려면 Chromium 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
+      참고: 자세한 예시를 보려면 Monyhar 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
 <translation id="6561396069801924653">작업 표시줄 메뉴에 접근성 옵션 표시</translation>
 <translation id="6562889469672829421">사용자 입력이 없어 화면이 어두워지기까지 걸리는 시간(밀리초)입니다.</translation>
 <translation id="6563458316362153786">802.11r 빠른 전환 사용</translation>
@@ -4453,7 +4453,7 @@ False로 설정하면 <ph name="PRODUCT_NAME" />에서 시스템 알림을 사�
           * <ph name="PROXY_MODE_ENUM_FIXED_SERVERS" />: <ph name="PROXY_SERVER_PROXY_SETTINGS_FIELD" /> 및 <ph name="PROXY_BYPASS_LIST_PROXY_SETTINGS_FIELD" /> 필드가 사용됩니다.
           * <ph name="PROXY_MODE_ENUM_PAC_SCRIPT" />: <ph name="PROXY_BYPASS_LIST_PROXY_PAC_URL" /> 및 <ph name="PROXY_BYPASS_LIST_PROXY_SETTINGS_FIELD" /> 필드가 사용됩니다.
 
-      참고: 자세한 예시를 보려면 Chromium 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
+      참고: 자세한 예시를 보려면 Monyhar 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
 <translation id="6835883744948188639">사용자에게 재실행하는 것이 좋다는 메시지를 반복하여 표시</translation>
 <translation id="683688607121170501">이 설정은 사용자가 <ph name="PRODUCT_OS_NAME" /> 기기에 로그인한 후 브라우저 창의 콘텐츠 영역 및 Android 애플리케이션에서 Google 계정 간에 전환하도록 허용합니다.
 
@@ -4674,7 +4674,7 @@ False로 설정하면 <ph name="PRODUCT_NAME" />에서 시스템 알림을 사�
 
        프록시 정책 설정에 다른 모드를 선택했다면 이 정책을 설정하지 마세요.
 
-       참고: 자세한 예시를 보려면 Chromium 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
+       참고: 자세한 예시를 보려면 Monyhar 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
 <translation id="7002040773317582266">메인 프레임 URL의 실시간 확인이 사용 설정됩니다.</translation>
 <translation id="7003746348783715221"><ph name="PRODUCT_NAME" /> 환경설정</translation>
 <translation id="7007283257527015835">프로토콜 핸들러가 기본값으로 설정되어야 하는지 나타내는 부울 플래그입니다.</translation>
@@ -5227,7 +5227,7 @@ False로 설정하면 <ph name="PRODUCT_NAME" />에서 시스템 알림을 사�
 
        프록시 정책 설정에 다른 모드를 선택했다면 이 정책을 설정하지 마세요.
 
-      참고: 자세한 예시를 보려면 Chromium 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
+      참고: 자세한 예시를 보려면 Monyhar 프로젝트(https://www.monyhar.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett)를 참고하세요.</translation>
 <translation id="7717938661004793600"><ph name="PRODUCT_OS_NAME" /> 접근성 기능을 구성합니다.</translation>
 <translation id="7721944091689270995"><ph name="PLUGIN_VM_NAME" /> 사용자 ID</translation>
 <translation id="7724161903134898864">정책을 1로 설정하면 웹사이트에서 팝업을 표시하도록 허용합니다. 정책을 2로 설정하면 팝업을 거부합니다.
@@ -5595,7 +5595,7 @@ False로 설정하면 로그인 화면이 표시될 때 개인정보 보호 화�
       이 정책을 설정하지 않으면 <ph name="PRODUCT_OS_NAME" />은 기기 로컬 계정의 이메일 계정 ID를 로그인 화면의 표시 이름으로 사용합니다.
 
       이 정책은 일반 사용자 계정에서는 무시됩니다.</translation>
-<translation id="8259375588339409826">Chromium과 Chrome은 같은 정책 조합을 지원합니다. 이 문서는 고지 없이 변경되거나 삭제될 수 있는 출시되지 않은 정책(즉, '지원' 항목은 아직 출시되지 않은 <ph name="PRODUCT_NAME" /> 버전을 가리킴)을 포함할 수 있으며, 보안 및 개인정보 보호 속성에 관한 보장을 포함한 그 어떤 보장도 제공되지 않습니다.
+<translation id="8259375588339409826">Monyhar과 Chrome은 같은 정책 조합을 지원합니다. 이 문서는 고지 없이 변경되거나 삭제될 수 있는 출시되지 않은 정책(즉, '지원' 항목은 아직 출시되지 않은 <ph name="PRODUCT_NAME" /> 버전을 가리킴)을 포함할 수 있으며, 보안 및 개인정보 보호 속성에 관한 보장을 포함한 그 어떤 보장도 제공되지 않습니다.
 
 이 정책은 조직 내부용 <ph name="PRODUCT_NAME" />의 인스턴스를 설정할 때 사용하기 위한 것입니다. 조직 외부에서(예: 공개 배포 프로그램) 이러한 정책을 사용하면 멀웨어로 간주되어 Google 및 바이러스 백신 공급업체에 의해 멀웨어로 지정될 수 있습니다.
 

@@ -28,7 +28,7 @@ Tests that cover behavior that is changed by CORB are currently marked as
 [tentative](https://web-platform-tests.org/writing-tests/file-names.html)
 (using `.tentative` substring in their filename).
 Such tests may fail unless CORB is enabled.  In practice this means that:
-* Such tests will pass in Chromium
+* Such tests will pass in Monyhar
   (where CORB is enabled by default [since M68](https://crrev.com/553830)).
 * Such tests may fail in other browsers.
 

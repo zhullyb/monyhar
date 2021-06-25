@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,8 +27,8 @@ void OnSourceFile(base::OnceClosure quit_closure,
 
 }  // namespace
 
-const char kChromiumCodeSearchURL[] = "https://cs.monyhar.org/";
-const char kChromiumCodeSearchSrcURL[] =
+const char kMonyharCodeSearchURL[] = "https://cs.monyhar.org/";
+const char kMonyharCodeSearchSrcURL[] =
     "https://cs.monyhar.org/monyhar/src/";
 
 bool GetSourceCode(std::string path, std::string* source_code) {

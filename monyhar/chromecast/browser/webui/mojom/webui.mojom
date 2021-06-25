@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -8,7 +8,7 @@ import "mojo/public/mojom/base/ref_counted_memory.mojom";
 import "mojo/public/mojom/base/values.mojom";
 
 // =============================================================================
-// These interfaces allow a remote client to control Chromium Web UIs in the
+// These interfaces allow a remote client to control Monyhar Web UIs in the
 // Cast Browser. The client will provide resources to specific Web UIs based on
 // host name. The only intended client for these interfaces is the Cast Service,
 // which currently lives in the browser process. Eventually Cast will be moved
@@ -38,7 +38,7 @@ interface Resources {
   RequestResourceBytes(string path) => (mojo_base.mojom.RefCountedMemory bytes);
 };
 
-// Implement this interface to control Chromium Web UI pages. This interface
+// Implement this interface to control Monyhar Web UI pages. This interface
 // is implemented by the Cast Service process.
 interface WebUiClient {
   // Called whenever a Web UI is about to be launched. The client must bind

@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -274,7 +274,7 @@ void StreamBufferManager::SetUpStreamsAndBuffers(
         NOTREACHED();
       }
     }
-    const ChromiumPixelFormat stream_format =
+    const MonyharPixelFormat stream_format =
         camera_buffer_factory_->ResolveStreamBufferFormat(
             stream_context->stream->format, stream_context->buffer_usage);
     // Internally we keep track of the VideoPixelFormat that's actually

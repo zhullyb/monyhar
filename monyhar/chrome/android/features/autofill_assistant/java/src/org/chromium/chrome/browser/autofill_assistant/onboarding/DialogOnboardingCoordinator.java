@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -60,7 +60,7 @@ class DialogOnboardingCoordinator extends BaseOnboardingCoordinator {
         mDialog = new AlertDialog
                           .Builder(getContext(),
                                   org.monyhar.chrome.autofill_assistant.R.style
-                                          .Theme_Chromium_AlertDialog)
+                                          .Theme_Monyhar_AlertDialog)
                           .create();
 
         mDialog.setOnDismissListener((OnDismissListener) dialog

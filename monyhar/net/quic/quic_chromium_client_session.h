@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -67,7 +67,7 @@ class SSLInfo;
 class TransportSecurityState;
 
 namespace test {
-class QuicChromiumClientSessionPeer;
+class QuicMonyharClientSessionPeer;
 }  // namespace test
 
 // SETTINGS_MAX_HEADERS_LIST_SIZE, the maximum size of uncompressed QUIC headers
@@ -135,12 +135,12 @@ enum class ProbingResult {
   FAILURE,                          // Probing failed for other reason.
 };
 
-class NET_EXPORT_PRIVATE QuicChromiumClientSession
+class NET_EXPORT_PRIVATE QuicMonyharClientSession
     : public quic::QuicSpdyClientSessionBase,
       public MultiplexedSession,
       public QuicConnectivityProbingManager::Delegate,
-      public QuicChromiumPacketReader::Visitor,
-      public QuicChromiumPacketWriter::Delegate {
+      public QuicMonyharPacketReader::Visitor,
+      public QuicMonyharPacketWriter::Delegate {
  public:
   class StreamRequest;
 
@@ -151,12 +151,12 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
    public:
     // Called when path degrading is detected on |network|.
     virtual void OnSessionPathDegrading(
-        QuicChromiumClientSession* session,
+        QuicMonyharClientSession* session,
         NetworkChangeNotifier::NetworkHandle network) = 0;
 
     // Called when forward progress is made after path degrading on |network|.
     virtual void OnSessionResumedPostPathDegrading(
-        QuicChromiumClientSession* session,
+        QuicMonyharClientSession* session,
         NetworkChangeNotifier::NetworkHandle network) = 0;
 
     // Called when |session| encounters write error on |network|.
@@ -164,14 +164,14 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
     // interface, and can be pre-emptive hints of connectivity quality changes
     // based on the |error_code|.
     virtual void OnSessionEncounteringWriteError(
-        QuicChromiumClientSession* session,
+        QuicMonyharClientSession* session,
         NetworkChangeNotifier::NetworkHandle network,
         int error_code) = 0;
 
     // Called when |session| is closed by |source| with |error_code|
     // and handshake has been confirmed.
     virtual void OnSessionClosedAfterHandshake(
-        QuicChromiumClientSession* session,
+        QuicMonyharClientSession* session,
         NetworkChangeNotifier::NetworkHandle network,
         quic::ConnectionCloseSource source,
         quic::QuicErrorCode error_code) = 0;
@@ -179,11 +179,11 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
     // Called when |this| is registered to monitor the connectivity of the
     // |session|.
     virtual void OnSessionRegistered(
-        QuicChromiumClientSession* session,
+        QuicMonyharClientSession* session,
         NetworkChangeNotifier::NetworkHandle network) = 0;
 
     // Called when |session| is removed.
-    virtual void OnSessionRemoved(QuicChromiumClientSession* session) = 0;
+    virtual void OnSessionRemoved(QuicMonyharClientSession* session) = 0;
   };
 
   // Wrapper for interacting with the session in a restricted fashion which
@@ -195,7 +195,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
    public:
     // Constructs a handle to |session| which was created via the alternative
     // server |destination|.
-    Handle(const base::WeakPtr<QuicChromiumClientSession>& session,
+    Handle(const base::WeakPtr<QuicMonyharClientSession>& session,
            const HostPortPair& destination);
     Handle(const Handle& other) = delete;
     ~Handle() override;
@@ -222,11 +222,11 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
                       const NetworkTrafficAnnotationTag& traffic_annotation);
 
     // Releases |stream_| to the caller. Returns nullptr if the underlying
-    // QuicChromiumClientSession is closed.
-    std::unique_ptr<QuicChromiumClientStream::Handle> ReleaseStream();
+    // QuicMonyharClientSession is closed.
+    std::unique_ptr<QuicMonyharClientStream::Handle> ReleaseStream();
 
     // Releases |push_stream_| to the caller.
-    std::unique_ptr<QuicChromiumClientStream::Handle> ReleasePromisedStream();
+    std::unique_ptr<QuicMonyharClientStream::Handle> ReleasePromisedStream();
 
     // Sends Rst for the stream, and makes sure that future calls to
     // IsClosedStream(id) return true, which ensures that any subsequent
@@ -293,8 +293,8 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
         const QuicSessionKey& key) const;
 
    private:
-    friend class QuicChromiumClientSession;
-    friend class QuicChromiumClientSession::StreamRequest;
+    friend class QuicMonyharClientSession;
+    friend class QuicMonyharClientSession::StreamRequest;
 
     // Waits for the handshake to be confirmed and invokes |callback| when
     // that happens. If the handshake has already been confirmed, returns OK.
@@ -321,7 +321,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
     void CancelRequest(StreamRequest* request);
 
     // Underlying session which may be destroyed before this handle.
-    base::WeakPtr<QuicChromiumClientSession> session_;
+    base::WeakPtr<QuicMonyharClientSession> session_;
 
     HostPortPair destination_;
 
@@ -346,7 +346,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
     // invoked.
     quic::QuicClientPushPromiseIndex::TryHandle* push_handle_;
     CompletionOnceCallback push_callback_;
-    std::unique_ptr<QuicChromiumClientStream::Handle> push_stream_;
+    std::unique_ptr<QuicMonyharClientStream::Handle> push_stream_;
 
     bool was_ever_used_;
   };
@@ -365,14 +365,14 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
     int StartRequest(CompletionOnceCallback callback);
 
     // Releases |stream_| to the caller.
-    std::unique_ptr<QuicChromiumClientStream::Handle> ReleaseStream();
+    std::unique_ptr<QuicMonyharClientStream::Handle> ReleaseStream();
 
     const NetworkTrafficAnnotationTag traffic_annotation() {
       return traffic_annotation_;
     }
 
    private:
-    friend class QuicChromiumClientSession;
+    friend class QuicMonyharClientSession;
 
     enum State {
       STATE_NONE,
@@ -383,7 +383,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
     };
 
     // |session| must outlive this request.
-    StreamRequest(QuicChromiumClientSession::Handle* session,
+    StreamRequest(QuicMonyharClientSession::Handle* session,
                   bool requires_confirmation,
                   const NetworkTrafficAnnotationTag& traffic_annotation);
 
@@ -399,17 +399,17 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
     // Called by |session_| for an asynchronous request when the stream
     // request has finished successfully.
     void OnRequestCompleteSuccess(
-        std::unique_ptr<QuicChromiumClientStream::Handle> stream);
+        std::unique_ptr<QuicMonyharClientStream::Handle> stream);
 
     // Called by |session_| for an asynchronous request when the stream
     // request has finished with an error. Also called with ERR_ABORTED
     // if |session_| is destroyed while the stream request is still pending.
     void OnRequestCompleteFailure(int rv);
 
-    QuicChromiumClientSession::Handle* session_;
+    QuicMonyharClientSession::Handle* session_;
     const bool requires_confirmation_;
     CompletionOnceCallback callback_;
-    std::unique_ptr<QuicChromiumClientStream::Handle> stream_;
+    std::unique_ptr<QuicMonyharClientStream::Handle> stream_;
     // For tracking how much time pending stream requests wait.
     base::TimeTicks pending_start_time_;
     State next_state_;
@@ -423,31 +423,31 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
 
   // This class contains all the context needed for path validation and
   // migration.
-  class NET_EXPORT_PRIVATE QuicChromiumPathValidationContext
+  class NET_EXPORT_PRIVATE QuicMonyharPathValidationContext
       : public quic::QuicPathValidationContext {
    public:
-    QuicChromiumPathValidationContext(
+    QuicMonyharPathValidationContext(
         const quic::QuicSocketAddress& self_address,
         const quic::QuicSocketAddress& peer_address,
         NetworkChangeNotifier::NetworkHandle network,
         std::unique_ptr<DatagramClientSocket> socket,
-        std::unique_ptr<QuicChromiumPacketWriter> writer,
-        std::unique_ptr<QuicChromiumPacketReader> reader);
-    ~QuicChromiumPathValidationContext() override;
+        std::unique_ptr<QuicMonyharPacketWriter> writer,
+        std::unique_ptr<QuicMonyharPacketReader> reader);
+    ~QuicMonyharPathValidationContext() override;
 
     NetworkChangeNotifier::NetworkHandle network();
     quic::QuicPacketWriter* WriterToUse() override;
 
     // Transfer the ownership from |this| to the caller.
-    std::unique_ptr<QuicChromiumPacketWriter> ReleaseWriter();
+    std::unique_ptr<QuicMonyharPacketWriter> ReleaseWriter();
     std::unique_ptr<DatagramClientSocket> ReleaseSocket();
-    std::unique_ptr<QuicChromiumPacketReader> ReleaseReader();
+    std::unique_ptr<QuicMonyharPacketReader> ReleaseReader();
 
    private:
     NetworkChangeNotifier::NetworkHandle network_handle_;
     std::unique_ptr<DatagramClientSocket> socket_;
-    std::unique_ptr<QuicChromiumPacketWriter> writer_;
-    std::unique_ptr<QuicChromiumPacketReader> reader_;
+    std::unique_ptr<QuicMonyharPacketWriter> writer_;
+    std::unique_ptr<QuicMonyharPacketReader> reader_;
   };
 
   // This class implements Chrome logic for path validation events associated
@@ -456,7 +456,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
       : public quic::QuicPathValidator::ResultDelegate {
    public:
     explicit ConnectionMigrationValidationResultDelegate(
-        QuicChromiumClientSession* session);
+        QuicMonyharClientSession* session);
 
     void OnPathValidationSuccess(
         std::unique_ptr<quic::QuicPathValidationContext> context) override;
@@ -466,7 +466,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
 
    private:
     // |session_| owns |this| and should out live |this|.
-    QuicChromiumClientSession* session_;
+    QuicMonyharClientSession* session_;
   };
 
   // This class implements Chrome logic for path validation events associated
@@ -475,7 +475,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
       : public quic::QuicPathValidator::ResultDelegate {
    public:
     explicit PortMigrationValidationResultDelegate(
-        QuicChromiumClientSession* session);
+        QuicMonyharClientSession* session);
 
     void OnPathValidationSuccess(
         std::unique_ptr<quic::QuicPathValidationContext> context) override;
@@ -485,22 +485,22 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
 
    private:
     // |session_| owns |this| and should out live |this|.
-    QuicChromiumClientSession* session_;
+    QuicMonyharClientSession* session_;
   };
 
   // This class is used to handle writer events that occur on the probing path.
-  class NET_EXPORT_PRIVATE QuicChromiumPathValidationWriterDelegate
-      : public QuicChromiumPacketWriter::Delegate {
+  class NET_EXPORT_PRIVATE QuicMonyharPathValidationWriterDelegate
+      : public QuicMonyharPacketWriter::Delegate {
    public:
-    QuicChromiumPathValidationWriterDelegate(
-        QuicChromiumClientSession* session,
+    QuicMonyharPathValidationWriterDelegate(
+        QuicMonyharClientSession* session,
         base::SequencedTaskRunner* task_runner);
-    ~QuicChromiumPathValidationWriterDelegate();
+    ~QuicMonyharPathValidationWriterDelegate();
 
-    // QuicChromiumPacketWriter::Delegate interface.
+    // QuicMonyharPacketWriter::Delegate interface.
     int HandleWriteError(
         int error_code,
-        scoped_refptr<QuicChromiumPacketWriter::ReusableIOBuffer> last_packet)
+        scoped_refptr<QuicMonyharPacketWriter::ReusableIOBuffer> last_packet)
         override;
     void OnWriteError(int error_code) override;
     void OnWriteUnblocked() override;
@@ -512,15 +512,15 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
     void NotifySessionProbeFailed(NetworkChangeNotifier::NetworkHandle network);
 
     // |session_| owns |this| and should out live |this|.
-    QuicChromiumClientSession* session_;
+    QuicMonyharClientSession* session_;
     // |task_owner_| should out live |this|.
     base::SequencedTaskRunner* task_runner_;
     // The path validation context of the most recent probing.
     NetworkChangeNotifier::NetworkHandle network_;
     quic::QuicSocketAddress peer_address_;
-    base::WeakPtrFactory<QuicChromiumPathValidationWriterDelegate>
+    base::WeakPtrFactory<QuicMonyharPathValidationWriterDelegate>
         weak_factory_{this};
-    DISALLOW_COPY_AND_ASSIGN(QuicChromiumPathValidationWriterDelegate);
+    DISALLOW_COPY_AND_ASSIGN(QuicMonyharPathValidationWriterDelegate);
   };
 
   // Constructs a new session which will own |connection|, but not
@@ -532,7 +532,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
   // the server and the current network support QUIC, as HTTP fallback can't
   // trigger (or at least will take longer) after a QUIC stream has successfully
   // been created.
-  QuicChromiumClientSession(
+  QuicMonyharClientSession(
       quic::QuicConnection* connection,
       std::unique_ptr<DatagramClientSocket> socket,
       QuicStreamFactory* stream_factory,
@@ -569,7 +569,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
       base::SequencedTaskRunner* task_runner,
       std::unique_ptr<SocketPerformanceWatcher> socket_performance_watcher,
       NetLog* net_log);
-  ~QuicChromiumClientSession() override;
+  ~QuicMonyharClientSession() override;
 
   void Initialize() override;
 
@@ -601,9 +601,9 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
   // Cancels the pending stream creation request.
   void CancelRequest(StreamRequest* request);
 
-  // QuicChromiumPacketWriter::Delegate override.
+  // QuicMonyharPacketWriter::Delegate override.
   int HandleWriteError(int error_code,
-                       scoped_refptr<QuicChromiumPacketWriter::ReusableIOBuffer>
+                       scoped_refptr<QuicMonyharPacketWriter::ReusableIOBuffer>
                            last_packet) override;
   void OnWriteError(int error_code) override;
   // Called when the associated writer is unblocked. Write the cached |packet_|
@@ -618,30 +618,30 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
       const quic::QuicSocketAddress& peer_address,
       const quic::QuicSocketAddress& self_address,
       std::unique_ptr<DatagramClientSocket> socket,
-      std::unique_ptr<QuicChromiumPacketWriter> writer,
-      std::unique_ptr<QuicChromiumPacketReader> reader) override;
+      std::unique_ptr<QuicMonyharPacketWriter> writer,
+      std::unique_ptr<QuicMonyharPacketReader> reader) override;
 
   void OnConnectionMigrationProbeSucceeded(
       NetworkChangeNotifier::NetworkHandle network,
       const quic::QuicSocketAddress& peer_address,
       const quic::QuicSocketAddress& self_address,
       std::unique_ptr<DatagramClientSocket> socket,
-      std::unique_ptr<QuicChromiumPacketWriter> writer,
-      std::unique_ptr<QuicChromiumPacketReader> reader);
+      std::unique_ptr<QuicMonyharPacketWriter> writer,
+      std::unique_ptr<QuicMonyharPacketReader> reader);
 
   void OnPortMigrationProbeSucceeded(
       NetworkChangeNotifier::NetworkHandle network,
       const quic::QuicSocketAddress& peer_address,
       const quic::QuicSocketAddress& self_address,
       std::unique_ptr<DatagramClientSocket> socket,
-      std::unique_ptr<QuicChromiumPacketWriter> writer,
-      std::unique_ptr<QuicChromiumPacketReader> reader);
+      std::unique_ptr<QuicMonyharPacketWriter> writer,
+      std::unique_ptr<QuicMonyharPacketReader> reader);
 
   void OnProbeFailed(NetworkChangeNotifier::NetworkHandle network,
                      const quic::QuicSocketAddress& peer_address) override;
 
   bool OnSendConnectivityProbingPacket(
-      QuicChromiumPacketWriter* writer,
+      QuicMonyharPacketWriter* writer,
       const quic::QuicSocketAddress& peer_address) override;
 
   // quic::QuicSpdySession methods:
@@ -661,8 +661,8 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
       const quic::AcceptChFrame& frame) override;
 
   // quic::QuicSession methods:
-  QuicChromiumClientStream* CreateOutgoingBidirectionalStream() override;
-  QuicChromiumClientStream* CreateOutgoingUnidirectionalStream() override;
+  QuicMonyharClientStream* CreateOutgoingBidirectionalStream() override;
+  QuicMonyharClientStream* CreateOutgoingUnidirectionalStream() override;
   const quic::QuicCryptoClientStream* GetCryptoStream() const override;
   quic::QuicCryptoClientStream* GetMutableCryptoStream() override;
   void SetDefaultEncryptionLevel(quic::EncryptionLevel level) override;
@@ -699,7 +699,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
   void OnForwardProgressMadeAfterPathDegrading() override;
   void OnKeyUpdate(quic::KeyUpdateReason reason) override;
 
-  // QuicChromiumPacketReader::Visitor methods:
+  // QuicMonyharPacketReader::Visitor methods:
   bool OnReadError(int result, const DatagramClientSocket* socket) override;
   bool OnPacket(const quic::QuicReceivedPacket& packet,
                 const quic::QuicSocketAddress& local_address,
@@ -743,7 +743,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
   bool gquic_zero_rtt_disabled() const;
 
   // Returns a Handle to this session.
-  std::unique_ptr<QuicChromiumClientSession::Handle> CreateHandle(
+  std::unique_ptr<QuicMonyharClientSession::Handle> CreateHandle(
       const HostPortPair& destination);
 
   // Returns the number of client hello messages that have been sent on the
@@ -794,8 +794,8 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
   bool MigrateToSocket(const quic::QuicSocketAddress& self_address,
                        const quic::QuicSocketAddress& peer_address,
                        std::unique_ptr<DatagramClientSocket> socket,
-                       std::unique_ptr<QuicChromiumPacketReader> reader,
-                       std::unique_ptr<QuicChromiumPacketWriter> writer);
+                       std::unique_ptr<QuicMonyharPacketReader> reader,
+                       std::unique_ptr<QuicMonyharPacketWriter> writer);
 
   // Called when NetworkChangeNotifier notifies observers of a newly
   // connected network. Migrates this session to the newly connected
@@ -872,25 +872,25 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
   bool ShouldCreateOutgoingBidirectionalStream() override;
   bool ShouldCreateOutgoingUnidirectionalStream() override;
 
-  QuicChromiumClientStream* CreateIncomingStream(
+  QuicMonyharClientStream* CreateIncomingStream(
       quic::QuicStreamId id) override;
-  QuicChromiumClientStream* CreateIncomingStream(
+  QuicMonyharClientStream* CreateIncomingStream(
       quic::PendingStream* pending) override;
 
  private:
-  friend class test::QuicChromiumClientSessionPeer;
+  friend class test::QuicMonyharClientSessionPeer;
 
   typedef std::set<Handle*> HandleSet;
   typedef std::list<StreamRequest*> StreamRequestQueue;
 
   bool WasConnectionEverUsed();
 
-  QuicChromiumClientStream* CreateOutgoingReliableStreamImpl(
+  QuicMonyharClientStream* CreateOutgoingReliableStreamImpl(
       const NetworkTrafficAnnotationTag& traffic_annotation);
-  QuicChromiumClientStream* CreateIncomingReliableStreamImpl(
+  QuicMonyharClientStream* CreateIncomingReliableStreamImpl(
       quic::QuicStreamId id,
       const NetworkTrafficAnnotationTag& traffic_annotation);
-  QuicChromiumClientStream* CreateIncomingReliableStreamImpl(
+  QuicMonyharClientStream* CreateIncomingReliableStreamImpl(
       quic::PendingStream* pending,
       const NetworkTrafficAnnotationTag& traffic_annotation);
   // A completion callback invoked when a read completes.
@@ -1021,7 +1021,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
   size_t num_total_streams_;
   base::SequencedTaskRunner* task_runner_;
   NetLogWithSource net_log_;
-  std::vector<std::unique_ptr<QuicChromiumPacketReader>> packet_readers_;
+  std::vector<std::unique_ptr<QuicMonyharPacketReader>> packet_readers_;
   LoadTimingInfo::ConnectTiming connect_timing_;
   std::unique_ptr<QuicConnectionLogger> logger_;
   std::unique_ptr<QuicHttp3Logger> http3_logger_;
@@ -1041,7 +1041,7 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
   // Stores the packet that witnesses socket write error. This packet will be
   // written to an alternate socket when the migration completes and the
   // alternate socket is unblocked.
-  scoped_refptr<QuicChromiumPacketWriter::ReusableIOBuffer> packet_;
+  scoped_refptr<QuicMonyharPacketWriter::ReusableIOBuffer> packet_;
   // Stores the latest default network platform marks if migration is enabled.
   // Otherwise, stores the network interface that is used by the connection.
   NetworkChangeNotifier::NetworkHandle default_network_;
@@ -1075,14 +1075,14 @@ class NET_EXPORT_PRIVATE QuicChromiumClientSession
 
   std::unique_ptr<quic::QuicClientPushPromiseIndex> push_promise_index_;
 
-  QuicChromiumPathValidationWriterDelegate path_validation_writer_delegate_;
+  QuicMonyharPathValidationWriterDelegate path_validation_writer_delegate_;
 
   // Map of origin to Accept-CH header field values received via ALPS.
   base::flat_map<url::Origin, std::string> accept_ch_entries_received_via_alps_;
 
-  base::WeakPtrFactory<QuicChromiumClientSession> weak_factory_{this};
+  base::WeakPtrFactory<QuicMonyharClientSession> weak_factory_{this};
 
-  DISALLOW_COPY_AND_ASSIGN(QuicChromiumClientSession);
+  DISALLOW_COPY_AND_ASSIGN(QuicMonyharClientSession);
 };
 
 }  // namespace net

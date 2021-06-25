@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -21,7 +21,7 @@ _top_level_dir = os.path.dirname(os.path.realpath(__file__))
 
 
 def Config(benchmark_subdirs):
-  return monyhar_config.ChromiumConfig(
+  return monyhar_config.MonyharConfig(
       top_level_dir=_top_level_dir,
       benchmark_dirs=[os.path.join(_top_level_dir, subdir)
                       for subdir in benchmark_subdirs])

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -20,7 +20,7 @@ BORINGSSL_PATH = os.path.join(SRC_PATH, 'third_party', 'boringssl')
 BORINGSSL_SRC_PATH = os.path.join(BORINGSSL_PATH, 'src')
 
 if not os.path.isfile(DEPS_PATH) or not os.path.isdir(BORINGSSL_SRC_PATH):
-  raise Exception('Could not find Chromium checkout')
+  raise Exception('Could not find Monyhar checkout')
 
 # Pull OS_ARCH_COMBOS out of the BoringSSL script.
 sys.path.append(os.path.join(BORINGSSL_SRC_PATH, 'util'))
@@ -108,7 +108,7 @@ def main():
     return 1
 
   if not IsPristine(SRC_PATH):
-    print('Chromium checkout not pristine.', file=sys.stderr)
+    print('Monyhar checkout not pristine.', file=sys.stderr)
     return 0
   if not IsPristine(BORINGSSL_SRC_PATH):
     print('BoringSSL checkout not pristine.', file=sys.stderr)
@@ -127,7 +127,7 @@ def main():
 
   print('Rolling BoringSSL from %s to %s...' % (old_head, new_head))
 
-  # Look for commits with associated Chromium bugs.
+  # Look for commits with associated Monyhar bugs.
   crbugs = set()
   crbug_commits = []
   update_note_commits = []
@@ -187,7 +187,7 @@ https://boringssl.googlesource.com/boringssl/+log/%s..%s
 
 """ % (old_head[:9], new_head[:9], old_head, new_head)
   if crbug_commits:
-    message += 'The following commits have Chromium bugs associated:\n'
+    message += 'The following commits have Monyhar bugs associated:\n'
     for commit in crbug_commits:
       message += '  ' + FormatCommit(commit) + '\n'
     message += '\n'

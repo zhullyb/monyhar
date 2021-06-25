@@ -1,4 +1,4 @@
-// Copyright © 2018 Chromium authors and World Wide Web Consortium, (Massachusetts Institute of Technology, ERCIM, Keio University, Beihang).
+// Copyright © 2018 Monyhar authors and World Wide Web Consortium, (Massachusetts Institute of Technology, ERCIM, Keio University, Beihang).
 
 function findSupportedChangeTypeTestTypes(cb) {
   // Changetype test media metadata.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -9,13 +9,13 @@ import sys
 import subprocess
 import time
 
-def GetChromiumSrcDir():
+def GetMonyharSrcDir():
   return os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir,
                                       os.pardir, os.pardir, os.pardir,
                                       os.pardir))
 
 def GetIosDir():
-  return os.path.join(GetChromiumSrcDir(), 'ios')
+  return os.path.join(GetMonyharSrcDir(), 'ios')
 
 sys.path.append(os.path.join(GetIosDir(), 'build', 'bots', 'scripts'))
 
@@ -24,7 +24,7 @@ import test_apps
 import xcodebuild_runner
 
 def GetDefaultBuildDir():
-  return os.path.join(GetChromiumSrcDir(), 'out', 'Debug-iphonesimulator')
+  return os.path.join(GetMonyharSrcDir(), 'out', 'Debug-iphonesimulator')
 
 parser=argparse.ArgumentParser(
     formatter_class=argparse.ArgumentDefaultsHelpFormatter)

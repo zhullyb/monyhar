@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,11 +23,11 @@ public class NativeUnitTest extends NativeTest {
     @Override
     public void preCreate(Activity activity) {
         super.preCreate(activity);
-        // Necessary because NativeUnitTestActivity uses BaseChromiumApplication which does not
+        // Necessary because NativeUnitTestActivity uses BaseMonyharApplication which does not
         // initialize ContextUtils.
         ContextUtils.initApplicationContext(activity.getApplicationContext());
 
-        // Necessary because BaseChromiumApplication no longer automatically initializes application
+        // Necessary because BaseMonyharApplication no longer automatically initializes application
         // tracking.
         ApplicationStatus.initialize(activity.getApplication());
 

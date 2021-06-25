@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -105,7 +105,7 @@ using chrome_test_util::SyncSettingsConfirmButton;
 // Tests the following steps:
 //  + Opens sign-in from Google services
 //  + Taps on the settings link to open the advanced sign-in settings
-//  + Opens "Data from Chromium sync" to interrupt sign-in
+//  + Opens "Data from Monyhar sync" to interrupt sign-in
 - (void)testInterruptSigninFromGoogleServicesSettings {
   [GoogleServicesSettingsAppInterface
       blockAllNavigationRequestsForCurrentWebState];

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -52,7 +52,7 @@ enum class ChannelLayout {
   SURROUND_5_1,
 
   // Actual channel layout is specified in the bitstream and the actual channel
-  // count is unknown at Chromium media pipeline level (useful for audio
+  // count is unknown at Monyhar media pipeline level (useful for audio
   // pass-through mode).
   BITSTREAM,
 

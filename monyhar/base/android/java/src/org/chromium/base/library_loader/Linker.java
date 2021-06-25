@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -61,7 +61,7 @@ import javax.annotation.concurrent.GuardedBy;
  *
  * - Early on, before the attempt to load the library, the linker needs to be initialized either as
  *   a producer or a consumer of the RELRO region. Depending on the choice either
- *   initAsRelroProducer() or initAsRelroConsumer() should be invoked. Since various Chromium
+ *   initAsRelroProducer() or initAsRelroConsumer() should be invoked. Since various Monyhar
  *   projects have vastly different initialization paths, for convenience the initialization runs
  *   implicitly as part of loading the library. In this case the behaviour is of a producer.
  *
@@ -246,7 +246,7 @@ abstract class Linker {
     /**
      * Loads the native shared library.
      *
-     * The library must not be the Chromium linker library. The LegacyLinker only allows loading one
+     * The library must not be the Monyhar linker library. The LegacyLinker only allows loading one
      * library per file, including zip/APK files.
      *
      * @param library The library name to load.

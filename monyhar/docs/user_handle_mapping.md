@@ -1,4 +1,4 @@
-For Chromium contributors that have different nicks on other domains.
+For Monyhar contributors that have different nicks on other domains.
 
 | **@monyhar.org** | **IRC nick(s)** | **@google.com** |
 |:------------------|:----------------|:----------------|

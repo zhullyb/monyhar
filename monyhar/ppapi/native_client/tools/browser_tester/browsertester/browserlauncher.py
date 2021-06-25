@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -265,7 +265,7 @@ class ChromeLauncher(BrowserLauncher):
 
   def MakeCmd(self, url, host, port):
     cmd = [self.binary,
-            # --enable-logging enables stderr output from Chromium subprocesses
+            # --enable-logging enables stderr output from Monyhar subprocesses
             # on Windows (see
             # https://code.google.com/p/monyhar/issues/detail?id=171836)
             '--enable-logging',

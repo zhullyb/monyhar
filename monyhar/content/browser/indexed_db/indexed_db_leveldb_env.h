@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@
 namespace content {
 
 // The leveldb::Env used by the Indexed DB backend.
-class IndexedDBLevelDBEnv : public leveldb_env::ChromiumEnv {
+class IndexedDBLevelDBEnv : public leveldb_env::MonyharEnv {
  public:
   CONTENT_EXPORT static IndexedDBLevelDBEnv* Get();
 

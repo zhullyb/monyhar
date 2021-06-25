@@ -15,7 +15,7 @@ ChromeDriver uses 3 types of threads:
 ## Thread Interactions
 
 As one would expect, threads cannot directly call each other.
-Instead, ChromeDriver uses mechanisms provided by Chromium base library
+Instead, ChromeDriver uses mechanisms provided by Monyhar base library
 to post tasks between threads.
 
 Each thread in ChromeDriver is wrapped by a

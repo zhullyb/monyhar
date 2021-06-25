@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@ import org.monyhar.components.embedder_support.delegate.WebContentsDelegateAndro
  * WebView-specific WebContentsDelegate.
  * This file is the Java version of the native class of the same name.
  * It should contain abstract WebContentsDelegate methods to be implemented by the embedder.
- * These methods belong to WebView but are not shared with the Chromium Android port.
+ * These methods belong to WebView but are not shared with the Monyhar Android port.
  */
 @VisibleForTesting
 @JNINamespace("android_webview")

@@ -1,7 +1,7 @@
 # Cocoa Tips and Tricks
 
 A collection of idioms that we use when writing the Cocoa views and controllers
-for Chromium.
+for Monyhar.
 
 [TOC]
 
@@ -66,7 +66,7 @@ What this means in practice is:
 
 ## Unit Tests
 
-There are four Chromium-specific GTest macros for writing ObjC++ test cases.
+There are four Monyhar-specific GTest macros for writing ObjC++ test cases.
 These macros are `EXPECT_NSEQ`, `EXPECT_NSNE`, and `ASSERT` variants by the same
 names.  These test `-[id<NSObject> isEqual:]` and will print the object's
 `-description` in GTest-style if the assertion fails. These macros are defined

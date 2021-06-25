@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -454,7 +454,7 @@ void NetworkTimeTracker::CheckTime() {
             "timestamp."
           trigger:
             "A request can be sent to retrieve the current time when the user "
-            "encounters an SSL date error, or in the background if Chromium "
+            "encounters an SSL date error, or in the background if Monyhar "
             "determines that it doesn't have an accurate timestamp."
           data: "None"
           destination: GOOGLE_OWNED_SERVICE

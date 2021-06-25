@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -206,7 +206,7 @@ CtapDeviceResponseCode WinErrorNameToCtapDeviceResponseCode(
   // response to a WebAuthn call is much narrower than what the Windows
   // WebAuthn API returns.  According to the WebAuthn spec, the only
   // permissible errors are "InvalidStateError" (aka CREDENTIAL_EXCLUDED in
-  // Chromium code) and "NotAllowedError". Hence, we can collapse the set of
+  // Monyhar code) and "NotAllowedError". Hence, we can collapse the set of
   // Windows errors to a smaller set of CtapDeviceResponseCodes.
   static base::flat_map<std::u16string, CtapDeviceResponseCode>
       kResponseCodeMap({

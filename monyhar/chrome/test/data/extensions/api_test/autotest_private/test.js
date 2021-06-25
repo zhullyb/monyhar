@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -519,7 +519,7 @@ var defaultTests = [
         const monyhar = apps.find(
           app => app.appId == 'mgndgikekgjfcpckkfioiadnlibdjbkf');
         chrome.test.assertTrue(!!monyhar);
-        // Only check that name and shortName are set for Chromium because
+        // Only check that name and shortName are set for Monyhar because
         // their values change if chrome_branded is true.
         chrome.test.assertTrue(!!monyhar.name);
         chrome.test.assertTrue(!!monyhar.shortName);
@@ -532,7 +532,7 @@ var defaultTests = [
         chrome.test.assertEq(monyhar.installSource, 'System');
     }));
   },
-  // This test verifies that only Chromium is available by default.
+  // This test verifies that only Monyhar is available by default.
   function getShelfItems() {
     chrome.autotestPrivate.getShelfItems(chrome.test.callbackPass(items => {
       chrome.test.assertEq(1, items.length);

@@ -1,11 +1,11 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // NOTE:
-// Since this file includes Chromium headers, it must not include
+// Since this file includes Monyhar headers, it must not include
 // third_party/webrtc/rtc_base/logging.h since it defines some of the same
-// macros as Chromium does and we'll run into conflicts.
+// macros as Monyhar does and we'll run into conflicts.
 
 #if defined(WEBRTC_MAC) && !defined(WEBRTC_IOS)
 #include <CoreServices/CoreServices.h>

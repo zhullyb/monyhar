@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -111,7 +111,7 @@ class _BulkObjectFileAnalyzerWorker(object):
         # ELF files (and never BC files).
         arch_paths.append(path)
       elif bcanalyzer.IsBitcodeFile(os.path.join(self._output_directory, path)):
-        # Chromium build tools create BC files with .o extension. As a result,
+        # Monyhar build tools create BC files with .o extension. As a result,
         # IsBitcodeFile() is needed to distinguish BC files from ELF .o files.
         bc_paths.append(path)
       else:

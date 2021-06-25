@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -117,7 +117,7 @@ ResultExpr BaselinePolicyAndroid::EvaluateSyscall(int sysno) const {
     case __NR_rt_sigtimedwait_time64:
 #endif
     // sched_getaffinity() and sched_setaffinity() are required for an
-    // experiment to schedule all Chromium threads onto LITTLE cores
+    // experiment to schedule all Monyhar threads onto LITTLE cores
     // (crbug.com/1111789). Should be removed or reconsidered once
     // the experiment is complete.
     case __NR_sched_getaffinity:

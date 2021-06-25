@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ import org.monyhar.content_public.browser.InputMethodManagerWrapper;
  */
 // TODO(changwan): add unit tests once Robolectric supports Android API level >= 21.
 // See crbug.com/588547 for details.
-public class ThreadedInputConnectionFactory implements ChromiumBaseInputConnection.Factory {
+public class ThreadedInputConnectionFactory implements MonyharBaseInputConnection.Factory {
     private static final String TAG = "Ime";
     private static final boolean DEBUG_LOGS = false;
 

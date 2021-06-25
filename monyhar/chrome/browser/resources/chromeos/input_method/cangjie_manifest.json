@@ -1,8 +1,8 @@
 {
   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDEIgqcph7Si8b8iQL1Bfg0L2uXeez55ctSYwZRWBpYu7pBDOxyQvcUotQiUkVrJJRZMp0/0H7ekaGSSkiHMaeOJGQmg3eTmYwJFyyNffEdQTn+41zQBEbfK0Kr1NpGLYDniX8ZI5vzsqSwBdpau9PAow3Njb6afN6v6GmJPoAdEQIDAQAB",
-  "name": "Chromium OS IME (Cangjie)",
+  "name": "Monyhar OS IME (Cangjie)",
   "version": "1.0.0.0",
-  "description": "Traditional Chinese Cangjie IME for Chromium OS.",
+  "description": "Traditional Chinese Cangjie IME for Monyhar OS.",
   "default_locale": "en",
   "permissions": [
     "input"

@@ -7,5 +7,5 @@ Security Critical: yes
 
 Description:
 
-libunwind for Chromium.
+libunwind for Monyhar.
 This is a dependency of libc++abi on ARM builds.

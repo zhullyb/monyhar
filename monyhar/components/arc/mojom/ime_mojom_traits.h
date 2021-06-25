@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@ struct EnumTraits<arc::mojom::TextInputType, ui::TextInputType> {
   // The two enum types are similar, but intentionally made not identical.
   // We cannot force them to be in sync. If we do, updates in ui::TextInputType
   // must always be propagated to the mojom::TextInputType mojo definition in
-  // ARC container side, which is in a different repository than Chromium.
+  // ARC container side, which is in a different repository than Monyhar.
   // We don't want such dependency.
   //
   // That's why we need a lengthy switch statement instead of static_cast

@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -360,7 +360,7 @@ AwContents::~AwContents() {
   base::subtle::Atomic32 instance_count =
       base::subtle::NoBarrier_AtomicIncrement(&g_instance_count, -1);
   // When the last WebView is destroyed free all discardable memory allocated by
-  // Chromium, because the app process may continue to run for a long time
+  // Monyhar, because the app process may continue to run for a long time
   // without ever using another WebView.
   if (instance_count == 0) {
     // TODO(timvolodine): consider moving NotifyMemoryPressure to

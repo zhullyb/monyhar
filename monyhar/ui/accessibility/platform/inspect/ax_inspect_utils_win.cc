@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ namespace ui {
 namespace {
 
 constexpr wchar_t kChromeTitle[] = L"Google Chrome";
-constexpr wchar_t kChromiumTitle[] = L"Chromium";
+constexpr wchar_t kMonyharTitle[] = L"Monyhar";
 constexpr wchar_t kEdgeTitle[] = L"Edge";
 constexpr wchar_t kFirefoxTitle[] = L"Mozilla Firefox";
 
@@ -733,8 +733,8 @@ AX_EXPORT HWND GetHWNDBySelector(const AXTreeSelector& selector) {
   HWNDSearchInfo info;
   if (selector.types & AXTreeSelector::Chrome) {
     info.title = kChromeTitle;
-  } else if (selector.types & AXTreeSelector::Chromium) {
-    info.title = kChromiumTitle;
+  } else if (selector.types & AXTreeSelector::Monyhar) {
+    info.title = kMonyharTitle;
   } else if (selector.types & AXTreeSelector::Edge) {
     info.title = kEdgeTitle;
   } else if (selector.types & AXTreeSelector::Firefox) {

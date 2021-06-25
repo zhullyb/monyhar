@@ -1,9 +1,9 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
 # This file is used to assign starting resource ids for resources and strings
-# used by Chromium.  This is done to ensure that resource ids are unique
+# used by Monyhar.  This is done to ensure that resource ids are unique
 # across all the grd files.  If you are adding a new grd file, please add
 # a new entry to this file.
 #
@@ -41,8 +41,8 @@
   #
   # chrome/ and ios/chrome/ must start at the same id.
   # App only use one file depending on whether it is iOS or other platform.
-  # Chromium strings and Google Chrome strings must start at the same id.
-  # We only use one file depending on whether we're building Chromium or
+  # Monyhar strings and Google Chrome strings must start at the same id.
+  # We only use one file depending on whether we're building Monyhar or
   # Google Chrome.
   "chrome/app/monyhar_strings.grd": {
     "messages": [400],
@@ -471,8 +471,8 @@
   # END chromeos/ section.
 
   # START components/ section.
-  # Chromium strings and Google Chrome strings must start at the same id.
-  # We only use one file depending on whether we're building Chromium or
+  # Monyhar strings and Google Chrome strings must start at the same id.
+  # We only use one file depending on whether we're building Monyhar or
   # Google Chrome.
   "components/components_monyhar_strings.grd": {
     # Big alignment at start of section.
@@ -520,8 +520,8 @@
     "structures": [420],
   },
 
-  # Chromium strings and Google Chrome strings must start at the same id.
-  # We only use one file depending on whether we're building Chromium or
+  # Monyhar strings and Google Chrome strings must start at the same id.
+  # We only use one file depending on whether we're building Monyhar or
   # Google Chrome.
   "ios/chrome/app/strings/ios_monyhar_strings.grd": {
     # Big alignment to make start IDs look nicer.
@@ -792,5 +792,5 @@
   # Thinking about appending to the end?
   # Please read the header and find the right section above instead.
 
-  # Resource ids starting at 31000 are reserved for projects built on Chromium.
+  # Resource ids starting at 31000 are reserved for projects built on Monyhar.
 }

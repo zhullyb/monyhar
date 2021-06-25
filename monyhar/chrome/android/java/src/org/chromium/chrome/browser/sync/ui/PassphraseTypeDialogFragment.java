@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -181,7 +181,7 @@ public class PassphraseTypeDialogFragment extends DialogFragment implements
         list.setSelection(adapter.getPositionForType(currentType));
 
         // Create and return the dialog
-        return new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog)
+        return new AlertDialog.Builder(getActivity(), R.style.Theme_Monyhar_AlertDialog)
                 .setNegativeButton(R.string.cancel, this)
                 .setTitle(R.string.sync_passphrase_type_title)
                 .setView(v)

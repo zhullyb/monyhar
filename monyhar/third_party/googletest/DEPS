@@ -1,4 +1,4 @@
-# This file is a dummy used so that non-Chromium clients can specify
+# This file is a dummy used so that non-Monyhar clients can specify
 # recursive DEPS. Otherwise the clients would need to nest DEPS inside
 # each other. Nested DEPS are not supported by gclient.
 #

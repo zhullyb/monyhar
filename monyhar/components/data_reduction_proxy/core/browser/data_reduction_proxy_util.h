@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,20 +35,20 @@ enum class Client {
 
 namespace util {
 
-// Returns the version of Chromium that is being used, e.g. "1.2.3.4".
-const char* ChromiumVersion();
+// Returns the version of Monyhar that is being used, e.g. "1.2.3.4".
+const char* MonyharVersion();
 
 // Returns the build and patch numbers of |version_string| as std::string.
-// |version_string| must be a properly formed Chromium version number, e.g.
+// |version_string| must be a properly formed Monyhar version number, e.g.
 // "1.2.3.4".
-void GetChromiumBuildAndPatch(const std::string& version_string,
+void GetMonyharBuildAndPatch(const std::string& version_string,
                               std::string* build,
                               std::string* patch);
 
 // Returns the build and patch numbers of |version_string| as unit32_t.
-// |version_string| must be a properly formed Chromium version number, e.g.
+// |version_string| must be a properly formed Monyhar version number, e.g.
 // "1.2.3.4".
-void GetChromiumBuildAndPatchAsInts(const std::string& version_string,
+void GetMonyharBuildAndPatchAsInts(const std::string& version_string,
                                     uint32_t* build,
                                     uint32_t* patch);
 

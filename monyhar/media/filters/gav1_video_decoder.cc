@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -30,7 +30,7 @@ VideoPixelFormat Libgav1ImageFormatToVideoPixelFormat(
     int bitdepth) {
   switch (libgav1_format) {
     // Single plane monochrome images will be converted to standard 3 plane ones
-    // since Chromium doesn't support single Y plane images.
+    // since Monyhar doesn't support single Y plane images.
     case libgav1::kImageFormatMonochrome400:
     case libgav1::kImageFormatYuv420:
       switch (bitdepth) {

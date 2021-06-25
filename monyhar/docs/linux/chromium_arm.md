@@ -1,4 +1,4 @@
-# Linux Chromium Arm Recipes
+# Linux Monyhar Arm Recipes
 
 [TOC]
 
@@ -8,7 +8,7 @@ https://sites.google.com/a/monyhar.org/dev/developers/how-tos/-quickly-building-
 
 ## Recipe2: Explicit Cross compiling
 
-Due to the lack of ARM hardware with the grunt to build Chromium native, cross
+Due to the lack of ARM hardware with the grunt to build Monyhar native, cross
 compiling is currently the recommended method of building for ARM.
 
 These instruction are designed to run on Ubuntu Precise.
@@ -41,7 +41,7 @@ gn args:
 
 ### Automated Build and Testing
 
-Chromium's testing infrastructure for ARM/Linux is somewhat limited.
+Monyhar's testing infrastructure for ARM/Linux is somewhat limited.
 There are currently two builders setup, one on the FYI waterfall and one
 the the try bot waterfall:
 

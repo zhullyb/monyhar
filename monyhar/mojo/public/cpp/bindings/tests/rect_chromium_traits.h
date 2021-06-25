@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,13 +11,13 @@
 namespace mojo {
 
 template <>
-struct StructTraits<test::TypemappedRectDataView, test::RectChromium> {
-  static int x(const test::RectChromium& r) { return r.x(); }
-  static int y(const test::RectChromium& r) { return r.y(); }
-  static int width(const test::RectChromium& r) { return r.width(); }
-  static int height(const test::RectChromium& r) { return r.height(); }
+struct StructTraits<test::TypemappedRectDataView, test::RectMonyhar> {
+  static int x(const test::RectMonyhar& r) { return r.x(); }
+  static int y(const test::RectMonyhar& r) { return r.y(); }
+  static int width(const test::RectMonyhar& r) { return r.width(); }
+  static int height(const test::RectMonyhar& r) { return r.height(); }
 
-  static bool Read(test::TypemappedRectDataView r, test::RectChromium* out) {
+  static bool Read(test::TypemappedRectDataView r, test::RectMonyhar* out) {
     if (r.width() < 0 || r.height() < 0)
       return false;
     out->set_x(r.x());

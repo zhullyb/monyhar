@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@
 namespace net {
 
 // Chrome specific packet writer which uses a datagram Socket for writing data.
-class NET_EXPORT_PRIVATE QuicChromiumPacketWriter
+class NET_EXPORT_PRIVATE QuicMonyharPacketWriter
     : public quic::QuicPacketWriter {
  public:
   // Define a specific IO buffer that can be allocated once, but be
@@ -65,11 +65,11 @@ class NET_EXPORT_PRIVATE QuicChromiumPacketWriter
     virtual void OnWriteUnblocked() = 0;
   };
 
-  QuicChromiumPacketWriter();
+  QuicMonyharPacketWriter();
   // |socket| and |task_runner| must outlive writer.
-  QuicChromiumPacketWriter(DatagramClientSocket* socket,
+  QuicMonyharPacketWriter(DatagramClientSocket* socket,
                            base::SequencedTaskRunner* task_runner);
-  ~QuicChromiumPacketWriter() override;
+  ~QuicMonyharPacketWriter() override;
 
   // |delegate| must outlive writer.
   void set_delegate(Delegate* delegate) { delegate_ = delegate; }
@@ -126,9 +126,9 @@ class NET_EXPORT_PRIVATE QuicChromiumPacketWriter
   base::OneShotTimer retry_timer_;
 
   CompletionRepeatingCallback write_callback_;
-  base::WeakPtrFactory<QuicChromiumPacketWriter> weak_factory_{this};
+  base::WeakPtrFactory<QuicMonyharPacketWriter> weak_factory_{this};
 
-  DISALLOW_COPY_AND_ASSIGN(QuicChromiumPacketWriter);
+  DISALLOW_COPY_AND_ASSIGN(QuicMonyharPacketWriter);
 };
 
 }  // namespace net

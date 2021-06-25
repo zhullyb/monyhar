@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,14 +13,14 @@ import org.monyhar.base.ThreadUtils;
 import java.util.Set;
 
 /**
- * Chromium implementation of GeolocationPermissions -- forwards calls to the
+ * Monyhar implementation of GeolocationPermissions -- forwards calls to the
  * monyhar internal implementation.
  */
 final class GeolocationPermissionsAdapter extends GeolocationPermissions {
-    private final WebViewChromiumFactoryProvider mFactory;
+    private final WebViewMonyharFactoryProvider mFactory;
     private final AwGeolocationPermissions mChromeGeolocationPermissions;
 
-    public GeolocationPermissionsAdapter(WebViewChromiumFactoryProvider factory,
+    public GeolocationPermissionsAdapter(WebViewMonyharFactoryProvider factory,
             AwGeolocationPermissions chromeGeolocationPermissions) {
         mFactory = factory;
         mChromeGeolocationPermissions = chromeGeolocationPermissions;
@@ -106,7 +106,7 @@ final class GeolocationPermissionsAdapter extends GeolocationPermissions {
 
     private static boolean checkNeedsPost() {
         // Init is guaranteed to have happened if a GeolocationPermissionsAdapter is created, so do
-        // not need to check WebViewChromiumFactoryProvider.hasStarted.
+        // not need to check WebViewMonyharFactoryProvider.hasStarted.
         return !ThreadUtils.runningOnUiThread();
     }
 }

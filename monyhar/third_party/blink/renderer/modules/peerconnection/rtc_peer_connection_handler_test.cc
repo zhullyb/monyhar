@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -983,7 +983,7 @@ TEST_F(RTCPeerConnectionHandlerTest, GetRTCStats) {
       for (size_t i = 0; i < stats->MembersCount(); ++i) {
         std::unique_ptr<RTCStatsMember> member = stats->GetMember(i);
         // TODO(hbos): A WebRTC-change is adding new members, this would cause
-        // not all members to be defined. This if-statement saves Chromium from
+        // not all members to be defined. This if-statement saves Monyhar from
         // crashing. As soon as the change has been rolled in, I will update
         // this test. crbug.com/627816
         if (!member->IsDefined())

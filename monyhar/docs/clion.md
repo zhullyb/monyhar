@@ -37,7 +37,7 @@ Prerequisite:
         1. `Help` > `Edit Custom VM Options`
         1. (Optional) `Help` > `Edit Custom Properties`
 
-## Chromium in CLion
+## Monyhar in CLion
 1. Import project
     - At the startup dialog, select `Import Project` and select your `monyhar`
       directory; this should be the parent directory to `src`. Selecting `src`

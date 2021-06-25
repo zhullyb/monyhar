@@ -11,18 +11,18 @@ or bugs that can be deduced via static analysis.
 
 ## Where is it?
 
-clang-tidy is available in two places in Chromium:
+clang-tidy is available in two places in Monyhar:
 
-- In Chromium checkouts
+- In Monyhar checkouts
 - In code review on Gerrit
 
-Clang-tidy automatically runs on any CL that Chromium committers upload to
+Clang-tidy automatically runs on any CL that Monyhar committers upload to
 Gerrit, and will leave code review comments there. This is the recommended way
 of using clang-tidy.
 
 ## Enabled checks
 
-Chromium globally enables a subset of all of clang-tidy's checks (see
+Monyhar globally enables a subset of all of clang-tidy's checks (see
 `${monyhar}/src/.clang-tidy`). We want these checks to cover as much as we
 reasonably can, but we also strive to strike a reasonable balance between signal
 and noise on code reviews. Hence, a large number of clang-tidy checks are
@@ -40,8 +40,8 @@ Traditionally, petitions to add checks include [an
 evaluation](https://docs.google.com/document/d/1i1KmXtDD4j_qjhmAdGlJ6UkYXByVX1Kp952Zusdcl5k/edit?usp=sharing)
 of the check under review. Crucially, this includes two things:
 
-- a count of how many times this check fires across Chromium
-- a random sample (>30) of places where the check fires across Chromium
+- a count of how many times this check fires across Monyhar
+- a random sample (>30) of places where the check fires across Monyhar
 
 It's expected that the person proposing the check has manually surveyed every
 clang-tidy diagnostic in the sample, noting any bugs, odd behaviors, or
@@ -51,7 +51,7 @@ expected to be considered by the evaluation, too.
 An example of a previous proposal email thread is
 [here](https://groups.google.com/a/monyhar.org/g/cxx/c/iZ6-Y9ZhC3Q/m/g-8HzqmbAAAJ).
 
-#### Evaluating: running clang-tidy across Chromium
+#### Evaluating: running clang-tidy across Monyhar
 
 Running clang-tidy requires some setup. First, you'll need to sync clang-tidy,
 which requires adding `checkout_clang_tidy` to your `.gclient` file:
@@ -68,10 +68,10 @@ solutions = [
 
 Your next run of `gclient runhooks` should cause clang-tidy to be synced.
 
-To run clang-tidy across all of Chromium, you'll need a checkout of Chromium's
+To run clang-tidy across all of Monyhar, you'll need a checkout of Monyhar's
 [build/](https://monyhar.googlesource.com/monyhar/tools/build) repository.
-Once you have that and a Chromium `out/` dir with an `args.gn`, running
-clang-tidy across all of Chromium is a single command:
+Once you have that and a Monyhar `out/` dir with an `args.gn`, running
+clang-tidy across all of Monyhar is a single command:
 
 ```
 $ cd ${monyhar}/src
@@ -83,16 +83,16 @@ $ ${monyhar_build}/recipes/recipe_modules/tricium_clang_tidy/resources/tricium_c
     --all
 ```
 
-All clang-tidy checks are run on Linux builds of Chromium, so please set up your
+All clang-tidy checks are run on Linux builds of Monyhar, so please set up your
 `args.gn` to build Linux.
 
 `all_findings.json` is where all of clang-tidy's findings will be dumped. The
 format of this file is detailed in `tricium_clang_tidy.py`.
 
-**Note** that the above command will use Chromium's top-level `.clang-tidy` file
+**Note** that the above command will use Monyhar's top-level `.clang-tidy` file
 (or `.clang-tidy` files scattered throughout `third_party/`, depending on the
 files we lint. In order to test a *new* check, you'll have to add it to
-Chromium's top-level `.clang-tidy` file.
+Monyhar's top-level `.clang-tidy` file.
 
 ### Ignoring a check
 
@@ -106,7 +106,7 @@ https://clang.llvm.org/extra/clang-tidy/#suppressing-undesired-diagnostics).
 **Please note** that adding comments that exist only to silence clang-tidy is
 actively discouraged. These comments clutter code, can easily get
 out-of-date, and don't provide much value to readers. Moreover, clang-tidy only
-complains on Gerrit when lines are touched, and making Chromium clang-tidy clean
+complains on Gerrit when lines are touched, and making Monyhar clang-tidy clean
 is an explicit non-goal; making code less readable in order to silence a
 rarely-surfaced complaint isn't a good trade-off.
 
@@ -185,7 +185,7 @@ If you already have `solutions` and `custom_vars`, just add
 
 Once the above update has been made, run `gclient runhooks`, and clang-tidy
 should appear at `src/third_party/llvm-build/Release+Asserts/bin/clang-tidy` if
-your Chromium tree is sufficiently up-to-date.
+your Monyhar tree is sufficiently up-to-date.
 
 ### Running clang-tidy locally
 
@@ -202,7 +202,7 @@ manager (e.g., on Debian/Ubuntu, `sudo apt-get install clang-tidy clang-tools`),
 you might not need an LLVM checkout to make the required binaries and scripts
 (`clang-tidy`, `run-clang-tidy` and `clang-apply-replacements`) available in
 your `$PATH`. However, the system packaged binaries might be several versions
-behind Chromium's toolchain, so not all flags are guaranteed to work. If this is
+behind Monyhar's toolchain, so not all flags are guaranteed to work. If this is
 a problem, consider building clang-tidy from the same revision the current
 toolchain is using, rather than filing a bug against the toolchain component.
 

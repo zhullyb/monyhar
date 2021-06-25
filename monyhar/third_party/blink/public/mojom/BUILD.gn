@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -1338,7 +1338,7 @@ mojom_component("web_feature_mojo_bindings") {
 }
 
 # The embedded_frame_sink_mojo_bindings is separated from the rest of mojom
-# files because its deps contain too many files in Chromium that would pollute
+# files because its deps contain too many files in Monyhar that would pollute
 # the include paths in generated mojom-blink files for other services.
 mojom("embedded_frame_sink_mojo_bindings") {
   visibility = [ "//content/*" ]

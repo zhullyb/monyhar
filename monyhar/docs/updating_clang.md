@@ -3,14 +3,14 @@
 We distribute prebuilt packages of LLVM binaries, including clang and lld, that
 all developers and bots pull at `gclient runhooks` time. These binaries are
 just regular LLVM binaries built at a fixed upstream revision. This document
-describes how to build a package at a newer revision and update Chromium to it.
+describes how to build a package at a newer revision and update Monyhar to it.
 An archive of all packages built so far is at https://is.gd/chromeclang
 
 1.  Check that https://ci.monyhar.org/p/monyhar/g/monyhar.clang/console
     looks reasonably green. Red bots with seemingly normal test failures are
     usually ok, that likely means the test is broken with the stable Clang as
     well.
-1.  Sync your Chromium tree to the latest revision to pick up any plugin
+1.  Sync your Monyhar tree to the latest revision to pick up any plugin
     changes.
 1.  Run [go/chrome-push-clang-to-goma](https://goto.google.com/chrome-push-clang-to-goma).
     This takes a recent dry run CL to update clang, and if the trybots were

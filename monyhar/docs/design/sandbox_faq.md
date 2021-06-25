@@ -8,7 +8,7 @@ The sandbox is a C++ library that allows the creation of sandboxed processes —
 processes that execute within a very restrictive environment. The only resources
 sandboxed processes can freely use are CPU cycles and memory. For example,
 sandboxes processes cannot write to disk or display their own windows. What
-exactly they can do is controlled by an explicit policy. Chromium renderers are
+exactly they can do is controlled by an explicit policy. Monyhar renderers are
 sandboxed processes.
 
 ### What does and doesn't it protect against?
@@ -18,9 +18,9 @@ bugs cannot install persistent malware in the user's account (because writing to
 the filesystem is banned). Such bugs also cannot read and steal arbitrary files
 from the user's machine.
 
-(In Chromium, the renderer processes are sandboxed and have this
+(In Monyhar, the renderer processes are sandboxed and have this
 protection. After the NPAPI removal, all remaining plugins are also
-sandboxed. Also note that Chromium renderer processes are isolated from the
+sandboxed. Also note that Monyhar renderer processes are isolated from the
 system, but not yet from the web. Therefore, domain-based data isolation is not
 yet provided.).
 
@@ -45,7 +45,7 @@ We leverage the Windows security model. In Windows, code cannot perform any form
 of I/O (be it disk, keyboard, or screen) without making a system call. In most
 system calls, Windows performs some sort of security check. The sandbox sets
 things up so that these security checks fail for the kinds of actions that you
-don’t want the sandboxed process to perform. In Chromium, the sandbox is such
+don’t want the sandboxed process to perform. In Monyhar, the sandbox is such
 that all access checks should fail.
 
 ### So how can a sandboxed process such as a renderer accomplish anything?
@@ -53,7 +53,7 @@ that all access checks should fail.
 Certain communication channels are explicitly open for the sandboxed processes;
 the processes can write and read from these channels. A more privileged process
 can use these channels to do certain actions on behalf of the sandboxed
-process. In Chromium, the privileged process is usually the browser process.
+process. In Monyhar, the privileged process is usually the browser process.
 
 ### Doesn't Vista have similar functionality? 
 
@@ -65,7 +65,7 @@ features is one of the things that the sandbox library does for you.
 
 ### This is very neat. Can I use the sandbox in my own programs?
 
-Yes. The sandbox does not have any hard dependencies on the Chromium browser and
+Yes. The sandbox does not have any hard dependencies on the Monyhar browser and
 was designed to be used with other Internet-facing applications. The main hurdle
 is that you have to split your application into at least two interacting
 processes. One of the processes is privileged and does I/O and interacts with
@@ -113,9 +113,9 @@ efficiency in later calls.
 
 There is no master list of safe APIs. In general, structure your code such that
 the sandboxed code reads and writes from pipes or shared memory and just does
-operations over this data. In the case of Chromium, the entire WebKit code runs
+operations over this data. In the case of Monyhar, the entire WebKit code runs
 this way, and the output is mostly a rendered bitmap of the web pages. You can
-use Chromium as inspiration for your own memory- or pipe-based IPC.
+use Monyhar as inspiration for your own memory- or pipe-based IPC.
 
 ### But can't malware just infect the process at the other end of the pipe or shared memory?
 

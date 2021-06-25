@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@
 #include "third_party/boringssl/src/include/openssl/obj.h"
 
 // These "headers" actually contain several function definitions and thus can
-// only be included once across Chromium.
+// only be included once across Monyhar.
 #include "chrome/android/features/cablev2_authenticator/jni_headers/BLEAdvert_jni.h"
 #include "chrome/android/features/cablev2_authenticator/jni_headers/CableAuthenticator_jni.h"
 #include "chrome/android/features/cablev2_authenticator/jni_headers/USBHandler_jni.h"

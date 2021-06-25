@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1059,7 +1059,7 @@ class InputMethodObserverForShowIme : public InputMethodObserverBase {
 // This test is disabled on Windows because we have removed TryShow/TryHide API
 // calls and replaced it with TSF input pane policy which is a policy applied by
 // text service framework on Windows based on whether TSF edit control has focus
-// or not. On Windows we have implemented TSF1 on Chromium that takes care of
+// or not. On Windows we have implemented TSF1 on Monyhar that takes care of
 // IME compositions, handwriting panels, SIP visibility etc. Please see
 // (https://crbug.com/1007958) for more details.
 #if !defined(OS_WIN)

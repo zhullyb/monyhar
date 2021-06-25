@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -494,7 +494,7 @@ void LogoServiceImpl::FetchLogo() {
           cookies_allowed: YES
           cookies_store: "user"
           setting:
-            "Choosing a non-Google search engine in Chromium settings under "
+            "Choosing a non-Google search engine in Monyhar settings under "
             "'Search Engine' will disable this feature."
           policy_exception_justification:
             "Not implemented, considered not useful as it does not upload any"

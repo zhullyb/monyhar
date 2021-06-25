@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,16 +27,16 @@ namespace chromecast {
 namespace external_service_support {
 class ExternalConnector;
 
-// Provides a wrapper for a Chromium ServiceManager-based service to run in
-// an external (non-Chromium) process.
-class ChromiumServiceWrapper : public external_mojo::mojom::ExternalService {
+// Provides a wrapper for a Monyhar ServiceManager-based service to run in
+// an external (non-Monyhar) process.
+class MonyharServiceWrapper : public external_mojo::mojom::ExternalService {
  public:
-  ChromiumServiceWrapper(
+  MonyharServiceWrapper(
       ExternalConnector* connector,
       mojo::Remote<service_manager::mojom::Service> service_remote,
       std::unique_ptr<service_manager::Service> monyhar_service,
       const std::string& service_name);
-  ~ChromiumServiceWrapper() override;
+  ~MonyharServiceWrapper() override;
 
  private:
   // external_mojo::mojom::ExternalService implementation:
@@ -48,36 +48,36 @@ class ChromiumServiceWrapper : public external_mojo::mojom::ExternalService {
 
   mojo::Receiver<external_mojo::mojom::ExternalService> service_receiver_{this};
 
-  DISALLOW_COPY_AND_ASSIGN(ChromiumServiceWrapper);
+  DISALLOW_COPY_AND_ASSIGN(MonyharServiceWrapper);
 };
 
-// Creates a ServiceRequest (analogous to one created by Chromium
-// ServiceManager) for use in creating Chromium Mojo services in an external
+// Creates a ServiceRequest (analogous to one created by Monyhar
+// ServiceManager) for use in creating Monyhar Mojo services in an external
 // process. |service_remote| will be filled in with a pointer for the service,
-// which should be bassed to ChromiumServiceWrapper's constructor. |identity| is
+// which should be bassed to MonyharServiceWrapper's constructor. |identity| is
 // the desired identity of the service to be created (ie, what will be returned
 // from ServiceBinding::identity() once the service binding is created). If you
 // don't care about the identity, just use the default.
 mojo::PendingReceiver<service_manager::mojom::Service>
-CreateChromiumServiceReceiver(
+CreateMonyharServiceReceiver(
     ExternalConnector* connector,
     mojo::Remote<service_manager::mojom::Service>* service_remote,
     service_manager::Identity identity = service_manager::Identity());
 
 // Creates a service_manager::Connector instance from an external service
 // ExternalConnector.
-std::unique_ptr<service_manager::Connector> CreateChromiumConnector(
+std::unique_ptr<service_manager::Connector> CreateMonyharConnector(
     ExternalConnector* connector);
 
 // Convenience helper for services that only take a ServiceRequest param in the
 // constructor. The |name| is the desired service name.
 template <typename T>
-std::unique_ptr<ChromiumServiceWrapper> CreateChromiumService(
+std::unique_ptr<MonyharServiceWrapper> CreateMonyharService(
     ExternalConnector* connector,
     const std::string& name) {
   mojo::Remote<service_manager::mojom::Service> service_remote;
-  auto receiver = CreateChromiumServiceReceiver(connector, &service_remote);
-  return std::make_unique<ChromiumServiceWrapper>(
+  auto receiver = CreateMonyharServiceReceiver(connector, &service_remote);
+  return std::make_unique<MonyharServiceWrapper>(
       connector, std::move(service_remote),
       std::make_unique<T>(std::move(receiver)), name);
 }

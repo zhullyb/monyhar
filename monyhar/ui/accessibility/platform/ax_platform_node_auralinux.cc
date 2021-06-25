@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -646,7 +646,7 @@ gint GetNActions(AtkAction* atk_action) {
 
 const gchar* GetDescription(AtkAction*, gint) {
   // Not implemented. Right now Orca does not provide this and
-  // Chromium is not providing a string for the action description.
+  // Monyhar is not providing a string for the action description.
   return nullptr;
 }
 

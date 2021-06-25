@@ -10,7 +10,7 @@ Description:
 This folder contains WebRTC files (third_party/webrtc) that should be
 overridden. The reason for this folder to be separate from third_party/webrtc is
 that WebRTC is pulled directly into third_party/webrtc and the overrides need to
-be in the Chromium repo since they depend on Chromium code.
+be in the Monyhar repo since they depend on Monyhar code.
 
 For information on WebRTC, see third_party/webrtc/README.monyhar.
 

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -409,8 +409,8 @@ std::unique_ptr<PolicyWatcher> PolicyWatcher::CreateWithPolicyService(
 std::unique_ptr<PolicyWatcher> PolicyWatcher::CreateWithTaskRunner(
     const scoped_refptr<base::SingleThreadTaskRunner>& file_task_runner) {
   // Create platform-specific PolicyLoader. Always read the Chrome policies
-  // (even on Chromium) so that policy enforcement can't be bypassed by running
-  // Chromium.
+  // (even on Monyhar) so that policy enforcement can't be bypassed by running
+  // Monyhar.
   std::unique_ptr<policy::AsyncPolicyLoader> policy_loader;
 #if defined(OS_WIN)
   policy_loader = std::make_unique<policy::PolicyLoaderWin>(

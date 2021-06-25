@@ -18,7 +18,7 @@ The `FaceDetectionTest` interface is defined as:
   };
 ```
 
-The Chromium implementation of the `FaceDetectionTest` interface is located in
+The Monyhar implementation of the `FaceDetectionTest` interface is located in
 [mock-facedetection.js](../resources/monyhar/mock-facedetection.js).
 
 The `BarcodeDetectionTest` interface is defined as:
@@ -38,7 +38,7 @@ The `BarcodeDetectionTest` interface is defined as:
   };
 ```
 
-The Chromium implementation of the `BarcodeDetectionTest` interface is located in
+The Monyhar implementation of the `BarcodeDetectionTest` interface is located in
 [mock-barcodedetection.js](../resources/monyhar/mock-barcodedetection.js).
 
 The `TextDetectionTest` interface is defined as:
@@ -55,7 +55,7 @@ The `TextDetectionTest` interface is defined as:
   };
 ```
 
-The Chromium implementation of the `TextDetectionTest` interface is located in
+The Monyhar implementation of the `TextDetectionTest` interface is located in
 [mock-textdetection.js](../resources/monyhar/mock-textdetection.js).
 
 Other browser vendors should provide their own implementations of

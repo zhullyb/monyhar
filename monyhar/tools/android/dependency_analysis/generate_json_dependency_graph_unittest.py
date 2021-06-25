@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Unit tests for dependency_analysis.generate_json_dependency_graph."""
@@ -28,19 +28,19 @@ GN_DESC_OUTPUT = """
 class TestHelperFunctions(unittest.TestCase):
     """Unit tests for module-level helper functions."""
     def test_class_is_interesting(self):
-        """Tests that the helper identifies a valid Chromium class name."""
+        """Tests that the helper identifies a valid Monyhar class name."""
         self.assertTrue(
             generate_json_dependency_graph.class_is_interesting(
                 'org.monyhar.chrome.browser.Foo'))
 
     def test_class_is_interesting_longer(self):
-        """Tests that the helper identifies a valid Chromium class name."""
+        """Tests that the helper identifies a valid Monyhar class name."""
         self.assertTrue(
             generate_json_dependency_graph.class_is_interesting(
                 'org.monyhar.chrome.browser.foo.Bar'))
 
     def test_class_is_interesting_negative(self):
-        """Tests that the helper ignores a non-Chromium class name."""
+        """Tests that the helper ignores a non-Monyhar class name."""
         self.assertFalse(
             generate_json_dependency_graph.class_is_interesting(
                 'org.notmonyhar.chrome.browser.Foo'))

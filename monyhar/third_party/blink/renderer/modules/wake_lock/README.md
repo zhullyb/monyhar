@@ -6,7 +6,7 @@ This directory contains an implementation of the [Wake Lock specification], a We
 
 At the time of writing (October 2019), system wake lock requests are always denied, as allowing them depends on a proper permission model for the requests being figured out first.
 
-The code required to implement the Wake Lock API is spread across multiple Chromium subsystems: Blink, `//content`, `//components`, `//services` and `//chrome`. This document focuses on the Blink part, and the other subsystems are mentioned when necessary but without much detail.
+The code required to implement the Wake Lock API is spread across multiple Monyhar subsystems: Blink, `//content`, `//components`, `//services` and `//chrome`. This document focuses on the Blink part, and the other subsystems are mentioned when necessary but without much detail.
 
 ## High level overview
 
@@ -42,7 +42,7 @@ The rest of the implementation is found in the following directories:
 
 ### Testing
 
-Validation, exception types, permissions policy integration and general IDL compliance are tested in [web platform tests], while Chromium-specific implementation details (e.g. permission handling) are tested in [web tests].
+Validation, exception types, permissions policy integration and general IDL compliance are tested in [web platform tests], while Monyhar-specific implementation details (e.g. permission handling) are tested in [web tests].
 
 Larger parts of the Blink implementation are tested as browser and unit tests:
 
@@ -96,7 +96,7 @@ This section describes what happens when `lock.release()` is called.
 
 [release wake lock algorithm]: https://w3c.github.io/screen-wake-lock/#release-wake-lock-algorithm
 
-## Other Wake Lock usage in Chromium
+## Other Wake Lock usage in Monyhar
 
 ### Inside Blink
 
@@ -116,7 +116,7 @@ wake_lock_->RequestWakeLock();
 
 ### Outside Blink
 
-The [Wake Lock service](/services/device/wake_lock) is also used by multiple parts of Chromium outside Blink. In other words, it is possible to use the Wake Lock service and prevent screen and CPU from entering a deep power state directly from the browser side.
+The [Wake Lock service](/services/device/wake_lock) is also used by multiple parts of Monyhar outside Blink. In other words, it is possible to use the Wake Lock service and prevent screen and CPU from entering a deep power state directly from the browser side.
 
 In fact, this is why [`WakeLockProvider::GetWakeLockWithoutContext()`](/services/device/public/mojom/wake_lock_provider.mojom) exists in the first place. One consequence is that one needs to bear in mind these other usages when changing the public API exposed by the Wake Lock service.
 
@@ -133,8 +133,8 @@ Example usage outside Blink includes:
 
 The Wake Lock API spec checks for user activation in the context of [wake lock permission requests](https://w3c.github.io/screen-wake-lock/#dfn-obtain-permission), as a result of a call to `WakeLock.request()`. If a user agent is configured to prompt a user when a wake lock is requested, user activation is required, otherwise the request will be denied.
 
-In the Chromium implementation, there currently is no "prompt" state, and no permission UI or settings: wake lock requests are either always granted or always denied:
+In the Monyhar implementation, there currently is no "prompt" state, and no permission UI or settings: wake lock requests are either always granted or always denied:
 
-* Screen wake lock request are always granted without prompting or user activation checks. This is based on the existing precedent of the `<video>` tag's use of `VideoWakeLock`s: they are always requested and granted transparently, so even if the Wake Lock API implementation in Chromium started requiring stricter checks, malicious actors could still embed a `<video>` tag and prevent the screen from turning off without any user interaction.
+* Screen wake lock request are always granted without prompting or user activation checks. This is based on the existing precedent of the `<video>` tag's use of `VideoWakeLock`s: they are always requested and granted transparently, so even if the Wake Lock API implementation in Monyhar started requiring stricter checks, malicious actors could still embed a `<video>` tag and prevent the screen from turning off without any user interaction.
 
 * System wake lock requests are always denied in `components/permissions/contexts/wake_lock_permission_context.cc`. This means the entirety of the code is present and enabled in Blink, but all calls to `WakeLock.request('system')` currently return a promise that will be rejected with a `NotAllowedError`. Changing that requires figuring out a permission model for system wake lock requests, which, at the moment, is future work.

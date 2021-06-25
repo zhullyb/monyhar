@@ -13,5 +13,5 @@ They are periodically built and pushed to WPT.~~
 not practical for browser developers to sync their WebGPU implementations with
 WPT auto-import and auto-export of these tests. Instead, browsers should pin
 ("vendor") a specific version of the gpuweb/cts repository, and check the built
-files into the browser repository as non-exported wpt tests (like Chromium's
+files into the browser repository as non-exported wpt tests (like Monyhar's
 `wpt_internal`).

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -318,7 +318,7 @@ TEST_F(SignalSenderVerificationTest, DISABLED_TestOwnerStealing) {
   SafeServiceStop(&stealable_test_service);
 }
 
-// Fails on Linux ChromiumOS Tests
+// Fails on Linux MonyharOS Tests
 TEST_F(SignalSenderVerificationTest, DISABLED_TestMultipleObjects) {
   const char kMessage[] = "hello, world";
 

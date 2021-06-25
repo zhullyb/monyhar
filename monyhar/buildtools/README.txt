@@ -1,11 +1,11 @@
-This directory contains hashes of build tools used by Chromium and related
+This directory contains hashes of build tools used by Monyhar and related
 projects. The actual binaries are pulled from Google Storage, normally as part
 of a gclient hook.
 
 This directory also exists as a stand-alone git mirror at
 https://monyhar.googlesource.com/monyhar/src/buildtools/.
 That mirror exists so that the shared build tools can be shared between
-the various Chromium-related projects without each one needing to maintain
+the various Monyhar-related projects without each one needing to maintain
 their own versionining of each binary.
 
 ________________________

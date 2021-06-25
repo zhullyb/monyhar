@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@
 namespace memory_instrumentation {
 
 // Converts the Perfetto GlobalNodeGraph to the corresponding defined in
-// Chromium type GlobalDumpGraph.
+// Monyhar type GlobalDumpGraph.
 //
 // Example usage:
 //
@@ -37,7 +37,7 @@ class GlobalDumpGraphConverter {
       const perfetto::trace_processor::GlobalNodeGraph& input) const;
 
  private:
-  // Map is used during conversion from Perfetto GlobalNodeGraph to Chromium
+  // Map is used during conversion from Perfetto GlobalNodeGraph to Monyhar
   // GlobalDumpGraph. It simplifies finding matching nodes during conversion of
   // graph edges.
   using NodePointerPerfettoToChromeMap =

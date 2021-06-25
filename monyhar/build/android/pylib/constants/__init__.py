@@ -1,4 +1,4 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -196,7 +196,7 @@ def SetBuildType(build_type):
 
 
 def SetOutputDirectory(output_directory):
-  """Set the Chromium output directory.
+  """Set the Monyhar output directory.
 
   This must be called early by scripts that rely on GetOutDirectory() or
   CheckOutputDirectory(). Typically by providing an --output-dir or
@@ -205,22 +205,22 @@ def SetOutputDirectory(output_directory):
   os.environ['CHROMIUM_OUTPUT_DIR'] = output_directory
 
 
-# The message that is printed when the Chromium output directory cannot
+# The message that is printed when the Monyhar output directory cannot
 # be found. Note that CHROMIUM_OUT_DIR and BUILDTYPE are not mentioned
 # intentionally to encourage the use of CHROMIUM_OUTPUT_DIR instead.
 _MISSING_OUTPUT_DIR_MESSAGE = '\
-The Chromium output directory could not be found. Please use an option such as \
+The Monyhar output directory could not be found. Please use an option such as \
 --output-directory to provide it (see --help for details). Otherwise, \
 define the CHROMIUM_OUTPUT_DIR environment variable.'
 
 
 def GetOutDirectory():
-  """Returns the Chromium build output directory.
+  """Returns the Monyhar build output directory.
 
   NOTE: This is determined in the following way:
     - From a previous call to SetOutputDirectory()
     - Otherwise, from the CHROMIUM_OUTPUT_DIR env variable, if it is defined.
-    - Otherwise, from the current Chromium source directory, and a previous
+    - Otherwise, from the current Monyhar source directory, and a previous
       call to SetBuildType() or the BUILDTYPE env variable, in combination
       with the optional CHROMIUM_OUT_DIR env variable.
   """
@@ -238,7 +238,7 @@ def GetOutDirectory():
 
 
 def CheckOutputDirectory():
-  """Checks that the Chromium output directory is set, or can be found.
+  """Checks that the Monyhar output directory is set, or can be found.
 
   If it is not already set, this will also perform a little auto-detection:
 
@@ -276,7 +276,7 @@ def CheckOutputDirectory():
       return
 
     raise Exception(
-        'Chromium output directory not set, and CHROME_HEADLESS detected. ' +
+        'Monyhar output directory not set, and CHROME_HEADLESS detected. ' +
         'However, multiple out dirs exist: %r' % dirs)
 
   raise Exception(_MISSING_OUTPUT_DIR_MESSAGE)

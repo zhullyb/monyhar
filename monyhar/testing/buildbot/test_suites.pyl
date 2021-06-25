@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -3883,7 +3883,7 @@
           # Make Dawn allow "Unsafe APIs" so they can be tested with the WebGPU CTS.
           '--additional-driver-flag=--disable-dawn-features=disallow_unsafe_apis',
           # We need this flag to initialize ANGLE so that we can explicitly tell
-          # Dawn which ANGLE adapter Chromium is using. This will help match the test
+          # Dawn which ANGLE adapter Monyhar is using. This will help match the test
           # usage to be the same as the browser.
           '--additional-driver-flag=--use-gpu-in-tests',
         ],
@@ -3924,7 +3924,7 @@
           # Make Dawn allow "Unsafe APIs" so they can be tested with the WebGPU CTS.
           '--additional-driver-flag=--disable-dawn-features=disallow_unsafe_apis',
           # We need this flag to initialize ANGLE so that we can explicitly tell
-          # Dawn which ANGLE adapter Chromium is using. This will help match the test
+          # Dawn which ANGLE adapter Monyhar is using. This will help match the test
           # usage to be the same as the browser.
           '--additional-driver-flag=--use-gpu-in-tests',
         ],
@@ -3968,7 +3968,7 @@
           # Make Dawn allow "Unsafe APIs" so they can be tested with the WebGPU CTS.
           '--additional-driver-flag=--disable-dawn-features=disallow_unsafe_apis',
           # We need this flag to initialize ANGLE so that we can explicitly tell
-          # Dawn which ANGLE adapter Chromium is using. This will help match the test
+          # Dawn which ANGLE adapter Monyhar is using. This will help match the test
           # usage to be the same as the browser.
           '--additional-driver-flag=--use-gpu-in-tests',
         ],
@@ -6122,7 +6122,7 @@
       'gpu_common_gtests_passthrough',
     ],
 
-    # GPU gtests that test Dawn and integration with Chromium
+    # GPU gtests that test Dawn and integration with Monyhar
     # These tests are run both on the CI and trybots which test DEPS Dawn.
     'gpu_dawn_integration_gtests_passthrough': [
       'gpu_dawn_gtests',
@@ -6130,7 +6130,7 @@
       'gpu_common_gtests_passthrough',
     ],
 
-    # GPU gtests that test Dawn and integration with Chromium
+    # GPU gtests that test Dawn and integration with Monyhar
     # These tests are run both on the CI and trybots which test DEPS Dawn.
     'gpu_dawn_integration_gtests_passthrough_win_intel': [
       'gpu_dawn_gtests',

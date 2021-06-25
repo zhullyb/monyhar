@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -369,7 +369,7 @@ ConfirmQuitPanelController* g_confirmQuitPanelController = nil;
 // This returns the NSMenuItem that quits the application.
 + (NSMenuItem*)quitMenuItem {
   NSMenu* mainMenu = [NSApp mainMenu];
-  // Get the application menu (i.e. Chromium).
+  // Get the application menu (i.e. Monyhar).
   NSMenu* appMenu = [[mainMenu itemAtIndex:0] submenu];
   for (NSMenuItem* item in [appMenu itemArray]) {
     // Find the Quit item.

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -160,7 +160,7 @@ void ServiceController::Initialize(
       config->spoken_feedback_enabled);
 
   CreateAndRegisterDeviceStateListener();
-  CreateAndRegisterChromiumApiDelegate(std::move(url_loader_factory));
+  CreateAndRegisterMonyharApiDelegate(std::move(url_loader_factory));
 
   SetServerExperiments(assistant_manager_internal());
 
@@ -320,22 +320,22 @@ void ServiceController::CreateAndRegisterDeviceStateListener() {
   assistant_manager()->AddDeviceStateListener(device_state_listener_.get());
 }
 
-void ServiceController::CreateAndRegisterChromiumApiDelegate(
+void ServiceController::CreateAndRegisterMonyharApiDelegate(
     mojo::PendingRemote<network::mojom::URLLoaderFactory>
         url_loader_factory_remote) {
-  CreateChromiumApiDelegate(std::move(url_loader_factory_remote));
+  CreateMonyharApiDelegate(std::move(url_loader_factory_remote));
 
   assistant_manager_internal()
       ->GetFuchsiaApiHelperOrDie()
       ->SetChromeOSApiDelegate(monyhar_api_delegate_.get());
 }
 
-void ServiceController::CreateChromiumApiDelegate(
+void ServiceController::CreateMonyharApiDelegate(
     mojo::PendingRemote<network::mojom::URLLoaderFactory>
         url_loader_factory_remote) {
   DCHECK(!monyhar_api_delegate_);
 
-  monyhar_api_delegate_ = std::make_unique<ChromiumApiDelegate>(
+  monyhar_api_delegate_ = std::make_unique<MonyharApiDelegate>(
       CreatePendingURLLoaderFactory(std::move(url_loader_factory_remote)));
 }
 

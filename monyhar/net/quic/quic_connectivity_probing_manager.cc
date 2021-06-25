@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Chromium Authors. All rights reserved.
+// Copyright (c) 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -72,7 +72,7 @@ QuicConnectivityProbingManager::~QuicConnectivityProbingManager() {
 
 int QuicConnectivityProbingManager::HandleWriteError(
     int error_code,
-    scoped_refptr<QuicChromiumPacketWriter::ReusableIOBuffer> packet) {
+    scoped_refptr<QuicMonyharPacketWriter::ReusableIOBuffer> packet) {
   // Write error on the probing network is not recoverable.
   DVLOG(1) << "Probing packet encounters write error";
   // Post a task to notify |delegate_| that this probe failed and cancel
@@ -126,8 +126,8 @@ void QuicConnectivityProbingManager::StartProbing(
     NetworkChangeNotifier::NetworkHandle network,
     const quic::QuicSocketAddress& peer_address,
     std::unique_ptr<DatagramClientSocket> socket,
-    std::unique_ptr<QuicChromiumPacketWriter> writer,
-    std::unique_ptr<QuicChromiumPacketReader> reader,
+    std::unique_ptr<QuicMonyharPacketWriter> writer,
+    std::unique_ptr<QuicMonyharPacketReader> reader,
     base::TimeDelta initial_timeout,
     const NetLogWithSource& net_log) {
   DCHECK(peer_address != quic::QuicSocketAddress());

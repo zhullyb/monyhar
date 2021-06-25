@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -206,7 +206,7 @@ class WebUITabStripWebView : public views::WebView {
   bool CanDragEnter(content::WebContents* source,
                     const content::DropData& data,
                     blink::DragOperationsMask operations_allowed) override {
-    // TODO(crbug.com/1032592): Prevent dragging across Chromium instances.
+    // TODO(crbug.com/1032592): Prevent dragging across Monyhar instances.
     if (data.custom_data.find(base::ASCIIToUTF16(kWebUITabIdDataType)) !=
         data.custom_data.end()) {
       int tab_id;

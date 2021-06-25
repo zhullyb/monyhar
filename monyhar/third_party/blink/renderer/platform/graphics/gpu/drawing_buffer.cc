@@ -117,7 +117,7 @@ scoped_refptr<DrawingBuffer> DrawingBuffer::Create(
     bool want_antialiasing,
     PreserveDrawingBuffer preserve,
     WebGLVersion webgl_version,
-    ChromiumImageUsage monyhar_image_usage,
+    MonyharImageUsage monyhar_image_usage,
     SkFilterQuality filter_quality,
     const CanvasColorParams& color_params,
     gl::GpuPreference gpu_preference) {
@@ -192,7 +192,7 @@ DrawingBuffer::DrawingBuffer(
     WebGLVersion webgl_version,
     bool want_depth,
     bool want_stencil,
-    ChromiumImageUsage monyhar_image_usage,
+    MonyharImageUsage monyhar_image_usage,
     SkFilterQuality filter_quality,
     const CanvasColorParams& color_params,
     gl::GpuPreference gpu_preference)
@@ -599,7 +599,7 @@ void DrawingBuffer::MailboxReleasedGpu(scoped_refptr<ColorBuffer> color_buffer,
   // Creation of image backed mailboxes is very expensive, so be less
   // aggressive about pruning them. Pruning is done in FIFO order.
   size_t cache_limit = kDefaultColorBufferCacheLimit;
-  if (ShouldUseChromiumImage())
+  if (ShouldUseMonyharImage())
     cache_limit = 4;
   while (recycled_color_buffer_queue_.size() >= cache_limit)
     recycled_color_buffer_queue_.TakeLast();
@@ -881,7 +881,7 @@ bool DrawingBuffer::Initialize(const IntSize& size, bool use_multisampling) {
   texture_target_ = GL_TEXTURE_2D;
 
 #if defined(OS_MAC)
-  if (ShouldUseChromiumImage()) {
+  if (ShouldUseMonyharImage()) {
     // A CHROMIUM_image backed texture requires a specialized set of parameters
     // on OSX.
     texture_target_ = gpu::GetPlatformSpecificTextureTarget();
@@ -915,7 +915,7 @@ bool DrawingBuffer::Initialize(const IntSize& size, bool use_multisampling) {
       //  - FramebufferBlit is invalid to multisample renderbuffers
       allocate_alpha_channel_ = true;
       have_alpha_channel_ = true;
-    } else if (ShouldUseChromiumImage() && ContextProvider()
+    } else if (ShouldUseMonyharImage() && ContextProvider()
                                                ->GetCapabilities()
                                                .monyhar_image_rgb_emulation) {
       // This configuration avoids the above issues by
@@ -1166,7 +1166,7 @@ bool DrawingBuffer::ResizeDefaultFramebuffer(const IntSize& size) {
   // the non-premultiplied rendering results. These will be copied into the GMB
   // via CopySubTextureCHROMIUM, performing the premultiplication step then.
   // This also applies to swap chains which are exported via AsCanvasResource().
-  if ((ShouldUseChromiumImage() || UsingSwapChain()) &&
+  if ((ShouldUseMonyharImage() || UsingSwapChain()) &&
       allocate_alpha_channel_ && !premultiplied_alpha_) {
     gpu::SharedImageInterface* sii = ContextProvider()->SharedImageInterface();
     state_restorer_->SetTextureBindingDirty();
@@ -1715,7 +1715,7 @@ scoped_refptr<DrawingBuffer::ColorBuffer> DrawingBuffer::CreateColorBuffer(
     back_buffer_mailbox = mailboxes.back_buffer;
     front_buffer_mailbox = mailboxes.front_buffer;
   } else {
-    if (ShouldUseChromiumImage()) {
+    if (ShouldUseMonyharImage()) {
       gfx::BufferFormat buffer_format;
       if (allocate_alpha_channel_) {
         buffer_format = use_half_float_storage_ ? gfx::BufferFormat::RGBA_F16
@@ -1749,11 +1749,11 @@ scoped_refptr<DrawingBuffer::ColorBuffer> DrawingBuffer::CreateColorBuffer(
     // allocation above failed.
     if (!gpu_memory_buffer) {
       // We want to set the correct SkAlphaType on the new shared image but in
-      // the case of ShouldUseChromiumImage() we instead keep this buffer
+      // the case of ShouldUseMonyharImage() we instead keep this buffer
       // premultiplied, draw to |premultiplied_alpha_false_mailbox_|, and
       // convert during copy.
       SkAlphaType alpha_type = kPremul_SkAlphaType;
-      if (!ShouldUseChromiumImage() && !premultiplied_alpha_)
+      if (!ShouldUseMonyharImage() && !premultiplied_alpha_)
         alpha_type = kUnpremul_SkAlphaType;
 
       back_buffer_mailbox = sii->CreateSharedImage(
@@ -1947,9 +1947,9 @@ DrawingBuffer::ScopedStateRestorer::~ScopedStateRestorer() {
     client->DrawingBufferClientRestorePixelPackBufferBinding();
 }
 
-bool DrawingBuffer::ShouldUseChromiumImage() {
-  return RuntimeEnabledFeatures::WebGLImageChromiumEnabled() &&
-         monyhar_image_usage_ == kAllowChromiumImage &&
+bool DrawingBuffer::ShouldUseMonyharImage() {
+  return RuntimeEnabledFeatures::WebGLImageMonyharEnabled() &&
+         monyhar_image_usage_ == kAllowMonyharImage &&
          Platform::Current()->GetGpuMemoryBufferManager();
 }
 

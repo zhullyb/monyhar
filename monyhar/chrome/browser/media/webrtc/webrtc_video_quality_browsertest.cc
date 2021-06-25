@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -330,7 +330,7 @@ INSTANTIATE_TEST_SUITE_P(WebRtcVideoQualityBrowserTests,
                          WebRtcVideoQualityBrowserTest,
                          testing::ValuesIn(kVideoConfigurations));
 
-// WebRTC's frame_analyzer doesn't build from a Chromium's component build.
+// WebRTC's frame_analyzer doesn't build from a Monyhar's component build.
 #if defined(COMPONENT_BUILD)
 #define MAYBE_MANUAL_TestVideoQualityVp8 DISABLED_MANUAL_TestVideoQualityVp8
 #else
@@ -342,7 +342,7 @@ IN_PROC_BROWSER_TEST_P(WebRtcVideoQualityBrowserTest,
   TestVideoQuality("VP8", false /* prefer_hw_video_codec */);
 }
 
-// Flaky on windows and WebRTC's frame_analyzer doesn't build from a Chromium's
+// Flaky on windows and WebRTC's frame_analyzer doesn't build from a Monyhar's
 // component build.
 // TODO(crbug.com/1008766): re-enable when flakiness is investigated, diagnosed
 // and resolved.
@@ -360,7 +360,7 @@ IN_PROC_BROWSER_TEST_P(WebRtcVideoQualityBrowserTest,
 #if BUILDFLAG(RTC_USE_H264)
 
 // Flaky on mac (crbug.com/754684) and WebRTC's frame_analyzer doesn't build
-// from a Chromium's component build.
+// from a Monyhar's component build.
 #if defined(OS_MAC) || defined(COMPONENT_BUILD)
 #define MAYBE_MANUAL_TestVideoQualityH264 DISABLED_MANUAL_TestVideoQualityH264
 #else

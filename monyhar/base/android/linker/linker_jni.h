@@ -1,10 +1,10 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This is the Android-specific Chromium linker, a tiny shared library
+// This is the Android-specific Monyhar linker, a tiny shared library
 // implementing a custom dynamic linker that can be used to load the
-// real Chromium libraries.
+// real Monyhar libraries.
 
 // The main point of this linker is to be able to share the RELRO
 // section of libcontentshell.so (or equivalent) between the browser and
@@ -28,7 +28,7 @@
 // in base/ which hasn't been loaded yet.
 #define DEBUG 0
 
-#define TAG "cr_ChromiumAndroidLinker"
+#define TAG "cr_MonyharAndroidLinker"
 
 #if DEBUG
 #define LOG_INFO(FORMAT, ...)                                             \

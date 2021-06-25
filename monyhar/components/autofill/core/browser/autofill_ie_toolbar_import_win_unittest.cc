@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -31,9 +31,9 @@ bool ImportCurrentUserProfiles(const std::string& app_locale,
 
 namespace {
 
-const wchar_t kUnitTestRegistrySubKey[] = L"SOFTWARE\\Chromium Unit Tests";
+const wchar_t kUnitTestRegistrySubKey[] = L"SOFTWARE\\Monyhar Unit Tests";
 const wchar_t kUnitTestUserOverrideSubKey[] =
-    L"SOFTWARE\\Chromium Unit Tests\\HKCU Override";
+    L"SOFTWARE\\Monyhar Unit Tests\\HKCU Override";
 
 const wchar_t kProfileKey[] =
     L"Software\\Google\\Google Toolbar\\4.0\\Autofill\\Profiles";

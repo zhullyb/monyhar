@@ -2182,7 +2182,7 @@ Verdiene for denne regelen og WebUsbAllowDevicesForUrls-regelen slås sammen.</t
 <translation id="5148753489738115745">Lar deg spesifisere ytterligere parametere som brukes når <ph name="PRODUCT_FRAME_NAME" /> kjører <ph name="PRODUCT_NAME" />.
 
           Hvis denne tillatelsen ikke er angitt, blir standardkommandolinjen brukt.</translation>
-<translation id="5152787786897382519">Både Chromium og Google Chrome har enkelte regelgrupper som avhenger av hverandre for å gi kontroll over funksjoner. Disse settene representeres av de følgende regelgruppene. Siden regler kan ha flere kilder, brukes kun verdier fra kilden som har høyest prioritet. Verdier fra kilder med lavere prioritet i samme gruppe ignoreres. Prioritetsrekkefølgen er definert i <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Både Monyhar og Google Chrome har enkelte regelgrupper som avhenger av hverandre for å gi kontroll over funksjoner. Disse settene representeres av de følgende regelgruppene. Siden regler kan ha flere kilder, brukes kun verdier fra kilden som har høyest prioritet. Verdier fra kilder med lavere prioritet i samme gruppe ignoreres. Prioritetsrekkefølgen er definert i <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Hvor ofte (i millisekunder) nettverkspakker for overvåking sendes.
 
       Hvis denne regelen ikke er spesifisert, er standardintervallet 3 minutter.
@@ -3872,7 +3872,7 @@ MERK: Frem til versjon 45 ble denne regelen bare støttet i kioskmodus.</transla
       Hvis innstillingen ikke angis, bruker <ph name="PRODUCT_OS_NAME" /> ID-en for e-postkontoen til enhetens lokale konto som skjermnavn på påloggingsskjermen.
 
       Denne innstillingen ignoreres for vanlige brukerkontoer.</translation>
-<translation id="8259375588339409826">Både Chromium og Google Chrome støtter det samme settet med regler. Merk at dette dokumentet kan inneholde upubliserte regler (dvs. at reglenes «Støttes på»-informasjon kan vise til en upublisert versjon av <ph name="PRODUCT_NAME" />) som kan endres eller fjernes uten varsel. Det gis ingen garantier av noe slag, verken i forbindelse med sikkerhet, personvern eller annet, for slike upubliserte regler.
+<translation id="8259375588339409826">Både Monyhar og Google Chrome støtter det samme settet med regler. Merk at dette dokumentet kan inneholde upubliserte regler (dvs. at reglenes «Støttes på»-informasjon kan vise til en upublisert versjon av <ph name="PRODUCT_NAME" />) som kan endres eller fjernes uten varsel. Det gis ingen garantier av noe slag, verken i forbindelse med sikkerhet, personvern eller annet, for slike upubliserte regler.
 
 Disse reglene er kun ment å brukes for å konfigurere forekomster av <ph name="PRODUCT_NAME" /> internt i organisasjonen din. Bruk av disse reglene utenfor organisasjonen (for eksempel i et offentlig distribuert program) regnes som skadelig programvare og blir sannsynligvis merket som skadelig programvare av Google og antivirus-leverandører.
 

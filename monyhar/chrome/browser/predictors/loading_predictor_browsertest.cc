@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -83,7 +83,7 @@ using testing::SizeIs;
 
 namespace predictors {
 
-const char kChromiumUrl[] = "http://monyhar.org";
+const char kMonyharUrl[] = "http://monyhar.org";
 
 const char kHtmlSubresourcesPath[] = "/predictors/html_subresources.html";
 // The embedded test server runs on test.com.
@@ -1041,9 +1041,9 @@ IN_PROC_BROWSER_TEST_F(LoadingPredictorBrowserTest, DnsPrefetch) {
   net::NetworkIsolationKey network_isolation_key(origin, origin);
   ui_test_utils::NavigateToURL(browser(), url);
   preconnect_manager_observer()->WaitUntilHostLookedUp(
-      GURL(kChromiumUrl).host(), network_isolation_key);
+      GURL(kMonyharUrl).host(), network_isolation_key);
   EXPECT_TRUE(preconnect_manager_observer()->HostFound(
-      GURL(kChromiumUrl).host(), network_isolation_key));
+      GURL(kMonyharUrl).host(), network_isolation_key));
 }
 
 // Tests that preconnect warms up a socket connection to a test server.

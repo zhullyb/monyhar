@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -31,16 +31,16 @@ public class LocaleUtils {
     }
 
     /**
-     * Java keeps deprecated language codes for Hebrew, Yiddish and Indonesian but Chromium uses
-     * updated ones. Similarly, Android uses "tl" while Chromium uses "fil" for Tagalog/Filipino.
+     * Java keeps deprecated language codes for Hebrew, Yiddish and Indonesian but Monyhar uses
+     * updated ones. Similarly, Android uses "tl" while Monyhar uses "fil" for Tagalog/Filipino.
      * So apply a mapping here.
      * See http://developer.android.com/reference/java/util/Locale.html
-     * @return a updated language code for Chromium with given language string.
+     * @return a updated language code for Monyhar with given language string.
      */
-    public static String getUpdatedLanguageForChromium(String language) {
+    public static String getUpdatedLanguageForMonyhar(String language) {
         // IMPORTANT: Keep in sync with the mapping found in:
         // build/android/gyp/util/resource_utils.py (Yiddish and Javanese are not possible Android
-        // languages but are possible Chromium languages, they do not need to be kept in sync).
+        // languages but are possible Monyhar languages, they do not need to be kept in sync).
         switch (language) {
             case "iw":
                 return "he"; // Hebrew
@@ -58,14 +58,14 @@ public class LocaleUtils {
     }
 
     /**
-     * @return a locale with updated language codes for Chromium, with translated modern language
-     *         codes used by Chromium.
+     * @return a locale with updated language codes for Monyhar, with translated modern language
+     *         codes used by Monyhar.
      */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @VisibleForTesting
-    public static Locale getUpdatedLocaleForChromium(Locale locale) {
+    public static Locale getUpdatedLocaleForMonyhar(Locale locale) {
         String language = locale.getLanguage();
-        String languageForChrome = getUpdatedLanguageForChromium(language);
+        String languageForChrome = getUpdatedLanguageForMonyhar(language);
         if (languageForChrome.equals(language)) {
             return locale;
         }
@@ -73,7 +73,7 @@ public class LocaleUtils {
     }
 
     /**
-     * Android uses "tl" while Chromium uses "fil" for Tagalog/Filipino.
+     * Android uses "tl" while Monyhar uses "fil" for Tagalog/Filipino.
      * So apply a mapping here.
      * See http://developer.android.com/reference/java/util/Locale.html
      * @return a updated language code for Android with given language string.
@@ -93,7 +93,7 @@ public class LocaleUtils {
 
     /**
      * @return a locale with updated language codes for Android, from translated modern language
-     *         codes used by Chromium.
+     *         codes used by Monyhar.
      */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @VisibleForTesting
@@ -156,7 +156,7 @@ public class LocaleUtils {
      *         represents this locale.
      */
     public static String toLanguageTag(Locale locale) {
-        String language = getUpdatedLanguageForChromium(locale.getLanguage());
+        String language = getUpdatedLanguageForMonyhar(locale.getLanguage());
         String country = locale.getCountry();
         if (language.equals("no") && country.equals("NO") && locale.getVariant().equals("NY")) {
             return "nn-NO";
@@ -174,7 +174,7 @@ public class LocaleUtils {
     public static String toLanguageTags(LocaleList localeList) {
         ArrayList<String> newLocaleList = new ArrayList<>();
         for (int i = 0; i < localeList.size(); i++) {
-            Locale locale = getUpdatedLocaleForChromium(localeList.get(i));
+            Locale locale = getUpdatedLocaleForMonyhar(localeList.get(i));
             newLocaleList.add(toLanguageTag(locale));
         }
         return TextUtils.join(",", newLocaleList);

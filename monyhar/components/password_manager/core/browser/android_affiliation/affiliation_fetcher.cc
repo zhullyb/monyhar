@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -51,7 +51,7 @@ void AffiliationFetcher::StartRequest(const std::vector<FacetURI>& facet_uris,
           setting:
             "Users can enable or disable this feature either by stoping "
             "syncing passwords to Google (via unchecking 'Passwords' in "
-            "Chromium's settings under 'Sign In', 'Advanced sync settings') or "
+            "Monyhar's settings under 'Sign In', 'Advanced sync settings') or "
             "by introducing a custom passphrase to disable this service. The "
             "feature is enabled by default."
           chrome_policy {

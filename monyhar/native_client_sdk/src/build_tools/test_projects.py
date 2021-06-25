@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -129,7 +129,7 @@ def GetBrowserTesterCommand(desc, toolchain, config):
   ]
 
   args.extend(['--serving_dir', GetServingDirForProject(desc)])
-  # Fall back on the example directory in the Chromium repo, to find test.js.
+  # Fall back on the example directory in the Monyhar repo, to find test.js.
   args.extend(['--serving_dir', GetRepoServingDirForProject(desc)])
   # If it is not found there, fall back on the dummy one (in this directory.)
   args.extend(['--serving_dir', SCRIPT_DIR])

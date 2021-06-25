@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">المكتبة الأساسية</translation>
 <translation id="443560535555262820">فتح إعدادات "أدوات تمكين الوصول" المفضّلة</translation>
 <translation id="4450893287417543264">عدم الإظهار مرة أخرى</translation>
-<translation id="4512952200932940229">‏حقوق الطبع والنشر The Chromium Authors لعام 2021. جميع الحقوق محفوظة.</translation>
+<translation id="4512952200932940229">‏حقوق الطبع والنشر The Monyhar Authors لعام 2021. جميع الحقوق محفوظة.</translation>
 <translation id="4513946894732546136">ملاحظات</translation>
 <translation id="4563926062592110512">تم إلغاء ربط العميل: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">الأجهزة عن بُعد</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">يُرجى إدخال رقم التعريف الشخصي لجهاز الكمبيوتر البعيد.</translation>
 <translation id="7895403300744144251">لا تسمح سياسات الأمان على جهاز الكمبيوتر البعيد بالاتصالات من حسابك.</translation>
 <translation id="7936528439960309876">إرساء إلى اليسار</translation>
-<translation id="7970576581263377361">‏تعذّرت المصادقة.يُرجى تسجيل الدخول إلى Chromium مرة أخرى.</translation>
+<translation id="7970576581263377361">‏تعذّرت المصادقة.يُرجى تسجيل الدخول إلى Monyhar مرة أخرى.</translation>
 <translation id="7981525049612125370">انتهت صلاحية الجلسة البعيدة.</translation>
 <translation id="8038111231936746805">(تلقائي)</translation>
 <translation id="8041089156583427627">إرسال تعليقات</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737">منح إذن "تسجيل الشاشة" إلى <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">إعداد المضيف غير صالح.</translation>
 <translation id="981121421437150478">بلا اتصال</translation>
-<translation id="985602178874221306">The Chromium Authors</translation>
+<translation id="985602178874221306">The Monyhar Authors</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (آخر دخول على الإنترنت في تمام <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

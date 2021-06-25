@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -123,7 +123,7 @@ void CanvasRenderingContextHost::CreateCanvasResourceProvider3D() {
     // in such mode. It will first try a PassThrough provider and, if that is
     // not possible, it will try a SharedImage with the appropriate flags.
     if ((RenderingContext() && RenderingContext()->UsingSwapChain()) ||
-        RuntimeEnabledFeatures::WebGLImageChromiumEnabled()) {
+        RuntimeEnabledFeatures::WebGLImageMonyharEnabled()) {
       // If either SwapChain is enabled or WebGLImage mode is enabled, we can
       // try a passthrough provider.
       DCHECK(LowLatencyEnabled());
@@ -134,10 +134,10 @@ void CanvasRenderingContextHost::CreateCanvasResourceProvider3D() {
     }
     if (!provider) {
       // If PassThrough failed, try a SharedImage with usage display enabled,
-      // and if WebGLImageChromium is enabled, add concurrent read write and
+      // and if WebGLImageMonyhar is enabled, add concurrent read write and
       // usage scanout (overlay).
       uint32_t shared_image_usage_flags = gpu::SHARED_IMAGE_USAGE_DISPLAY;
-      if (RuntimeEnabledFeatures::WebGLImageChromiumEnabled()) {
+      if (RuntimeEnabledFeatures::WebGLImageMonyharEnabled()) {
         shared_image_usage_flags |= gpu::SHARED_IMAGE_USAGE_SCANOUT;
         shared_image_usage_flags |=
             gpu::SHARED_IMAGE_USAGE_CONCURRENT_READ_WRITE;
@@ -151,9 +151,9 @@ void CanvasRenderingContextHost::CreateCanvasResourceProvider3D() {
   } else if (SharedGpuContext::IsGpuCompositingEnabled()) {
     // If there is no LawLatency mode, and GPU is enabled, will try a GPU
     // SharedImage that should support Usage Display and probably Usage Canbout
-    // if WebGLImageChromium is enabled.
+    // if WebGLImageMonyhar is enabled.
     uint32_t shared_image_usage_flags = gpu::SHARED_IMAGE_USAGE_DISPLAY;
-    if (RuntimeEnabledFeatures::WebGLImageChromiumEnabled()) {
+    if (RuntimeEnabledFeatures::WebGLImageMonyharEnabled()) {
       shared_image_usage_flags |= gpu::SHARED_IMAGE_USAGE_SCANOUT;
     }
     provider = CanvasResourceProvider::CreateSharedImageProvider(
@@ -219,9 +219,9 @@ void CanvasRenderingContextHost::CreateCanvasResourceProvider2D(
     // Concurrent Read and Write if possible.
     if (!provider) {
       uint32_t shared_image_usage_flags = gpu::SHARED_IMAGE_USAGE_DISPLAY;
-      if (RuntimeEnabledFeatures::Canvas2dImageChromiumEnabled() ||
+      if (RuntimeEnabledFeatures::Canvas2dImageMonyharEnabled() ||
           base::FeatureList::IsEnabled(
-              features::kLowLatencyCanvas2dImageChromium)) {
+              features::kLowLatencyCanvas2dImageMonyhar)) {
         shared_image_usage_flags |= gpu::SHARED_IMAGE_USAGE_SCANOUT;
         shared_image_usage_flags |=
             gpu::SHARED_IMAGE_USAGE_CONCURRENT_READ_WRITE;
@@ -237,14 +237,14 @@ void CanvasRenderingContextHost::CreateCanvasResourceProvider2D(
     // hardware compositing, we also try to enable the usage of the image as
     // scanout buffer (overlay)
     uint32_t shared_image_usage_flags = gpu::SHARED_IMAGE_USAGE_DISPLAY;
-    if (RuntimeEnabledFeatures::Canvas2dImageChromiumEnabled())
+    if (RuntimeEnabledFeatures::Canvas2dImageMonyharEnabled())
       shared_image_usage_flags |= gpu::SHARED_IMAGE_USAGE_SCANOUT;
     provider = CanvasResourceProvider::CreateSharedImageProvider(
         Size(), FilterQuality(), resource_params,
         CanvasResourceProvider::ShouldInitialize::kCallClear,
         SharedGpuContext::ContextProviderWrapper(), RasterMode::kGPU,
         is_origin_top_left, shared_image_usage_flags);
-  } else if (RuntimeEnabledFeatures::Canvas2dImageChromiumEnabled()) {
+  } else if (RuntimeEnabledFeatures::Canvas2dImageMonyharEnabled()) {
     const uint32_t shared_image_usage_flags =
         gpu::SHARED_IMAGE_USAGE_DISPLAY | gpu::SHARED_IMAGE_USAGE_SCANOUT;
     provider = CanvasResourceProvider::CreateSharedImageProvider(

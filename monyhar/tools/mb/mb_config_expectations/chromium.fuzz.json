@@ -88,7 +88,7 @@
       "use_goma": true
     }
   },
-  "ChromiumOS ASAN Release": {
+  "MonyharOS ASAN Release": {
     "gn_args": {
       "enable_ipc_fuzzer": true,
       "is_asan": true,

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -214,7 +214,7 @@ TEST_F(GoogleAPIKeysTest, OfficialKeys) {
 #define BUILDFLAG_INTERNAL_GOOGLE_CHROME_BRANDING() (0)
 #undef USE_OFFICIAL_GOOGLE_API_KEYS
 
-// Test the set of keys temporarily baked into Chromium by default.
+// Test the set of keys temporarily baked into Monyhar by default.
 namespace default_keys {
 
 // We start every test by creating a clean environment for the

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -84,7 +84,7 @@ ChromeVoxEventWatcherUnitTest.prototype = {
   }
 };
 
-// Flaky on Chromium OS: https://crbug.com/912390.
+// Flaky on Monyhar OS: https://crbug.com/912390.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_ButtonFocusFeedback', function() {
   this.loadHtml('<div> <button id="alpha">Alpha</button> </div>');
   this.setFocus('alpha');
@@ -114,7 +114,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'FocusLinksBackwards', function() {
 /**
  * Test feedback when an editable text field gets focus.
  */
-// Flaky on Chromium OS: crbug.com/622387, crbug.com/912390.
+// Flaky on Monyhar OS: crbug.com/622387, crbug.com/912390.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_TextFocusFeedback', function() {
   this.loadHtml('<div>' +
       '<label for="mytext">Label</label>' +
@@ -128,7 +128,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_TextFocusFeedback', function()
 /**
  * Test feedback when a contenteditable field gets focus.
  */
-// Flaky on Chromium OS: crbug.com/622387.
+// Flaky on Monyhar OS: crbug.com/622387.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_ContentEditableFocusFeedback',
        function() {
   this.loadHtml('<div>' +
@@ -144,7 +144,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_ContentEditableFocusFeedback',
  * Test feedback when an item in an dialog receives focus and then focus
  *     leaves the dialog.
  */
-// Flaky on Chromium OS: crbug.com/622387.
+// Flaky on Monyhar OS: crbug.com/622387.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_DialogFeedback', function() {
   this.loadHtml('<div>' +
       '<button id="show">Show</button>' +
@@ -171,7 +171,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_DialogFeedback', function() {
 /**
  * Test feedback when an item in an alert dialog receives focus.
  */
-// Flaky on Chromium OS: crbug.com/622387.
+// Flaky on Monyhar OS: crbug.com/622387.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_AlertDialogFeedback', function() {
   this.loadHtml('<div>' +
       '<div role="alertdialog">' +
@@ -193,7 +193,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_AlertDialogFeedback', function
  * quickly - make sure the notification that we entered the dialog
  * isn't interrupted.
  */
-// Flaky on Chromium OS: crbug.com/622387, crbug.com/912390.
+// Flaky on Monyhar OS: crbug.com/622387, crbug.com/912390.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_DoubleFocusAlertDialogFeedback',
     function() {
   this.loadHtml('<div>' +
@@ -254,7 +254,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'CloseDialogTabRecovery', function() {
 /**
  * Test feedback when a list box with an active descendant receives focus.
  */
-// Flaky on Chromium OS: crbug.com/622387.
+// Flaky on Monyhar OS: crbug.com/622387.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_ListBoxFeedback', function() {
   this.loadHtml('<div>' +
       '<p id="before">My listbox</p>' +
@@ -286,7 +286,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_ListBoxFeedback', function() {
 /**
  * Test feedback when the items of a list box receive focus.
  */
-// Flaky on Chromium OS: https://crbug.com/912390.
+// Flaky on Monyhar OS: https://crbug.com/912390.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_ListBoxOptionFeedback', function() {
   this.loadHtml('<div>' +
       '<p id="before">My listbox</p>' +
@@ -343,7 +343,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'ListBoxOptionFeedbackWithFocus',
  * The low-level details are tested in editable_text_test.js, this is
  * a higher-level test of how that code interacts with the event watcher.
  */
-// Flaky on Chromium OS: https://crbug.com/912390.
+// Flaky on Monyhar OS: https://crbug.com/912390.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_EditableText', function() {
   cvox.ChromeVoxEditableTextBase.eventTypingEcho = false;
   this.loadHtml('<div>' +
@@ -445,7 +445,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'EditableTextListboxUpdatingInput',
 /**
  * Tests navigating through a multiline text area.
  */
-// Flaky on Chromium OS: crbug.com/622387.
+// Flaky on Monyhar OS: crbug.com/622387.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_MultilineNavigation', function() {
   this.loadHtml('<div> <textarea id="area">' +
       'one' +
@@ -503,7 +503,7 @@ SYNC_TEST_F('ChromeVoxEventWatcherUnitTest', 'ShouldWaitToProcess', function() {
  * Test that no feedback is received for events that fire on elements
  * that are hidden (or the descendant of a hidden element).
  */
-// Flaky on Chromium OS: https://crbug.com/919033.
+// Flaky on Monyhar OS: https://crbug.com/919033.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_AriaHiddenFeedback', function() {
   this.loadHtml('<div>' +
       '<div>' +
@@ -687,7 +687,7 @@ TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_DateWidget', function() {
  * Test that ChromeVox speaks the correct state when a focused control
  * changes as the result of a key up, not just key down.
  */
-// Flaky on Chromium OS: crbug.com/622387, crbug.com/912390.
+// Flaky on Monyhar OS: crbug.com/622387, crbug.com/912390.
 TEST_F('ChromeVoxEventWatcherUnitTest', 'DISABLED_ToggleOnKeyUp', function() {
   this.loadHtml('<div>' +
       '<div tabIndex=0 id="pressable" role="button" aria-pressed="false">' +

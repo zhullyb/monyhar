@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -73,7 +73,7 @@ void SetNonMainDexJniRegistrationHook(
 void RecordLibraryLoaderRendererHistograms() {
   // Record how long it took to load the shared libraries.
   UMA_HISTOGRAM_TIMES(
-      "ChromiumAndroidLinker.RendererLoadTime",
+      "MonyharAndroidLinker.RendererLoadTime",
       base::TimeDelta::FromMilliseconds(g_renderer_library_load_time_ms));
 }
 

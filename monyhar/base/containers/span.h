@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -213,7 +213,7 @@ constexpr size_t must_not_be_dynamic_extent() {
 // --------------------------------
 //
 // http://eel.is/c++draft/views contains the latest C++20 draft of std::span.
-// Chromium tries to follow the draft as close as possible. Differences between
+// Monyhar tries to follow the draft as close as possible. Differences between
 // the draft and the implementation are documented in subsections below.
 //
 // Differences from [span.objectrep]:
@@ -230,7 +230,7 @@ constexpr size_t must_not_be_dynamic_extent() {
 //   ([[nodiscard]] is a C++17 feature)
 //
 // Furthermore, all constructors and methods are marked noexcept due to the lack
-// of exceptions in Chromium.
+// of exceptions in Monyhar.
 //
 // Due to the lack of class template argument deduction guides in C++14
 // appropriate make_span() utility functions are provided.

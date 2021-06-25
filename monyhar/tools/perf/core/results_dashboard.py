@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -162,7 +162,7 @@ def MakeHistogramSetWithDiagnostics(histograms_file,
   add_diagnostics_args = [str(v) for v in add_diagnostics_args]
 
   add_reserved_diagnostics_path = os.path.join(
-      path_util.GetChromiumSrcDir(), 'third_party', 'catapult', 'tracing',
+      path_util.GetMonyharSrcDir(), 'third_party', 'catapult', 'tracing',
       'bin', 'add_reserved_diagnostics')
 
   # This script may write multiple files to output_dir.

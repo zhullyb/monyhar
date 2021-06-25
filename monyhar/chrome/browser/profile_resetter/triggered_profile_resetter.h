@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ class Profile;
 // To use this mechanism from a third party tool, perform the following steps:
 //   1) Create (or open) the registry key
 //      HKCU\Software\$PRODUCT_NAME\TriggeredReset where $PRODUCT_NAME is one
-//      of the values "Google\\Chrome" or "Chromium".
+//      of the values "Google\\Chrome" or "Monyhar".
 //   2) Set a REG_SZ value called "ToolName" to the localized name of the tool.
 //      This string (truncated to kMaxToolNameLength) will be displayed in a
 //      notification UI. The "ToolName" should be just the name of the tool,

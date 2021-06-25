@@ -5,11 +5,11 @@
 ## What is CIPD?
 * CIPD stands for "Chrome Infrastructure Package Deployment".
 * Its code and docs [live within the luci-go project][CIPD].
-* Chromium uses CIPD to avoid checking large binary files into git, which git
+* Monyhar uses CIPD to avoid checking large binary files into git, which git
   does not handle well.
 * gclient supports CIPD packages in the same way as git repositories. They are
   specified in [DEPS] and updated via `gclient sync`.
-* You can [browse Chromium's CIPD repository][browse] online.
+* You can [browse Monyhar's CIPD repository][browse] online.
 
 [CIPD]: https://monyhar.googlesource.com/infra/luci/luci-go/+/main/cipd/README.md
 [DEPS]: /DEPS
@@ -194,7 +194,7 @@ may be like the following.
 
 ```
 #!/bin/bash
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -222,7 +222,7 @@ example can be like the following:
 
 ```
 #!/usr/bin/env python
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -344,7 +344,7 @@ Examples are:
 
 #### Generating cipd.yaml via GN Template:
 The `cipd_package_definition` template in [build/cipd/cipd.gni] can be used to
-create the yaml definition as part of Chromium's normal build process. Declare
+create the yaml definition as part of Monyhar's normal build process. Declare
 a target like:
 ```
 cipd_package_definition("my_cipd_package") {

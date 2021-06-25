@@ -26,7 +26,7 @@ How to update:
 4. Merge the new src/include/freetype/config/ftconfig.h into
    include/freetype-custom-config/ftconfig.h .
 5. Update this file.
-6. Commit build changes while rolling Chromium's freetype DEPS to the
+6. Commit build changes while rolling Monyhar's freetype DEPS to the
    new commit.
 
 Most of the updating can be automated will roll-freetype.sh.

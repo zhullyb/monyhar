@@ -1,6 +1,6 @@
 # Debugging GPU related code
 
-Chromium's GPU system is multi-process, which can make debugging it rather
+Monyhar's GPU system is multi-process, which can make debugging it rather
 difficult. See [GPU Command Buffer] for some of the nitty gitty. These are just
 a few notes to help with debugging.
 
@@ -49,14 +49,14 @@ The output looks like this:
 
 The GPU process logs many errors and warnings. You can see these by navigating
 to `about:gpu`. Logs appear at the bottom of the page. You can also see them
-on standard output if Chromium is run from the command line on Linux/Mac.
+on standard output if Monyhar is run from the command line on Linux/Mac.
 On Windows, you need debugging tools (like VS, WinDbg, etc.) to connect to the
 debug output stream.
 
 **Note:** If `about:gpu` is telling you that your GPU is disabled and
 hardware acceleration is unavailable, it might be a problem with your GPU being
 unsupported. To override this and turn on hardware acceleration anyway, you can
-use the `--ignore-gpu-blocklist` command line option when starting Chromium.
+use the `--ignore-gpu-blocklist` command line option when starting Monyhar.
 
 ### Breaking on GL Error
 
@@ -121,7 +121,7 @@ On Linux this works for me:
 
 On OSX this works for me:
 
-*   `out/Debug/Chromium.app/Contents/MacOSX/Chromium --no-sandbox
+*   `out/Debug/Monyhar.app/Contents/MacOSX/Monyhar --no-sandbox
     --renderer-cmd-prefix="xterm -e gdb --args"
     http://localhost:8000/page-to-repro.html`
 
@@ -225,7 +225,7 @@ On Linux this works for me:
 
 On OSX this works for me:
 
-*   `out/Debug/Chromium.app/Contents/MacOSX/Chromium --no-sandbox
+*   `out/Debug/Monyhar.app/Contents/MacOSX/Monyhar --no-sandbox
     --gpu-launcher="xterm -e gdb --args"
     http://localhost:8000/page-to-repro.html`
 

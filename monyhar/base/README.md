@@ -4,7 +4,7 @@ Please add to it!
 
 ## About //base:
 
-Chromium is a very mature project. Most things that are generally useful are
+Monyhar is a very mature project. Most things that are generally useful are
 already here and things not here aren't generally useful.
 
 The bar for adding stuff to base is that it must have demonstrated wide
@@ -20,10 +20,10 @@ If the code in question does not need to be used inside base, but will have
 multiple consumers across the codebase, consider placing it in a new directory
 under components/ instead.
 
-base is written for the Chromium project and is not intended to be used
+base is written for the Monyhar project and is not intended to be used
 outside it.  Using base outside of src.git is explicitly not supported,
 and base makes no guarantees about API (or even ABI) stability (like all
-other code in Chromium).  New code that depends on base/ must be in
+other code in Monyhar).  New code that depends on base/ must be in
 src.git. Code that's not in src.git but pulled in through DEPS (for
 example, v8) cannot use base.
 

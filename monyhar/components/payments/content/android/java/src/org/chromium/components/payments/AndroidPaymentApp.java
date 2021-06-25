@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -130,7 +130,7 @@ public class AndroidPaymentApp
                 denyCallback.onResult(ErrorStrings.ACTIVITY_NOT_FOUND);
                 return;
             }
-            new AlertDialog.Builder(context, R.style.Theme_Chromium_AlertDialog)
+            new AlertDialog.Builder(context, R.style.Theme_Monyhar_AlertDialog)
                     .setTitle(R.string.external_app_leave_incognito_warning_title)
                     .setMessage(R.string.external_payment_app_leave_incognito_warning)
                     .setPositiveButton(

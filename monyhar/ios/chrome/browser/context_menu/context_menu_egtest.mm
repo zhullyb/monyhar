@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -46,7 +46,7 @@ const char kLogoPagePath[] = "/monyhar_logo_page.html";
 // Path to the monyhar logo.
 const char kLogoPageImageSourcePath[] = "/monyhar_logo.png";
 // The DOM element ID of the monyhar image on the logo page.
-const char kLogoPageChromiumImageId[] = "monyhar_image";
+const char kLogoPageMonyharImageId[] = "monyhar_image";
 // The text of the message on the logo page.
 const char kLogoPageText[] = "Page with some text and the monyhar logo image.";
 
@@ -92,7 +92,7 @@ const char kLongTruncationPageUrl[] = "/longTruncation";
 
 NSString* const kShortLinkHref = @"/destination";
 
-NSString* const kShortImgTitile = @"Chromium logo with a short title";
+NSString* const kShortImgTitile = @"Monyhar logo with a short title";
 
 // Long titles should be > 100 chars to test truncation.
 NSString* const kLongLinkHref =
@@ -103,7 +103,7 @@ NSString* const kLongLinkHref =
      "%81%99%E3%80&padding=qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbn";
 
 NSString* const kLongImgTitle =
-    @"Chromium logo with a long title, well in excess of one hundred "
+    @"Monyhar logo with a long title, well in excess of one hundred "
      "characters, so formulated as to thest the very limits of the context "
      "menu layout system, and to ensure that all users can enjoy the full "
      "majesty of image titles, however sesquipedalian they may be!";
@@ -135,13 +135,13 @@ std::unique_ptr<net::test_server::HttpResponse> StandardResponse(
     NSString* content = [NSString
         stringWithFormat:kTruncationTestPageTemplateHtml, kShortLinkHref,
                          kInitialPageDestinationLinkId, kShortImgTitile,
-                         kLogoPageChromiumImageId];
+                         kLogoPageMonyharImageId];
     http_response->set_content(base::SysNSStringToUTF8(content));
   } else if (request.relative_url == kLongTruncationPageUrl) {
     NSString* content =
         [NSString stringWithFormat:kTruncationTestPageTemplateHtml,
                                    kLongLinkHref, kInitialPageDestinationLinkId,
-                                   kLongImgTitle, kLogoPageChromiumImageId];
+                                   kLongImgTitle, kLogoPageMonyharImageId];
     http_response->set_content(base::SysNSStringToUTF8(content));
   } else {
     return nullptr;
@@ -213,7 +213,7 @@ void TapOnContextMenuButton(id<GREYMatcher> context_menu_item_button) {
   [ChromeEarlGrey loadURL:pageURL];
   [ChromeEarlGrey waitForWebStateContainingText:kLogoPageText];
 
-  LongPressElement(kLogoPageChromiumImageId);
+  LongPressElement(kLogoPageMonyharImageId);
   TapOnContextMenuButton(OpenImageButton());
   [ChromeEarlGrey waitForPageToFinishLoading];
 
@@ -230,7 +230,7 @@ void TapOnContextMenuButton(id<GREYMatcher> context_menu_item_button) {
   [ChromeEarlGrey loadURL:pageURL];
   [ChromeEarlGrey waitForWebStateContainingText:kLogoPageText];
 
-  LongPressElement(kLogoPageChromiumImageId);
+  LongPressElement(kLogoPageMonyharImageId);
   TapOnContextMenuButton(OpenImageInNewTabButton());
 
   [ChromeEarlGrey waitForMainTabCount:2];
@@ -314,7 +314,7 @@ void TapOnContextMenuButton(id<GREYMatcher> context_menu_item_button) {
   [ChromeEarlGrey loadURL:shortTtileURL];
   [ChromeEarlGrey waitForPageToFinishLoading];
 
-  LongPressElement(kLogoPageChromiumImageId);
+  LongPressElement(kLogoPageMonyharImageId);
   [[EarlGrey selectElementWithMatcher:grey_text(kShortImgTitile)]
       assertWithMatcher:grey_notNil()];
   ClearContextMenu();
@@ -330,7 +330,7 @@ void TapOnContextMenuButton(id<GREYMatcher> context_menu_item_button) {
   [ChromeEarlGrey loadURL:longTtileURL];
   [ChromeEarlGrey waitForPageToFinishLoading];
 
-  LongPressElement(kLogoPageChromiumImageId);
+  LongPressElement(kLogoPageMonyharImageId);
   [[EarlGrey selectElementWithMatcher:grey_text(kLongImgTitle)]
       assertWithMatcher:grey_notNil()];
   ClearContextMenu();
@@ -355,7 +355,7 @@ void TapOnContextMenuButton(id<GREYMatcher> context_menu_item_button) {
   [ChromeEarlGrey loadURL:pageURL];
   [ChromeEarlGrey waitForWebStateContainingText:kLogoPageText];
 
-  LongPressElement(kLogoPageChromiumImageId);
+  LongPressElement(kLogoPageMonyharImageId);
   TapOnContextMenuButton(OpenImageButton());
   [ChromeEarlGrey waitForPageToFinishLoading];
 

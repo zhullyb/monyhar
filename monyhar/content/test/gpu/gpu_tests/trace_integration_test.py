@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -18,8 +18,8 @@ from telemetry.timeline import tracing_config
 gpu_relative_path = "content/test/data/gpu/"
 
 data_paths = [
-    os.path.join(path_util.GetChromiumSrcDir(), gpu_relative_path),
-    os.path.join(path_util.GetChromiumSrcDir(), 'media', 'test', 'data')
+    os.path.join(path_util.GetMonyharSrcDir(), gpu_relative_path),
+    os.path.join(path_util.GetMonyharSrcDir(), 'media', 'test', 'data')
 ]
 
 webgl_test_harness_script = r"""
@@ -81,7 +81,7 @@ _SWAP_CHAIN_PRESENTATION_MODE_COMPOSED = 0
 _SWAP_CHAIN_PRESENTATION_MODE_OVERLAY = 1
 _SWAP_CHAIN_PRESENTATION_MODE_NONE = 2
 _SWAP_CHAIN_PRESENTATION_MODE_COMPOSITION_FAILURE = 3
-# The following is defined for Chromium testing internal use.
+# The following is defined for Monyhar testing internal use.
 _SWAP_CHAIN_GET_FRAME_STATISTICS_MEDIA_FAILED = -1
 
 _GET_STATISTICS_EVENT_NAME = 'GetFrameStatisticsMedia'

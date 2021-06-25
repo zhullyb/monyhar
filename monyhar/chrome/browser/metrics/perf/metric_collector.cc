@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -36,7 +36,7 @@ base::TimeDelta RandomTimeDelta(base::TimeDelta max) {
 }
 
 // PerfDataProto is defined elsewhere with more fields than the definition in
-// Chromium's copy of perf_data.proto. During deserialization, the protobuf
+// Monyhar's copy of perf_data.proto. During deserialization, the protobuf
 // data could contain fields that are defined elsewhere but not in
 // perf_data.proto, resulting in some data in |unknown_fields| for the message
 // types within PerfDataProto.

@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -350,7 +350,7 @@ class UpdateCTSTest(unittest.TestCase):
 
   @patch('devil.utils.cmd_helper.RunCmd')
   @patch('devil.utils.cmd_helper.GetCmdOutput')
-  @patch.object(cts_utils.ChromiumRepoHelper, 'update_testing_json')
+  @patch.object(cts_utils.MonyharRepoHelper, 'update_testing_json')
   @patch('urllib.urlretrieve')
   def testCompleteUpdate(self, retrieve_mock, update_json_mock, cmd_mock,
                          run_mock):

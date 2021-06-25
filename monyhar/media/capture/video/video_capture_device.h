@@ -1,9 +1,9 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
 // VideoCaptureDevice is the abstract base class for realizing video capture
-// device support in Chromium. It provides the interface for OS dependent
+// device support in Monyhar. It provides the interface for OS dependent
 // implementations.
 // The class is created and functions are invoked on a thread owned by
 // VideoCaptureManager. Capturing is done on other threads, depending on the OS

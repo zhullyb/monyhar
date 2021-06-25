@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -94,7 +94,7 @@ void WaylandSubsurface::CreateSubsurface() {
   DCHECK(subcompositor);
   subsurface_ = wayland_surface()->CreateSubsurface(parent_->root_surface());
 
-  // Chromium positions quads in display::Display coordinates in physical
+  // Monyhar positions quads in display::Display coordinates in physical
   // pixels, but Wayland requires them to be in local surface coordinates a.k.a
   // relative to parent window.
   auto bounds_px =

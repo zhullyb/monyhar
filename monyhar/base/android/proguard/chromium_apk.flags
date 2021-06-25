@@ -1,8 +1,8 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# Contains flags that we'd like all Chromium .apks to use.
+# Contains flags that we'd like all Monyhar .apks to use.
 
 # Keep line number information, useful for stack traces.
 -keepattributes SourceFile,LineNumberTable

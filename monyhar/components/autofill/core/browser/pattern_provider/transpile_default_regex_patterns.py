@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -61,7 +61,7 @@ def build_cpp_function(cpp, output_handle):
       s = unicode(s, 'utf-8')
     output_handle.write(s)
 
-  output('// Copyright 2020 The Chromium Authors. All rights reserved.\n')
+  output('// Copyright 2020 The Monyhar Authors. All rights reserved.\n')
   output('// Use of this source code is governed by a BSD-style license ')
   output('that can be\n')
   output('// found in the LICENSE file.\n')

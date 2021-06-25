@@ -13,27 +13,27 @@ details and discussions about this approach to testing software.
 
 Local Modifications:
 This is only a partial inclusion of the OCMock tree. This only includes
-/Source/OCMock because the tests and other files are not necessary for Chromium.
+/Source/OCMock because the tests and other files are not necessary for Monyhar.
 The License.txt and Changes.txt file are also present from /Source.
 
-Chromium can no longer sync to the tip-of-tree because upstream OCMock requires
+Monyhar can no longer sync to the tip-of-tree because upstream OCMock requires
 OS X 10.11.
 
-Chromium adds gtest_support.h/.mm and ocmock_extensions.h/.mm.
+Monyhar adds gtest_support.h/.mm and ocmock_extensions.h/.mm.
 
-Chromium patches in 3e193f3c2d4ea4ada63df54c8ce98e7ea4cf768f to use OCMock with
+Monyhar patches in 3e193f3c2d4ea4ada63df54c8ce98e7ea4cf768f to use OCMock with
 libc++'s string for return types having vtables.
 
-Chromium patches in c32abcaba428921d8ac12ac98b272ecf8241f9bb and
+Monyhar patches in c32abcaba428921d8ac12ac98b272ecf8241f9bb and
 33aeea46b0912d9f57ff0ee2763f2667ac099acc to allow the use of .andReturn(...)
 because our version of clang does not support __builtin_types_compatible_p.
 As we are building with Objective-C++, we need to add 'extern "C"' in
 OCMFunctions.h to have C linkage.
 
-Chromium patches in a fix for crbug.com/731129 to assume that unnamed types
+Monyhar patches in a fix for crbug.com/731129 to assume that unnamed types
 are equal to named ones (see bug for example of types). This is probably due
-to differences between the type embedded by Chromium version of clang and by
+to differences between the type embedded by Monyhar version of clang and by
 the introspection used by Xcode 9 SDK.
 
-Chromium patches in https://github.com/erikdoe/ocmock/pull/343 to fix the
+Monyhar patches in https://github.com/erikdoe/ocmock/pull/343 to fix the
 comparison of structure representation as strings (again).

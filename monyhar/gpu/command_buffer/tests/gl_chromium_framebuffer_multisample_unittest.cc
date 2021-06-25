@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@
 
 namespace gpu {
 
-class GLChromiumFramebufferMultisampleTest : public testing::Test {
+class GLMonyharFramebufferMultisampleTest : public testing::Test {
  protected:
   void SetUp() override { gl_.Initialize(GLManager::Options()); }
 
@@ -24,7 +24,7 @@ class GLChromiumFramebufferMultisampleTest : public testing::Test {
 };
 
 // Test that GL is at least minimally working.
-TEST_F(GLChromiumFramebufferMultisampleTest, CachedBindingsTest) {
+TEST_F(GLMonyharFramebufferMultisampleTest, CachedBindingsTest) {
   if (!GLTestHelper::HasExtension("GL_CHROMIUM_framebuffer_multisample")) {
     return;
   }
@@ -44,7 +44,7 @@ TEST_F(GLChromiumFramebufferMultisampleTest, CachedBindingsTest) {
   GLTestHelper::CheckGLError("no errors", __LINE__);
 }
 
-TEST_F(GLChromiumFramebufferMultisampleTest, DrawAndResolve) {
+TEST_F(GLMonyharFramebufferMultisampleTest, DrawAndResolve) {
   if (!(GLTestHelper::HasExtension("GL_CHROMIUM_framebuffer_multisample") &&
         GLTestHelper::HasExtension("GL_OES_rgb8_rgba8"))) {
     return;

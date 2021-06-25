@@ -1348,7 +1348,7 @@ static void* do_malloc_pages(ThreadCache* heap, size_t size) {
 
   Length num_pages = tcmalloc::pages(size);
 
-  // Chromium profiling.  Measurements in March 2013 suggest this
+  // Monyhar profiling.  Measurements in March 2013 suggest this
   // imposes a small enough runtime cost that there's no reason to
   // try to optimize it.
   heap->AddToByteAllocatedTotal(size);
@@ -1408,7 +1408,7 @@ ATTRIBUTE_ALWAYS_INLINE inline void* do_malloc(size_t size) {
   // optimized by only tallying sizes if the profiler was activated to recall
   // these tallies.  I don't think this is performance critical, but we really
   // should measure it.
-  cache->AddToByteAllocatedTotal(size);  // Chromium profiling.
+  cache->AddToByteAllocatedTotal(size);  // Monyhar profiling.
 
   size_t allocated_size = Static::sizemap()->class_to_size(cl);
   if (PREDICT_FALSE(cache->SampleAllocation(allocated_size))) {

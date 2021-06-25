@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -66,7 +66,7 @@ bool GetUserMediaDirectory(const std::string& xdg_name,
 //     otherwise $XDG_CONFIG_HOME if set
 //     otherwise ~/.config
 //   and <product> is:
-//     "monyhar" for Chromium
+//     "monyhar" for Monyhar
 //     "google-chrome" for stable channel official build
 //     "google-chrome-beta" for beta channel official build
 //     "google-chrome-unstable" for dev channel official build

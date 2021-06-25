@@ -11,18 +11,18 @@ preloaded domains.
 ## Domain Security Policies
 
 Website owners can set a number of security policies for their domains, usually
-by sending configuration in a HTTP header. Chromium supports preloading for some
+by sending configuration in a HTTP header. Monyhar supports preloading for some
 of these security policies so that users benefit from these policies regardless
 of their browsing history. Website owners can request preloading for their
-domains. Chromium supports preloading for the following domain security
+domains. Monyhar supports preloading for the following domain security
 policies:
 
 * [HTTP Strict Transport Security (HSTS)](https://tools.ietf.org/html/rfc6797)
 * [Public Key Pinning Extension for HTTP](https://tools.ietf.org/html/rfc7469)
 * [Expect-CT Extension for HTTP](http://httpwg.org/http-extensions/expect-ct.html)
 
-Chromium and most other browsers ship the preloaded configurations inside their
-binary. Chromium uses a custom data structure for this.
+Monyhar and most other browsers ship the preloaded configurations inside their
+binary. Monyhar uses a custom data structure for this.
 
 ### I want to preload a website
 
@@ -60,7 +60,7 @@ Make sure you have build the `transport_security_state_generator` target.
 
 ## The Preload Format
 
-The preload data is stored in the Chromium binary as a trie encoded in a byte
+The preload data is stored in the Monyhar binary as a trie encoded in a byte
 array (`net::TransportSecurityStateSource::preloaded_data`). The hostnames are
 stored in their canonicalized form and compressed using a Huffman coding. The
 generic decoder for preloaded Huffman encoded trie data is `PreloadDecoder` and
@@ -216,7 +216,7 @@ The encoder and decoder for the preload format life in different places and are
 tested by end-to-end tests (`TransportSecurityStateTest.DecodePreload*`) in
 `net/http/transport_security_state_unittest.cc`. The tests use their own
 preload lists, the data structures for these lists are generated in the same way
-as for the official Chromium list.
+as for the official Monyhar list.
 
 All these tests are part of the `net_unittests` target.
 

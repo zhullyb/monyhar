@@ -1,6 +1,6 @@
 # Web Bluetooth API Web Tests
 
-This directory contains Chromium only Web Bluetooth API web tests.
+This directory contains Monyhar only Web Bluetooth API web tests.
 
 The [Web Bluetooth specification] is implemented by the Web Bluetooth Service
 in `//content/browser/bluetooth`. See the [Web Bluetooth Service README] for

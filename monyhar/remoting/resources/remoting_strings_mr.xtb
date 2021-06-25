@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">कोअर लायब्ररी</translation>
 <translation id="443560535555262820">अ‍ॅक्सेसिबिलिटी प्राधान्ये उघडा</translation>
 <translation id="4450893287417543264">पुन्हा दाखवू नका</translation>
-<translation id="4512952200932940229">कॉपीराइट २०२१ Chromium लेखक. सर्व हक्क राखीव.</translation>
+<translation id="4512952200932940229">कॉपीराइट २०२१ Monyhar लेखक. सर्व हक्क राखीव.</translation>
 <translation id="4513946894732546136">Feedback</translation>
 <translation id="4563926062592110512">डिस्कनेक्ट केलेला क्लायंट: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">रिमोट डिव्हाइस</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">कृपया रिमोट कॉंप्युटरचा तुमचा पिन एंटर करा.</translation>
 <translation id="7895403300744144251">रिमोट कॉंप्युटरवरील सुरक्षितता धोरणे तुमच्या खात्यामधील कनेक्शनना अनुमती देत नाहीत.</translation>
 <translation id="7936528439960309876">उजवीकडे डॉक करा</translation>
-<translation id="7970576581263377361">ऑथेंटिकेशन अयशस्वी. कृपया Chromium वर पुन्हा साइन इन करा.</translation>
+<translation id="7970576581263377361">ऑथेंटिकेशन अयशस्वी. कृपया Monyhar वर पुन्हा साइन इन करा.</translation>
 <translation id="7981525049612125370">रिमोट सेशन कालबाह्य झाले आहे.</translation>
 <translation id="8038111231936746805">(डीफॉल्ट)</translation>
 <translation id="8041089156583427627">अभिप्राय पाठवा</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737"><ph name="PRODUCT_NAME" /> ला 'स्क्रीन रेकॉर्डिंग' ची परवानगी द्या</translation>
 <translation id="9213184081240281106">चुकीचे होस्ट कॉंफिगरेशन.</translation>
 <translation id="981121421437150478">ऑफलाइन</translation>
-<translation id="985602178874221306">Chromium लेखक</translation>
+<translation id="985602178874221306">Monyhar लेखक</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (अखरेचे ऑनलाइन <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

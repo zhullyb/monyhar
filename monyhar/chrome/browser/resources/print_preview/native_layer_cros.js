@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,7 +37,7 @@ export let PrintServer;
 export let PrintServersConfig;
 
 /**
- * An interface to the Chrome OS platform specific part of the native Chromium
+ * An interface to the Chrome OS platform specific part of the native Monyhar
  * printing system layer.
  * @interface
  */

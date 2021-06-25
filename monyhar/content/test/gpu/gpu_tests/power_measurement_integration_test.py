@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """This script only works on Windows with Intel CPU. Intel Power Gadget needs
@@ -6,8 +6,8 @@ to be installed on the machine before this script works. The software can be
 downloaded from:
   https://software.intel.com/en-us/articles/intel-power-gadget
 
-To run this test on a target machine without Chromium workspace checked out:
-1) inside Chromium workspace, run
+To run this test on a target machine without Monyhar workspace checked out:
+1) inside Monyhar workspace, run
    python tools/mb/mb.py zip out/Release
        telemetry_gpu_integration_test_scripts_only out/myfilename.zip
    This zip doesn't include a chrome executable. The intent is to run with
@@ -49,8 +49,8 @@ _POWER_MEASUREMENT_RESOLUTION = 100
 _GPU_RELATIVE_PATH = "content/test/data/gpu/"
 
 _DATA_PATHS = [
-    os.path.join(path_util.GetChromiumSrcDir(), _GPU_RELATIVE_PATH),
-    os.path.join(path_util.GetChromiumSrcDir(), 'media', 'test', 'data')
+    os.path.join(path_util.GetMonyharSrcDir(), _GPU_RELATIVE_PATH),
+    os.path.join(path_util.GetMonyharSrcDir(), 'media', 'test', 'data')
 ]
 
 _VIDEO_TEST_SCRIPT = r"""

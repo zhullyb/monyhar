@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ extern const base::Feature kWinUseBrowserSpellChecker;
 // spellcheck service is on-demand, invoked by calling
 // SpellcheckService::InitializeDictionaries with a callback to indicate when
 // the operation completes. (2) The call to create the spellcheck service in
-// ChromeBrowserMainParts::PreMainMessageLoopRunImpl will be skipped. Chromium
+// ChromeBrowserMainParts::PreMainMessageLoopRunImpl will be skipped. Monyhar
 // will still by default instantiate the spellcheck service on startup for
 // custom dictionary synchronization, but will not load Windows spellcheck
 // dictionaries. The command line for launching the browser with Windows hybrid

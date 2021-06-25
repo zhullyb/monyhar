@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -58,7 +58,7 @@ class MEDIA_GPU_EXPORT H265Picture : public CodecPicture {
 
   // Values calculated per H.265 specification or taken from slice header.
   // See spec for more details on each (some names have been converted from
-  // CamelCase in spec to Chromium-style names).
+  // CamelCase in spec to Monyhar-style names).
   int nal_unit_type_;
   bool no_rasl_output_flag_{false};
   bool no_output_of_prior_pics_flag_{false};

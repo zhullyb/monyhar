@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,7 +33,7 @@ CFTypeID SecTrustedApplicationGetTypeID();
 // http://www.openradar.me/15341349 rdar://15341349
 //
 // TODO(https://crbug.com/1076527): This is fixed in 10.15. When 10.15 is the
-// minimum OS for Chromium, remove this SPI declaration.
+// minimum OS for Monyhar, remove this SPI declaration.
 Boolean _CFIsObjC(CFTypeID typeID, CFTypeRef obj);
 #endif
 }  // extern "C"
@@ -250,7 +250,7 @@ const char* BaseBundleID() {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
   return "com.google.Chrome";
 #else
-  return "org.monyhar.Chromium";
+  return "org.monyhar.Monyhar";
 #endif
 }
 
@@ -319,7 +319,7 @@ CF_TO_NS_CAST_DEFN(CTFont, UIFont)
 // http://www.openradar.me/15341349 rdar://15341349
 //
 // TODO(https://crbug.com/1076527): This is fixed in 10.15. When 10.15 is the
-// minimum OS for Chromium, remove this specialization and replace it with just:
+// minimum OS for Monyhar, remove this specialization and replace it with just:
 //
 // CF_TO_NS_CAST_DEFN(CTFont, NSFont)
 NSFont* CFToNSCast(CTFontRef cf_val) {
@@ -388,7 +388,7 @@ CF_CAST_DEFN(CTFont)
 // http://www.openradar.me/15341349 rdar://15341349
 //
 // TODO(https://crbug.com/1076527): This is fixed in 10.15. When 10.15 is the
-// minimum OS for Chromium, remove this specialization and the #if IOS above,
+// minimum OS for Monyhar, remove this specialization and the #if IOS above,
 // and rely just on the one CF_CAST_DEFN(CTFont).
 template<> CTFontRef
 CFCast<CTFontRef>(const CFTypeRef& cf_val) {

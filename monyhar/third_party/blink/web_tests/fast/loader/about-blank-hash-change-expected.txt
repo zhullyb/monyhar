@@ -1,4 +1,4 @@
-This test tests parsing of hash fragments in about:blank URLs. Chromium had a bug at one point where setting the hash fragment would cause a load event and in some cases an infinite loop.
+This test tests parsing of hash fragments in about:blank URLs. Monyhar had a bug at one point where setting the hash fragment would cause a load event and in some cases an infinite loop.
 
 See https://bugs.webkit.org/show_bug.cgi?id=35180.
 

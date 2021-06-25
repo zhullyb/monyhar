@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@ import java.util.Arrays;
 import javax.annotation.Nonnull;
 
 /**
- * A state machine interface which receives Chromium internal events to determines when to call
+ * A state machine interface which receives Monyhar internal events to determines when to call
  * {@link InputMethodManager#updateCursorAnchorInfo(View, CursorAnchorInfo)}. This interface is
  * also used in unit tests to mock out {@link CursorAnchorInfo}.
  */

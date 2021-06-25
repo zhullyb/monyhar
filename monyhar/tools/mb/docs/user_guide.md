@@ -10,7 +10,7 @@ written as part of the GYP-&gt;GN migration.
 It is intended to be used by bots to make it easier to manage the configuration
 each bot builds (i.e., the configurations can be changed from monyhar
 commits), and to consolidate the list of all of the various configurations
-that Chromium is built in.
+that Monyhar is built in.
 
 Ideally this tool will no longer be needed after the migration is complete.
 
@@ -231,7 +231,7 @@ matching `.isolate` and `.isolated.gen.json` files.
 ## The mb_config.pyl config file
 
 The `mb_config.pyl` config file is intended to enumerate all of the
-supported build configurations for Chromium. Generally speaking, you
+supported build configurations for Monyhar. Generally speaking, you
 should never need to (or want to) build a configuration that isn't
 listed here, and so by using the configs in this file you can avoid
 having to juggle long lists of gn args by hand.
@@ -252,7 +252,7 @@ arguments in a single build, and must *only* be used for such builders
 The `configs` key points to a dictionary of named build configurations.
 
 There should be an key in this dict for every supported configuration
-of Chromium, meaning every configuration we have a bot for, and every
+of Monyhar, meaning every configuration we have a bot for, and every
 configuration commonly used by develpers but that we may not have a bot
 for.
 

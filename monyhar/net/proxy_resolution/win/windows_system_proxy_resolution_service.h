@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -117,7 +117,7 @@ class NET_EXPORT WindowsSystemProxyResolutionService
   // This is the log for any generated events.
   NetLog* net_log_;
 
-  // This object encapsulates all WinHttp logic in Chromium-friendly terms. It
+  // This object encapsulates all WinHttp logic in Monyhar-friendly terms. It
   // manages the lifetime of the WinHttp session (which is
   // per-resolution-service). This will get handed off to individual resolution
   // requests so that they can query/cancel proxy resolution as needed.

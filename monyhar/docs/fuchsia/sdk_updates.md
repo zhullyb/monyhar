@@ -1,4 +1,4 @@
-# Manually updating Chromium to a new Fuchsia SDK
+# Manually updating Monyhar to a new Fuchsia SDK
 
 Normally the Fuchsia SDK dependency is automatically updated to a recent build
 on a regular basis, by the [Fuchsia SDK AutoRoll Bot](https://fuchsia-sdk-monyhar-roll.skia.org).
@@ -9,13 +9,13 @@ Should you need to manually update the SDK dependency for some reason, then:
    job](https://luci-scheduler.appspot.com/jobs/fuchsia/sdk-topaz-x64-linux)
    for a recent green archive. On the "SUCCEEDED" link, copy the SHA-1 from the
    `gsutil.upload` link of the `upload fuchsia-sdk` step.
-0. Put that into Chromium's src.git `build/fuchsia/linux.sdk.sha1`.
+0. Put that into Monyhar's src.git `build/fuchsia/linux.sdk.sha1`.
 0. `gclient sync && ninja ...` and make sure things go OK locally.
 0. Upload the roll CL, making sure to include the `fuchsia` trybot. Tag the roll
    with `Bug: 707030`.
 
 If you would like to build an SDK locally, `tools/fuchsia/local-sdk.py` tries to
-do this (so you can iterate on ToT Fuchsia against your Chromium build), however
+do this (so you can iterate on ToT Fuchsia against your Monyhar build), however
 it's simply a copy of the steps run on the bot above, and so may be out of date.
 
 In order to sync a Fuchsia tree to the state matching an SDK hash, you can use:
@@ -30,7 +30,7 @@ CLs](https://fuchsia-review.googlesource.com/q/owner:zircon-roller%40fuchsia-inf
 might be useful too.
 
 Another useful command, if the SDK was pulled by `cipd` (which it is in
-Chromium-related projects like Crashpad, instead of directly pulling the
+Monyhar-related projects like Crashpad, instead of directly pulling the
 .tar.gz), is:
 
 `cipd describe fuchsia/sdk/linux-amd64 -version <CIPD_HASH_HERE>`

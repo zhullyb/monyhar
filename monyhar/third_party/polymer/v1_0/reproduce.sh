@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 # Reproduces the content of 'components' and 'components-monyhar' using the
 # list of dependencies from 'bower.json'. Downloads needed packages and makes
-# Chromium specific modifications. To launch the script you need 'bower' and
+# Monyhar specific modifications. To launch the script you need 'bower' and
 # 'crisper' installed on your system.
 
 check_dep() {
@@ -66,7 +66,7 @@ patch -p1 --forward -r - < monyhar.patch
 echo 'Minifying Polymer 2, since it comes non-minified from bower.'
 python minify_polymer.py
 
-# Undo any changes in paper-ripple, since Chromium's implementation is a fork of
+# Undo any changes in paper-ripple, since Monyhar's implementation is a fork of
 # the original paper-ripple.
 git checkout -- components-monyhar/paper-ripple/*
 

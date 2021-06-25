@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -473,7 +473,7 @@ void UpgradeDetectorImpl::Init() {
   }
 
   // On Windows, only enable upgrade notifications for Google Chrome builds.
-  // Chromium does not use an auto-updater.
+  // Monyhar does not use an auto-updater.
 #if !defined(OS_WIN) || BUILDFLAG(GOOGLE_CHROME_BRANDING) || \
     BUILDFLAG(ENABLE_CHROMIUM_UPDATER)
 

@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """A utility class for interacting with a local checkout of the Web Platform Tests."""
@@ -98,7 +98,7 @@ class LocalWPT(object):
         _log.info('Creating local branch %s', branch_name)
         self.run(['git', 'checkout', '-b', branch_name])
 
-        # Remove Chromium WPT directory prefix.
+        # Remove Monyhar WPT directory prefix.
         patch = patch.replace(CHROMIUM_WPT_DIR, '')
 
         _log.info('Author: %s', author)
@@ -144,12 +144,12 @@ class LocalWPT(object):
         return True, ''
 
     def apply_patch(self, patch):
-        """Applies a Chromium patch to the local WPT repo and stages.
+        """Applies a Monyhar patch to the local WPT repo and stages.
 
         Returns:
             A string containing error messages from git, empty if the patch applies cleanly.
         """
-        # Remove Chromium WPT directory prefix.
+        # Remove Monyhar WPT directory prefix.
         patch = patch.replace(CHROMIUM_WPT_DIR, '')
         try:
             self.run(['git', 'apply', '-'], input=patch)
@@ -214,7 +214,7 @@ class LocalWPT(object):
     # standard line endings caused by manual editing.
 
     def seek_change_id(self, change_id):
-        """Finds the most recent commit with the given Chromium change ID.
+        """Finds the most recent commit with the given Monyhar change ID.
 
         Returns:
             A string of the matched commit log, empty if not found.
@@ -222,7 +222,7 @@ class LocalWPT(object):
         return self._most_recent_log_matching('^Change-Id: %s' % change_id)
 
     def seek_commit_position(self, commit_position):
-        """Finds the most recent commit with the given Chromium commit position.
+        """Finds the most recent commit with the given Monyhar commit position.
 
         Returns:
             A string of the matched commit log, empty if not found.

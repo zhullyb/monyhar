@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -325,7 +325,7 @@ void V4GetHashProtocolManager::GetFullHashes(
           cookies_store: "Safe Browsing cookie store"
           setting:
             "Users can disable Safe Browsing by unchecking 'Protect you and "
-            "your device from dangerous sites' in Chromium settings under "
+            "your device from dangerous sites' in Monyhar settings under "
             "Privacy. The feature is enabled by default."
           chrome_policy {
             SafeBrowsingEnabled {

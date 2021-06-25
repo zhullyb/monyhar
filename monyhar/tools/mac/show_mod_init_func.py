@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@
 Prints the contents of the __DATA,__mod_init_func section of a Mach-O image.
 
 Usage:
-  tools/mac/show_mod_init_func.py out/gn/Chromium\ Framework.unstripped
+  tools/mac/show_mod_init_func.py out/gn/Monyhar\ Framework.unstripped
 
 This is meant to be used on a Mach-O executable. If a dSYM is present, use
 dump-static-initializers.py instead.
@@ -53,7 +53,7 @@ def GetModuleInitializers(binary, xcode_path):
   # Skip the first two header lines and then get the address of the
   # initializer in the second column. The first address is the address
   # of the initializer pointer.
-  #   out/gn/Chromium Framework.unstripped:
+  #   out/gn/Monyhar Framework.unstripped:
   #   Contents of (__DATA,__mod_init_func) section
   #   0x0000000008761498 0x000000000385d120
   return [line.split(' ')[1] for line in lines[2:]]

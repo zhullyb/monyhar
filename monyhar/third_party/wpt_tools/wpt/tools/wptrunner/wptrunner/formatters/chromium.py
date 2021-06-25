@@ -5,8 +5,8 @@ from collections import defaultdict
 from mozlog.formatters import base
 
 
-class ChromiumFormatter(base.BaseFormatter):  # type: ignore
-    """Formatter to produce results matching the Chromium JSON Test Results format.
+class MonyharFormatter(base.BaseFormatter):  # type: ignore
+    """Formatter to produce results matching the Monyhar JSON Test Results format.
     https://monyhar.googlesource.com/monyhar/src/+/master/docs/testing/json_test_results_format.md
 
     Notably, each test has an "artifacts" field that is a dict consisting of
@@ -146,9 +146,9 @@ class ChromiumFormatter(base.BaseFormatter):  # type: ignore
 
     def _map_status_name(self, status):
         """
-        Maps a WPT status to a Chromium status.
+        Maps a WPT status to a Monyhar status.
 
-        Chromium has five main statuses that we have to map to:
+        Monyhar has five main statuses that we have to map to:
         CRASH: the test harness crashed
         FAIL: the test did not run as expected
         PASS: the test ran as expected
@@ -156,7 +156,7 @@ class ChromiumFormatter(base.BaseFormatter):  # type: ignore
         TIMEOUT: the did not finish in time and was aborted
 
         :param str status: the string status of a test from WPT
-        :return: a corresponding string status for Chromium
+        :return: a corresponding string status for Monyhar
         """
         if status == "OK":
             return "PASS"
@@ -221,7 +221,7 @@ class ChromiumFormatter(base.BaseFormatter):  # type: ignore
     def test_end(self, data):
         test_name = data["test"]
         # Save the status reported by WPT since we might change it when
-        # reporting to Chromium.
+        # reporting to Monyhar.
         wpt_actual_status = data["status"]
         actual_status = self._map_status_name(wpt_actual_status)
         expected_statuses = self._get_expected_status_from_data(actual_status, data)
@@ -231,7 +231,7 @@ class ChromiumFormatter(base.BaseFormatter):  # type: ignore
             # Clean up the test list to avoid accumulating too many.
             self.tests_with_subtest_fails.remove(test_name)
             # This test passed but it has failing subtests. Since we can only
-            # report a single status to Chromium, we choose FAIL to indicate
+            # report a single status to Monyhar, we choose FAIL to indicate
             # that something about this test did not run correctly.
             if actual_status == "PASS":
                 actual_status = "FAIL"

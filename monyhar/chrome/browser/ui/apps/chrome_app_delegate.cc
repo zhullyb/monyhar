@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -69,7 +69,7 @@ int kAppWindowFirstShowTimeoutSeconds = 10;
 
 bool disable_external_open_for_testing_ = false;
 
-// Opens a URL with Chromium (not external browser) with the right profile.
+// Opens a URL with Monyhar (not external browser) with the right profile.
 content::WebContents* OpenURLFromTabInternal(
     content::BrowserContext* context,
     const content::OpenURLParams& params) {

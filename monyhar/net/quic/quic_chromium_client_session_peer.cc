@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,8 +11,8 @@
 namespace net {
 namespace test {
 // static
-void QuicChromiumClientSessionPeer::SetHostname(
-    QuicChromiumClientSession* session,
+void QuicMonyharClientSessionPeer::SetHostname(
+    QuicMonyharClientSession* session,
     const std::string& hostname) {
   quic::QuicServerId server_id(hostname,
                                session->session_key_.server_id().port(),
@@ -22,20 +22,20 @@ void QuicChromiumClientSessionPeer::SetHostname(
 }
 
 // static
-uint64_t QuicChromiumClientSessionPeer::GetPushedBytesCount(
-    QuicChromiumClientSession* session) {
+uint64_t QuicMonyharClientSessionPeer::GetPushedBytesCount(
+    QuicMonyharClientSession* session) {
   return session->bytes_pushed_count_;
 }
 
 // static
-uint64_t QuicChromiumClientSessionPeer::GetPushedAndUnclaimedBytesCount(
-    QuicChromiumClientSession* session) {
+uint64_t QuicMonyharClientSessionPeer::GetPushedAndUnclaimedBytesCount(
+    QuicMonyharClientSession* session) {
   return session->bytes_pushed_and_unclaimed_count_;
 }
 
 // static
-QuicChromiumClientStream* QuicChromiumClientSessionPeer::CreateOutgoingStream(
-    QuicChromiumClientSession* session) {
+QuicMonyharClientStream* QuicMonyharClientSessionPeer::CreateOutgoingStream(
+    QuicMonyharClientSession* session) {
   return session->ShouldCreateOutgoingBidirectionalStream()
              ? session->CreateOutgoingReliableStreamImpl(
                    TRAFFIC_ANNOTATION_FOR_TESTS)
@@ -43,13 +43,13 @@ QuicChromiumClientStream* QuicChromiumClientSessionPeer::CreateOutgoingStream(
 }
 
 // static
-bool QuicChromiumClientSessionPeer::GetSessionGoingAway(
-    QuicChromiumClientSession* session) {
+bool QuicMonyharClientSessionPeer::GetSessionGoingAway(
+    QuicMonyharClientSession* session) {
   return session->going_away_;
 }
 
-bool QuicChromiumClientSessionPeer::DoesSessionAllowPortMigration(
-    QuicChromiumClientSession* session) {
+bool QuicMonyharClientSessionPeer::DoesSessionAllowPortMigration(
+    QuicMonyharClientSession* session) {
   return session->allow_port_migration_;
 }
 

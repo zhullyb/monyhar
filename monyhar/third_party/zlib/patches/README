@@ -18,7 +18,7 @@
   As patches created in this way will feature a ChangeLog, there is no longer
 the need to append this file with a description of what the patch does. This
 should help to solve frequent conflicts in pending new patches on
-Chromium's zlib.
+Monyhar's zlib.
 
   The plan for the near future is to better insulate the platform specific
 changes to ease update adoption with new releases of zlib. This insulation

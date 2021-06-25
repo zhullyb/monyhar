@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -272,10 +272,10 @@ std::unique_ptr<ExternalConnector> ExternalConnectorImpl::Clone() {
   return std::make_unique<ExternalConnectorImpl>(std::move(remote));
 }
 
-void ExternalConnectorImpl::SendChromiumConnectorRequest(
+void ExternalConnectorImpl::SendMonyharConnectorRequest(
     mojo::ScopedMessagePipeHandle request) {
   BindConnectorIfNecessary();
-  connector_->BindChromiumConnector(std::move(request));
+  connector_->BindMonyharConnector(std::move(request));
 }
 
 void ExternalConnectorImpl::Connect() {

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -47,7 +47,7 @@
   NSString* title = base::SysUTF8ToNSString(item->label.value_or(""));
   // https://crbug.com/1140620: SysUTF8ToNSString will return nil if the bits
   // that it is passed cannot be turned into a CFString. If this nil value is
-  // passed to -[NSMenuItem addItemWithTitle:action:keyEquivalent], Chromium
+  // passed to -[NSMenuItem addItemWithTitle:action:keyEquivalent], Monyhar
   // will crash. Therefore, for debugging, if the result is nil, substitute in
   // the raw bytes, encoded for safety in base64, to allow for investigation.
   if (!title) {

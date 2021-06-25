@@ -1,4 +1,4 @@
-# Checking out and Building Chromium for Windows
+# Checking out and Building Monyhar for Windows
 
 There are instructions for other platforms linked from the
 [get the code](get_the_code.md) page.
@@ -23,9 +23,9 @@ Are you a Google employee? See
 
 ### Visual Studio
 
-Chromium requires Visual Studio 2017 (>=15.7.2) to build, but VS2019 (>=16.0.0)
-is preferred. Visual Studio can also be used to debug Chromium, and VS2019 is
-preferred for this as it handles Chromium's large debug information much better.
+Monyhar requires Visual Studio 2017 (>=15.7.2) to build, but VS2019 (>=16.0.0)
+is preferred. Visual Studio can also be used to debug Monyhar, and VS2019 is
+preferred for this as it handles Monyhar's large debug information much better.
 The clang-cl compiler is used but Visual Studio's header files, libraries, and
 some tools are required. Visual Studio Community Edition should work if its
 license is appropriate for you. You must install the "Desktop development with
@@ -166,7 +166,7 @@ development and testing purposes.
 
 ## Setting up the build
 
-Chromium uses [Ninja](https://ninja-build.org) as its main build tool along with
+Monyhar uses [Ninja](https://ninja-build.org) as its main build tool along with
 a tool called [GN](https://gn.googlesource.com/gn/+/master/docs/quick_start.md)
 to generate `.ninja` files. You can create any number of *build directories*
 with different configurations. To create a build directory:
@@ -237,7 +237,7 @@ Still, builds will take many hours on many machines.
 ### Why is my build slow?
 
 Many things can make builds slow, with Windows Defender slowing process startups
-being a frequent culprit. Have you ensured that the entire Chromium src
+being a frequent culprit. Have you ensured that the entire Monyhar src
 directory is excluded from antivirus scanning (on Google machines this means
 putting it in a ``src`` directory in the root of a drive)? Have you tried the
 different settings listed above, including different link settings and -j
@@ -330,9 +330,9 @@ You can also get a visual report of the build performance with
 $ python ninjatracing out\Default\.ninja_log >build.json
 ```
 
-## Build Chromium
+## Build Monyhar
 
-Build Chromium (the "chrome" target) with Ninja using the command:
+Build Monyhar (the "chrome" target) with Ninja using the command:
 
 ```shell
 $ autoninja -C out\Default chrome
@@ -346,7 +346,7 @@ You can get a list of all of the other build targets from GN by running
 the GN label with no preceding "//" (so for `//chrome/test:unit_tests`
 use ninja -C out/Default chrome/test:unit_tests`).
 
-## Run Chromium
+## Run Monyhar
 
 Once it is built, you can simply run the browser:
 
@@ -377,7 +377,7 @@ $ git rebase-update
 $ gclient sync -D
 ```
 
-The first command updates the primary Chromium source repository and rebases
+The first command updates the primary Monyhar source repository and rebases
 any of your local branches on top of tip-of-tree (aka the Git branch `origin/master`).
 If you don't want to use this script, you can also just use `git pull` or
 other common Git commands to update the repo.
@@ -392,7 +392,7 @@ Intellisense support.
 
 #### Using Visual Studio Intellisense
 
-If you want to use Visual Studio Intellisense when developing Chromium, use the
+If you want to use Visual Studio Intellisense when developing Monyhar, use the
 `--ide` command line argument to `gn gen` when you generate your output
 directory (as described on the [get the code](https://dev.monyhar.org/developers/how-tos/get-the-code)
 page):
@@ -433,7 +433,7 @@ overhead of a multi-project solution file. Simply "open" your chrome.exe binary
 with `File->Open->Project/Solution`, or from a Visual Studio command prompt like
 so: `devenv /debugexe out\Debug\chrome.exe <your arguments>`. Many of Visual
 Studio's code exploration features will not work in this configuration, but by
-installing the [VsChromium Visual Studio Extension](https://monyhar.github.io/vs-monyhar/)
+installing the [VsMonyhar Visual Studio Extension](https://monyhar.github.io/vs-monyhar/)
 you can get the source code to appear in the solution explorer window along
 with other useful features such as code search. You can add multiple executables
 of interest (base_unittests.exe, browser_tests.exe) to your solution with

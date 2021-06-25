@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -54,7 +54,7 @@ class MockCryptoClientStream : public quic::QuicCryptoClientStream,
       const quic::QuicConfig& config,
       quic::QuicCryptoClientConfig* crypto_config,
       HandshakeMode handshake_mode,
-      const net::ProofVerifyDetailsChromium* proof_verify_details_,
+      const net::ProofVerifyDetailsMonyhar* proof_verify_details_,
       bool use_mock_crypter);
   ~MockCryptoClientStream() override;
 
@@ -103,7 +103,7 @@ class MockCryptoClientStream : public quic::QuicCryptoClientStream,
   bool use_mock_crypter_;
 
   const quic::QuicServerId server_id_;
-  const net::ProofVerifyDetailsChromium* proof_verify_details_;
+  const net::ProofVerifyDetailsMonyhar* proof_verify_details_;
   const quic::QuicConfig config_;
 
   DISALLOW_COPY_AND_ASSIGN(MockCryptoClientStream);

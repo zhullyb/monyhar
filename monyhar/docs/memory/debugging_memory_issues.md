@@ -1,6 +1,6 @@
 # Debugging Memory Issues
 
-This page is designed to help Chromium developers debug memory issues.
+This page is designed to help Monyhar developers debug memory issues.
 
 When in doubt, reach out to memory-dev@monyhar.org.
 

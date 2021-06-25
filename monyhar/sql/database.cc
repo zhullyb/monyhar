@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -109,7 +109,7 @@ int BackupDatabase(sqlite3* src, sqlite3* dst, const char* db_name) {
 }
 
 // Be very strict on attachment point.  SQLite can handle a much wider
-// character set with appropriate quoting, but Chromium code should
+// character set with appropriate quoting, but Monyhar code should
 // just use clean names to start with.
 bool ValidAttachmentPoint(const char* attachment_point) {
   for (size_t i = 0; attachment_point[i]; ++i) {
@@ -275,7 +275,7 @@ bool Database::OpenTemporary() {
 void Database::CloseInternal(bool forced) {
   TRACE_EVENT0("sql", "Database::CloseInternal");
   // TODO(shess): Calling "PRAGMA journal_mode = DELETE" at this point
-  // will delete the -journal file.  For ChromiumOS or other more
+  // will delete the -journal file.  For MonyharOS or other more
   // embedded systems, this is probably not appropriate, whereas on
   // desktop it might make some sense.
 
@@ -672,7 +672,7 @@ size_t Database::GetAppropriateMmapSize() {
 
     // Read more of the database looking for errors.  The VFS interface is used
     // to assure that the reads are valid for SQLite.  |g_reads_allowed| is used
-    // to limit checking to 20MB per run of Chromium.
+    // to limit checking to 20MB per run of Monyhar.
     sqlite3_file* file = nullptr;
     sqlite3_int64 db_size = 0;
     if (SQLITE_OK != GetSqlite3FileAndSize(db_, &file, &db_size))
@@ -680,7 +680,7 @@ size_t Database::GetAppropriateMmapSize() {
 
     // Read the data left, or |g_reads_allowed|, whichever is smaller.
     // |g_reads_allowed| limits the total amount of I/O to spend verifying data
-    // in a single Chromium run.
+    // in a single Monyhar run.
     sqlite3_int64 amount = db_size - mmap_ofs;
     if (amount < 0)
       amount = 0;
@@ -1475,7 +1475,7 @@ bool Database::OpenInternal(const std::string& file_name,
 
   // Enable extended result codes to provide more color on I/O errors.
   // Not having extended result codes is not a fatal problem, as
-  // Chromium code does not attempt to handle I/O errors anyhow.  The
+  // Monyhar code does not attempt to handle I/O errors anyhow.  The
   // current implementation always returns SQLITE_OK, the DCHECK is to
   // quickly notify someone if SQLite changes.
   err = sqlite3_extended_result_codes(db_, 1);

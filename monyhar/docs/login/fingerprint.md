@@ -15,7 +15,7 @@ an authentication token. This auth token is needed to successfully enroll
 fingerprints. Enrollment can only be started if the user has less than 3
 fingerprints enrolled.
 
-While fingerprint setup depends on biod system dbus service, Chromium implements
+While fingerprint setup depends on biod system dbus service, Monyhar implements
 a fake dbus client (`FakeBiodClient`) that fakes interactions with the biod
 dbus service. Tests can use `FakeBiodClient` to create an enrollment session and
 simulate fingerprint enrollment scan progress.

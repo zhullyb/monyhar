@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -68,7 +68,7 @@ class HostResolver;
 class HttpServerProperties;
 class NetLog;
 class NetworkIsolationKey;
-class QuicChromiumConnectionHelper;
+class QuicMonyharConnectionHelper;
 class QuicCryptoClientStreamFactory;
 class QuicServerInfo;
 class QuicStreamFactory;
@@ -106,7 +106,7 @@ enum AllActiveSessionsGoingAwayReason {
   kCertDBChanged
 };
 
-// Encapsulates a pending request for a QuicChromiumClientSession.
+// Encapsulates a pending request for a QuicMonyharClientSession.
 // If the request is still pending when it is destroyed, it will
 // cancel the request with the factory.
 class NET_EXPORT_PRIVATE QuicStreamRequest {
@@ -170,10 +170,10 @@ class NET_EXPORT_PRIVATE QuicStreamRequest {
   void SetPriority(RequestPriority priority);
 
   // Releases the handle to the QUIC session retrieved as a result of Request().
-  std::unique_ptr<QuicChromiumClientSession::Handle> ReleaseSessionHandle();
+  std::unique_ptr<QuicMonyharClientSession::Handle> ReleaseSessionHandle();
 
   // Sets |session_|.
-  void SetSession(std::unique_ptr<QuicChromiumClientSession::Handle> session);
+  void SetSession(std::unique_ptr<QuicMonyharClientSession::Handle> session);
 
   NetErrorDetails* net_error_details() { return net_error_details_; }
 
@@ -188,7 +188,7 @@ class NET_EXPORT_PRIVATE QuicStreamRequest {
   CompletionOnceCallback callback_;
   CompletionOnceCallback failed_on_default_network_callback_;
   NetErrorDetails* net_error_details_;  // Unowned.
-  std::unique_ptr<QuicChromiumClientSession::Handle> session_;
+  std::unique_ptr<QuicMonyharClientSession::Handle> session_;
 
   // Set in Request(). If true, then OnHostResolutionComplete() is expected to
   // be called in the future.
@@ -199,7 +199,7 @@ class NET_EXPORT_PRIVATE QuicStreamRequest {
   DISALLOW_COPY_AND_ASSIGN(QuicStreamRequest);
 };
 
-// A factory for fetching QuicChromiumClientSessions.
+// A factory for fetching QuicMonyharClientSessions.
 class NET_EXPORT_PRIVATE QuicStreamFactory
     : public NetworkChangeNotifier::IPAddressObserver,
       public NetworkChangeNotifier::NetworkObserver,
@@ -256,7 +256,7 @@ class NET_EXPORT_PRIVATE QuicStreamFactory
   bool CanUseExistingSession(const QuicSessionKey& session_key,
                              const HostPortPair& destination);
 
-  // Fetches a QuicChromiumClientSession to |host_port_pair| which will be
+  // Fetches a QuicMonyharClientSession to |host_port_pair| which will be
   // owned by |request|.
   // If a matching session already exists, this method will return OK.  If no
   // matching session exists, this will return ERR_IO_PENDING and will invoke
@@ -276,13 +276,13 @@ class NET_EXPORT_PRIVATE QuicStreamFactory
 
   // Called by a session when it is going away and no more streams should be
   // created on it.
-  void OnSessionGoingAway(QuicChromiumClientSession* session);
+  void OnSessionGoingAway(QuicMonyharClientSession* session);
 
   // Called by a session after it shuts down.
-  void OnSessionClosed(QuicChromiumClientSession* session);
+  void OnSessionClosed(QuicMonyharClientSession* session);
 
   // Called by a session when it blackholes after the handshake is confirmed.
-  void OnBlackholeAfterHandshakeConfirmed(QuicChromiumClientSession* session);
+  void OnBlackholeAfterHandshakeConfirmed(QuicMonyharClientSession* session);
 
   // Cancels a pending request.
   void CancelRequest(QuicStreamRequest* request);
@@ -360,7 +360,7 @@ class NET_EXPORT_PRIVATE QuicStreamFactory
   // It returns the amount of time waiting job should be delayed.
   base::TimeDelta GetTimeDelayForWaitingJob(const QuicSessionKey& session_key);
 
-  QuicChromiumConnectionHelper* helper() { return helper_.get(); }
+  QuicMonyharConnectionHelper* helper() { return helper_.get(); }
 
   quic::QuicAlarmFactory* alarm_factory() { return alarm_factory_.get(); }
 
@@ -387,14 +387,14 @@ class NET_EXPORT_PRIVATE QuicStreamFactory
   class CryptoClientConfigHandle;
   friend class test::QuicStreamFactoryPeer;
 
-  using SessionMap = std::map<QuicSessionKey, QuicChromiumClientSession*>;
+  using SessionMap = std::map<QuicSessionKey, QuicMonyharClientSession*>;
   using SessionIdMap =
-      std::map<QuicChromiumClientSession*, QuicSessionAliasKey>;
+      std::map<QuicMonyharClientSession*, QuicSessionAliasKey>;
   using AliasSet = std::set<QuicSessionAliasKey>;
-  using SessionAliasMap = std::map<QuicChromiumClientSession*, AliasSet>;
-  using SessionSet = std::set<QuicChromiumClientSession*>;
+  using SessionAliasMap = std::map<QuicMonyharClientSession*, AliasSet>;
+  using SessionSet = std::set<QuicMonyharClientSession*>;
   using IPAliasMap = std::map<IPEndPoint, SessionSet>;
-  using SessionPeerIPMap = std::map<QuicChromiumClientSession*, IPEndPoint>;
+  using SessionPeerIPMap = std::map<QuicMonyharClientSession*, IPEndPoint>;
   using JobMap = std::map<QuicSessionKey, std::unique_ptr<Job>>;
   using DnsAliasesBySessionKeyMap =
       std::map<QuicSessionKey, std::vector<std::string>>;
@@ -416,10 +416,10 @@ class NET_EXPORT_PRIVATE QuicStreamFactory
                     base::TimeTicks dns_resolution_start_time,
                     base::TimeTicks dns_resolution_end_time,
                     const NetLogWithSource& net_log,
-                    QuicChromiumClientSession** session,
+                    QuicMonyharClientSession** session,
                     NetworkChangeNotifier::NetworkHandle* network);
   void ActivateSession(const QuicSessionAliasKey& key,
-                       QuicChromiumClientSession* session,
+                       QuicMonyharClientSession* session,
                        std::vector<std::string> dns_aliases);
   // Go away all active sessions. May disable session's connectivity monitoring
   // based on the |reason|.
@@ -466,21 +466,21 @@ class NET_EXPORT_PRIVATE QuicStreamFactory
       const std::unique_ptr<QuicServerInfo>& server_info,
       quic::QuicConnectionId* connection_id);
 
-  void ProcessGoingAwaySession(QuicChromiumClientSession* session,
+  void ProcessGoingAwaySession(QuicMonyharClientSession* session,
                                const quic::QuicServerId& server_id,
                                bool was_session_active);
 
   // Insert the given alias `key` in the AliasSet for the given `session` in
   // the map `session_aliases_`, and add the given `dns_aliases` for
   // `key.session_key()` in `dns_aliases_by_session_key_`.
-  void MapSessionToAliasKey(QuicChromiumClientSession* session,
+  void MapSessionToAliasKey(QuicMonyharClientSession* session,
                             const QuicSessionAliasKey& key,
                             std::vector<std::string> dns_aliases);
 
   // For all alias keys for `session` in `session_aliases_`, erase the
   // corresponding DNS aliases in `dns_aliases_by_session_key_`. Then erase
   // `session` from `session_aliases_`.
-  void UnmapSessionFromSessionAliases(QuicChromiumClientSession* session);
+  void UnmapSessionFromSessionAliases(QuicMonyharClientSession* session);
 
   // Creates a CreateCryptoConfigHandle for the specified NetworkIsolationKey.
   // If there's already a corresponding entry in |active_crypto_config_map_|,
@@ -538,7 +538,7 @@ class NET_EXPORT_PRIVATE QuicStreamFactory
   SocketPerformanceWatcherFactory* socket_performance_watcher_factory_;
 
   // The helper used for all connections.
-  std::unique_ptr<QuicChromiumConnectionHelper> helper_;
+  std::unique_ptr<QuicMonyharConnectionHelper> helper_;
 
   // The alarm factory used for all connections.
   std::unique_ptr<quic::QuicAlarmFactory> alarm_factory_;
@@ -586,7 +586,7 @@ class NET_EXPORT_PRIVATE QuicStreamFactory
 
   // If more than |yield_after_packets_| packets have been read or more than
   // |yield_after_duration_| time has passed, then
-  // QuicChromiumPacketReader::StartReading() yields by doing a PostTask().
+  // QuicMonyharPacketReader::StartReading() yields by doing a PostTask().
   int yield_after_packets_;
   quic::QuicTime::Delta yield_after_duration_;
 

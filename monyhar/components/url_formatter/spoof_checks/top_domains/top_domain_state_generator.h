@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ namespace url_formatter {
 namespace top_domains {
 
 // TopDomainStateGenerator generates C++ code that contains the top domain
-// entries in a way the Chromium code understands. The code that reads the
+// entries in a way the Monyhar code understands. The code that reads the
 // output can be found in components/url_formatter/idn_spoof_checker.cc.
 // The output gets compiled into the binary.
 //

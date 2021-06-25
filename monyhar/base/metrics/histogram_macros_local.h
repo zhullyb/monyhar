@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,7 +9,7 @@
 #include "base/metrics/histogram_macros_internal.h"
 #include "base/time/time.h"
 
-// TODO(rkaplow): Migrate all LOCAL_* usage within Chromium to include this
+// TODO(rkaplow): Migrate all LOCAL_* usage within Monyhar to include this
 // file instead of the histogram_macros.h file.
 
 //------------------------------------------------------------------------------

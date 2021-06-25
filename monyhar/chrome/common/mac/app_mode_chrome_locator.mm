@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,8 +28,8 @@ absl::optional<PathAndStructure> GetFrameworkDylibPathAndStructure(
     NSString* bundle_path,
     NSString* version) {
   // NEW STYLE:
-  // Chromium.app/Contents/Frameworks/Chromium Framework.framework/
-  //   Versions/<version>/Chromium Framework
+  // Monyhar.app/Contents/Frameworks/Monyhar Framework.framework/
+  //   Versions/<version>/Monyhar Framework
   NSString* path = [NSString pathWithComponents:@[
     bundle_path, @"Contents", @"Frameworks", @(chrome::kFrameworkName),
     @"Versions", version, @(chrome::kFrameworkExecutableName)
@@ -39,8 +39,8 @@ absl::optional<PathAndStructure> GetFrameworkDylibPathAndStructure(
     return PathAndStructure{path, true};
 
   // OLD STYLE:
-  // Chromium.app/Contents/Versions/<version>/Chromium Framework.framework/
-  //   Versions/A/Chromium Framework
+  // Monyhar.app/Contents/Versions/<version>/Monyhar Framework.framework/
+  //   Versions/A/Monyhar Framework
   path = [NSString pathWithComponents:@[
     bundle_path, @"Contents", @"Versions", version, @(chrome::kFrameworkName),
     @"Versions", @"A", @(chrome::kFrameworkExecutableName)
@@ -87,10 +87,10 @@ bool GetChromeBundleInfo(const base::FilePath& chrome_bundle,
   // with the old bundle structure.)
   //
   // Note that the scenario where a specific version was requested but is not
-  // present is a "should not happen" scenario. Chromium, while it is running,
+  // present is a "should not happen" scenario. Monyhar, while it is running,
   // maintains a link to the currently running version, and this function's
-  // caller checked to see if the Chromium was still running. However, even in
-  // this bizarre case, it's best to find _some_ Chromium.
+  // caller checked to see if the Monyhar was still running. However, even in
+  // this bizarre case, it's best to find _some_ Monyhar.
   if (!framework_path_and_structure) {
     framework_path_and_structure =
         GetFrameworkDylibPathAndStructure(cr_bundle_path, @"Current");

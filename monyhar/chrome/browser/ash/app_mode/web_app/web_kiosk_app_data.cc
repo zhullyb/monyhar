@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -55,7 +55,7 @@ class WebKioskAppData::IconFetcher : public ImageDecoder::ImageRequest {
             "the installation of the app itself. Before this happens, "
             "we are using default placeholder icon for the app. To "
             "overcome this issue, the URL with the icon file is being "
-            "sent from the device management server. Chromium will "
+            "sent from the device management server. Monyhar will "
             "download the image located at this url."
           trigger:
             "User clicks on the menu button with the list of kiosk apps"

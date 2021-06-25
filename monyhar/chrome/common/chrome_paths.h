@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -59,7 +59,7 @@ enum {
      BUILDFLAG(CHROMIUM_BRANDING)) ||                        \
     defined(OS_MAC)
   DIR_USER_EXTERNAL_EXTENSIONS,  // Directory for per-user external extensions
-                                 // on Chrome Mac and Chromium Linux.
+                                 // on Chrome Mac and Monyhar Linux.
                                  // On Chrome OS, this path is used for OEM
                                  // customization. Getting this path does not
                                  // create it.

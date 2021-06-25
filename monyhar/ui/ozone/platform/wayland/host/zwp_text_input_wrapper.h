@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -60,7 +60,7 @@ class ZWPTextInputWrapperClient {
 
 // A wrapper around different versions of wayland text input protocols.
 // Wayland compositors support various different text input protocols which
-// all from Chromium point of view provide the functionality needed by Chromium
+// all from Monyhar point of view provide the functionality needed by Monyhar
 // IME. This interface collects the functionality behind one wrapper API.
 class ZWPTextInputWrapper {
  public:

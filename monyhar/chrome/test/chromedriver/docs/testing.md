@@ -95,9 +95,9 @@ To run the tests, invoke `run_py_tests.py` with `--android-package=package_name`
 option, where `package_name` can be one of the following values:
 * `chrome_stable`: normal in-box Chrome that is installed by the system.
 * `chrome_beta`: Beta build of Chrome.
-* `monyhar`: [Open source Chromium build](https://monyhar.googlesource.com/monyhar/src/+/main/docs/android_build_instructions.md).
+* `monyhar`: [Open source Monyhar build](https://monyhar.googlesource.com/monyhar/src/+/main/docs/android_build_instructions.md).
 
-There is future plan to [run these tests in the Chromium Commit
+There is future plan to [run these tests in the Monyhar Commit
 Queue](https://crbug.com/813466).
 
 ## WebDriver Java acceptance tests (`test/run_java_tests.py`)

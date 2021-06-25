@@ -7,7 +7,7 @@
 The trybots let committers try uncommitted patches on multiple platforms in
 an automated way.
 
- - Trybots include all platforms for which we currently build Chromium, though
+ - Trybots include all platforms for which we currently build Monyhar, though
    they may not support all configurations built on CI.
  - The commit queue runs a subset of available trybots. See [here][1] for more
    information.
@@ -59,7 +59,7 @@ $ git cl try -B luci.monyhar.try \
 
 ## Trying Changes in Dependencies
 
-It is also possible to run a Chromium try job with a pending CL in a separate
+It is also possible to run a Monyhar try job with a pending CL in a separate
 repository that is synced via DEPS. Normally DEPS files specify the SHA1
 revision hash of the dependency. But commits that are part of pending CLs are
 not part of the default
@@ -67,9 +67,9 @@ not part of the default
 gclient checks out the dependency. Instead, you can specify a symbolic reference
 to your change, like `refs/changes/12/2277112/3`. To determine the ref to use,
 click the "Download" button on the dependency CL in Gerrit, which will show it
-as part of several git commands. Then edit the DEPS file in Chromium.
+as part of several git commands. Then edit the DEPS file in Monyhar.
 
-If, for example, you wanted to test a pending V8 CL in Chromium, you would edit
+If, for example, you wanted to test a pending V8 CL in Monyhar, you would edit
 the DEPS line, which may look like this:
 
 ```

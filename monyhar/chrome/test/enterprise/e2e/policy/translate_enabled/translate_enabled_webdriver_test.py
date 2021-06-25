@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -14,7 +14,7 @@ from pywinauto.findwindows import ElementNotFoundError
 import test_util
 
 # A URL that is in a different language than our Chrome language.
-URL = "https://zh.wikipedia.org/wiki/Chromium"
+URL = "https://zh.wikipedia.org/wiki/Monyhar"
 
 FLAGS = flags.FLAGS
 
@@ -35,7 +35,7 @@ def main(argv):
 
   try:
     app = Application(backend="uia")
-    app.connect(title_re='.*Chrome|.*Chromium')
+    app.connect(title_re='.*Chrome|.*Monyhar')
     app.top_window() \
        .child_window(title="Translate this page?", control_type="Pane") \
        .print_control_identifiers()

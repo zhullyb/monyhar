@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -357,7 +357,7 @@ class GLES2InterfaceForTests : public gpu::gles2::GLES2InterfaceStub,
     return most_recently_produced_size_;
   }
 
-  void SetCreateImageChromiumFail(bool fail) {
+  void SetCreateImageMonyharFail(bool fail) {
     create_image_monyhar_fail_ = fail;
   }
 
@@ -393,7 +393,7 @@ class GLES2InterfaceForTests : public gpu::gles2::GLES2InterfaceStub,
   }
 
  private:
-  // The target to use when binding a texture to a Chromium image.
+  // The target to use when binding a texture to a Monyhar image.
 #if defined(OS_MAC)
   static constexpr GLuint kImageCHROMIUMTarget = GC3D_TEXTURE_RECTANGLE_ARB;
 #else
@@ -482,7 +482,7 @@ class DrawingBufferForTests : public DrawingBuffer {
             kWebGL1,
             false /* wantDepth */,
             false /* wantStencil */,
-            DrawingBuffer::kAllowChromiumImage /* ChromiumImageUsage */,
+            DrawingBuffer::kAllowMonyharImage /* MonyharImageUsage */,
             kLow_SkFilterQuality,
             CanvasColorParams(),
             gl::GpuPreference::kHighPerformance),

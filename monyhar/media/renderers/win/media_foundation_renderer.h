@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -121,7 +121,7 @@ class MEDIA_EXPORT MediaFoundationRenderer
   // Current duration of the media.
   base::TimeDelta duration_;
 
-  // This is the same as "natural_size" in Chromium.
+  // This is the same as "natural_size" in Monyhar.
   gfx::Size native_video_size_;
 
   // Keep the last volume value being set.

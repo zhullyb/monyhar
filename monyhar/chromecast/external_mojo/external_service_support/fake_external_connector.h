@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -54,7 +54,7 @@ class FakeExternalConnector
       std::vector<chromecast::external_mojo::mojom::ServiceInstanceInfoPtr>
           service_instances_info) override;
   std::unique_ptr<external_service_support::ExternalConnector> Clone() override;
-  void SendChromiumConnectorRequest(
+  void SendMonyharConnectorRequest(
       mojo::ScopedMessagePipeHandle request) override;
   void QueryServiceList(
       base::OnceCallback<

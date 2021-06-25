@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -282,7 +282,7 @@ void FidoHidDevice::OnPotentialInitReply(
 
   absl::optional<uint32_t> maybe_channel_id = ParseInitReply(nonce, *buf);
   if (!maybe_channel_id) {
-    // This instance of Chromium may not be the only process communicating with
+    // This instance of Monyhar may not be the only process communicating with
     // this HID device, but all processes will see all the messages from the
     // device. Thus it is not an error to observe unexpected messages from the
     // device and they are ignored.

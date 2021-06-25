@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2015 The Chromium Authors. All rights reserved.
+<!-- Copyright 2015 The Monyhar Authors. All rights reserved.
      Use of this source code is governed by a BSD-style license that can be
      found in the LICENSE file. -->
 
@@ -362,7 +362,7 @@ by a child template that "extends" this file.
         <activity android:name="org.monyhar.chrome.browser.media.PictureInPictureActivity"
                   android:exported="false"
                   android:noHistory="true"
-                  android:theme="@style/Theme.Chromium.Activity"
+                  android:theme="@style/Theme.Monyhar.Activity"
                   android:excludeFromRecents="true"
                   android:configChanges=
                        "screenSize|smallestScreenSize|screenLayout|orientation"
@@ -437,7 +437,7 @@ by a child template that "extends" this file.
 
         <!-- Custom Tabs -->
         <activity android:name="org.monyhar.chrome.browser.customtabs.CustomTabActivity"
-            android:theme="@style/Theme.Chromium.Activity"
+            android:theme="@style/Theme.Monyhar.Activity"
             android:exported="false"
             {{ self.chrome_activity_common() }}
             {{ self.supports_video_persistence() }}
@@ -446,7 +446,7 @@ by a child template that "extends" this file.
             {{ self.extra_web_rendering_activity_definitions() }}
         </activity>
         <activity android:name="org.monyhar.chrome.browser.customtabs.TranslucentCustomTabActivity"
-                  android:theme="@style/Theme.Chromium.Activity.FakeTranslucent"
+                  android:theme="@style/Theme.Monyhar.Activity.FakeTranslucent"
                   android:exported="false"
             {{ self.chrome_activity_common() }}
             {{ self.supports_video_persistence() }}
@@ -456,7 +456,7 @@ by a child template that "extends" this file.
         </activity>
         <!-- ChromeTabbedActivity related -->
         <activity android:name="org.monyhar.chrome.browser.ChromeTabbedActivity"
-            android:theme="@style/Theme.Chromium.TabbedMode"
+            android:theme="@style/Theme.Monyhar.TabbedMode"
             android:exported="true"
             android:launchMode="singleTask"
             {# We can only use blocks once in Jinja, for future substitutions we use
@@ -506,7 +506,7 @@ by a child template that "extends" this file.
             {{ self.extra_web_rendering_activity_definitions() }}
         </activity-alias>
         <activity android:name="org.monyhar.chrome.browser.ChromeTabbedActivity2"
-            android:theme="@style/Theme.Chromium.TabbedMode"
+            android:theme="@style/Theme.Monyhar.TabbedMode"
             android:exported="false"
             android:taskAffinity="{{ manifest_package }}.ChromeTabbedActivity2"
             android:launchMode="singleTask"
@@ -517,7 +517,7 @@ by a child template that "extends" this file.
             {{ self.extra_web_rendering_activity_definitions() }}
         </activity>
         <activity android:name="org.monyhar.chrome.browser.multiwindow.MultiInstanceChromeTabbedActivity"
-            android:theme="@style/Theme.Chromium.TabbedMode"
+            android:theme="@style/Theme.Monyhar.TabbedMode"
             android:exported="false"
             {{ self.chrome_activity_common() }}>
             {{ self.extra_web_rendering_activity_definitions() }}
@@ -533,16 +533,16 @@ by a child template that "extends" this file.
             android:exported="false">
         </activity>
         <activity android:name="org.monyhar.chrome.browser.sync.ui.PassphraseActivity"
-            android:theme="@style/Theme.Chromium.Activity"
+            android:theme="@style/Theme.Monyhar.Activity"
             android:autoRemoveFromRecents="true">
         </activity>
         <activity android:name="org.monyhar.chrome.browser.firstrun.LightweightFirstRunActivity"
-            android:theme="@style/Theme.Chromium.AlertDialog.NoActionBar"
+            android:theme="@style/Theme.Monyhar.AlertDialog.NoActionBar"
             android:launchMode="singleInstance"
             {{ self.first_run_activity_common() }}>
         </activity>
         <activity android:name="org.monyhar.chrome.browser.firstrun.FirstRunActivity"
-            android:theme="@style/Theme.Chromium.DialogWhenLarge"
+            android:theme="@style/Theme.Monyhar.DialogWhenLarge"
             android:launchMode="singleTop"
             {% block first_run_activity_common %}
             android:label="@string/fre_activity_label"
@@ -553,7 +553,7 @@ by a child template that "extends" this file.
             {% endblock %}>
         </activity>
         <activity android:name="org.monyhar.chrome.browser.firstrun.TabbedModeFirstRunActivity"
-            android:theme="@style/Theme.Chromium.TabbedMode"
+            android:theme="@style/Theme.Monyhar.TabbedMode"
             android:launchMode="singleTop"
             {{ self.first_run_activity_common() }}>
         </activity>
@@ -569,24 +569,24 @@ by a child template that "extends" this file.
         </activity>
         {% endif %}
         <activity android:name="org.monyhar.chrome.browser.signin.SyncConsentActivity"
-            android:theme="@style/Theme.Chromium.DialogWhenLarge"
+            android:theme="@style/Theme.Monyhar.DialogWhenLarge"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize"
             android:exported="false">
         </activity>
         <activity android:name="org.monyhar.chrome.browser.settings.SettingsActivity"
-            android:theme="@style/Theme.Chromium.Settings"
+            android:theme="@style/Theme.Monyhar.Settings"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize"
             android:label="@string/settings"
             android:exported="false">
         </activity>
         <activity android:name="org.monyhar.chrome.browser.site_settings.ManageSpaceActivity"
-            android:theme="@style/Theme.Chromium.Settings.ManageSpace"
+            android:theme="@style/Theme.Monyhar.Settings.ManageSpace"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize"
             android:label="@string/storage_management_activity_label"
             android:exported="false">
         </activity>
         <activity android:name="org.monyhar.chrome.browser.bookmarks.BookmarkActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize">
@@ -603,19 +603,19 @@ by a child template that "extends" this file.
             </intent-filter>
         </activity>
         <activity android:name="org.monyhar.chrome.browser.bookmarks.BookmarkEditActivity"
-            android:theme="@style/Theme.Chromium.DialogWhenLarge"
+            android:theme="@style/Theme.Monyhar.DialogWhenLarge"
             android:windowSoftInputMode="stateHidden"
             android:exported="false"
             android:label="@string/edit_bookmark"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize">
         </activity>
         <activity android:name="org.monyhar.chrome.browser.bookmarks.BookmarkAddEditFolderActivity"
-            android:theme="@style/Theme.Chromium.DialogWhenLarge"
+            android:theme="@style/Theme.Monyhar.DialogWhenLarge"
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize">
         </activity>
         <activity android:name="org.monyhar.chrome.browser.bookmarks.BookmarkFolderSelectActivity"
-            android:theme="@style/Theme.Chromium.DialogWhenLarge"
+            android:theme="@style/Theme.Monyhar.DialogWhenLarge"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:label="@string/bookmark_choose_folder"
             android:exported="false"
@@ -624,14 +624,14 @@ by a child template that "extends" this file.
 
         <!-- Activities for video tutorials. -->
         <activity android:name="org.monyhar.chrome.browser.app.video_tutorials.VideoTutorialListActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize"
             android:exported="false">
         </activity>
 
         <!-- Activities for downloads. -->
         <activity android:name="org.monyhar.chrome.browser.download.DownloadActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize">
@@ -639,13 +639,13 @@ by a child template that "extends" this file.
 
         <!-- Activities for feed. -->
         <activity android:name="org.monyhar.chrome.browser.app.feedmanagement.FeedManagementActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize">
         </activity>
         <activity android:name="org.monyhar.chrome.browser.app.followmanagement.FollowManagementActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize">
@@ -657,7 +657,7 @@ by a child template that "extends" this file.
 
         <!-- Activities for video tutorials. -->
         <activity android:name="org.monyhar.chrome.browser.app.video_tutorials.VideoPlayerActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize"
             android:exported="false"
@@ -667,7 +667,7 @@ by a child template that "extends" this file.
 
         <!-- Activities for history. -->
         <activity android:name="org.monyhar.chrome.browser.history.HistoryActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize">
@@ -675,7 +675,7 @@ by a child template that "extends" this file.
 
         <!-- Activities for app launcher. -->
         <activity android:name="org.monyhar.chrome.browser.webapps.launchpad.LaunchpadActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:exported="false"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize">
@@ -715,7 +715,7 @@ by a child template that "extends" this file.
             android:targetActivity="org.monyhar.chrome.browser.webapps.WebappLauncherActivity">
         </activity-alias>
         <activity android:name="org.monyhar.chrome.browser.webapps.WebappActivity"
-            android:theme="@style/Theme.Chromium.Webapp"
+            android:theme="@style/Theme.Monyhar.Webapp"
             android:label="@string/webapp_activity_title"
             android:launchMode="singleTop"
             android:documentLaunchMode="intoExisting"
@@ -734,7 +734,7 @@ by a child template that "extends" this file.
         </activity-alias>
         <!-- Activities for WebAPKs. -->
         <activity android:name="org.monyhar.chrome.browser.webapps.SameTaskWebApkActivity"
-            android:theme="@style/Theme.Chromium.Webapp.Translucent"
+            android:theme="@style/Theme.Monyhar.Webapp.Translucent"
             android:label="@string/webapp_activity_title"
             android:exported="false"
             android:persistableMode="persistNever"
@@ -755,7 +755,7 @@ by a child template that "extends" this file.
         </activity>
 
         <activity android:name="org.monyhar.components.media_router.caf.remoting.CafExpandedControllerActivity"
-            android:theme="@style/Theme.Chromium.Activity"
+            android:theme="@style/Theme.Monyhar.Activity"
             android:label="Chrome.CafExpandedControllerActivity"
             android:hardwareAccelerated="true"
             android:launchMode="singleTask"
@@ -818,7 +818,7 @@ by a child template that "extends" this file.
             android:excludeFromRecents="true"
             android:exported="true"
             android:noHistory="true"
-            android:theme="@style/Theme.Chromium.Activity.TranslucentNoAnimations"
+            android:theme="@style/Theme.Monyhar.Activity.TranslucentNoAnimations"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc|screenLayout|smallestScreenSize" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -865,12 +865,12 @@ by a child template that "extends" this file.
         </receiver>
 
         <activity android:name="org.monyhar.chrome.browser.browserservices.ClearDataDialogActivity"
-            android:theme="@style/Theme.Chromium.ClearDataDialogActivity"
+            android:theme="@style/Theme.Monyhar.ClearDataDialogActivity"
             android:exported="false"/>
 
         <activity
             android:name="org.monyhar.chrome.browser.browserservices.ManageTrustedWebActivityDataActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen.Transparent"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen.Transparent"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.support.customtabs.action.ACTION_MANAGE_TRUSTED_WEB_ACTIVITY_DATA" />
@@ -885,7 +885,7 @@ by a child template that "extends" this file.
         </activity>
 
         <activity android:name="org.monyhar.chrome.browser.webauth.authenticator.CableAuthenticatorActivity"
-            android:theme="@style/Theme.Chromium.Activity.Fullscreen"
+            android:theme="@style/Theme.Monyhar.Activity.Fullscreen"
             android:label="@string/cablev2_activity_title"
             android:permission="com.google.android.gms.auth.cryptauth.permission.CABLEV2_SERVER_LINK"
             android:exported="true"
@@ -965,7 +965,7 @@ by a child template that "extends" this file.
 
         <!-- Search Activity -->
         <activity android:name="org.monyhar.chrome.browser.searchwidget.SearchActivity"
-            android:theme="@style/Theme.Chromium.SearchActivity"
+            android:theme="@style/Theme.Monyhar.SearchActivity"
             android:label="Search"
             android:exported="false"
             android:launchMode="singleTask"

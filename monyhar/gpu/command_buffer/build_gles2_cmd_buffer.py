@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """code generator for GLES2 command buffers."""
@@ -734,7 +734,7 @@ _NAMED_TYPE_INFO = {
       'GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH',
     ],
     'invalid': [
-      'GL_PROGRAM_BINARY_RETRIEVABLE_HINT',  # not supported in Chromium.
+      'GL_PROGRAM_BINARY_RETRIEVABLE_HINT',  # not supported in Monyhar.
     ],
   },
   'QueryObjectParameter': {
@@ -1909,7 +1909,7 @@ _FUNCTION_INFO = {
     'cmd_args': 'GLuint bucket_id, GLint* result',
     'result': ['GLint'],
     'extension': 'GL_CHROMIUM_enable_feature',
-    'pepper_interface': 'ChromiumEnableFeature',
+    'pepper_interface': 'MonyharEnableFeature',
   },
   'CompileShader': {'decoder_func': 'DoCompileShader', 'unit_test': False},
   'CompressedTexImage2D': {
@@ -2882,13 +2882,13 @@ _FUNCTION_INFO = {
   'MapBufferSubDataCHROMIUM': {
     'type': 'NoCommand',
     'extension': 'CHROMIUM_map_sub',
-    'pepper_interface': 'ChromiumMapSub',
+    'pepper_interface': 'MonyharMapSub',
     'trace_level': 1,
   },
   'MapTexSubImage2DCHROMIUM': {
     'type': 'NoCommand',
     'extension': "CHROMIUM_sub_image",
-    'pepper_interface': 'ChromiumMapSub',
+    'pepper_interface': 'MonyharMapSub',
     'trace_level': 1,
   },
   'MapBufferRange': {
@@ -3524,7 +3524,7 @@ _FUNCTION_INFO = {
   'UnmapBufferSubDataCHROMIUM': {
     'type': 'NoCommand',
     'extension': 'CHROMIUM_map_sub',
-    'pepper_interface': 'ChromiumMapSub',
+    'pepper_interface': 'MonyharMapSub',
     'trace_level': 1,
   },
   'UnmapBuffer': {
@@ -3535,7 +3535,7 @@ _FUNCTION_INFO = {
   'UnmapTexSubImage2DCHROMIUM': {
     'type': 'NoCommand',
     'extension': "CHROMIUM_sub_image",
-    'pepper_interface': 'ChromiumMapSub',
+    'pepper_interface': 'MonyharMapSub',
     'trace_level': 1,
   },
   'UseProgram': {

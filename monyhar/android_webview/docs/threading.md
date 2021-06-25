@@ -1,13 +1,13 @@
 # Android WebView and the UI thread
 
-This document describes how the Chromium based Android WebView reconciles with
-mismatching requirements and assumptions between Android and Chromium about the
+This document describes how the Monyhar based Android WebView reconciles with
+mismatching requirements and assumptions between Android and Monyhar about the
 UI thread.
 
 
-## The UI Thread in Chromium
+## The UI Thread in Monyhar
 
-In Chromium, there is a single global **UI** thread in the browser process. It
+In Monyhar, there is a single global **UI** thread in the browser process. It
 is one of the explicitly named
 [BrowserThreads](/content/public/browser/browser_thread.h).
 The **UI** thread is generally where UI code runs, including input delivery from
@@ -38,11 +38,11 @@ the same.
 WebView’s solution is use the first **view** thread as the **UI** thread, then
 post non-**UI** thread calls to the **UI** thread, and block if needed.
 
-Because Chromium initialization identifies the thread as the UI thread, parts of
-this solution runs before Chromium is initialized. The implementation is in the
+Because Monyhar initialization identifies the thread as the UI thread, parts of
+this solution runs before Monyhar is initialized. The implementation is in the
 android webview glue layer, specifically in
-[WebViewChromium](../glue/java/src/com/android/webview/monyhar/WebViewChromium.java)
-and [WebViewChromiumFactoryProvider](../glue/java/src/com/android/webview/monyhar/WebViewChromiumFactoryProvider.java).
+[WebViewMonyhar](../glue/java/src/com/android/webview/monyhar/WebViewMonyhar.java)
+and [WebViewMonyharFactoryProvider](../glue/java/src/com/android/webview/monyhar/WebViewMonyharFactoryProvider.java).
 The idea is hold off initializing monyhar until a **view** thread is identified.
 
 **View** thread can be identified by certain View methods. For example,

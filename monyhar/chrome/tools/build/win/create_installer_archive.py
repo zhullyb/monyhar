@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -97,8 +97,8 @@ def CopyAllFilesToStagingDir(config, distribution, staging_dir, build_dir,
                              enable_hidpi, include_snapshotblob,
                              component_build, component_ffmpeg_build, verbose):
   """Copies the files required for installer archive.
-  Copies all common files required for various distributions of Chromium and
-  also files for the specific Chromium build specified by distribution.
+  Copies all common files required for various distributions of Monyhar and
+  also files for the specific Monyhar build specified by distribution.
   """
   CopySectionFilesToStagingDir(config, 'GENERAL', staging_dir, build_dir,
                                verbose)
@@ -590,7 +590,7 @@ def _ParseOptions():
            'Defaults to %s in the build directory.' %
                MINI_INSTALLER_INPUT_FILE)
   parser.add_option('-d', '--distribution',
-      help='Name of Chromium Distribution. Optional.')
+      help='Name of Monyhar Distribution. Optional.')
   parser.add_option('-s', '--skip_rebuild_archive',
       default="False", help='Skip re-building Chrome.7z archive if it exists.')
   parser.add_option('-l', '--last_chrome_installer',

@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -909,7 +909,7 @@ typedef void (^ViewportStateCompletion)(const web::PageViewportState*);
 
 // TODO(crbug.com/1174560) This depends on iOS TBA logic landed in WebKit's
 // opensource repository, and currently includes not-to-be-shipped logic to use
-// private APIs, so the rest of the Chromium logic can be tested. When iOS TBA
+// private APIs, so the rest of the Monyhar logic can be tested. When iOS TBA
 // is released with the necessary logic, the private implementation can be
 // removed. See https://bugs.webkit.org/show_bug.cgi?id=220958 for details.
 - (BOOL)setSessionStateData:(NSData*)data {
@@ -955,7 +955,7 @@ typedef void (^ViewportStateCompletion)(const web::PageViewportState*);
 
 // TODO(crbug.com/1174560) This depends on iOS TBA logic landed in WebKit's
 // opensource repository, and currently includes not-to-be-shipped logic to use
-// private APIs, so the rest of the Chromium logic can be tested. When iOS TBA
+// private APIs, so the rest of the Monyhar logic can be tested. When iOS TBA
 // is released with the necessary logic, the private implementation can be
 // removed. See https://bugs.webkit.org/show_bug.cgi?id=220958 for details.
 - (NSData*)sessionStateData {

@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -17,7 +17,7 @@ from gpu_tests import path_util
 from telemetry.util import image_util
 from telemetry.util import rgba_color
 
-data_path = os.path.join(path_util.GetChromiumSrcDir(), 'content', 'test',
+data_path = os.path.join(path_util.GetMonyharSrcDir(), 'content', 'test',
                          'data', 'gpu')
 
 

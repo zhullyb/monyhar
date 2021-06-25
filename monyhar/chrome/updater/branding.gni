@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -11,22 +11,22 @@ if (is_chrome_branded) {
   browser_name = "Chrome"
   browser_product_name = "Google Chrome"
   updater_copyright =
-      "Copyright 2020 The Chromium Authors. All rights reserved."
+      "Copyright 2020 The Monyhar Authors. All rights reserved."
   mac_updater_bundle_identifier = "com.google.GoogleUpdater"
   mac_browser_bundle_identifier = "com.google.Chrome"
 } else {
-  updater_company_full_name = "Chromium Authors"
-  updater_company_short_name = "Chromium"
-  updater_product_full_name = "ChromiumUpdater"
-  browser_name = "Chromium"
-  browser_product_name = "Chromium"
+  updater_company_full_name = "Monyhar Authors"
+  updater_company_short_name = "Monyhar"
+  updater_product_full_name = "MonyharUpdater"
+  browser_name = "Monyhar"
+  browser_product_name = "Monyhar"
   updater_copyright =
-      "Copyright 2020 The Chromium Authors. All rights reserved."
-  mac_updater_bundle_identifier = "org.monyhar.ChromiumUpdater"
-  mac_browser_bundle_identifier = "org.monyhar.Chromium"
+      "Copyright 2020 The Monyhar Authors. All rights reserved."
+  mac_updater_bundle_identifier = "org.monyhar.MonyharUpdater"
+  mac_browser_bundle_identifier = "org.monyhar.Monyhar"
 }
 
-# Chrome and Chromium share the same endpoints for now.
+# Chrome and Monyhar share the same endpoints for now.
 update_check_url = "https://update.googleapis.com/service/update2/json"
 crash_upload_url = "https://clients2.google.com/cr/report"
 crash_staging_upload_url = "https://clients2.google.com/cr/staging_report"

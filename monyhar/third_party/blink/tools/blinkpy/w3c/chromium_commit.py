@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -7,13 +7,13 @@ from blinkpy.w3c.monyhar_finder import absolute_monyhar_dir, absolute_monyhar_wp
 from blinkpy.w3c.common import is_file_exportable
 
 
-class ChromiumCommit(object):
+class MonyharCommit(object):
     def __init__(self, host, sha=None, position=None):
         """Initializes a ChomiumCommit object, given a sha or commit position.
 
         Args:
             host: A Host object.
-            sha: A Chromium commit SHA hash.
+            sha: A Monyhar commit SHA hash.
             position: A commit position footer string of the form:
                     'Cr-Commit-Position: refs/heads/main@{#431915}'
                 or just the commit position string:
@@ -35,7 +35,7 @@ class ChromiumCommit(object):
             position = self.sha_to_position(sha)
 
         assert len(sha) == 40, 'Expected SHA-1 hash, got {}'.format(sha)
-        assert sha and position, 'ChromiumCommit should have sha and position after __init__'
+        assert sha and position, 'MonyharCommit should have sha and position after __init__'
         self.sha = sha
         self.position = position
 
@@ -68,7 +68,7 @@ class ChromiumCommit(object):
                 cwd=self.absolute_monyhar_dir).strip()
         except ScriptError as e:
             # Commits from Gerrit CLs that have not yet been committed in
-            # Chromium do not have a commit position.
+            # Monyhar do not have a commit position.
             if 'Unable to infer commit position from footers' in e.message:
                 return 'no-commit-position-yet'
             else:

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -576,7 +576,7 @@ TEST_F(SiteSettingsHelperTest, CreateChooserExceptionObject) {
                                       *chooser_object);
 
     // The map sorts the sites by requesting origin, so |kAndroidUrl| should
-    // be first, followed by the origin pair (kGoogleOrigin, kChromiumOrigin).
+    // be first, followed by the origin pair (kGoogleOrigin, kMonyharOrigin).
     const auto& sites_list = exception.FindKey(kSites)->GetList();
     ExpectValidSiteExceptionObject(/*actual_site_object=*/sites_list[0],
                                    /*origin=*/kAndroidUrl,
@@ -645,7 +645,7 @@ constexpr char kUsbPolicySetting[] = R"(
 class SiteSettingsHelperChooserExceptionTest : public testing::Test {
  protected:
   const GURL kGoogleUrl{"https://google.com"};
-  const GURL kChromiumUrl{"https://monyhar.org"};
+  const GURL kMonyharUrl{"https://monyhar.org"};
   const GURL kAndroidUrl{"https://android.com"};
   const GURL kTestUrl{"https://test.com"};
 
@@ -674,7 +674,7 @@ class SiteSettingsHelperChooserExceptionTest : public testing::Test {
     base::RunLoop().RunUntilIdle();
 
     const auto kAndroidOrigin = url::Origin::Create(kAndroidUrl);
-    const auto kChromiumOrigin = url::Origin::Create(kChromiumUrl);
+    const auto kMonyharOrigin = url::Origin::Create(kMonyharUrl);
     const auto kTestOrigin = url::Origin::Create(kTestUrl);
 
     // Add the user granted permissions for testing. "Gizmo" is allowed on two
@@ -682,7 +682,7 @@ class SiteSettingsHelperChooserExceptionTest : public testing::Test {
     // allowed on one origin which is overlapping with the policy.
     chooser_context->GrantDevicePermission(kTestOrigin,
                                            *persistent_device_info);
-    chooser_context->GrantDevicePermission(kChromiumOrigin,
+    chooser_context->GrantDevicePermission(kMonyharOrigin,
                                            *persistent_device_info);
     chooser_context->GrantDevicePermission(kAndroidOrigin,
                                            *ephemeral_device_info);
@@ -799,7 +799,7 @@ TEST_F(SiteSettingsHelperChooserExceptionTest,
     const auto& sites_list = exception.FindKey(kSites)->GetList();
     ASSERT_EQ(sites_list.size(), 2u);
     ExpectValidSiteExceptionObject(sites_list[0],
-                                   /*origin=*/kChromiumUrl,
+                                   /*origin=*/kMonyharUrl,
                                    /*source=*/kPolicySource,
                                    /*incognito=*/false);
     ExpectValidSiteExceptionObject(sites_list[1],

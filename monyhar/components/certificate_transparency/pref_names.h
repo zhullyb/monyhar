@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -43,7 +43,7 @@ extern const char kCTExcludedSPKIs[];
 // 1) The SPKI listed is a known as a publicly trusted root
 //    (see //net/data/ssl/root_stores)
 // 2) The SPKI listed is not actively trusted in the current version of the
-//    ChromiumOS or Android root stores.
+//    MonyharOS or Android root stores.
 //    (see '"legacy": true' in root_stores.json)
 extern const char kCTExcludedLegacySPKIs[];
 

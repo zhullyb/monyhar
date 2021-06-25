@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -169,7 +169,7 @@ void GetVP9ProbsParams(const struct v4l2_vp9_probabilities* v4l2_probs,
 
 }  // namespace
 
-V4L2ChromiumVP9Accelerator::V4L2ChromiumVP9Accelerator(
+V4L2MonyharVP9Accelerator::V4L2MonyharVP9Accelerator(
     V4L2DecodeSurfaceHandler* surface_handler,
     V4L2Device* device)
     : surface_handler_(surface_handler), device_(device) {
@@ -180,9 +180,9 @@ V4L2ChromiumVP9Accelerator::V4L2ChromiumVP9Accelerator(
       device_->IsCtrlExposed(V4L2_CID_MPEG_VIDEO_VP9_FRAME_CONTEXT(0));
 }
 
-V4L2ChromiumVP9Accelerator::~V4L2ChromiumVP9Accelerator() = default;
+V4L2MonyharVP9Accelerator::~V4L2MonyharVP9Accelerator() = default;
 
-scoped_refptr<VP9Picture> V4L2ChromiumVP9Accelerator::CreateVP9Picture() {
+scoped_refptr<VP9Picture> V4L2MonyharVP9Accelerator::CreateVP9Picture() {
   scoped_refptr<V4L2DecodeSurface> dec_surface =
       surface_handler_->CreateSurface();
   if (!dec_surface)
@@ -191,7 +191,7 @@ scoped_refptr<VP9Picture> V4L2ChromiumVP9Accelerator::CreateVP9Picture() {
   return new V4L2VP9Picture(std::move(dec_surface));
 }
 
-DecodeStatus V4L2ChromiumVP9Accelerator::SubmitDecode(
+DecodeStatus V4L2MonyharVP9Accelerator::SubmitDecode(
     scoped_refptr<VP9Picture> pic,
     const Vp9SegmentationParams& segm_params,
     const Vp9LoopFilterParams& lf_params,
@@ -328,7 +328,7 @@ DecodeStatus V4L2ChromiumVP9Accelerator::SubmitDecode(
   return DecodeStatus::kOk;
 }
 
-bool V4L2ChromiumVP9Accelerator::OutputPicture(scoped_refptr<VP9Picture> pic) {
+bool V4L2MonyharVP9Accelerator::OutputPicture(scoped_refptr<VP9Picture> pic) {
   // TODO(crbug.com/647725): Insert correct color space.
   surface_handler_->SurfaceReady(VP9PictureToV4L2DecodeSurface(pic.get()),
                                  pic->bitstream_id(), pic->visible_rect(),
@@ -336,7 +336,7 @@ bool V4L2ChromiumVP9Accelerator::OutputPicture(scoped_refptr<VP9Picture> pic) {
   return true;
 }
 
-bool V4L2ChromiumVP9Accelerator::GetFrameContext(scoped_refptr<VP9Picture> pic,
+bool V4L2MonyharVP9Accelerator::GetFrameContext(scoped_refptr<VP9Picture> pic,
                                                  Vp9FrameContext* frame_ctx) {
   auto ctx_id = pic->frame_hdr->frame_context_idx_to_save_probs;
 
@@ -362,7 +362,7 @@ bool V4L2ChromiumVP9Accelerator::GetFrameContext(scoped_refptr<VP9Picture> pic,
   return true;
 }
 
-bool V4L2ChromiumVP9Accelerator::IsFrameContextRequired() const {
+bool V4L2MonyharVP9Accelerator::IsFrameContextRequired() const {
   return device_needs_frame_context_;
 }
 

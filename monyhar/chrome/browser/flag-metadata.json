@@ -1421,7 +1421,7 @@
   {
     "name": "enable-command-line-on-non-rooted-devices",
     "owners": [ "clank-app-team@google.com" ],
-    // This flag is used for debugging on Android; it causes Android Chromium
+    // This flag is used for debugging on Android; it causes Android Monyhar
     // builds to read command-line arguments from a writable location on disk.
     "expiry_milestone": -1
   },
@@ -3433,8 +3433,8 @@
     "name": "load-media-router-component-extension",
     "owners": [ "mfoltz", "media-dev" ],
     // This flag has two purposes: in-team development/Q&A, and allowing
-    // Chromium users to load this extension, which isn't normally distributed
-    // with Chromium. It can be removed once the extension is removed, which has
+    // Monyhar users to load this extension, which isn't normally distributed
+    // with Monyhar. It can be removed once the extension is removed, which has
     // external dependencies.
     "expiry_milestone": -1
   },

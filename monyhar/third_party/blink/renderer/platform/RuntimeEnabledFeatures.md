@@ -1,6 +1,6 @@
 # Runtime Enabled Features
 ## Overview
-Runtime flags enable Blink developers the ability to control access Chromium users have to new features they implement. Features that are hidden behind a runtime flag are known as Runtime Enabled Features. It is a requirement of the Blink Launch Process to implement new web exposed features behind a runtime flag until an Intent To Ship has been approved.
+Runtime flags enable Blink developers the ability to control access Monyhar users have to new features they implement. Features that are hidden behind a runtime flag are known as Runtime Enabled Features. It is a requirement of the Blink Launch Process to implement new web exposed features behind a runtime flag until an Intent To Ship has been approved.
 
 ## Adding A Runtime Enabled Feature
 Runtime Enabled Features are defined in runtime_enabled_features.json5 in alphabetical order. Add your feature's flag to this file and the rest will be generated for you automatically.
@@ -21,10 +21,10 @@ The status of the feature controls when it will be enabled in the Blink engine.
 | `experimental` | Yes | Yes | No | No |
 | `stable` | Yes | Yes | Yes | No |
 
-\[1]: content_shell will not enable experimental/test features by default. The `--run-web-tests` flag used as part of running web tests enables this behaviour. The `--enable-blink-test-features` flag also enables this behavior in Chromium and content_shell's browser mode.
+\[1]: content_shell will not enable experimental/test features by default. The `--run-web-tests` flag used as part of running web tests enables this behaviour. The `--enable-blink-test-features` flag also enables this behavior in Monyhar and content_shell's browser mode.
 
-\[2]: Navigate to about:flags in the URL bar and turn on "Enable experimental web platform features" (formerly, "Enable experimental WebKit features") **or** run Chromium with `--enable-experimental-web-platform-features` (formerly, --enable-experimental-webkit-features).
-Works in all Chromium channels: canary, dev, beta, and stable.
+\[2]: Navigate to about:flags in the URL bar and turn on "Enable experimental web platform features" (formerly, "Enable experimental WebKit features") **or** run Monyhar with `--enable-experimental-web-platform-features` (formerly, --enable-experimental-webkit-features).
+Works in all Monyhar channels: canary, dev, beta, and stable.
 
 \[3]: For features that are not web exposed features but require code in Blink to be triggered. Such feature can have a about:flags entry or be toggled based on other signals. Such entries should be called out in a comment to differentiate them from stalled entries.
 
@@ -74,12 +74,12 @@ When a feature has shipped and is no longer at risk of needing to be disabled, i
 
 If a feature is not stable and no longer under active development, remove `status: "test"/"experimental"` on it (and consider deleting the code implementing the feature).
 
-### Relationship between a Chromium Feature and a Blink Feature
+### Relationship between a Monyhar Feature and a Blink Feature
 
-In some cases, e.g. for finch expeirment, you may need to define a Chromium feature for a blink feature. Their relationship is
+In some cases, e.g. for finch expeirment, you may need to define a Monyhar feature for a blink feature. Their relationship is
 defined in [content/child/runtime_features.cc]. See the [initialize blink features] doc for more details.
 
-**Note:** If a feature is implemented at both Chromium side and blink side, as the blink feature doesn't fully work by itself, we normally don't set the blink feature's status so that the Chromium feature can fully control the blink feature ([example][controlled by monyhar feature]).
+**Note:** If a feature is implemented at both Monyhar side and blink side, as the blink feature doesn't fully work by itself, we normally don't set the blink feature's status so that the Monyhar feature can fully control the blink feature ([example][controlled by monyhar feature]).
 
 ### Runtime Enabled CSS Properties
 
@@ -152,7 +152,7 @@ internals.runtimeFlags.amazingNewFeatureEnabled
 ```
 This attribute is read only and cannot be changed, unless `settable_from_internals: true` is specified for the feature.
 
-**Note:** The `internals` JavaScript API is only available in content_shell for use by web tests and does not appear in Chromium. In content_shell's browser mode, `--expose-internals-for-testing` is needed to have the `internals` JavaScript API.
+**Note:** The `internals` JavaScript API is only available in content_shell for use by web tests and does not appear in Monyhar. In content_shell's browser mode, `--expose-internals-for-testing` is needed to have the `internals` JavaScript API.
 
 **Note:** If your runtime feature is called `AmazingNewFeature`, the Javascript variable name is `internals.runtimeFlags.amazingNewFeatureEnabled`.
 
@@ -181,7 +181,7 @@ When content_shell is run for web tests with `--stable-release-mode` flag, test-
 --enable-blink-features=SomeNewFeature,SomeOtherNewFeature
 --disable-blink-features=SomeOldFeature
 ```
-After applying most other feature settings, the features requested feature settings (comma-separated) are changed. "disable" is applied later (and takes precedence), regardless of the order the switches appear on the command line. These switches only affect Blink's state. Some features may need to be switched on in Chromium as well; in this case, a specific flag is required.
+After applying most other feature settings, the features requested feature settings (comma-separated) are changed. "disable" is applied later (and takes precedence), regardless of the order the switches appear on the command line. These switches only affect Blink's state. Some features may need to be switched on in Monyhar as well; in this case, a specific flag is required.
 
 **Announcement**
 https://groups.google.com/a/monyhar.org/d/msg/blink-dev/JBakhu5J6Qs/re2LkfEslTAJ

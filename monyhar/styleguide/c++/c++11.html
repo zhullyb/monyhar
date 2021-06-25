@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!--
-Copyright 2014 The Chromium Authors. All rights reserved.
+Copyright 2014 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
 <html>
 <head>
 <meta charset="utf-8">
-<title>Modern C++ use in Chromium</title>
+<title>Modern C++ use in Monyhar</title>
 <link rel="stylesheet" href="c++11.css">
 <style>
 table tbody tr td:first-child {
@@ -18,20 +18,20 @@ table tbody tr td:first-child {
 </head>
 <body>
 <div id="content">
-<h1>Modern C++ use in Chromium</h1>
+<h1>Modern C++ use in Monyhar</h1>
 
 <p><i>This document lives at
 <a href="https://source.monyhar.org/monyhar/monyhar/src/+/main:styleguide/c++/c++11.html">
-src/styleguide/c++/c++11.html</a> in a Chromium checkout and is part of the more general
+src/styleguide/c++/c++11.html</a> in a Monyhar checkout and is part of the more general
 <a href="https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/c++/c++.md">
-Chromium C++ style guide</a>. It summarizes the supported state of new and
+Monyhar C++ style guide</a>. It summarizes the supported state of new and
 updated language and library features in recent C++ standards and the
 <a href="https://abseil.io/about/">Abseil</a> library. This guide
-applies to both Chromium and its subprojects, though subprojects can choose to
+applies to both Monyhar and its subprojects, though subprojects can choose to
 be more restrictive if necessary for toolchain support.</i></p>
 
 <p>The C++ language has in recent years received an updated standard every three
-years (C++11, C++14, C++17). For various reasons, Chromium does not immediately
+years (C++11, C++14, C++17). For various reasons, Monyhar does not immediately
 allow new features on the publication of such a standard. Instead, once
 toolchain support is sufficient, a standard is declared "initially supported",
 with new language/library features banned pending discussion.</p>
@@ -50,7 +50,7 @@ The current status of existing standards and Abseil features is:
 
 <ul><li><b>C++11:</b> <i>Default allowed; see banned features below</i></li>
 <li><b>C++14:</b> <i>Default allowed; see banned features below</i></li>
-<li><b>C++17:</b> <i>Not yet supported in Chromium, unlikely before mid-2021; <a href="http://crbug.com/752720">tracking bug</a></i></li>
+<li><b>C++17:</b> <i>Not yet supported in Monyhar, unlikely before mid-2021; <a href="http://crbug.com/752720">tracking bug</a></i></li>
 <li><b>C++20:</b> <i>Not yet standardized</i></li>
 <li><b>Abseil:</b> Initially supported July 31, 2020; see allowed/banned/TBD features below
 <ul>
@@ -87,7 +87,7 @@ The current status of existing standards and Abseil features is:
 
 <h2 id="blocklist_banned"><a name="core-blocklist"></a>C++11 Banned Language Features</h2>
 
-<p>The following C++11 language features are not allowed in the Chromium codebase.</p>
+<p>The following C++11 language features are not allowed in the Monyhar codebase.</p>
 
 <table id="banned_list" class="unlined striped">
 <tbody>
@@ -137,7 +137,7 @@ The current status of existing standards and Abseil features is:
 
 <h2 id="blocklist_stdlib"><a name="library-blocklist"></a>C++11 Banned Library Features</h2>
 
-<p>The following C++11 library features are not allowed in the Chromium codebase.</p>
+<p>The following C++11 library features are not allowed in the Monyhar codebase.</p>
 
 <table id="blocklist_lib_list" class="unlined striped">
 <tbody>
@@ -178,7 +178,7 @@ The current status of existing standards and Abseil features is:
 <td><code>&lt;exception&gt;</code></td>
 <td>Enhancements to exception throwing and handling</td>
 <td><a href="http://en.cppreference.com/w/cpp/header/exception">Standard library header &lt;exception&gt;</a></td>
-<td>Exceptions are banned by the <a href="https://google.github.io/styleguide/cppguide.html#Exceptions">Google Style Guide</a> and disabled in Chromium compiles. However, the <code>noexcept</code> specifier is explicitly allowed. <a href="https://groups.google.com/a/monyhar.org/forum/#!topic/monyhar-dev/8i4tMqNpHhg">Discussion thread</a></td>
+<td>Exceptions are banned by the <a href="https://google.github.io/styleguide/cppguide.html#Exceptions">Google Style Guide</a> and disabled in Monyhar compiles. However, the <code>noexcept</code> specifier is explicitly allowed. <a href="https://groups.google.com/a/monyhar.org/forum/#!topic/monyhar-dev/8i4tMqNpHhg">Discussion thread</a></td>
 </tr>
 
 <tr>
@@ -186,7 +186,7 @@ The current status of existing standards and Abseil features is:
 <td><code>std::function</code></td>
 <td>Wraps a standard polymorphic function</td>
 <td><a href="http://en.cppreference.com/w/cpp/utility/functional/function">std::function</a></td>
-<td>Use <code>base::&lcub;Once,Repeating&rcub;Callback</code> instead. Compared to <code>std::function</code>, <code>base::&lcub;Once,Repeating&rcub;Callback</code> directly supports Chromium's refcounting classes and weak pointers and deals with additional thread safety concerns. <a href="https://groups.google.com/a/monyhar.org/forum/#!topic/cxx/SoEj7oIDNuA">Discussion thread</a></td>
+<td>Use <code>base::&lcub;Once,Repeating&rcub;Callback</code> instead. Compared to <code>std::function</code>, <code>base::&lcub;Once,Repeating&rcub;Callback</code> directly supports Monyhar's refcounting classes and weak pointers and deals with additional thread safety concerns. <a href="https://groups.google.com/a/monyhar.org/forum/#!topic/cxx/SoEj7oIDNuA">Discussion thread</a></td>
 </tr>
 
 <tr>
@@ -214,7 +214,7 @@ The current status of existing standards and Abseil features is:
 <td><code>&lt;regex&gt;</code></td>
 <td>A standard regular expressions library</td>
 <td><a href="http://en.cppreference.com/w/cpp/regex">Regular expressions library</a></td>
-<td>Overlaps with many regular expression libraries in Chromium. When in doubt, use re2.</td>
+<td>Overlaps with many regular expression libraries in Monyhar. When in doubt, use re2.</td>
 </tr>
 
 <tr>
@@ -222,7 +222,7 @@ The current status of existing standards and Abseil features is:
 <td><code>std::shared_ptr</code></td>
 <td>Allows shared ownership of a pointer through reference counts</td>
 <td><a href="http://en.cppreference.com/w/cpp/memory/shared_ptr">std::shared_ptr</a></td>
-<td>Needs a lot more evaluation for Chromium, and there isn't enough of a push for this feature. <a href="https://google.github.io/styleguide/cppguide.html#Ownership_and_Smart_Pointers">Google Style Guide</a>. <a href="https://groups.google.com/a/monyhar.org/forum/#!topic/cxx/aT2wsBLKvzI">Discussion Thread</a></td>
+<td>Needs a lot more evaluation for Monyhar, and there isn't enough of a push for this feature. <a href="https://google.github.io/styleguide/cppguide.html#Ownership_and_Smart_Pointers">Google Style Guide</a>. <a href="https://groups.google.com/a/monyhar.org/forum/#!topic/cxx/aT2wsBLKvzI">Discussion Thread</a></td>
 </tr>
 
 <tr>
@@ -255,7 +255,7 @@ The current status of existing standards and Abseil features is:
 
 <h2 id="blocklist_stdlib"><a name="library-blocklist-14"></a>C++14 Banned Library Features</h2>
 
-<p>The following C++14 library features are not allowed in the Chromium codebase.</p>
+<p>The following C++14 library features are not allowed in the Monyhar codebase.</p>
 
 <table id="blocklist_lib_list" class="unlined striped">
 <tbody>
@@ -281,7 +281,7 @@ The current status of existing standards and Abseil features is:
 
 <h2 id="allowlist_abseil"><a name="absl-allowlist"></a>Abseil Allowed Library Features</h2>
 
-<p>The following Abseil library features are allowed in the Chromium codebase.</p>
+<p>The following Abseil library features are allowed in the Monyhar codebase.</p>
 
 <table id="allowlist_abseil_list" class="unlined striped">
 <tbody>
@@ -324,7 +324,7 @@ The current status of existing standards and Abseil features is:
 
 <h2 id="blocklist_absl"><a name="absl-blocklist"></a>Abseil Banned Library Features</h2>
 
-<p>The following Abseil library features are not allowed in the Chromium codebase.</p>
+<p>The following Abseil library features are not allowed in the Monyhar codebase.</p>
 
 <table id="blocklist_absl_list" class="unlined striped">
 <tbody>
@@ -379,7 +379,7 @@ Keep using <code>base::StringPiece</code> from <code>base/strings/</code>.</td>
 
 <h2 id="review_abseil"><a name="absl-review"></a>Abseil TBD Features</h2>
 
-<p>The following Abseil library features are not allowed in the Chromium codebase.
+<p>The following Abseil library features are not allowed in the Monyhar codebase.
 See the top of this page on how to propose moving a feature from this list into
 the allowed or banned sections.</p>
 

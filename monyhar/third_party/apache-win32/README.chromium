@@ -24,7 +24,7 @@ cf4f192bfab0b59b6af64a2ce9f4a0394ebce1a695d0f1a478c4443e601f9f87  php-7.2.12-Win
 
 To update:
 
- 1. Go to the Chromium third_party directory and back up apache-win32,
+ 1. Go to the Monyhar third_party directory and back up apache-win32,
     for example by renaming it as apache-win32.bak.
 
  2. Download Apache2, unpack, and move to "apache-win32". This directory
@@ -43,7 +43,7 @@ To update:
     in the Blink tools directory. Update the win-httpd.conf configuration
     file if necessary.
 
- 7. Update filenames as necessary and delete files that aren't need for Chromium
+ 7. Update filenames as necessary and delete files that aren't need for Monyhar
     using remove_files_not_needed_for_monyhar.sh.
 
  8. Copy vsruntime{version}.dll from the corresponding MSVC version to
@@ -54,7 +54,7 @@ To update:
  9. Copy the UCRT DLLs from the Windows SDK. Note this includes both
     api-ms-win-*.dll and ucrtbase.dll. See also Microsoft's documentation:
     https://docs.microsoft.com/en-us/cpp/ide/universal-crt-deployment?view=vs-2017
-    We use the Local Deployment option because some of Chromium's bots do not
+    We use the Local Deployment option because some of Monyhar's bots do not
     include a full install. https://crbug.com/910745
 
 10. Upload the executables and DLLs to Google Storage, to the

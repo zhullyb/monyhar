@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,10 +14,10 @@ import org.gradle.api.artifacts.component.ComponentIdentifier
 import org.gradle.api.logging.Logger
 
 /**
- * Parses the project dependencies and generates a graph of {@link ChromiumDepGraph.DependencyDescription} objects to
+ * Parses the project dependencies and generates a graph of {@link MonyharDepGraph.DependencyDescription} objects to
  * make the data manipulation easier.
  */
-class ChromiumDepGraph {
+class MonyharDepGraph {
 
     // Some libraries don't properly fill their POM with the appropriate licensing information. It is provided here from
     // manual lookups. Note that licenseUrl must provide textual content rather than be an html page.

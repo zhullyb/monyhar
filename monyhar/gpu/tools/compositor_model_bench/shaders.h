@@ -1,8 +1,8 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Shaders from Chromium and an interface for setting them up
+// Shaders from Monyhar and an interface for setting them up
 
 #ifndef GPU_TOOLS_COMPOSITOR_MODEL_BENCH_SHADERS_H_
 #define GPU_TOOLS_COMPOSITOR_MODEL_BENCH_SHADERS_H_

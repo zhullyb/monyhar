@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -12,7 +12,7 @@ import subprocess
 import sys
 import tempfile
 
-# How to patch libxslt in Chromium:
+# How to patch libxslt in Monyhar:
 #
 # 1. Write a .patch file and add it to third_party/libxslt/monyhar.
 # 2. Apply the patch in src: patch -p1 <../monyhar/foo.patch
@@ -22,11 +22,11 @@ import tempfile
 #    patch, applied patch and any other relevant changes like
 #    regression tests. Go through the usual review and commit process.
 #
-# How to roll libxslt in Chromium:
+# How to roll libxslt in Monyhar:
 #
 # Prerequisites:
 #
-# 1. Check out Chromium somewhere on Linux, Mac and Windows.
+# 1. Check out Monyhar somewhere on Linux, Mac and Windows.
 # 2. On Linux:
 #    a. sudo apt-get install libicu-dev
 #    b. git clone https://gitlab.gnome.org/GNOME/libxslt.git somewhere
@@ -43,7 +43,7 @@ import tempfile
 #
 #    This will be the upstream version of libxslt you are rolling to.
 #
-# 2. On Linux, in the Chromium src director:
+# 2. On Linux, in the Monyhar src director:
 #    a. third_party/libxslt/monyhar/roll.py --linux /path/to/libxslt
 #
 #    If this fails, it may be a patch no longer applies. Reset to
@@ -52,12 +52,12 @@ import tempfile
 #
 #    b. Upload a Cl but do not start review
 #
-# 2. On Windows, in the Chromium src directory:
+# 2. On Windows, in the Monyhar src directory:
 #    a. git cl patch <Gerrit Issue ID>
 #    b. third_party\libxslt\monyhar\roll.py --win32
 #    c. git cl upload
 #
-# 3. On Mac, in the Chromium src directory:
+# 3. On Mac, in the Monyhar src directory:
 #    a. git cl patch <Gerrit Issue ID>
 #    b. third_party/libxslt/monyhar/roll.py --mac
 #    c. Make and commit any final changes to README.monyhar, BUILD.gn, etc.
@@ -145,12 +145,12 @@ THIRD_PARTY_LIBXSLT_SRC = os.path.join(THIRD_PARTY_LIBXSLT, 'src')
 
 
 def libxml_path_option(src_path):
-    """Gets the path to libxml/linux in Chromium.
+    """Gets the path to libxml/linux in Monyhar.
 
     libxslt needs to be configured with libxml source.
 
     Args:
-        src_path: The Chromium src path.
+        src_path: The Monyhar src path.
 
     Returns:
         The path to the libxml2 third_party/libxml/linux configure
@@ -247,7 +247,7 @@ def prepare_libxslt_distribution(src_path, libxslt_repo_path, temp_dir):
     """Makes a libxslt distribution.
 
     Args:
-        src_path: The Chromium repository src path, for finding libxslt.
+        src_path: The Monyhar repository src path, for finding libxslt.
         libxslt_repo_path: The path to the local clone of the libxslt repo.
         temp_dir: A temporary directory to stage the distribution to.
 
@@ -307,7 +307,7 @@ def roll_libxslt_linux(src_path, repo_path):
             # cruft accumulates
             remove_tracked_and_local_dir(THIRD_PARTY_LIBXSLT_SRC)
 
-            # Export the libxslt distribution to the Chromium tree
+            # Export the libxslt distribution to the Monyhar tree
             with WorkingDir(THIRD_PARTY_LIBXSLT_SRC):
                 subprocess.check_call(
                     'tar xzf %s --strip-components=1' % tar_file,
@@ -383,11 +383,11 @@ def check_clean(path):
 def main():
     src_dir = os.getcwd()
     if not os.path.exists(os.path.join(src_dir, 'third_party')):
-        print('error: run this script from the Chromium src directory')
+        print('error: run this script from the Monyhar src directory')
         sys.exit(1)
 
     parser = argparse.ArgumentParser(
-        description='Roll the libxslt dependency in Chromium')
+        description='Roll the libxslt dependency in Monyhar')
     platform = parser.add_mutually_exclusive_group(required=True)
     platform.add_argument('--linux', action='store_true')
     platform.add_argument('--win32', action='store_true')

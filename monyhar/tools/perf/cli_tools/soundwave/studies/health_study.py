@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -36,15 +36,15 @@ STARTUP_BY_BROWSER = {
 APK_SIZE = {
     'test_suite': 'resource_sizes:Monochrome.minimal.apks',
     'measurement': 'Specifics:normalized apk size',
-    'bot': 'ChromiumPerf:android-builder-perf',
+    'bot': 'MonyharPerf:android-builder-perf',
 }
 
 
 def IterSystemHealthBots():
-  yield 'ChromiumPerf:android-go-perf'
-  yield 'ChromiumPerf:android-go_webview-perf'
-  yield 'ChromiumPerf:android-pixel2-perf'
-  yield 'ChromiumPerf:android-pixel2_webview-perf'
+  yield 'MonyharPerf:android-go-perf'
+  yield 'MonyharPerf:android-go_webview-perf'
+  yield 'MonyharPerf:android-pixel2-perf'
+  yield 'MonyharPerf:android-pixel2_webview-perf'
 
 
 def GetBrowserFromBot(bot):
@@ -65,7 +65,7 @@ def IterTestPaths():
     yield timeseries.Key.FromDict(STARTUP_BY_BROWSER[browser], bot=bot)
 
     # Memory.
-    if bot == 'ChromiumPerf:android-pixel2_webview-perf':
+    if bot == 'MonyharPerf:android-pixel2_webview-perf':
       # The pixel2 webview bot incorrectly reports memory as if coming from
       # chrome. TODO(crbug.com/972620): Remove this when bug is fixed.
       browser = 'chrome'

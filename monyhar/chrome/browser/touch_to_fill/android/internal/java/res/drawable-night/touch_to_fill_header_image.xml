@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Copyright 2019 The Chromium Authors. All rights reserved. Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.-->
+<!--Copyright 2019 The Monyhar Authors. All rights reserved. Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.-->
 <!--VectorRaster is ignored because: 1. The image should be shown rarely enough to prioritize binary size over inflation time. 2. Area-wise it's less than 63% of the recommended 200dp x 200dp limit.-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:width="224dp" android:height="112dp" android:viewportWidth="312" android:viewportHeight="156" tools:targetApi="21" tools:ignore="VectorRaster">
     <path android:pathData="M146.385 114.133a24.772 2.241 0 1 0 49.544 0 24.772 2.241 0 1 0-49.544 0zm-128.726 3.439a24.772 2.241 0 1 0 49.544 0 24.772 2.241 0 1 0-49.544 0zm160.996 14.564v4.446h43.19v-8.884z" android:strokeAlpha="0.16272135" android:strokeWidth="1" android:fillColor="#EDEDED" android:fillAlpha="0.16272135"/>

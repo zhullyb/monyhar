@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -17,7 +17,7 @@ class IPAddress;
 namespace sharing {
 
 // The MdnsResponderAdapter implements the WebRTC mDNS responder interface via
-// the MdnsResponder service in Chromium, and is used to register and resolve
+// the MdnsResponder service in Monyhar, and is used to register and resolve
 // mDNS hostnames to conceal local IP addresses.
 // TODO(crbug.com/1044522): reuse code from blink instead.
 class MdnsResponderAdapter : public webrtc::MdnsResponderInterface {

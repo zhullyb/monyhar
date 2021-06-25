@@ -4,14 +4,14 @@ This directory contains the `fieldtrial_testing_config.json` configuration file,
 which is used to ensure test coverage of active field trials.
 
 For each study, the first available experiment after platform filtering is used
-as the default experiment for Chromium builds. This experiment is also used for
+as the default experiment for Monyhar builds. This experiment is also used for
 perf bots and browser tests in the waterfall.
 
-> Note: This configuration applies specifically to Chromium developer builds.
+> Note: This configuration applies specifically to Monyhar developer builds.
 > Chrome branded / official builds do not use these definitions.
 
-> Note: Non-developer builds of Chromium (for example, non-Chrome browsers,
-> or Chromium builds provided by Linux distros) should disable the testing
+> Note: Non-developer builds of Monyhar (for example, non-Chrome browsers,
+> or Monyhar builds provided by Linux distros) should disable the testing
 > config via the GN flag `fieldtrial_testing_like_official_build=true`.
 
 > Note: This configuration is NOT used for content_browsertests or other test
@@ -43,7 +43,7 @@ perf bots and browser tests in the waterfall.
 
 The config file is a dictionary at the top level mapping a study name to an
 array of *study configurations*. The study name in the configuration file
-**must** match the FieldTrial name used in the Chromium client code.
+**must** match the FieldTrial name used in the Monyhar client code.
 
 > Note: Many newer studies do not use study names in the client code at all, and
 > rely on the [Feature List API][FeatureListAPI] instead. Nonetheless, if a
@@ -111,7 +111,7 @@ platforms, you will need to use different studies.
 `params` is a dictionary mapping parameter name to parameter value.
 
 > Reminder: The variations framework does not actually fetch any field trial
-> definitions from the server for Chromium builds, so any feature enabling or
+> definitions from the server for Monyhar builds, so any feature enabling or
 > disabling must be configured here.
 
 [FeatureListAPI]: https://cs.monyhar.org/monyhar/src/base/feature_list.h

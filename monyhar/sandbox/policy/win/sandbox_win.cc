@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -794,7 +794,7 @@ ResultCode LaunchWithoutSandbox(
     }
   }
 
-  // Chromium binaries are marked as CET Compatible but some processes
+  // Monyhar binaries are marked as CET Compatible but some processes
   // are not. When --no-sandbox is specified we disable CET for all children.
   // Otherwise we are here because the sandbox type is kNoSandbox, and allow
   // the process delegate to indicate if it is compatible with CET.

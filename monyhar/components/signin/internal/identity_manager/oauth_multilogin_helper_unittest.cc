@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -205,12 +205,12 @@ class OAuthMultiloginHelperTest
 
   std::string multilogin_url() const {
     return GaiaUrls::GetInstance()->oauth_multilogin_url().spec() +
-           "?source=ChromiumBrowser&reuseCookies=0";
+           "?source=MonyharBrowser&reuseCookies=0";
   }
 
   std::string multilogin_url_with_external_cc_result() const {
     return GaiaUrls::GetInstance()->oauth_multilogin_url().spec() +
-           "?source=ChromiumBrowser&reuseCookies=0&externalCcResult=" +
+           "?source=MonyharBrowser&reuseCookies=0&externalCcResult=" +
            kExternalCcResult;
   }
 

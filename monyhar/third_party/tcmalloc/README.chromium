@@ -7,7 +7,7 @@ Security Critical: yes
 License: BSD
 
 Description:
-This contains Chromium's locally patched copy of tcmalloc.
+This contains Monyhar's locally patched copy of tcmalloc.
 
 Contents:
 

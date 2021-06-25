@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -8,7 +8,7 @@
 //    clang-format -i -style=monyhar filename
 // DO NOT EDIT!
 
-// This file contains Chromium-specific GLES2 declarations.
+// This file contains Monyhar-specific GLES2 declarations.
 
 #ifndef GPU_GLES2_GL2CHROMIUM_AUTOGEN_H_
 #define GPU_GLES2_GL2CHROMIUM_AUTOGEN_H_

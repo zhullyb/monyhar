@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -56,7 +56,7 @@ class FetchBenchmarkDepsUnittest(unittest.TestCase):
     # Checks fetch_benchmark_deps.py output.
     output_count = 0
     for dep in deps[test_name]:
-      fullpath = os.path.join(path_util.GetChromiumSrcDir(), dep)
+      fullpath = os.path.join(path_util.GetMonyharSrcDir(), dep)
       sha1path = fullpath + '.sha1'
       self.assertTrue(os.path.isfile(sha1path))
       output_count += 1

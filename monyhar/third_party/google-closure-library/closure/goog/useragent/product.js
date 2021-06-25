@@ -156,7 +156,7 @@ goog.userAgent.product.ANDROID = goog.userAgent.product.PRODUCT_KNOWN_ ?
 
 
 /**
- * Whether the code is running on any Chromium-based web browser on any platform
+ * Whether the code is running on any Monyhar-based web browser on any platform
  * or AOSP browser or WebView in a KitKat+ Android phone or tablet.
  * @type {boolean}
  */

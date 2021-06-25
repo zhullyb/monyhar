@@ -345,7 +345,7 @@
 
 ### Interop and documentation
 
-* {#paint-timing-20202}**[Paint Timing](https://github.com/w3c/paint-timing)**: change the Chromium
+* {#paint-timing-20202}**[Paint Timing](https://github.com/w3c/paint-timing)**: change the Monyhar
   implementation so it passes [new web platform
   tests](https://wpt.fyi/results/paint-timing/fcp-only?label=experimental&label=master&aligned).
   These tests are based on the feedback from WebKit. They intend to ship First

@@ -1,11 +1,11 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 #include "ios/chrome/browser/flags/ios_chrome_flag_descriptions.h"
 
 // This file declares strings used in chrome://flags. These messages are not
-// translated, because instead of end-users they target Chromium developers and
+// translated, because instead of end-users they target Monyhar developers and
 // testers. See https://crbug.com/587272 and https://crbug.com/703134 for more
 // details.
 

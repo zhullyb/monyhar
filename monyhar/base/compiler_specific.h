@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -259,7 +259,7 @@
 #if defined(__arm__)
 #if !defined(__ARMEB__) && !defined(__ARM_EABI__) && !defined(__EABI__) && \
     !defined(__VFP_FP__) && !defined(_WIN32_WCE) && !defined(ANDROID)
-#error Chromium does not support middle endian architecture
+#error Monyhar does not support middle endian architecture
 #endif
 #if defined(__ARM_NEON__)
 #define CPU_ARM_NEON 1

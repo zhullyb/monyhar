@@ -89,7 +89,7 @@ static void ReplaceSystemAlloc() { PatchWindowsFunctions(); }
 
 #elif defined(_WIN32) && !defined(WIN32_DO_PATCHING)
 // "libc_override_redefine.h" is included in the original gperftools.  But,
-// we define allocator functions in Chromium's base/allocator/allocator_shim.cc
+// we define allocator functions in Monyhar's base/allocator/allocator_shim.cc
 // on Windows.  We don't include libc_override_redefine.h here.
 // ReplaceSystemAlloc() is defined here instead.
 static void ReplaceSystemAlloc() {}

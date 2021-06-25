@@ -198,8 +198,8 @@ and delete).
 Very little of the code is actually Android-specific. The target system's
 bitness is abstracted through a C++ traits class (see src/elf_traits.h).
 
-Written originally for Chrome, so follows the Chromium coding style. Which can
+Written originally for Chrome, so follows the Monyhar coding style. Which can
 be enforced by using the 'clang-format' tool with:
 
   cd /path/to/crazy_linker/
-  find . -name "*.h" -o -name "*.cpp" | xargs clang-format -style Chromium -i
+  find . -name "*.h" -o -name "*.cpp" | xargs clang-format -style Monyhar -i

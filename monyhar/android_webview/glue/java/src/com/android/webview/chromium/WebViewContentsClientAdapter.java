@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -68,8 +68,8 @@ import java.util.WeakHashMap;
  * An adapter class that forwards the callbacks from {@link ContentViewClient}
  * to the appropriate {@link WebViewClient} or {@link WebChromeClient}.
  *
- * An instance of this class is associated with one {@link WebViewChromium}
- * instance. A WebViewChromium is a WebView implementation provider (that is
+ * An instance of this class is associated with one {@link WebViewMonyhar}
+ * instance. A WebViewMonyhar is a WebView implementation provider (that is
  * android.webkit.WebView delegates all functionality to it) and has exactly
  * one corresponding {@link ContentView} instance.
  *
@@ -77,7 +77,7 @@ import java.util.WeakHashMap;
  * and hence multiple WebViews. Many WebViewClient methods pass the source
  * WebView as an argument. This means that we either need to pass the
  * corresponding ContentView to the corresponding ContentViewClient methods,
- * or use an instance of ContentViewClientAdapter per WebViewChromium, to
+ * or use an instance of ContentViewClientAdapter per WebViewMonyhar, to
  * allow the source WebView to be injected by ContentViewClientAdapter. We
  * choose the latter, because it makes for a cleaner design.
  */
@@ -132,7 +132,7 @@ class WebViewContentsClientAdapter extends SharedWebViewContentsClientAdapter {
                                         + " previously navigated.");
                             }
 
-                            WebViewChromium.completeWindowCreation(mWebView, newWebView);
+                            WebViewMonyhar.completeWindowCreation(mWebView, newWebView);
                             break;
                         default:
                             throw new IllegalStateException();
@@ -433,7 +433,7 @@ class WebViewContentsClientAdapter extends SharedWebViewContentsClientAdapter {
             // See b/8208948
             // This fakes an onNewPicture callback after onPageFinished to allow
             // CTS tests to run in an un-flaky manner. This is required as the
-            // path for sending Picture updates in Chromium are decoupled from the
+            // path for sending Picture updates in Monyhar are decoupled from the
             // page loading callbacks, i.e. the Chrome compositor may draw our
             // content and send the Picture before onPageStarted or onPageFinished
             // are invoked. The CTS harness discards any pictures it receives before

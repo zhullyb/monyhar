@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,8 +26,8 @@ namespace extensions {
 const wchar_t kChromeNativeMessagingRegistryKey[] =
     L"SOFTWARE\\Google\\Chrome\\NativeMessagingHosts";
 #if BUILDFLAG(CHROMIUM_BRANDING)
-const wchar_t kChromiumNativeMessagingRegistryKey[] =
-    L"SOFTWARE\\Chromium\\NativeMessagingHosts";
+const wchar_t kMonyharNativeMessagingRegistryKey[] =
+    L"SOFTWARE\\Monyhar\\NativeMessagingHosts";
 #endif
 
 namespace {
@@ -54,10 +54,10 @@ bool GetManifestPathWithFlags(HKEY root_key,
                               const std::wstring& host_name,
                               std::wstring* result) {
 #if BUILDFLAG(CHROMIUM_BRANDING)
-  // Try to read the path using the Chromium-specific registry for Chromium.
+  // Try to read the path using the Monyhar-specific registry for Monyhar.
   // If that fails, fallback to Chrome-specific registry key below.
   if (GetManifestPathWithFlagsFromSubkey(root_key, flags,
-                                         kChromiumNativeMessagingRegistryKey,
+                                         kMonyharNativeMessagingRegistryKey,
                                          host_name, result)) {
     return true;
   }

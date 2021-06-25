@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -85,7 +85,7 @@ int HttpAuthHandlerBasic::GenerateAuthTokenImpl(
     CompletionOnceCallback callback,
     std::string* auth_token) {
   DCHECK(credentials);
-  // Firefox, Safari and Chromium all use UTF-8 encoding; IE uses iso-8859-1.
+  // Firefox, Safari and Monyhar all use UTF-8 encoding; IE uses iso-8859-1.
   // RFC7617 does not specify a default encoding, but UTF-8 is the only allowed
   // value for the optional charset parameter on the challenge.
   std::string base64_username_password;

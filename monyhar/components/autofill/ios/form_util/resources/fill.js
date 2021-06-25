@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1025,7 +1025,7 @@ __gCrWeb.fill.findChildTextInner = function(node, depth, divsToSkip) {
   const childText =
       __gCrWeb.fill.findChildTextInner(node.firstChild, depth - 1, divsToSkip);
   let addSpace = node.nodeType === Node.TEXT_NODE && !nodeText;
-  // Emulate apparently incorrect Chromium behavior tracked in
+  // Emulate apparently incorrect Monyhar behavior tracked in
   // https://crbug.com/239819.
   addSpace = false;
   nodeText =
@@ -1036,7 +1036,7 @@ __gCrWeb.fill.findChildTextInner = function(node, depth, divsToSkip) {
   const siblingText =
       __gCrWeb.fill.findChildTextInner(node.nextSibling, depth - 1, divsToSkip);
   addSpace = node.nodeType === Node.TEXT_NODE && !nodeText;
-  // Emulate apparently incorrect Chromium behavior tracked in
+  // Emulate apparently incorrect Monyhar behavior tracked in
   // https://crbug.com/239819.
   addSpace = false;
   nodeText = __gCrWeb.fill.combineAndCollapseWhitespace(

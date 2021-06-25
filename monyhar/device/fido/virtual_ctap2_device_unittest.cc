@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -181,7 +181,7 @@ TEST_F(VirtualCtap2DeviceTest, AttestationCertificateIsValid) {
   const auto& subject = cert->subject();
   EXPECT_EQ("Batch Certificate", subject.common_name);
   EXPECT_EQ("US", subject.country_name);
-  EXPECT_THAT(subject.organization_names, testing::ElementsAre("Chromium"));
+  EXPECT_THAT(subject.organization_names, testing::ElementsAre("Monyhar"));
   EXPECT_THAT(subject.organization_unit_names,
               testing::ElementsAre("Authenticator Attestation"));
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1616,7 +1616,7 @@ TYPED_TEST_P(CookieStoreTest, OverwritePersistentCookie) {
 // Note that accepting an empty name is contrary to spec; see
 // https://tools.ietf.org/html/rfc6265#section-4.1.1.  However, we do it
 // for web compatibility; see http://inikulin.github.io/cookie-compat/
-// (specifically the "foo" and "=a" tests).  This test is present in Chromium
+// (specifically the "foo" and "=a" tests).  This test is present in Monyhar
 // so that a flag is raised if this behavior is changed.
 // On IOS we use the system cookie store which has Safari's behavior, so
 // the test is skipped.

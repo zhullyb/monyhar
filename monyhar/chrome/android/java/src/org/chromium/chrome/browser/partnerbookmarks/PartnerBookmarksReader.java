@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -279,7 +279,7 @@ public class PartnerBookmarksReader {
                 if (!bookmark.mIsFolder && urlSet.contains(bookmark.mUrl)) {
                     Log.i(TAG, "More than one bookmark pointing to "
                             + bookmark.mUrl
-                            + ". Keeping only the first one for consistency with Chromium.");
+                            + ". Keeping only the first one for consistency with Monyhar.");
                     continue;
                 }
 

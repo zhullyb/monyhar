@@ -76,10 +76,10 @@ Source code
 This directory contains just the allocator (i.e. shim) layer that switches
 between the different underlying memory allocation implementations.
 
-The tcmalloc library originates outside of Chromium and exists in
+The tcmalloc library originates outside of Monyhar and exists in
 `../../third_party/tcmalloc` (currently, the actual location is defined in the
 allocator.gyp file). The third party sources use a vendor-branch SCM pattern to
-track Chromium-specific changes independently from upstream changes.
+track Monyhar-specific changes independently from upstream changes.
 
 The general intent is to push local changes upstream so that over
 time we no longer need any forked files.

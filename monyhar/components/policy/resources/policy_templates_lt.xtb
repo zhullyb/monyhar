@@ -2224,7 +2224,7 @@
 <translation id="5148753489738115745">Leidžia nurodyti papildomus parametrus, naudojamus, kai „<ph name="PRODUCT_FRAME_NAME" />“ paleidžia „<ph name="PRODUCT_NAME" />“.
 
           Nenustačius šios politikos bus naudojama numatytoji komandinė eilutė.</translation>
-<translation id="5152787786897382519">Ir „Chromium“, ir „Google Chrome“ yra tokių politikų grupių, kurios valdo tam tikrą funkciją atsižvelgdama viena į kitą. Tokie rinkiniai – tai toliau nurodytos politikų grupės. Kadangi politikos gali turėti kelis šaltinius, bus taikomos tik didžiausio prioriteto šaltinio vertės. Tos pačios grupės žemesnio prioriteto šaltinio verčių bus nepaisoma. Prioriteto tvarka apibrėžta <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Ir „Monyhar“, ir „Google Chrome“ yra tokių politikų grupių, kurios valdo tam tikrą funkciją atsižvelgdama viena į kitą. Tokie rinkiniai – tai toliau nurodytos politikų grupės. Kadangi politikos gali turėti kelis šaltinius, bus taikomos tik didžiausio prioriteto šaltinio vertės. Tos pačios grupės žemesnio prioriteto šaltinio verčių bus nepaisoma. Prioriteto tvarka apibrėžta <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Stebėjimo tinklo paketų siuntimo dažnis milisekundėmis.
 
       Jei ši politika nenustatyta, numatytasis intervalas bus 3 minutės. Minimalus
@@ -3944,7 +3944,7 @@
       Jei ši politika nenustatyta, „<ph name="PRODUCT_OS_NAME" />“ kaip prisijungimo ekrane pateikiamas pavadinimas bus naudojamas įrenginio vietinės paskyros el. pašto paskyros ID.
 
       Ši politika netaikoma įprastose naudotojų paskyrose.</translation>
-<translation id="8259375588339409826">Tiek „Chromium“, tiek „Google Chrome“ palaiko tas pačias politikos nuostatas. Atminkite, kad šiame dokumente gali būti neišleistų politikos nuostatų (pvz., įrašu „Palaikoma naudojant“ nurodomas neišleistos versijos „<ph name="PRODUCT_NAME" />“), kurios gali būti pakeistos arba pašalintos be įspėjimo ir dėl kurių neteikiamos jokios garantijos, įskaitant garantijas dėl jų saugos ir privatumo nuostatų.
+<translation id="8259375588339409826">Tiek „Monyhar“, tiek „Google Chrome“ palaiko tas pačias politikos nuostatas. Atminkite, kad šiame dokumente gali būti neišleistų politikos nuostatų (pvz., įrašu „Palaikoma naudojant“ nurodomas neišleistos versijos „<ph name="PRODUCT_NAME" />“), kurios gali būti pakeistos arba pašalintos be įspėjimo ir dėl kurių neteikiamos jokios garantijos, įskaitant garantijas dėl jų saugos ir privatumo nuostatų.
 
 Šios politikos nuostatos griežtai skirtos tik „<ph name="PRODUCT_NAME" />“ objektams konfigūruoti organizacijos viduje. Šių politikos nuostatų naudojimas už organizacijos ribų (pvz., viešai platinamoje programoje) laikomas kenkėjišku ir „Google“ bei antivirusinės programinės įrangos teikėjai tai tikriausiai laikys kenkėjiška programa.
 

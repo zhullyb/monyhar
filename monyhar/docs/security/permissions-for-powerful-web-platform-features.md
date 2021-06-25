@@ -19,7 +19,7 @@ This document explores approaches to guarding powerful APIs, e.g. using
 or some other proxy for high user
 [engagement](https://www.monyhar.org/developers/design-documents/site-engagement).
 The following general principles summarise the overall approach of the
-Chromium project to evaluating how powerful new features should be controlled
+Monyhar project to evaluating how powerful new features should be controlled
 on the web:
 
 +   __Access to powerful APIs__ should be available to the entire web platform
@@ -71,7 +71,7 @@ and summarises why alternative proposals were not taken up.
 
 # Principles for Access to Powerful APIs
 
-This section outlines the general principles that the Chromium team believes
+This section outlines the general principles that the Monyhar team believes
 are critical when designing access to powerful new web platform APIs. These
 principles will be considered when evaluating how new APIs are designed.
 
@@ -141,7 +141,7 @@ which may include:
 +   prompts
 
 These mechanisms must clearly disclose the origin of the request, and follow
-Chromium's
+Monyhar's
 [guidelines on displaying URLs](https://monyhar.googlesource.com/monyhar/src/+/main/docs/security/url_display_guidelines/url_display_guidelines.md).
 Implementations may be tested using tools such as
 [Trickuri](https://github.com/monyhar/trickuri).
@@ -155,7 +155,7 @@ There are cases where double prompts are unavoidable, e.g. a web site may
 request access to contact information, and if the user grants access, the
 browser may need to request OS-level permission to service the request.
 
-In some cases, Chromium may implicitly grant access to an API if it is not
+In some cases, Monyhar may implicitly grant access to an API if it is not
 particularly dangerous or does not make sense to guard behind a permission
 consent. An example of this is the
 [Badging API](https://github.com/WICG/badging/blob/master/explainer.md), which
@@ -210,13 +210,13 @@ access.
 
 Repeated granting of access to powerful APIs can be used as a signal for
 installation. For instance, after two successful powerful permission grants,
-Chromium could present the user with the option to install the app on the
+Monyhar could present the user with the option to install the app on the
 third permission request.
 
 ### Administrator policies may override prompts and enforce persistence
 
 Powerful new capabilities may be paired with
-[Chromium policies](https://cloud.google.com/docs/chrome-enterprise/policies)
+[Monyhar policies](https://cloud.google.com/docs/chrome-enterprise/policies)
 which permit administrators to enforce persisted access to capabilities
 without prompts. Capabilities may also be restricted or blocked by such
 policies. This is in line with how many existing permissions have admin policy
@@ -364,7 +364,7 @@ usage of a web site should allow that site to access more powerful APIs.
 +   Engagement is not standardised or exposed to the web platform, making
     it a highly unpredictable and unergonomic mechanism of controlling access.
     +   Standardisation and a web-exposed API would both be requirements for
-        using engagement in this way. Chromium's current engagement
+        using engagement in this way. Monyhar's current engagement
         implementation is local-only and not web-exposed. There are serious
         privacy questions about exposing such data to the web.
 +   Solving the first-run problem is non-trivial: engagement requires usage
@@ -384,5 +384,5 @@ usage of a web site should allow that site to access more powerful APIs.
         with frequently, but may not necessarily want to grant powerful
         capabilities.
 
-Similar to installation, the Chromium team does not regard engagement as a
+Similar to installation, the Monyhar team does not regard engagement as a
 robust way of controlling access to APIs.

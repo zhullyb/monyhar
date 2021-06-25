@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -21,14 +21,14 @@ struct ResourceRequest;
 namespace remoting {
 
 // UrlRequest implementation based on network::SimpleURLLoader.
-class ChromiumUrlRequest : public UrlRequest {
+class MonyharUrlRequest : public UrlRequest {
  public:
-  ChromiumUrlRequest(
+  MonyharUrlRequest(
       scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory,
       UrlRequest::Type type,
       const std::string& url,
       const net::NetworkTrafficAnnotationTag& traffic_annotation);
-  ~ChromiumUrlRequest() override;
+  ~MonyharUrlRequest() override;
 
   // UrlRequest interface.
   void AddHeader(const std::string& value) override;
@@ -50,11 +50,11 @@ class ChromiumUrlRequest : public UrlRequest {
   OnResultCallback on_result_callback_;
 };
 
-class ChromiumUrlRequestFactory : public UrlRequestFactory {
+class MonyharUrlRequestFactory : public UrlRequestFactory {
  public:
-  ChromiumUrlRequestFactory(
+  MonyharUrlRequestFactory(
       scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory);
-  ~ChromiumUrlRequestFactory() override;
+  ~MonyharUrlRequestFactory() override;
 
   // UrlRequestFactory interface.
   std::unique_ptr<UrlRequest> CreateUrlRequest(

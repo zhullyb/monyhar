@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@
 #
 # - The Wuffs project is both a programming language, and a standard library
 #   written in that programming language (and then transpiled to C). As of
-#   November 2019, Chromium uses only Wuffs-the-library.
+#   November 2019, Monyhar uses only Wuffs-the-library.
 #
 # - That standard library speaks many codecs. As of November 2019, compression
 #   and images, but in the future, this may grow in scope.
@@ -21,9 +21,9 @@
 # Because Wuffs is many things, substantial changes (newer versions or newer
 # configurations) deserve additional review just as if they were a new
 # third_party dependency. This is especially so for Wuffs-the-language, as
-# adding a new programming language to Chromium has a very high bar.
+# adding a new programming language to Monyhar has a very high bar.
 #
-# In summary, non-trivial changes to how Chromium uses third_party/wuffs (i.e.
+# In summary, non-trivial changes to how Monyhar uses third_party/wuffs (i.e.
 # this BUILD.gn file), both adding new build targets or changing existing build
 # targets' configuration or visibility, require consulting ENG_REVIEW_OWNERS,
 # as per the "adding_to_third_party.md" link above.
@@ -60,7 +60,7 @@ static_library("wuffs") {
     #
     # ----
     #
-    # For Chromium, we're only interested in particular image codes (e.g. GIF)
+    # For Monyhar, we're only interested in particular image codes (e.g. GIF)
     # and their dependencies (e.g. BASE, LZW).
     #
     # Do not modify this list without considering the "consult

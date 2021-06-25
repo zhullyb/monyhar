@@ -1,9 +1,9 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // This file contains forward declarations for items in later SDKs than the
-// default one with which Chromium is built.
+// default one with which Monyhar is built.
 
 #ifndef BASE_MAC_SDK_FORWARD_DECLARATIONS_H_
 #define BASE_MAC_SDK_FORWARD_DECLARATIONS_H_
@@ -17,7 +17,7 @@
 #include "base/base_export.h"
 
 // ----------------------------------------------------------------------------
-// Definitions from SDKs newer than the one that Chromium compiles against.
+// Definitions from SDKs newer than the one that Monyhar compiles against.
 //
 // HOW TO DO THIS:
 //

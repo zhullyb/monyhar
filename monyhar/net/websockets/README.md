@@ -8,7 +8,7 @@ This directory contains the implementation of
 * [WebSocketBasicHandshakeStream design
   memo](https://docs.google.com/document/d/1r7dQDA9AQBD_kOk-z-yMi0WgLQZ-5m7psMO5pYLFUL8/edit).
   Some details have changed, but still a mostly-accurate description of
-  Chromium's current implementation.
+  Monyhar's current implementation.
 * [WebSocket Throttling
   Design](https://docs.google.com/document/d/1a8sUFQsbN5uve7ziW61ATkrFr3o9A-Tiyw8ig6T3puA/edit)
   discusses how we enforce WebSocket connection throttling. Also contains

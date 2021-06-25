@@ -1,10 +1,10 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-"""Use Chromium tracing to associate mojo endpoints with sandboxes.
+"""Use Monyhar tracing to associate mojo endpoints with sandboxes.
 
 This script provides a rich view of where mojo interfaces are hosted
-and consumed when Chromium is build with mojo tracing enabled, and
+and consumed when Monyhar is build with mojo tracing enabled, and
 provides a coarser view for default builds or packages such as Chrome
 Canary.
 
@@ -81,7 +81,7 @@ trace-sandbox-viewer.py file.json.gz
 
 ## Default Builds
 
-This script is also useful for default builds of Chromium but will
+This script is also useful for default builds of Monyhar but will
 show interfaces in both hosting and consuming processes (as mojom
 tracing is limited). Run using the same arguments as above.
 

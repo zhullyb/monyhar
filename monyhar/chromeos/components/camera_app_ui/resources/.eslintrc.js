@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -381,17 +381,17 @@ module.exports = {
 
     // TODO(b/172879638): Remove this once we have
     // https://github.com/sindresorhus/globals/pull/171 merged in ESLint and
-    // Chromium.
+    // Monyhar.
     'OffscreenCanvasRenderingContext2D': 'readable',
 
     // TODO(b/168894537): Remove this once we have
     // https://github.com/sindresorhus/globals/pull/175 merged in ESlint and
-    // Chromium.
+    // Monyhar.
     'OverconstrainedError': 'readable',
   },
   // Generally, the rules should be compatible to both bundled and the newest
   // stable eslint, so it's easier to upgrade and develop without the full
-  // Chromium tree.
+  // Monyhar tree.
   'rules': Object.assign({}, googleRules, {
     'curly': ['error', 'multi-line', 'consistent'],
     'eqeqeq': 'error',

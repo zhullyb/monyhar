@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -195,7 +195,7 @@ def angle_builder(*, name, **kwargs):
         service_account =
             "monyhar-ci-gpu-builder@chops-service-accounts.iam.gserviceaccount.com",
         properties = {
-            "perf_dashboard_machine_group": "ChromiumANGLE",
+            "perf_dashboard_machine_group": "MonyharANGLE",
         },
         **kwargs
     )
@@ -287,7 +287,7 @@ def monyharos_builder(*, name, tree_closing = True, **kwargs):
 def clang_builder(*, name, builderless = True, cores = 32, properties = None, **kwargs):
     properties = properties or {}
     properties.update({
-        "perf_dashboard_machine_group": "ChromiumClang",
+        "perf_dashboard_machine_group": "MonyharClang",
     })
     return ci_builder(
         name = name,
@@ -309,7 +309,7 @@ def clang_mac_builder(*, name, cores = 24, **kwargs):
         os = builders.os.MAC_10_15,
         ssd = True,
         properties = {
-            # The Chromium build doesn't need system Xcode, but the ToT clang
+            # The Monyhar build doesn't need system Xcode, but the ToT clang
             # bots also build clang and llvm and that build does need system
             # Xcode.
             "xcode_build_version": "12d4e",
@@ -485,7 +485,7 @@ def gpu_fyi_builder(*, name, **kwargs):
         service_account =
             "monyhar-ci-gpu-builder@chops-service-accounts.iam.gserviceaccount.com",
         properties = {
-            "perf_dashboard_machine_group": "ChromiumGPUFYI",
+            "perf_dashboard_machine_group": "MonyharGPUFYI",
         },
         **kwargs
     )

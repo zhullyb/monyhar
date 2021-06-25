@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -46,7 +46,7 @@ ErrorCode GetInitialErrorCode() {
 }
 
 bool SetInitialErrorCode(ErrorCode initial_error_code) {
-  // Note: Do not use Chromium IO methods in this function. When cast_shell
+  // Note: Do not use Monyhar IO methods in this function. When cast_shell
   // crashes, this function can be called by any thread.
   const std::string error_file_path = GetInitialErrorFilePath().value();
 

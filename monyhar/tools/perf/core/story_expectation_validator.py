@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Script to check validity of StoryExpectations."""
@@ -20,7 +20,7 @@ from typ import expectations_parser as typ_expectations_parser
 
 
 CLUSTER_TELEMETRY_DIR = os.path.join(
-    path_util.GetChromiumSrcDir(), 'tools', 'perf', 'contrib',
+    path_util.GetMonyharSrcDir(), 'tools', 'perf', 'contrib',
     'cluster_telemetry')
 CLUSTER_TELEMETRY_BENCHMARKS = [
     ct_benchmark.Name() for ct_benchmark in

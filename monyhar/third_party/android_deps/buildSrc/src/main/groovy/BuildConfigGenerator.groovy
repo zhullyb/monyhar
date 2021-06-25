@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ import java.util.regex.Pattern
 import java.util.regex.Matcher
 
 /**
- * Task to download dependencies specified in {@link ChromiumPlugin} and configure the Chromium build to integrate them.
+ * Task to download dependencies specified in {@link MonyharPlugin} and configure the Monyhar build to integrate them.
  * Used by declaring a new task in a {@code build.gradle} file:
  * <pre>
  * task myTaskName(type: BuildConfigGenerator) {
@@ -46,7 +46,7 @@ class BuildConfigGenerator extends DefaultTask {
     // https://source.monyhar.org/monyhar/infra/infra/+/master:recipes/recipe_modules/support_3pp/resolved_spec.py?q=symbol:PACKAGE_EPOCH&ss=monyhar
     private static final String THREEPP_EPOCH = '2'
 
-    // Some libraries are hosted in Chromium's //third_party directory. This is a mapping between
+    // Some libraries are hosted in Monyhar's //third_party directory. This is a mapping between
     // them so they can be used instead of android_deps pulling in its own copy.
     static final Map<String, String> EXISTING_LIBS = [
         com_ibm_icu_icu4j: '//third_party/icu4j:icu4j_java',
@@ -66,7 +66,7 @@ class BuildConfigGenerator extends DefaultTask {
     static final String AUTOROLLED_REPO_PATH = 'third_party/android_deps_autorolled'
 
     static final String COPYRIGHT_HEADER = '''\
-        # Copyright 2021 The Chromium Authors. All rights reserved.
+        # Copyright 2021 The Monyhar Authors. All rights reserved.
         # Use of this source code is governed by a BSD-style license that can be
         # found in the LICENSE file.
     '''.stripIndent()
@@ -80,7 +80,7 @@ class BuildConfigGenerator extends DefaultTask {
     @Input
     String repositoryPath
 
-    /** Relative path to the Chromium source root from the build.gradle file. */
+    /** Relative path to the Monyhar source root from the build.gradle file. */
     @Input
     String monyharSourceRoot
 
@@ -123,9 +123,9 @@ class BuildConfigGenerator extends DefaultTask {
         return 'file://third_party/android_deps/OWNERS\n'
     }
 
-    static String makeReadme(ChromiumDepGraph.DependencyDescription dependency) {
+    static String makeReadme(MonyharDepGraph.DependencyDescription dependency) {
         List<String> licenseStrings = []
-        for (ChromiumDepGraph.LicenseSpec license : dependency.licenses) {
+        for (MonyharDepGraph.LicenseSpec license : dependency.licenses) {
             // Replace license names with ones that are whitelisted, see third_party/PRESUBMIT.py
             switch (license.name) {
                 case 'The Apache License, Version 2.0':
@@ -161,7 +161,7 @@ class BuildConfigGenerator extends DefaultTask {
             """.stripIndent()
     }
 
-    static String makeCipdYaml(ChromiumDepGraph.DependencyDescription dependency, String cipdBucket, String repoPath) {
+    static String makeCipdYaml(MonyharDepGraph.DependencyDescription dependency, String cipdBucket, String repoPath) {
         String cipdVersion = "${THREEPP_EPOCH}@${dependency.version}.${dependency.cipdSuffix}"
         String cipdPath = "${cipdBucket}/${repoPath}"
         // CIPD does not allow uppercase in names.
@@ -171,7 +171,7 @@ class BuildConfigGenerator extends DefaultTask {
         // NOTE: Keep the copyright year 2018 until this generated code is updated, avoiding annual churn of all
         //       cipd.yaml files.
         return """\
-            # Copyright 2018 The Chromium Authors. All rights reserved.
+            # Copyright 2018 The Monyhar Authors. All rights reserved.
             # Use of this source code is governed by a BSD-style license that can be
             # found in the LICENSE file.
 
@@ -184,25 +184,25 @@ class BuildConfigGenerator extends DefaultTask {
             """.stripIndent()
     }
 
-    static void validateLicenses(ChromiumDepGraph.DependencyDescription dependency) {
+    static void validateLicenses(MonyharDepGraph.DependencyDescription dependency) {
         if (dependency.licenses.empty) {
             throw new RuntimeException("Missing license for ${dependency.id}.")
         }
 
-        for (ChromiumDepGraph.LicenseSpec license : dependency.licenses) {
+        for (MonyharDepGraph.LicenseSpec license : dependency.licenses) {
             if (!license.path?.trim() && !license.url?.trim()) {
                 throw new RuntimeException("Missing license for ${dependency.id}. License Name was: ${license.name}")
             }
         }
     }
 
-    static void downloadLicenses(ChromiumDepGraph.DependencyDescription dependency,
+    static void downloadLicenses(MonyharDepGraph.DependencyDescription dependency,
                                  String normalisedRepoPath,
                                  ExecutorService downloadExecutor,
                                  List<Future> downloadTasks) {
         String depDir = "$normalisedRepoPath/${computeDepDir(dependency)}"
         for (int i = 0; i < dependency.licenses.size(); ++i) {
-            ChromiumDepGraph.LicenseSpec license = dependency.licenses[i]
+            MonyharDepGraph.LicenseSpec license = dependency.licenses[i]
             if (!license.path?.trim() && license.url?.trim()) {
                 String destFileSuffix = (dependency.licenses.size() > 1) ? "${i + 1}.tmp" : ''
                 File destFile = new File("${depDir}/LICENSE${destFileSuffix}")
@@ -210,14 +210,14 @@ class BuildConfigGenerator extends DefaultTask {
                     downloadFile(dependency.id, license.url, destFile)
                     if (destFile.text.contains('<html')) {
                         throw new RuntimeException('Found HTML in LICENSE file. Please add an '
-                                + "override to ChromiumDepGraph.groovy for ${dependency.id}.")
+                                + "override to MonyharDepGraph.groovy for ${dependency.id}.")
                     }
                 })
             }
         }
                                  }
 
-    static void mergeLicenses(ChromiumDepGraph.DependencyDescription dependency, String normalisedRepoPath) {
+    static void mergeLicenses(MonyharDepGraph.DependencyDescription dependency, String normalisedRepoPath) {
         String depDir = computeDepDir(dependency)
         File outFile = new File("${normalisedRepoPath}/${depDir}/LICENSE")
 
@@ -231,14 +231,14 @@ class BuildConfigGenerator extends DefaultTask {
 
         outFile.write('Third-Party Software Licenses\n')
         for (int i = 0; i < dependency.licenses.size(); ++i) {
-            ChromiumDepGraph.LicenseSpec licenseSpec = dependency.licenses[i]
+            MonyharDepGraph.LicenseSpec licenseSpec = dependency.licenses[i]
             outFile.append("\n${i + 1}. ${licenseSpec.name}\n\n")
             String licensePath = licenseSpec.path ? licenseSpec.path.trim() : "${depDir}/LICENSE${i + 1}.tmp"
             outFile.append(new File("${normalisedRepoPath}/${licensePath}").text)
         }
     }
 
-    static String make3ppPb(ChromiumDepGraph.DependencyDescription dependency, String cipdBucket, String repoPath) {
+    static String make3ppPb(MonyharDepGraph.DependencyDescription dependency, String cipdBucket, String repoPath) {
         String pkgPrefix = "${cipdBucket}/${repoPath}/${DOWNLOAD_DIRECTORY_NAME}"
 
         return COPYRIGHT_HEADER + '\n' + GEN_REMINDER + """
@@ -256,7 +256,7 @@ class BuildConfigGenerator extends DefaultTask {
             """.stripIndent()
     }
 
-    static String make3ppFetch(Template fetchTemplate, ChromiumDepGraph.DependencyDescription dependency) {
+    static String make3ppFetch(Template fetchTemplate, MonyharDepGraph.DependencyDescription dependency) {
         Map bindMap = [
             copyrightHeader: COPYRIGHT_HEADER,
             dependency: dependency,
@@ -326,7 +326,7 @@ class BuildConfigGenerator extends DefaultTask {
         Set<Project> subprojects = [] as Set
         subprojects.add(project)
         subprojects.addAll(project.subprojects)
-        ChromiumDepGraph graph = new ChromiumDepGraph(
+        MonyharDepGraph graph = new MonyharDepGraph(
                 projects: subprojects, logger: project.logger, skipLicenses: skipLicenses)
         String normalisedRepoPath = normalisePath(repositoryPath)
 
@@ -337,13 +337,13 @@ class BuildConfigGenerator extends DefaultTask {
         List<String> dependencyDirectories = []
         ExecutorService downloadExecutor = Executors.newCachedThreadPool()
         List<Future> downloadTasks = []
-        List<ChromiumDepGraph.DependencyDescription> mergeLicensesDeps = []
+        List<MonyharDepGraph.DependencyDescription> mergeLicensesDeps = []
         graph.dependencies.values().each { dependency ->
             if (excludeDependency(dependency) || computeJavaGroupForwardingTarget(dependency) != null) {
                 return
             }
 
-            ChromiumDepGraph.DependencyDescription dependencyForLogging = dependency.clone()
+            MonyharDepGraph.DependencyDescription dependencyForLogging = dependency.clone()
             // jsonDump() throws StackOverflowError for ResolvedArtifact.
             dependencyForLogging.artifact = null
 
@@ -409,8 +409,8 @@ class BuildConfigGenerator extends DefaultTask {
                                   "${normalisedRepoPath}/additional_readme_paths.json")
     }
 
-    void appendBuildTarget(ChromiumDepGraph.DependencyDescription dependency,
-                           Map<String, ChromiumDepGraph.DependencyDescription> allDependencies,
+    void appendBuildTarget(MonyharDepGraph.DependencyDescription dependency,
+                           Map<String, MonyharDepGraph.DependencyDescription> allDependencies,
                            StringBuilder sb) {
         if (excludeDependency(dependency) || !dependency.generateTarget) {
             return
@@ -433,7 +433,7 @@ class BuildConfigGenerator extends DefaultTask {
 
         String depsStr = ''
         dependency.children?.each { childDep ->
-            ChromiumDepGraph.DependencyDescription dep = allDependencies[childDep]
+            MonyharDepGraph.DependencyDescription dep = allDependencies[childDep]
             if (dep.exclude) {
                 return
             }
@@ -493,7 +493,7 @@ class BuildConfigGenerator extends DefaultTask {
         sb.append('}\n\n')
                 }
 
-    String generateBuildTargetVisibilityDeclaration(ChromiumDepGraph.DependencyDescription dependency) {
+    String generateBuildTargetVisibilityDeclaration(MonyharDepGraph.DependencyDescription dependency) {
         StringBuilder sb = new StringBuilder()
         switch (dependency.id) {
             case 'com_google_android_material_material':
@@ -516,7 +516,7 @@ class BuildConfigGenerator extends DefaultTask {
         return sb.toString()
     }
 
-    boolean excludeDependency(ChromiumDepGraph.DependencyDescription dependency) {
+    boolean excludeDependency(MonyharDepGraph.DependencyDescription dependency) {
         if (dependency.exclude || EXISTING_LIBS.get(dependency.id)) {
             return true
         }
@@ -543,7 +543,7 @@ class BuildConfigGenerator extends DefaultTask {
     }
 
     /** If |dependency| should be a java_group(), returns target to forward to. Returns null otherwise. */
-    String computeJavaGroupForwardingTarget(ChromiumDepGraph.DependencyDescription dependency) {
+    String computeJavaGroupForwardingTarget(MonyharDepGraph.DependencyDescription dependency) {
         String targetName = translateTargetName(dependency.id) + '_java'
         return repositoryPath != AUTOROLLED_REPO_PATH && isTargetAutorolled(targetName) ?
                "//${AUTOROLLED_REPO_PATH}:${targetName}" : null
@@ -561,7 +561,7 @@ class BuildConfigGenerator extends DefaultTask {
         return sb.toString()
     }
 
-    private static String computeDepDir(ChromiumDepGraph.DependencyDescription dependency) {
+    private static String computeDepDir(MonyharDepGraph.DependencyDescription dependency) {
         return "${DOWNLOAD_DIRECTORY_NAME}/${dependency.directoryName}"
     }
 
@@ -909,7 +909,7 @@ class BuildConfigGenerator extends DefaultTask {
         refFile.write(JsonOutput.prettyPrint(JsonOutput.toJson(directories)) + '\n')
     }
 
-    private void updateBuildTargetDeclaration(ChromiumDepGraph depGraph, String normalisedRepoPath) {
+    private void updateBuildTargetDeclaration(MonyharDepGraph depGraph, String normalisedRepoPath) {
         File buildFile = new File("${normalisedRepoPath}/BUILD.gn")
         StringBuilder sb = new StringBuilder()
 
@@ -923,7 +923,7 @@ class BuildConfigGenerator extends DefaultTask {
             return dependency1.id <=> dependency2.id
         }
 
-        List<ChromiumDepGraph.DependencyDescription> fixedDependencies = depGraph.dependencies.values().findAll {
+        List<MonyharDepGraph.DependencyDescription> fixedDependencies = depGraph.dependencies.values().findAll {
             dependency -> dependency.usedInBuild
         }
         fixedDependencies.sort(dependencyComparator).each { dependency ->
@@ -931,11 +931,11 @@ class BuildConfigGenerator extends DefaultTask {
         }
 
         sb.append('if (!limit_android_deps) {\n')
-        List<ChromiumDepGraph.DependencyDescription> buildWithChromiumDependencies
-        buildWithChromiumDependencies = depGraph.dependencies.values().findAll {
+        List<MonyharDepGraph.DependencyDescription> buildWithMonyharDependencies
+        buildWithMonyharDependencies = depGraph.dependencies.values().findAll {
             dependency -> !dependency.usedInBuild
         }
-        buildWithChromiumDependencies.sort(dependencyComparator).each { dependency ->
+        buildWithMonyharDependencies.sort(dependencyComparator).each { dependency ->
             appendBuildTarget(dependency, depGraph.dependencies, sb)
         }
         sb.append('}\n')
@@ -957,7 +957,7 @@ class BuildConfigGenerator extends DefaultTask {
         return "visibility = ${makeGnArray(internalTargetVisibility)}\n"
     }
 
-    private void updateDepsDeclaration(ChromiumDepGraph depGraph, String cipdBucket,
+    private void updateDepsDeclaration(MonyharDepGraph depGraph, String cipdBucket,
                                        String repoPath, String depsFilePath) {
         File depsFile = new File(depsFilePath)
         StringBuilder sb = new StringBuilder()
@@ -1007,8 +1007,8 @@ class BuildConfigGenerator extends DefaultTask {
         return false
     }
 
-    private String normalisePath(String pathRelativeToChromiumRoot) {
-        return project.file("${monyharSourceRoot}/${pathRelativeToChromiumRoot}").absolutePath
+    private String normalisePath(String pathRelativeToMonyharRoot) {
+        return project.file("${monyharSourceRoot}/${pathRelativeToMonyharRoot}").absolutePath
     }
 
 }

@@ -7,8 +7,8 @@ compositor_frame_fuzzer.proto, which describes the root RenderPass for a
 CompositorFrame as input. It uses [libFuzzer][libfuzzer] and
 [libprotobuf-mutator][protobuf-mutator] to generate and mutate a corpus of
 inputs that exercise as many code paths as possible. See [libFuzzer in
-Chromium][libfuzzer-monyhar] documentation for general information on these
-tools and how they are used in Chromium.
+Monyhar][libfuzzer-monyhar] documentation for general information on these
+tools and how they are used in Monyhar.
 
 On each iteration, the CompositorFrame fuzzer builds a CompositorFrame
 following the specifications in the protobuf-format input and submits it to the

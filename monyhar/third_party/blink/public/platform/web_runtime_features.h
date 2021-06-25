@@ -96,7 +96,7 @@ class WebRuntimeFeatures {
       bool enable);
   BLINK_PLATFORM_EXPORT static void EnableCookiesWithoutSameSiteMustBeSecure(
       bool);
-  BLINK_PLATFORM_EXPORT static void EnableCanvas2dImageChromium(bool);
+  BLINK_PLATFORM_EXPORT static void EnableCanvas2dImageMonyhar(bool);
   BLINK_PLATFORM_EXPORT static void EnableCooperativeScheduling(bool);
   BLINK_PLATFORM_EXPORT static void EnableCSSHexAlphaColor(bool);
   BLINK_PLATFORM_EXPORT static void EnableSameSiteByDefaultCookies(bool);
@@ -174,7 +174,7 @@ class WebRuntimeFeatures {
   BLINK_PLATFORM_EXPORT static void EnableWebBluetoothManufacturerDataFilter(
       bool);
   BLINK_PLATFORM_EXPORT static void EnableWebGLDraftExtensions(bool);
-  BLINK_PLATFORM_EXPORT static void EnableWebGLImageChromium(bool);
+  BLINK_PLATFORM_EXPORT static void EnableWebGLImageMonyhar(bool);
   BLINK_PLATFORM_EXPORT static void EnableWebGPU(bool);
   BLINK_PLATFORM_EXPORT static void EnableWebID(bool);
   BLINK_PLATFORM_EXPORT static void EnableWebNfc(bool);

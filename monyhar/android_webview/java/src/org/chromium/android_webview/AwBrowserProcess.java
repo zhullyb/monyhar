@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -138,7 +138,7 @@ public final class AwBrowserProcess {
             AwBrowserProcessJni.get().setProcessNameCrashKey(ContextUtils.getProcessName());
             AwDataDirLock.lock(appContext);
             // We must post to the UI thread to cover the case that the user
-            // has invoked Chromium startup by using the (thread-safe)
+            // has invoked Monyhar startup by using the (thread-safe)
             // CookieManager rather than creating a WebView.
             ThreadUtils.runOnUiThreadBlocking(() -> {
                 boolean multiProcess =

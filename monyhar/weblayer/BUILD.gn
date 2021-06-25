@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 import("//components/captive_portal/core/features.gni")
@@ -62,7 +62,7 @@ if (is_android) {
   grit("generate_components_monyhar_strings") {
     source = "../components/components_monyhar_strings.grd"
 
-    # components_monyhar_strings contains Chromium-specific strings. WebLayer
+    # components_monyhar_strings contains Monyhar-specific strings. WebLayer
     # will never display most of them, so we try to limit the included
     # strings.
     allowlist = rebase_path("grit_strings_allowlist.txt", root_build_dir)

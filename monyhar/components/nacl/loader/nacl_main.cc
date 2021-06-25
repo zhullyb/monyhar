@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -42,9 +42,9 @@ int NaClMain(const content::MainFunctionParams& parameters) {
       parsed_command_line.HasSwitch(sandbox::policy::switches::kNoSandbox);
 
 #if defined(OS_WIN)
-  // NaCl processes exit differently from other Chromium processes (see NaClExit
+  // NaCl processes exit differently from other Monyhar processes (see NaClExit
   // in native_client/src/shared/platform/win/nacl_exit.c) and so do not want
-  // default Chromium process exit behavior.
+  // default Monyhar process exit behavior.
   base::win::SetShouldCrashOnProcessDetach(false);
 #endif
 

@@ -10,7 +10,7 @@ function createEvent(initializer) {
   return new ExtendableMessageEvent('type', initializer);
 }
 
-// These test cases are mostly copied from the following file in the Chromium
+// These test cases are mostly copied from the following file in the Monyhar
 // project (as of commit 848ad70823991e0f12b437d789943a4ab24d65bb):
 // third_party/WebKit/LayoutTests/fast/events/constructors/message-event-constructor.html
 

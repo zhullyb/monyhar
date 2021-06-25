@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -48,7 +48,7 @@ def GetUserSidString():
 
 
 def InternalTimeFromPyTime(pytime):
-  """Returns a Chromium internal time value representing a Python datetime."""
+  """Returns a Monyhar internal time value representing a Python datetime."""
   # Microseconds since 1601-01-01 00:00:00 UTC
   delta = pytime - datetime(1601, 1, 1)
   return math.trunc(delta.total_seconds()) * 1000000 + delta.microseconds

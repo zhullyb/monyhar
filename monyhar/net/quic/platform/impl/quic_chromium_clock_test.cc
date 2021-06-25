@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,8 +10,8 @@
 namespace quic {
 namespace test {
 
-TEST(QuicChromiumClockTest, Now) {
-  QuicChromiumClock clock;
+TEST(QuicMonyharClockTest, Now) {
+  QuicMonyharClock clock;
 
   QuicTime start = clock.Now();
   QuicTime now = clock.ApproximateNow();
@@ -21,8 +21,8 @@ TEST(QuicChromiumClockTest, Now) {
   EXPECT_LE(now, end);
 }
 
-TEST(QuicChromiumClockTest, WallNow) {
-  QuicChromiumClock clock;
+TEST(QuicMonyharClockTest, WallNow) {
+  QuicMonyharClock clock;
 
   base::Time start = base::Time::Now();
   QuicWallTime now = clock.WallNow();

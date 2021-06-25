@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -58,7 +58,7 @@ void LogFirstCapturedVideoFrame(const AVCaptureDeviceFormat* bestCaptureFormat,
     base::UmaHistogramEnumeration(
         "Media.VideoCapture.Mac.Device.RequestedPixelFormat",
         [VideoCaptureDeviceAVFoundation
-            FourCCToChromiumPixelFormat:CMFormatDescriptionGetMediaSubType(
+            FourCCToMonyharPixelFormat:CMFormatDescriptionGetMediaSubType(
                                             requestedFormat)],
         media::VideoPixelFormat::PIXEL_FORMAT_MAX);
 

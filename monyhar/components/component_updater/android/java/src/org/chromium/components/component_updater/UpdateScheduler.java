@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ import org.monyhar.components.background_task_scheduler.BackgroundTask.TaskFinis
 import org.monyhar.components.background_task_scheduler.BackgroundTaskSchedulerFactory;
 import org.monyhar.components.background_task_scheduler.TaskIds;
 import org.monyhar.components.background_task_scheduler.TaskInfo;
-import org.monyhar.gms.ChromiumPlayServicesAvailability;
+import org.monyhar.gms.MonyharPlayServicesAvailability;
 
 /** Java-side implementation of the component update scheduler using the BackgroundTaskScheduler. */
 @JNINamespace("component_updater")
@@ -35,7 +35,7 @@ public class UpdateScheduler {
     @CalledByNative
     /* package */ static boolean isAvailable() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                || ChromiumPlayServicesAvailability.isGooglePlayServicesAvailable(
+                || MonyharPlayServicesAvailability.isGooglePlayServicesAvailable(
                         ContextUtils.getApplicationContext());
     }
 

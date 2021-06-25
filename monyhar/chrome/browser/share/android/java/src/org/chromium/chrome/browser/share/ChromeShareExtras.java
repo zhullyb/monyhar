@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ import org.monyhar.url.GURL;
  *
  * <p>This class contains extras that are used only by Android Share, and should never be
  * componentized. {@link ShareParams} lives in //components and only contains parameters that are
- * used in more than one part of the Chromium codebase.
+ * used in more than one part of the Monyhar codebase.
  */
 public class ChromeShareExtras {
     /**

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@
 
 namespace remoting {
 
-ChromiumUrlRequest::ChromiumUrlRequest(
+MonyharUrlRequest::MonyharUrlRequest(
     scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory,
     UrlRequest::Type type,
     const std::string& url,
@@ -37,19 +37,19 @@ ChromiumUrlRequest::ChromiumUrlRequest(
   resource_request_->referrer = GURL("https://chrome.google.com/remotedesktop");
 }
 
-ChromiumUrlRequest::~ChromiumUrlRequest() = default;
+MonyharUrlRequest::~MonyharUrlRequest() = default;
 
-void ChromiumUrlRequest::AddHeader(const std::string& value) {
+void MonyharUrlRequest::AddHeader(const std::string& value) {
   resource_request_->headers.AddHeaderFromString(value);
 }
 
-void ChromiumUrlRequest::SetPostData(const std::string& content_type,
+void MonyharUrlRequest::SetPostData(const std::string& content_type,
                                      const std::string& data) {
   post_data_content_type_ = content_type;
   post_data_ = data;
 }
 
-void ChromiumUrlRequest::Start(OnResultCallback on_result_callback) {
+void MonyharUrlRequest::Start(OnResultCallback on_result_callback) {
   DCHECK(!on_result_callback.is_null());
   DCHECK(on_result_callback_.is_null());
 
@@ -64,11 +64,11 @@ void ChromiumUrlRequest::Start(OnResultCallback on_result_callback) {
 
   url_loader_->DownloadToStringOfUnboundedSizeUntilCrashAndDie(
       url_loader_factory_.get(),
-      base::BindOnce(&ChromiumUrlRequest::OnURLLoadComplete,
+      base::BindOnce(&MonyharUrlRequest::OnURLLoadComplete,
                      base::Unretained(this)));
 }
 
-void ChromiumUrlRequest::OnURLLoadComplete(
+void MonyharUrlRequest::OnURLLoadComplete(
     std::unique_ptr<std::string> response_body) {
   Result result;
   result.success = !!response_body;
@@ -85,16 +85,16 @@ void ChromiumUrlRequest::OnURLLoadComplete(
   std::move(on_result_callback_).Run(result);
 }
 
-ChromiumUrlRequestFactory::ChromiumUrlRequestFactory(
+MonyharUrlRequestFactory::MonyharUrlRequestFactory(
     scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory)
     : url_loader_factory_(url_loader_factory) {}
-ChromiumUrlRequestFactory::~ChromiumUrlRequestFactory() = default;
+MonyharUrlRequestFactory::~MonyharUrlRequestFactory() = default;
 
-std::unique_ptr<UrlRequest> ChromiumUrlRequestFactory::CreateUrlRequest(
+std::unique_ptr<UrlRequest> MonyharUrlRequestFactory::CreateUrlRequest(
     UrlRequest::Type type,
     const std::string& url,
     const net::NetworkTrafficAnnotationTag& traffic_annotation) {
-  return std::make_unique<ChromiumUrlRequest>(url_loader_factory_, type, url,
+  return std::make_unique<MonyharUrlRequest>(url_loader_factory_, type, url,
                                               traffic_annotation);
 }
 

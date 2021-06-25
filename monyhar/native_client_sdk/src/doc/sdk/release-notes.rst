@@ -737,7 +737,7 @@ Windows SDK
   Linux systems, but doing so requires more work because the SDK does not yet
   include the above resources (library source files and pre-built libraries)
   for Mac and Linux systems. To build and debug a trusted plugin on Mac and
-  Linux systems, you need to `get the Chromium code
+  Linux systems, you need to `get the Monyhar code
   <http://dev.monyhar.org/developers/how-tos/get-the-code>`_ and then follow
   the `Mac instructions
   <http://www.monyhar.org/nativeclient/how-tos/debugging-documentation/debugging-a-trusted-plugin/trusted-debugging-on-mac>`_

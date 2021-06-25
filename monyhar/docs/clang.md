@@ -1,10 +1,10 @@
 # Clang
 
-Chromium ships a prebuilt [clang](http://clang.llvm.org) binary.
+Monyhar ships a prebuilt [clang](http://clang.llvm.org) binary.
 It's just upstream clang built at a known-good revision that we
 bump every two weeks or so.
 
-This is the only supported compiler for building Chromium.
+This is the only supported compiler for building Monyhar.
 
 [TOC]
 
@@ -84,9 +84,9 @@ You can then look in `out/gn/toolchain.ninja` and check that the `rule cc` and
 `rule cxx` commands run your clang binary.  If things look good, run `ninja
 -C out/gn` to build.
 
-Chromium tries to be buildable with its currently pinned clang, and with clang
+Monyhar tries to be buildable with its currently pinned clang, and with clang
 trunk. Set `llvm_force_head_revision = true` in your args.gn if the clang you're
-trying to build with is closer to clang trunk than to Chromium's pinned clang
+trying to build with is closer to clang trunk than to Monyhar's pinned clang
 (which `tools/clang/scripts/update.py --print-revision` prints).
 
 ## Related documents

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -45,7 +45,7 @@ drawings.InputEvent;
  *
  * See http://go/ink-tools for details on each tool.
  *
- * Note: These values map to the AnnotationTool definition in Chromium.
+ * Note: These values map to the AnnotationTool definition in Monyhar.
  *
  * @enum {string}
  */
@@ -123,7 +123,7 @@ drawings.Canvas = class {
   /**
    * Set the tool parameters in the Ink engine.
    *
-   * See AnnotationTool in Chromium.
+   * See AnnotationTool in Monyhar.
    *
    * @param {{
    *   tool: (!drawings.ToolType|string),

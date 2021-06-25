@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -591,7 +591,7 @@ bool GLES2Implementation::IsExtensionAvailableHelper(const char* extension,
   }
 }
 
-bool GLES2Implementation::IsChromiumFramebufferMultisampleAvailable() {
+bool GLES2Implementation::IsMonyharFramebufferMultisampleAvailable() {
   return IsExtensionAvailableHelper("GL_CHROMIUM_framebuffer_multisample",
                                     &monyhar_framebuffer_multisample_);
 }
@@ -867,7 +867,7 @@ bool GLES2Implementation::GetHelper(GLenum pname, GLint* params) {
       return true;
     case GL_READ_FRAMEBUFFER_BINDING:
       if (capabilities_.major_version >= 3 ||
-          IsChromiumFramebufferMultisampleAvailable()) {
+          IsMonyharFramebufferMultisampleAvailable()) {
         *params = bound_read_framebuffer_;
         return true;
       }
@@ -5135,7 +5135,7 @@ void GLES2Implementation::BindFramebufferHelper(GLenum target,
       break;
     case GL_READ_FRAMEBUFFER:
       DCHECK(capabilities_.major_version >= 3 ||
-             IsChromiumFramebufferMultisampleAvailable());
+             IsMonyharFramebufferMultisampleAvailable());
       if (bound_read_framebuffer_ != framebuffer) {
         bound_read_framebuffer_ = framebuffer;
         changed = true;
@@ -5143,7 +5143,7 @@ void GLES2Implementation::BindFramebufferHelper(GLenum target,
       break;
     case GL_DRAW_FRAMEBUFFER:
       DCHECK(capabilities_.major_version >= 3 ||
-             IsChromiumFramebufferMultisampleAvailable());
+             IsMonyharFramebufferMultisampleAvailable());
       if (bound_framebuffer_ != framebuffer) {
         bound_framebuffer_ = framebuffer;
         changed = true;

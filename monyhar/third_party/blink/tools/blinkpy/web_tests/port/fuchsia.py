@@ -228,7 +228,7 @@ class FuchsiaPort(base.Port):
         _import_fuchsia_runner()
 
     def _driver_class(self):
-        return ChromiumFuchsiaDriver
+        return MonyharFuchsiaDriver
 
     def _path_to_driver(self, target=None):
         return self._build_path_with_target(target, CONTENT_SHELL_PACKAGE_PATH)
@@ -337,9 +337,9 @@ class FuchsiaPort(base.Port):
         return os.path.join(os.path.dirname(package_path), 'ids.txt')
 
 
-class ChromiumFuchsiaDriver(driver.Driver):
+class MonyharFuchsiaDriver(driver.Driver):
     def __init__(self, port, worker_number, no_timeout=False):
-        super(ChromiumFuchsiaDriver, self).__init__(port, worker_number,
+        super(MonyharFuchsiaDriver, self).__init__(port, worker_number,
                                                     no_timeout)
 
     def _initialize_server_process(self, server_name, cmd_line, environment):
@@ -370,7 +370,7 @@ class ChromiumFuchsiaDriver(driver.Driver):
         return cmd
 
     def _command_from_driver_input(self, driver_input):
-        command = super(ChromiumFuchsiaDriver,
+        command = super(MonyharFuchsiaDriver,
                         self)._command_from_driver_input(driver_input)
         if command.startswith('/'):
             relative_test_filename = \

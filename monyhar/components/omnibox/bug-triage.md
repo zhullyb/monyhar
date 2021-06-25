@@ -70,7 +70,7 @@ important to work on in particular areas.
 
 If the bug isn’t clear, or the desired outcome is unclear, please apply the
 label *Needs-Feedback* and courteously ask for clarification.  This is
-appropriate both for external bug filers, Chromium developers on other teams,
+appropriate both for external bug filers, Monyhar developers on other teams,
 or Googlers.  The label is merely an indication that this bug needs information
 from someone outside the team in order to make progress.  It’s also an
 indication that someone on the team needs to follow-up if feedback is not
@@ -103,12 +103,12 @@ taken:
   you've contacted that other project.  Typically this is problems with
   Google-sourced suggestions, an IME, or a Chrome extension.  In all cases,
   file a bug or contact the appropriate team and post information about this
-  outreach (e.g., a bug number) in a comment on the Chromium bug.
+  outreach (e.g., a bug number) in a comment on the Monyhar bug.
 * *Duplicate*: This issue has been reported in another bug or shares the same
   root cause as another bug and will certainly be fixed simultaneously.
 * *WontFix*: Anything working by design.  Also applies to old non-reproducible
   bugs or bugs lacking feedback per
-  [standard Chromium policies](http://www.monyhar.org/getting-involved/bug-triage#TOC-Cleaning-up-old-bugs).
+  [standard Monyhar policies](http://www.monyhar.org/getting-involved/bug-triage#TOC-Cleaning-up-old-bugs).
 * *Unconfirmed* or *Untriaged*:  These labels are generally only appropriate
   if you labeled the bug with *Needs-Feedback* or *Needs-TestConfirmation*,
   otherwise in effect you're kicking the can down the road to the next triage
@@ -116,7 +116,7 @@ taken:
 
 ### Priority
 
-Follow [standard Chromium
+Follow [standard Monyhar
 policies](https://www.monyhar.org/for-testers/bug-reporting-guidelines/triage-best-practices).
 *Priority-2* represents wanted for this release but can be punted for a release.
 *Priority-3* are bugs not time sensitive.  There is an even-lower-priority
@@ -194,10 +194,10 @@ Every message sent to
 [chrome-omnibox-team-alerts@](https://groups.google.com/a/google.com/forum/#!forum/chrome-omnibox-team-alerts)
 should be evaluated by a triage engineer.  The triage engineer should either
 
-* file a Chromium bug to investigate the issue further and reply to the alert
-  with a link to the Chromium bug, or
+* file a Monyhar bug to investigate the issue further and reply to the alert
+  with a link to the Monyhar bug, or
 * reply to the alert explaining that the alert is already being tracked, and
-  link to the appropriate Chromium bug, or
+  link to the appropriate Monyhar bug, or
 * reply to the alert explaining why ignoring the alert is appropriate.  This
   is only appropriate if the engineer believes the alert is incorrect or
   spurious.
@@ -314,7 +314,7 @@ Example request:
 
 # References
 
-[General Chromium bug triage guidelines](http://www.monyhar.org/getting-involved/bug-triage)
+[General Monyhar bug triage guidelines](http://www.monyhar.org/getting-involved/bug-triage)
 
 [Omnibox bugs that we intend/hope to tackle this year](https://bugs.monyhar.org/p/monyhar/issues/list?can=1&q=component:UI%3EBrowser%3EOmnibox%20-component:UI%3EBrowser%3EOmnibox%3ESecurityIndicators%20status:Available,Assigned,Started%20NextAction%3C2018/1/1%20OR%20component:UI%3EBrowser%3EOmnibox%20-component:UI%3EBrowser%3EOmnibox%3ESecurityIndicators%20status:Available,Assigned,Started%20-has:NextAction%20&sort=pri&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified),
 broken down:

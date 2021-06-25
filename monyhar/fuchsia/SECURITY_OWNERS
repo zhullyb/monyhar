@@ -1,7 +1,7 @@
 # Changes to integration with the Fuchsia platform, or peer components, require
 # security review to avoid introducing sandbox escapes. These include:
 # - Critical platform integrations (e.g. shared memory, process launching).
-# - Changes to Chromium-defined Fuchsia IPC (aka FIDL) protocols.
+# - Changes to Monyhar-defined Fuchsia IPC (aka FIDL) protocols.
 # - Addition of new FIDL services to child process sandboxes.
 # - Addition of new FIDL clients and implementations.
 #

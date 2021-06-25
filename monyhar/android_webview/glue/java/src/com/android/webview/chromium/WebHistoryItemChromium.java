@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,17 +11,17 @@ import org.monyhar.content_public.browser.NavigationEntry;
 import org.monyhar.url.GURL;
 
 /**
- * WebView Chromium implementation of WebHistoryItem. Simple immutable wrapper
+ * WebView Monyhar implementation of WebHistoryItem. Simple immutable wrapper
  * around NavigationEntry
  */
 @SuppressWarnings("deprecation")
-public class WebHistoryItemChromium extends WebHistoryItem {
+public class WebHistoryItemMonyhar extends WebHistoryItem {
     private final GURL mUrl;
     private final GURL mOriginalUrl;
     private final String mTitle;
     private final Bitmap mFavicon;
 
-    /* package */ WebHistoryItemChromium(NavigationEntry entry) {
+    /* package */ WebHistoryItemMonyhar(NavigationEntry entry) {
         mUrl = entry.getUrl();
         mOriginalUrl = entry.getOriginalUrl();
         mTitle = entry.getTitle();
@@ -70,7 +70,7 @@ public class WebHistoryItemChromium extends WebHistoryItem {
     }
 
     // Clone constructor.
-    private WebHistoryItemChromium(GURL url, GURL originalUrl, String title, Bitmap favicon) {
+    private WebHistoryItemMonyhar(GURL url, GURL originalUrl, String title, Bitmap favicon) {
         mUrl = url;
         mOriginalUrl = originalUrl;
         mTitle = title;
@@ -82,8 +82,8 @@ public class WebHistoryItemChromium extends WebHistoryItem {
      */
     @SuppressWarnings("NoSynchronizedMethodCheck")
     @Override
-    public synchronized WebHistoryItemChromium
+    public synchronized WebHistoryItemMonyhar
     clone() {
-        return new WebHistoryItemChromium(mUrl, mOriginalUrl, mTitle, mFavicon);
+        return new WebHistoryItemMonyhar(mUrl, mOriginalUrl, mTitle, mFavicon);
     }
 }

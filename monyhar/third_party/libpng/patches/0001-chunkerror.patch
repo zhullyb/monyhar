@@ -5,11 +5,11 @@ Subject: [PATCH] Turn large PNG chunks into benign errors
 
 Bug: 827754
 
-A recent change to libpng [1] (included in Chromium with the recent
+A recent change to libpng [1] (included in Monyhar with the recent
 libpng update [2]) turns chunks that are bigger than
 PNG_USER_CHUNK_MALLOC_MAX into failures. Although this matches the
 intent of PNG_USER_CHUNK_MALLOC_MAX, it also causes images which used to
-be viewable in Chromium to fail. Changing to a benign error allows us to
+be viewable in Monyhar to fail. Changing to a benign error allows us to
 display these images once again. Though it means we do allow libpng to
 allocate more than PNG_USER_CHUNK_MALLOC_MAX, it matches the behavior
 prior to [2] (when we were using 1.6.22), and it does not regress

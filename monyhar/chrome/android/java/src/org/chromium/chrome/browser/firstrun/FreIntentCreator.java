@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -168,12 +168,12 @@ public class FreIntentCreator {
 
     /**
      * On tablets, where FRE activity is a dialog, transitions from fillscreen activities
-     * (the ones that use Theme.Chromium.TabbedMode, e.g. ChromeTabbedActivity) look ugly, because
+     * (the ones that use Theme.Monyhar.TabbedMode, e.g. ChromeTabbedActivity) look ugly, because
      * when FRE is started from CTA.onCreate(), currently running animation for CTA window
      * is aborted. This is perceived as a flash of white and doesn't look good.
      *
      * To solve this, we added TabbedMode FRE activity, which has the same window background
-     * as Theme.Chromium.TabbedMode activities, but shows content in a FRE-like dialog.
+     * as Theme.Monyhar.TabbedMode activities, but shows content in a FRE-like dialog.
      *
      * This function returns whether to use the TabbedModeFRE.
      */

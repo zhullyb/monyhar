@@ -155,7 +155,7 @@ establish the Crashpad client environment before running a program.
  * **--metrics-dir**=_DIR_
 
    Metrics information will be written to _DIR_. This option only has an effect
-   when built as part of Chromium. In non-Chromium builds, and in the absence of
+   when built as part of Monyhar. In non-Monyhar builds, and in the absence of
    this option, metrics information will not be written.
 
  * **--monitor-self**
@@ -289,7 +289,7 @@ establish the Crashpad client environment before running a program.
 
    Causes crash reports to be passed via an in-memory file to
    `/sbin/crash_reporter` instead of storing them in the database. The database
-   is still used for Crashpad settings. This option is only valid on Chromium
+   is still used for Crashpad settings. This option is only valid on Monyhar
    OS.
 
 * **--write-minidump-to-log**

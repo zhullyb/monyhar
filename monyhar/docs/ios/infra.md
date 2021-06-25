@@ -1,8 +1,8 @@
-# Continuous build and test infrastructure for Chromium for iOS
+# Continuous build and test infrastructure for Monyhar for iOS
 
-See the [instructions] for how to check out and build Chromium for iOS.
+See the [instructions] for how to check out and build Monyhar for iOS.
 
-The Chromium projects use buildbot for continuous integration. This doc starts
+The Monyhar projects use buildbot for continuous integration. This doc starts
 with an overview of the system, then gives detailed explanations about each
 part.
 
@@ -11,7 +11,7 @@ part.
 ## Overview
 
 Commits are made using the [commit queue], which triggers a series of try jobs
-to compile and test the proposed patch against Chromium tip of tree before
+to compile and test the proposed patch against Monyhar tip of tree before
 actually making the commit. If the try jobs succeed the patch is committed. A
 newly committed change triggers the builders (or "bots") to compile and test
 the change again.
@@ -24,7 +24,7 @@ to compile and test new commits whenever they are detected. [monyhar.mac] is
 the main waterfall for Mac desktop and iOS. [tryserver.monyhar.mac] serves
 as the try server for Mac desktop and iOS.
 
-The bots know how to check out a given revision of Chromium, compile, and test.
+The bots know how to check out a given revision of Monyhar, compile, and test.
 
 ### Code location
 
@@ -35,7 +35,7 @@ contains various infra-related scripts.
 
 #### Pollers
 
-[monyhar.mac] uses a `GitilesPoller` which polls the Chromium repository for
+[monyhar.mac] uses a `GitilesPoller` which polls the Monyhar repository for
 new commits using the [gitiles] interface. When a new commit is detected, the
 bots are triggered.
 
@@ -48,7 +48,7 @@ functionality that the various [iOS recipes] use.
 #### Configs
 
 Because the recipes live in another repository, changes to the recipes don't
-go through the Chromium [commit queue] and aren't tested on the [try server].
+go through the Monyhar [commit queue] and aren't tested on the [try server].
 In order to allow bot changes to be tested by the commit queue, the recipes
 for iOS are generic instead of bot-specific, and rely on configuration files
 which live in master-specific JSON config files located in [src/ios/build/bots].
@@ -64,13 +64,13 @@ can be tested on the [try server].
 
 ### Compiling with goma
 
-Goma is the distributed build system used by Chromium. It reduces compilation
+Goma is the distributed build system used by Monyhar. It reduces compilation
 time by avoiding recompilation of objects which have already been compiled
 elsewhere.
 
 ### Testing with swarming
 
-Tests run on [swarming], a distributed test system used by Chromium. After
+Tests run on [swarming], a distributed test system used by Monyhar. After
 compilation, configured tests will be zipped up along with their necessary
 dependencies ("isolated") and sent to the [swarming server] for execution. The
 server issues tasks to its attached workers for execution. The bots themselves
@@ -96,7 +96,7 @@ tests in the iOS [simulator]. A build is considered successful when both
 compilation and all configured tests succeed.
 
 `ios-device` and `ios-simulator` both compile using the version of [clang]
-defined by the `CLANG_REVISION` in the Chromium tree.
+defined by the `CLANG_REVISION` in the Monyhar tree.
 
 ### Scheduling try jobs using buildbucket
 
@@ -168,7 +168,7 @@ perform Debug builds for x86 and x64, and Release builds for arm and arm64. An
 x86/x64 build can only be tested on the [iOS simulator], while an arm/arm64
 build can only be tested on a physical device.
 
-Since Chromium for iOS is shipped as a [universal binary], it's also fairly
+Since Monyhar for iOS is shipped as a [universal binary], it's also fairly
 common to set `additional_target_cpus`. For simulator builds, we typically set:
 ```json
 "gn_args": [
@@ -337,27 +337,27 @@ A bot may be configured to upload compiled artifacts. This is defined by the
   ],
   "upload": [
     {
-      "artifact": "Chromium.breakpad",
+      "artifact": "Monyhar.breakpad",
       "bucket": "my-gcs-bucket",
     },
     {
-      "artifact": "Chromium.app",
+      "artifact": "Monyhar.app",
       "bucket": "my-gcs-bucket",
       "compress": true,
     },
     {
-      "artifact": "Chromium.breakpad",
+      "artifact": "Monyhar.breakpad",
       "symupload": "https://clients2.google.com/cr/symbol",
     }
   ]
 }
 ```
 After compilation, the bot will upload three artifacts. First the
-`Chromium.breakpad` symbols will be uploaded to
-`gs://my-gcs-bucket/<buildername>/<buildnumber>/Chromium.breakpad`. Next
-`Chromium.app` will be tarred, gzipped, and uploaded to
-`gs://my-gcs-bucket/<buildername>/<buildnumber>/Chromium.tar.gz`. Finally
-the `Chromium.breakpad` symbols will be uploaded to the [breakpad] crash
+`Monyhar.breakpad` symbols will be uploaded to
+`gs://my-gcs-bucket/<buildername>/<buildnumber>/Monyhar.breakpad`. Next
+`Monyhar.app` will be tarred, gzipped, and uploaded to
+`gs://my-gcs-bucket/<buildername>/<buildnumber>/Monyhar.tar.gz`. Finally
+the `Monyhar.breakpad` symbols will be uploaded to the [breakpad] crash
 reporting server where they can be used to symbolicate stack traces.
 
 If `artifact` is a directory, you must specify `"compress": true`.

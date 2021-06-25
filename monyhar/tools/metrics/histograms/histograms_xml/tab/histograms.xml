@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -447,7 +447,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>skare@monyhar.org</owner>
   <summary>
     Records actions taken after one or more screenshots of a page were taken.
-    This will not be recorded if Chromium is killed before leaving the page. If
+    This will not be recorded if Monyhar is killed before leaving the page. If
     several types of action (IPH and Sharing) occur, only the last is recorded.
     We think that both IPH and Sharing happening at the same time is rare, so we
     do not expect to lose much data this way.
@@ -460,7 +460,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <summary>
     Records the number of screenshots taken of a specific page. It is recorded
     when the user navigates away from this page or the tab is destroyed. This
-    will not be recorded if Chromium is killed before leaving the page.
+    will not be recorded if Monyhar is killed before leaving the page.
   </summary>
 </histogram>
 

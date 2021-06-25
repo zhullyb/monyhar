@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -137,7 +137,7 @@ def _LoadTimingData(args):
 
 
 def _source_filepath(posix_path):
-  return os.path.join(path_util.GetChromiumSrcDir(), *posix_path.split('/'))
+  return os.path.join(path_util.GetMonyharSrcDir(), *posix_path.split('/'))
 
 
 def GenerateShardMap(builder, num_of_shards, debug=False):
@@ -171,7 +171,7 @@ def _PromptWarning():
              'In addition, this is a tricky operation and should '
              'always be reviewed by Benchmarking '
              'team members. Upon landing the CL to update the shard maps, '
-             'please notify Chromium perf sheriffs in '
+             'please notify Monyhar perf sheriffs in '
              'perf-sheriffs@monyhar.org and put a warning about expected '
              'false regressions in your CL '
              'description')

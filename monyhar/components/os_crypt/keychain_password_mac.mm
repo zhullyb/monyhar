@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -51,8 +51,8 @@ std::string AddRandomPasswordToKeychain(const AppleKeychain& keychain,
 KeychainPassword::KeychainNameType KeychainPassword::service_name("Chrome Safe Storage");
 KeychainPassword::KeychainNameType KeychainPassword::account_name("Chrome");
 #else
-KeychainPassword::KeychainNameType KeychainPassword::service_name("Chromium Safe Storage");
-KeychainPassword::KeychainNameType KeychainPassword::account_name("Chromium");
+KeychainPassword::KeychainNameType KeychainPassword::service_name("Monyhar Safe Storage");
+KeychainPassword::KeychainNameType KeychainPassword::account_name("Monyhar");
 #endif
 
 KeychainPassword::KeychainPassword(const AppleKeychain& keychain)

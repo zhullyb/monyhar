@@ -322,7 +322,7 @@
       status: "experimental",
     },
     {
-      name: "Canvas2dImageChromium",
+      name: "Canvas2dImageMonyhar",
     },
     {
       name: "Canvas2dScrollPathIntoView",
@@ -973,7 +973,7 @@
       name: "FontAccess",
       origin_trial_feature_name: "FontAccess",
       // No status because this blink runtime feature doesn't work by itself.
-      // It's controlled by the corresponding Chromium feature which needs to
+      // It's controlled by the corresponding Monyhar feature which needs to
       // be enabled to make the whole feature work.
     },
     {
@@ -981,13 +981,13 @@
       // TODO(crbug.com/1000486): Add when the Origin Trial dependency bug is fixed.
       // depends_on: ["FontAccess"],
       // No status because this blink runtime feature doesn't work by itself.
-      // It's controlled by the corresponding Chromium feature which needs to
+      // It's controlled by the corresponding Monyhar feature which needs to
       // be enabled to make the whole feature work.
     },
     {
       name: "FontSrcLocalMatching",
       // No status, as the web platform runtime enabled feature is controlled by
-      // a Chromium level feature.
+      // a Monyhar level feature.
     },
     // For simulating Android's overlay fullscreen video in web tests on Linux.
     {
@@ -2065,7 +2065,7 @@
     },
     // Many websites disable mouse support when touch APIs are available.  We'd
     // like to enable this always but can't until more websites fix this bug.
-    // Chromium sets this conditionally (eg. based on the presence of a
+    // Monyhar sets this conditionally (eg. based on the presence of a
     // touchscreen) in ApplyWebPreferences. "Touch events" themselves are always
     // enabled since they're a feature always supported by Chrome.
     {
@@ -2243,7 +2243,7 @@
       status: "stable",
     },
     // A more subtle UI for WebAuthn that is web exposed. Under development.
-    // It's controlled by the corresponding Chromium feature which needs to
+    // It's controlled by the corresponding Monyhar feature which needs to
     // be enabled to make the whole feature work.
     {
       name: "WebAuthenticationConditionalUI",
@@ -2314,7 +2314,7 @@
       status: "experimental",
     },
     {
-      name: "WebGLImageChromium",
+      name: "WebGLImageMonyhar",
     },
     // WebGPU adds a large attack surface area to the GPU process and allows
     // running arbitrary programs on the GPU (compute shaders), which may

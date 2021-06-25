@@ -1,5 +1,5 @@
 if (window.testRunner) {
-  // In Chromium we need to change the setting to disallow displaying
+  // In Monyhar we need to change the setting to disallow displaying
   // insecure contents.
 
   // By default, LayoutTest content_shell returns allowed for

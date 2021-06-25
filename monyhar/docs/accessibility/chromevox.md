@@ -1,7 +1,7 @@
 # ChromeVox (for developers)
 
 ChromeVox is the built-in screen reader on Chrome OS. It was originally
-developed as a separate extension but now the code lives inside of the Chromium
+developed as a separate extension but now the code lives inside of the Monyhar
 tree and it's built as part of Chrome OS.
 
 NOTE: ChromeVox ships also as an extension on the Chrome webstore. This version
@@ -96,7 +96,7 @@ You may need to remove rootfs verification to write to `/etc/chrome_dev.conf`.
 ```
 
 See
-[Chromium OS Doc](https://monyhar.googlesource.com/monyharos/docs/+/HEAD/developer_mode.md#disable-verity)
+[Monyhar OS Doc](https://monyhar.googlesource.com/monyharos/docs/+/HEAD/developer_mode.md#disable-verity)
 for more information about removing rootfs verification.
 
 ### Running tests

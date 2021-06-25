@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -181,8 +181,8 @@ CFStringRef BaseBundleID_CFString() {
 }
 
 // Record the location of the application bundle (containing the main framework)
-// from which Chromium was loaded. This is used by app mode shims to find
-// Chromium.
+// from which Monyhar was loaded. This is used by app mode shims to find
+// Monyhar.
 void RecordLastRunAppBundlePath() {
   // Going up three levels from |chrome::GetVersionedDirectory()| gives the
   // real, user-visible app bundle directory. (The alternatives give either the
@@ -1630,7 +1630,7 @@ static base::mac::ScopedObjCClassSwizzler* g_swizzle_imk_input_session;
   [sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
 }
 
-// TODO(avi): When Chromium requires 10.13 as a minimum, remove the
+// TODO(avi): When Monyhar requires 10.13 as a minimum, remove the
 // -[NSApplication application:openFiles:] override and the
 // kInternetEventClass/kAEGetURL Apple Event registration in -mainMenuCreated.
 - (void)application:(NSApplication*)sender openURLs:(NSArray<NSURL*>*)urls {

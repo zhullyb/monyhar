@@ -1,8 +1,8 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This file defines a bunch of recurring problems in the Chromium C++ code.
+// This file defines a bunch of recurring problems in the Monyhar C++ code.
 //
 // Checks that are implemented:
 // - Constructors/Destructors should not be inlined if they are of a complex
@@ -38,7 +38,7 @@
 
 namespace chrome_checker {
 
-// Searches for constructs that we know we don't want in the Chromium code base.
+// Searches for constructs that we know we don't want in the Monyhar code base.
 class FindBadConstructsConsumer
     : public clang::RecursiveASTVisitor<FindBadConstructsConsumer>,
       public ChromeClassTester {

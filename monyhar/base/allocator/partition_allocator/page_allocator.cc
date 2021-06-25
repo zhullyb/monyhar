@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -302,7 +302,7 @@ bool ReserveAddressSpace(size_t size) {
   AutoLock guard(GetReserveLock());
   if (s_reservation_address == nullptr) {
     void* mem =
-        SystemAllocPages(nullptr, size, PageInaccessible, PageTag::kChromium);
+        SystemAllocPages(nullptr, size, PageInaccessible, PageTag::kMonyhar);
     if (mem != nullptr) {
       // We guarantee this alignment when reserving address space.
       PA_DCHECK(!(reinterpret_cast<uintptr_t>(mem) &

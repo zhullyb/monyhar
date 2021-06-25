@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,19 +13,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * WebView Chromium implementation of WebBackForwardList. Simple immutable
+ * WebView Monyhar implementation of WebBackForwardList. Simple immutable
  * wrapper around NavigationHistory.
  */
 @SuppressWarnings("NoSynchronizedMethodCheck")
-public class WebBackForwardListChromium extends WebBackForwardList {
-    private final List<WebHistoryItemChromium> mHistroryItemList;
+public class WebBackForwardListMonyhar extends WebBackForwardList {
+    private final List<WebHistoryItemMonyhar> mHistroryItemList;
     private final int mCurrentIndex;
 
-    /* package */ WebBackForwardListChromium(NavigationHistory navHistory) {
+    /* package */ WebBackForwardListMonyhar(NavigationHistory navHistory) {
         mCurrentIndex = navHistory.getCurrentEntryIndex();
-        mHistroryItemList = new ArrayList<WebHistoryItemChromium>(navHistory.getEntryCount());
+        mHistroryItemList = new ArrayList<WebHistoryItemMonyhar>(navHistory.getEntryCount());
         for (int i = 0; i < navHistory.getEntryCount(); ++i) {
-            mHistroryItemList.add(new WebHistoryItemChromium(navHistory.getEntryAtIndex(i)));
+            mHistroryItemList.add(new WebHistoryItemMonyhar(navHistory.getEntryAtIndex(i)));
         }
     }
 
@@ -70,7 +70,7 @@ public class WebBackForwardListChromium extends WebBackForwardList {
     }
 
     // Clone constructor.
-    private WebBackForwardListChromium(List<WebHistoryItemChromium> list, int currentIndex) {
+    private WebBackForwardListMonyhar(List<WebHistoryItemMonyhar> list, int currentIndex) {
         mHistroryItemList = list;
         mCurrentIndex = currentIndex;
     }
@@ -79,11 +79,11 @@ public class WebBackForwardListChromium extends WebBackForwardList {
      * See {@link android.webkit.WebBackForwardList#clone}.
      */
     @Override
-    protected synchronized WebBackForwardListChromium clone() {
-        List<WebHistoryItemChromium> list = new ArrayList<WebHistoryItemChromium>(getSize());
+    protected synchronized WebBackForwardListMonyhar clone() {
+        List<WebHistoryItemMonyhar> list = new ArrayList<WebHistoryItemMonyhar>(getSize());
         for (int i = 0; i < getSize(); ++i) {
             list.add(mHistroryItemList.get(i).clone());
         }
-        return new WebBackForwardListChromium(list, mCurrentIndex);
+        return new WebBackForwardListMonyhar(list, mCurrentIndex);
     }
 }

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -549,7 +549,7 @@ public class FeedStreamTest {
     @SmallTest
     public void testSendFeedback() {
         final String testUrl = TEST_URL;
-        final String testTitle = "Chromium based browsers for the win!";
+        final String testTitle = "Monyhar based browsers for the win!";
         final String xSurfaceCardTitle = "Card Title";
         final String cardTitle = "CardTitle";
         final String cardUrl = "CardUrl";

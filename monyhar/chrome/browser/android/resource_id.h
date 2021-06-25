@@ -1,8 +1,8 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This file maps Chromium resource IDs to Android resource IDs.
+// This file maps Monyhar resource IDs to Android resource IDs.
 
 // Presence of regular include guards is checked by:
 // 1. cpplint

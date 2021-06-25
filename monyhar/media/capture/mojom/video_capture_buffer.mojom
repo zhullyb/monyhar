@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ struct VideoFrameInfo{
   // that the region has valid data.
   bool is_premapped;
   // This field is only optional to work around the issue of native enums
-  // not being usable for non-Chromium Mojo clients.
+  // not being usable for non-Monyhar Mojo clients.
   // TODO(chfremer): Make this non-optional once gfx.mojom.ColorSpace has been
   // migrated to a full Mojo struct. See https://crbug.com/893203.
   gfx.mojom.ColorSpace? color_space;

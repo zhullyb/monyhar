@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -42,15 +42,15 @@ TestConfigurator::TestConfigurator(PrefService* pref_service)
       enabled_cup_signing_(false),
       enabled_component_updates_(true),
       pref_service_(pref_service),
-      unzip_factory_(base::MakeRefCounted<update_client::UnzipChromiumFactory>(
+      unzip_factory_(base::MakeRefCounted<update_client::UnzipMonyharFactory>(
           base::BindRepeating(&unzip::LaunchInProcessUnzipper))),
-      patch_factory_(base::MakeRefCounted<update_client::PatchChromiumFactory>(
+      patch_factory_(base::MakeRefCounted<update_client::PatchMonyharFactory>(
           base::BindRepeating(&patch::LaunchInProcessFilePatcher))),
       test_shared_loader_factory_(
           base::MakeRefCounted<network::WeakWrapperSharedURLLoaderFactory>(
               &test_url_loader_factory_)),
       network_fetcher_factory_(
-          base::MakeRefCounted<NetworkFetcherChromiumFactory>(
+          base::MakeRefCounted<NetworkFetcherMonyharFactory>(
               test_shared_loader_factory_,
               base::BindRepeating([](const GURL& url) { return false; }))) {}
 

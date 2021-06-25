@@ -17,7 +17,7 @@ for noninclude/GL/*, GLES2/* and GLES3/*.
 
 Local Modifications:
 
-NOTE: Please add Chromium-specific declarations to files in gpu/{GL,EGL,GLES2}
+NOTE: Please add Monyhar-specific declarations to files in gpu/{GL,EGL,GLES2}
 and not here.
 
 noninclude/GL/glext.h
@@ -25,7 +25,7 @@ noninclude/GL/glext.h
 GLES2/gl2.h
  - Added include of gl2monyhar.h
 GLES2/gl2ext.h
- - Chromium-specific define to account for issues in gles2_conform_test,
+ - Monyhar-specific define to account for issues in gles2_conform_test,
    see http://crbug.com/329708.
  - Commented out GL_SAMPLER, conflicts with third_party/gles2_conform
  - Drop const from last argument of GLDEBUGPROCKHR (win trybot fail)

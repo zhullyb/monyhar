@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -150,7 +150,7 @@ public class AndroidViewIntegrationTest {
      *
      * A 0x0 sized view is common if the WebView is set to wrap_content and newly created. The
      * expected behavior is for the WebView to expand after some content is loaded.
-     * In Chromium it would be valid to not load or render content into a WebContents with a 0x0
+     * In Monyhar it would be valid to not load or render content into a WebContents with a 0x0
      * view (since the user can't see it anyway) and only do so after the view's size is non-zero.
      * Such behavior is unacceptable for the WebView and this test is to ensure that such behavior
      * is not re-introduced.

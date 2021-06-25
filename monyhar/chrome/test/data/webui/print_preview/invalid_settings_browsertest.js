@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -144,12 +144,12 @@ suite(invalid_settings_browsertest.suiteName, function() {
           assertFalse(overlayEl.classList.contains('invisible'));
 
           // Make sure the correct text is shown.
-          const expectedMessageChromium = 'Chromium cannot show the print ' +
+          const expectedMessageMonyhar = 'Monyhar cannot show the print ' +
               'preview when the built-in PDF viewer is missing.';
           const expectedMessageChrome = 'Google Chrome cannot show the print ' +
               'preview when the built-in PDF viewer is missing.';
           assertTrue(
-              messageEl.textContent.includes(expectedMessageChromium) ||
+              messageEl.textContent.includes(expectedMessageMonyhar) ||
               messageEl.textContent.includes(expectedMessageChrome));
         });
       });

@@ -1,4 +1,4 @@
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -7,8 +7,8 @@ import("//build/config/android/rules.gni")
 # Stub versions of Preconditions classes used when dchecks are off.
 #
 # Each preconditions class is in a separate android_library() to make it easier
-# for third party non-Chromium projects to use the Chromium version of some
-# libraries but not others (ex: androidx version used by Chromium and custom
+# for third party non-Monyhar projects to use the Monyhar version of some
+# libraries but not others (ex: androidx version used by Monyhar and custom
 # guava version).
 java_group("preconditions_stub_java") {
   deps = [

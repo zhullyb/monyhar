@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -92,7 +92,7 @@ def main_mac(output_directory, results_collector, size_path):
   """
   result = 0
   # Work with either build type.
-  base_names = ('Chromium', 'Google Chrome')
+  base_names = ('Monyhar', 'Google Chrome')
   for base_name in base_names:
     app_bundle = base_name + '.app'
     framework_name = base_name + ' Framework'
@@ -425,7 +425,7 @@ def main():
   parser.add_argument(
       '--output-directory',
       type=os.path.realpath,
-      help='Chromium output directory, e.g. /path/to/src/out/Debug')
+      help='Monyhar output directory, e.g. /path/to/src/out/Debug')
   parser.add_argument(
       '--platform',
       default=default_platform,

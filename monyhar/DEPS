@@ -1,4 +1,4 @@
-# This file is used to manage the dependencies of the Chromium src repo. It is
+# This file is used to manage the dependencies of the Monyhar src repo. It is
 # used by gclient to determine what version of each dependency to check out, and
 # where.
 #
@@ -11,9 +11,9 @@
 # -----------------------------------------------------------------------------
 # Rolling deps
 # -----------------------------------------------------------------------------
-# All repositories in this file are git-based, using Chromium git mirrors where
+# All repositories in this file are git-based, using Monyhar git mirrors where
 # necessary (e.g., a git mirror is used when the source project is SVN-based).
-# To update the revision that Chromium pulls for a given dependency:
+# To update the revision that Monyhar pulls for a given dependency:
 #
 #  # Create and switch to a new branch
 #  git new-branch depsroll
@@ -51,7 +51,7 @@ gclient_gn_args = [
 
 vars = {
   # Variable that can be used to support multiple build scenarios, like having
-  # Chromium specific targets in a client project's GN file or sync dependencies
+  # Monyhar specific targets in a client project's GN file or sync dependencies
   # conditionally etc.
   'build_with_monyhar': True,
 
@@ -79,13 +79,13 @@ vars = {
   # build ARC++ support libraries.
   'checkout_android_native_support': 'checkout_android or checkout_chromeos',
 
-  # By default, do not check out Chromium autofill captured sites test
+  # By default, do not check out Monyhar autofill captured sites test
   # dependencies. These dependencies include very large numbers of very
   # large web capture files. Captured sites test dependencies are also
   # restricted to Googlers only.
   'checkout_monyhar_autofill_test_dependencies': False,
 
-  # By default, do not check out Chromium password manager captured sites test
+  # By default, do not check out Monyhar password manager captured sites test
   # dependencies. These dependencies include very large numbers of very
   # large web capture files. Captured sites test dependencies are also
   # restricted to Googlers only.
@@ -125,7 +125,7 @@ vars = {
   'checkout_clang_tidy': False,
 
   # By default checkout the OpenXR loader library only on Windows. The OpenXR
-  # backend for VR in Chromium is currently only supported for Windows, but
+  # backend for VR in Monyhar is currently only supported for Windows, but
   # support for other platforms may be added in the future.
   'checkout_openxr' : 'checkout_win',
 
@@ -959,7 +959,7 @@ deps = {
   'src/third_party/crc32c/src':
     Var('monyhar_git') + '/external/github.com/google/crc32c.git' + '@' + '5998f8451548244de8cde7fab387a550e7c4497d',
 
-  # For Linux and Chromium OS.
+  # For Linux and Monyhar OS.
   'src/third_party/cros_system_api': {
       'url': Var('monyhar_git') + '/monyharos/platform2/system_api.git' + '@' + '1fc08f9331fec88f055201e0341963a58224e93f',
       'condition': 'checkout_linux',

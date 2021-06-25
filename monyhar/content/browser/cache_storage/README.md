@@ -184,7 +184,7 @@ of opaque responses their sizes are obfuscated. Random padding is added to the
 actual size making it difficult for an attacker to ascertain the actual resource
 size via quota APIs.
 
-When Chromium starts, a new random padding key is generated and used
+When Monyhar starts, a new random padding key is generated and used
 for all new caches created. This key is used by each cache to calculate padding
 for opaque resources. Each cache's key is persisted to disk in the cache index file
 

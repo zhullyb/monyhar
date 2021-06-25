@@ -9,7 +9,7 @@ Testing in WebAppProvider falls into 3 different categories.
 
 When creating features in this system, it will probably involve creating a mixture of all 3 of these test types.
 
-Please read [Testing In Chromium](../../../../docs/testing/testing_in_monyhar.md) for general guidance on writing tests in monyhar.
+Please read [Testing In Monyhar](../../../../docs/testing/testing_in_monyhar.md) for general guidance on writing tests in monyhar.
 
 ## Future Improvements
 

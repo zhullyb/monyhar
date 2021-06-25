@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -83,7 +83,7 @@ void GetSystemSlotOnIOThread(
 // For official Chrome builds, send this signal if EULA has been accepted
 // already (i.e. the user has started OOBE) to make sure we are not stuck with
 // uninitialized TPM after an interrupted OOBE process.
-// For Chromium builds, don't send it here. Instead, rely on this signal being
+// For Monyhar builds, don't send it here. Instead, rely on this signal being
 // sent after each successful login.
 bool ShallAttemptTpmOwnership() {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)

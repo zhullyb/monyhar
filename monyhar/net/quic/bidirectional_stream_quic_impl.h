@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -32,7 +32,7 @@ class NET_EXPORT_PRIVATE BidirectionalStreamQuicImpl
     : public BidirectionalStreamImpl {
  public:
   explicit BidirectionalStreamQuicImpl(
-      std::unique_ptr<QuicChromiumClientSession::Handle> session);
+      std::unique_ptr<QuicMonyharClientSession::Handle> session);
 
   ~BidirectionalStreamQuicImpl() override;
 
@@ -79,8 +79,8 @@ class NET_EXPORT_PRIVATE BidirectionalStreamQuicImpl
   // Invokes OnFailure(error) on |delegate|.
   void NotifyFailure(BidirectionalStreamImpl::Delegate* delegate, int error);
 
-  const std::unique_ptr<QuicChromiumClientSession::Handle> session_;
-  std::unique_ptr<QuicChromiumClientStream::Handle> stream_;
+  const std::unique_ptr<QuicMonyharClientSession::Handle> session_;
+  std::unique_ptr<QuicMonyharClientStream::Handle> stream_;
 
   const BidirectionalStreamRequestInfo* request_info_;
   BidirectionalStreamImpl::Delegate* delegate_;

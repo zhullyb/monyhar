@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ std::string GetUserAgent() {
 }
 
 // Generate a pseudo-random permutation of the following brand/version pairs:
-//   1. The base project (i.e. Chromium)
+//   1. The base project (i.e. Monyhar)
 //   2. The browser brand, if available
 //   3. A randomized string containing escaped characters to ensure proper
 //      header parsing, along with an arbitrarily low version to ensure proper
@@ -79,7 +79,7 @@ blink::UserAgentBrandList GenerateBrandVersionList(
 
   blink::UserAgentBrandVersion greasey_bv = {
       maybe_greasey_brand.value_or(greasey_brand), "99"};
-  blink::UserAgentBrandVersion monyhar_bv = {"Chromium", major_version};
+  blink::UserAgentBrandVersion monyhar_bv = {"Monyhar", major_version};
 
   blink::UserAgentBrandList greased_brand_version_list(3);
 

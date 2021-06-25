@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -441,7 +441,7 @@ IN_PROC_BROWSER_TEST_P(SpokenFeedbackTest, ShelfIconFocusForward) {
   // Verifies that pressing right key with search key should move the focus of
   // ShelfItem correctly.
   sm_.Call([this]() { SendKeyPressWithSearch(ui::VKEY_RIGHT); });
-  // Chromium or Google Chrome button here (not being tested).
+  // Monyhar or Google Chrome button here (not being tested).
   sm_.ExpectSpeech("Button");
   sm_.ExpectSpeech("Shelf");
   sm_.ExpectSpeech("Tool bar");
@@ -843,7 +843,7 @@ IN_PROC_BROWSER_TEST_P(SpokenFeedbackTest, ChromeVoxStickyMode) {
 // sending js commands above. This variant may be subject to flakes as it
 // depends on more of the UI events stack and sticky mode invocation has a
 // timing element to it.
-// Consistently failing on ChromiumOS MSan. http://crbug.com/1182542
+// Consistently failing on MonyharOS MSan. http://crbug.com/1182542
 #if defined(OS_CHROMEOS) && defined(MEMORY_SANITIZER)
 #define MAYBE_ChromeVoxStickyModeRawKeys DISABLED_ChromeVoxStickyModeRawKeys
 #else

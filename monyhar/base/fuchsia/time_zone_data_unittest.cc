@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The Chromium Authors. All rights reserved.
+// Copyright (c) 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,7 +33,7 @@ class TimeZoneDataTest : public testing::Test {
   void TearDown() override { ResetIcu(); }
 
   // Needed to enable loading of ICU config files that are different from what
-  // is available in Chromium.  Both icu_util and ICU library keep internal
+  // is available in Monyhar.  Both icu_util and ICU library keep internal
   // state so clear both.
   void ResetIcu() {
     // Clears the state in the reverse order of construction.
@@ -55,7 +55,7 @@ class TimeZoneDataTest : public testing::Test {
 // mismatch.
 //
 // In Fuchsia build bot setup, we ensure that the file revision.txt exists, so
-// that this test is not skipped. In Chromium build bot setup, this file may
+// that this test is not skipped. In Monyhar build bot setup, this file may
 // not be present, in which case we skip running this test.
 TEST_F(TimeZoneDataTest, CompareSystemRevisionWithExpected) {
   if (!base::PathExists(base::FilePath(kRevisionFilePath))) {
@@ -76,9 +76,9 @@ TEST_F(TimeZoneDataTest, CompareSystemRevisionWithExpected) {
 
 // Verifies that the current version of the ICU library in use can load ICU
 // data in a specific version format (in this case 44).  Designed to fail if
-// the ICU library version used in Chromium drifts from version 44 so much that
+// the ICU library version used in Monyhar drifts from version 44 so much that
 // the library is no longer able to load the old tzdata.  If the test fails,
-// this could be a sign that all platforms Chromium runs on need to upgrade the
+// this could be a sign that all platforms Monyhar runs on need to upgrade the
 // ICU library versions.
 TEST_F(TimeZoneDataTest, TestLoadingTimeZoneDataFromKnownConfigs) {
   ASSERT_TRUE(base::DirectoryExists(base::FilePath(kTzDataDirPath)));

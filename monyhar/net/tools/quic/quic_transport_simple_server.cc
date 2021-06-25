@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The Chromium Authors. All rights reserved.
+// Copyright (c) 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ namespace {
 
 using quic::CryptoHandshakeMessage;
 using quic::ParsedQuicVersion;
-using quic::QuicChromiumClock;
+using quic::QuicMonyharClock;
 using quic::QuicCryptoServerStreamBase;
 using quic::QuicSocketAddress;
 using quic::QuicTransportSimpleServerSession;
@@ -64,7 +64,7 @@ QuicTransportSimpleServer::QuicTransportSimpleServer(
     std::unique_ptr<quic::ProofSource> proof_source)
     : port_(port),
       version_manager_(AllVersionsValidForQuicTransport()),
-      clock_(QuicChromiumClock::GetInstance()),
+      clock_(QuicMonyharClock::GetInstance()),
       crypto_config_(kSourceAddressTokenSecret,
                      quic::QuicRandom::GetInstance(),
                      std::move(proof_source),
@@ -72,11 +72,11 @@ QuicTransportSimpleServer::QuicTransportSimpleServer(
       dispatcher_(&config_,
                   &crypto_config_,
                   &version_manager_,
-                  std::make_unique<QuicChromiumConnectionHelper>(
+                  std::make_unique<QuicMonyharConnectionHelper>(
                       clock_,
                       quic::QuicRandom::GetInstance()),
                   std::make_unique<QuicTransportSimpleServerSessionHelper>(),
-                  std::make_unique<QuicChromiumAlarmFactory>(
+                  std::make_unique<QuicMonyharAlarmFactory>(
                       base::ThreadTaskRunnerHandle::Get().get(),
                       clock_),
                   quic::kQuicDefaultConnectionIdLength,

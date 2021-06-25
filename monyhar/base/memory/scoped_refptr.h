@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -160,7 +160,7 @@ scoped_refptr<T> WrapRefCounted(T* t) {
 //     // now, |a| and |b| each own a reference to the same MyFoo object.
 //   }
 //
-// Also see Chromium's ownership and calling conventions:
+// Also see Monyhar's ownership and calling conventions:
 // https://monyhar.googlesource.com/monyhar/src/+/lkgr/styleguide/c++/c++.md#object-ownership-and-calling-conventions
 // Specifically:
 //   If the function (at least sometimes) takes a ref on a refcounted object,

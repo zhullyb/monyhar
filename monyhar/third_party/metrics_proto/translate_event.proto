@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -49,7 +49,7 @@ message TranslateEventProto {
   optional uint32 ranker_version = 7;
 
   // Timestamp of when the Ranker was queried, in seconds.
-  // This value comes from Chromium's TimeTicks::Now(), which is an abstract
+  // This value comes from Monyhar's TimeTicks::Now(), which is an abstract
   // time value that is guaranteed to always be increasing (regardless of
   // Daylight Saving Time or any other changes to the system clock).
   // These numbers are only comparable within a session.  To sequence events
@@ -153,7 +153,7 @@ message TranslateEventProto {
   repeated EventType decision_overrides = 15;
 
   // The timestamp for the event, in seconds.
-  // This value comes from Chromium's TimeTicks::Now(), which is an abstract
+  // This value comes from Monyhar's TimeTicks::Now(), which is an abstract
   // time value that is guaranteed to always be increasing (regardless of
   // Daylight Saving Time or any other changes to the system clock).
   // These numbers are only comparable within a session.  To sequence events

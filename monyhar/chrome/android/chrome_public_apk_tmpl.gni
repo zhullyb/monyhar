@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -32,7 +32,7 @@ _add_unwind_tables_in_chrome_32bit_apk =
     (android_channel == "default" || android_channel == "canary" ||
      android_channel == "dev")
 
-# A template used to declare any target that will implement a full Chromium
+# A template used to declare any target that will implement a full Monyhar
 # or Chrome application, either as an APK, or an app bundle module.
 #
 # Variables:
@@ -55,7 +55,7 @@ _add_unwind_tables_in_chrome_32bit_apk =
 #     before 4.3.0.
 #   load_library_from_apk: Optional. If true, native libraries will be loaded
 #     directly from the APK (and stored zipaligned and uncompressed). This
-#     requires either the Chromium linker, or Android M+.
+#     requires either the Monyhar linker, or Android M+.
 #   version_name: Application version name (e.g. "Developer Build").
 #
 #   Plus all other variables accepted by android_apk() or

@@ -4068,7 +4068,7 @@ const ComputedStyle* LayoutObject::FirstLineStyleWithoutFallback() const {
   NOT_DESTROYED();
   DCHECK(GetDocument().GetStyleEngine().UsesFirstLineRules());
 
-  // Normal markers don't use ::first-line styles in Chromium, so be consistent
+  // Normal markers don't use ::first-line styles in Monyhar, so be consistent
   // and return null for content markers. This may need to change depending on
   // https://github.com/w3c/csswg-drafts/issues/4506
   if (IsMarkerContent())

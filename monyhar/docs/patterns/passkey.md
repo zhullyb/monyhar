@@ -1,6 +1,6 @@
 # The Passkey Pattern
 
-For the Chromium implementation of this pattern, see
+For the Monyhar implementation of this pattern, see
 [//base/types/pass_key.h].
 
 The Passkey pattern is used when you need to expose a subset of a class's

@@ -1,7 +1,7 @@
 # Linux Eclipse Dev
 
 Eclipse can be used on Linux (and probably Windows and Mac) as an IDE for
-developing Chromium. It's unpolished, but here's what works:
+developing Monyhar. It's unpolished, but here's what works:
 
 *   Editing code works well (especially if you're used to it or Visual Studio).
 *   Navigating around the code works well. There are multiple ways to do this
@@ -20,7 +20,7 @@ developing Chromium. It's unpolished, but here's what works:
 
 ### Get & Configure Eclipse
 
-Eclipse 4.6.1 (Neon) is known to work with Chromium for Linux.
+Eclipse 4.6.1 (Neon) is known to work with Monyhar for Linux.
 
 *   [Download](http://www.eclipse.org/downloads/) the distribution appropriate
     for your OS. For example, for Linux 64-bit/Java 64-bit, use the Linux 64 bit
@@ -52,7 +52,7 @@ subprojects that Eclipse is maintaining code indices for.
 Pressing the control key on (for keyboard shortcuts such as copy/paste) can
 trigger the hyperlink detector. This occurs on the UI thread and can result in
 the reading of jar files on the Eclipse classpath, which can tie up the editor
-due to the size of the classpath in Chromium.
+due to the size of the classpath in Monyhar.
 
 ### A short word about paths
 
@@ -115,7 +115,7 @@ Create a single Eclipse project for everything:
 1.  Select toolchain: Linux GCC
 1.  Click Finish.
 
-Chromium uses C++14, so tell the indexer about it. Otherwise it will get
+Monyhar uses C++14, so tell the indexer about it. Otherwise it will get
 confused about things like std::unique_ptr.
 
 1.  Right-click on "src" and select "Properties..."
@@ -125,7 +125,7 @@ confused about things like std::unique_ptr.
 1.  In the text box entitled Command to get compiler specs append "-std=c++14"
     (leaving out the quotes)
 
-Chromium has a huge amount of code, enough that Eclipse can take a very long
+Monyhar has a huge amount of code, enough that Eclipse can take a very long
 time to perform operations like "go to definition" and "open resource". You need
 to set it up to operate on a subset of the code.
 

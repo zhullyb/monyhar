@@ -6,7 +6,7 @@ work on the build.
 
 ## Background
 
-Chromium uses [LLD](https://lld.llvm.org/) as linker on all platforms,
+Monyhar uses [LLD](https://lld.llvm.org/) as linker on all platforms,
 except when targeting macOS or iOS. LLD is faster than other ELF linkers (ELF
 is the executable file format used on most OSs, including Linux, Android,
 Chrome OS, Fuchsia), and it's faster than other COFF linkers (the executable
@@ -15,7 +15,7 @@ file format on Windows).
 ld64, the standard Mach-O linker (the executable file format on iOS and macOS),
 is on the other hand already fairly fast and works well, so there are fewer
 advantages to using LLD here. (Having said that, LLD is currently 4x faster
-at linking Chromium Framework than ld64 in symbol\_level=0 release builds,
+at linking Monyhar Framework than ld64 in symbol\_level=0 release builds,
 despite ld64 being already fast. Maybe that's due to LLD not yet doing
 critical things and it will get slower, but at the moment it's faster than
 ld64.)
@@ -55,15 +55,15 @@ different platforms.
 ## Current status and known issues
 
 A `symbol_level = 0` `is_debug = false` `use_lld = true` x64 build produces
-a mostly-working Chromium.app, but there are open issues and missing features:
+a mostly-working Monyhar.app, but there are open issues and missing features:
 
 - LLD's ARM support is fairly new
-  - Chromium crashes very early during startup ([bug](https://llvm.org/PR50411))
+  - Monyhar crashes very early during startup ([bug](https://llvm.org/PR50411))
   - likely other bugs for `target_cpu="arm64"`
 - Some tests fail, see mac-rel job on https://monyhar-review.googlesource.com/c/monyhar/src/+/2885356
   - Two crashpad_tests fail
     ([fixed upstream](https://reviews.llvm.org/rGb4ead2c37bcbb1f81919c68e2a2a227aac90f07c))
-  - LLD-linked Chromium fails to run on macOS 10.14 or earlier
+  - LLD-linked Monyhar fails to run on macOS 10.14 or earlier
     ([bug](https://llvm.org/PR49800))
 - LLD doesn't yet implement `-dead_strip`, leading to many linker warnings
 - LLD doesn't yet implement deduplication (aka "ICF")

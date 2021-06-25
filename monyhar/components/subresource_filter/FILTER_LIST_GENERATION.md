@@ -67,7 +67,7 @@ your destination.
 Once exported, you can download the files from your bucket.
 
 ## 2. Acquire a filter list in the indexed format
-Chromium's tools are designed to work with a binary indexed version of filter
+Monyhar's tools are designed to work with a binary indexed version of filter
 lists. You can use the `subresource_indexing_tool` to convert a text based
 filter list to an indexed file.
 
@@ -95,8 +95,8 @@ Appends allowlist rules and also deduplicates rules which only differ by their s
 3. awk -F,domain= '{ if(!length($2)) table[$1] = ""; else table[$1 FS] = length(table[$1 FS]) ? table[$1 FS] "|" $2 : $2; } END{ for (key in table) print key table[key] }' deduped_smaller_list.txt > final_list.txt
 ```
 
-## 5. Turn the final list into a form usable by Chromium tools
-The final filterlist has been generated. If you'd like to convert it to Chromium's binary indexed format, proceed with the following steps:
+## 5. Turn the final list into a form usable by Monyhar tools
+The final filterlist has been generated. If you'd like to convert it to Monyhar's binary indexed format, proceed with the following steps:
 
 ```sh
 1. ninja -C out/Release/ subresource_filter_tools

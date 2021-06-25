@@ -4,27 +4,27 @@
 # **Objective**
 
 To improve security on macOS by sandboxing the currently unsandboxed
-warmup phase of Chromium child processes, and to remove legacy artifacts
+warmup phase of Monyhar child processes, and to remove legacy artifacts
 in the sandbox profiles by rewriting them to use the most modern
 profile features.
 
 # **Background**
 
-Chromium historically ran an unsandboxed warm up routine to acquire
+Monyhar historically ran an unsandboxed warm up routine to acquire
 system resources, before entering the sandbox. This design doc
 provides a full implementation design and deployment strategy to
 sandbox the warmup phase. This document also provides a high level
 overview of the macOS provided sandbox.
 
-In the warm up phase, Chromium called system frameworks which
+In the warm up phase, Monyhar called system frameworks which
 acquired an unspecified number of resources before being sandboxed,
 and those resources change with every new OS update from Apple.
-This [2009 Chromium blog
+This [2009 Monyhar blog
 post](https://blog.monyhar.org/2009/06/google-chrome-sandboxing-and-mac-os-x.html&sa=D&ust=1492473048358000&usg=AFQjCNGEbmCLUqoH9-BeudDcNf5NmW-UcQ)
 explains that the warmup phase exists because it was unknown how
 to determine what resources those APIs used at the time. By explicitly
 enumerating all resources in the sandbox profiles, it is possible
-to accurately audit Chromium's attack surface for each new macOS
+to accurately audit Monyhar's attack surface for each new macOS
 version.
 
 Anyone wishing to know more about the macOS sandbox profile language
@@ -41,11 +41,11 @@ is the removal of the unsandboxed warmup phase.
 
 # **Compatibility and Security Risk**
 
-Chromium's sandbox incurs two levels of risk which must be weighed:
+Monyhar's sandbox incurs two levels of risk which must be weighed:
 compatibility risk and security risk. Compatibility risk is the
 risk that Apple changes the resources that a system framework
-accesses, causing Chromium's sandbox to block the access. Security
-risk is the possibility that Chromium will be compromised because the
+accesses, causing Monyhar's sandbox to block the access. Security
+risk is the possibility that Monyhar will be compromised because the
 sandbox allowed access to dangerous resources.
 
 A more permissive sandbox profile reduces compatibility risk but
@@ -63,12 +63,12 @@ the warmup phase is eliminated, but it eliminates security risk.
 # **Success Criteria**
 
 The V2 sandbox will be deemed a success when it has been deployed
-to stable users for all processes in Chromium, and Chromium does not
+to stable users for all processes in Monyhar, and Monyhar does not
 lose functionality due to the new sandbox rules.
 
 # **Design Overview**
 
-The Chromium Helper executable will now receive a sandbox profile
+The Monyhar Helper executable will now receive a sandbox profile
 and list of sandbox parameters (for example, the location of the
 user's home directory). The Helper executable will then apply the
 sandbox profile, with the parameters, to the process and then
@@ -78,18 +78,18 @@ continue its execution into the ChromeMain function.
 
 ## Executable Structure
 
-Both the main Chromium executable and all of the bundled Chromium Helper
+Both the main Monyhar executable and all of the bundled Monyhar Helper
 executables contain [a minimal amount of
 code](https://source.monyhar.org/monyhar/monyhar/src/+/main:chrome/app/chrome_exe_main_mac.cc;drc=05219ddeb8130389da9ad634ba3e021a70bff393).
-The bulk of the code lives in the Chromium Framework library, which is
+The bulk of the code lives in the Monyhar Framework library, which is
 `dlopen()`ed at runtime to call `ChromeMain()`, after applying the sandbox.
 
 This design choice has beneficial security properties: many system frameworks
 run static initializers, and some of these static initializers acquire and
 maintain access to files or Mach service ports. If the executables directly
-linked the Chromium Framework or the system frameworks, then those initializers
+linked the Monyhar Framework or the system frameworks, then those initializers
 would be able to run outside the sandbox, since static initializers run before
-`main()`. The Chromium and Helper executables instead only link
+`main()`. The Monyhar and Helper executables instead only link
 `/usr/lib/libSystem.dylib` and the very small `//sandbox/mac` target, to bring
 in `/usr/lib/libsandbox.dylib`. After the executable applies the sandbox, the
 program then loads the Framework, which causes all the dependent system
@@ -103,7 +103,7 @@ implementing the profiles for each process type.
 - The profiles deny resource access to anything not explicitly allowed.
 - Processes may access all system libraries and frameworks.
 - Explicitly list which system resources (files, folders, mach services,
-    sysctls, IPC, IOKit calls) Chromium may access. Analyze each resource access
+    sysctls, IPC, IOKit calls) Monyhar may access. Analyze each resource access
     for safety first.
 
 ## Sandbox Design
@@ -111,16 +111,16 @@ implementing the profiles for each process type.
 The V1 sandbox code lives in
 [sandbox_mac.mm](https://source.monyhar.org/monyhar/monyhar/src/+/main:services/service_manager/sandbox/mac/sandbox_mac.mm;l=1;drc=efd8e880522dc1df3b8883648513016fab3d3956).
 This file will continue to exist until the V1 sandbox is removed for all process
-types. Chromium now uses the V2 sandbox for all process types except the GPU
+types. Monyhar now uses the V2 sandbox for all process types except the GPU
 process.
 
 ## Code Structure
 
-Chromium's architecture is multi-process with a main browser process
+Monyhar's architecture is multi-process with a main browser process
 and some number of helper processes which performs tasks such as
 rendering web pages, running GPU processes, or various utility
 functions. The main browser process launches the other processes
-using the "Google Chromium Helper" executable. The browser passes
+using the "Google Monyhar Helper" executable. The browser passes
 command line flags to the Helper executable indicating what type
 of process it should execute as.
 
@@ -142,8 +142,8 @@ the profile and parameters, before continuing execution to the
 One alternative design is the current design where process acquires
 numerous system resources early in the execution phase and then
 applies the sandbox. However, this means that we do not have a
-consistent and auditable way to track what resources Chromium is using
-over time. Chromium's attack surface can increase significantly with
+consistent and auditable way to track what resources Monyhar is using
+over time. Monyhar's attack surface can increase significantly with
 a new OS release, and we would not know. The new explicit profiles
 make the attack surface very auditable and easy to understand.
 
@@ -164,7 +164,7 @@ in a subset of Scheme. This is a macOS supplied format called Sandbox
 Profile Language (SBPL). As there is no official OS-provided
 documentation for the SBPL, this design doc provides a short
 description below so that other engineers can understand the
-constructs that Chromium is leveraging.
+constructs that Monyhar is leveraging.
 
 SBPL files accept parameters. A parameter is a way to pass variable
 information into the sandbox profile that is not known at compile-time,
@@ -225,11 +225,11 @@ sandbox profiles to function:
 *   Whether or not the sandbox should log failures
 *   The user's home directory
 *   Information about the specific OS version (10.9, 10.10, etc.)
-*   The path to the main `Google Chromium.app` bundle
-*   The PID of the Chromium process
+*   The path to the main `Google Monyhar.app` bundle
+*   The PID of the Monyhar process
 *   If applicable, the path to the permitted directory that the process can read and write to.
 
-The sandbox directives most commonly used in Chromium's V2 profiles
+The sandbox directives most commonly used in Monyhar's V2 profiles
 are documented here for future reference.
 
 ```(deny default)``` - All resource access is denied by default. The

@@ -1,5 +1,5 @@
 # File that lists fields that should be ignored when running the
-# rewrite_raw_ptr_fields tool on Chromium sources.
+# rewrite_raw_ptr_fields tool on Monyhar sources.
 #
 # Each non-comment, non-empty line should specify a fully-namespace qualified
 # field like:

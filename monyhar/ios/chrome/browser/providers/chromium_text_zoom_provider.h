@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,10 +7,10 @@
 
 #import "ios/public/provider/chrome/browser/text_zoom_provider.h"
 
-class ChromiumTextZoomProvider : public TextZoomProvider {
+class MonyharTextZoomProvider : public TextZoomProvider {
  public:
-  ChromiumTextZoomProvider();
-  ~ChromiumTextZoomProvider() override;
+  MonyharTextZoomProvider();
+  ~MonyharTextZoomProvider() override;
 
  private:
   // Text Zoom Provider

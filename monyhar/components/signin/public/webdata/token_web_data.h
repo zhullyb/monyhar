@@ -1,10 +1,10 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Chromium settings and storage represent user-selected preferences and
+// Monyhar settings and storage represent user-selected preferences and
 // information and MUST not be extracted, overwritten or modified except
-// through Chromium defined APIs.
+// through Monyhar defined APIs.
 
 #ifndef COMPONENTS_SIGNIN_PUBLIC_WEBDATA_TOKEN_WEB_DATA_H_
 #define COMPONENTS_SIGNIN_PUBLIC_WEBDATA_TOKEN_WEB_DATA_H_

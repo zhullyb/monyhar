@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -26,7 +26,7 @@ class GetCiBuildersUnittest(fake_filesystem_unittest.TestCase):
   def CreateFile(self, *args, **kwargs):
     # TODO(crbug.com/1156806): Remove this and just use fs.create_file() when
     # Catapult is updated to a newer version of pyfakefs that is compatible with
-    # Chromium's version.
+    # Monyhar's version.
     if hasattr(self.fs, 'create_file'):
       self.fs.create_file(*args, **kwargs)
     else:

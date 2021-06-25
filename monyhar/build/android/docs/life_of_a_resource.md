@@ -5,7 +5,7 @@
 ## Overview
 
 This document describes how [Android Resources][android resources]
-are built in Chromium's build system. It does not mention native resources
+are built in Monyhar's build system. It does not mention native resources
 which are [processed differently][native resources].
 
 [android resources]: https://developer.android.com/guide/topics/resources/providing-resources

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ import org.monyhar.base.test.util.DisableIf;
 import org.monyhar.base.test.util.DisabledTest;
 import org.monyhar.base.test.util.Feature;
 import org.monyhar.base.test.util.UrlUtils;
-import org.monyhar.content.browser.input.ChromiumBaseInputConnection;
+import org.monyhar.content.browser.input.MonyharBaseInputConnection;
 import org.monyhar.content.browser.input.ImeTestUtils;
 import org.monyhar.content.browser.selection.SelectionPopupControllerImpl;
 import org.monyhar.content_public.browser.SelectionClient;
@@ -662,8 +662,8 @@ public class ContentTextSelectionTest {
     }
 
     private CharSequence getTextBeforeCursor(final int length, final int flags) {
-        final ChromiumBaseInputConnection connection =
-                (ChromiumBaseInputConnection) mActivityTestRule.getImeAdapter()
+        final MonyharBaseInputConnection connection =
+                (MonyharBaseInputConnection) mActivityTestRule.getImeAdapter()
                         .getInputConnectionForTest();
         return ImeTestUtils.runBlockingOnHandlerNoException(
                 connection.getHandler(), new Callable<CharSequence>() {

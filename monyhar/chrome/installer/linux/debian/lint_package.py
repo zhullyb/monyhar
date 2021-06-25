@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -18,7 +18,7 @@ SUPPRESSIONS = [
     'dir-or-file-in-opt',
     # Distros usually don't like libraries to be statically linked
     # into binaries because it's easier to push a security patch on a
-    # single package than to update many packages.  Chromium
+    # single package than to update many packages.  Monyhar
     # statically links some libraries anyway.
     'embedded-library',
     # The setuid sandbox is a setuid binary.

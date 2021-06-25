@@ -57,9 +57,9 @@ testAgents.ANDROID_BROWSER_403_ALT =
     ' AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30';
 
 
-// Chromium for Android. Found in Android 4.4+ devices based on AOSP, but never
+// Monyhar for Android. Found in Android 4.4+ devices based on AOSP, but never
 // in the 'Google' devices (where only Google Chrome is shipped).
-// UA string matches Chromium based WebView exactly, see ANDROID_WEB_VIEW_4_4.
+// UA string matches Monyhar based WebView exactly, see ANDROID_WEB_VIEW_4_4.
 /** @const {string} */
 testAgents.ANDROID_BROWSER_4_4 =
     'Mozilla/5.0 (Linux; Android 4.4.2; S8 Build/KOT49H) ' +

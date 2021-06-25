@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ namespace ui {
 namespace {
 
 // Custom mime type used for window dragging DND sessions.
-constexpr char kMimeTypeChromiumWindow[] = "monyhar/x-window";
+constexpr char kMimeTypeMonyharWindow[] = "monyhar/x-window";
 
 // DND action used in window dragging DND sessions.
 constexpr uint32_t kDndActionWindowDrag =
@@ -110,7 +110,7 @@ bool WaylandWindowDragController::StartDragSession() {
 
   DCHECK(!data_source_);
   data_source_ = data_device_manager_->CreateSource(this);
-  data_source_->Offer({kMimeTypeChromiumWindow});
+  data_source_->Offer({kMimeTypeMonyharWindow});
   data_source_->SetAction(DragDropTypes::DRAG_MOVE);
 
   if (IsExtendedDragAvailable()) {
@@ -209,11 +209,11 @@ void WaylandWindowDragController::OnDragEnter(WaylandWindow* window,
 
   // Ensure this is a valid "window drag" offer.
   DCHECK_EQ(data_offer_->mime_types().size(), 1u);
-  DCHECK_EQ(data_offer_->mime_types().front(), kMimeTypeChromiumWindow);
+  DCHECK_EQ(data_offer_->mime_types().front(), kMimeTypeMonyharWindow);
 
   // Accept the offer and set the dnd action.
   data_offer_->SetActions(kDndActionWindowDrag);
-  data_offer_->Accept(serial, kMimeTypeChromiumWindow);
+  data_offer_->Accept(serial, kMimeTypeMonyharWindow);
 }
 
 void WaylandWindowDragController::OnDragMotion(const gfx::PointF& location) {

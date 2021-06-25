@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -401,8 +401,8 @@ CanvasResourceProvider* OffscreenCanvas::GetOrCreateResourceProvider() {
       (Is3d() || (RuntimeEnabledFeatures::Accelerated2dCanvasEnabled() &&
                   !context_->CreationAttributes().will_read_frequently));
   const bool composited_mode =
-      (Is3d() ? RuntimeEnabledFeatures::WebGLImageChromiumEnabled()
-              : RuntimeEnabledFeatures::Canvas2dImageChromiumEnabled());
+      (Is3d() ? RuntimeEnabledFeatures::WebGLImageMonyharEnabled()
+              : RuntimeEnabledFeatures::Canvas2dImageMonyharEnabled());
 
   uint32_t shared_image_usage_flags = gpu::SHARED_IMAGE_USAGE_DISPLAY;
   if (composited_mode && HasPlaceholderCanvas())

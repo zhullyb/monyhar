@@ -1,6 +1,6 @@
 # Linux Minidump to Core
 
-On Linux, Chromium can use Breakpad to generate minidump files for crashes. It
+On Linux, Monyhar can use Breakpad to generate minidump files for crashes. It
 is possible to convert the minidump files to core files, and examine the core
 file in gdb, cgdb, or Qtcreator. In the examples below cgdb is assumed but any
 gdb based debugger can be used.
@@ -10,7 +10,7 @@ gdb based debugger can be used.
 ## Creating the core file
 
 Use `minidump-2-core` to convert the minidump file to a core file. On Linux, one
-can build the minidump-2-core target in a Chromium checkout, or alternatively,
+can build the minidump-2-core target in a Monyhar checkout, or alternatively,
 build it in a Google Breakpad checkout.
 
 ```shell
@@ -57,7 +57,7 @@ debugging with Qtcreator see
 
 ## Source debugging
 
-If you have a Chromium repo that is synchronized to exactly (or even
+If you have a Monyhar repo that is synchronized to exactly (or even
 approximately) when the Chrome build was created then you can tell
 `gdb/cgdb/Qtcreator` to load source code. Since all source paths in Chrome are
 relative to the out/Release directory you just need to add that directory to

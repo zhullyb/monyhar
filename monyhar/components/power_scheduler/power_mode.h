@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -45,9 +45,9 @@ enum class PowerMode {
   // The process is responding to user input.
   kResponse,
 
-  // The (Android) app is showing an uninstrumented activity (e.g., Chromium's
+  // The (Android) app is showing an uninstrumented activity (e.g., Monyhar's
   // settings activity) for which we can't determine a more specific use case.
-  // Only valid in Chromium's browser process.
+  // Only valid in Monyhar's browser process.
   kNonWebActivity,
 
   // All pages and tabs associated with the process are backgrounded, or the app

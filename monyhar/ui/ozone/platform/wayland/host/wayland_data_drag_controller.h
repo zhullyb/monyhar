@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -31,8 +31,8 @@ class WaylandShmBuffer;
 class WaylandSurface;
 
 // WaylandDataDragController implements regular data exchange on top of the
-// Wayland Drag and Drop protocol.  The data can be dragged within the Chromium
-// window, or between Chromium and other application in both directions.
+// Wayland Drag and Drop protocol.  The data can be dragged within the Monyhar
+// window, or between Monyhar and other application in both directions.
 //
 // The outgoing drag starts via the StartSession() method.  For more context,
 // see WaylandTopLevelWindow::StartDrag().
@@ -41,7 +41,7 @@ class WaylandSurface;
 // (the data device), and ends up in call to WaylandWindow::OnDragEnter(), but
 // two ways of coming there are possible:
 //
-// 1.  The drag has been initiated by a Chromium window.  In this case, the data
+// 1.  The drag has been initiated by a Monyhar window.  In this case, the data
 // that is being dragged is available right away, and therefore the controller
 // can forward the data to the window immediately.
 //
@@ -132,7 +132,7 @@ class WaylandDataDragController : public WaylandDataDevice::DragDelegate,
   // Data offered by us to the other side.
   std::unique_ptr<WaylandDataSource> data_source_;
 
-  // When dragging is started from Chromium, |data_| holds the data to be sent
+  // When dragging is started from Monyhar, |data_| holds the data to be sent
   // through wl_data_device instance.
   std::unique_ptr<ui::OSExchangeData> data_;
 
@@ -141,7 +141,7 @@ class WaylandDataDragController : public WaylandDataDevice::DragDelegate,
   //
   // The data offer from another Wayland client through wl_data_device, that
   // triggered the current drag and drop session. If null, either there is no
-  // dnd session running or Chromium is the data source.
+  // dnd session running or Monyhar is the data source.
   std::unique_ptr<WaylandDataOffer> data_offer_;
 
   // Mime types to be handled.

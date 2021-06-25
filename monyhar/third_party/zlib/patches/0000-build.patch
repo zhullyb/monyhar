@@ -153,7 +153,7 @@ index 5e1d68a004e9..a7a815f575a7 100644
 + * This library is also built as a part of AOSP, which does not need to include
 + * chromeconf.h. This config does not want chromeconf.h, so it can set this
 + * macro to opt out. While this works today, there's no guarantee that building
-+ * zlib outside of Chromium keeps working in the future.
++ * zlib outside of Monyhar keeps working in the future.
 + */
 +#if !defined(CHROMIUM_ZLIB_NO_CHROMECONF)
 +/* This include does prefixing as below, but with an updated set of names.  Also

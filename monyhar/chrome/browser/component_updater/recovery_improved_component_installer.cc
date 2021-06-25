@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Chromium Authors. All rights reserved.
+// Copyright (c) 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -66,7 +66,7 @@ void RecoveryComponentActionHandler::Handle(const base::FilePath& action,
 }
 
 void RecoveryComponentActionHandler::Unpack() {
-  auto unzipper = base::MakeRefCounted<update_client::UnzipChromiumFactory>(
+  auto unzipper = base::MakeRefCounted<update_client::UnzipMonyharFactory>(
                       base::BindRepeating(&unzip::LaunchUnzipper))
                       ->Create();
   auto unpacker = base::MakeRefCounted<update_client::ComponentUnpacker>(

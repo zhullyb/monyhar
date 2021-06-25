@@ -48,7 +48,7 @@ other files in the same directory.
 
 ## Instrumentation test features
 
-In many cases, Chromium has extended the instrumentation test framework
+In many cases, Monyhar has extended the instrumentation test framework
 classes to implement additional features.
 
 ### Tracing
@@ -68,8 +68,8 @@ This causes every function called on the Python side to be added to the trace.
 
 ### Annotations
 
-Instrumentation tests in Chromium use a wide variety of annotations to control
-and manipulate test execution. Some of these are implemented in Chromium, while
+Instrumentation tests in Monyhar use a wide variety of annotations to control
+and manipulate test execution. Some of these are implemented in Monyhar, while
 others are pulled in from outside. They include:
 
 #### Test Batching
@@ -140,7 +140,7 @@ tests marked with **@FlakyTest** are explicitly run on some bots.
 ```
 
 Note that there are Android versions of **@DisabledTest** and **@FlakyTest**
-that do not allow message specification. These are no longer used in Chromium.
+that do not allow message specification. These are no longer used in Monyhar.
 
 As alluded to above, tests marked with either **@DisabledTest** or
 **@FlakyTest** can be explicitly run via the test runner's
@@ -289,7 +289,7 @@ command-line flags on a per-test basis (i.e., the flags handled by
 #### Feature annotations
 
 [**@Feature**](https://monyhar.googlesource.com/monyhar/src/+/main/base/test/android/javatests/src/org/monyhar/base/test/util/Feature.java)
-has been used inconsistently in Chromium to group tests across
+has been used inconsistently in Monyhar to group tests across
 test cases according to the feature they're testing.
 
 ```java

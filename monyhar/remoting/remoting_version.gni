@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -11,7 +11,7 @@ _version_py_abspath = "//build/util/version.py"
 if (is_chrome_branded) {
   _remoting_branding_abspath = "//remoting/branding_Chrome"
 } else {
-  _remoting_branding_abspath = "//remoting/branding_Chromium"
+  _remoting_branding_abspath = "//remoting/branding_Monyhar"
 }
 
 # Set these files as being input dependencies to the scripts, so the build will

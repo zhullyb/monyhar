@@ -1,4 +1,4 @@
-# Copyright (c) 2018 The Chromium Authors. All rights reserved.
+# Copyright (c) 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Common code generator for command buffers."""
@@ -15,7 +15,7 @@ _SIZE_OF_UINT32 = 4
 _SIZE_OF_COMMAND_HEADER = 4
 _FIRST_SPECIFIC_COMMAND_ID = 256
 
-_LICENSE = """// Copyright %s The Chromium Authors. All rights reserved.
+_LICENSE = """// Copyright %s The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -87,8 +87,8 @@ _PEPPER_INTERFACES = [
   {'name': 'InstancedArrays', 'dev': False},
   {'name': 'FramebufferBlit', 'dev': False},
   {'name': 'FramebufferMultisample', 'dev': False},
-  {'name': 'ChromiumEnableFeature', 'dev': False},
-  {'name': 'ChromiumMapSub', 'dev': False},
+  {'name': 'MonyharEnableFeature', 'dev': False},
+  {'name': 'MonyharMapSub', 'dev': False},
   {'name': 'Query', 'dev': False},
   {'name': 'VertexArrayObject', 'dev': False},
   {'name': 'DrawBuffers', 'dev': True},
@@ -766,7 +766,7 @@ def ToCamelCase(input_string):
 
 def EnumsConflict(a, b):
   """Returns true if the enums have different names (ignoring suffixes) and one
-  of them is a Chromium enum."""
+  of them is a Monyhar enum."""
   if a == b:
     return False
 
@@ -1580,7 +1580,7 @@ class StateSetHandler(TypeHandler):
         # Drivers might generate an INVALID_VALUE error when a value is set
         # to NaN. This is allowed behavior under GLES 3.0 section 2.1.1 or
         # OpenGL 4.5 section 2.3.4.1 - providing NaN allows undefined results.
-        # Make this behavior consistent within Chromium, and avoid leaking GL
+        # Make this behavior consistent within Monyhar, and avoid leaking GL
         # errors by generating the error in the command buffer instead of
         # letting the GL driver generate it.
         code.append("std::isnan(%s)" % args[ndx].name)
@@ -7077,7 +7077,7 @@ void ContextStateTestHelpers::SetupInitStateExpectations(
 
   def WriteGLES2Header(self, filename):
     """Writes the GLES2 header."""
-    comment = "// This file contains Chromium-specific GLES2 declarations.\n\n"
+    comment = "// This file contains Monyhar-specific GLES2 declarations.\n\n"
     with CHeaderWriter(filename, self.year, comment) as f:
       for func in self.original_functions:
         func.WriteGLES2Header(f)

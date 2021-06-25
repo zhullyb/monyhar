@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ namespace wl {
 
 // A proxy interface to Ozone/Wayland that is used by input emulation. The
 // reason why this is needed is that input emulation mustn't be part of
-// Chromium and only be used and compiled when there is a need to run tests.
+// Monyhar and only be used and compiled when there is a need to run tests.
 // This nicely separates Ozone/Wayland from input emulation and provides just
 // core functionality that input emulation needs from Ozone/Wayland.
 class COMPONENT_EXPORT(WAYLAND_PROXY) WaylandProxy {

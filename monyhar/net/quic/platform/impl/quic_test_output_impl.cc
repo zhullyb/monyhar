@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The Chromium Authors. All rights reserved.
+// Copyright (c) 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -64,7 +64,7 @@ void QuicRecordTraceImpl(absl::string_view identifier, absl::string_view data) {
   const testing::TestInfo* test_info =
       testing::UnitTest::GetInstance()->current_test_info();
 
-  // TODO(vasilvv): replace this with absl::Time once it's usable in Chromium.
+  // TODO(vasilvv): replace this with absl::Time once it's usable in Monyhar.
   time_t now_ts = time(nullptr);
   tm now;
 #ifdef OS_WIN

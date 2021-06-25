@@ -1,5 +1,5 @@
 include_rules = [
-   # chromecast/public should not depend on anything Chromium specific
+   # chromecast/public should not depend on anything Monyhar specific
    # Disallow all monyhar-wide dependencies listed in monyhar/src/DEPS.
    "-base",
    "-build",

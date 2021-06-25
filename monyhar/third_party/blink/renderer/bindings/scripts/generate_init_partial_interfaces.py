@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Generate initPartialInterfacesInModules(), which registers partial
@@ -22,7 +22,7 @@ from utilities import should_generate_impl_file_from_idl
 from utilities import write_file
 from v8_utilities import build_basename
 
-_COPYRIGHT = """// Copyright 2014 The Chromium Authors. All rights reserved.
+_COPYRIGHT = """// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 """

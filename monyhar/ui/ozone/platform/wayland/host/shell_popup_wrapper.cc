@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -41,10 +41,10 @@ gfx::Rect GetAnchorRect(MenuType menu_type,
       // it's positioned correctly, place it closer to the beginning of the
       // parent menu shifted by the same value along x-axis. The width of anchor
       // must correspond the width between two points - specified origin by the
-      // Chromium and calculated point shifted by the same value along x-axis
+      // Monyhar and calculated point shifted by the same value along x-axis
       // from the beginning of the parent menu width.
       //
-      // We also have to bear in mind that Chromium may decide to flip the
+      // We also have to bear in mind that Monyhar may decide to flip the
       // position of the menu window along the x-axis and show it on the other
       // side of the parent menu window (normally, the Wayland compositor does
       // it). Thus, check which side the child menu window is going to be
@@ -90,7 +90,7 @@ WlAnchor GetAnchor(MenuType menu_type, const gfx::Rect& bounds) {
       anchor = WlAnchor::BottomRight;
       break;
     case MenuType::kChildMenu:
-      // Chromium may want to manually position a child menu on the left side of
+      // Monyhar may want to manually position a child menu on the left side of
       // its parent menu. Thus, react accordingly. Positive x means the child is
       // located on the right side of the parent and negative - on the left
       // side.
@@ -114,7 +114,7 @@ WlGravity GetGravity(MenuType menu_type, const gfx::Rect& bounds) {
       gravity = WlGravity::BottomRight;
       break;
     case MenuType::kChildMenu:
-      // Chromium may want to manually position a child menu on the left side of
+      // Monyhar may want to manually position a child menu on the left side of
       // its parent menu. Thus, react accordingly. Positive x means the child is
       // located on the right side of the parent and negative - on the left
       // side.

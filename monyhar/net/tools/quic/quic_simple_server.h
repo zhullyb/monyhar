@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -82,13 +82,13 @@ class QuicSimpleServer : public quic::QuicSpdyServerBase {
   std::unique_ptr<quic::QuicDispatcher> dispatcher_;
 
   // Used by the helper_ to time alarms.
-  quic::QuicChromiumClock clock_;
+  quic::QuicMonyharClock clock_;
 
   // Used to manage the message loop. Owned by dispatcher_.
-  QuicChromiumConnectionHelper* helper_;
+  QuicMonyharConnectionHelper* helper_;
 
   // Used to manage the message loop. Owned by dispatcher_.
-  QuicChromiumAlarmFactory* alarm_factory_;
+  QuicMonyharAlarmFactory* alarm_factory_;
 
   // Listening socket. Also used for outbound client communication.
   std::unique_ptr<UDPServerSocket> socket_;

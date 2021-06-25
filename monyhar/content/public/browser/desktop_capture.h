@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ CONTENT_EXPORT std::unique_ptr<webrtc::DesktopCapturer> CreateWindowCapturer();
 // Returns whether we can use PipeWire capturer based on:
 // 1) We run Linux Wayland session
 // 2) WebRTC is built with PipeWire enabled
-// 3) Chromium has features::kWebRtcPipeWireCapturer enabled
+// 3) Monyhar has features::kWebRtcPipeWireCapturer enabled
 CONTENT_EXPORT bool CanUsePipeWire();
 
 }  // namespace desktop_capture

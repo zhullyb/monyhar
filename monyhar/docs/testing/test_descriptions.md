@@ -37,12 +37,12 @@ See [Testing and infrastructure](https://sites.google.com/a/monyhar.org/dev/deve
 |[page\_cycler\_tests](https://sites.google.com/a/monyhar.org/dev/developers/testing/page-cyclers)| |
 |performance\_ui\_tests  | |
 |plugin\_tests           |Tests the plugin subsystem.|
-|ppapi\_unittests        |Tests to verify Chromium recovery after hanging or crashing of renderers.|
+|ppapi\_unittests        |Tests to verify Monyhar recovery after hanging or crashing of renderers.|
 |printing\_unittests     | |
 |reliability\_tests      | |
 |safe\_browsing\_tests   | |
 |sql\_unittests          | |
-|startup\_tests          |Test startup performance of Chromium.|
+|startup\_tests          |Test startup performance of Monyhar.|
 |sync\_integration\_tests| |
 |sync\_unit\_tests       | |
 |tab\_switching\_test    |Test tab switching functionality.|
@@ -51,7 +51,7 @@ See [Testing and infrastructure](https://sites.google.com/a/monyhar.org/dev/deve
 |test\_shell\_tests      |A collection of tests within the Test Shell.|
 |[test\_installer](https://sites.google.com/a/monyhar.org/dev/developers/testing/windows-installer-tests)|Tests Chrome's installer for Windows|
 |ui\_base\_unittests     |Unit tests for //ui/base.|
-|unit\_tests             |The kitchen sink for unit tests. These tests cover several modules within Chromium.|
+|unit\_tests             |The kitchen sink for unit tests. These tests cover several modules within Monyhar.|
 |url\_unittests          | |
 |views\_unittests        | |
 |wav\_ola\_test          | |

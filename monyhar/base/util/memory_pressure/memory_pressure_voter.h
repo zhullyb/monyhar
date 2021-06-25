@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -87,7 +87,7 @@ class MemoryPressureVoteAggregator {
   // bucket.
   // MEMORY_PRESSURE_LEVEL_CRITICAL + 1 is used in place of adding a kCount
   // value to the MemoryPressureLevel enum as adding another value would require
-  // changing every instance of switch(MemoryPressureLevel) in Chromium, and the
+  // changing every instance of switch(MemoryPressureLevel) in Monyhar, and the
   // MemoryPressureLevel system will be changing soon regardless.
   std::array<size_t,
              base::MemoryPressureListener::MEMORY_PRESSURE_LEVEL_CRITICAL + 1>

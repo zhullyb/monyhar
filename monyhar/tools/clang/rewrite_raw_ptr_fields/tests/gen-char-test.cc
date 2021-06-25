@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@
 // To run the test use tools/clang/rewrite_raw_ptr_fields/tests/run_all_tests.py
 
 struct MyStruct {
-  // Chromium is built with a warning/error that there are no user-defined
+  // Monyhar is built with a warning/error that there are no user-defined
   // constructors invoked when initializing global-scoped values.
   // CheckedPtr<char> conversion might trigger a global constructor call when a
   // pointer field is initialized with a non-null value.  This frequently

@@ -129,7 +129,7 @@ void Usage(const base::FilePath& me) {
 #if defined(OS_APPLE)
 "      --mach-service=SERVICE  register SERVICE with the bootstrap server\n"
 #endif  // OS_APPLE
-"      --metrics-dir=DIR       store metrics files in DIR (only in Chromium)\n"
+"      --metrics-dir=DIR       store metrics files in DIR (only in Monyhar)\n"
 "      --monitor-self          run a second handler to catch crashes in the first\n"
 "      --monitor-self-annotation=KEY=VALUE\n"
 "                              set a module annotation in the handler\n"

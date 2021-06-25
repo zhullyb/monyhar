@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -38,7 +38,7 @@ constexpr char kBrowserDisplayName[] = "google-chrome";
 #define PRODUCT_STRING "Google Chrome"
 #else
 constexpr char kBrowserDisplayName[] = "monyhar-browser";
-#define PRODUCT_STRING "Chromium"
+#define PRODUCT_STRING "Monyhar"
 #endif
 
 #if defined(DLOPEN_PULSEAUDIO)
@@ -57,7 +57,7 @@ void DestroyContext(pa_context* context) {
   pa_context_unref(context);
 }
 
-pa_channel_position ChromiumToPAChannelPosition(Channels channel) {
+pa_channel_position MonyharToPAChannelPosition(Channels channel) {
   switch (channel) {
     // PulseAudio does not differentiate between left/right and
     // stereo-left/stereo-right, both translate to front-left/front-right.
@@ -328,7 +328,7 @@ pa_channel_map ChannelLayoutToPAChannelMap(ChannelLayout channel_layout) {
       if (channel_index < 0)
         continue;
 
-      channel_map.map[channel_index] = ChromiumToPAChannelPosition(ch);
+      channel_map.map[channel_index] = MonyharToPAChannelPosition(ch);
     }
   }
 

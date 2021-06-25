@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -354,7 +354,7 @@ ResultType STLSetIntersection(const Arg1& a1, const Arg2& a2) {
 // They provide a generic way to erase elements from a container.
 // The functions here implement these for the standard containers until those
 // functions are available in the C++ standard.
-// For Chromium containers overloads should be defined in their own headers
+// For Monyhar containers overloads should be defined in their own headers
 // (like standard containers).
 // Note: there is no std::erase for standard associative containers so we don't
 // have it either.

@@ -1,4 +1,4 @@
-The code is this directory is neither endorsed nor supported by the Chromium
+The code is this directory is neither endorsed nor supported by the Monyhar
 benchmarking team.
 
 To add code in this directory:
@@ -16,6 +16,6 @@ ephemeral benchmark used to drive a perf project, you need an accompanied bug
 **NOTE**
 1. Benchmarks in this directory will not be scheduled for running on the
 perf waterfall.
-2. Chromium benchmarking team will NOT review nor maintain any code under this
+2. Monyhar benchmarking team will NOT review nor maintain any code under this
 directory. It is the responsiblity of the owners of each sub-directory to
 maintain them.

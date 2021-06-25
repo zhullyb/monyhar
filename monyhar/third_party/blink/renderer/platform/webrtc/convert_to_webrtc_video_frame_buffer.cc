@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -461,7 +461,7 @@ scoped_refptr<media::VideoFrame> ConvertFromMappedWebRtcVideoFrameBuffer(
     }
     case webrtc::VideoFrameBuffer::Type::kI010: {
       const webrtc::I010BufferInterface* yuv_buffer = buffer->GetI010();
-      // WebRTC defines I010 data as uint16 whereas Chromium uses uint8 for all
+      // WebRTC defines I010 data as uint16 whereas Monyhar uses uint8 for all
       // video formats, so conversion and cast is needed.
       video_frame = media::VideoFrame::WrapExternalYuvData(
           media::PIXEL_FORMAT_YUV420P10, size, gfx::Rect(size), size,

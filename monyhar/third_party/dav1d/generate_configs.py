@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Creates config files for building dav1d."""
@@ -127,16 +127,16 @@ def GenerateConfig(config_dir, env, special_args=[]):
       [
           # We don't want non-visible log strings polluting the official binary.
           (r'(#define CONFIG_LOG .*)',
-           r'// \1 -- Logging is controlled by Chromium'),
+           r'// \1 -- Logging is controlled by Monyhar'),
 
-          # The Chromium build system already defines this.
+          # The Monyhar build system already defines this.
           (r'(#define _WIN32_WINNT .*)',
-           r'// \1 -- Windows version is controlled by Chromium'),
+           r'// \1 -- Windows version is controlled by Monyhar'),
 
           # Clang LTO doesn't respect stack alignment, so we must use the
           # platform's default stack alignment; https://crbug.com/928743.
           (r'(#define STACK_ALIGNMENT \d{1,2})',
-           r'// \1 -- Stack alignment is controlled by Chromium'),
+           r'// \1 -- Stack alignment is controlled by Monyhar'),
       ])
 
   config_asm_path = os.path.join(temp_dir, 'config.asm')
@@ -144,7 +144,7 @@ def GenerateConfig(config_dir, env, special_args=[]):
     RewriteFile(
         config_asm_path,
         [(r'(%define STACK_ALIGNMENT \d{1,2})',
-          r'; \1 -- Stack alignment is controlled by Chromium')])
+          r'; \1 -- Stack alignment is controlled by Monyhar')])
 
   CopyConfigsAndCleanup(temp_dir, config_dir)
 

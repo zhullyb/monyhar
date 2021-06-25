@@ -29,7 +29,7 @@ See [instructions](https://clang.llvm.org/extra/clangd/Installation.html#install
 Alternative: download clangd from the official [Releases](https://github.com/clangd/clangd/releases)
 page.
 
-Note: clangd 10.0.0 does not work with Chromium; use one of the more recent
+Note: clangd 10.0.0 does not work with Monyhar; use one of the more recent
 pre-release versions of 11 or later on the Releases page.
 
 If you prefer to build clangd locally, use the following command to build from
@@ -93,7 +93,7 @@ compilation database). The index improves code navigation features
   codebase to files you are currently editing.
 
 Note: the first index time may take hours (for reference, it took 2~3 hours on
-a 48-core, 64GB machine). A full index of Chromium (including v8, blink) takes
+a 48-core, 64GB machine). A full index of Monyhar (including v8, blink) takes
 ~550 MB disk space and ~2.7 GB memory in clangd.
 
 ## Questions

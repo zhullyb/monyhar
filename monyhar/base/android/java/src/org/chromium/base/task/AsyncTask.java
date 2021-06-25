@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -27,7 +27,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * A Chromium version of android.os.AsyncTask.
+ * A Monyhar version of android.os.AsyncTask.
  *
  * The API is quite close to Android's Oreo version, but with a number of things removed.
  * @param <Result> Return type of the background task.

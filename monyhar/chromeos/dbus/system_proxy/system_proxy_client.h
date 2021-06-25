@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -77,7 +77,7 @@ class COMPONENT_EXPORT(SYSTEM_PROXY) SystemProxyClient {
   static SystemProxyClient* Get();
 
   // SystemProxy daemon D-Bus method calls. See org.monyhar.SystemProxy.xml and
-  // system_proxy_service.proto in Chromium OS code for the documentation of the
+  // system_proxy_service.proto in Monyhar OS code for the documentation of the
   // methods and request/response messages.
   virtual void SetAuthenticationDetails(
       const system_proxy::SetAuthenticationDetailsRequest& request,

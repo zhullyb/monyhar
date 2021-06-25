@@ -2,7 +2,7 @@
 
 This directory contains the open source, application layer of Google Chrome.
 
-Unlike other parts of Chromium like //content, which provide framework intended
+Unlike other parts of Monyhar like //content, which provide framework intended
 to support multiple products, this directory contains code that is focused on
 building specific products with opinionated UX.
 

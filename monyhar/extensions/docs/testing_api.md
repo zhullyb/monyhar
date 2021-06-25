@@ -381,7 +381,7 @@ Many tests were written years and years ago.  Modern JS practices, such as
 `let` and `const`, [arrow functions], [template literals], and more, generally
 increase readability.  Don't feel shy about using them just because other
 examples don't.  (The caveat to this is that these tests should not use
-anything that isn't [approved](/styleguide/web/es.md) for Chromium JS use,
+anything that isn't [approved](/styleguide/web/es.md) for Monyhar JS use,
 unless the use of it is explicitly necessary for the test.)
 
 ### **Don't** Mix chrome.test.notifyPass() and chrome.test.runTests()

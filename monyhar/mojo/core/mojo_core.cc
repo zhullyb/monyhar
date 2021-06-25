@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -47,7 +47,7 @@ class IPCSupport {
  private:
 #if !defined(COMPONENT_BUILD)
   // NOTE: For component builds, we assume the consumer is always a target in
-  // the Chromium tree which already depends on base initialization stuff and
+  // the Monyhar tree which already depends on base initialization stuff and
   // therefore already has an AtExitManager. For non-component builds, use of
   // this AtExitManager is strictly isolated to Mojo Core internals, so running
   // hooks on |MojoShutdown()| (where |this| is destroyed) makes sense.

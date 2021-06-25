@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ public class LocalizationUtilsTest {
 
     @Test
     @SmallTest
-    public void testChromiumLocaleMatchesLanguage() {
+    public void testMonyharLocaleMatchesLanguage() {
         assertTrue(LocalizationUtils.monyharLocaleMatchesLanguage("en-US", "en"));
         assertTrue(LocalizationUtils.monyharLocaleMatchesLanguage("en-GB", "en"));
         assertFalse(LocalizationUtils.monyharLocaleMatchesLanguage("en-US", "es"));
@@ -47,8 +47,8 @@ public class LocalizationUtilsTest {
         assertFalse(LocalizationUtils.monyharLocaleMatchesLanguage("fil", "fi"));
 
         // "tl" is the Android locale name for Filipines, due to historical
-        // reasons. The corresponding Chromium locale name is "fil".
-        // Check that the method only deals with Chromium locale names.
+        // reasons. The corresponding Monyhar locale name is "fil".
+        // Check that the method only deals with Monyhar locale names.
         assertFalse(LocalizationUtils.monyharLocaleMatchesLanguage("fil", "tl"));
     }
 }

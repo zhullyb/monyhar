@@ -18,7 +18,7 @@ uploaded to the CIPD service and tagged with a version:
 For versioning the CIPD package, use a date in the form YYYYMMDD.N, where N is
 an integer starting at 1 to differentiate different versions on the same day.
 
-After uploading a new version to CIPD, the data need to be rolled into Chromium
+After uploading a new version to CIPD, the data need to be rolled into Monyhar
 by updating the version referenced in the root `DEPS` file.
 
 Generating the data at build time is slow and has [caused](https://crbug.com/696529)

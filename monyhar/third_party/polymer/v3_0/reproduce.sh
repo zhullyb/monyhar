@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 # - Downloads all dependencies listed in package.json
-# - Makes Chromium specific modifications.
+# - Makes Monyhar specific modifications.
 # - Places the final output in components-monyhar/
 
 check_dep() {
@@ -73,7 +73,7 @@ echo 'Updating paper/iron elements to point to the minified file.'
 find components-monyhar/ -name '*.js' -exec sed -i \
   's/\/polymer\/[a-zA-Z\/\.-]\+/\/polymer\/polymer_bundled.min.js/' {} +
 
-# Undo any changes in paper-ripple, since Chromium's implementation is a fork of
+# Undo any changes in paper-ripple, since Monyhar's implementation is a fork of
 # the original paper-ripple.
 git checkout -- components-monyhar/paper-ripple/*
 

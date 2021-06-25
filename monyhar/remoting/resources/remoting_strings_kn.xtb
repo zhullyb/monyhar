@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">ಮುಖ್ಯ ಲೈಬ್ರರಿ</translation>
 <translation id="443560535555262820">ಪ್ರವೇಶಿಸುವಿಕೆ ಆದ್ಯತೆಗಳನ್ನು ತೆರೆಯಿರಿ</translation>
 <translation id="4450893287417543264">ಮತ್ತೊಮ್ಮೆ ತೋರಿಸಬೇಡಿ</translation>
-<translation id="4512952200932940229">ಹಕ್ಕುಸ್ವಾಮ್ಯ 2021 Chromium ಲೇಖಕರು. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</translation>
+<translation id="4512952200932940229">ಹಕ್ಕುಸ್ವಾಮ್ಯ 2021 Monyhar ಲೇಖಕರು. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</translation>
 <translation id="4513946894732546136">Feedback</translation>
 <translation id="4563926062592110512">ಕ್ಲೈಂಟ್ ಸಂಪರ್ಕ ರದ್ದುಮಾಡಲಾಗಿದೆ: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">ರಿಮೋಟ್ ಸಾಧನಗಳು</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">ದಯವಿಟ್ಟು ರಿಮೋಟ್ ಕಂಪ್ಯೂಟರ್‌ಗಾಗಿ ನಿಮ್ಮ PIN ನಮೂದಿಸಿ.</translation>
 <translation id="7895403300744144251">ನಿಮ್ಮ ಖಾತೆಯಿಂದ ಸಂಪರ್ಕಗಳನ್ನು ರಿಮೋಟ್ ಕಂಪ್ಯೂಟರ್‌ಗಳಲ್ಲಿನ ಭದ್ರತಾ ನೀತಿಗಳು ಅನುಮತಿಸುವುದಿಲ್ಲ.</translation>
 <translation id="7936528439960309876">ಬಲಕ್ಕೆ ಡಾಕ್ ಮಾಡಿ</translation>
-<translation id="7970576581263377361">ದೃಢೀಕರಣ ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು Chromium ಗೆ ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.</translation>
+<translation id="7970576581263377361">ದೃಢೀಕರಣ ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು Monyhar ಗೆ ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.</translation>
 <translation id="7981525049612125370">ರಿಮೋಟ್ ಸೆಶನ್ ಅವಧಿ ಮೀರಿದೆ.</translation>
 <translation id="8038111231936746805">(ಡಿಫಾಲ್ಟ್)</translation>
 <translation id="8041089156583427627">ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಿ</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737"><ph name="PRODUCT_NAME" /> ಗೆ 'ಸ್ಕ್ರೀನ್ ರೆಕಾರ್ಡಿಂಗ್' ಅನುಮತಿಯನ್ನು ನೀಡಿ</translation>
 <translation id="9213184081240281106">ಅಮಾನ್ಯ ಹೋಸ್ಟ್ ಕಾನ್ಫಿಗರೇಶನ್.</translation>
 <translation id="981121421437150478">ಆಫ್‌ಲೈನ್</translation>
-<translation id="985602178874221306">Chromium ಲೇಖಕರು</translation>
+<translation id="985602178874221306">Monyhar ಲೇಖಕರು</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (ಕೊನೆಯ ಬಾರಿಯ ಆನ್‌‌ಲೈನ್ <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

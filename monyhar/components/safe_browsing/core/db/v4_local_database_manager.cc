@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -475,7 +475,7 @@ bool V4LocalDatabaseManager::CheckResourceUrl(const GURL& url, Client* client) {
     // TODO(nparker): This should queue the request if the DB isn't yet
     // loaded, and later decide if this store is available.
     // Currently this is the only store that requires full-hash-checks
-    // AND isn't supported on Chromium, so it's unique.
+    // AND isn't supported on Monyhar, so it's unique.
     return true;
   }
 

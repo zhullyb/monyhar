@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 #
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 '''Implements Chrome-Fuchsia package binary size checks.'''
@@ -54,7 +54,7 @@ def CreateSizesHistogramItem(name, size, sizes_guid):
   """Create a performance dashboard histogram from the histogram template and
   binary size data."""
 
-  # Chromium performance dashboard histogram containing binary size data.
+  # Monyhar performance dashboard histogram containing binary size data.
   histogram = {
       'name': name,
       'unit': 'sizeInBytes_smallerIsBetter',

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -372,7 +372,7 @@ TEST_F(SysInfoTest, IsRunningOnChromeOS) {
     EXPECT_TRUE(SysInfo::IsRunningOnChromeOS());
   }
   {
-    const char kLsbRelease3[] = "CHROMEOS_RELEASE_NAME=Chromium OS\n";
+    const char kLsbRelease3[] = "CHROMEOS_RELEASE_NAME=Monyhar OS\n";
     test::ScopedChromeOSVersionInfo version(kLsbRelease3, Time());
     EXPECT_TRUE(SysInfo::IsRunningOnChromeOS());
   }

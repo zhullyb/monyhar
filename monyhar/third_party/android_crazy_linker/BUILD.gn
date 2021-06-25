@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -229,7 +229,7 @@ if (is_android) {
         libs += invoker.libs
       }
 
-      # This is not Chromium code.
+      # This is not Monyhar code.
       configs -= [ "//build/config/compiler:monyhar_code" ]
       configs += [ "//build/config/compiler:no_monyhar_code" ]
 

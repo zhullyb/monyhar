@@ -1,11 +1,11 @@
-# Copyright 2013 The Chromium Authors. All rights reserved.
+# Copyright 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Scans the Chromium source for histograms that are absent from histograms.xml.
+"""Scans the Monyhar source for histograms that are absent from histograms.xml.
 
 This is a heuristic scan, so a clean run of this script does not guarantee that
-all histograms in the Chromium source are properly mapped.  Notably, field
+all histograms in the Monyhar source are properly mapped.  Notably, field
 trials are entirely ignored by this script.
 
 """
@@ -188,7 +188,7 @@ def collapseAdjacentCStrings(string):
 
 def logNonLiteralHistogram(filename, histogram):
   """Logs a statement warning about a non-literal histogram name found in the
-  Chromium source.
+  Monyhar source.
 
   Filters out known acceptable exceptions.
 
@@ -224,8 +224,8 @@ def logNonLiteralHistogram(filename, histogram):
                   histogram)
 
 
-def readChromiumHistograms():
-  """Searches the Chromium source for all histogram names.
+def readMonyharHistograms():
+  """Searches the Monyhar source for all histogram names.
 
   Also prints warnings for any invocations of the UMA_HISTOGRAM_* macros with
   names that might vary during a single run of the app.
@@ -235,7 +235,7 @@ def readChromiumHistograms():
       a set containing any found literal histogram names, and
       a set mapping histogram name to first filename:line where it was found
   """
-  logging.info('Scanning Chromium source for histograms...')
+  logging.info('Scanning Monyhar source for histograms...')
 
   # Use git grep to find all invocations of the UMA_HISTOGRAM_* macros.
   # Examples:
@@ -341,7 +341,7 @@ def output_log(unmapped_histograms, location_map, verbose):
   if len(unmapped_histograms):
     logging.info('')
     logging.info('')
-    logging.info('Histograms in Chromium but not in XML files:')
+    logging.info('Histograms in Monyhar but not in XML files:')
     logging.info('-------------------------------------------------')
     for histogram in sorted(unmapped_histograms):
       if verbose:
@@ -396,7 +396,7 @@ def main():
   except EnvironmentError as e:
     logging.error("Could not change to root directory: %s", e)
     sys.exit(1)
-  monyhar_histograms, location_map = readChromiumHistograms()
+  monyhar_histograms, location_map = readMonyharHistograms()
   xml_histograms = readAllXmlHistograms()
   unmapped_histograms = monyhar_histograms - xml_histograms
 

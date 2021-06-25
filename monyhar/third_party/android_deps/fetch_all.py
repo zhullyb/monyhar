@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-"""A script used to manage Google Maven dependencies for Chromium.
+"""A script used to manage Google Maven dependencies for Monyhar.
 
 For each dependency in `build.gradle`:
 
@@ -386,7 +386,7 @@ def ParseDeps(root_dir, libs_dir):
     """Parse an android_deps/libs and retrieve package information.
 
   Args:
-    root_dir: Path to a root Chromium or build directory.
+    root_dir: Path to a root Monyhar or build directory.
   Returns:
     A directory mapping package names to tuples of
     (cipd_yaml_file, package_name, package_tag), where |cipd_yaml_file|

@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -445,11 +445,11 @@ class CTSUtilsTest(unittest.TestCase):
       for i in range(1, 5):
         self.assertTrue(CIPD_DATA['file' + str(i)] in uploaded_files)
 
-  def testChromiumRepoHelper(self):
+  def testMonyharRepoHelper(self):
     with tempfile_ext.NamedTemporaryDirectory() as tempDir,\
          cts_utils.chdir(tempDir):
       setup_fake_repo('.')
-      helper = cts_utils.ChromiumRepoHelper(root_dir='.')
+      helper = cts_utils.MonyharRepoHelper(root_dir='.')
       self.assertEquals(DEPS_DATA['revision'], helper.get_cipd_dependency_rev())
 
       self.assertEquals(

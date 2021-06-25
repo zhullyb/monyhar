@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -21,7 +21,7 @@ config("icu_config") {
     # on classes through the U_COMMON_API and U_I18N_API macros (among others).
     # When linking against the system ICU library, we want its symbols to have
     # public LTO visibility. This disables CFI checks for the ICU classes and
-    # allows whole-program optimization to be applied to the rest of Chromium.
+    # allows whole-program optimization to be applied to the rest of Monyhar.
     #
     # Both U_COMMON_API and U_I18N_API macros would be defined to U_EXPORT only
     # when U_COMBINED_IMPLEMENTATION is defined (see unicode/utypes.h). Because

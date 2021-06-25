@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,10 +13,10 @@ package optimization_guide.proto;
 // The possible resource type values.
 enum ResourceType {
   RESOURCE_TYPE_UNKNOWN = 0;
-  // A CSS Stylesheet, maps to ResourceType::kStylesheet in the Chromium
+  // A CSS Stylesheet, maps to ResourceType::kStylesheet in the Monyhar
   // repository.
   RESOURCE_TYPE_CSS = 1;
-  // An external script, maps to ResourceType::kScript in the Chromium
+  // An external script, maps to ResourceType::kScript in the Monyhar
   // repository.
   RESOURCE_TYPE_SCRIPT = 2;
 }

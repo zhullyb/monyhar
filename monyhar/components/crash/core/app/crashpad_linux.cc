@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -152,7 +152,7 @@ base::FilePath PlatformCrashpadInitialization(
     annotations["plat"] = std::string("Linux");
 
 #if !(BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS))
-    // crash_reporter provides it's own Chromium OS values for lsb-release.
+    // crash_reporter provides it's own Monyhar OS values for lsb-release.
     annotations["lsb-release"] = base::GetLinuxDistro();
 #endif
 

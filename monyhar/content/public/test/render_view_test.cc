@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -429,7 +429,7 @@ void RenderViewTest::SetUp() {
   // Subclasses can set render_thread_ with their own implementation before
   // calling RenderViewTest::SetUp().
   // The render thread needs to exist before blink::Initialize. It also mirrors
-  // the order on Chromium initialization.
+  // the order on Monyhar initialization.
   if (!render_thread_)
     render_thread_ = std::make_unique<MockRenderThread>();
 

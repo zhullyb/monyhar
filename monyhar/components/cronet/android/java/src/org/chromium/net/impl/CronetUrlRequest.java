@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,7 +34,7 @@ import java.util.concurrent.RejectedExecutionException;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
- * UrlRequest using Chromium HTTP stack implementation. Could be accessed from
+ * UrlRequest using Monyhar HTTP stack implementation. Could be accessed from
  * any thread on Executor. Cancel can be called from any thread.
  * All @CallByNative methods are called on native network thread
  * and post tasks with listener calls onto Executor. Upon return from listener

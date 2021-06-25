@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -72,7 +72,7 @@ DefaultLevelDBFactory::OpenLevelDBState(const base::FilePath& file_name,
             status, false};
   }
 
-  // ChromiumEnv assumes UTF8, converts back to FilePath before using.
+  // MonyharEnv assumes UTF8, converts back to FilePath before using.
   std::tie(db, status) =
       OpenDB(file_name.AsUTF8Unsafe(), create_if_missing, write_buffer_size);
   if (UNLIKELY(!status.ok())) {

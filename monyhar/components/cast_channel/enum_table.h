@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -80,7 +80,7 @@
 // - The members have the default values assigned by the compiler.
 //
 // - There is an extra member named kMaxValue which is set equal to the highest
-//   ordinary value.  (The Chromium style checker will verify that kMaxValue
+//   ordinary value.  (The Monyhar style checker will verify that kMaxValue
 //   really is the maximum value.)
 //
 // - The values in the EnumTable constructor appear in sorted order.
@@ -137,7 +137,7 @@
 //
 // If you roll your own solution, you can't do much better than this without
 // jumping through some hoops.  Obvious improvements, like storing the data in a
-// global base::flat_map, are off-limits because Chromium requires all global
+// global base::flat_map, are off-limits because Monyhar requires all global
 // variables to have trivial destructors.  A simple chain of "if" statements
 // works fine, but it has a number of drawbacks compared to an EnumTable:
 //

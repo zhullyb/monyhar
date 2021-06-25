@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -149,7 +149,7 @@ class GPU_GLES2_EXPORT SharedImageBackingD3D
 
     // If |d3d11_texture_| has a keyed mutex, it will be stored in
     // |dxgi_keyed_mutex_|. The keyed mutex is used to synchronize D3D11 and
-    // D3D12 Chromium components. |dxgi_keyed_mutex_| is the D3D11 side of the
+    // D3D12 Monyhar components. |dxgi_keyed_mutex_| is the D3D11 side of the
     // keyed mutex. To create the corresponding D3D12 interface, pass the handle
     // stored in |shared_handle_| to ID3D12Device::OpenSharedHandle. Only one
     // component is allowed to read/write to the texture at a time.

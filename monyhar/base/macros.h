@@ -1,9 +1,9 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // This file contains macros and macro-like constructs (e.g., templates) that
-// are commonly used throughout Chromium source. (It may also contain things
+// are commonly used throughout Monyhar source. (It may also contain things
 // that are closely related to things that are commonly used that belong in this
 // file.)
 

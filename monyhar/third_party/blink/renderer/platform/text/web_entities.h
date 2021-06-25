@@ -49,8 +49,8 @@ class PLATFORM_EXPORT WebEntities {
   //  - Firefox supports &apos; as an HTML entity.
   //  - Both of IE and Firefox don't support &percnt;, &nsup; and &supl;.
   //
-  // A web page saved by Chromium should be able to be read by other browsers
-  // such as IE and Firefox.  Chromium should produce only the standard entity
+  // A web page saved by Monyhar should be able to be read by other browsers
+  // such as IE and Firefox.  Monyhar should produce only the standard entity
   // references which other browsers can recognize.
   // So if standard_html_entities_ is true, we will use a numeric character
   // reference for &apos;, and don't use entity references for &percnt;, &nsup;

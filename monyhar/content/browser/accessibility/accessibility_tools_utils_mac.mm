@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -21,7 +21,7 @@ namespace a11y {
 using base::SysNSStringToUTF8;
 
 const char kChromeTitle[] = "Google Chrome";
-const char kChromiumTitle[] = "Chromium";
+const char kMonyharTitle[] = "Monyhar";
 const char kFirefoxTitle[] = "Firefox";
 const char kSafariTitle[] = "Safari";
 
@@ -239,8 +239,8 @@ std::pair<AXUIElementRef, int> FindAXUIElement(const AXTreeSelector& selector) {
   std::string title;
   if (selector.types & AXTreeSelector::Chrome) {
     title = kChromeTitle;
-  } else if (selector.types & AXTreeSelector::Chromium) {
-    title = kChromiumTitle;
+  } else if (selector.types & AXTreeSelector::Monyhar) {
+    title = kMonyharTitle;
   } else if (selector.types & AXTreeSelector::Firefox) {
     title = kFirefoxTitle;
   } else if (selector.types & AXTreeSelector::Safari) {

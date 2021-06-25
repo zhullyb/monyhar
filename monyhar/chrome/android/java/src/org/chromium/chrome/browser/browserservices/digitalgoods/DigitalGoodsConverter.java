@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ import java.util.List;
  * {@link DigitalGoodsImpl} deals with and the Android types that {@link TrustedWebActivityClient}
  * details with.
  *
- * Ideally these classes would have no Chromium dependencies that are not from Mojo (in a *.mojom.*
+ * Ideally these classes would have no Monyhar dependencies that are not from Mojo (in a *.mojom.*
  * package) to allow it to be more easily reused in ARC++.
  */
 public class DigitalGoodsConverter {

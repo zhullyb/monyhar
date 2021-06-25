@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -959,8 +959,8 @@ void GL_APIENTRY glBindVertexArrayOES(GLuint array) {
 }
 
 GLboolean GL_APIENTRY glEnableFeatureCHROMIUM(const char* feature) {
-  const struct PPB_OpenGLES2ChromiumEnableFeature* ext =
-      glGetChromiumEnableFeatureInterfacePPAPI();
+  const struct PPB_OpenGLES2MonyharEnableFeature* ext =
+      glGetMonyharEnableFeatureInterfacePPAPI();
   if (ext)
     return ext->EnableFeatureCHROMIUM(glGetCurrentContextPPAPI(), feature);
   return 0;
@@ -970,8 +970,8 @@ void* GL_APIENTRY glMapBufferSubDataCHROMIUM(GLuint target,
                                              GLintptr offset,
                                              GLsizeiptr size,
                                              GLenum access) {
-  const struct PPB_OpenGLES2ChromiumMapSub* ext =
-      glGetChromiumMapSubInterfacePPAPI();
+  const struct PPB_OpenGLES2MonyharMapSub* ext =
+      glGetMonyharMapSubInterfacePPAPI();
   if (ext)
     return ext->MapBufferSubDataCHROMIUM(glGetCurrentContextPPAPI(), target,
                                          offset, size, access);
@@ -979,8 +979,8 @@ void* GL_APIENTRY glMapBufferSubDataCHROMIUM(GLuint target,
 }
 
 void GL_APIENTRY glUnmapBufferSubDataCHROMIUM(const void* mem) {
-  const struct PPB_OpenGLES2ChromiumMapSub* ext =
-      glGetChromiumMapSubInterfacePPAPI();
+  const struct PPB_OpenGLES2MonyharMapSub* ext =
+      glGetMonyharMapSubInterfacePPAPI();
   if (ext)
     ext->UnmapBufferSubDataCHROMIUM(glGetCurrentContextPPAPI(), mem);
 }
@@ -994,8 +994,8 @@ void* GL_APIENTRY glMapTexSubImage2DCHROMIUM(GLenum target,
                                              GLenum format,
                                              GLenum type,
                                              GLenum access) {
-  const struct PPB_OpenGLES2ChromiumMapSub* ext =
-      glGetChromiumMapSubInterfacePPAPI();
+  const struct PPB_OpenGLES2MonyharMapSub* ext =
+      glGetMonyharMapSubInterfacePPAPI();
   if (ext)
     return ext->MapTexSubImage2DCHROMIUM(glGetCurrentContextPPAPI(), target,
                                          level, xoffset, yoffset, width, height,
@@ -1004,8 +1004,8 @@ void* GL_APIENTRY glMapTexSubImage2DCHROMIUM(GLenum target,
 }
 
 void GL_APIENTRY glUnmapTexSubImage2DCHROMIUM(const void* mem) {
-  const struct PPB_OpenGLES2ChromiumMapSub* ext =
-      glGetChromiumMapSubInterfacePPAPI();
+  const struct PPB_OpenGLES2MonyharMapSub* ext =
+      glGetMonyharMapSubInterfacePPAPI();
   if (ext)
     ext->UnmapTexSubImage2DCHROMIUM(glGetCurrentContextPPAPI(), mem);
 }

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -305,7 +305,7 @@ void InputMethodSyncer::OnPreferenceChanged(const std::string& pref_name) {
   enabled_imes_syncable_.SetValue(enabled_imes_.GetValue());
 
   // For preload engines, use legacy xkb IDs so the preference can sync
-  // across Chrome OS and Chromium OS.
+  // across Chrome OS and Monyhar OS.
   std::vector<std::string> engines =
       base::SplitString(preload_engines_.GetValue(), ",", base::TRIM_WHITESPACE,
                         base::SPLIT_WANT_ALL);

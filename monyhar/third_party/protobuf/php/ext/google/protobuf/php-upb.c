@@ -1393,7 +1393,7 @@ upb_map *_upb_map_new(upb_arena *a, size_t key_size, size_t value_size) {
 
 #define UPB_MAXARRSIZE 16  /* 64k. */
 
-/* From Chromium. */
+/* From Monyhar. */
 #define ARRAY_SIZE(x) \
     ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
 

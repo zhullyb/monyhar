@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -194,9 +194,9 @@ NaClBrowser::~NaClBrowser() {
 
 void NaClBrowser::InitIrtFilePath() {
   // Allow the IRT library to be overridden via an environment
-  // variable.  This allows the NaCl/Chromium integration bot to
+  // variable.  This allows the NaCl/Monyhar integration bot to
   // specify a newly-built IRT rather than using a prebuilt one
-  // downloaded via Chromium's DEPS file.  We use the same environment
+  // downloaded via Monyhar's DEPS file.  We use the same environment
   // variable that the standalone NaCl PPAPI plugin accepts.
   const char* irt_path_var = getenv("NACL_IRT_LIBRARY");
   if (irt_path_var != NULL) {

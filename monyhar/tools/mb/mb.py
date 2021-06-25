@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -684,7 +684,7 @@ class MetaBuildWrapper(object):
 
     # Talking to the isolateserver may fail because we're not logged in.
     # We trap the command explicitly and rewrite the error output so that
-    # the error message is actually correct for a Chromium check out.
+    # the error message is actually correct for a Monyhar check out.
     self.PrintCmd(cmd)
     ret, out, _ = self.Run(cmd, force_verbose=False)
     if ret:
@@ -928,7 +928,7 @@ class MetaBuildWrapper(object):
       config = self.ConfigFromArgs()
     except MBErr as e:
       # TODO(crbug.com/912681) While iOS bots are migrated to use the
-      # Chromium recipe, we want to ensure that we're checking MB's
+      # Monyhar recipe, we want to ensure that we're checking MB's
       # configurations first before going to iOS.
       # This is to be removed once the migration is complete.
       vals = self.ReadIOSBotConfig()
@@ -1395,10 +1395,10 @@ class MetaBuildWrapper(object):
               'select_to_speak/',
           )) or (is_mac and f in (  # https://crbug.com/1000667
               'AlertNotificationService.xpc/',
-              'Chromium Framework.framework/',
-              'Chromium Helper.app/',
-              'Chromium.app/',
-              'ChromiumUpdater.app/',
+              'Monyhar Framework.framework/',
+              'Monyhar Helper.app/',
+              'Monyhar.app/',
+              'MonyharUpdater.app/',
               'Content Shell.app/',
               'Google Chrome Framework.framework/',
               'Google Chrome Helper (Alerts).app/',

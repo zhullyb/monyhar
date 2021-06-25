@@ -1,8 +1,8 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-apply plugin: ChromiumPlugin
+apply plugin: MonyharPlugin
 
 buildscript {
   repositories {
@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    // Note about the configuration names: they are defined in buildSrc/ChromiumPlugin
+    // Note about the configuration names: they are defined in buildSrc/MonyharPlugin
 
     // Upstream guava introduced versions with -android suffix starting with version
     // 22 to remove incompatible code with android. Thus we keep two jars, one for

@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -9,7 +9,7 @@ def ListAllDepsPaths(deps_file):
   """Recursively returns a list of all paths indicated in this deps file.
 
   Note that this discards information about where path dependencies come from,
-  so this is only useful in the context of a Chromium source checkout that has
+  so this is only useful in the context of a Monyhar source checkout that has
   already fetched all dependencies.
 
   Args:

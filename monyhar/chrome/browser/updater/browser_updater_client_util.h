@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ class FilePath;
 
 extern const char kUpdaterName[];
 
-// Gets the FilePath to the updater folder (e.g. Chromium/ChromiumUpdater).
+// Gets the FilePath to the updater folder (e.g. Monyhar/MonyharUpdater).
 base::FilePath GetUpdaterFolderName();
 
 // Get the current installed version of the browser.

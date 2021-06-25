@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -149,7 +149,7 @@ android_apk("net_test_support_apk") {
     "//base:base_java",
   ]
   android_manifest = "../test/android/javatests/AndroidManifest.xml"
-  apk_name = "ChromiumNetTestSupport"
+  apk_name = "MonyharNetTestSupport"
   shared_libraries = [ ":net_java_test_native_support" ]
 }
 

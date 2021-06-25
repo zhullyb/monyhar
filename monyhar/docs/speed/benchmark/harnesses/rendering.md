@@ -23,7 +23,7 @@ There are currently two rendering benchmarks:
 
 Note: Some pages are used for rendering.desktop but not rendering.mobile, and vice versa. This is because some pages are only meant to measure behavior on one platform, for instance dragging on desktop. This is indicated with the `SUPPORTED_PLATFORMS` attribute in the page class.
 
-These benchmarks are run on the [Chromium Perf Waterfall](https://ci.monyhar.org/p/monyhar/g/monyhar.perf/console), with results reported on the [Chrome Performance Dashboard](https://chromeperf.appspot.com/report).
+These benchmarks are run on the [Monyhar Perf Waterfall](https://ci.monyhar.org/p/monyhar/g/monyhar.perf/console), with results reported on the [Chrome Performance Dashboard](https://chromeperf.appspot.com/report).
 
 ## What are the  rendering metrics
 

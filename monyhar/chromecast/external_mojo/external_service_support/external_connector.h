@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -43,7 +43,7 @@ class ExternalConnector {
   static std::unique_ptr<ExternalConnector> Create(
       mojo::PendingRemote<external_mojo::mojom::ExternalConnector> remote);
 
-  // Acquires a connector from the BrokerService via the Chromium service
+  // Acquires a connector from the BrokerService via the Monyhar service
   // manager.
   static std::unique_ptr<ExternalConnector> Create(
       ::service_manager::Connector* connector);
@@ -104,8 +104,8 @@ class ExternalConnector {
   // sequence.
   virtual std::unique_ptr<ExternalConnector> Clone() = 0;
 
-  // Sends a request for a Chromium ServiceManager connector.
-  virtual void SendChromiumConnectorRequest(
+  // Sends a request for a Monyhar ServiceManager connector.
+  virtual void SendMonyharConnectorRequest(
       mojo::ScopedMessagePipeHandle request) = 0;
 
   // Query the list of available services from this connector.

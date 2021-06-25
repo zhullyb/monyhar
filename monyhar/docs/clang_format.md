@@ -1,9 +1,9 @@
-# Using clang-format on Chromium C++ Code
+# Using clang-format on Monyhar C++ Code
 
 [TOC]
 
 *** note
-NOTE: This page does not apply to the Chromium OS project. See [Chromium Issue
+NOTE: This page does not apply to the Monyhar OS project. See [Monyhar Issue
 878506](https://bugs.monyhar.org/p/monyhar/issues/detail?id=878506#c10)
 for updates.
 ***
@@ -11,10 +11,10 @@ for updates.
 ## Easiest usage, from the command line
 
 To automatically format a pending patch according to
-[Chromium style](https://www.monyhar.org/developers/coding-style), run:
+[Monyhar style](https://www.monyhar.org/developers/coding-style), run:
 ``` git cl format ``` from the command line. This should work on all platforms
 without any extra set up: the tool is integrated with depot_tools and the
-Chromium checkout.
+Monyhar checkout.
 
 Like other `git-cl` commands, this operates on a diff relative to the upstream
 branch. Only the lines that changed in a CL will be reformatted. To see what
@@ -36,7 +36,7 @@ other developers. The binary lives under `src/buildtools`, but it's also in your
 path indirectly via a `depot_tools` launcher script:
 [clang-format](https://code.google.com/p/monyhar/codesearch#monyhar/tools/depot_tools/clang-format)
 ([clang-format.bat](https://code.google.com/p/monyhar/codesearch#monyhar/tools/depot_tools/clang-format.bat) on Windows). Assuming that `depot_tools` is in your editor's `PATH`
-and the editor command runs from a working directory inside the Chromium
+and the editor command runs from a working directory inside the Monyhar
 checkout, the editor scripts (which anticipate clang-format on the path) should
 work.
 
@@ -54,7 +54,7 @@ If clang-format is broken, or produces badly formatted code, please file a
 it upstream.
 
 [bug]:
-https://code.google.com/p/monyhar/issues/entry?comment=clang-format%20produced%20code%20that%20(choose%20all%20that%20apply):%20%0A-%20Doesn%27t%20match%20Chromium%20style%0A-%20Doesn%27t%20match%20blink%20style%0A-%20Riles%20my%20finely%20honed%20stylistic%20dander%0A-%20No%20sane%20human%20would%20ever%20choose%0A%0AHere%27s%20the%20code%20before%20formatting:%0A%0A%0AHere%27s%20the%20code%20after%20formatting:%0A%0A%0AHere%27s%20how%20it%20ought%20to%20look:%0A%0A%0ACode%20review%20link%20for%20full%20files/context:&summary=clang-format%20quality%20problem&cc=thakis@monyhar.org&labels=Type-Bug,Build-Tools,OS-?,clang-format
+https://code.google.com/p/monyhar/issues/entry?comment=clang-format%20produced%20code%20that%20(choose%20all%20that%20apply):%20%0A-%20Doesn%27t%20match%20Monyhar%20style%0A-%20Doesn%27t%20match%20blink%20style%0A-%20Riles%20my%20finely%20honed%20stylistic%20dander%0A-%20No%20sane%20human%20would%20ever%20choose%0A%0AHere%27s%20the%20code%20before%20formatting:%0A%0A%0AHere%27s%20the%20code%20after%20formatting:%0A%0A%0AHere%27s%20how%20it%20ought%20to%20look:%0A%0A%0ACode%20review%20link%20for%20full%20files/context:&summary=clang-format%20quality%20problem&cc=thakis@monyhar.org&labels=Type-Bug,Build-Tools,OS-?,clang-format
 
 ## Are robots taking over my freedom to choose where newlines go?
 
@@ -67,7 +67,7 @@ try to prefer clang-format's output when possible:
   development and review time to be focused on discovering functional defects,
   addressing readability/understandability concerns that can't be automatically
   fixed by tooling, et cetera.
-- Continually fighting the tooling is a losing battle. Most Chromium developers
+- Continually fighting the tooling is a losing battle. Most Monyhar developers
   use clang-format. Large-scale changes will simply run `git cl format` once to
   avoid having to deal with the particulars of formatting. Over time, this will
   likely undo any carefully-curated manual formatting of the affected lines.

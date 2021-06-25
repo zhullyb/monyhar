@@ -1,6 +1,6 @@
-# Defines the Chromium style for automatic reformatting.
+# Defines the Monyhar style for automatic reformatting.
 # http://clang.llvm.org/docs/ClangFormatStyleOptions.html
-BasedOnStyle: Chromium
+BasedOnStyle: Monyhar
 
 # Don't pack arguments on a single line, this ensures that all raw_pup data
 # structures are declared in the same way.

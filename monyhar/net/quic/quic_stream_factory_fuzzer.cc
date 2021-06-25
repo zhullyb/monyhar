@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -65,7 +65,7 @@ struct Env {
   }
 
   std::unique_ptr<SSLConfigService> ssl_config_service;
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   MockCryptoClientStreamFactory crypto_client_stream_factory;
   HostPortPair host_port_pair;
   NetLogWithSource net_log;
@@ -155,7 +155,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       callback.callback());
 
   callback.WaitForResult();
-  std::unique_ptr<QuicChromiumClientSession::Handle> session =
+  std::unique_ptr<QuicMonyharClientSession::Handle> session =
       request.ReleaseSessionHandle();
   if (!session)
     return 0;

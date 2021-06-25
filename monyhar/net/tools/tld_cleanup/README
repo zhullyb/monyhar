@@ -8,10 +8,10 @@ When updating src/net/base/registry_controlled_domains/effective_tld_names.dat:
      sed -i -e "s/\s*$//g" \
          src/net/base/registry_controlled_domains/effective_tld_names.dat
 
-3. Add the Chromium note back in just after the license at the top, and just
+3. Add the Monyhar note back in just after the license at the top, and just
    before '===BEGIN ICANN DOMAINS==='. Ensure there is an empty line above and
    two empty lines below the note. The note should say:
-// Chromium note: this is based on Mozilla's file:
+// Monyhar note: this is based on Mozilla's file:
 // https://publicsuffix.org/list/public_suffix_list.dat
 
 4. Diff the changes and restore any changes annotated with a "// CHROMIUM"

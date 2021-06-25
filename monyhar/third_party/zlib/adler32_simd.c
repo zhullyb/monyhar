@@ -1,8 +1,8 @@
 /* adler32_simd.c
  *
- * Copyright 2017 The Chromium Authors. All rights reserved.
+ * Copyright 2017 The Monyhar Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
- * found in the Chromium source repository LICENSE file.
+ * found in the Monyhar source repository LICENSE file.
  *
  * Per http://en.wikipedia.org/wiki/Adler-32 the adler32 A value (aka s1) is
  * the sum of N input data bytes D1 ... DN,

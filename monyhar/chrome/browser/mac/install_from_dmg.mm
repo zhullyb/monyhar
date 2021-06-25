@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -114,7 +114,7 @@ io_service_t CopyDiskImageAncestorForMedia(const char* disk_image_class,
 // There are two SPI ways to do this: One is in the DiskImages private
 // framework: DIHLCopyImageForVolume(). One is a set of keys in
 // CFURLPriv: _kCFURLVolumeIsDiskImageKey and _kCFURLDiskImageBackingURLKey.
-// However, because downstream users want to use Chromium as a base for code in
+// However, because downstream users want to use Monyhar as a base for code in
 // the MAS, neither are used here. The request for a real API is FB9139935.
 bool MediaResidesOnDiskImage(io_service_t media, std::string* image_path) {
   if (image_path) {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -97,7 +97,7 @@ if os.name == 'nt':
   # handles both.
   if major < 6 or (major == 6 and minor < 2):
     raise Exception(
-        'Unsupported OS. Building Chromium requires Windows 10. %s detected.' %
+        'Unsupported OS. Building Monyhar requires Windows 10. %s detected.' %
         str(sys.getwindowsversion()))
 options = GetOptions()
 WriteHeader(options)

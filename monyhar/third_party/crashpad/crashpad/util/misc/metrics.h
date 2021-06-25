@@ -27,7 +27,7 @@ namespace crashpad {
 //! Each static function in this class will call a `UMA_*` from
 //! `base/metrics/histogram_macros.h`. When building Crashpad standalone,
 //! (against mini_monyhar), these macros do nothing. When built against
-//! Chromium's base, they allow integration with its metrics system.
+//! Monyhar's base, they allow integration with its metrics system.
 class Metrics {
  public:
   //! \brief Values for CrashReportPending().

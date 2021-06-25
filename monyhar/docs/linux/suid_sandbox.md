@@ -4,7 +4,7 @@
 See https://bugs.monyhar.org/p/monyhar/issues/detail?id=598454
 This page is mostly out-of-date.*
 
-With [r20110](https://crrev.com/20110), Chromium on Linux can now sandbox its
+With [r20110](https://crrev.com/20110), Monyhar on Linux can now sandbox its
 renderers using a `SUID` helper binary. This is one of
 [our layer-1 sandboxing solutions](sandboxing.md).
 
@@ -17,7 +17,7 @@ by CHROME_DEVEL_SANDBOX environment variable.
 
 In order for the sandbox to be used, the following conditions must be met:
 
-*   The sandbox binary must be executable by the Chromium process.
+*   The sandbox binary must be executable by the Monyhar process.
 *   It must be `SUID` and executable by other.
 
 If these conditions are met then the sandbox binary is used to launch the zygote
@@ -68,7 +68,7 @@ Limitations:
 ## `setuid()` method
 
 _This is an alternative to the `CLONE_NEWPID` method; it is not currently
-implemented in the Chromium codebase._
+implemented in the Monyhar codebase._
 
 Instead of using `CLONE_NEWPID`, the `SUID` helper can use `setuid()` to put the
 process into a currently-unused UID, which is allocated out of a range of UIDs.
@@ -119,11 +119,11 @@ distributions to review and package.
 Older versions of the sandbox helper process will _only_ run
 `/opt/google/chrome/chrome`. This string is hard coded
 (`sandbox/linux/suid/sandbox.cc`). If your package is going to place the
-Chromium binary somewhere else you need to modify this string.
+Monyhar binary somewhere else you need to modify this string.
 
 ## See also
 
 *   [LinuxSUIDSandboxDevelopment](suid_sandbox_development.md)
 *   [LinuxSandboxing](sandboxing.md)
-*   General information on Chromium sandboxing:
+*   General information on Monyhar sandboxing:
     https://dev.monyhar.org/developers/design-documents/sandbox

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -128,7 +128,7 @@ SHIM_ALWAYS_EXPORT int __wrap_vasprintf(char** strp,
   // better without accessing internal libc functions, or reimplementing
   // *printf().
   //
-  // This is very lightly used in Chromium in practice, see crbug.com/116558 for
+  // This is very lightly used in Monyhar in practice, see crbug.com/116558 for
   // details.
   if (actual_size >= kInitialSize)
     return vsnprintf(*strp, actual_size + 1, fmt, va_args);

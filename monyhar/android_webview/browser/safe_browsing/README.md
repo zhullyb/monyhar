@@ -6,7 +6,7 @@ Android WebView has supported core Safe Browsing features since 2017.
 
 ## What is Safe Browsing?
 
-See the relevant Chromium classes in
+See the relevant Monyhar classes in
 [//components/safe\_browsing/](/components/safe_browsing).
 
 For info on the feature, see https://safebrowsing.google.com/.

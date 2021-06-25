@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -49,7 +49,7 @@ import java.util.concurrent.TimeoutException;
  * Integration tests for text input for Android L (or above) features.
  */
 class ImeActivityTestRule extends ContentShellActivityTestRule {
-    private ChromiumBaseInputConnection mConnection;
+    private MonyharBaseInputConnection mConnection;
     private TestInputConnectionFactory mConnectionFactory;
     private ImeAdapterImpl mImeAdapter;
 
@@ -136,7 +136,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
         return mCallbackContainer;
     }
 
-    ChromiumBaseInputConnection getConnection() {
+    MonyharBaseInputConnection getConnection() {
         return mConnection;
     }
 
@@ -346,13 +346,13 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
         });
     }
 
-    ChromiumBaseInputConnection getInputConnection() {
+    MonyharBaseInputConnection getInputConnection() {
         try {
             return TestThreadUtils.runOnUiThreadBlocking(
-                    new Callable<ChromiumBaseInputConnection>() {
+                    new Callable<MonyharBaseInputConnection>() {
                         @Override
-                        public ChromiumBaseInputConnection call() {
-                            return (ChromiumBaseInputConnection) getImeAdapter()
+                        public MonyharBaseInputConnection call() {
+                            return (MonyharBaseInputConnection) getImeAdapter()
                                     .getInputConnectionForTest();
                         }
                     });
@@ -421,7 +421,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     boolean beginBatchEdit() throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Boolean>() {
             @Override
             public Boolean call() {
@@ -431,7 +431,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     boolean endBatchEdit() throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Boolean>() {
             @Override
             public Boolean call() {
@@ -441,7 +441,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     boolean commitText(final CharSequence text, final int newCursorPosition) throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Boolean>() {
             @Override
             public Boolean call() {
@@ -451,7 +451,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     boolean setSelection(final int start, final int end) throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Boolean>() {
             @Override
             public Boolean call() {
@@ -461,7 +461,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     boolean setComposingRegion(final int start, final int end) throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Boolean>() {
             @Override
             public Boolean call() {
@@ -472,7 +472,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
 
     protected boolean setComposingText(final CharSequence text, final int newCursorPosition)
             throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Boolean>() {
             @Override
             public Boolean call() {
@@ -482,7 +482,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     boolean finishComposingText() throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Boolean>() {
             @Override
             public Boolean call() {
@@ -492,7 +492,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     boolean deleteSurroundingText(final int before, final int after) throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Boolean>() {
             @Override
             public Boolean call() {
@@ -516,7 +516,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     CharSequence getTextBeforeCursor(final int length, final int flags) throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<CharSequence>() {
             @Override
             public CharSequence call() {
@@ -526,7 +526,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     CharSequence getSelectedText(final int flags) throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<CharSequence>() {
             @Override
             public CharSequence call() {
@@ -536,7 +536,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     CharSequence getTextAfterCursor(final int length, final int flags) throws Exception {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<CharSequence>() {
             @Override
             public CharSequence call() {
@@ -546,7 +546,7 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
     }
 
     int getCursorCapsMode(final int reqModes) throws Throwable {
-        final ChromiumBaseInputConnection connection = mConnection;
+        final MonyharBaseInputConnection connection = mConnection;
         return runBlockingOnImeThread(new Callable<Integer>() {
             @Override
             public Integer call() {
@@ -605,8 +605,8 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
         mConnection = getInputConnection();
     }
 
-    static class TestInputConnectionFactory implements ChromiumBaseInputConnection.Factory {
-        private final ChromiumBaseInputConnection.Factory mFactory;
+    static class TestInputConnectionFactory implements MonyharBaseInputConnection.Factory {
+        private final MonyharBaseInputConnection.Factory mFactory;
 
         private final List<Integer> mTextInputTypeList = new ArrayList<>();
         private final List<Integer> mTextInputModeList = new ArrayList<>();
@@ -614,12 +614,12 @@ class ImeActivityTestRule extends ContentShellActivityTestRule {
         private final List<String> mTextInputLastTextList = new ArrayList<>();
         private EditorInfo mOutAttrs;
 
-        public TestInputConnectionFactory(ChromiumBaseInputConnection.Factory factory) {
+        public TestInputConnectionFactory(MonyharBaseInputConnection.Factory factory) {
             mFactory = factory;
         }
 
         @Override
-        public ChromiumBaseInputConnection initializeAndGet(View view, ImeAdapterImpl imeAdapter,
+        public MonyharBaseInputConnection initializeAndGet(View view, ImeAdapterImpl imeAdapter,
                 int inputType, int inputFlags, int inputMode, int inputAction, int selectionStart,
                 int selectionEnd, String lastText, EditorInfo outAttrs) {
             mTextInputTypeList.add(inputType);

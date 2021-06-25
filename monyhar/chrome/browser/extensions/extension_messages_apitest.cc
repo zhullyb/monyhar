@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -347,7 +347,7 @@ class ExternallyConnectableMessagingTest : public MessagingApiTest {
     return GetURLForPath("www.google.com", "/google.com.html");
   }
 
-  scoped_refptr<const Extension> LoadChromiumConnectableExtension() {
+  scoped_refptr<const Extension> LoadMonyharConnectableExtension() {
     scoped_refptr<const Extension> extension = LoadExtensionIntoDir(
         &web_connectable_dir_extension_,
         base::StringPrintf("{"
@@ -362,7 +362,7 @@ class ExternallyConnectableMessagingTest : public MessagingApiTest {
     return extension;
   }
 
-  scoped_refptr<const Extension> LoadChromiumConnectableApp(
+  scoped_refptr<const Extension> LoadMonyharConnectableApp(
       bool with_event_handlers = true) {
     scoped_refptr<const Extension> extension =
         LoadExtensionIntoDir(&web_connectable_dir_app_,
@@ -398,12 +398,12 @@ class ExternallyConnectableMessagingTest : public MessagingApiTest {
   }
 
   scoped_refptr<const Extension>
-  LoadChromiumConnectableExtensionWithTlsChannelId() {
+  LoadMonyharConnectableExtensionWithTlsChannelId() {
     return LoadExtensionIntoDir(&tls_channel_id_connectable_dir_,
                                 connectable_with_tls_channel_id_manifest());
   }
 
-  scoped_refptr<const Extension> LoadChromiumHostedApp() {
+  scoped_refptr<const Extension> LoadMonyharHostedApp() {
     scoped_refptr<const Extension> hosted_app =
         LoadExtensionIntoDir(&hosted_app_dir_,
                              base::StringPrintf(
@@ -546,7 +546,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
   // Install the web connectable extension. monyhar.org can connect to it,
   // google.com can't.
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtension();
+      LoadMonyharConnectableExtension();
 
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
   EXPECT_EQ(OK,
@@ -580,7 +580,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        DISABLED_BackgroundPageClosesOnMessageReceipt) {
   // Install the web connectable extension.
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtension();
+      LoadMonyharConnectableExtension();
 
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
   // If the background page closes after receipt of the message, it will still
@@ -599,7 +599,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
   // Install the web connectable extension. monyhar.org can connect to it,
   // google.com can't.
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtension();
+      LoadMonyharConnectableExtension();
   ASSERT_TRUE(monyhar_connectable.get());
 
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
@@ -620,7 +620,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        WebConnectableWithTlsChannelIdWithNonMatchingSite) {
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtensionWithTlsChannelId();
+      LoadMonyharConnectableExtensionWithTlsChannelId();
   ASSERT_TRUE(monyhar_connectable.get());
 
   ui_test_utils::NavigateToURL(browser(), google_com_url());
@@ -641,7 +641,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        WebConnectableWithTlsChannelIdWithEmptyTlsChannelId) {
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtensionWithTlsChannelId();
+      LoadMonyharConnectableExtensionWithTlsChannelId();
   ASSERT_TRUE(monyhar_connectable.get());
 
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
@@ -667,7 +667,7 @@ IN_PROC_BROWSER_TEST_F(
     ExternallyConnectableMessagingTest,
     DISABLED_WebConnectableWithEmptyTlsChannelIdAndClosedBackgroundPage) {
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtensionWithTlsChannelId();
+      LoadMonyharConnectableExtensionWithTlsChannelId();
 
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
   // If the page does ask for it, it isn't empty, even if the background page
@@ -693,7 +693,7 @@ IN_PROC_BROWSER_TEST_F(
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        EnablingAndDisabling) {
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtension();
+      LoadMonyharConnectableExtension();
   scoped_refptr<const Extension> not_connectable =
       LoadNotConnectableExtension();
 
@@ -724,7 +724,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 // TODO(kalman): test messages from incognito extensions too.
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        FromIncognitoDenyApp) {
-  scoped_refptr<const Extension> app = LoadChromiumConnectableApp();
+  scoped_refptr<const Extension> app = LoadMonyharConnectableApp();
   ASSERT_TRUE(app->is_platform_app());
 
   Browser* incognito_browser = OpenURLOffTheRecord(
@@ -759,7 +759,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        FromIncognitoDenyExtensionAndApp) {
-  scoped_refptr<const Extension> extension = LoadChromiumConnectableExtension();
+  scoped_refptr<const Extension> extension = LoadMonyharConnectableExtension();
   EXPECT_FALSE(util::IsIncognitoEnabled(extension->id(), profile()));
 
   Browser* incognito_browser = OpenURLOffTheRecord(
@@ -784,7 +784,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
   // Loading a platform app in the renderer should cause the chrome.runtime
   // bindings to be generated in the renderer. A platform app is always loaded
   // in the incognito renderer.
-  LoadChromiumConnectableApp();
+  LoadMonyharConnectableApp();
   EXPECT_EQ(COULD_NOT_ESTABLISH_CONNECTION_ERROR,
             CanConnectAndSendMessagesToFrame(incognito_frame, extension.get(),
                                              nullptr));
@@ -812,7 +812,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 // handler for the connection event.
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        FromIncognitoNoEventHandlerInApp) {
-  scoped_refptr<const Extension> app = LoadChromiumConnectableApp(false);
+  scoped_refptr<const Extension> app = LoadMonyharConnectableApp(false);
   ASSERT_TRUE(app->is_platform_app());
 
   Browser* incognito_browser = OpenURLOffTheRecord(
@@ -843,7 +843,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 // TODO(kalman): see comment above about split mode.
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        FromIncognitoAllowApp) {
-  scoped_refptr<const Extension> app = LoadChromiumConnectableApp();
+  scoped_refptr<const Extension> app = LoadMonyharConnectableApp();
   ASSERT_TRUE(app->is_platform_app());
 
   Browser* incognito_browser = OpenURLOffTheRecord(
@@ -880,7 +880,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 // Flaky: https://crbug.com/940952.
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        DISABLED_FromIncognitoPromptApp) {
-  scoped_refptr<const Extension> app = LoadChromiumConnectableApp();
+  scoped_refptr<const Extension> app = LoadMonyharConnectableApp();
   ASSERT_TRUE(app->is_platform_app());
 
   // Open an incognito browser with two tabs displaying "monyhar.org".
@@ -943,7 +943,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest, IllegalArguments) {
   // Tests that malformed arguments to connect() don't crash.
   // Regression test for crbug.com/472700.
-  LoadChromiumConnectableExtension();
+  LoadMonyharConnectableExtension();
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
   bool result;
   CHECK(content::ExecuteScriptAndExtractBool(
@@ -954,7 +954,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest, IllegalArguments) {
 
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        FromIncognitoAllowExtension) {
-  scoped_refptr<const Extension> extension = LoadChromiumConnectableExtension();
+  scoped_refptr<const Extension> extension = LoadMonyharConnectableExtension();
   EXPECT_FALSE(util::IsIncognitoEnabled(extension->id(), profile()));
 
   Browser* incognito_browser = OpenURLOffTheRecord(
@@ -1000,7 +1000,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 // permission. Iframe should work.
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        FromIframeWithPermission) {
-  scoped_refptr<const Extension> extension = LoadChromiumConnectableExtension();
+  scoped_refptr<const Extension> extension = LoadMonyharConnectableExtension();
 
   ui_test_utils::NavigateToURL(browser(), google_com_url());
   EXPECT_EQ(NAMESPACE_NOT_DEFINED,
@@ -1017,7 +1017,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
 // Iframe shouldn't work.
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        FromIframeWithoutPermission) {
-  scoped_refptr<const Extension> extension = LoadChromiumConnectableExtension();
+  scoped_refptr<const Extension> extension = LoadMonyharConnectableExtension();
 
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
   EXPECT_EQ(OK, CanConnectAndSendMessagesToMainFrame(extension.get()));
@@ -1034,7 +1034,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest, FromPopup) {
   base::CommandLine::ForCurrentProcess()->AppendSwitch(
       embedder_support::kDisablePopupBlocking);
 
-  scoped_refptr<const Extension> extension = LoadChromiumConnectableExtension();
+  scoped_refptr<const Extension> extension = LoadMonyharConnectableExtension();
 
   // This will let us wait for the monyhar.org.html page to load in a popup.
   ui_test_utils::UrlLoadObserver url_observer(
@@ -1086,7 +1086,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTestNoChannelID,
   std::string expected_tls_channel_id_value;
 
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtensionWithTlsChannelId();
+      LoadMonyharConnectableExtensionWithTlsChannelId();
   ASSERT_TRUE(monyhar_connectable.get());
 
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
@@ -1110,7 +1110,7 @@ IN_PROC_BROWSER_TEST_F(
   std::string expected_tls_channel_id_value;
 
   scoped_refptr<const Extension> monyhar_connectable =
-      LoadChromiumConnectableExtensionWithTlsChannelId();
+      LoadMonyharConnectableExtensionWithTlsChannelId();
 
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
   // If the page does ask for it, it isn't empty, even if the background page
@@ -1181,7 +1181,7 @@ IN_PROC_BROWSER_TEST_F(MessagingApiTest, MessagingUserGesture) {
 // Tests that a hosted app on a connectable site doesn't interfere with the
 // connectability of that site.
 IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest, HostedAppOnWebsite) {
-  scoped_refptr<const Extension> app = LoadChromiumHostedApp();
+  scoped_refptr<const Extension> app = LoadMonyharHostedApp();
 
   // The presence of the hosted app shouldn't give the ability to send messages.
   ui_test_utils::NavigateToURL(browser(), monyhar_org_url());
@@ -1190,7 +1190,7 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest, HostedAppOnWebsite) {
   EXPECT_FALSE(AreAnyNonWebApisDefinedForMainFrame());
 
   // Once a connectable extension is installed, it should.
-  scoped_refptr<const Extension> extension = LoadChromiumConnectableExtension();
+  scoped_refptr<const Extension> extension = LoadMonyharConnectableExtension();
   EXPECT_EQ(OK, CanConnectAndSendMessagesToMainFrame(extension.get()));
   EXPECT_FALSE(AreAnyNonWebApisDefinedForMainFrame());
 }
@@ -1203,8 +1203,8 @@ IN_PROC_BROWSER_TEST_F(ExternallyConnectableMessagingTest,
                        InvalidExtensionIDFromHostedApp) {
   // The presence of the monyhar hosted app triggers this bug. The monyhar
   // connectable extension needs to be installed to set up the runtime bindings.
-  LoadChromiumHostedApp();
-  LoadChromiumConnectableExtension();
+  LoadMonyharHostedApp();
+  LoadMonyharConnectableExtension();
 
   scoped_refptr<const Extension> invalid =
       ExtensionBuilder()

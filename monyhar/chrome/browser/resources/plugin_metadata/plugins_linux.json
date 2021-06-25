@@ -43,11 +43,11 @@
       {
         "version": "0",
         "status": "fully_trusted",
-        "comment": "Chromium PDF Viewer has no version information."
+        "comment": "Monyhar PDF Viewer has no version information."
       }
     ],
-    "name": "Chromium PDF Viewer",
-    "group_name_matcher": "*Chromium PDF Viewer*"
+    "name": "Monyhar PDF Viewer",
+    "group_name_matcher": "*Monyhar PDF Viewer*"
   },
   "google-chrome-pdf-plugin": {
     "mime_types": [
@@ -69,10 +69,10 @@
       {
         "version": "0",
         "status": "fully_trusted",
-        "comment": "Chromium PDF Plugin has no version information."
+        "comment": "Monyhar PDF Plugin has no version information."
       }
     ],
-    "name": "Chromium PDF Plugin",
-    "group_name_matcher": "*Chromium PDF Plugin*"
+    "name": "Monyhar PDF Plugin",
+    "group_name_matcher": "*Monyhar PDF Plugin*"
   }
 }

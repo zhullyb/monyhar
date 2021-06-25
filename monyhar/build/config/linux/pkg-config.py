@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -71,7 +71,7 @@ def GetPkgConfigPrefixToStrip(options, args):
   This returned prefix is the one that should be stripped from the beginning of
   directory names to take into account sysroots.
   """
-  # Some sysroots, like the Chromium OS ones, may generate paths that are not
+  # Some sysroots, like the Monyhar OS ones, may generate paths that are not
   # relative to the sysroot. For example,
   # /path/to/chroot/build/x86-generic/usr/lib/pkgconfig/pkg.pc may have all
   # paths relative to /path/to/chroot (i.e. prefix=/build/x86-generic/usr)

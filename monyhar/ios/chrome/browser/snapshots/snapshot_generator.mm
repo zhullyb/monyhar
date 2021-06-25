@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -227,7 +227,7 @@ BOOL ViewHierarchyContainsWKWebView(UIView* view) {
                                      afterScreenUpdates:YES];
   } else {
     // |-renderInContext:| is buggy for WKWebView, which is used for some
-    // Chromium pages such as "No internet" or "Site can't be reached".
+    // Monyhar pages such as "No internet" or "Site can't be reached".
     [[baseView layer] renderInContext:context];
   }
   UIImage* image = nil;

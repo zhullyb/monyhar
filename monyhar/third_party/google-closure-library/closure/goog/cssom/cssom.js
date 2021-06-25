@@ -155,7 +155,7 @@ goog.cssom.getAllCssStyleSheets = function(
       // Chrome does not evaluate cssRuleList[i] to undefined when i >=n;
       // so we use a (i < n) check instead of cssRuleList[i] in the loop below
       // and in other places where we iterate over a rules list.
-      // See issue # 5917 in Chromium.
+      // See issue # 5917 in Monyhar.
       for (var i = 0, n = cssRuleList.length, cssRule; i < n; i++) {
         cssRule = cssRuleList[i];
         // There are more stylesheets to get on this object..

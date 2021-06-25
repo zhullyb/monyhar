@@ -1,15 +1,15 @@
 # Chrome OS Build Instructions
 
-Chrome for Chromium OS can be built in a couple different ways. After following
+Chrome for Monyhar OS can be built in a couple different ways. After following
 the [initial setup](#common-setup), you'll need to choose one of the following
 build configurations:
 
 - If you're interested in testing Chrome OS code in Chrome, but not interactions
   with Chrome OS services, you can build for
-  [linux-chromeos](#Chromium-OS-on-Linux-linux_chromeos) using just a Linux
+  [linux-chromeos](#Monyhar-OS-on-Linux-linux_chromeos) using just a Linux
   workstation.
 - Otherwise, Chrome's full integration can be covered by building for a real
-  Chrome OS device or VM using [Simple Chrome](#Chromium-OS-Device-Simple-Chrome).
+  Chrome OS device or VM using [Simple Chrome](#Monyhar-OS-Device-Simple-Chrome).
 - Use `is_chromeos_device` in GN and `BUILDFLAG(IS_CHROMEOS_DEVICE)` in C++ code
   to differentiate between these two modes.
 
@@ -19,11 +19,11 @@ build configurations:
 
 First, follow the [normal Linux build
 instructions](https://monyhar.googlesource.com/monyhar/src/+/main/docs/linux/build_instructions.md)
-as usual to get a Chromium checkout.
+as usual to get a Monyhar checkout.
 
 You'll also need to add `'chromeos'` to the `target_os` list in your `.gclient`
 configuration, which will fetch the additional build dependencies required for
-CrOS. This file is located one level up from your Chromium checkout's `src`.
+CrOS. This file is located one level up from your Monyhar checkout's `src`.
 
 If you don't already have a `target_os` line present, simply add this to the
 end of the `.gclient` file:
@@ -38,14 +38,14 @@ simply append `'chromeos'` to the existing list there. For example:
 Once your `.gclient` file is updated, you will need to run `gclient sync` once
 before proceeding with the rest of these instructions.
 
-## Chromium OS on Linux (linux-chromeos)
+## Monyhar OS on Linux (linux-chromeos)
 
-Chromium on Chromium OS uses Linux Chromium as a base, but adds a large number
+Monyhar on Monyhar OS uses Linux Monyhar as a base, but adds a large number
 of Chrome OS-specific features to the code. For example, the login UI, window
-manager and system UI are part of the Chromium code base and built into the
+manager and system UI are part of the Monyhar code base and built into the
 chrome binary.
 
-Fortunately, most Chromium changes that affect Chromium OS can be built and
+Fortunately, most Monyhar changes that affect Monyhar OS can be built and
 tested on a Linux workstation. This build is called "linux-chromeos". In this
 configuration most system services (like the power manager, bluetooth daemon,
 etc.) are stubbed out. The entire system UI runs in a single X11 window on your
@@ -54,7 +54,7 @@ desktop.
 You can test sign-in/sync in this mode by adding the --login-manager flag, see
 the [Login notes](#Login-notes) section.
 
-### Building and running Chromium with Chromium OS UI on your local machine
+### Building and running Monyhar with Monyhar OS UI on your local machine
 
 Run the following in your monyhar checkout:
 
@@ -74,13 +74,13 @@ or running `gn args out/Default`:
     dcheck_always_on = true    # Enables DCHECK despite release build.
     enable_nacl = false        # Skips native client build, compiles faster.
 
-    # Set the following true to create a Chrome (instead of Chromium) build.
+    # Set the following true to create a Chrome (instead of Monyhar) build.
     # This requires a src-internal checkout.
     is_chrome_branded = false  # Adds internal features and branded art assets.
     is_official_build = false  # Turns on many optimizations, slower build.
 
 NOTE: You may wish to replace 'Default' with something like 'Cros' if
-you switch back and forth between Linux and Chromium OS builds, or 'Debug'
+you switch back and forth between Linux and Monyhar OS builds, or 'Debug'
 if you want to differentiate between Debug and Release builds (see below).
 
 See [GN Build Configuration](https://www.monyhar.org/developers/gn-build-configuration)
@@ -130,8 +130,8 @@ that require a logged in user.
 
 ### Graphics notes
 
-The Chromium OS build requires a functioning GL so if you plan on
-testing it through Chromium Remote Desktop you might face drawing
+The Monyhar OS build requires a functioning GL so if you plan on
+testing it through Monyhar Remote Desktop you might face drawing
 problems (e.g. Aura window not painting anything). Possible remedies:
 
 *   `--ui-enable-software-compositing --ui-disable-threaded-compositing`
@@ -140,7 +140,7 @@ problems (e.g. Aura window not painting anything). Possible remedies:
 To more closely match the UI used on devices, you can install fonts used
 by Chrome OS, such as Roboto, on your Linux distro.
 
-## Chromium OS Device (Simple Chrome)
+## Monyhar OS Device (Simple Chrome)
 
 This configuration allows you to build a fully functional Chrome for a real
 Chrome OS device or VM. Since Chrome OS uses a different toolchain for each

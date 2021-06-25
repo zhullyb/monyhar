@@ -1,9 +1,9 @@
-// Copyright 2019 The Chromium project authors. All rights reserved.
+// Copyright 2019 The Monyhar project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This file is Chromium specific, to make the tests work.  It will work
-// in the standalone (upstream) build, as well as in Chromium. In other code
+// This file is Monyhar specific, to make the tests work.  It will work
+// in the standalone (upstream) build, as well as in Monyhar. In other code
 // bases (e.g. v8), a custom file with these two functions and with appropriate
 // includes may need to be provided, so it isn't necessarily part of a roll.
 

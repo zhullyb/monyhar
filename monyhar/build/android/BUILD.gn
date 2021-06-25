@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -54,7 +54,7 @@ python_library("devil_monyhar_py") {
     "//third_party/catapult/third_party/gsutil/",
     "//third_party/catapult/devil/devil/devil_dependencies.json",
 
-    # Read by gn_helpers.BuildWithChromium()
+    # Read by gn_helpers.BuildWithMonyhar()
     "//build/config/gclient_args.gni",
   ]
 }

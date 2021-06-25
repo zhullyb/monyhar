@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -97,10 +97,10 @@ const char kIcuExtraDataFileName[] = "icudtl_extra.dat";
 // See for details: http://userguide.icu-project.org/datetime/timezone
 const char kIcuTimeZoneEnvVariable[] = "ICU_TIMEZONE_FILES_DIR";
 
-// We assume that Fuchsia will provide time zone data at this path for Chromium
+// We assume that Fuchsia will provide time zone data at this path for Monyhar
 // to load, and that the path will be timely updated when Fuchsia needs to
 // uprev the ICU version it is using. There are unit tests that will fail at
-// Fuchsia roll time in case either Chromium or Fuchsia get upgraded to
+// Fuchsia roll time in case either Monyhar or Fuchsia get upgraded to
 // mutually incompatible ICU versions. That should be enough to alert the
 // developers of the need to keep ICU library versions in ICU and Fuchsia in
 // reasonable sync.

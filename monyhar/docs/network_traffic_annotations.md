@@ -214,7 +214,7 @@ all other fields bundled together as a serialized protobuf string.
           cookies_store: "Safe Browsing cookie store"
           setting:
             "Users can disable Safe Browsing by unchecking 'Protect you and "
-            "your device from dangerous sites' in Chromium settings under "
+            "your device from dangerous sites' in Monyhar settings under "
             "Privacy. The feature is enabled by default."
           chrome_policy {
             SafeBrowsingEnabled {

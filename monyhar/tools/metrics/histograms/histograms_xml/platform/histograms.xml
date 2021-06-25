@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -418,7 +418,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>andrewlassalle@monyhar.org</owner>
   <owner>chromeos-core-services@google.com</owner>
   <summary>
-    The result of an attempt to Install a DLC package. DLCs are ChromiumOS
+    The result of an attempt to Install a DLC package. DLCs are MonyharOS
     Software packages that are installed in the stateful partition.
   </summary>
 </histogram>
@@ -428,7 +428,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>andrewlassalle@monyhar.org</owner>
   <owner>chromeos-core-services@google.com</owner>
   <summary>
-    The result of an attempt to Uninstall a DLC package. DLCs are ChromiumOS
+    The result of an attempt to Uninstall a DLC package. DLCs are MonyharOS
     Software packages that are installed in the stateful partition.
   </summary>
 </histogram>

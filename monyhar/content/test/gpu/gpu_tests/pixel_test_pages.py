@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -119,7 +119,7 @@ def GetMediaStreamTestBrowserArgs(media_stream_source_relpath):
   return [
       '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream',
       '--use-file-for-fake-video-capture=' +
-      os.path.join(path_util.GetChromiumSrcDir(), media_stream_source_relpath)
+      os.path.join(path_util.GetMonyharSrcDir(), media_stream_source_relpath)
   ]
 
 
@@ -615,25 +615,25 @@ class PixelTestPages(object):
                       test_rect=[0, 0, 300, 300],
                       browser_args=iosurface_2d_canvas_args),
 
-        # On macOS, test WebGL non-Chromium Image compositing path.
+        # On macOS, test WebGL non-Monyhar Image compositing path.
         PixelTestPage('pixel_webgl_aa_alpha.html',
                       base_name +
-                      '_WebGLGreenTriangle_NonChromiumImage_AA_Alpha',
+                      '_WebGLGreenTriangle_NonMonyharImage_AA_Alpha',
                       test_rect=[0, 0, 300, 300],
                       browser_args=non_monyhar_image_args),
         PixelTestPage('pixel_webgl_noaa_alpha.html',
                       base_name +
-                      '_WebGLGreenTriangle_NonChromiumImage_NoAA_Alpha',
+                      '_WebGLGreenTriangle_NonMonyharImage_NoAA_Alpha',
                       test_rect=[0, 0, 300, 300],
                       browser_args=non_monyhar_image_args),
         PixelTestPage('pixel_webgl_aa_noalpha.html',
                       base_name +
-                      '_WebGLGreenTriangle_NonChromiumImage_AA_NoAlpha',
+                      '_WebGLGreenTriangle_NonMonyharImage_AA_NoAlpha',
                       test_rect=[0, 0, 300, 300],
                       browser_args=non_monyhar_image_args),
         PixelTestPage('pixel_webgl_noaa_noalpha.html',
                       base_name +
-                      '_WebGLGreenTriangle_NonChromiumImage_NoAA_NoAlpha',
+                      '_WebGLGreenTriangle_NonMonyharImage_NoAA_NoAlpha',
                       test_rect=[0, 0, 300, 300],
                       browser_args=non_monyhar_image_args),
 

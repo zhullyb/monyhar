@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -986,7 +986,7 @@ class QuicNetworkTransactionTest
   scoped_refptr<TestTaskRunner> quic_task_runner_;
   std::unique_ptr<HttpNetworkSession> session_;
   MockClientSocketFactory socket_factory_;
-  ProofVerifyDetailsChromium verify_details_;
+  ProofVerifyDetailsMonyhar verify_details_;
   MockCryptoClientStreamFactory crypto_client_stream_factory_;
   MockHostResolver host_resolver_;
   MockCertVerifier cert_verifier_;
@@ -1611,10 +1611,10 @@ TEST_P(QuicNetworkTransactionTest, QuicProxyWithCert) {
   // This certificate is valid for the proxy, but not for the origin.
   EXPECT_TRUE(cert->VerifyNameMatch(proxy_host));
   EXPECT_FALSE(cert->VerifyNameMatch(origin_host));
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
-  ProofVerifyDetailsChromium verify_details2;
+  ProofVerifyDetailsMonyhar verify_details2;
   verify_details2.cert_verify_result.verified_cert = cert;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details2);
 
@@ -1638,7 +1638,7 @@ TEST_P(QuicNetworkTransactionTest, AlternativeServicesDifferentHost) {
   // valid for the origin but not the alternative, that should work too.
   EXPECT_TRUE(cert->VerifyNameMatch(origin.host()));
   EXPECT_TRUE(cert->VerifyNameMatch(alternative.host()));
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
 
@@ -2694,7 +2694,7 @@ TEST_P(QuicNetworkTransactionTest,
   // Use a TestTaskRunner to avoid waiting in real time for timeouts.
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
   // Add alternate protocol mapping to race QUIC and TCP.
   // QUIC connection requires handshake to be confirmed and sends CHLO to the
@@ -2811,7 +2811,7 @@ TEST_P(QuicNetworkTransactionTest,
   // Use a TestTaskRunner to avoid waiting in real time for timeouts.
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
   // Add alternate protocol mapping to race QUIC and TCP.
   // QUIC connection requires handshake to be confirmed and sends CHLO to the
@@ -2951,7 +2951,7 @@ TEST_P(
   // Use a TestTaskRunner to avoid waiting in real time for timeouts.
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
   // Add alternate protocol mapping to race QUIC and TCP.
   // QUIC connection requires handshake to be confirmed and sends CHLO to the
@@ -3090,7 +3090,7 @@ TEST_P(QuicNetworkTransactionTest,
   // Use a TestTaskRunner to avoid waiting in real time for timeouts.
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
   // Add alternate protocol mapping to race QUIC and TCP.
   // QUIC connection requires handshake to be confirmed and sends CHLO to the
@@ -3250,7 +3250,7 @@ TEST_P(QuicNetworkTransactionTest, TimeoutAfterHandshakeConfirmed) {
   // Use a TestTaskRunner to avoid waiting in real time for timeouts.
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   AddQuicAlternateProtocolMapping(MockCryptoClientStream::ZERO_RTT);
@@ -3481,7 +3481,7 @@ TEST_P(QuicNetworkTransactionTest, TimeoutAfterHandshakeConfirmedThenBroken2) {
   // Use a TestTaskRunner to avoid waiting in real time for timeouts.
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   AddQuicAlternateProtocolMapping(MockCryptoClientStream::ZERO_RTT);
@@ -3863,7 +3863,7 @@ TEST_P(QuicNetworkTransactionTest, RemoteAltSvcWorkingWhileLocalAltSvcBroken) {
   ASSERT_TRUE(cert->VerifyNameMatch("www.example.org"));
   ASSERT_TRUE(cert->VerifyNameMatch("mail.example.org"));
 
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   verify_details.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
@@ -3945,7 +3945,7 @@ TEST_P(QuicNetworkTransactionTest, BrokenAlternativeOnlyRecordedOnce) {
       ImportCertFromFile(GetTestCertsDirectory(), "wildcard.pem"));
   ASSERT_TRUE(cert->VerifyNameMatch("mail.example.org"));
 
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   verify_details.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
@@ -3997,7 +3997,7 @@ TEST_P(QuicNetworkTransactionTest,
   ASSERT_TRUE(cert->VerifyNameMatch("www.example.org"));
   ASSERT_TRUE(cert->VerifyNameMatch("mail.example.org"));
 
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   verify_details.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
@@ -4082,7 +4082,7 @@ TEST_P(QuicNetworkTransactionTest,
   CreateSession();
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   // Set up alternative service for |origin1|.
@@ -4217,7 +4217,7 @@ TEST_P(QuicNetworkTransactionTest, UseExistingAlternativeServiceForQuic) {
   CreateSession();
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   SendRequestAndExpectHttpResponse("hello world");
@@ -4282,7 +4282,7 @@ TEST_P(QuicNetworkTransactionTest, PoolByOrigin) {
   CreateSession();
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   const char destination1[] = "first.example.com";
@@ -4379,7 +4379,7 @@ TEST_P(QuicNetworkTransactionTest, PoolByDestination) {
   CreateSession();
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   const char destination1[] = "first.example.com";
@@ -4510,7 +4510,7 @@ TEST_P(QuicNetworkTransactionTest,
   CreateSession();
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   // Send two HTTP requests, responses set up alt-svc lists for the origins.
@@ -5045,7 +5045,7 @@ TEST_P(QuicNetworkTransactionTest, ZeroRTTWithTooEarlyResponse) {
   AddQuicAlternateProtocolMapping(MockCryptoClientStream::ZERO_RTT);
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   HttpNetworkTransaction trans(DEFAULT_PRIORITY, session_.get());
@@ -5151,7 +5151,7 @@ TEST_P(QuicNetworkTransactionTest, ZeroRTTWithMultipleTooEarlyResponse) {
   AddQuicAlternateProtocolMapping(MockCryptoClientStream::ZERO_RTT);
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner_.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner_.get(),
                                                  context_.clock()));
 
   HttpNetworkTransaction trans(DEFAULT_PRIORITY, session_.get());
@@ -7116,7 +7116,7 @@ TEST_P(QuicNetworkTransactionWithDestinationTest, InvalidCertificate) {
   ASSERT_FALSE(cert->VerifyNameMatch(origin1_));
   ASSERT_TRUE(cert->VerifyNameMatch(origin2_));
 
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   verify_details.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
@@ -7158,7 +7158,7 @@ TEST_P(QuicNetworkTransactionWithDestinationTest, PoolIfCertificateValid) {
   ASSERT_TRUE(cert->VerifyNameMatch(origin2_));
   ASSERT_FALSE(cert->VerifyNameMatch(kDifferentHostname));
 
-  ProofVerifyDetailsChromium verify_details;
+  ProofVerifyDetailsMonyhar verify_details;
   verify_details.cert_verify_result.verified_cert = cert;
   verify_details.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details);
@@ -7225,7 +7225,7 @@ TEST_P(QuicNetworkTransactionWithDestinationTest, PoolIfCertificateValid) {
       new TestTaskRunner(context_.mock_clock()));
   QuicStreamFactoryPeer::SetAlarmFactory(
       session_->quic_stream_factory(),
-      std::make_unique<QuicChromiumAlarmFactory>(quic_task_runner.get(),
+      std::make_unique<QuicMonyharAlarmFactory>(quic_task_runner.get(),
                                                  context_.clock()));
 
   SendRequestAndExpectQuicResponse(origin1_);
@@ -7257,12 +7257,12 @@ TEST_P(QuicNetworkTransactionWithDestinationTest,
   ASSERT_TRUE(cert2->VerifyNameMatch(origin2_));
   ASSERT_FALSE(cert2->VerifyNameMatch(kDifferentHostname));
 
-  ProofVerifyDetailsChromium verify_details1;
+  ProofVerifyDetailsMonyhar verify_details1;
   verify_details1.cert_verify_result.verified_cert = cert1;
   verify_details1.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details1);
 
-  ProofVerifyDetailsChromium verify_details2;
+  ProofVerifyDetailsMonyhar verify_details2;
   verify_details2.cert_verify_result.verified_cert = cert2;
   verify_details2.cert_verify_result.is_issued_by_known_root = true;
   crypto_client_stream_factory_.AddProofVerifyDetails(&verify_details2);

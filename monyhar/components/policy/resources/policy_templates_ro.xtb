@@ -2171,7 +2171,7 @@ Dacă politica nu este setată, se va folosi comportamentul prestabilit de a nu 
 <translation id="5148753489738115745">Vă permite să specificați parametri suplimentari, care vor fi utilizați atunci când <ph name="PRODUCT_FRAME_NAME" /> lansează <ph name="PRODUCT_NAME" />.
 
           Dacă această politică nu este setată, va fi utilizată linia de comandă prestabilită.</translation>
-<translation id="5152787786897382519">Chromium și Google Chrome au câteva grupuri de politici care depind una de cealaltă pentru a asigura controlul asupra unei funcții. Aceste seturi sunt reprezentate de grupurile de politici de mai jos. Întrucât politicile pot avea mai multe surse, se vor aplica numai valorile din sursa cu prioritatea cea mai mare. Valorile din același grup care provin din surse cu prioritate mai mică vor fi ignorate. Ordinea priorităților este definită în <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Monyhar și Google Chrome au câteva grupuri de politici care depind una de cealaltă pentru a asigura controlul asupra unei funcții. Aceste seturi sunt reprezentate de grupurile de politici de mai jos. Întrucât politicile pot avea mai multe surse, se vor aplica numai valorile din sursa cu prioritatea cea mai mare. Valorile din același grup care provin din surse cu prioritate mai mică vor fi ignorate. Ordinea priorităților este definită în <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Frecvența de trimitere a pachetelor de monitorizare din rețea, în milisecunde.
 
       Dacă această politică nu este configurată, intervalul prestabilit este de 3 minute.
@@ -3836,7 +3836,7 @@ nu poate fi stabilit de utilizator din setările browserului.
       Dacă această politică nu este setată, <ph name="PRODUCT_OS_NAME" /> va utiliza codul contului de e-mail al contului local de pe gadget ca nume afișat pe ecranul de conectare.
 
       Această politică este ignorată pentru conturile de utilizator obișnuite.</translation>
-<translation id="8259375588339409826">Chromium și Google Chrome acceptă același set de politici. Reține că acest document poate să includă politici nelansate (adică, în cazul acestora, intrarea „compatibilă cu” se referă la o versiune <ph name="PRODUCT_NAME" /> nelansată încă), care pot fi modificate sau eliminate fără notificare în prealabil și pentru care nu se oferă nicio garanție, de niciun fel, inclusiv nicio garanție privind proprietățile de securitate și confidențialitate.
+<translation id="8259375588339409826">Monyhar și Google Chrome acceptă același set de politici. Reține că acest document poate să includă politici nelansate (adică, în cazul acestora, intrarea „compatibilă cu” se referă la o versiune <ph name="PRODUCT_NAME" /> nelansată încă), care pot fi modificate sau eliminate fără notificare în prealabil și pentru care nu se oferă nicio garanție, de niciun fel, inclusiv nicio garanție privind proprietățile de securitate și confidențialitate.
 
 Aceste politici sunt destinate exclusiv pentru a configura instanțe ale <ph name="PRODUCT_NAME" /> din organizația ta. Folosirea acestor politici în afara organizației (de exemplu, într-un program distribuit public) se consideră program malware și este posibil să fie etichetată ca atare de Google și de furnizorii de programe antivirus.
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -122,7 +122,7 @@ const wchar_t kAllowImportWhenPrimaryAccountExists[] =
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 const wchar_t kRegHkcuAccountsPath[] = L"Software\\Google\\Accounts";
 #else
-const wchar_t kRegHkcuAccountsPath[] = L"Software\\Chromium\\Accounts";
+const wchar_t kRegHkcuAccountsPath[] = L"Software\\Monyhar\\Accounts";
 #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
 
 }  // namespace credential_provider

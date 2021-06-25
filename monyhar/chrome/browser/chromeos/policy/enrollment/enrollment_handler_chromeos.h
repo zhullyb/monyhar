@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -44,7 +44,7 @@ class DeviceCloudPolicyStoreChromeOS;
 class DMTokenStorage;
 class ServerBackedStateKeysBroker;
 
-// Implements the logic that establishes enterprise enrollment for Chromium OS
+// Implements the logic that establishes enterprise enrollment for Monyhar OS
 // devices. The process is as follows:
 //   1. Given an auth token, register with the policy service.
 //   2. Download the initial policy blob from the service.

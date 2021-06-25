@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Runs Android's lint tool."""
@@ -34,8 +34,8 @@ _DISABLED_ALWAYS = [
     "LintBaseline",  # Don't warn about using baseline.xml files.
     "MissingApplicationIcon",  # False positive for non-production targets.
     "SwitchIntDef",  # Many C++ enums are not used at all in java.
-    "UniqueConstants",  # Chromium enums allow aliases.
-    "UnusedAttribute",  # Chromium apks have various minSdkVersion values.
+    "UniqueConstants",  # Monyhar enums allow aliases.
+    "UnusedAttribute",  # Monyhar apks have various minSdkVersion values.
     "ObsoleteLintCustomCheck",  # We have no control over custom lint checks.
 ]
 

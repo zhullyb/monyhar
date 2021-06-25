@@ -12,9 +12,9 @@
 *   [NPAPI plugin guide](http://gplflash.sourceforge.net/gplflash2_blog/npapi.html)
     from GPLFlash project
 
-### Chromium-specific
+### Monyhar-specific
 
-*   [Chromium's plugin architecture](https://dev.monyhar.org/developers/design-documents/plugin-architecture)
+*   [Monyhar's plugin architecture](https://dev.monyhar.org/developers/design-documents/plugin-architecture)
     -- may be out of date but will be worth reading
 
 ## Code to reference

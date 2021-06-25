@@ -487,7 +487,7 @@ for details.
 The top of [go/uma-guide](http://go/uma-guide) has good advice on how to go
 about analyzing and interpreting the results of UMA data uploaded by users. If
 you're reading this page, you've probably just finished adding a histogram to
-the Chromium source code and you're waiting for users to update their version of
+the Monyhar source code and you're waiting for users to update their version of
 Chrome to a version that includes your code. In this case, the best advice is
 to remind you that users who update frequently / quickly are biased. Best take
 the initial statistics with a grain of salt; they're probably *mostly* right but
@@ -515,7 +515,7 @@ about is good! But see the note below on
 Document histograms in [histograms.xml](./histograms.xml). There is also a
 [google-internal version of the file](http://go/chrome-histograms-internal) for
 the rare case in which the histogram is confidential (added only to Chrome code,
-not Chromium code; or, an accurate description about how to interpret the
+not Monyhar code; or, an accurate description about how to interpret the
 histogram would reveal information about Google's plans).
 
 ### Add Histogram and Documentation in the Same Changelist
@@ -640,7 +640,7 @@ histogram at some point that did so even if it isn't active now.
 
 *Exception:* It is ok to delete the metadata for any histogram that has never
 been recorded to. For example, it's fine to correct a typo where the histogram
-name in the metadata does not match the name in the Chromium source code.
+name in the metadata does not match the name in the Monyhar source code.
 
 ### Patterned Histograms
 
@@ -757,7 +757,7 @@ For more information, see [sparse_histograms.h](https://cs.monyhar.org/monyhar/s
 
 # Becoming a Metrics Reviewer
 
-Any Chromium committer who is also a Google employee is eligible to become a
+Any Monyhar committer who is also a Google employee is eligible to become a
 metrics reviewer. Please follow the instructions at [go/reviewing-metrics](https://goto.google.com/reviewing-metrics).
 This consists of reviewing our training materials and passing an informational
 quiz. Since metrics have a direct impact on internal systems and have privacy

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -49,9 +49,9 @@ QuicSimpleServer::QuicSimpleServer(
     quic::QuicSimpleServerBackend* quic_simple_server_backend)
     : version_manager_(supported_versions),
       helper_(
-          new QuicChromiumConnectionHelper(&clock_,
+          new QuicMonyharConnectionHelper(&clock_,
                                            quic::QuicRandom::GetInstance())),
-      alarm_factory_(new QuicChromiumAlarmFactory(
+      alarm_factory_(new QuicMonyharAlarmFactory(
           base::ThreadTaskRunnerHandle::Get().get(),
           &clock_)),
       config_(config),

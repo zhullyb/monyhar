@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -166,7 +166,7 @@ class DataUseMeasurement
   std::unique_ptr<base::android::ApplicationStatusListener> app_listener_;
 #endif
 
-  // Number of bytes received and sent by Chromium as reported by the operating
+  // Number of bytes received and sent by Monyhar as reported by the operating
   // system when it was last queried for traffic statistics. Set to 0 if the
   // operating system was never queried.
   int64_t rx_bytes_os_ = 0;
@@ -180,7 +180,7 @@ class DataUseMeasurement
   network::mojom::ConnectionType connection_type_ =
       network::mojom::ConnectionType::CONNECTION_UNKNOWN;
 
-  // Number of bytes received and sent by Chromium as reported by the network
+  // Number of bytes received and sent by Monyhar as reported by the network
   // delegate since the operating system was last queried for traffic
   // statistics.
   int64_t bytes_transferred_since_last_traffic_stats_query_ = 0;

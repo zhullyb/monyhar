@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -17,7 +17,7 @@ struct ExternalServiceInfo {
   mojo_base.mojom.TimeTicks disconnect_time;
 };
 
-// Interface for external (non-Chromium process) Mojo services to receive Mojo
+// Interface for external (non-Monyhar process) Mojo services to receive Mojo
 // binding requests from other processes/services.
 interface ExternalService {
   // Called when another service/process wants to bind to the interface with the
@@ -32,7 +32,7 @@ struct ServiceInstanceInfo {
 };
 
 // Interface to register external Mojo services to the broker, and bind to
-// registered Mojo services. This provides functionality similar to Chromium's
+// registered Mojo services. This provides functionality similar to Monyhar's
 // service manager, but avoids any dependency on the service manager since this
 // is intended for use by code outside of the Chrome repository.
 interface ExternalConnector {
@@ -51,8 +51,8 @@ interface ExternalConnector {
   // clone Connector pointers for use on other threads.
   Clone(pending_receiver<ExternalConnector> receiver);
 
-  // Binds to a Chromium service_manager::Connector instance, if possible.
-  BindChromiumConnector(handle<message_pipe> interface_pipe);
+  // Binds to a Monyhar service_manager::Connector instance, if possible.
+  BindMonyharConnector(handle<message_pipe> interface_pipe);
 
   // Query services that are available from this connector.
   QueryServiceList() => (array<ExternalServiceInfo> services);

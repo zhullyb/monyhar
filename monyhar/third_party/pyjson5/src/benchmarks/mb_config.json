@@ -1229,12 +1229,12 @@
       "Win7": "release_bot_x86_minimal_symbols"
     }, 
     "monyhar.monyharos": {
-      "ChromiumOS amd64-generic Compile": "cros_chrome_sdk", 
-      "ChromiumOS daisy Compile": "cros_chrome_sdk", 
-      "Linux ChromiumOS Builder": "chromeos_with_codecs_release_bot", 
-      "Linux ChromiumOS Builder (dbg)": "chromeos_with_codecs_debug_bot", 
-      "Linux ChromiumOS Full": "chromeos_with_codecs_release_bot", 
-      "Linux ChromiumOS Ozone Builder": "chromeos_with_codecs_release_bot"
+      "MonyharOS amd64-generic Compile": "cros_chrome_sdk", 
+      "MonyharOS daisy Compile": "cros_chrome_sdk", 
+      "Linux MonyharOS Builder": "chromeos_with_codecs_release_bot", 
+      "Linux MonyharOS Builder (dbg)": "chromeos_with_codecs_debug_bot", 
+      "Linux MonyharOS Full": "chromeos_with_codecs_release_bot", 
+      "Linux MonyharOS Ozone Builder": "chromeos_with_codecs_release_bot"
     }, 
     "monyhar.fyi": {
       "Afl Upload Linux ASan": "release_afl_asan", 
@@ -1245,31 +1245,31 @@
       "Browser Side Navigation Linux": "release_bot", 
       "CFI Linux CF": "cfi_full_cfi_diag_recover_release_static", 
       "CFI Linux ToT": "clang_tot_cfi_full_cfi_diag_thin_lto_release_static_dcheck_always_on", 
-      "ChromeOS amd64 Chromium Goma Canary": "cros_chrome_sdk", 
-      "Chromium Linux Goma Canary": "release_bot", 
-      "Chromium Linux Goma Canary (clobber)": "release_bot", 
-      "Chromium Linux Goma Canary LocalOutputCache": "release_bot", 
-      "Chromium Linux Precise Goma LinkTest": "release_bot", 
-      "Chromium Linux32 Goma Canary (clobber)": "release_bot_x86", 
-      "Chromium Mac 10.10 MacViews": "mac_views_browser_release_bot", 
-      "Chromium Mac 10.11": "release_bot", 
-      "Chromium Mac 10.11 Force Mac Toolchain": "release_bot_mac_new_sdk", 
-      "Chromium Mac 10.13": "release_bot", 
-      "Chromium Mac 10.9 Goma Canary": "release_bot", 
-      "Chromium Mac 10.9 Goma Canary (clobber)": "release_bot", 
-      "Chromium Mac 10.9 Goma Canary (dbg)": "debug_bot", 
-      "Chromium Mac 10.9 Goma Canary (dbg)(clobber)": "debug_bot", 
-      "Chromium Mac Goma Canary LocalOutputCache": "release_bot", 
-      "Chromium Win 10 GCE Tests": "release_bot_minimal_symbols", 
-      "Chromium Win PGO Builder": {
+      "ChromeOS amd64 Monyhar Goma Canary": "cros_chrome_sdk", 
+      "Monyhar Linux Goma Canary": "release_bot", 
+      "Monyhar Linux Goma Canary (clobber)": "release_bot", 
+      "Monyhar Linux Goma Canary LocalOutputCache": "release_bot", 
+      "Monyhar Linux Precise Goma LinkTest": "release_bot", 
+      "Monyhar Linux32 Goma Canary (clobber)": "release_bot_x86", 
+      "Monyhar Mac 10.10 MacViews": "mac_views_browser_release_bot", 
+      "Monyhar Mac 10.11": "release_bot", 
+      "Monyhar Mac 10.11 Force Mac Toolchain": "release_bot_mac_new_sdk", 
+      "Monyhar Mac 10.13": "release_bot", 
+      "Monyhar Mac 10.9 Goma Canary": "release_bot", 
+      "Monyhar Mac 10.9 Goma Canary (clobber)": "release_bot", 
+      "Monyhar Mac 10.9 Goma Canary (dbg)": "debug_bot", 
+      "Monyhar Mac 10.9 Goma Canary (dbg)(clobber)": "debug_bot", 
+      "Monyhar Mac Goma Canary LocalOutputCache": "release_bot", 
+      "Monyhar Win 10 GCE Tests": "release_bot_minimal_symbols", 
+      "Monyhar Win PGO Builder": {
         "1": "official_optimize_chrome_pgo_phase_1_x86", 
         "2": "official_optimize_chrome_pgo_phase_2_x86"
       }, 
-      "Chromium Win x64 PGO Builder": {
+      "Monyhar Win x64 PGO Builder": {
         "1": "official_optimize_chrome_pgo_phase_1", 
         "2": "official_optimize_chrome_pgo_phase_2"
       }, 
-      "Chromium Windows Analyze": "windows_analyze", 
+      "Monyhar Windows Analyze": "windows_analyze", 
       "ClangToTAndroid": "android_clang_tot_release", 
       "ClangToTAndroid (dbg)": "android_clang_tot_dbg", 
       "ClangToTAndroid x64": "android_clang_tot_x64", 
@@ -1339,7 +1339,7 @@
       "MD Top Chrome Win material": "debug_bot_minimal_symbols", 
       "Mac deterministic": "release_bot_mac_strip", 
       "Mac deterministic (dbg)": "debug_bot", 
-      "Mojo ChromiumOS": "chromeos_with_codecs_release_trybot", 
+      "Mojo MonyharOS": "chromeos_with_codecs_release_trybot", 
       "Mojo Linux": "release_trybot", 
       "Mojo Windows": "release_bot_x86_minimal_symbols", 
       "Out of Process Profiling Android": "release_bot_out_of_process_profiling", 
@@ -1362,10 +1362,10 @@
       "ios-simulator": "ios"
     }, 
     "monyhar.goma": {
-      "Chromium Linux Goma GCE Staging": "release_bot", 
-      "Chromium Linux Goma Staging": "release_bot", 
-      "Chromium Mac Goma GCE Staging": "release_bot", 
-      "Chromium Mac Goma Staging": "release_bot", 
+      "Monyhar Linux Goma GCE Staging": "release_bot", 
+      "Monyhar Linux Goma Staging": "release_bot", 
+      "Monyhar Mac Goma GCE Staging": "release_bot", 
+      "Monyhar Mac Goma Staging": "release_bot", 
       "CrWinGomaStaging": "release_bot_x86_minimal_symbols"
     }, 
     "monyhar.gpu": {
@@ -1392,8 +1392,8 @@
       "GPU Win Clang Builder (dbg)": "gpu_fyi_tests_win_clang_debug_bot", 
       "GPU Win x64 Builder": "gpu_tests_deqp_gles_release_trybot", 
       "GPU Win x64 Builder (dbg)": "gpu_tests_deqp_gles_debug_trybot", 
-      "Linux ChromiumOS Builder": "gpu_fyi_tests_chromeos_cros_release_trybot", 
-      "Linux ChromiumOS Ozone Builder": "gpu_fyi_tests_ozone_linux_system_gbm_libdrm_release_trybot", 
+      "Linux MonyharOS Builder": "gpu_fyi_tests_chromeos_cros_release_trybot", 
+      "Linux MonyharOS Ozone Builder": "gpu_fyi_tests_ozone_linux_system_gbm_libdrm_release_trybot", 
       "Linux GPU TSAN Release": "gpu_fyi_tests_release_trybot_tsan", 
       "Mac GPU ASAN Release": "gpu_fyi_tests_release_trybot_asan"
     }, 
@@ -1431,7 +1431,7 @@
       "ASan Debug (32-bit x86 with V8-ARM)": "asan_edge_v8_heap_debug_bot_hybrid", 
       "ASan Release (32-bit x86 with V8-ARM)": "asan_edge_fuzzer_v8_heap_release_bot_hybrid", 
       "ASan Release Media (32-bit x86 with V8-ARM)": "asan_edge_fuzzer_v8_heap_chromeos_codecs_release_bot_hybrid", 
-      "ChromiumOS ASAN Release": "chromeos_asan_lsan_edge_fuzzer_v8_heap_release_bot", 
+      "MonyharOS ASAN Release": "chromeos_asan_lsan_edge_fuzzer_v8_heap_release_bot", 
       "MSAN Release (chained origins)": "msan_edge_release_bot", 
       "MSAN Release (no origins)": "msan_no_origins_edge_release_bot", 
       "Mac ASAN Debug": "asan_disable_nacl_edge_fuzzer_v8_heap_debug_symbols_static_bot", 
@@ -1459,8 +1459,8 @@
     "monyhar.memory": {
       "Linux ASan LSan Builder": "asan_lsan_release_trybot", 
       "Linux CFI": "cfi_full_cfi_diag_thin_lto_release_static_dcheck_always_on_goma", 
-      "Linux Chromium OS ASan LSan Builder": "asan_lsan_chromeos_release_trybot", 
-      "Linux ChromiumOS MSan Builder": "chromeos_msan_release_bot", 
+      "Linux Monyhar OS ASan LSan Builder": "asan_lsan_chromeos_release_trybot", 
+      "Linux MonyharOS MSan Builder": "chromeos_msan_release_bot", 
       "Linux MSan Builder": "msan_release_bot", 
       "Linux TSan Builder": "tsan_disable_nacl_release_bot", 
       "Mac ASan 64 Builder": "asan_full_symbols_disable_nacl_release_bot_dcheck_always_on"
@@ -1623,8 +1623,8 @@
       "win_angle_x64_rel_ng": "gpu_tests_deqp_gles_release_trybot"
     }, 
     "tryserver.monyhar.linux": {
-      "Chromium Linux Codesearch Builder": "codesearch", 
-      "ChromiumOS Codesearch Builder": "codesearch", 
+      "Monyhar Linux Codesearch Builder": "codesearch", 
+      "MonyharOS Codesearch Builder": "codesearch", 
       "cast_shell_audio_linux": "cast_audio_release_trybot", 
       "cast_shell_linux": "cast_release_trybot", 
       "chromeos_amd64-generic_monyhar_compile_only_ng": "cros_chrome_sdk", 

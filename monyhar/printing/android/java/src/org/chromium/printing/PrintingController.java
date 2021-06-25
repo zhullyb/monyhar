@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@ public interface PrintingController {
     int getDpi();
 
     /**
-     * @return The file descriptor number of the file into which Chromium will write the PDF.  This
+     * @return The file descriptor number of the file into which Monyhar will write the PDF.  This
      *         is provided to us by {@link PrintDocumentAdapter#onWrite}.
      */
     int getFileDescriptor();
@@ -71,7 +71,7 @@ public interface PrintingController {
     void setPrintingContext(final PrintingContext printingContext);
 
     /**
-     * @return Whether a complete PDF generation cycle inside Chromium has been completed.
+     * @return Whether a complete PDF generation cycle inside Monyhar has been completed.
      */
     boolean hasPrintingFinished();
 

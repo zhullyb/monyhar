@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ char kLSanDefaultSuppressions[] =
     // Leak in glibc's gconv caused by fopen(..., "r,ccs=UNICODE")
     "leak:__gconv_lookup_cache\n"
 
-    // ================ Leaks in Chromium code ================
+    // ================ Leaks in Monyhar code ================
     // PLEASE DO NOT ADD SUPPRESSIONS FOR NEW LEAKS.
     // Instead, commits that introduce memory leaks should be reverted.
     // Suppressing the leak is acceptable in some cases when reverting is

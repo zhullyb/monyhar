@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -87,7 +87,7 @@ class LanguageListWaiter : public WelcomeScreen::Observer {
 }  // namespace
 
 // These test data depend on the IME extension manifest which differs between
-// Chromium OS and Chrome OS.
+// Monyhar OS and Chrome OS.
 struct LocalizationTestParams {
   const char* initial_locale;
   const char* keyboard_layout;

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -36,7 +36,7 @@ import org.monyhar.android_webview.AwBrowserProcess;
 import org.monyhar.android_webview.AwContentsStatics;
 import org.monyhar.android_webview.AwSettings;
 import org.monyhar.android_webview.ProductConfig;
-import org.monyhar.android_webview.WebViewChromiumRunQueue;
+import org.monyhar.android_webview.WebViewMonyharRunQueue;
 import org.monyhar.android_webview.common.AwSwitches;
 import org.monyhar.android_webview.common.CommandLineUtil;
 import org.monyhar.android_webview.common.DeveloperModeUtils;
@@ -72,10 +72,10 @@ import java.util.concurrent.FutureTask;
  * implementation classes.
  */
 @SuppressWarnings("deprecation")
-public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
+public class WebViewMonyharFactoryProvider implements WebViewFactoryProvider {
     private static final String TAG = "WVCFactoryProvider";
 
-    private static final String CHROMIUM_PREFS_NAME = "WebViewChromiumPrefs";
+    private static final String CHROMIUM_PREFS_NAME = "WebViewMonyharPrefs";
     private static final String VERSION_CODE_PREF = "lastVersionCodeUsed";
 
     private static final String SUPPORT_LIB_GLUE_AND_BOUNDARY_INTERFACE_PREFIX =
@@ -106,14 +106,14 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
     }
 
     private static final Object sSingletonLock = new Object();
-    private static WebViewChromiumFactoryProvider sSingleton;
+    private static WebViewMonyharFactoryProvider sSingleton;
     // Used to indicate if WebLayer and WebView are running in the same process.
     private static boolean sWebLayerRunningInSameProcess;
 
-    private final WebViewChromiumRunQueue mRunQueue = new WebViewChromiumRunQueue(
-            () -> { return WebViewChromiumFactoryProvider.this.mAwInit.hasStarted(); });
+    private final WebViewMonyharRunQueue mRunQueue = new WebViewMonyharRunQueue(
+            () -> { return WebViewMonyharFactoryProvider.this.mAwInit.hasStarted(); });
 
-    /* package */ WebViewChromiumRunQueue getRunQueue() {
+    /* package */ WebViewMonyharRunQueue getRunQueue() {
         return mRunQueue;
     }
 
@@ -136,7 +136,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
      * Class that takes care of monyhar lazy initialization.
      * This is package-public so that a downstream subclass can access it.
      */
-    /* package */ WebViewChromiumAwInit mAwInit;
+    /* package */ WebViewMonyharAwInit mAwInit;
 
     private SharedPreferences mWebViewPrefs;
     private WebViewDelegate mWebViewDelegate;
@@ -155,25 +155,25 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? new ObjectHolderForP() : null;
 
     /**
-     * Thread-safe way to set the one and only WebViewChromiumFactoryProvider.
+     * Thread-safe way to set the one and only WebViewMonyharFactoryProvider.
      */
-    private static void setSingleton(WebViewChromiumFactoryProvider provider) {
+    private static void setSingleton(WebViewMonyharFactoryProvider provider) {
         synchronized (sSingletonLock) {
             if (sSingleton != null) {
                 throw new RuntimeException(
-                        "WebViewChromiumFactoryProvider should only be set once!");
+                        "WebViewMonyharFactoryProvider should only be set once!");
             }
             sSingleton = provider;
         }
     }
 
     /**
-     * Thread-safe way to get the one and only WebViewChromiumFactoryProvider.
+     * Thread-safe way to get the one and only WebViewMonyharFactoryProvider.
      */
-    static WebViewChromiumFactoryProvider getSingleton() {
+    static WebViewMonyharFactoryProvider getSingleton() {
         synchronized (sSingletonLock) {
             if (sSingleton == null) {
-                throw new RuntimeException("WebViewChromiumFactoryProvider has not been set!");
+                throw new RuntimeException("WebViewMonyharFactoryProvider has not been set!");
             }
             return sSingleton;
         }
@@ -182,36 +182,36 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
     /**
      * Entry point for newer versions of Android.
      */
-    public static WebViewChromiumFactoryProvider create(android.webkit.WebViewDelegate delegate) {
-        return new WebViewChromiumFactoryProvider(delegate);
+    public static WebViewMonyharFactoryProvider create(android.webkit.WebViewDelegate delegate) {
+        return new WebViewMonyharFactoryProvider(delegate);
     }
 
     /**
      * Constructor called by the API 21 version of {@link WebViewFactory} and earlier.
      */
-    public WebViewChromiumFactoryProvider() {
+    public WebViewMonyharFactoryProvider() {
         initialize(WebViewDelegateFactory.createApi21CompatibilityDelegate());
     }
 
     /**
      * Constructor called by the API 22 version of {@link WebViewFactory} and later.
      */
-    public WebViewChromiumFactoryProvider(android.webkit.WebViewDelegate delegate) {
+    public WebViewMonyharFactoryProvider(android.webkit.WebViewDelegate delegate) {
         initialize(WebViewDelegateFactory.createProxyDelegate(delegate));
     }
 
     /**
      * Constructor for internal use when a proxy delegate has already been created.
      */
-    WebViewChromiumFactoryProvider(WebViewDelegate delegate) {
+    WebViewMonyharFactoryProvider(WebViewDelegate delegate) {
         initialize(delegate);
     }
 
     // Protected to allow downstream to override.
-    protected WebViewChromiumAwInit createAwInit() {
+    protected WebViewMonyharAwInit createAwInit() {
         try (ScopedSysTraceEvent e2 =
-                        ScopedSysTraceEvent.scoped("WebViewChromiumFactoryProvider.createAwInit")) {
-            return new WebViewChromiumAwInit(this);
+                        ScopedSysTraceEvent.scoped("WebViewMonyharFactoryProvider.createAwInit")) {
+            return new WebViewMonyharAwInit(this);
         }
     }
 
@@ -222,7 +222,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
 
     private void deleteContentsOnPackageDowngrade(PackageInfo packageInfo) {
         try (ScopedSysTraceEvent e2 = ScopedSysTraceEvent.scoped(
-                     "WebViewChromiumFactoryProvider.deleteContentsOnPackageDowngrade")) {
+                     "WebViewMonyharFactoryProvider.deleteContentsOnPackageDowngrade")) {
             // Use shared preference to check for package downgrade.
             // Since N, getSharedPreferences creates the preference dir if it doesn't exist,
             // causing a disk write.
@@ -249,10 +249,10 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
     private void initialize(WebViewDelegate webViewDelegate) {
         long startTime = SystemClock.uptimeMillis();
         try (ScopedSysTraceEvent e1 =
-                        ScopedSysTraceEvent.scoped("WebViewChromiumFactoryProvider.initialize")) {
+                        ScopedSysTraceEvent.scoped("WebViewMonyharFactoryProvider.initialize")) {
             PackageInfo packageInfo;
             try (ScopedSysTraceEvent e2 = ScopedSysTraceEvent.scoped(
-                         "WebViewChromiumFactoryProvider.getLoadedPackageInfo")) {
+                         "WebViewMonyharFactoryProvider.getLoadedPackageInfo")) {
                 // The package is used to locate the services for copying crash minidumps and
                 // requesting variations seeds. So it must be set before initializing variations and
                 // before a renderer has a chance to crash.
@@ -267,7 +267,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
 
             // If the application context is DE, but we have credentials, use a CE context instead
             try (ScopedSysTraceEvent e2 = ScopedSysTraceEvent.scoped(
-                         "WebViewChromiumFactoryProvider.checkStorage")) {
+                         "WebViewMonyharFactoryProvider.checkStorage")) {
                 checkStorageIsNotDeviceProtected(webViewDelegate.getApplication());
             } catch (IllegalArgumentException e) {
                 assert Build.VERSION.SDK_INT >= Build.VERSION_CODES.N;
@@ -298,7 +298,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
             mAwInit.setUpResourcesOnBackgroundThread(packageId, ctx);
 
             try (ScopedSysTraceEvent e2 = ScopedSysTraceEvent.scoped(
-                         "WebViewChromiumFactoryProvider.initCommandLine")) {
+                         "WebViewMonyharFactoryProvider.initCommandLine")) {
                 // This may take ~20 ms only on userdebug devices.
                 CommandLineUtil.initCommandLine();
             }
@@ -374,7 +374,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
 
             try (StrictModeContext ignored = StrictModeContext.allowDiskWrites()) {
                 try (ScopedSysTraceEvent e2 = ScopedSysTraceEvent.scoped(
-                             "WebViewChromiumFactoryProvider.loadChromiumLibrary")) {
+                             "WebViewMonyharFactoryProvider.loadMonyharLibrary")) {
                     String dataDirectorySuffix = null;
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                         dataDirectorySuffix = webViewDelegate.getDataDirectorySuffix();
@@ -383,7 +383,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
                 }
 
                 try (ScopedSysTraceEvent e2 = ScopedSysTraceEvent.scoped(
-                             "WebViewChromiumFactoryProvider.loadGlueLayerPlatSupportLibrary")) {
+                             "WebViewMonyharFactoryProvider.loadGlueLayerPlatSupportLibrary")) {
                     System.loadLibrary("webviewmonyhar_plat_support");
                 }
 
@@ -432,10 +432,10 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
     }
 
     /**
-     * Both versionCodes should be from a WebView provider package implemented by Chromium.
+     * Both versionCodes should be from a WebView provider package implemented by Monyhar.
      * VersionCodes from other kinds of packages won't make any sense in this method.
      *
-     * An introduction to Chromium versionCode scheme:
+     * An introduction to Monyhar versionCode scheme:
      * "BBBBPPPAX"
      * BBBB: 4 digit branch number. It monotonically increases over time.
      * PPP: patch number in the branch. It is padded with zeroes to the left. These three digits may
@@ -490,7 +490,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
         synchronized (mAwInit.getLock()) {
             SharedStatics sharedStatics = mAwInit.getStatics();
             if (mStaticsAdapter == null) {
-                mStaticsAdapter = new WebViewChromiumFactoryProvider.Statics() {
+                mStaticsAdapter = new WebViewMonyharFactoryProvider.Statics() {
                     @Override
                     public String findAddress(String addr) {
                         return sharedStatics.findAddress(addr);
@@ -555,7 +555,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
 
     @Override
     public WebViewProvider createWebView(WebView webView, WebView.PrivateAccess privateAccess) {
-        return new WebViewChromium(this, webView, privateAccess, mShouldDisableThreadChecking);
+        return new WebViewMonyhar(this, webView, privateAccess, mShouldDisableThreadChecking);
     }
 
     // Workaround for IME thread crashes on legacy OEM apps.
@@ -649,14 +649,14 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
     WebViewContentsClientAdapter createWebViewContentsClientAdapter(WebView webView,
             Context context) {
         try (ScopedSysTraceEvent e = ScopedSysTraceEvent.scoped(
-                     "WebViewChromiumFactoryProvider.insideCreateWebViewContentsClientAdapter")) {
+                     "WebViewMonyharFactoryProvider.insideCreateWebViewContentsClientAdapter")) {
             return new WebViewContentsClientAdapter(webView, context, mWebViewDelegate);
         }
     }
 
     void startYourEngines(boolean onMainThread) {
         try (ScopedSysTraceEvent e1 = ScopedSysTraceEvent.scoped(
-                     "WebViewChromiumFactoryProvider.startYourEngines")) {
+                     "WebViewMonyharFactoryProvider.startYourEngines")) {
             mAwInit.startYourEngines(onMainThread);
         }
     }
@@ -670,15 +670,15 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
         return mAwInit.getBrowserContextOnUiThread();
     }
 
-    WebViewChromiumAwInit getAwInit() {
+    WebViewMonyharAwInit getAwInit() {
         return mAwInit;
     }
 
     @Override
     public TracingController getTracingController() {
         synchronized (mAwInit.getLock()) {
-            mAwInit.ensureChromiumStartedLocked(true);
-            // ensureChromiumStartedLocked() can release the lock on first call while
+            mAwInit.ensureMonyharStartedLocked(true);
+            // ensureMonyharStartedLocked() can release the lock on first call while
             // waiting for startup. Hence check the mTracingController here to ensure
             // the singleton property.
             if (mObjectHolderForP.mTracingController == null) {
@@ -717,7 +717,7 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
 
     @Override
     public ClassLoader getWebViewClassLoader() {
-        return new FilteredClassLoader(WebViewChromiumFactoryProvider.class.getClassLoader());
+        return new FilteredClassLoader(WebViewMonyharFactoryProvider.class.getClassLoader());
     }
 
     // This is called from WebLayer when WebView and WebLayer are run in the same process. It's

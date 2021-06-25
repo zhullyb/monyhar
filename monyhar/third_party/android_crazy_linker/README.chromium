@@ -94,7 +94,7 @@ Local Modifications:
 
 - Define CRAZY_DISABLE_R_BRK to disable debugger support.
 
-- Enable integration and unit tests when building with Chromium.
+- Enable integration and unit tests when building with Monyhar.
 
 - Support passing system library handles in dlsym() / dlclose() wrappers.
 
@@ -102,6 +102,6 @@ Local Modifications:
 
 - Safer zip parsing code (avoid integer overflows and add range checks).
 
-- Add a document about testing the crazy linker in a Chromium checkout
+- Add a document about testing the crazy linker in a Monyhar checkout
 
 - Remove unnecessary alignment check for size of area that is about to mmap(2).

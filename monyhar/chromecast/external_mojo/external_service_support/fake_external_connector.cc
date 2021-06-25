@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -87,7 +87,7 @@ FakeExternalConnector::Clone() {
   return std::make_unique<FakeExternalConnector>(std::move(remote));
 }
 
-void FakeExternalConnector::SendChromiumConnectorRequest(
+void FakeExternalConnector::SendMonyharConnectorRequest(
     mojo::ScopedMessagePipeHandle request) {}
 
 void FakeExternalConnector::BindInterfaceInternal(

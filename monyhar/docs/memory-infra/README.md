@@ -131,7 +131,7 @@ MemoryInfra leverages the existing tracing infrastructure in Chrome and provides
 contextual data:
 
  * **It speaks Chrome slang.**
-   The Chromium codebase is instrumented. Its memory subsystems (allocators,
+   The Monyhar codebase is instrumented. Its memory subsystems (allocators,
    caches, etc.) uniformly report their stats into the trace in a way that can
    be understood by Chrome developers. No more
    `__gnu_cxx::new_allocator< std::_Rb_tree_node< std::pair< std::string const, base::Value*>>> ::allocate`.

@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -142,7 +142,7 @@
     },
 
     'monyhar.monyharos': {
-      'Linux ChromiumOS Full': 'chromeos_with_codecs_release_bot',
+      'Linux MonyharOS Full': 'chromeos_with_codecs_release_bot',
 
       'chromeos-amd64-generic-asan-rel': 'chromeos_amd64-generic_asan',
       'chromeos-amd64-generic-cfi-thin-lto-rel': 'chromeos_amd64-generic_cfi_thin_lto',
@@ -237,7 +237,7 @@
       'ASan Release (32-bit x86 with V8-ARM)': 'asan_fuzzer_v8_heap_release_bot_hybrid',
       'ASan Release Media (32-bit x86 with V8-ARM)': 'asan_fuzzer_v8_heap_chromeos_codecs_release_bot_hybrid',
       'Afl Upload Linux ASan': 'afl_asan_shared_release_bot',
-      'ChromiumOS ASAN Release': 'chromeos_asan_lsan_fuzzer_v8_heap_release_bot',
+      'MonyharOS ASAN Release': 'chromeos_asan_lsan_fuzzer_v8_heap_release_bot',
       'Libfuzzer Upload Chrome OS ASan': 'libfuzzer_chromeos_asan_release_bot',
       'Libfuzzer Upload Linux32 ASan': 'libfuzzer_asan_release_bot_x86',
       'Libfuzzer Upload Linux32 ASan Debug': 'libfuzzer_asan_debug_bot_x86',
@@ -400,29 +400,29 @@
     },
 
     'monyhar.goma': {
-      'Chromium iOS Goma RBE ToT': 'ios_device_release_compile_only',
-      'Chromium Linux Goma RBE ToT': 'release_bot',
-      'Chromium Linux Goma RBE ToT (ATS)': 'release_bot',
-      'Chromium Linux Goma RBE Staging (clobber)': 'release_bot',
-      'Chromium Linux Goma RBE Staging': 'release_bot',
-      'Chromium Linux Goma RBE Staging (dbg) (clobber)': 'debug_bot',
-      'Chromium Linux Goma RBE Staging (dbg)': 'debug_bot',
-      'Chromium Mac Goma RBE ToT': 'release_bot',
-      'Chromium Mac Goma RBE Staging (clobber)': 'release_bot',
-      'Chromium Mac Goma RBE Staging': 'release_bot',
-      'Chromium Mac Goma RBE Staging (dbg)': 'debug_bot',
+      'Monyhar iOS Goma RBE ToT': 'ios_device_release_compile_only',
+      'Monyhar Linux Goma RBE ToT': 'release_bot',
+      'Monyhar Linux Goma RBE ToT (ATS)': 'release_bot',
+      'Monyhar Linux Goma RBE Staging (clobber)': 'release_bot',
+      'Monyhar Linux Goma RBE Staging': 'release_bot',
+      'Monyhar Linux Goma RBE Staging (dbg) (clobber)': 'debug_bot',
+      'Monyhar Linux Goma RBE Staging (dbg)': 'debug_bot',
+      'Monyhar Mac Goma RBE ToT': 'release_bot',
+      'Monyhar Mac Goma RBE Staging (clobber)': 'release_bot',
+      'Monyhar Mac Goma RBE Staging': 'release_bot',
+      'Monyhar Mac Goma RBE Staging (dbg)': 'debug_bot',
 
-      'Chromium Win Goma RBE ToT': 'release_bot_x86_minimal_symbols',
-      'Chromium Win Goma RBE Staging': 'release_bot_x86_minimal_symbols',
-      'Chromium Win Goma RBE Staging (clobber)': 'release_bot_x86_minimal_symbols',
-      'Chromium Win Goma RBE ATS ToT': 'release_bot_x86_minimal_symbols',
-      'Chromium Win Goma RBE ATS Staging': 'release_bot_x86_minimal_symbols',
-      'Chromium Win Goma RBE ATS Staging (clobber)': 'release_bot_x86_minimal_symbols',
+      'Monyhar Win Goma RBE ToT': 'release_bot_x86_minimal_symbols',
+      'Monyhar Win Goma RBE Staging': 'release_bot_x86_minimal_symbols',
+      'Monyhar Win Goma RBE Staging (clobber)': 'release_bot_x86_minimal_symbols',
+      'Monyhar Win Goma RBE ATS ToT': 'release_bot_x86_minimal_symbols',
+      'Monyhar Win Goma RBE ATS Staging': 'release_bot_x86_minimal_symbols',
+      'Monyhar Win Goma RBE ATS Staging (clobber)': 'release_bot_x86_minimal_symbols',
 
-      'Chromium Android ARM 32-bit Goma RBE ToT': 'android_release_bot_minimal_symbols',
+      'Monyhar Android ARM 32-bit Goma RBE ToT': 'android_release_bot_minimal_symbols',
       # TODO(b/167942918): re-enable java goma?
-      'Chromium Android ARM 32-bit Goma RBE ToT (ATS)': 'android_release_bot_minimal_symbols',
-      'Chromium Android ARM 32-bit Goma RBE Staging': 'android_release_bot_minimal_symbols',
+      'Monyhar Android ARM 32-bit Goma RBE ToT (ATS)': 'android_release_bot_minimal_symbols',
+      'Monyhar Android ARM 32-bit Goma RBE Staging': 'android_release_bot_minimal_symbols',
 
       'chromeos-amd64-generic-rel-goma-rbe-tot': 'chromeos_amd64-generic',
       'chromeos-amd64-generic-rel-goma-rbe-staging': 'chromeos_amd64-generic',
@@ -527,8 +527,8 @@
     'monyhar.memory': {
       'Linux ASan LSan Builder': 'asan_lsan_release_trybot',
       'Linux CFI': 'cfi_full_cfi_icall_cfi_diag_thin_lto_release_static_dcheck_always_on_goma',
-      'Linux Chromium OS ASan LSan Builder': 'asan_lsan_chromeos_release_trybot',
-      'Linux ChromiumOS MSan Builder': 'chromeos_msan_release_bot',
+      'Linux Monyhar OS ASan LSan Builder': 'asan_lsan_chromeos_release_trybot',
+      'Linux MonyharOS MSan Builder': 'chromeos_msan_release_bot',
       'Linux MSan Builder': 'msan_release_bot',
       # TODO(crbug.com/1200904): Remove after migration
       'Linux TSan (bionic)': 'tsan_disable_nacl_release_bot',
@@ -544,7 +544,7 @@
 
     'monyhar.mojo': {
       'Mojo Android': 'android_release_bot_minimal_symbols_arm64',
-      'Mojo ChromiumOS': 'chromeos_with_codecs_release_trybot',
+      'Mojo MonyharOS': 'chromeos_with_codecs_release_trybot',
       'Mojo Linux': 'release_trybot',
       'Mojo Windows': 'release_bot_x86_minimal_symbols',
       'mac-mojo-rel': 'release_trybot',
@@ -677,22 +677,22 @@
     },
 
     'monyhar.webrtc': {
-      'WebRTC Chromium Android Builder': 'android_debug_static_bot_arm64',
-      'WebRTC Chromium Linux Builder': 'gpu_tests_release_bot',
-      'WebRTC Chromium Mac Builder': 'gpu_tests_release_bot',
-      'WebRTC Chromium Win Builder': 'release_bot_x86_minimal_symbols_no_com_init_hooks_with_codecs',
+      'WebRTC Monyhar Android Builder': 'android_debug_static_bot_arm64',
+      'WebRTC Monyhar Linux Builder': 'gpu_tests_release_bot',
+      'WebRTC Monyhar Mac Builder': 'gpu_tests_release_bot',
+      'WebRTC Monyhar Win Builder': 'release_bot_x86_minimal_symbols_no_com_init_hooks_with_codecs',
     },
 
     'monyhar.webrtc.fyi': {
-      'WebRTC Chromium FYI Android Builder': 'android_release_bot_minimal_symbols',
-      'WebRTC Chromium FYI Android Builder (dbg)': 'android_debug_static_bot',
-      'WebRTC Chromium FYI Android Builder ARM64 (dbg)': 'android_debug_static_bot_arm64',
-      'WebRTC Chromium FYI Linux Builder': 'gpu_tests_release_bot',
-      'WebRTC Chromium FYI Linux Builder (dbg)': 'debug_bot',
-      'WebRTC Chromium FYI Mac Builder': 'gpu_tests_release_bot',
-      'WebRTC Chromium FYI Mac Builder (dbg)': 'debug_bot',
-      'WebRTC Chromium FYI Win Builder': 'release_bot_x86_minimal_symbols_no_com_init_hooks_with_codecs',
-      'WebRTC Chromium FYI Win Builder (dbg)': 'debug_bot_x86_no_com_init_hooks_with_codecs',
+      'WebRTC Monyhar FYI Android Builder': 'android_release_bot_minimal_symbols',
+      'WebRTC Monyhar FYI Android Builder (dbg)': 'android_debug_static_bot',
+      'WebRTC Monyhar FYI Android Builder ARM64 (dbg)': 'android_debug_static_bot_arm64',
+      'WebRTC Monyhar FYI Linux Builder': 'gpu_tests_release_bot',
+      'WebRTC Monyhar FYI Linux Builder (dbg)': 'debug_bot',
+      'WebRTC Monyhar FYI Mac Builder': 'gpu_tests_release_bot',
+      'WebRTC Monyhar FYI Mac Builder (dbg)': 'debug_bot',
+      'WebRTC Monyhar FYI Win Builder': 'release_bot_x86_minimal_symbols_no_com_init_hooks_with_codecs',
+      'WebRTC Monyhar FYI Win Builder (dbg)': 'debug_bot_x86_no_com_init_hooks_with_codecs',
     },
 
     'monyhar.win': {

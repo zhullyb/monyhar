@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,7 +56,7 @@ BluetoothChooserAndroid::~BluetoothChooserAndroid() {
 }
 
 bool BluetoothChooserAndroid::CanAskForScanningPermission() {
-  // Creating the dialog returns null if Chromium can't ask for permission to
+  // Creating the dialog returns null if Monyhar can't ask for permission to
   // scan for BT devices.
   return !java_dialog_.is_null();
 }

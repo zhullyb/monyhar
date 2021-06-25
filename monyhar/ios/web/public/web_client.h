@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -80,7 +80,7 @@ class WebClient {
   virtual std::string GetApplicationLocale() const;
 
   // Returns true if URL has application specific schema. Embedder must return
-  // true for every custom app specific schema it supports. For example Chromium
+  // true for every custom app specific schema it supports. For example Monyhar
   // browser would return true for "chrome://about" URL.
   virtual bool IsAppSpecificURL(const GURL& url) const;
 

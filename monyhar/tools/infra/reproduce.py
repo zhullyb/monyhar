@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Debug monyhar builds locally.
@@ -144,7 +144,7 @@ class Build(object):
     # Buildbot id number. Used to fetch data from logdog.
     self._bb_id = ''
 
-    # Chromium revision. Used to run `gclient sync`.
+    # Monyhar revision. Used to run `gclient sync`.
     self.monyhar_revision = ''
 
     # Patch information. Tuple of (repo url, patch ref). Used in `gclient sync`.

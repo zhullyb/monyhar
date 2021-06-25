@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -228,14 +228,14 @@ if (is_mac || is_android) {
     if (is_mac && is_component_build) {
       ldflags = [
         # The handler is in
-        # Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/A/Helpers/
+        # Monyhar.app/Contents/Frameworks/Monyhar Framework.framework/Versions/A/Helpers/
         # or
         # Content Shell.app/Contents/Frameworks/Content Shell Framework.framework/Versions/C/Helpers/
         # so set rpath up to the base.
         "-Wl,-rpath,@loader_path/../../../../../../..",
 
         # The handler can also be executed in an unbundled framework at
-        # Chromium Framework.framework/Versions/A/Helpers/
+        # Monyhar Framework.framework/Versions/A/Helpers/
         "-Wl,-rpath,@loader_path/../../../..",
 
         # The handler can be executed from headless_browsertests in Helpers/

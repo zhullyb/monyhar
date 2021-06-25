@@ -1,5 +1,5 @@
 <!--
-Copyright 2020 The Chromium Authors. All rights reserved.
+Copyright 2020 The Monyhar Authors. All rights reserved.
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
@@ -96,7 +96,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <summary>
     Recorded to indicate whether the GetCookiesForURL call found cookies or not
     when called on a specific system cookie store implementation. Most of the
-    cookies fetching on iOS Chromium is done by the WKWebView and doesn't
+    cookies fetching on iOS Monyhar is done by the WKWebView and doesn't
     involve calling GetCookiesForURL. The method is only called when a request
     is made by the UrlRequestFetcher for cases that are not handled by WKWebView
     (eg. Downloads, Auto Suggestions and NTP tiles).
@@ -109,7 +109,7 @@ reviews. Googlers can read more about this at go/gwsq-gerrit.
   <owner>bling-team@google.com</owner>
   <summary>
     The system cookie store type used when GetCookiesForURL method is called.
-    Most of the cookies fetching on iOS Chromium is done by the WKWebView and
+    Most of the cookies fetching on iOS Monyhar is done by the WKWebView and
     doesn't involve calling GetCookiesForURL. The method is only called when a
     request is made by the UrlRequestFetcher for cases that are not handled by
     WKWebView (eg. Downloads, Auto Suggestions and NTP tiles).

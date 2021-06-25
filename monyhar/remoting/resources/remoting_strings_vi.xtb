@@ -72,7 +72,7 @@ Nếu đã chọn '<ph name="SERVICE_SCRIPT_NAME" />', hãy bỏ chọn rồi ch
 <translation id="4405930547258349619">Thư viện trung tâm</translation>
 <translation id="443560535555262820">Mở tùy chọn Hỗ trợ tiếp cận</translation>
 <translation id="4450893287417543264">Không hiện lại</translation>
-<translation id="4512952200932940229">Bản quyền 2021 The Chromium Authors. Bảo lưu mọi quyền.</translation>
+<translation id="4512952200932940229">Bản quyền 2021 The Monyhar Authors. Bảo lưu mọi quyền.</translation>
 <translation id="4513946894732546136">Phản hồi</translation>
 <translation id="4563926062592110512">Ứng dụng khách đã ngắt kết nối: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Thiết bị từ xa</translation>
@@ -147,7 +147,7 @@ Nếu đã chọn '<ph name="SERVICE_SCRIPT_NAME" />', hãy bỏ chọn rồi ch
 <translation id="7868137160098754906">Hãy nhập mã PIN của bạn cho máy tính từ xa.</translation>
 <translation id="7895403300744144251">Chính sách quyền riêng tư trên máy tính từ xa không cho phép các kết nối từ tài khoản của bạn.</translation>
 <translation id="7936528439960309876">Gắn vào bên phải</translation>
-<translation id="7970576581263377361">Xác thực bị lỗi. Vui lòng đăng nhập lại vào Chromium.</translation>
+<translation id="7970576581263377361">Xác thực bị lỗi. Vui lòng đăng nhập lại vào Monyhar.</translation>
 <translation id="7981525049612125370">Phiên từ xa đã hết hạn.</translation>
 <translation id="8038111231936746805">(mặc định)</translation>
 <translation id="8041089156583427627">Gửi ý kiến phản hồi</translation>
@@ -181,6 +181,6 @@ Nếu đã đánh dấu vào hộp '<ph name="SERVICE_SCRIPT_NAME" />', hãy b�
 <translation id="9187628920394877737">Cấp quyền 'Ghi màn hình' cho <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Cấu hình máy chủ không hợp lệ.</translation>
 <translation id="981121421437150478">Ngoại tuyến</translation>
-<translation id="985602178874221306">Tác giả Chromium</translation>
+<translation id="985602178874221306">Tác giả Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (trực tuyến lần cuối <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -220,7 +220,7 @@ void AwRenderFrameExt::DidCommitProvisionalLoad(
     ui::PageTransition transition) {
   // Clear the cache when we cross site boundaries in the main frame.
   //
-  // We're trying to approximate what happens with a multi-process Chromium,
+  // We're trying to approximate what happens with a multi-process Monyhar,
   // where navigation across origins would cause a new render process to spin
   // up, and thus start with a clear cache. Wiring up a signal from browser to
   // renderer code to say "this navigation would have switched processes" would

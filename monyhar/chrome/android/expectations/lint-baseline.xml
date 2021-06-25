@@ -821,7 +821,7 @@
         errorLine1="                requestId, new AwContents.VisualStateCallback() {"
         errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="../../android_webview/support_library/java/src/org/monyhar/support_lib_glue/SupportLibWebViewChromium.java"
+            file="../../android_webview/support_library/java/src/org/monyhar/support_lib_glue/SupportLibWebViewMonyhar.java"
             line="50"
             column="32"/>
     </issue>
@@ -964,7 +964,7 @@
         errorLine1="                requestId, callback == null ? null : new AwContents.VisualStateCallback() {"
         errorLine2="                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="../../android_webview/glue/java/src/com/android/webview/monyhar/WebViewChromium.java"
+            file="../../android_webview/glue/java/src/com/android/webview/monyhar/WebViewMonyhar.java"
             line="971"
             column="58"/>
     </issue>
@@ -975,7 +975,7 @@
         errorLine1="                mAwContents.getWebContents()));"
         errorLine2="                            ~~~~~~~~~~~~~~">
         <location
-            file="../../android_webview/glue/java/src/com/android/webview/monyhar/WebViewChromium.java"
+            file="../../android_webview/glue/java/src/com/android/webview/monyhar/WebViewMonyhar.java"
             line="1827"
             column="29"/>
     </issue>

@@ -1,7 +1,7 @@
 # Introduction
 
 This document describes the `.build_config` files that are used by the
-Chromium build system for Android-specific targets like APK, resources,
+Monyhar build system for Android-specific targets like APK, resources,
 and more.
 
 [TOC]

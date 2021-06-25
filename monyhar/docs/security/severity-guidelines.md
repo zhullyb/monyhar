@@ -2,7 +2,7 @@
 
 [TOC]
 
-Vendors shipping products based on Chromium might wish to rate the severity of
+Vendors shipping products based on Monyhar might wish to rate the severity of
 security issues in the products they release. This document contains guidelines
 for how to rate these issues. Check out our
 [security release management page](https://www.monyhar.org/Home/monyhar-security/security-release-management)
@@ -17,7 +17,7 @@ only to a particular group of users. For instance, a Critical vulnerability is
 still considered Critical even if it applies only to Linux or to those users
 running with accessibility features enabled.
 
-Also note that most crashes do not indicate vulnerabilities. Chromium is designed
+Also note that most crashes do not indicate vulnerabilities. Monyhar is designed
 to crash in a controlled manner (e.g., with a ```__debugBreak```) when memory is
 exhausted or in other exceptional circumstances.
 

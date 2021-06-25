@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ import java.util.Locale;
 public class HostBrowserLauncherParams {
     private boolean mIsNewStyleWebApk;
     private String mHostBrowserPackageName;
-    private int mHostBrowserMajorChromiumVersion;
+    private int mHostBrowserMajorMonyharVersion;
     private boolean mDialogShown;
     private Intent mOriginalIntent;
     private String mStartUrl;
@@ -44,7 +44,7 @@ public class HostBrowserLauncherParams {
         Bundle metadata = WebApkUtils.readMetaData(context);
         if (metadata == null) return null;
 
-        int hostBrowserMajorChromiumVersion = HostBrowserUtils.queryHostBrowserMajorChromiumVersion(
+        int hostBrowserMajorMonyharVersion = HostBrowserUtils.queryHostBrowserMajorMonyharVersion(
                 context, hostBrowserPackageName);
         long intentLaunchTimeMs = intent.getLongExtra(WebApkConstants.EXTRA_WEBAPK_LAUNCH_TIME, -1);
         if (intentLaunchTimeMs > 0) {
@@ -94,7 +94,7 @@ public class HostBrowserLauncherParams {
         boolean isNewStyleWebApk = metadata.getBoolean(WebApkMetaDataKeys.IS_NEW_STYLE_WEBAPK);
 
         return new HostBrowserLauncherParams(isNewStyleWebApk, hostBrowserPackageName,
-                hostBrowserMajorChromiumVersion, dialogShown, intent, startUrl, source,
+                hostBrowserMajorMonyharVersion, dialogShown, intent, startUrl, source,
                 forceNavigation, launchTimeMs, splashShownTimeMs,
                 selectedShareTargetActivityClassName);
     }
@@ -206,12 +206,12 @@ public class HostBrowserLauncherParams {
     }
 
     private HostBrowserLauncherParams(boolean isNewStyleWebApk, String hostBrowserPackageName,
-            int hostBrowserMajorChromiumVersion, boolean dialogShown, Intent originalIntent,
+            int hostBrowserMajorMonyharVersion, boolean dialogShown, Intent originalIntent,
             String startUrl, int source, boolean forceNavigation, long launchTimeMs,
             long splashShownTimeMs, String selectedShareTargetActivityClassName) {
         mIsNewStyleWebApk = isNewStyleWebApk;
         mHostBrowserPackageName = hostBrowserPackageName;
-        mHostBrowserMajorChromiumVersion = hostBrowserMajorChromiumVersion;
+        mHostBrowserMajorMonyharVersion = hostBrowserMajorMonyharVersion;
         mDialogShown = dialogShown;
         mOriginalIntent = originalIntent;
         mStartUrl = startUrl;
@@ -236,11 +236,11 @@ public class HostBrowserLauncherParams {
     }
 
     /**
-     * Returns the major version of the host browser. Currently, only Chromium host browsers
+     * Returns the major version of the host browser. Currently, only Monyhar host browsers
      * (Chrome Canary, Chrome Dev ...) are supported.
      */
-    public int getHostBrowserMajorChromiumVersion() {
-        return mHostBrowserMajorChromiumVersion;
+    public int getHostBrowserMajorMonyharVersion() {
+        return mHostBrowserMajorMonyharVersion;
     }
 
     /** Returns whether the choose-host-browser dialog was shown. */

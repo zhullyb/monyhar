@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11874,7 +11874,7 @@ TEST_F(HttpNetworkTransactionTest, BuildRequest_UserAgent) {
   request.method = "GET";
   request.url = GURL("http://www.example.org/");
   request.extra_headers.SetHeader(HttpRequestHeaders::kUserAgent,
-                                  "Chromium Ultra Awesome X Edition");
+                                  "Monyhar Ultra Awesome X Edition");
   request.traffic_annotation =
       net::MutableNetworkTrafficAnnotationTag(TRAFFIC_ANNOTATION_FOR_TESTS);
 
@@ -11886,7 +11886,7 @@ TEST_F(HttpNetworkTransactionTest, BuildRequest_UserAgent) {
           "GET / HTTP/1.1\r\n"
           "Host: www.example.org\r\n"
           "Connection: keep-alive\r\n"
-          "User-Agent: Chromium Ultra Awesome X Edition\r\n\r\n"),
+          "User-Agent: Monyhar Ultra Awesome X Edition\r\n\r\n"),
   };
 
   // Lastly, the server responds with the actual content.

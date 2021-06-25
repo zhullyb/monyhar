@@ -269,7 +269,7 @@ index 5a8099ec5bd1..cd6be338e486 100644
  bool File::Create(const wchar *Name,uint Mode)
  {
 +#if defined(CHROMIUM_UNRAR)
-+  // Since the Chromium sandbox does not allow the creation of files, use the
++  // Since the Monyhar sandbox does not allow the creation of files, use the
 +  // provided file.
 +  hFile = hOpenFile;
 +#else

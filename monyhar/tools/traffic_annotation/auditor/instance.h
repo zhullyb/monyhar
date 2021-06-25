@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -138,7 +138,7 @@ class AnnotationInstance : public InstanceBase {
   int archive_content_hash_code;
 
   // The milestone (Chrome version) where this annotation was first added to
-  // Chromium code.
+  // Monyhar code.
   int archive_added_in_milestone;
 
   // Flag stating if annotation is loaded from annotations.xml.

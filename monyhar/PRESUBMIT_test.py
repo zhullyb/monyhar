@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -825,7 +825,7 @@ class IncludeGuardTest(unittest.TestCase):
           'struct McBoatFace;',
           '#endif  // AcceptedInBlink_h',
         ]),
-        # Using a non-Chromium include guard in third_party
+        # Using a non-Monyhar include guard in third_party
         # (outside blink) is accepted.
         MockAffectedFile('third_party/foo/some_file.h', [
           '#ifndef REQUIRED_RPCNDR_H_',
@@ -1940,7 +1940,7 @@ class CorrectProductNameInMessagesTest(unittest.TestCase):
       ]),
       MockAffectedFile('chrome/app/monyhar_strings.grd', [
         '<message name="Bar" desc="Welcome to Chrome">',
-        '  Welcome to Chromium!',
+        '  Welcome to Monyhar!',
         '</message>',
       ]),
     ]
@@ -1948,7 +1948,7 @@ class CorrectProductNameInMessagesTest(unittest.TestCase):
         mock_input_api, MockOutputApi())
     self.assertEqual(0, len(warnings))
 
-  def testChromeInChromium(self):
+  def testChromeInMonyhar(self):
     mock_input_api = MockInputApi()
     mock_input_api.files = [
       MockAffectedFile('chrome/app/google_chrome_strings.grd', [
@@ -1967,17 +1967,17 @@ class CorrectProductNameInMessagesTest(unittest.TestCase):
     self.assertEqual(1, len(warnings))
     self.assertTrue('chrome/app/monyhar_strings.grd' in warnings[0].items[0])
 
-  def testChromiumInChrome(self):
+  def testMonyharInChrome(self):
     mock_input_api = MockInputApi()
     mock_input_api.files = [
       MockAffectedFile('chrome/app/google_chrome_strings.grd', [
         '<message name="Foo" desc="Welcome to Chrome">',
-        '  Welcome to Chromium!',
+        '  Welcome to Monyhar!',
         '</message>',
       ]),
       MockAffectedFile('chrome/app/monyhar_strings.grd', [
         '<message name="Bar" desc="Welcome to Chrome">',
-        '  Welcome to Chromium!',
+        '  Welcome to Monyhar!',
         '</message>',
       ]),
     ]
@@ -1995,7 +1995,7 @@ class CorrectProductNameInMessagesTest(unittest.TestCase):
         '  Welcome to Chrome!',
         '</message>',
         '<message name="Baz" desc="A correct message">',
-        '  Chromium is the software you are using.',
+        '  Monyhar is the software you are using.',
         '</message>',
         '<message name="Bat" desc="An incorrect message">',
         '  Google Chrome is the software you are using.',
@@ -2018,7 +2018,7 @@ class CorrectProductNameInMessagesTest(unittest.TestCase):
         '  Welcome to Chrome!',
         '</message>',
         '<message name="Baz" desc="A correct message">',
-        '  Chromium is the software you are using.',
+        '  Monyhar is the software you are using.',
         '</message>',
         '<message name="Bat" desc="An incorrect message">',
         '  Google Chrome is the software you are using.',
@@ -2029,7 +2029,7 @@ class CorrectProductNameInMessagesTest(unittest.TestCase):
         '  Welcome to Chrome!',
         '</message>',
         '<message name="Baz" desc="A correct message">',
-        '  Chromium is the software you are using.',
+        '  Monyhar is the software you are using.',
         '</message>',
         '<message name="Bat" desc="An incorrect message">',
         '  Google Chrome is the software you are using.',

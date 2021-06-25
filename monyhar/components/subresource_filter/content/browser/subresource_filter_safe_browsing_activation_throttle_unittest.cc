@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -929,7 +929,7 @@ TEST_F(SubresourceFilterSafeBrowsingActivationThrottleTest,
   tester().ExpectTotalCount(kSafeBrowsingCheckTime, 1);
 }
 
-// Flaky on Win, Chromium and Linux. http://crbug.com/748524
+// Flaky on Win, Monyhar and Linux. http://crbug.com/748524
 TEST_P(SubresourceFilterSafeBrowsingActivationThrottleParamTest,
        DISABLED_ListMatchedOnStart_NoDelay) {
   const ActivationListTestData& test_data = GetParam();
@@ -951,7 +951,7 @@ TEST_P(SubresourceFilterSafeBrowsingActivationThrottleParamTest,
                                  base::TimeDelta::FromMilliseconds(0), 1);
 }
 
-// Flaky on Win, Chromium and Linux. http://crbug.com/748524
+// Flaky on Win, Monyhar and Linux. http://crbug.com/748524
 TEST_P(SubresourceFilterSafeBrowsingActivationThrottleParamTest,
        DISABLED_ListMatchedOnRedirect_NoDelay) {
   const ActivationListTestData& test_data = GetParam();

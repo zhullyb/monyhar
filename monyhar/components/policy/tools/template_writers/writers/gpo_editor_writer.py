@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018 The Chromium Authors. All rights reserved.
+# Copyright (c) 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -25,7 +25,7 @@ class GpoEditorWriter(template_writer.TemplateWriter):
     #
     # TODO(crbug.com/463990): Eventually exclude some policies, e.g. if they
     # were deprecated a long time ago.
-    major_version = self._GetChromiumMajorVersion()
+    major_version = self._GetMonyharMajorVersion()
     if not major_version:
       return True
 
@@ -41,7 +41,7 @@ class GpoEditorWriter(template_writer.TemplateWriter):
     return False
 
   def _IsRemovedPolicy(self, policy):
-    major_version = self._GetChromiumMajorVersion()
+    major_version = self._GetMonyharMajorVersion()
     for supported_on in policy.get('supported_on', []):
       if '*' in self.platforms or supported_on['platform'] in self.platforms:
         until_version = supported_on.get('until_version', None)

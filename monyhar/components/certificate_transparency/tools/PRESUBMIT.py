@@ -1,9 +1,9 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 
-"""Chromium presubmit script for src/net/tools/ct_log_list."""
+"""Monyhar presubmit script for src/net/tools/ct_log_list."""
 
 
 def _RunMakeCTLogListTests(input_api, output_api):

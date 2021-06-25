@@ -1,8 +1,8 @@
 #!/usr/bin/env vpython
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-"""Stage the Chromium checkout to update CTS test version."""
+"""Stage the Monyhar checkout to update CTS test version."""
 
 import contextlib
 import json
@@ -277,8 +277,8 @@ def filter_cts_file(cts_config, cts_zip_file, dest_dir):
   raise ValueError('Could not find platform and arch for: ' + cts_zip_file)
 
 
-class ChromiumRepoHelper(object):
-  """Performs operations on Chromium checkout."""
+class MonyharRepoHelper(object):
+  """Performs operations on Monyhar checkout."""
 
   def __init__(self, root_dir=SRC_DIR):
     self._root_dir = os.path.abspath(root_dir)

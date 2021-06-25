@@ -2,17 +2,17 @@
 
 # NOTE: This script requires python 3.
 
-"""Script to generate Chromium's Abseil .def files at roll time.
+"""Script to generate Monyhar's Abseil .def files at roll time.
 
 This script generates //third_party/abseil-app/absl/symbols_*.def at Abseil
 roll time.
 
-Since Abseil doesn't export symbols, Chromium is forced to consider all
+Since Abseil doesn't export symbols, Monyhar is forced to consider all
 Abseil's symbols as publicly visible. On POSIX it is possible to use
 -fvisibility=default but on Windows a .def file with all the symbols
 is needed.
 
-Unless you are on a Windows machine, you need to set up your Chromium
+Unless you are on a Windows machine, you need to set up your Monyhar
 checkout for cross-compilation by following the instructions at
 https://monyhar.googlesource.com/monyhar/src.git/+/main/docs/win_cross.md.
 If you are on Windows, you may need to tweak this script to run, e.g. by

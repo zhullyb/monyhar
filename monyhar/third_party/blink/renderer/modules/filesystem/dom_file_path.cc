@@ -111,7 +111,7 @@ bool DOMFilePath::IsValidPath(const String& path) {
     return false;
 
   // While not [yet] restricted by the spec, '\\' complicates implementation for
-  // Chromium.
+  // Monyhar.
   if (path.find('\\') != WTF::kNotFound)
     return false;
 

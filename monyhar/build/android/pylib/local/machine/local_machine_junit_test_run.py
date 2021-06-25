@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -25,7 +25,7 @@ from py_utils import tempfile_ext
 # These Test classes are used for running tests and are excluded in the test
 # runner. See:
 # https://android.googlesource.com/platform/frameworks/testing/+/android-support-test/runner/src/main/java/android/support/test/internal/runner/TestRequestBuilder.java
-# base/test/android/javatests/src/org/monyhar/base/test/BaseChromiumAndroidJUnitRunner.java # pylint: disable=line-too-long
+# base/test/android/javatests/src/org/monyhar/base/test/BaseMonyharAndroidJUnitRunner.java # pylint: disable=line-too-long
 _EXCLUDED_CLASSES_PREFIXES = ('android', 'junit', 'org/bouncycastle/util',
                               'org/hamcrest', 'org/junit', 'org/mockito')
 

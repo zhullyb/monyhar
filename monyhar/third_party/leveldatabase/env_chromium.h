@@ -138,18 +138,18 @@ LEVELDB_EXPORT std::string DatabaseNameForRewriteDB(
 // space. A value of -1 will return leveldb's default write buffer size.
 LEVELDB_EXPORT extern size_t WriteBufferSize(int64_t disk_space);
 
-class LEVELDB_EXPORT ChromiumEnv : public leveldb::Env {
+class LEVELDB_EXPORT MonyharEnv : public leveldb::Env {
  public:
   using ScheduleFunc = void(void*);
 
-  // Constructs a ChromiumEnv instance with an unrestricted FilesystemProxy
+  // Constructs a MonyharEnv instance with an unrestricted FilesystemProxy
   // instance that performs direct filesystem access.
-  ChromiumEnv();
+  MonyharEnv();
 
-  // Constructs a ChromiumEnv instance with a custom FilesystemProxy instance.
-  explicit ChromiumEnv(std::unique_ptr<storage::FilesystemProxy> filesystem);
+  // Constructs a MonyharEnv instance with a custom FilesystemProxy instance.
+  explicit MonyharEnv(std::unique_ptr<storage::FilesystemProxy> filesystem);
 
-  ~ChromiumEnv() override;
+  ~MonyharEnv() override;
 
   bool FileExists(const std::string& fname) override;
   leveldb::Status GetChildren(const std::string& dir,
@@ -183,12 +183,12 @@ class LEVELDB_EXPORT ChromiumEnv : public leveldb::Env {
   void SetReadOnlyFileLimitForTesting(int max_open_files);
 
  protected:
-  // Constructs a ChromiumEnv instance with a local unrestricted FilesystemProxy
+  // Constructs a MonyharEnv instance with a local unrestricted FilesystemProxy
   // instance that performs direct filesystem access.
-  explicit ChromiumEnv(const std::string& name);
+  explicit MonyharEnv(const std::string& name);
 
-  // Constructs a ChromiumEnv instance with a custom FilesystemProxy instance.
-  ChromiumEnv(const std::string& name,
+  // Constructs a MonyharEnv instance with a custom FilesystemProxy instance.
+  MonyharEnv(const std::string& name,
               std::unique_ptr<storage::FilesystemProxy> filesystem);
 
   static const char* FileErrorString(base::File::Error error);
@@ -266,10 +266,10 @@ class LEVELDB_EXPORT DBTracker {
 
   using DatabaseVisitor = base::RepeatingCallback<void(TrackedDB*)>;
 
-  friend class ChromiumEnvDBTrackerTest;
-  FRIEND_TEST_ALL_PREFIXES(ChromiumEnvDBTrackerTest, IsTrackedDB);
-  FRIEND_TEST_ALL_PREFIXES(ChromiumEnvDBTrackerTest, MemoryDumpCreation);
-  FRIEND_TEST_ALL_PREFIXES(ChromiumEnvDBTrackerTest, MemEnvMemoryDumpCreation);
+  friend class MonyharEnvDBTrackerTest;
+  FRIEND_TEST_ALL_PREFIXES(MonyharEnvDBTrackerTest, IsTrackedDB);
+  FRIEND_TEST_ALL_PREFIXES(MonyharEnvDBTrackerTest, MemoryDumpCreation);
+  FRIEND_TEST_ALL_PREFIXES(MonyharEnvDBTrackerTest, MemEnvMemoryDumpCreation);
 
   DBTracker();
   ~DBTracker();

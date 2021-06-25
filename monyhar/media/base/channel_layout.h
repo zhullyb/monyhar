@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -109,7 +109,7 @@ enum ChannelLayout {
   CHANNEL_LAYOUT_4_1_QUAD_SIDE = 31,
 
   // Actual channel layout is specified in the bitstream and the actual channel
-  // count is unknown at Chromium media pipeline level (useful for audio
+  // count is unknown at Monyhar media pipeline level (useful for audio
   // pass-through mode).
   CHANNEL_LAYOUT_BITSTREAM = 32,
 

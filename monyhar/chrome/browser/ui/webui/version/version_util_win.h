@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@ namespace win {
 std::string GetFullWindowsVersion();
 
 // Return a formatted version of the update cohort string
-// IDS_VERSION_UI_COHORT_NAME filled with the update cohort of this Chromium
+// IDS_VERSION_UI_COHORT_NAME filled with the update cohort of this Monyhar
 // install.
 std::u16string GetCohortVersionInfo();
 

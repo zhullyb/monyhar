@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ public class CaptioningStyle {
     private Typeface mTypeface;
 
     /**
-     * Construct a Chromium CaptioningStyle object.
+     * Construct a Monyhar CaptioningStyle object.
      *
      * @param backgroundColor background color of the CaptioningStyle
      * @param edgeColor edge color of the CaptioningStyle
@@ -92,14 +92,14 @@ public class CaptioningStyle {
     }
 
     /**
-     * Converts from a platform CaptionStyle to a Chromium CaptioningStyle. In the case that null
+     * Converts from a platform CaptionStyle to a Monyhar CaptioningStyle. In the case that null
      * is passed in, a CaptioningStyle that includes no settings is returned.
      * This is safe to call on KitKat.
      *
      * KitKat CaptionStyle supported neither windowColor nor a few enum values of edgeType.
      *
      * @param captionStyle an Android platform CaptionStyle object
-     * @return a Chromium CaptioningStyle object
+     * @return a Monyhar CaptioningStyle object
      */
     public static CaptioningStyle createFrom(CaptionStyle captionStyle) {
         if (captionStyle == null) {

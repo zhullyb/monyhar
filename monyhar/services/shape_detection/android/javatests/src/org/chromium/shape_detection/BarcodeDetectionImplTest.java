@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -117,7 +117,7 @@ public class BarcodeDetectionImplTest {
     public static class BarcodeExampleParams implements ParameterProvider {
         private static List<ParameterSet> sBarcodeExampleParams = Arrays.asList(
                 new ParameterSet()
-                        .value("aztec.png", BarcodeFormat.AZTEC, "Chromium", 11, 11, 61, 61)
+                        .value("aztec.png", BarcodeFormat.AZTEC, "Monyhar", 11, 11, 61, 61)
                         .name("AZTEC"),
                 new ParameterSet()
                         .value("codabar.png", BarcodeFormat.CODABAR, "A6.2831853B", 24, 24, 448, 95)
@@ -129,10 +129,10 @@ public class BarcodeDetectionImplTest {
                         .value("code_93.png", BarcodeFormat.CODE_93, "CHROMIUM", 20, 20, 216, 75)
                         .name("CODE_93"),
                 new ParameterSet()
-                        .value("code_128.png", BarcodeFormat.CODE_128, "Chromium", 20, 20, 246, 75)
+                        .value("code_128.png", BarcodeFormat.CODE_128, "Monyhar", 20, 20, 246, 75)
                         .name("CODE_128"),
                 new ParameterSet()
-                        .value("data_matrix.png", BarcodeFormat.DATA_MATRIX, "Chromium", 11, 11, 53,
+                        .value("data_matrix.png", BarcodeFormat.DATA_MATRIX, "Monyhar", 11, 11, 53,
                                 53)
                         .name("DATA_MATIX"),
                 new ParameterSet()
@@ -145,7 +145,7 @@ public class BarcodeDetectionImplTest {
                         .value("itf.png", BarcodeFormat.ITF, "62831853071795", 10, 10, 135, 39)
                         .name("ITF"),
                 new ParameterSet()
-                        .value("pdf417.png", BarcodeFormat.PDF417, "Chromium", 20, 20, 240, 44)
+                        .value("pdf417.png", BarcodeFormat.PDF417, "Monyhar", 20, 20, 240, 44)
                         .name("PDF417"),
                 new ParameterSet()
                         .value("qr_code.png", BarcodeFormat.QR_CODE, "https://monyhar.org", 40, 40,

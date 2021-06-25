@@ -1,4 +1,4 @@
-# This is reserved for people that are familiar with how Chromium builders
+# This is reserved for people that are familiar with how Monyhar builders
 # run tests and understand the implications of changing these files.
 
 # If you're making changes that affect CQ builders (like adding new tests or

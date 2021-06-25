@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -149,10 +149,10 @@ const base::Feature kBrowserVerifiedUserActivationMouse{
 const base::Feature kCacheInlineScriptCode{"CacheInlineScriptCode",
                                            base::FEATURE_ENABLED_BY_DEFAULT};
 
-// If Canvas2D Image Chromium is allowed, this feature controls whether it is
+// If Canvas2D Image Monyhar is allowed, this feature controls whether it is
 // enabled.
-const base::Feature kCanvas2DImageChromium {
-  "Canvas2DImageChromium",
+const base::Feature kCanvas2DImageMonyhar {
+  "Canvas2DImageMonyhar",
 #if defined(OS_MAC)
       base::FEATURE_ENABLED_BY_DEFAULT
 #else
@@ -502,11 +502,11 @@ const base::Feature kOverscrollHistoryNavigation{
 const base::Feature kPeriodicBackgroundSync{"PeriodicBackgroundSync",
                                             base::FEATURE_DISABLED_BY_DEFAULT};
 
-// If Pepper 3D Image Chromium is allowed, this feature controls whether it is
+// If Pepper 3D Image Monyhar is allowed, this feature controls whether it is
 // enabled.
 // TODO(https://crbug.com/1196009): Remove this feature, remove the code that
 // uses it.
-const base::Feature kPepper3DImageChromium{"Pepper3DImageChromium",
+const base::Feature kPepper3DImageMonyhar{"Pepper3DImageMonyhar",
                                            base::FEATURE_DISABLED_BY_DEFAULT};
 
 // Kill-switch to introduce a compatibility breaking restriction.
@@ -932,20 +932,20 @@ const base::Feature kWebBluetoothNewPermissionsBackend{
 
 // Controls whether Web Bundles (Bundled HTTP Exchanges) is enabled.
 // https://wicg.github.io/webpackage/draft-yasskin-wpack-bundled-exchanges.html
-// When this feature is enabled, Chromium can load unsigned Web Bundles local
+// When this feature is enabled, Monyhar can load unsigned Web Bundles local
 // file under file:// URL (and content:// URI on Android).
 const base::Feature kWebBundles{"WebBundles",
                                 base::FEATURE_DISABLED_BY_DEFAULT};
 
-// When this feature is enabled, Chromium will be able to load unsigned Web
+// When this feature is enabled, Monyhar will be able to load unsigned Web
 // Bundles file under https: URL and localhost http: URL.
 // TODO(crbug.com/1018640): Implement this feature.
 const base::Feature kWebBundlesFromNetwork{"WebBundlesFromNetwork",
                                            base::FEATURE_DISABLED_BY_DEFAULT};
 
-// If WebGL Image Chromium is allowed, this feature controls whether it is
+// If WebGL Image Monyhar is allowed, this feature controls whether it is
 // enabled.
-const base::Feature kWebGLImageChromium{"WebGLImageChromium",
+const base::Feature kWebGLImageMonyhar{"WebGLImageMonyhar",
                                         base::FEATURE_ENABLED_BY_DEFAULT};
 
 // Enable WebGPU on gpu serivce side only. This is used with origin trial

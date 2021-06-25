@@ -1,10 +1,10 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 /**
  * @fileoverview 'settings-clear-browsing-data-dialog' allows the user to
- * delete browsing data that has been cached by Chromium.
+ * delete browsing data that has been cached by Monyhar.
  */
 
 import 'chrome://resources/cr_elements/cr_button/cr_button.m.js';

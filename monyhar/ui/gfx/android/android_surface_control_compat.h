@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -51,7 +51,7 @@ class GFX_EXPORT SurfaceControl {
   static bool SupportsOnCommit();
 
   // Applies transaction. Used to emulate webview functor interface, where we
-  // pass raw ASurfaceTransaction object. For use inside Chromium use
+  // pass raw ASurfaceTransaction object. For use inside Monyhar use
   // Transaction class below instead.
   static void ApplyTransaction(ASurfaceTransaction* transaction);
 

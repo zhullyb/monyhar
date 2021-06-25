@@ -1,12 +1,12 @@
 // These tests rely on the User Agent providing an implementation of
 // MockWebOTPService.
 //
-// In Chromium-based browsers this implementation is provided by a polyfill
+// In Monyhar-based browsers this implementation is provided by a polyfill
 // in order to reduce the amount of test-only code shipped to users. To enable
 // these tests the browser must be run with these options:
 // //   --enable-blink-features=MojoJS,MojoJSTest
 
-import {isChromiumBased} from '/resources/test-only-api.m.js';
+import {isMonyharBased} from '/resources/test-only-api.m.js';
 
 /**
  * This enumeration is used by WebOTP WPTs to control mock backend behavior.
@@ -41,8 +41,8 @@ export class MockWebOTPService {
  * instance if one is available.
  */
 async function createBrowserSpecificMockImpl() {
-  if (isChromiumBased) {
-    return await createChromiumMockImpl();
+  if (isMonyharBased) {
+    return await createMonyharMockImpl();
   }
   throw new Error('Unsupported browser.');
 }
@@ -59,12 +59,12 @@ export function expectOTPRequest() {
 }
 
 /**
- * Instantiates a Chromium-specific subclass of MockWebOTPService.
+ * Instantiates a Monyhar-specific subclass of MockWebOTPService.
  */
-async function createChromiumMockImpl() {
+async function createMonyharMockImpl() {
   const {SmsStatus, WebOTPService, WebOTPServiceReceiver} = await import(
       '/gen/third_party/blink/public/mojom/sms/webotp_service.mojom.m.js');
-  const MockWebOTPServiceChromium = class extends MockWebOTPService {
+  const MockWebOTPServiceMonyhar = class extends MockWebOTPService {
     constructor() {
       super();
       this.mojoReceiver_ = new WebOTPServiceReceiver(this);
@@ -109,6 +109,6 @@ async function createChromiumMockImpl() {
 
     async abort() {}
   };
-  return new MockWebOTPServiceChromium();
+  return new MockWebOTPServiceMonyhar();
 }
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-"""Wrapper script to help run clang tools across Chromium code.
+"""Wrapper script to help run clang tools across Monyhar code.
 
 How to use run_tool.py:
-If you want to run a clang tool across all Chromium code:
+If you want to run a clang tool across all Monyhar code:
 run_tool.py <tool> <path/to/compiledb>
 
 If you want to include all files mentioned in the compilation database
@@ -17,7 +17,7 @@ content/browser:
 run_tool.py <tool> <path/to/compiledb> chrome/browser content/browser
 
 Please see docs/clang_tool_refactoring.md for more information, which documents
-the entire automated refactoring flow in Chromium.
+the entire automated refactoring flow in Monyhar.
 
 Why use run_tool.py (instead of running a clang tool directly):
 The clang tool implementation doesn't take advantage of multiple cores, and if

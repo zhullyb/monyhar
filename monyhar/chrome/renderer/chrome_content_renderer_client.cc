@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -277,7 +277,7 @@ using extensions::Extension;
 
 namespace {
 
-// Whitelist PPAPI for Android Runtime for Chromium. (See crbug.com/383937)
+// Whitelist PPAPI for Android Runtime for Monyhar. (See crbug.com/383937)
 #if BUILDFLAG(ENABLE_PLUGINS)
 const char* const kPredefinedAllowedCameraDeviceOrigins[] = {
     "6EAED1924DB611B6EEF2A664BD077BE7EAD33B8F",

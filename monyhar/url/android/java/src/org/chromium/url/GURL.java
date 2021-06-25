@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ import org.monyhar.base.task.TaskTraits;
 import java.util.Random;
 
 /**
- * An immutable Java wrapper for GURL, Chromium's URL parsing library.
+ * An immutable Java wrapper for GURL, Monyhar's URL parsing library.
  *
  * This class is safe to use during startup, but will block on the native library being sufficiently
  * loaded to use native GURL (and will not wait for content initialization). In practice it's very

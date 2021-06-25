@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -204,15 +204,15 @@ void NetworkFetcherImpl::OnProgressCallback(ProgressCallback progress_callback,
   progress_callback.Run(base::saturated_cast<int64_t>(current));
 }
 
-NetworkFetcherChromiumFactory::NetworkFetcherChromiumFactory(
+NetworkFetcherMonyharFactory::NetworkFetcherMonyharFactory(
     scoped_refptr<network::SharedURLLoaderFactory> shared_url_network_factory,
     SendCookiesPredicate cookie_predicate)
     : shared_url_network_factory_(shared_url_network_factory),
       cookie_predicate_(cookie_predicate) {}
 
-NetworkFetcherChromiumFactory::~NetworkFetcherChromiumFactory() = default;
+NetworkFetcherMonyharFactory::~NetworkFetcherMonyharFactory() = default;
 
-std::unique_ptr<NetworkFetcher> NetworkFetcherChromiumFactory::Create() const {
+std::unique_ptr<NetworkFetcher> NetworkFetcherMonyharFactory::Create() const {
   return std::make_unique<NetworkFetcherImpl>(shared_url_network_factory_,
                                               cookie_predicate_);
 }

@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -77,7 +77,7 @@ template("ios_eg2_test") {
 
     # TODO(crbug.com/1056328) Because we change the target name, the subnodes
     # are going to append with the _test in the naming, which won't be backwards
-    # compatible during migration from iOS recipe to Chromium.
+    # compatible during migration from iOS recipe to Monyhar.
     output_name = "${_target_name}"
   }
 

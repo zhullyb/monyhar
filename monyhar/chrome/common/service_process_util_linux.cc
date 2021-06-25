@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -69,7 +69,7 @@ bool ServiceProcessState::AddToAutoRun() {
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
   std::string app_name = "Google Chrome Service";
 #else  // BUILDFLAG(CHROMIUM_BRANDING)
-  std::string app_name = "Chromium Service";
+  std::string app_name = "Monyhar Service";
 #endif
   return AutoStart::AddApplication(
       GetServiceProcessScopedName(GetBaseDesktopName()),

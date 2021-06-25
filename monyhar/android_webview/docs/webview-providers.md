@@ -135,7 +135,7 @@ decided to use `targetSdkVersion` as a proxy for this:
   [`Build.VERSION_CODES.CUR_DEVELOPMENT`](https://developer.android.com/reference/android/os/Build.VERSION_CODES#CUR_DEVELOPMENT)
   and be compiled with the corresponding pre-release SDK.
 
-In the Chromium repo, we configure this in GN args by setting
+In the Monyhar repo, we configure this in GN args by setting
 `android_sdk_release = "x"`, where "x" is the lowercase codename letter of the
 desired OS version. Upstream monyhar code usually only supports the latest
 public Android version, so you should use that value for all public Android OS

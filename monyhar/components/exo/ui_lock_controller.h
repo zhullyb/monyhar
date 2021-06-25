@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ extern const base::TimeDelta kLongPressEscapeDuration;
 // TODO(cpelling): For now this is just non-immersive fullscreen. Eventually
 // this should also break pointer lock.
 //
-// The "long keypress" design is inspired by Chromium's Keyboard Lock feature
+// The "long keypress" design is inspired by Monyhar's Keyboard Lock feature
 // (see https://chromestatus.com/feature/5642959835889664).
 class UILockController : public ui::EventHandler, public SeatObserver {
  public:

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -174,7 +174,7 @@ class WebAppShortcutCreator {
   bool UpdateIcon(const base::FilePath& app_path) const;
 
   // Path to the data directory for this app. For example:
-  // ~/Library/Application Support/Chromium/Default/Web Applications/_crx_abc/
+  // ~/Library/Application Support/Monyhar/Default/Web Applications/_crx_abc/
   const base::FilePath app_data_dir_;
 
   // Information about the app. Owned by the caller of the constructor.

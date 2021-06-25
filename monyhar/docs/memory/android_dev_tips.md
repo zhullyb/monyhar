@@ -42,7 +42,7 @@ $ ./build/android/adb_chrome_public_command_line --my-happy-flag-here
 Select monyhar as the system debug app to pick up flags!:
    * Go to the `Developer Options` in Android Settings
    * Find the `Select debug app` option.
-   * Select Chromium (after your first install)
+   * Select Monyhar (after your first install)
 
 If you neglect to do this AND you do not have a rooted phone, the
 `adb_chrome_public_command_line` tool cannot write a command line file into the

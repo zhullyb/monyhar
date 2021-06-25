@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -597,7 +597,7 @@ public class VrShell extends GvrLayout
         return mDelegate.canRequestRecordAudioPermission();
     }
 
-    // Exits VR, telling the user to remove their headset, and returning to Chromium.
+    // Exits VR, telling the user to remove their headset, and returning to Monyhar.
     @CalledByNative
     public void forceExitVr() {
         mDelegate.showDoff(false);

@@ -419,7 +419,7 @@ SkFontHinting RendererPreferencesToSkiaHinting(
   if (!prefs.should_antialias_text) {
     // When anti-aliasing is off, GTK maps all non-zero hinting settings to
     // 'Normal' hinting so we do the same. Otherwise, folks who have 'Slight'
-    // hinting selected will see readable text in everything expect Chromium.
+    // hinting selected will see readable text in everything expect Monyhar.
     switch (prefs.hinting) {
       case gfx::FontRenderParams::HINTING_NONE:
         return SkFontHinting::kNone;

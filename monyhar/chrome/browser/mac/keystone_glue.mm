@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -354,7 +354,7 @@ NSString* const kVersionKey = @"KSVersion";
   // Default to none.
   _brandFile.reset(@"", base::scoped_policy::RETAIN);
 
-  // Only a side-by-side capable Chromium can have an independent brand code.
+  // Only a side-by-side capable Monyhar can have an independent brand code.
 
   if (!chrome::IsSideBySideCapable()) {
     // If on the older dev or beta channels that were not side-by-side capable,

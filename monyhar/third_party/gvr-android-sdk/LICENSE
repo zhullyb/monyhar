@@ -196,7 +196,7 @@ This software may use portions of the following libraries subject to the accompa
 ****************************
 monyhar_audio
 ****************************
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -5693,7 +5693,7 @@ BoringSSL is a fork of OpenSSL. As such, large parts of it fall under OpenSSL
 licensing. Files that are completely new have a Google copyright and an ISC
 license. This license is reproduced at the bottom of this file.
 
-Contributors to BoringSSL are required to follow the CLA rules for Chromium:
+Contributors to BoringSSL are required to follow the CLA rules for Monyhar:
 https://cla.developers.google.com/clas
 
 Some files from Intel are under yet another license, which is also included
@@ -5883,7 +5883,7 @@ BoringSSL is a fork of OpenSSL. As such, large parts of it fall under OpenSSL
 licensing. Files that are completely new have a Google copyright and an ISC
 license. This license is reproduced at the bottom of this file.
 
-Contributors to BoringSSL are required to follow the CLA rules for Chromium:
+Contributors to BoringSSL are required to follow the CLA rules for Monyhar:
 https://cla.developers.google.com/clas
 
 Some files from Intel are under yet another license, which is also included

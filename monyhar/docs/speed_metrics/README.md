@@ -100,7 +100,7 @@ changelog](../speed/metrics_changelog/README.md) which will be updated over time
   * [Lessons learned from performance monitoring in
     Chrome](https://www.youtube.com/watch?v=ctavZT87syI), by Annie Sullivan.
   * [Shipping a performance API on
-    Chromium](https://ftp.osuosl.org/pub/fosdem/2020/H.1309/webperf_monyhar_development.webm),
+    Monyhar](https://ftp.osuosl.org/pub/fosdem/2020/H.1309/webperf_monyhar_development.webm),
     by Nicolás Peña Moreno.
   * [Understanding Cumulative Layout
     Shift](https://www.youtube.com/watch?v=zIJuY-JCjqw), by Annie Sullivan and

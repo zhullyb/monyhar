@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -89,7 +89,7 @@ def ProcessArgs(args, parser=None):
     rest_args_filtered.append('--retry-limit=2')
   rest_args_filtered.extend(
       ['--repository-absolute-path',
-       path_util.GetChromiumSrcDir()])
+       path_util.GetMonyharSrcDir()])
   return rest_args_filtered
 
 

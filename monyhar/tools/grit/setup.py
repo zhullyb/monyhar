@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -20,7 +20,7 @@ setuptools.setup(
     install_requires=[
         'six >= 1.10',
     ],
-    author='The Chromium Authors',
+    author='The Monyhar Authors',
     author_email='monyhar-dev@monyhar.org',
     description=('Google Resource and Internationalization Tool for managing '
                  'translations & resource files'),

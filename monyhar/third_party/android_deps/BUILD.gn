@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -91,7 +91,7 @@ if (!limit_android_deps) {
   }
 
   android_library("monyhar_play_services_availability_java") {
-    sources = [ "util/org/monyhar/gms/ChromiumPlayServicesAvailability.java" ]
+    sources = [ "util/org/monyhar/gms/MonyharPlayServicesAvailability.java" ]
     deps = [ "$google_play_services_package:google_play_services_base_java" ]
   }
 
@@ -99,7 +99,7 @@ if (!limit_android_deps) {
     # Platform checks are broken for Robolectric. See https://crbug.com/1071638.
     bypass_platform_checks = true
     testonly = true
-    sources = [ "util/org/monyhar/gms/shadows/ShadowChromiumPlayServicesAvailability.java" ]
+    sources = [ "util/org/monyhar/gms/shadows/ShadowMonyharPlayServicesAvailability.java" ]
     deps = [
       ":monyhar_play_services_availability_java",
       "//third_party/android_deps:robolectric_all_java",

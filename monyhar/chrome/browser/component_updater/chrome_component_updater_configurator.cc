@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -179,7 +179,7 @@ scoped_refptr<update_client::NetworkFetcherFactory>
 ChromeConfigurator::GetNetworkFetcherFactory() {
   if (!network_fetcher_factory_) {
     network_fetcher_factory_ =
-        base::MakeRefCounted<update_client::NetworkFetcherChromiumFactory>(
+        base::MakeRefCounted<update_client::NetworkFetcherMonyharFactory>(
             g_browser_process->system_network_context_manager()
                 ->GetSharedURLLoaderFactory(),
             // Never send cookies for component update downloads.
@@ -201,7 +201,7 @@ scoped_refptr<update_client::UnzipperFactory>
 ChromeConfigurator::GetUnzipperFactory() {
   DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
   if (!unzip_factory_) {
-    unzip_factory_ = base::MakeRefCounted<update_client::UnzipChromiumFactory>(
+    unzip_factory_ = base::MakeRefCounted<update_client::UnzipMonyharFactory>(
         base::BindRepeating(&unzip::LaunchUnzipper));
   }
   return unzip_factory_;
@@ -211,7 +211,7 @@ scoped_refptr<update_client::PatcherFactory>
 ChromeConfigurator::GetPatcherFactory() {
   DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
   if (!patch_factory_) {
-    patch_factory_ = base::MakeRefCounted<update_client::PatchChromiumFactory>(
+    patch_factory_ = base::MakeRefCounted<update_client::PatchMonyharFactory>(
         base::BindRepeating(&patch::LaunchFilePatcher));
   }
   return patch_factory_;

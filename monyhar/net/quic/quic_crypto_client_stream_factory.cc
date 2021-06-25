@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Chromium Authors. All rights reserved.
+// Copyright (c) 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -17,7 +17,7 @@ class DefaultCryptoStreamFactory : public QuicCryptoClientStreamFactory {
  public:
   quic::QuicCryptoClientStream* CreateQuicCryptoClientStream(
       const quic::QuicServerId& server_id,
-      QuicChromiumClientSession* session,
+      QuicMonyharClientSession* session,
       std::unique_ptr<quic::ProofVerifyContext> proof_verify_context,
       quic::QuicCryptoClientConfig* crypto_config) override {
     return new quic::QuicCryptoClientStream(server_id, session,

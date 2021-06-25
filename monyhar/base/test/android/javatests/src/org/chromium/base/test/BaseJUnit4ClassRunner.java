@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -103,8 +103,8 @@ public class BaseJUnit4ClassRunner extends AndroidJUnit4ClassRunner {
                         InstrumentationRegistry.getArguments(), false, 0L, false));
 
         assert InstrumentationRegistry.getInstrumentation()
-                        instanceof BaseChromiumAndroidJUnitRunner
-            : "Must use BaseChromiumAndroidJUnitRunner instrumentation with "
+                        instanceof BaseMonyharAndroidJUnitRunner
+            : "Must use BaseMonyharAndroidJUnitRunner instrumentation with "
               + "BaseJUnit4ClassRunner, but found: "
               + InstrumentationRegistry.getInstrumentation().getClass();
         String traceOutput = InstrumentationRegistry.getArguments().getString(EXTRA_TRACE_FILE);
@@ -124,7 +124,7 @@ public class BaseJUnit4ClassRunner extends AndroidJUnit4ClassRunner {
     /** Returns the singleton Application instance. */
     public static Application getApplication() {
         return (Application)
-                BaseChromiumAndroidJUnitRunner.sInMemorySharedPreferencesContext.getBaseContext();
+                BaseMonyharAndroidJUnitRunner.sInMemorySharedPreferencesContext.getBaseContext();
     }
 
     /**
@@ -265,7 +265,7 @@ public class BaseJUnit4ClassRunner extends AndroidJUnit4ClassRunner {
      */
     @Override
     public void run(RunNotifier notifier) {
-        if (BaseChromiumAndroidJUnitRunner.shouldListTests()) {
+        if (BaseMonyharAndroidJUnitRunner.shouldListTests()) {
             for (Description child : getDescription().getChildren()) {
                 notifier.fireTestFinished(child);
             }

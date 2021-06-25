@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -62,7 +62,7 @@ enum StoreReadResult {
   // that doesn't contain hash prefixes.
   UNEXPECTED_MAGIC_NUMBER_FAILURE = 5,
 
-  // The version of the file is different from expected and Chromium doesn't
+  // The version of the file is different from expected and Monyhar doesn't
   // know how to interpret this version of the file.
   FILE_VERSION_INCOMPATIBLE_FAILURE = 6,
 

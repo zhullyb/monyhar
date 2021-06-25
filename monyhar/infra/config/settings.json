@@ -1,6 +1,6 @@
 {
     "project": "monyhar",
-    "project_title": "Chromium",
+    "project_title": "Monyhar",
     "is_main": true,
     "is_lts_branch": false,
     "ref": "refs/heads/master",

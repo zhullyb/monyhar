@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -158,7 +158,7 @@ bool WStringSetMatchEntry(const std::wstring& value,
 bool WStringWildcardMatchInsensitive(const std::wstring& text,
                                      const std::wstring& pattern,
                                      const wchar_t escape_char) {
-  // TODO(crbug.com/837637): Check the performance of Chromium's MatchPattern
+  // TODO(crbug.com/837637): Check the performance of Monyhar's MatchPattern
   // and replace this with it if possible.
   WildcardMatchCache cache;
   return WStringWildcardMatchRecursive(text, 0, pattern, 0, escape_char,

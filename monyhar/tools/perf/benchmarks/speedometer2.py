@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -19,7 +19,7 @@ from telemetry.web_perf import timeline_based_measurement
 
 from page_sets import speedometer2_pages
 
-_SPEEDOMETER_DIR = os.path.join(path_util.GetChromiumSrcDir(),
+_SPEEDOMETER_DIR = os.path.join(path_util.GetMonyharSrcDir(),
     'third_party', 'blink', 'perf_tests', 'speedometer')
 
 @benchmark.Info(emails=['hablich@monyhar.org'],

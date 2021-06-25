@@ -3,7 +3,7 @@
 Library for using the image annotation service on images on webpages.
 
 The image annotation service performs general image processing / labeling tasks
-in Chromium. This library enables use of the service with webpages; for example,
+in Monyhar. This library enables use of the service with webpages; for example,
 by tracking images on webpages and sending their pixel data to the service.
 
 This is a layered component

@@ -14,7 +14,7 @@
 
 // This is branched from AOSP's frameworks/base/opengl/include/ETC1/etc1.h
 //
-// It has been modified to implement Chromium's ETC1 API.  The decoding path
+// It has been modified to implement Monyhar's ETC1 API.  The decoding path
 // has been removed as we do not require it.
 
 #ifndef THIRD_PARTY_ANDROID_OPENGL_ETC1_ETC1_H_

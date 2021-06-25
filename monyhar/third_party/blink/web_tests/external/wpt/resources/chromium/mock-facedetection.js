@@ -97,7 +97,7 @@ self.FaceDetectionTest = (() => {
     MockFaceDetectionProvider: null
   }
 
-  class FaceDetectionTestChromium {
+  class FaceDetectionTestMonyhar {
     constructor() {
       Object.freeze(this); // Make it immutable.
     }
@@ -126,5 +126,5 @@ self.FaceDetectionTest = (() => {
     }
   }
 
-  return FaceDetectionTestChromium;
+  return FaceDetectionTestMonyhar;
 })();

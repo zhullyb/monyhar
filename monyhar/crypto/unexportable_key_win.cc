@@ -1,4 +1,4 @@
-// Copyright (c) 2021 The Chromium Authors. All rights reserved.
+// Copyright (c) 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,7 +56,7 @@ std::vector<uint8_t> CBBToVector(const CBB* cbb) {
   return std::vector<uint8_t>(CBB_data(cbb), CBB_data(cbb) + CBB_len(cbb));
 }
 
-// BCryptAlgorithmFor returns the BCrypt algorithm ID for the given Chromium
+// BCryptAlgorithmFor returns the BCrypt algorithm ID for the given Monyhar
 // signing algorithm.
 absl::optional<LPCWSTR> BCryptAlgorithmFor(
     SignatureVerifier::SignatureAlgorithm algo) {

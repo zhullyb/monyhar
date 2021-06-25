@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -54,8 +54,8 @@ class RegisterUninstallationViaOsSettingsTest : public testing::Test {
 // creation on the Start Menu only.
 TEST_F(RegisterUninstallationViaOsSettingsTest, DuplicateKey) {
   ASSERT_TRUE(RegisterUninstallationViaOsSettings(
-      register_key_, L"Display_Name", L"Chromium", *uninstall_commandline_,
-      base::FilePath(L"C:\\users\\account\\AppData\\Local\\Chromium\\User "
+      register_key_, L"Display_Name", L"Monyhar", *uninstall_commandline_,
+      base::FilePath(L"C:\\users\\account\\AppData\\Local\\Monyhar\\User "
                      "Data\\Default\\Icons\\icon.ico")));
 
   ASSERT_EQ(uninstall_key_.OpenKey(register_key_.c_str(), KEY_QUERY_VALUE),
@@ -63,8 +63,8 @@ TEST_F(RegisterUninstallationViaOsSettingsTest, DuplicateKey) {
 
   // It should be failed for duplicate key.
   ASSERT_FALSE(RegisterUninstallationViaOsSettings(
-      register_key_, L"Display_Name", L"Chromium", *uninstall_commandline_,
-      base::FilePath(L"C:\\users\\account\\AppData\\Local\\Chromium\\User "
+      register_key_, L"Display_Name", L"Monyhar", *uninstall_commandline_,
+      base::FilePath(L"C:\\users\\account\\AppData\\Local\\Monyhar\\User "
                      "Data\\Default\\Icons\\icon.ico")));
 
   UnregisterUninstallationViaOsSettings(register_key_);
@@ -81,10 +81,10 @@ TEST_F(RegisterUninstallationViaOsSettingsTest, RegValues) {
   // Registry entry is inserted as it has --app-id argument and
   // uninstall_string property set.
   std::wstring display_name = L"Display_Name";
-  std::wstring publisher = L"Chromium";
+  std::wstring publisher = L"Monyhar";
 
   base::FilePath icon_path(
-      L"C:\\users\\account\\AppData\\Local\\Chromium\\User "
+      L"C:\\users\\account\\AppData\\Local\\Monyhar\\User "
       "Data\\Default\\Icons\\icon.ico");
 
   ASSERT_TRUE(RegisterUninstallationViaOsSettings(

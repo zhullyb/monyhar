@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -53,7 +53,7 @@ class ExternalConnectorImpl : public ExternalConnector {
                      mojo::ScopedMessagePipeHandle interface_pipe,
                      bool async = true) override;
   std::unique_ptr<ExternalConnector> Clone() override;
-  void SendChromiumConnectorRequest(
+  void SendMonyharConnectorRequest(
       mojo::ScopedMessagePipeHandle request) override;
   void QueryServiceList(
       base::OnceCallback<

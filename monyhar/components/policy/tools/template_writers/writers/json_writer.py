@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -70,9 +70,9 @@ class JsonWriter(template_writer.TemplateWriter):
     self._first_written = False
 
   def BeginTemplate(self):
-    if self._GetChromiumVersionString() is not None:
+    if self._GetMonyharVersionString() is not None:
       self.WriteComment(self.config['build'] + ''' version: ''' + \
-          self._GetChromiumVersionString())
+          self._GetMonyharVersionString())
     self._out.append(TEMPLATE_HEADER)
 
   def EndTemplate(self):

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -80,7 +80,7 @@ IN_PROC_BROWSER_TEST_F(HeadlessBrowserTest,
               UnorderedElementsAre(browser_context));
 
   // We check that HeadlessBrowser correctly handles non-closed BrowserContexts.
-  // We can rely on Chromium DCHECKs to capture this.
+  // We can rely on Monyhar DCHECKs to capture this.
 }
 
 IN_PROC_BROWSER_TEST_F(HeadlessBrowserTest, CreateAndDestroyWebContents) {
@@ -125,7 +125,7 @@ IN_PROC_BROWSER_TEST_F(HeadlessBrowserTest,
 
   EXPECT_TRUE(browser()->GetAllBrowserContexts().empty());
 
-  // If WebContents are not destroyed, Chromium DCHECKs will capture this.
+  // If WebContents are not destroyed, Monyhar DCHECKs will capture this.
 }
 
 IN_PROC_BROWSER_TEST_F(HeadlessBrowserTest, CreateAndDoNotDestroyWebContents) {
@@ -141,7 +141,7 @@ IN_PROC_BROWSER_TEST_F(HeadlessBrowserTest, CreateAndDoNotDestroyWebContents) {
   EXPECT_THAT(browser_context->GetAllWebContents(),
               UnorderedElementsAre(web_contents));
 
-  // If WebContents are not destroyed, Chromium DCHECKs will capture this.
+  // If WebContents are not destroyed, Monyhar DCHECKs will capture this.
 }
 
 IN_PROC_BROWSER_TEST_F(HeadlessBrowserTest, DestroyAndCreateTwoWebContents) {

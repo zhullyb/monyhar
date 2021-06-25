@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -95,7 +95,7 @@ struct NaClStartParams {
   bool validation_cache_enabled;
   std::string validation_cache_key;
   // Chrome version string. Sending the version string over IPC avoids linkage
-  // issues in cases where NaCl is not compiled into the main Chromium
+  // issues in cases where NaCl is not compiled into the main Monyhar
   // executable or DLL.
   std::string version;
 

@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -127,7 +127,7 @@ declare_args() {
   # handling them internally.  This disables the built-in crash handler.
   use_system_crash_handler = false
 
-  # True to use the Chromium runtime for cast rendering.
+  # True to use the Monyhar runtime for cast rendering.
   enable_monyhar_runtime_cast_renderer = false
 
   # True to link in alternate build targets for the Cast Media Runtime.

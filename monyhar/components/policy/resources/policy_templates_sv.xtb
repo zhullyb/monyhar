@@ -2218,7 +2218,7 @@
 <translation id="5148753489738115745">Innebär att du kan ange ytterligare parametrar som används när <ph name="PRODUCT_FRAME_NAME" /> startar <ph name="PRODUCT_NAME" />.
 
           Om policyn inte anges används standardkommandoraden.</translation>
-<translation id="5152787786897382519">I både Chromium och Google Chrome finns principgrupper som måste användas tillsammans för att styra över vissa funktioner. Dessa uppsättningar representeras av följande principgrupper. Eftersom principer kan komma från flera olika källor gäller endast värden som kommer från källor med högst prioritet. Värden från en källa med lägre prioritet i samma grupp ignoreras. Prioriteringsordningen förklaras i <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">I både Monyhar och Google Chrome finns principgrupper som måste användas tillsammans för att styra över vissa funktioner. Dessa uppsättningar representeras av följande principgrupper. Eftersom principer kan komma från flera olika källor gäller endast värden som kommer från källor med högst prioritet. Värden från en källa med lägre prioritet i samma grupp ignoreras. Prioriteringsordningen förklaras i <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Hur ofta nätverkspaket för övervakning skickas, i millisekunder.
 
       Om principen inte har angetts är standardintervallet 3 minuter. Det lägsta
@@ -3938,7 +3938,7 @@
       Om policyn inte tillämpas använder <ph name="PRODUCT_OS_NAME" /> det lokala kontot på enhetens e-postkonto-ID som visningsnamn på inloggningsskärmen.
 
       Policyn ignoreras för vanliga användarkonton.</translation>
-<translation id="8259375588339409826">Chromium och Google Chrome stöder samma uppsättning principer. Observera att principer som ännu inte har lanserats kan finnas med i det här dokumentet (en version av <ph name="PRODUCT_NAME" /> som inte har släppts ännu anges i fältet Stöds av). Sådana principer kan ändras eller tas bort utan föregående meddelande och vi ger inga som helst garantier för dem, vad gäller säkerhet eller sekretess eller något annat.
+<translation id="8259375588339409826">Monyhar och Google Chrome stöder samma uppsättning principer. Observera att principer som ännu inte har lanserats kan finnas med i det här dokumentet (en version av <ph name="PRODUCT_NAME" /> som inte har släppts ännu anges i fältet Stöds av). Sådana principer kan ändras eller tas bort utan föregående meddelande och vi ger inga som helst garantier för dem, vad gäller säkerhet eller sekretess eller något annat.
 
 De här principerna ska endast användas för att konfigurera instanser av <ph name="PRODUCT_NAME" /> internt inom organisationen. All användning av principerna utanför organisationen (t.ex. i ett program som är allmänt tillgängligt) är att uppfatta som skadlig programvara och skulle sannolikt märkas som sådan av Google och av antivirusleverantörer.
 

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -38,7 +38,7 @@ class BrowserSkiaGoldPixelDiff : public ui::test::SkiaGoldPixelDiff {
   // widget The instance you plan to take screenshots with.
   // screenshot_prefix The prefix for your screenshot name on GCS.
   //   For every screenshot you take, it should have a unique name
-  //   across Chromium, because all screenshots (aka golden images) stores
+  //   across Monyhar, because all screenshots (aka golden images) stores
   //   in one bucket on GCS. The standard convention is to use the browser
   //   test class name as the prefix. The name will be
   //   |screenshot_prefix| + "_" + |screenshot_name|.'

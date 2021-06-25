@@ -1,11 +1,11 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // Definitions for the diagnostics API exposed by the cros_healthd daemon. This
 // API is normally consumed by the browser and the diag command-line tool.
 
-// NOTE: This mojom should be kept in sync with the copy in Chromium's repo in
+// NOTE: This mojom should be kept in sync with the copy in Monyhar's repo in
 // src/platform2/diagnostics/mojo/cros_healthd_diagnostics.mojom.
 
 module chromeos.cros_healthd.mojom;

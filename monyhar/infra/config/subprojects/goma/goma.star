@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -236,42 +236,42 @@ def goma_builder(
     )
 
 goma_builder(
-    name = "Chromium Android ARM 32-bit Goma RBE Staging",
+    name = "Monyhar Android ARM 32-bit Goma RBE Staging",
     goma_backend = goma.backend.RBE_STAGING,
     execution_timeout = 4 * time.hour,
 )
 
 goma_builder(
-    name = "Chromium Android ARM 32-bit Goma RBE ToT",
+    name = "Monyhar Android ARM 32-bit Goma RBE ToT",
     goma_backend = goma.backend.RBE_TOT,
     goma_enable_ats = False,
     execution_timeout = 4 * time.hour,
 )
 
 goma_builder(
-    name = "Chromium Android ARM 32-bit Goma RBE ToT (ATS)",
+    name = "Monyhar Android ARM 32-bit Goma RBE ToT (ATS)",
     goma_backend = goma.backend.RBE_TOT,
     goma_enable_ats = True,
     execution_timeout = 4 * time.hour,
 )
 
 goma_builder(
-    name = "Chromium Linux Goma RBE Staging",
+    name = "Monyhar Linux Goma RBE Staging",
     goma_backend = goma.backend.RBE_STAGING,
 )
 
 goma_builder(
-    name = "Chromium Linux Goma RBE Staging (clobber)",
+    name = "Monyhar Linux Goma RBE Staging (clobber)",
     goma_backend = goma.backend.RBE_STAGING,
 )
 
 goma_builder(
-    name = "Chromium Linux Goma RBE Staging (dbg)",
+    name = "Monyhar Linux Goma RBE Staging (dbg)",
     goma_backend = goma.backend.RBE_STAGING,
 )
 
 goma_builder(
-    name = "Chromium Linux Goma RBE Staging (dbg) (clobber)",
+    name = "Monyhar Linux Goma RBE Staging (dbg) (clobber)",
     goma_backend = goma.backend.RBE_STAGING,
 )
 
@@ -282,13 +282,13 @@ goma_builder(
 )
 
 goma_builder(
-    name = "Chromium Linux Goma RBE ToT",
+    name = "Monyhar Linux Goma RBE ToT",
     goma_backend = goma.backend.RBE_TOT,
     goma_enable_ats = False,
 )
 
 goma_builder(
-    name = "Chromium Linux Goma RBE ToT (ATS)",
+    name = "Monyhar Linux Goma RBE ToT (ATS)",
     goma_backend = goma.backend.RBE_TOT,
     goma_enable_ats = True,
 )
@@ -313,29 +313,29 @@ def goma_mac_builder(
     )
 
 goma_mac_builder(
-    name = "Chromium iOS Goma RBE ToT",
+    name = "Monyhar iOS Goma RBE ToT",
     goma_backend = goma.backend.RBE_TOT,
     os = os.MAC_10_15,
     xcode = xcode.x12d4e,
 )
 
 goma_mac_builder(
-    name = "Chromium Mac Goma RBE Staging",
+    name = "Monyhar Mac Goma RBE Staging",
     goma_backend = goma.backend.RBE_STAGING,
 )
 
 goma_mac_builder(
-    name = "Chromium Mac Goma RBE Staging (clobber)",
+    name = "Monyhar Mac Goma RBE Staging (clobber)",
     goma_backend = goma.backend.RBE_STAGING,
 )
 
 goma_mac_builder(
-    name = "Chromium Mac Goma RBE Staging (dbg)",
+    name = "Monyhar Mac Goma RBE Staging (dbg)",
     goma_backend = goma.backend.RBE_STAGING,
 )
 
 goma_mac_builder(
-    name = "Chromium Mac Goma RBE ToT",
+    name = "Monyhar Mac Goma RBE ToT",
     goma_backend = goma.backend.RBE_TOT,
 )
 
@@ -353,37 +353,37 @@ def goma_windows_builder(
     )
 
 goma_windows_builder(
-    name = "Chromium Win Goma RBE Staging",
+    name = "Monyhar Win Goma RBE Staging",
     goma_backend = goma.backend.RBE_STAGING,
     goma_enable_ats = False,
 )
 
 goma_windows_builder(
-    name = "Chromium Win Goma RBE Staging (clobber)",
+    name = "Monyhar Win Goma RBE Staging (clobber)",
     goma_backend = goma.backend.RBE_STAGING,
     goma_enable_ats = False,
 )
 
 goma_windows_builder(
-    name = "Chromium Win Goma RBE ToT",
+    name = "Monyhar Win Goma RBE ToT",
     goma_backend = goma.backend.RBE_TOT,
     goma_enable_ats = False,
 )
 
 goma_windows_builder(
-    name = "Chromium Win Goma RBE ATS Staging",
+    name = "Monyhar Win Goma RBE ATS Staging",
     goma_backend = goma.backend.RBE_STAGING,
     goma_enable_ats = True,
 )
 
 goma_windows_builder(
-    name = "Chromium Win Goma RBE ATS Staging (clobber)",
+    name = "Monyhar Win Goma RBE ATS Staging (clobber)",
     goma_backend = goma.backend.RBE_STAGING,
     goma_enable_ats = True,
 )
 
 goma_windows_builder(
-    name = "Chromium Win Goma RBE ATS ToT",
+    name = "Monyhar Win Goma RBE ATS ToT",
     goma_backend = goma.backend.RBE_TOT,
     goma_enable_ats = True,
 )

@@ -141,7 +141,7 @@ localhost:8700`.
 
 ## Attaching GDB to debug native code
 
-The Chromium build system provides a convenience wrapper script that can be used
+The Monyhar build system provides a convenience wrapper script that can be used
 to easily launch GDB. Run
 
 ```shell

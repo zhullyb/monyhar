@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Creates a GN include file for building dav1d from source."""
@@ -11,7 +11,7 @@ import datetime
 import glob
 import os
 
-_COPYRIGHT = """# Copyright %d The Chromium Authors. All rights reserved.
+_COPYRIGHT = """# Copyright %d The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 

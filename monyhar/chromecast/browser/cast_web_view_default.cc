@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -111,7 +111,7 @@ CastWebViewDefault::CastWebViewDefault(
 
 #if BUILDFLAG(IS_ANDROID_APPLIANCE)
   // Configure the ducking multiplier for AThings-like speakers. We don't want
-  // the Chromium MediaSession to duck since we are doing our own ducking.
+  // the Monyhar MediaSession to duck since we are doing our own ducking.
   constexpr double kDuckingMultiplier = 1.0;
   content::MediaSession::Get(web_contents_.get())
       ->SetDuckingVolumeMultiplier(kDuckingMultiplier);

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -856,7 +856,7 @@ void WidgetBase::UpdateTextInputStateInternal(bool show_virtual_keyboard,
   }
   ui::TextInputType new_type = GetTextInputType();
   if (IsDateTimeInput(new_type))
-    return;  // Not considered as a text input field in WebKit/Chromium.
+    return;  // Not considered as a text input field in WebKit/Monyhar.
 
   FrameWidget* frame_widget = client_->FrameWidget();
 

@@ -33,7 +33,7 @@ https://docs.google.com/document/d/1wAHLw9h7gGuqJNCgG1mP1BmLtCGfZ2pys-PdZQ1vg7M/
 
 > Note: For more background about this section, see also [Multi-process
 Architecture](https://www.monyhar.org/developers/design-documents/multi-process-architecture)
-for an overview of the processes in Chromium.
+for an overview of the processes in Monyhar.
 
 The network service is designed as a [Mojo service](/docs/mojo_and_services.md)
 that in general doesn't need to be aware of which thread/process it runs on.
@@ -44,7 +44,7 @@ inside the browser process (*in-process*) or in a dedicated utility process
 The out-of-process configuration is preferred for isolation and stability, and
 is the default on most platforms. The in-process configuration is the default on
 Android because of some unresolved issues; see https://crbug.com/1049008.  It
-can also be useful for debugging; for example, it's used in Chromium's
+can also be useful for debugging; for example, it's used in Monyhar's
 [`--single-process`](https://www.monyhar.org/developers/design-documents/process-models)
 mode.
 
@@ -66,7 +66,7 @@ it to launch the network service. For the browser-side code, see
 `GetNetworkService()` in `content/browser/network_service_instance_impl.cc`.
 For the utility process code, see `GetIOThreadServiceFactory` in
 content/utility/services.cc. This calls `RunNetworkService()` which creates the
-`network::NetworkService` instance. For more background about Chromium's
+`network::NetworkService` instance. For more background about Monyhar's
 services architecture, see [Mojo and Services](/docs/mojo_and_services.md).
 
 *In the in-process case*: The browser process starts the network service. See

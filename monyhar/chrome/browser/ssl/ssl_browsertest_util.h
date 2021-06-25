@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -101,11 +101,11 @@ bool UsingBuiltinCertVerifier();
 // skipped.
 bool SystemSupportsHardFailRevocationChecking();
 
-// SystemUsesChromiumEVMetadata returns true iff the current operating system
-// uses Chromium's EV metadata (i.e. EVRootCAMetadata). If it does not, then
+// SystemUsesMonyharEVMetadata returns true iff the current operating system
+// uses Monyhar's EV metadata (i.e. EVRootCAMetadata). If it does not, then
 // several tests are effected because our testing EV certificate won't be
 // recognised as EV.
-bool SystemUsesChromiumEVMetadata();
+bool SystemUsesMonyharEVMetadata();
 
 // Returns true iff OCSP stapling is supported on this operating system.
 bool SystemSupportsOCSPStapling();

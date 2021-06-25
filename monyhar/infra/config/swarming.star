@@ -1,8 +1,8 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Permissions for Chromium main swarming pools (CI, try, tests).
+"""Permissions for Monyhar main swarming pools (CI, try, tests).
 
 They are actually shared with a bunch other projects.
 """
@@ -10,7 +10,7 @@ They are actually shared with a bunch other projects.
 load("//lib/swarming.star", "swarming")
 load("//project.star", "ACTIVE_MILESTONES")
 
-# Set up permissions that apply to all Chromium pools.
+# Set up permissions that apply to all Monyhar pools.
 swarming.root_permissions()
 
 # Task accounts for isolated tests.
@@ -53,8 +53,8 @@ swarming.task_triggerers(
 #
 # The tasks here are triggered via Buildbucket (which authenticates as
 # "project:<project that defines the bucket>"), so we enumerate projects
-# (besides "project:monyhar" itself) that are allowed to use Chromium CI pools
-# in their Buildbucket configs (which are currently only per-milestone Chromium
+# (besides "project:monyhar" itself) that are allowed to use Monyhar CI pools
+# in their Buildbucket configs (which are currently only per-milestone Monyhar
 # projects).
 swarming.pool_realm(
     name = "pools/ci",
@@ -89,7 +89,7 @@ swarming.task_triggerers(
     ],
     users = [
         # An account used by "Build Recipes Tester" builder infra/try bucket
-        # used to tests changes to Chromium recipes using LED before commit.
+        # used to tests changes to Monyhar recipes using LED before commit.
         "infra-try-recipes-tester@chops-service-accounts.iam.gserviceaccount.com",
     ],
 )
@@ -97,11 +97,11 @@ swarming.task_triggerers(
 # Realm with bots that run isolated tests.
 #
 # Tasks here are triggered directly on Swarming (not via Buildbucket) by various
-# CI and Try builder (not only Chromium ones!) and also directly by users.
+# CI and Try builder (not only Monyhar ones!) and also directly by users.
 swarming.pool_realm(
     name = "pools/tests",
     groups = [
-        # Various Chromium CI and Try LUCI builders that trigger isolated tests.
+        # Various Monyhar CI and Try LUCI builders that trigger isolated tests.
         "project-monyhar-ci-task-accounts",
         "project-monyhar-findit-task-accounts",
         "project-monyhar-try-task-accounts",
@@ -133,7 +133,7 @@ swarming.pool_realm(
     ],
 )
 
-# Anyone with Chromium tryjob access can use isolate testers pool directly.
+# Anyone with Monyhar tryjob access can use isolate testers pool directly.
 #
 # We assume isolated tests triggered from workstation go to the "try" realm,
 # just like tasks triggered by try jobs.

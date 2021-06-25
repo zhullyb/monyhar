@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -41,7 +41,7 @@ bool EtwTraceController::Start() {
   DCHECK_EQ(instance_, nullptr);
   instance_ = this;
 
-  // The shared Chromium event tracing class registers itself as a 'classic'
+  // The shared Monyhar event tracing class registers itself as a 'classic'
   // provider which only supports one session so stop any existing sessions now.
   // More info on ETW provider registration:
   // https://docs.microsoft.com/en-us/windows/win32/etw/about-event-tracing#mof-classic-providers

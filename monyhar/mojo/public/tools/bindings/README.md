@@ -131,7 +131,7 @@ Generated C++ bindings will define a class interface `MoneyGenerator` in the
 `MoneyGenerator` in the `org.monyhar.business.stuff` package. JavaScript
 bindings at this time are unaffected by module declarations.
 
-**NOTE:** By convention in the Chromium codebase, **all** Mojom files should
+**NOTE:** By convention in the Monyhar codebase, **all** Mojom files should
 declare a module name with at least (and preferably exactly) one top-level name
 as well as an inner `mojom` module suffix. *e.g.*, `chrome.mojom`,
 `business.mojom`, *etc.*
@@ -431,7 +431,7 @@ interesting attributes supported today.
   version-skewed binaries. Stable definitions may only depend on builtin mojom
   types or other stable definitions, and changes to such definitions MUST
   preserve backward-compatibility through appropriate use of versioning.
-  Backward-compatibility of changes is enforced in the Chromium tree using a
+  Backward-compatibility of changes is enforced in the Monyhar tree using a
   strict presubmit check. See [Versioning](#Versioning) for more details on
   backward-compatibility constraints.
 

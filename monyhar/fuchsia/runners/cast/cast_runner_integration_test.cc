@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -639,7 +639,7 @@ class CastRunnerIntegrationTest : public testing::Test {
 };
 
 // A basic integration test ensuring a basic cast request launches the right
-// URL in the Chromium service.
+// URL in the Monyhar service.
 TEST_F(CastRunnerIntegrationTest, BasicRequest) {
   TestCastComponent component(cast_runner_.get());
 
@@ -1059,7 +1059,7 @@ class HeadlessCastRunnerIntegrationTest : public CastRunnerIntegrationTest {
 };
 
 // A basic integration test ensuring a basic cast request launches the right
-// URL in the Chromium service.
+// URL in the Monyhar service.
 TEST_F(HeadlessCastRunnerIntegrationTest, Headless) {
   TestCastComponent component(cast_runner_.get());
 

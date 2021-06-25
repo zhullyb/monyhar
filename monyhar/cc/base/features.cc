@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ const base::Feature kAnimatedImageResume = {"AnimatedImageResume",
 // Enables impulse-style scroll animations in place of the default ones.
 //
 // Note: Do not enable this on the Mac. The animation does not match the system
-// scroll animation curve to such an extent that it makes Chromium stand out in
+// scroll animation curve to such an extent that it makes Monyhar stand out in
 // a bad way.
 const base::Feature kImpulseScrollAnimations = {
     "ImpulseScrollAnimations",

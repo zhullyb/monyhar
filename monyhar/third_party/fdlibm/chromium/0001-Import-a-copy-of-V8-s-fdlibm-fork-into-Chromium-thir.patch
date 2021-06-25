@@ -1,11 +1,11 @@
 From 715afeb52a0c6aca1c7fcbe8c7302f20a1a2ed1a Mon Sep 17 00:00:00 2001
 From: Caleb Raitto <caraitto@monyhar.org>
 Date: Wed, 9 Dec 2020 15:37:30 -0500
-Subject: [PATCH] Import a copy of V8's fdlibm fork into Chromium
+Subject: [PATCH] Import a copy of V8's fdlibm fork into Monyhar
  //third_party.
 
 Import a copy of v8/src/base/ieee754.[h/cc] from V8 into
-Chromium.
+Monyhar.
 
 This will be used to mitigate Web Audio fingerprinting by using the same
 math library across OS versions and platforms.
@@ -18,7 +18,7 @@ fork.
 This avoids complicating the build, and the V8 team also prefers not
 sharing these internal details. If further similar logic needs to be
 copied in the future, we could consider refactoring that into a common
-library that both V8 and Chromium pull in via DEPS.
+library that both V8 and Monyhar pull in via DEPS.
 
 The V8 math library also hasn't seen much churn, but we will need to
 keep both copies up-to-date. crrev.com/c/2593649 has added a WATCHLISTS
@@ -48,7 +48,7 @@ index 000000000000..9c70cbdb062c
 --- /dev/null
 +++ b/third_party/fdlibm/BUILD.gn
 @@ -0,0 +1,12 @@
-+# Copyright 2020 The Chromium Authors. All rights reserved.
++# Copyright 2020 The Monyhar Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be
 +# found in the LICENSE file.
 +
@@ -76,7 +76,7 @@ diff --git a/third_party/fdlibm/README.monyhar b/third_party/fdlibm/README.monyh
 index eb45e2ab9438..48b3ab4bc6cc 100644
 --- a/third_party/fdlibm/README.monyhar
 +++ b/third_party/fdlibm/README.monyhar
-@@ -13,3 +13,13 @@ This library is a copy of that V8 library intended for use in Chromium.
+@@ -13,3 +13,13 @@ This library is a copy of that V8 library intended for use in Monyhar.
  
  This library may be useful when mathematical consistency across OS platforms is
  desired.
@@ -86,7 +86,7 @@ index eb45e2ab9438..48b3ab4bc6cc 100644
 +
 +Changes from V8 upstream:
 +- Changed namespace to fdlibm.
-+- Alter //v8/src/base usage to use Chromium //base equivalents.
++- Alter //v8/src/base usage to use Monyhar //base equivalents.
 +- Implement 32-bit float functions (sinf(), etc.) by calling the 64-bit
 +  versions.
 +- Format the code.
@@ -103,7 +103,7 @@ index 1706b56dfd90..4825b22fc6f5 100644
  // The original source code covered by the above license above has been
  // modified significantly by Google Inc.
  // Copyright 2016 the V8 project authors. All rights reserved.
-+// Copyright 2020 The Chromium Authors. All rights reserved.
++// Copyright 2020 The Monyhar Authors. All rights reserved.
  
 -#include "src/base/ieee754.h"
 +#include "third_party/fdlibm/ieee754.h"
@@ -250,7 +250,7 @@ index f2b3a3eb5808..27b5013818a2 100644
 +++ b/third_party/fdlibm/ieee754.h
 @@ -1,64 +1,61 @@
  // Copyright 2016 the V8 project authors. All rights reserved.
-+// Copyright 2020 The Chromium Authors. All rights reserved.
++// Copyright 2020 The Monyhar Authors. All rights reserved.
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
  
@@ -386,7 +386,7 @@ index 14dcfb10de1a..815fa624ce11 100644
 +++ b/third_party/fdlibm/overflowing-math.h
 @@ -1,19 +1,19 @@
  // Copyright 2019 the V8 project authors. All rights reserved.
-+// Copyright 2020 The Chromium Authors. All rights reserved.
++// Copyright 2020 The Monyhar Authors. All rights reserved.
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
  

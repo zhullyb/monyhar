@@ -3616,7 +3616,7 @@
       }
     ]
   },
-  "Linux Chromium OS ASan LSan Tests (1)": {
+  "Linux Monyhar OS ASan LSan Tests (1)": {
     "gtest_tests": [
       {
         "args": [
@@ -5532,7 +5532,7 @@
       }
     ]
   },
-  "Linux ChromiumOS MSan Tests": {
+  "Linux MonyharOS MSan Tests": {
     "gtest_tests": [
       {
         "args": [

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ using std::string;
 namespace net {
 
 QuicClientMessageLooplNetworkHelper::QuicClientMessageLooplNetworkHelper(
-    quic::QuicChromiumClock* clock,
+    quic::QuicMonyharClock* clock,
     quic::QuicClientBase* client)
     : packet_reader_started_(false), clock_(clock), client_(client) {}
 
@@ -88,7 +88,7 @@ bool QuicClientMessageLooplNetworkHelper::CreateUDPSocketAndBind(
   client_address_ = ToQuicSocketAddress(address);
 
   socket_.swap(socket);
-  packet_reader_ = std::make_unique<QuicChromiumPacketReader>(
+  packet_reader_ = std::make_unique<QuicMonyharPacketReader>(
       socket_.get(), clock_, this, kQuicYieldAfterPacketsRead,
       quic::QuicTime::Delta::FromMilliseconds(
           kQuicYieldAfterDurationMilliseconds),
@@ -127,7 +127,7 @@ QuicClientMessageLooplNetworkHelper::CreateQuicPacketWriter() {
   // so we set packet_reader_started_ to false to ensure that.
   packet_reader_started_ = false;
 
-  return new QuicChromiumPacketWriter(
+  return new QuicMonyharPacketWriter(
       socket_.get(), base::ThreadTaskRunnerHandle::Get().get());
 }
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -39,7 +39,7 @@
 //   be ignored for official Google Chrome builds.
 //
 // The names of the preprocessor variables (or environment variables
-// to override them at runtime in Chromium builds) are as follows:
+// to override them at runtime in Monyhar builds) are as follows:
 // - GOOGLE_API_KEY: The API key, a.k.a. developer key.
 // - GOOGLE_DEFAULT_CLIENT_ID: If set, this is used as the default for
 //   all client IDs not otherwise set.  This is intended only for
@@ -54,7 +54,7 @@
 //   the OAuth2Client enumeration below)
 //
 // If some of the parameters mentioned above are not provided,
-// Chromium will still build and run, but services that require them
+// Monyhar will still build and run, but services that require them
 // may fail to work without warning.  They should do so gracefully,
 // similar to what would happen when a network connection is
 // unavailable.

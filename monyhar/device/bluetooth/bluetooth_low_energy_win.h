@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,9 +23,9 @@ namespace win {
 //
 // Callback function signature for Bluetooth GATT events. This fixes a bug in
 // this typedef in the Windows 10.0.10586 SDK which is missing the CALLBACK
-// modifier. This corrected typedef should be used throughout Chromium except
+// modifier. This corrected typedef should be used throughout Monyhar except
 // when casting to the 'official' definition when calling Microsoft functions.
-// This allows Chromium to build with 10.0.14393 or later SDKs (which have the
+// This allows Monyhar to build with 10.0.14393 or later SDKs (which have the
 // fixed typedef) while doing the correct thing even when built with 10.0.10586.
 // The CALLBACK modifier affects how function parameters are cleaned up from the
 // stack and having a mismatch can lead to misalignment of the stack pointer.

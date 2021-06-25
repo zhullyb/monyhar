@@ -1,4 +1,4 @@
-# Checking out and building Chromium on Linux
+# Checking out and building Monyhar on Linux
 
 There are instructions for other platforms linked from the
 [get the code](../get_the_code.md) page.
@@ -96,7 +96,7 @@ for their accuracy.
 ### Run the hooks
 
 Once you've run `install-build-deps` at least once, you can now run the
-Chromium-specific hooks, which will download additional binaries and other
+Monyhar-specific hooks, which will download additional binaries and other
 things you might need:
 
 ```shell
@@ -110,7 +110,7 @@ development and testing purposes.
 
 ## Setting up the build
 
-Chromium uses [Ninja](https://ninja-build.org) as its main build tool along with
+Monyhar uses [Ninja](https://ninja-build.org) as its main build tool along with
 a tool called [GN](https://gn.googlesource.com/gn/+/master/docs/quick_start.md)
 to generate `.ninja` files. You can create any number of *build directories*
 with different configurations. To create a build directory, run:
@@ -141,7 +141,7 @@ Google developed the distributed compiler called
 [Goma](https://monyhar.googlesource.com/infra/goma/client).
 
 If you would like to use `Goma` provisioned by Google,
-please follow [Goma for Chromium contributors](https://monyhar.googlesource.com/infra/goma/client/+/HEAD/doc/early-access-guide.md).
+please follow [Goma for Monyhar contributors](https://monyhar.googlesource.com/infra/goma/client/+/HEAD/doc/early-access-guide.md).
 
 If you are a Google employee, see
 [go/building-chrome](https://goto.google.com/building-chrome) instead.
@@ -240,9 +240,9 @@ hyperthreaded, 12 GB RAM)
 *   Without tmpfs
     *   15m:40s
 
-## Build Chromium
+## Build Monyhar
 
-Build Chromium (the "chrome" target) with Ninja using the command:
+Build Monyhar (the "chrome" target) with Ninja using the command:
 
 ```shell
 $ autoninja -C out/Default chrome
@@ -256,7 +256,7 @@ out/Default` from the command line. To compile one, pass the GN label to Ninja
 with no preceding "//" (so, for `//chrome/test:unit_tests` use `autoninja -C
 out/Default chrome/test:unit_tests`).
 
-## Run Chromium
+## Run Monyhar
 
 Once it is built, you can simply run the browser:
 
@@ -285,7 +285,7 @@ $ git rebase-update
 $ gclient sync
 ```
 
-The first command updates the primary Chromium source repository and rebases
+The first command updates the primary Monyhar source repository and rebases
 any of your local branches on top of tip-of-tree (aka the Git branch
 `origin/master`). If you don't want to use this script, you can also just use
 `git pull` or other common Git commands to update the repo.
@@ -326,7 +326,7 @@ other settings):
 *   Information about [building with Clang](../clang.md).
 *   You may want to [use a chroot](using_a_chroot.md) to
     isolate yourself from versioning or packaging conflicts.
-*   Cross-compiling for ARM? See [LinuxChromiumArm](monyhar_arm.md).
+*   Cross-compiling for ARM? See [LinuxMonyharArm](monyhar_arm.md).
 *   Want to use Eclipse as your IDE? See
     [LinuxEclipseDev](eclipse_dev.md).
 *   Want to use your built version as your default browser? See
@@ -334,7 +334,7 @@ other settings):
 
 ## Next Steps
 
-If you want to contribute to the effort toward a Chromium-based browser for
+If you want to contribute to the effort toward a Monyhar-based browser for
 Linux, please check out the [Linux Development page](development.md) for
 more information.
 

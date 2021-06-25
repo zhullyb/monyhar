@@ -33,7 +33,7 @@ and the relevant IdentityManager(::Observer) API surfaces).
 
 # The Primary Account
 - "Primary account" in IdentityManager refers to the account that has been
-  blessed for sync by the user (what in Chromium historically was often referred
+  blessed for sync by the user (what in Monyhar historically was often referred
   to as the "authenticated account").
 - "Unconsented primary account" is intuitively the browsing identity of the user
   that we display to the user; the user may or may not have blessed this account
@@ -145,7 +145,7 @@ and the relevant IdentityManager(::Observer) API surfaces).
       accounts with refresh tokens is synchronized with the platform-level state
       via DeviceAccountsSynchronizer.
 
-# Mental Mapping from Chromium's Historical API Surfaces for Signin
+# Mental Mapping from Monyhar's Historical API Surfaces for Signin
 Documentation on the mapping between usage of legacy signin
 classes (notably PrimaryAccountManager and ProfileOAuth2TokenService) and usage
 of IdentityManager is available here:

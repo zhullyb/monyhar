@@ -132,7 +132,7 @@ _PATH_RULES_SPECIFIER = [
         ],
         ['-']),
     (
-        [  # Due to historical reasons scheduler uses Chromium style instead of
+        [  # Due to historical reasons scheduler uses Monyhar style instead of
             # Blink style.
             'renderer/platform/scheduler',
             'public/platform/scheduler'

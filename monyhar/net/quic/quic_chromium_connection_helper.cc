@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,23 +14,23 @@ quic::QuicBufferAllocator* GetBufferAllocator() {
 }
 }  // namespace
 
-QuicChromiumConnectionHelper::QuicChromiumConnectionHelper(
+QuicMonyharConnectionHelper::QuicMonyharConnectionHelper(
     const quic::QuicClock* clock,
     quic::QuicRandom* random_generator)
     : clock_(clock), random_generator_(random_generator) {}
 
-QuicChromiumConnectionHelper::~QuicChromiumConnectionHelper() {}
+QuicMonyharConnectionHelper::~QuicMonyharConnectionHelper() {}
 
-const quic::QuicClock* QuicChromiumConnectionHelper::GetClock() const {
+const quic::QuicClock* QuicMonyharConnectionHelper::GetClock() const {
   return clock_;
 }
 
-quic::QuicRandom* QuicChromiumConnectionHelper::GetRandomGenerator() {
+quic::QuicRandom* QuicMonyharConnectionHelper::GetRandomGenerator() {
   return random_generator_;
 }
 
 quic::QuicBufferAllocator*
-QuicChromiumConnectionHelper::GetStreamSendBufferAllocator() {
+QuicMonyharConnectionHelper::GetStreamSendBufferAllocator() {
   return GetBufferAllocator();
 }
 

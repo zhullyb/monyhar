@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -85,7 +85,7 @@ def _InstallApk(devices, apk, install_dict):
 #   keystore_path: Path to keystore file.
 #   keystore_password: Password for the keystore file.
 #   keystore_alias: Signing key name alias within the keystore file.
-#   system_image_locales: List of Chromium locales to include in system .apks.
+#   system_image_locales: List of Monyhar locales to include in system .apks.
 BundleGenerationInfo = collections.namedtuple(
     'BundleGenerationInfo',
     'bundle_path,bundle_apks_path,aapt2_path,keystore_path,keystore_password,'
@@ -667,7 +667,7 @@ class _LogcatProcessor(object):
     # flg=0x10000000 pkg=com.google.chromeremotedesktop} from uid 2000
     self._start_pattern = re.compile(r'START .*pkg=' + package_name)
 
-    self.nonce = 'Chromium apk_operations.py nonce={}'.format(random.random())
+    self.nonce = 'Monyhar apk_operations.py nonce={}'.format(random.random())
     # Holds lines buffered on start-up, before we find our nonce message.
     self._initial_buffered_lines = []
     self._UpdateMyPids()
@@ -1917,7 +1917,7 @@ def RunForBundle(output_directory, bundle_path, bundle_apks_path,
   """Entry point for generated app bundle wrapper scripts.
 
   Args:
-    output_dir: Chromium output directory path.
+    output_dir: Monyhar output directory path.
     bundle_path: Input bundle path.
     bundle_apks_path: Output bundle .apks archive path.
     additional_apk_paths: Additional APKs to install prior to bundle install.
@@ -1930,8 +1930,8 @@ def RunForBundle(output_directory, bundle_path, bundle_apks_path,
       used to store command-line flags for this bundle.
     proguard_mapping_path: Input path to the Proguard mapping file, used to
       deobfuscate Java stack traces.
-    target_cpu: Chromium target CPU name, used by the 'gdb' command.
-    system_image_locales: List of Chromium locales that should be included in
+    target_cpu: Monyhar target CPU name, used by the 'gdb' command.
+    system_image_locales: List of Monyhar locales that should be included in
       system image APKs.
     default_modules: List of modules that are installed in addition to those
       given by the '-m' switch.

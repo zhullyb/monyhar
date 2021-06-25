@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -91,7 +91,7 @@ fi
 if [[ "$update_pam" == "1" ]]; then
   logger Creating PAM config.
   cat > "$PAM_CONFIG" <<EOF
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 

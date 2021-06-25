@@ -1,5 +1,5 @@
    Notice that the following BSD-style license applies to the Valgrind header
-   files used by Chromium (valgrind.h and memcheck.h). However, the rest of
+   files used by Monyhar (valgrind.h and memcheck.h). However, the rest of
    Valgrind is licensed under the terms of the GNU General Public License,
    version 2, unless otherwise indicated.
 

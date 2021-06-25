@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -96,7 +96,7 @@ EXTRA_UI_CAPTURE_DIR = (
 EXTRA_TRACE_FILE = ('org.monyhar.base.test.BaseJUnit4ClassRunner.TraceFile')
 
 _EXTRA_TEST_LIST = (
-    'org.monyhar.base.test.BaseChromiumAndroidJUnitRunner.TestList')
+    'org.monyhar.base.test.BaseMonyharAndroidJUnitRunner.TestList')
 
 _EXTRA_PACKAGE_UNDER_TEST = ('org.monyhar.chrome.test.pagecontroller.rules.'
                              'ChromeUiApplicationTestRule.PackageUnderTest')

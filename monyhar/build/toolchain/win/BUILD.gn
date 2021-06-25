@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -427,7 +427,7 @@ template("win_toolchains") {
                                    "scope")
 
   # The toolchain using MSVC only makes sense when not doing cross builds.
-  # Chromium exclusively uses the win_clang_ toolchain below, but V8 and
+  # Monyhar exclusively uses the win_clang_ toolchain below, but V8 and
   # WebRTC still use this MSVC toolchain in some cases.
   if (host_os == "win") {
     msvc_toolchain(target_name) {

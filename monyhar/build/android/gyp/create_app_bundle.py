@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -36,7 +36,7 @@ _FALLBACK_LOCALE = 'en-US'
 # List of split dimensions recognized by this tool.
 _ALL_SPLIT_DIMENSIONS = [ 'ABI', 'SCREEN_DENSITY', 'LANGUAGE' ]
 
-# Due to historical reasons, certain languages identified by Chromium with a
+# Due to historical reasons, certain languages identified by Monyhar with a
 # 3-letters ISO 639-2 code, are mapped to a nearly equivalent 2-letters
 # ISO 639-1 code instead (due to the fact that older Android releases only
 # supported the latter when matching resources).

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@ namespace bindings {
 
 namespace {
 
-// These tricks will no longer be necessary once Chromium allows use of
+// These tricks will no longer be necessary once Monyhar allows use of
 // constexpr if statement (C++17 feature).
 inline bool IsCallbackConstructor(CallbackFunctionBase* callback) {
   return callback->IsConstructor();

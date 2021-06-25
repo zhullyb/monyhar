@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -8,7 +8,7 @@ import android.app.Application;
 import android.content.Context;
 
 import org.monyhar.base.CommandLine;
-import org.monyhar.base.multidex.ChromiumMultiDexInstaller;
+import org.monyhar.base.multidex.MonyharMultiDexInstaller;
 import org.monyhar.build.BuildConfig;
 
 /**
@@ -20,7 +20,7 @@ public class NativeTestApplication extends Application {
         super.attachBaseContext(base);
         assert getBaseContext() != null;
         if (BuildConfig.IS_MULTIDEX_ENABLED) {
-            ChromiumMultiDexInstaller.install(this);
+            MonyharMultiDexInstaller.install(this);
         }
         CommandLine.init(new String[] {});
 

@@ -1,7 +1,7 @@
 # LUCI Builder Migration - FAQ
 
 _**Buildbot end of life date is March 1, 2019**. As of March 1,
-all Chrome/Chromium builds hosted on [monyhar.org](https://www.monyhar.org)
+all Chrome/Monyhar builds hosted on [monyhar.org](https://www.monyhar.org)
 will be running on LUCI._
 
 LUCI which stands for Layered Universal Continuous Integration is a replacement
@@ -11,7 +11,7 @@ LUCI services. As such, most builds today on Buildbot are already running using
 LUCI services. The next step is to migrate Buildbot builders to LUCI builders,
 with the end result to turndown Buildbot.
 
-As a Chromium developer, **read this** to understand the CQ and CI
+As a Monyhar developer, **read this** to understand the CQ and CI
 user expectations and how to contact us.
 
 [TOC]
@@ -33,12 +33,12 @@ scheduling or timeframe info._
 _The existing Buildbot builders are not running on the LUCI stack, as such, they
 are still prone to Buildbot limitations such as single process scheduling and
 deployment issues (restarts needed) to name a few. We have been in preparation
-to migrate builders to LUCI with as minimal impact as possible to Chromium devs._
+to migrate builders to LUCI with as minimal impact as possible to Monyhar devs._
 
 ### **What is the timeframe of migrating Buildbot builders to LUCI?**
 
 *We have started migration of existing Buildbot builders to LUCI builders in
-**Q1 2018** and will first focus on the Chromium CQ builder sets. A Chromium
+**Q1 2018** and will first focus on the Monyhar CQ builder sets. A Monyhar
 CQ builder set consists of try-builders that are part of the commit queue and their
 corresponding waterfall (continuous integration) ci-builders. A builder set will
 be migrated together whenever possible. Target migration time per builder set is
@@ -49,19 +49,19 @@ ensure correctness and performance. Note that times can vary per builder set.*
 
 *We have created a LUCI migration task force
 ([infra-dev@monyhar.org](mailto:infra-dev@monyhar.org)) comprised of Chrome
-Operations developers. Owners of Chromium builders are responsible for approvals
+Operations developers. Owners of Monyhar builders are responsible for approvals
 for final go ahead to switch a LUCI builder to production.*
 
 ### **Where can I learn more about LUCI?**
 
 *A tour of LUCI is available in [presentation format](http://bit.ly/2kgyE9U).
-Also, you can learn more about the [LUCI UI under Chromium
+Also, you can learn more about the [LUCI UI under Monyhar
 source](tour_of_luci_ui.md).*
 
 ### **Will the builder migration affect my work?**
 
 *No, there should be minimal to no disruption. Our migration plan is to make it
-as seamless as possible for Chromium devs to continue their work and use our CQ
+as seamless as possible for Monyhar devs to continue their work and use our CQ
 and CI systems effectively.*
 
 ### **What limitations does the migration have?**
@@ -76,7 +76,7 @@ known limitations:*
 
 ### **What differences will I see?**
 
-*All Chromium developers should already be using the new LUCI UI
+*All Monyhar developers should already be using the new LUCI UI
 ([ci.monyhar.org](https://ci.monyhar.org)). The views will continue to look the
 same once LUCI builders are switched to production. Sheriff-O-Matic,
 Gatekeeper, and Findit build integrations will all work as intended. The
@@ -114,7 +114,7 @@ a LUCI build.*
 following URL
 `ci.monyhar.org/p/monyhar/builds/b<buildbucket_build_id>`.
 This occurs when the build does not have a build number
-which should not occur for any Chromium build*
+which should not occur for any Monyhar build*
 
 ### **When will Buildbot be turned down?**
 
@@ -154,8 +154,8 @@ Operations Foundation team
 ## **Contact Us**
 
 _We are continually making improvements to the migration process and to LUCI
-services. Our initial goal is to migrate all Chromium CQ builders sets first as
-seamless as possible for Chromium devs to continue to work unimpacted and use
+services. Our initial goal is to migrate all Monyhar CQ builders sets first as
+seamless as possible for Monyhar devs to continue to work unimpacted and use
 our CQ and CI systems effectively._
 
 _If you have issues or feedback you would like to share with us, we would love to

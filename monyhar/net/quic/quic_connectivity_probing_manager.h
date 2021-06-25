@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Chromium Authors. All rights reserved.
+// Copyright (c) 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ namespace net {
 // designated path to the specified peer, and for notifying associated session
 // when connectivity probe fails or succeeds.
 class NET_EXPORT_PRIVATE QuicConnectivityProbingManager
-    : public QuicChromiumPacketWriter::Delegate {
+    : public QuicMonyharPacketWriter::Delegate {
  public:
   // Delegate interface which receives notifications on probing results.
   class NET_EXPORT_PRIVATE Delegate {
@@ -35,8 +35,8 @@ class NET_EXPORT_PRIVATE QuicConnectivityProbingManager
         const quic::QuicSocketAddress& peer_address,
         const quic::QuicSocketAddress& self_address,
         std::unique_ptr<DatagramClientSocket> socket,
-        std::unique_ptr<QuicChromiumPacketWriter> writer,
-        std::unique_ptr<QuicChromiumPacketReader> reader) = 0;
+        std::unique_ptr<QuicMonyharPacketWriter> writer,
+        std::unique_ptr<QuicMonyharPacketReader> reader) = 0;
 
     // Called when probing to |peer_address| on |network| failed.
     virtual void OnProbeFailed(NetworkChangeNotifier::NetworkHandle network,
@@ -46,7 +46,7 @@ class NET_EXPORT_PRIVATE QuicConnectivityProbingManager
     // |peer_address| using |writer|. Returns true if subsequent packets can be
     // written by the |writer|.
     virtual bool OnSendConnectivityProbingPacket(
-        QuicChromiumPacketWriter* writer,
+        QuicMonyharPacketWriter* writer,
         const quic::QuicSocketAddress& peer_address) = 0;
   };
 
@@ -54,9 +54,9 @@ class NET_EXPORT_PRIVATE QuicConnectivityProbingManager
                                  base::SequencedTaskRunner* task_runner);
   ~QuicConnectivityProbingManager();
 
-  // QuicChromiumPacketWriter::Delegate interface.
+  // QuicMonyharPacketWriter::Delegate interface.
   int HandleWriteError(int error_code,
-                       scoped_refptr<QuicChromiumPacketWriter::ReusableIOBuffer>
+                       scoped_refptr<QuicMonyharPacketWriter::ReusableIOBuffer>
                            last_packet) override;
   void OnWriteError(int error_code) override;
   void OnWriteUnblocked() override;
@@ -71,8 +71,8 @@ class NET_EXPORT_PRIVATE QuicConnectivityProbingManager
   void StartProbing(NetworkChangeNotifier::NetworkHandle network,
                     const quic::QuicSocketAddress& peer_address,
                     std::unique_ptr<DatagramClientSocket> socket,
-                    std::unique_ptr<QuicChromiumPacketWriter> writer,
-                    std::unique_ptr<QuicChromiumPacketReader> reader,
+                    std::unique_ptr<QuicMonyharPacketWriter> writer,
+                    std::unique_ptr<QuicMonyharPacketReader> reader,
                     base::TimeDelta initial_timeout,
                     const NetLogWithSource& net_log);
 
@@ -127,8 +127,8 @@ class NET_EXPORT_PRIVATE QuicConnectivityProbingManager
   quic::QuicSocketAddress peer_address_;
 
   std::unique_ptr<DatagramClientSocket> socket_;
-  std::unique_ptr<QuicChromiumPacketWriter> writer_;
-  std::unique_ptr<QuicChromiumPacketReader> reader_;
+  std::unique_ptr<QuicMonyharPacketWriter> writer_;
+  std::unique_ptr<QuicMonyharPacketReader> reader_;
 
   int64_t retry_count_;
   base::TimeTicks probe_start_time_;

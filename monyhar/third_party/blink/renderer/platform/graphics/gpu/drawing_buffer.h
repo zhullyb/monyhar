@@ -120,9 +120,9 @@ class PLATFORM_EXPORT DrawingBuffer : public cc::TextureLayerClient,
     kWebGL2,
   };
 
-  enum ChromiumImageUsage {
-    kAllowChromiumImage,
-    kDisallowChromiumImage,
+  enum MonyharImageUsage {
+    kAllowMonyharImage,
+    kDisallowMonyharImage,
   };
 
   static scoped_refptr<DrawingBuffer> Create(
@@ -138,7 +138,7 @@ class PLATFORM_EXPORT DrawingBuffer : public cc::TextureLayerClient,
       bool want_antialiasing,
       PreserveDrawingBuffer,
       WebGLVersion,
-      ChromiumImageUsage,
+      MonyharImageUsage,
       SkFilterQuality,
       const CanvasColorParams&,
       gl::GpuPreference);
@@ -320,7 +320,7 @@ class PLATFORM_EXPORT DrawingBuffer : public cc::TextureLayerClient,
                 WebGLVersion,
                 bool wants_depth,
                 bool wants_stencil,
-                ChromiumImageUsage,
+                MonyharImageUsage,
                 SkFilterQuality,
                 const CanvasColorParams&,
                 gl::GpuPreference gpu_preference);
@@ -401,7 +401,7 @@ class PLATFORM_EXPORT DrawingBuffer : public cc::TextureLayerClient,
     const GLuint texture_id = 0;
     std::unique_ptr<gfx::GpuMemoryBuffer> gpu_memory_buffer;
 
-    // If we're emulating an RGB back buffer using an RGBA Chromium
+    // If we're emulating an RGB back buffer using an RGBA Monyhar
     // image (essentially macOS only), then when performing
     // BlitFramebuffer calls, we have to swap in an RGB texture in
     // place of the RGBA texture bound to the image. The reason is
@@ -504,10 +504,10 @@ class PLATFORM_EXPORT DrawingBuffer : public cc::TextureLayerClient,
   // If RGB emulation is required, then the CHROMIUM image's alpha channel
   // must be immediately cleared after it is bound to a texture. Nothing
   // should be allowed to change the alpha channel after this.
-  void ClearChromiumImageAlpha(const ColorBuffer&);
+  void ClearMonyharImageAlpha(const ColorBuffer&);
 
   // Tries to create a CHROMIUM_image backed texture if
-  // RuntimeEnabledFeatures::WebGLImageChromiumEnabled() is true. On failure,
+  // RuntimeEnabledFeatures::WebGLImageMonyharEnabled() is true. On failure,
   // or if the flag is false, creates a default texture. Always returns a valid
   // ColorBuffer.
   scoped_refptr<ColorBuffer> CreateColorBuffer(const IntSize&);
@@ -646,12 +646,12 @@ class PLATFORM_EXPORT DrawingBuffer : public cc::TextureLayerClient,
   Deque<scoped_refptr<ColorBuffer>> recycled_color_buffer_queue_;
 
   // In the case of OffscreenCanvas, we do not want to enable the
-  // WebGLImageChromium flag, so we replace all the
-  // RuntimeEnabledFeatures::WebGLImageChromiumEnabled() call with
-  // shouldUseChromiumImage() calls, and set m_monyharImageUsage to
-  // DisallowChromiumImage in the case of OffscreenCanvas.
-  ChromiumImageUsage monyhar_image_usage_;
-  bool ShouldUseChromiumImage();
+  // WebGLImageMonyhar flag, so we replace all the
+  // RuntimeEnabledFeatures::WebGLImageMonyharEnabled() call with
+  // shouldUseMonyharImage() calls, and set m_monyharImageUsage to
+  // DisallowMonyharImage in the case of OffscreenCanvas.
+  MonyharImageUsage monyhar_image_usage_;
+  bool ShouldUseMonyharImage();
 
   bool opengl_flip_y_extension_;
 

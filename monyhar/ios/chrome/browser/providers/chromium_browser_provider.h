@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,10 +7,10 @@
 
 #include "ios/public/provider/chrome/browser/chrome_browser_provider.h"
 
-class ChromiumBrowserProvider : public ios::ChromeBrowserProvider {
+class MonyharBrowserProvider : public ios::ChromeBrowserProvider {
  public:
-  ChromiumBrowserProvider();
-  ~ChromiumBrowserProvider() override;
+  MonyharBrowserProvider();
+  ~MonyharBrowserProvider() override;
 
   // ChromeBrowserProvider implementation
   ios::SigninErrorProvider* GetSigninErrorProvider() override;

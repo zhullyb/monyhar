@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CWVUIDelegate;
 @class CWVSSLStatus;
 
-// A web view component (like WKWebView) which uses iOS Chromium's web view
+// A web view component (like WKWebView) which uses iOS Monyhar's web view
 // implementation.
 //
 // In addition to WKWebView features, it allows Translate, Find In Page,

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -309,7 +309,7 @@ void DeviceService::BindSerialPortManager(
 #if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_UDEV)) || \
     defined(OS_WIN) || defined(OS_MAC)
   // TODO(crbug.com/1109621): SerialPortManagerImpl depends on the
-  // permission_broker service on Chromium OS. We will need to redirect
+  // permission_broker service on Monyhar OS. We will need to redirect
   // connections for LaCrOS here.
   DCHECK(serial_port_manager_task_runner_);
   serial_port_manager_task_runner_->PostTask(
@@ -336,7 +336,7 @@ void DeviceService::BindWakeLockProvider(
 void DeviceService::BindUsbDeviceManager(
     mojo::PendingReceiver<mojom::UsbDeviceManager> receiver) {
   // TODO(crbug.com/1109621): usb::DeviceManagerImpl depends on the
-  // permission_broker service on Chromium OS. We will need to redirect
+  // permission_broker service on Monyhar OS. We will need to redirect
   // connections for LaCrOS here.
   if (!usb_device_manager_)
     usb_device_manager_ = std::make_unique<usb::DeviceManagerImpl>();
@@ -347,7 +347,7 @@ void DeviceService::BindUsbDeviceManager(
 void DeviceService::BindUsbDeviceManagerTest(
     mojo::PendingReceiver<mojom::UsbDeviceManagerTest> receiver) {
   // TODO(crbug.com/1109621): usb::DeviceManagerImpl depends on the
-  // permission_broker service on Chromium OS. We will need to redirect
+  // permission_broker service on Monyhar OS. We will need to redirect
   // connections for LaCrOS here.
   if (!usb_device_manager_)
     usb_device_manager_ = std::make_unique<usb::DeviceManagerImpl>();

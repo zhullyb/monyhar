@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -43,8 +43,8 @@
   // an __NSStackBlock__, and verifies the fix for http://crbug.com/436175 .
   NSString* monyharPrefix = @"www.monyhar.org";
   [Cronet setRequestFilterBlock:^BOOL(NSURLRequest* request) {
-    BOOL isChromiumSite = [[[request URL] host] hasPrefix:monyharPrefix];
-    return !isChromiumSite;
+    BOOL isMonyharSite = [[[request URL] host] hasPrefix:monyharPrefix];
+    return !isMonyharSite;
   }];
 
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

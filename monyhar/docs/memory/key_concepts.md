@@ -44,11 +44,11 @@ drastically changes the way one can handle free lists.
 However, even in macOS, Android, CrOS, and "standard desktop linux" each
 also have enough divergences (compressed memory, pagefile vs swap partition
 vs no swap, overcommit settings, memory perssure signals etc) that even
-answering "how much memory is Chromium using" is hard to do in a uniform
+answering "how much memory is Monyhar using" is hard to do in a uniform
 manner.
 
 The goal of this document is to give a common set of vocabulary
-and concepts such that Chromium developers can more discuss questions like
+and concepts such that Monyhar developers can more discuss questions like
 the ones above without misunderstanding each other.
 
 

@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -50,7 +50,7 @@ using local_discovery::ServiceDiscoverySharedClient;
 
 // These (including the default values) come from section 9.2 of the Bonjour
 // Printing Spec v1.2, and the field names follow the spec definitions instead
-// of the canonical Chromium style.
+// of the canonical Monyhar style.
 //
 // Not all of these will necessarily be specified for a given printer.  Also, we
 // only define the fields that we care about, others not listed here we just

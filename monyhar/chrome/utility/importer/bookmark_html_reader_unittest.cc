@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -293,7 +293,7 @@ void BookmarkHTMLReaderTestWithData::ExpectSecondFirefox23Bookmark(
   EXPECT_FALSE(entry.is_folder);
   EXPECT_EQ(base::Time::FromTimeT(1376102304), entry.creation_time);
   EXPECT_EQ(1U, entry.path.size());
-  EXPECT_EQ(u"Chromium", entry.path.front());
+  EXPECT_EQ(u"Monyhar", entry.path.front());
   EXPECT_EQ("https://code.google.com/p/monyhar/issues/list", entry.url.spec());
 }
 
@@ -303,7 +303,7 @@ void BookmarkHTMLReaderTestWithData::ExpectThirdFirefox23Bookmark(
   EXPECT_FALSE(entry.is_folder);
   EXPECT_EQ(base::Time::FromTimeT(1376102224), entry.creation_time);
   EXPECT_EQ(1U, entry.path.size());
-  EXPECT_EQ(u"Chromium", entry.path.front());
+  EXPECT_EQ(u"Monyhar", entry.path.front());
   EXPECT_EQ("http://code.google.com/p/monyhar/codesearch", entry.url.spec());
 }
 

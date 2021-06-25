@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1106,7 +1106,7 @@ TEST_P(WatchTimeReporterTest, WatchTimeReporterSecondaryProperties) {
       has_video_ ? gfx::Size(800, 600) : gfx::Size());
 
   // Get a pointer to our original properties since we're not allowed to use
-  // lambda capture for movable types in Chromium C++ yet.
+  // lambda capture for movable types in Monyhar C++ yet.
   auto* properies_ptr = properties.get();
 
   // Muted watch time is only reported for audio+video.

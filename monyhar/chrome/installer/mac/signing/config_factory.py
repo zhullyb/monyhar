@@ -1,13 +1,13 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 
 def get_class():
     """Returns the subclass of |model.CodeSignConfig| to use."""
-    # First look up the processed Chromium config.
-    from .monyhar_config import ChromiumCodeSignConfig
-    config_class = ChromiumCodeSignConfig
+    # First look up the processed Monyhar config.
+    from .monyhar_config import MonyharCodeSignConfig
+    config_class = MonyharCodeSignConfig
 
     # Then search for the internal config for Google Chrome.
     try:

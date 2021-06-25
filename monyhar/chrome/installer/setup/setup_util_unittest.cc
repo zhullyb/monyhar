@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -850,7 +850,7 @@ const wchar_t LegacyCleanupsTest::kAppLauncherClientsKeyPath[] =
     L"{FDA71E6F-AC4C-4a00-8B70-9958A68906BF}";
 #else   // BUILDFLAG(GOOGLE_CHROME_BRANDING)
 const wchar_t LegacyCleanupsTest::kBinariesClientsKeyPath[] =
-    L"SOFTWARE\\Chromium Binaries";
+    L"SOFTWARE\\Monyhar Binaries";
 const wchar_t LegacyCleanupsTest::kCommandExecuteImplClsid[] =
     L"Software\\Classes\\CLSID\\{A2DF06F9-A21A-44A8-8A99-8B9C84F29160}";
 #endif  // !BUILDFLAG(GOOGLE_CHROME_BRANDING)

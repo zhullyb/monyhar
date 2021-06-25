@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -322,7 +322,7 @@ class InstallStaticUtilTest
     static constexpr wchar_t kPolicyKey[] =
         L"Software\\Policies\\Google\\Chrome";
 #else
-    static constexpr wchar_t kPolicyKey[] = L"Software\\Policies\\Chromium";
+    static constexpr wchar_t kPolicyKey[] = L"Software\\Policies\\Monyhar";
 #endif
 
     ASSERT_EQ(ERROR_SUCCESS,
@@ -373,7 +373,7 @@ TEST_P(InstallStaticUtilTest, GetChromeInstallSubDirectory) {
   // The directory strings for the brand's install modes; parallel to
   // kInstallModes.
   static constexpr const wchar_t* kInstallDirs[] = {
-      L"Chromium",
+      L"Monyhar",
   };
 #endif
   static_assert(base::size(kInstallDirs) == NUM_INSTALL_MODES,
@@ -396,7 +396,7 @@ TEST_P(InstallStaticUtilTest, GetRegistryPath) {
   // The registry path strings for the brand's install modes; parallel to
   // kInstallModes.
   static constexpr const wchar_t* kRegistryPaths[] = {
-      L"Software\\Chromium",
+      L"Software\\Monyhar",
   };
 #endif
   static_assert(base::size(kRegistryPaths) == NUM_INSTALL_MODES,
@@ -422,7 +422,7 @@ TEST_P(InstallStaticUtilTest, GetUninstallRegistryPath) {
   // The registry path strings for the brand's install modes; parallel to
   // kInstallModes.
   static constexpr const wchar_t* kUninstallRegistryPaths[] = {
-      L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Chromium",
+      L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Monyhar",
   };
 #endif
   static_assert(base::size(kUninstallRegistryPaths) == NUM_INSTALL_MODES,
@@ -464,7 +464,7 @@ TEST_P(InstallStaticUtilTest, GetBaseAppId) {
 #else
   // The base app ids for the brand's install modes; parallel to kInstallModes.
   static constexpr const wchar_t* kBaseAppIds[] = {
-      L"Chromium",
+      L"Monyhar",
   };
 #endif
   static_assert(base::size(kBaseAppIds) == NUM_INSTALL_MODES,
@@ -511,12 +511,12 @@ TEST_P(InstallStaticUtilTest, GetToastActivatorClsid) {
       {0x635EFA6F,
        0x08D6,
        0x4EC9,
-       {0xBD, 0x14, 0x8A, 0x0F, 0xDE, 0x97, 0x51, 0x59}}  // Chromium.
+       {0xBD, 0x14, 0x8A, 0x0F, 0xDE, 0x97, 0x51, 0x59}}  // Monyhar.
   };
 
   // The string representation of the CLSIDs above.
   static constexpr const wchar_t* kToastActivatorClsidsString[] = {
-      L"{635EFA6F-08D6-4EC9-BD14-8A0FDE975159}"  // Chromium.
+      L"{635EFA6F-08D6-4EC9-BD14-8A0FDE975159}"  // Monyhar.
   };
 #endif
   static_assert(base::size(kToastActivatorClsids) == NUM_INSTALL_MODES,
@@ -566,12 +566,12 @@ TEST_P(InstallStaticUtilTest, GetElevatorClsid) {
       {0xD133B120,
        0x6DB4,
        0x4D6B,
-       {0x8B, 0xFE, 0x83, 0xBF, 0x8C, 0xA1, 0xB1, 0xB0}},  // Chromium.
+       {0x8B, 0xFE, 0x83, 0xBF, 0x8C, 0xA1, 0xB1, 0xB0}},  // Monyhar.
   };
 
   // The string representation of the CLSIDs above.
   static constexpr const wchar_t* kElevatorClsidsString[] = {
-      L"{D133B120-6DB4-4D6B-8BFE-83BF8CA1B1B0}",  // Chromium.
+      L"{D133B120-6DB4-4D6B-8BFE-83BF8CA1B1B0}",  // Monyhar.
   };
 #endif
   static_assert(base::size(kElevatorClsids) == NUM_INSTALL_MODES,
@@ -632,12 +632,12 @@ TEST_P(InstallStaticUtilTest, GetElevatorIid) {
        0x4629,
        {0xb8, 0x3e, 0x77, 0xcc, 0x67, 0xd9, 0xce,
         0xed}},  // IElevator IID and TypeLib
-                 // {B88C45B9-8825-4629-B83E-77CC67D9CEED} for Chromium.
+                 // {B88C45B9-8825-4629-B83E-77CC67D9CEED} for Monyhar.
   };
 
   // The string representation of the IIDs above.
   static constexpr const wchar_t* kElevatorIidsString[] = {
-      L"{B88C45B9-8825-4629-B83E-77CC67D9CEED}",  // Chromium.
+      L"{B88C45B9-8825-4629-B83E-77CC67D9CEED}",  // Monyhar.
   };
 #endif
   static_assert(base::size(kElevatorIids) == NUM_INSTALL_MODES,
@@ -729,7 +729,7 @@ TEST_P(InstallStaticUtilTest, GetSandboxSidPrefix) {
 #else
   static constexpr const wchar_t* kSandBoxSids[] = {
       L"S-1-15-2-3251537155-1984446955-2931258699-841473695-1938553385-"
-      L"924012148-",  // Chromium.
+      L"924012148-",  // Monyhar.
   };
 #endif
   EXPECT_STREQ(GetSandboxSidPrefix(), kSandBoxSids[std::get<0>(GetParam())]);
@@ -757,8 +757,8 @@ INSTANTIATE_TEST_SUITE_P(Canary,
                          testing::Combine(testing::Values(CANARY_INDEX),
                                           testing::Values("user")));
 #else   // BUILDFLAG(GOOGLE_CHROME_BRANDING)
-// Chromium supports user and system levels.
-INSTANTIATE_TEST_SUITE_P(Chromium,
+// Monyhar supports user and system levels.
+INSTANTIATE_TEST_SUITE_P(Monyhar,
                          InstallStaticUtilTest,
                          testing::Combine(testing::Values(CHROMIUM_INDEX),
                                           testing::Values("user", "system")));

@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -103,7 +103,7 @@ class PreinstalledAppsBrowserTest : public ExtensionBrowserTest {
       TestExtensionRegistryObserver(registry()).WaitForExtensionInstalled();
     }
 
-    // In Chromium builds, there shouldn't be any other pending extensions.
+    // In Monyhar builds, there shouldn't be any other pending extensions.
     // In Google Chrome, we don't have this assertion, because we bundle a
     // couple other default extensions (like the Chrome Apps In-Apps Payment
     // app, or Chrome Media Router). These will never install, since they rely

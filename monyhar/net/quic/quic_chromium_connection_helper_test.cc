@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,20 +12,20 @@ namespace net {
 namespace test {
 namespace {
 
-class QuicChromiumConnectionHelperTest : public ::testing::Test {
+class QuicMonyharConnectionHelperTest : public ::testing::Test {
  protected:
-  QuicChromiumConnectionHelperTest() : helper_(&clock_, &random_generator_) {}
+  QuicMonyharConnectionHelperTest() : helper_(&clock_, &random_generator_) {}
 
-  QuicChromiumConnectionHelper helper_;
+  QuicMonyharConnectionHelper helper_;
   quic::MockClock clock_;
   quic::test::MockRandom random_generator_;
 };
 
-TEST_F(QuicChromiumConnectionHelperTest, GetClock) {
+TEST_F(QuicMonyharConnectionHelperTest, GetClock) {
   EXPECT_EQ(&clock_, helper_.GetClock());
 }
 
-TEST_F(QuicChromiumConnectionHelperTest, GetRandomGenerator) {
+TEST_F(QuicMonyharConnectionHelperTest, GetRandomGenerator) {
   EXPECT_EQ(&random_generator_, helper_.GetRandomGenerator());
 }
 

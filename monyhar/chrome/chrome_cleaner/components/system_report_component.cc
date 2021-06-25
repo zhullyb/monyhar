@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -137,12 +137,12 @@ const RegistryKey extension_policy_keys[] = {
     {HKEY_CURRENT_USER, kChromePoliciesWhitelistKeyPathDeprecated},
     {HKEY_LOCAL_MACHINE, kChromePoliciesForcelistKeyPath},
     {HKEY_CURRENT_USER, kChromePoliciesForcelistKeyPath},
-    {HKEY_LOCAL_MACHINE, kChromiumPoliciesAllowlistKeyPath},
-    {HKEY_LOCAL_MACHINE, kChromiumPoliciesWhitelistKeyPathDeprecated},
-    {HKEY_CURRENT_USER, kChromiumPoliciesAllowlistKeyPath},
-    {HKEY_CURRENT_USER, kChromiumPoliciesWhitelistKeyPathDeprecated},
-    {HKEY_LOCAL_MACHINE, kChromiumPoliciesForcelistKeyPath},
-    {HKEY_CURRENT_USER, kChromiumPoliciesForcelistKeyPath}};
+    {HKEY_LOCAL_MACHINE, kMonyharPoliciesAllowlistKeyPath},
+    {HKEY_LOCAL_MACHINE, kMonyharPoliciesWhitelistKeyPathDeprecated},
+    {HKEY_CURRENT_USER, kMonyharPoliciesAllowlistKeyPath},
+    {HKEY_CURRENT_USER, kMonyharPoliciesWhitelistKeyPathDeprecated},
+    {HKEY_LOCAL_MACHINE, kMonyharPoliciesForcelistKeyPath},
+    {HKEY_CURRENT_USER, kMonyharPoliciesForcelistKeyPath}};
 
 // Expand an executable path as if the launch process directory was the
 // windows folder. This is used to resolve kernel module path.

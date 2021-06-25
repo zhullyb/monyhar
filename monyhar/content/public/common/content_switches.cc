@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,7 +56,7 @@ const char kConversionsDebugMode[] = "conversions-debug-mode";
 const char kDisable2dCanvasAntialiasing[]   = "disable-canvas-aa";
 
 // Disables Canvas2D rendering into a scanout buffer for overlay support.
-const char kDisable2dCanvasImageChromium[] = "disable-2d-canvas-image-monyhar";
+const char kDisable2dCanvasImageMonyhar[] = "disable-2d-canvas-image-monyhar";
 
 // Disables client-visible 3D APIs, in particular WebGL and Pepper 3D.
 // This is controlled by policy and is kept separate from the other
@@ -203,8 +203,8 @@ const char kDisablePepper3d[]               = "disable-pepper-3d";
 // Disables the Permissions API.
 const char kDisablePermissionsAPI[]         = "disable-permissions-api";
 
-// Disable Image Chromium for Pepper 3d.
-const char kDisablePepper3DImageChromium[] = "disable-pepper-3d-image-monyhar";
+// Disable Image Monyhar for Pepper 3d.
+const char kDisablePepper3DImageMonyhar[] = "disable-pepper-3d-image-monyhar";
 
 // Disables compositor-accelerated touch-screen pinch gestures.
 const char kDisablePinch[]                  = "disable-pinch";
@@ -269,7 +269,7 @@ const char kDisableThreadedCompositing[]    = "disable-threaded-compositing";
 const char kDisableV8IdleTasks[]            = "disable-v8-idle-tasks";
 
 // Disables WebGL rendering into a scanout buffer for overlay support.
-const char kDisableWebGLImageChromium[]     = "disable-webgl-image-monyhar";
+const char kDisableWebGLImageMonyhar[]     = "disable-webgl-image-monyhar";
 
 // Don't enforce the same-origin policy; meant for website testing only.
 // This switch has no effect unless --user-data-dir (as defined by the content
@@ -450,7 +450,7 @@ const char kEnableWebAuthDeprecatedMojoTestingApi[] =
 const char kEnableWebGLDraftExtensions[] = "enable-webgl-draft-extensions";
 
 // Enables WebGL rendering into a scanout buffer for overlay support.
-const char kEnableWebGLImageChromium[] = "enable-webgl-image-monyhar";
+const char kEnableWebGLImageMonyhar[] = "enable-webgl-image-monyhar";
 
 // Handle to the shared memory segment containing field trial state that is to
 // be shared between processes. The argument to this switch is the handle id
@@ -799,7 +799,7 @@ const char kUseFakeUIForMediaStream[]     = "use-fake-ui-for-media-stream";
 // Texture target for CHROMIUM_image backed video frame textures.
 const char kVideoImageTextureTarget[] = "video-image-texture-target";
 
-// Set when Chromium should use a mobile user agent.
+// Set when Monyhar should use a mobile user agent.
 const char kUseMobileUserAgent[] = "use-mobile-user-agent";
 
 // Use the MockCertVerifier. This only works in test code.

@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -172,7 +172,7 @@ class ChromeBrowserCloudManagementController
   ~ChromeBrowserCloudManagementController() override;
 
   // The Chrome browser cloud management is only enabled on Chrome by default.
-  // However, it can be enabled on Chromium by command line switch for test and
+  // However, it can be enabled on Monyhar by command line switch for test and
   // development purpose.
   bool IsEnabled();
 

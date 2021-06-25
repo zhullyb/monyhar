@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -69,7 +69,7 @@ class BaseSafeBrowsingErrorUI {
 
     // Indicates if the 'Back to safety' primary action button should always be
     // shown. If the option is false, this button is shown only when there is
-    // a proper page to navigate back to. Chrome and Chromium builds should
+    // a proper page to navigate back to. Chrome and Monyhar builds should
     // always set this option to true,
     bool always_show_back_to_safety;
 

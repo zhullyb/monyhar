@@ -19,24 +19,24 @@ a preference on in order to activate accessibility application-wide.
 2) Either
 * Start VoiceOver (`CMD+F5`) or
 * Use application specific flag/preference
-  * Chrome/Chromium: use `--force-renderer-accessibility` runtime flag
+  * Chrome/Monyhar: use `--force-renderer-accessibility` runtime flag
 
-For example, to enable accessibility in Chromium run:
-```Chromium.app/Contents/MacOS/Chromium --force-renderer-accessibility```
+For example, to enable accessibility in Monyhar run:
+```Monyhar.app/Contents/MacOS/Monyhar --force-renderer-accessibility```
 
 ### Linux
 
 Either
 * Start Orca or
 * Use application specific flag/preference
-  * Chrome/Chromium: use `--force-renderer-accessibility` runtime flag
+  * Chrome/Monyhar: use `--force-renderer-accessibility` runtime flag
 
 ### Windows
 
 Either
 * Start Narrator/NVDA/JAWS or
 * Use application specific flag/preference
-  * Chrome/Chromium: use `--force-renderer-accessibility` runtime flag
+  * Chrome/Monyhar: use `--force-renderer-accessibility` runtime flag
 
 ## ax_dump_tree
 
@@ -58,7 +58,7 @@ To watch accessibility events, run:
 
 At your convenience the number of pre-defined application selectors are available:
 * `--chrome` for Chrome browser
-* `--monyhar` for Chromium browser
+* `--monyhar` for Monyhar browser
 * `--firefox` for Firefox browser
 * `--edge` for Edge browser (Windows only)
 * `--safari` for Safari browser (Mac only)
@@ -108,7 +108,7 @@ To dump Edge accessible tree on Windows:
 To dump an accessible tree on Mac for a Firefox window having title containing ``mozilla``:
 ``out/Default/ax_dump_tree --firefox --pattern=*mozilla*``
 
-To watch Chromium accessibility events on Linux:
+To watch Monyhar accessibility events on Linux:
 ``out/Default/ax_dump_events --monyhar``
 
 ## Build

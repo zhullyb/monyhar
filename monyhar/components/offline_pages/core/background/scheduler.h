@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -36,7 +36,7 @@ class Scheduler {
   // is scheduled at a time.
   virtual void Schedule(const TriggerConditions& trigger_conditions) = 0;
 
-  // Schedules the triggering of a task in case Chromium is killed,
+  // Schedules the triggering of a task in case Monyhar is killed,
   // so we can continue processing background download requests.  This will
   // not overwrite existing tasks.
   virtual void BackupSchedule(const TriggerConditions& trigger_conditions,

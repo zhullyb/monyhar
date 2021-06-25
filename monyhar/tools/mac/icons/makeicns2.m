@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -332,7 +332,7 @@ int main(int argc, char* argv[]) {
 
     NSMutableArray<NSData*>* blocks = [NSMutableArray array];
 
-    // Add the standard Chromium icon sizes.
+    // Add the standard Monyhar icon sizes.
     [blocks
         addObjectsFromArray:ImageAndMaskIconBlocksForIconOfSize(iconset, 16)];
     [blocks

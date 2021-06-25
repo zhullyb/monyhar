@@ -33,7 +33,7 @@
         "PPB_Instance;1.0", 
         "PPB_Memory(Dev);0.1", 
         "PPB_NetAddress_Private;1.1|PPB_NetAddress_Private;1.0|PPB_NetAddress_Private;0.1", 
-        "PPB_OpenGLES2ChromiumMapSub;1.0|PPB_OpenGLES2ChromiumMapSub(Dev);1.0|PPB_GLESChromiumTextureMapping(Dev);0.1", 
+        "PPB_OpenGLES2MonyharMapSub;1.0|PPB_OpenGLES2MonyharMapSub(Dev);1.0|PPB_GLESMonyharTextureMapping(Dev);0.1", 
         "PPB_OpenGLES2;1.0", 
         "PPB_TCPSocket_Private;0.5|PPB_TCPSocket_Private;0.4|PPB_TCPSocket_Private;0.3", 
         "PPB_TextInput(Dev);0.2|PPB_TextInput(Dev);0.1", 

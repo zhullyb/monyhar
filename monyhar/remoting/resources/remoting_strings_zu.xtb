@@ -72,7 +72,7 @@ Uma i-'<ph name="SERVICE_SCRIPT_NAME" />' isivele ithikhiwe, yekisa ukuyithikha 
 <translation id="4405930547258349619">Ilabhulali yomongo</translation>
 <translation id="443560535555262820">Vula okuncanyelwayo kokufinyeleleka</translation>
 <translation id="4450893287417543264">Ungabonisi futhi</translation>
-<translation id="4512952200932940229">I-Copyright 2021 Ababhali be-Chromium. Wonke amalungelo agciniwe.</translation>
+<translation id="4512952200932940229">I-Copyright 2021 Ababhali be-Monyhar. Wonke amalungelo agciniwe.</translation>
 <translation id="4513946894732546136">Impendulo</translation>
 <translation id="4563926062592110512">Iklayenti linqanyuliwe: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Amadivayisi yokulawula ukude</translation>
@@ -147,7 +147,7 @@ Uma i-'<ph name="SERVICE_SCRIPT_NAME" />' isivele ithikhiwe, yekisa ukuyithikha 
 <translation id="7868137160098754906">Sicela ufake iphinikhodi yakho kukhompyutha yesilawuli kude.</translation>
 <translation id="7895403300744144251">Izinqubomgomo zokuvikela kukhompuyutha yesilawuli kude azivumeli ukuxhumeka kusukela ku-akhawunti yakho.</translation>
 <translation id="7936528439960309876">Dokha ngakwesokudla</translation>
-<translation id="7970576581263377361">Ukuqinisekisa kuhlulekile. Sicela ungene ngemvume ku-Chromium futhi.</translation>
+<translation id="7970576581263377361">Ukuqinisekisa kuhlulekile. Sicela ungene ngemvume ku-Monyhar futhi.</translation>
 <translation id="7981525049612125370">Isikhathi sesilawuli kude siphelelwe isikhathi.</translation>
 <translation id="8038111231936746805">(okuzenzakalelayo)</translation>
 <translation id="8041089156583427627">Thumela impendulo</translation>
@@ -181,6 +181,6 @@ Uma i-'<ph name="SERVICE_SCRIPT_NAME" />' isivele ithikhiwe, susa ukuyithikha be
 <translation id="9187628920394877737">Nikeza imvume 'yokurekhoda kwesikrini' ku-<ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Ukulungiswa kosokhaya okungavumelekile.</translation>
 <translation id="981121421437150478">Ayixhunyiwe ku-inthanethi</translation>
-<translation id="985602178874221306">Ababhali be-Chromium</translation>
+<translation id="985602178874221306">Ababhali be-Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (ukugcina ukuba ku-inthanethi <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

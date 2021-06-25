@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -43,10 +43,10 @@ GL_APICALL const struct PPB_OpenGLES2FramebufferBlit* GL_APIENTRY
     glGetFramebufferBlitInterfacePPAPI(void);
 GL_APICALL const struct PPB_OpenGLES2FramebufferMultisample* GL_APIENTRY
     glGetFramebufferMultisampleInterfacePPAPI(void);
-GL_APICALL const struct PPB_OpenGLES2ChromiumEnableFeature* GL_APIENTRY
-    glGetChromiumEnableFeatureInterfacePPAPI(void);
-GL_APICALL const struct PPB_OpenGLES2ChromiumMapSub* GL_APIENTRY
-    glGetChromiumMapSubInterfacePPAPI(void);
+GL_APICALL const struct PPB_OpenGLES2MonyharEnableFeature* GL_APIENTRY
+    glGetMonyharEnableFeatureInterfacePPAPI(void);
+GL_APICALL const struct PPB_OpenGLES2MonyharMapSub* GL_APIENTRY
+    glGetMonyharMapSubInterfacePPAPI(void);
 GL_APICALL const struct PPB_OpenGLES2Query* GL_APIENTRY
     glGetQueryInterfacePPAPI(void);
 GL_APICALL const struct PPB_OpenGLES2VertexArrayObject* GL_APIENTRY

@@ -106,7 +106,7 @@ A domain lens makes sense when you have:
 
 A common use of domain lenses is to extract only the data needed to display an
 object into a separate type, to decouple the object from its display logic. One
-Chromium example of this is [TabRendererData], which encapsulates only the state
+Monyhar example of this is [TabRendererData], which encapsulates only the state
 of a Tab needed to draw that Tab somewhere, without providing access to the
 Tab's underlying webcontents or any methods for mutating it.
 

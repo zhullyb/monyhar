@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ namespace internal {
 //
 // Not checking <version> because we don't want to use the feature
 // automatically. We should wait until C++-17 library functionality is
-// explicitly allowed in Chromium.
+// explicitly allowed in Monyhar.
 template <typename T>
 using has_unique_object_representations = std::is_arithmetic<T>;
 

@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -202,7 +202,7 @@ void HttpBridge::MakeAsynchronousPost() {
         semantics {
           sender: "Chrome Sync"
           description:
-            "Chrome Sync synchronizes profile data between Chromium clients "
+            "Chrome Sync synchronizes profile data between Monyhar clients "
             "and Google for a given user account."
           trigger:
             "User makes a change to syncable profile data after enabling sync "

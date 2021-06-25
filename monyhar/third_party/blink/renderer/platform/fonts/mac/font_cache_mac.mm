@@ -295,7 +295,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFontPlatformData(
       ((traits & NSFontItalicTrait) && !(actual_traits & NSFontItalicTrait)) ||
       font_description.IsSyntheticItalic();
 
-  // FontPlatformData::typeface() is null in the case of Chromium out-of-process
+  // FontPlatformData::typeface() is null in the case of Monyhar out-of-process
   // font loading failing.  Out-of-process loading occurs for registered fonts
   // stored in non-system locations.  When loading fails, we do not want to use
   // the returned FontPlatformData since it will not have a valid SkTypeface.

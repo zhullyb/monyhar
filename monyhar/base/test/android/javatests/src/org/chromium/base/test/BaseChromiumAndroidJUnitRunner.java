@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -43,7 +43,7 @@ import org.monyhar.base.LifetimeAssert;
 import org.monyhar.base.Log;
 import org.monyhar.base.annotations.MainDex;
 import org.monyhar.base.metrics.UmaRecorderHolder;
-import org.monyhar.base.multidex.ChromiumMultiDexInstaller;
+import org.monyhar.base.multidex.MonyharMultiDexInstaller;
 import org.monyhar.base.test.util.CallbackHelper;
 import org.monyhar.base.test.util.InMemorySharedPreferences;
 import org.monyhar.base.test.util.InMemorySharedPreferencesContext;
@@ -71,11 +71,11 @@ import java.util.concurrent.TimeoutException;
  * <instrumentation>
  */
 @MainDex
-public class BaseChromiumAndroidJUnitRunner extends AndroidJUnitRunner {
+public class BaseMonyharAndroidJUnitRunner extends AndroidJUnitRunner {
     private static final String LIST_ALL_TESTS_FLAG =
-            "org.monyhar.base.test.BaseChromiumAndroidJUnitRunner.TestList";
+            "org.monyhar.base.test.BaseMonyharAndroidJUnitRunner.TestList";
     private static final String LIST_TESTS_PACKAGE_FLAG =
-            "org.monyhar.base.test.BaseChromiumAndroidJUnitRunner.TestListPackage";
+            "org.monyhar.base.test.BaseMonyharAndroidJUnitRunner.TestListPackage";
     /**
      * This flag is supported by AndroidJUnitRunner.
      *
@@ -124,12 +124,12 @@ public class BaseChromiumAndroidJUnitRunner extends AndroidJUnitRunner {
         if (isTestMultidex) {
             if (hasUnderTestApk) {
                 // Need hacks to have multidex work when there is an under-test apk :(.
-                ChromiumMultiDexInstaller.install(
-                        new BaseChromiumRunnerCommon.MultiDexContextWrapper(
+                MonyharMultiDexInstaller.install(
+                        new BaseMonyharRunnerCommon.MultiDexContextWrapper(
                                 getContext(), targetContext));
-                BaseChromiumRunnerCommon.reorderDexPathElements(cl, getContext(), targetContext);
+                BaseMonyharRunnerCommon.reorderDexPathElements(cl, getContext(), targetContext);
             } else {
-                ChromiumMultiDexInstaller.install(getContext());
+                MonyharMultiDexInstaller.install(getContext());
             }
         }
 
@@ -562,7 +562,7 @@ public class BaseChromiumAndroidJUnitRunner extends AndroidJUnitRunner {
 
     private void finishAllActivities() {
         // This mirrors the default logic of the test runner for finishing Activities when
-        // ApplicationStatus isn't initialized. However, we keep Chromium's logic for finishing
+        // ApplicationStatus isn't initialized. However, we keep Monyhar's logic for finishing
         // Activities below both because it's worked historically and we don't want to risk breaking
         // things, and because the ActivityFinisher does some filtering on which Activities it
         // chooses to finish which could potentially cause issues.
@@ -668,7 +668,7 @@ public class BaseChromiumAndroidJUnitRunner extends AndroidJUnitRunner {
             // WebView prefs need to stay because webview tests have no (good) way of hooking
             // SharedPreferences for instantiated WebViews.
             if (!f.getName().endsWith("multidex.version.xml")
-                    && !f.getName().equals("WebViewChromiumPrefs.xml")) {
+                    && !f.getName().equals("WebViewMonyharPrefs.xml")) {
                 if (check) {
                     badFiles.add(f);
                 } else {

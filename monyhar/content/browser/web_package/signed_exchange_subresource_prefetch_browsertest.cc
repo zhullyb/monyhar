@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1368,7 +1368,7 @@ IN_PROC_BROWSER_TEST_F(SignedExchangeSubresourcePrefetchBrowserTest,
   // only difference is that the <link rel=prefetch> element has "as=document"
   // attribute which was introduced to support cross origin prefetch with
   // SplitCacheByNetworkIsolationKey feature. Note that even if
-  // SplitCacheByNetworkIsolationKey feature is enabled, current Chromium
+  // SplitCacheByNetworkIsolationKey feature is enabled, current Monyhar
   // implementation doesn't require as=document for prefetching main resource
   // signed exchanges when SignedExchangePrefetchCacheForNavigations feature is
   // enabled, and for prefetching main resource and subresource signed exchanges

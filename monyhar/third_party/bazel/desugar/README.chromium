@@ -26,7 +26,7 @@ Update instructions (requires @google.com account for uploading):
     git apply $CHROMIUM_SRC/third_party/bazel/desugar/stateful-lambdas.patch
 * Build Desugar_deploy.jar:
     bazel build //src/tools/android/java/com/google/devtools/build/android/desugar:Desugar_deploy.jar
-* Move Desugar_deploy.jar to location within Chromium:
+* Move Desugar_deploy.jar to location within Monyhar:
     rm $CHROMIUM_SRC/third_party/bazel/desugar/Desugar.jar
     mv bazel-bin/src/tools/android/java/com/google/devtools/build/android/desugar/Desugar_deploy.jar $CHROMIUM_SRC/third_party/bazel/desugar/Desugar.jar
 * Update Desugar_runtime.jar:

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -40,7 +40,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
   // Retrieves the #planes for a given |fourcc|, or 0 if unknown.
   static size_t GetNumPlanesForFourCc(uint32_t fourcc);
   // Returns the Chrome pixel format for |v4l2_fourcc| or PIXEL_FORMAT_UNKNOWN.
-  static VideoPixelFormat V4l2FourCcToChromiumPixelFormat(
+  static VideoPixelFormat V4l2FourCcToMonyharPixelFormat(
       uint32_t v4l2_fourcc);
 
   // Composes a list of usable and supported pixel formats, in order of

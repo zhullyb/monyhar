@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@
 
 // This file contains specialisations for trace serialisation for key
 // widely-used //base classes. As these specialisations require full definition
-// of perfetto::TracedValue and almost every source unit in Chromium requires
+// of perfetto::TracedValue and almost every source unit in Monyhar requires
 // one of these //base concepts, include specialiazations here and expose them
 // to the users including trace_event.h, rather than adding a dependency from
 // scoped_refptr.h et al on traced_value.h.

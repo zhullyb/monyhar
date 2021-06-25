@@ -29,7 +29,7 @@ Rendered version of this file: https://monyhar.googlesource.com/monyhar/src/+/ma
 While Omaha allows rollback through the release manager, the Chrome client will
 reject updates with lower version numbers. (This is important for running new
 versions on Canary/Dev channel). Rolling back a bad version is best achieved by:
-  * **Reverting** the changes on the Chromium source tree.
+  * **Reverting** the changes on the Monyhar source tree.
   * **Submitting** a new CL incrementing the version number.
   * **Push** the newest version, as above.
 

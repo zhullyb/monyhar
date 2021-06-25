@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@
 @protocol AppController<NSObject>
 
 // For adding new methods, please mark them as optional until they are
-// implemented in both Chromium and ios_internal. For deletion, just reverse the
+// implemented in both Monyhar and ios_internal. For deletion, just reverse the
 // procedure. This is to prevent build break in internal buildbot.
 
 - (void)showMenuAnimated:(BOOL)animated;

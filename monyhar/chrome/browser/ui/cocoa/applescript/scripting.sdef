@@ -173,7 +173,7 @@
 			<result type="any"/>
 		</command>
 	</suite>
-	<suite name="Chromium Suite" code="CrSu" description="Common classes and commands for Chrome.">
+	<suite name="Monyhar Suite" code="CrSu" description="Common classes and commands for Chrome.">
 		<class-extension description="The application&apos;s top-level scripting object." extends="application">
 			<cocoa class="BrowserCrApplication"/>
 			<element description="Contains the bookmarks bar and other bookmarks folder." type="bookmark folder" access="r">

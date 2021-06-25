@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -191,7 +191,7 @@ std::unique_ptr<CSS::CSSStyleSheetHeader> BuildObjectForStyleSheetInfo(
   std::unique_ptr<CSS::CSSStyleSheetHeader> result =
       CSS::CSSStyleSheetHeader::create()
           .setStyleSheetId(stylesheet_uid)
-          .setSourceURL(kChromiumCodeSearchSrcURL + url_path +
+          .setSourceURL(kMonyharCodeSearchSrcURL + url_path +
                         "?l=" + base::NumberToString(line))
           .setStartLine(line)
           .setStartColumn(0)

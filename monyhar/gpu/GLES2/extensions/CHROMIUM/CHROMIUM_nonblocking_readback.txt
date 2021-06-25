@@ -19,7 +19,7 @@ Overview
     This extension provides a query mechanism that allows for non-blocking
     device-to-host readback of GL buffer object contents.
 
-    In Chromium's multiprocess GL architecture, buffer readback
+    In Monyhar's multiprocess GL architecture, buffer readback
     (MapBufferRange(MAP_READ_BIT)) may be accelerated by a shared-memory shadow
     copy of a GL buffer object's memory. This shadow copy is allocated based on
     the buffer allocation usage hint (*_READ). The contents of the shadow copy

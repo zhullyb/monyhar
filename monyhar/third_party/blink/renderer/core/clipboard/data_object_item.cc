@@ -213,7 +213,7 @@ String DataObjectItem::GetAsString() const {
 bool DataObjectItem::IsFilename() const {
   // TODO(https://bugs.webkit.org/show_bug.cgi?id=81261): When we properly
   // support File dragout, we'll need to make sure this works as expected for
-  // DragDataChromium.
+  // DragDataMonyhar.
   return kind_ == kFileKind && file_;
 }
 

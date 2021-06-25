@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -820,7 +820,7 @@ TEST_P(SQLDatabaseTest, RazeAndCloseDiagnostics) {
 // of Raze() is to truncate the file to remove blocks which generate I/O errors.
 // Test that Raze() turns off memory mapping so that the file is truncated.
 // [This would not cover the case of multiple connections where one of the other
-// connections is memory-mapped.  That is infrequent in Chromium.]
+// connections is memory-mapped.  That is infrequent in Monyhar.]
 TEST_P(SQLDatabaseTest, RazeTruncate) {
   // The empty database has 0 or 1 pages.  Raze() should leave it with exactly 1
   // page.  Not checking directly because auto_vacuum on Android adds a freelist

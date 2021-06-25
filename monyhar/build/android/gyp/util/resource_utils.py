@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -65,7 +65,7 @@ MULTIPLE_RES_MAGIC_STRING = b'magic'
 
 
 def ToAndroidLocaleName(monyhar_locale):
-  """Convert a Chromium locale name into a corresponding Android one."""
+  """Convert a Monyhar locale name into a corresponding Android one."""
   # Should be in sync with build/config/locales.gni.
   # First handle the special cases, these are needed to deal with Android
   # releases *before* 5.0/Lollipop.
@@ -73,7 +73,7 @@ def ToAndroidLocaleName(monyhar_locale):
   if android_locale:
     return android_locale
 
-  # Format of Chromium locale name is '<lang>' or '<lang>-<region>'
+  # Format of Monyhar locale name is '<lang>' or '<lang>-<region>'
   # where <lang> is a 2 or 3 letter language code (ISO 639-1 or 639-2)
   # and region is a capitalized locale region name.
   lang, _, region = monyhar_locale.partition('-')
@@ -100,8 +100,8 @@ _RE_ANDROID_LOCALE_QUALIFIER_1 = re.compile(r'^([a-z]{2,3})(\-r([A-Z]+))?$')
 _RE_ANDROID_LOCALE_QUALIFIER_2 = re.compile(r'^b\+([a-z]{2,3})(\+.+)?$')
 
 
-def ToChromiumLocaleName(android_locale):
-  """Convert an Android locale name into a Chromium one."""
+def ToMonyharLocaleName(android_locale):
+  """Convert an Android locale name into a Monyhar one."""
   lang = None
   region = None
   script = None
@@ -172,7 +172,7 @@ def FindLocaleInStringResourceFilePath(file_path):
 
 
 def ToAndroidLocaleList(locale_list):
-  """Convert a list of Chromium locales into the corresponding Android list."""
+  """Convert a list of Monyhar locales into the corresponding Android list."""
   return sorted(ToAndroidLocaleName(locale) for locale in locale_list)
 
 # Represents a line from a R.txt file.

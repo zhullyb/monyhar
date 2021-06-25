@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# Defines which strings are to be extracted from Chrome / Chromiums string
+# Defines which strings are to be extracted from Chrome / Monyhars string
 # .grd for use in the installer. The variable names MUST not be changed as
 # the importing module (base/win/embedded_i18n/create_rc_string.py is
 # expecting these names to exist in the module in order to use them.

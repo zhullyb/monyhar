@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@
 namespace power_scheduler {
 
 // Decides the active PowerMode for a process. To do this, it collects votes
-// from various instrumentation points in Chromium.
+// from various instrumentation points in Monyhar.
 //
 // Each instrumentation point can instantiate a PowerModeVoter and submit votes:
 //   auto voter = PowerModeArbiter::GetInstance()->NewVoter("MyVoter");

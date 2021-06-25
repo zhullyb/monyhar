@@ -17,7 +17,7 @@ The static analyzer can still be invoked with [clang-tidy](clang_tidy.md).
 ## Recommended checks
 Clang's static analyzer comes with a wide variety of checkers. Some of the
 checks aren't useful because they are intended for different languages,
-platforms, or coding conventions than the ones used for Chromium development.
+platforms, or coding conventions than the ones used for Monyhar development.
 
 Checkers we found useful were:
 
@@ -62,6 +62,6 @@ detailed information about how the annotations are implemented.
 
 ## Logging bugs
 
-If you find any issues with the static analyzer, or find Chromium code behaving
+If you find any issues with the static analyzer, or find Monyhar code behaving
 badly with the analyzer, please check the `Infra>CodeAnalysis` CrBug component
 to look for known issues, or file a bug if it is a new problem.

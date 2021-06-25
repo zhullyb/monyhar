@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -114,7 +114,7 @@ class UkmXmlValidation(object):
         for email in owner_node.childNodes:
           # Check <owner> tag's content is an email address, not a username.
           if not ('@monyhar.org' in email.data or '@google.com' in email.data):
-            errors.append("<owner> tag for event '%s' expects a Chromium or "
+            errors.append("<owner> tag for event '%s' expects a Monyhar or "
                           "Google email address." % event_name)
 
     isSuccess = not errors

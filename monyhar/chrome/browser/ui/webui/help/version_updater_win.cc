@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ VersionUpdaterWin::~VersionUpdaterWin() {
 
 void VersionUpdaterWin::CheckForUpdate(StatusCallback callback,
                                        PromoteCallback) {
-  // There is no supported integration with Google Update for Chromium.
+  // There is no supported integration with Google Update for Monyhar.
   callback_ = std::move(callback);
 
   callback_.Run(CHECKING, 0, false, false, std::string(), 0, std::u16string());

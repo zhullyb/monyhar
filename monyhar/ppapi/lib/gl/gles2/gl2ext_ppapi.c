@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -32,9 +32,9 @@ static const struct PPB_OpenGLES2FramebufferBlit*
     g_gles2_framebuffer_blit_interface = NULL;
 static const struct PPB_OpenGLES2FramebufferMultisample*
     g_gles2_framebuffer_multisample_interface = NULL;
-static const struct PPB_OpenGLES2ChromiumEnableFeature*
+static const struct PPB_OpenGLES2MonyharEnableFeature*
     g_gles2_monyhar_enable_feature_interface = NULL;
-static const struct PPB_OpenGLES2ChromiumMapSub*
+static const struct PPB_OpenGLES2MonyharMapSub*
     g_gles2_monyhar_map_sub_interface = NULL;
 static const struct PPB_OpenGLES2Query*
     g_gles2_query_interface = NULL;
@@ -120,13 +120,13 @@ const struct PPB_OpenGLES2FramebufferMultisample* GL_APIENTRY
   return g_gles2_framebuffer_multisample_interface;
 }
 
-const struct PPB_OpenGLES2ChromiumEnableFeature* GL_APIENTRY
-    glGetChromiumEnableFeatureInterfacePPAPI(void) {
+const struct PPB_OpenGLES2MonyharEnableFeature* GL_APIENTRY
+    glGetMonyharEnableFeatureInterfacePPAPI(void) {
   return g_gles2_monyhar_enable_feature_interface;
 }
 
-const struct PPB_OpenGLES2ChromiumMapSub* GL_APIENTRY
-    glGetChromiumMapSubInterfacePPAPI(void) {
+const struct PPB_OpenGLES2MonyharMapSub* GL_APIENTRY
+    glGetMonyharMapSubInterfacePPAPI(void) {
   return g_gles2_monyhar_map_sub_interface;
 }
 

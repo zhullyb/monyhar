@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -61,7 +61,7 @@ MockCryptoClientStream::MockCryptoClientStream(
     const QuicConfig& config,
     QuicCryptoClientConfig* crypto_config,
     HandshakeMode handshake_mode,
-    const net::ProofVerifyDetailsChromium* proof_verify_details,
+    const net::ProofVerifyDetailsMonyhar* proof_verify_details,
     bool use_mock_crypter)
     : QuicCryptoClientStream(server_id,
                              session,
@@ -93,13 +93,13 @@ void MockCryptoClientStream::OnHandshakeMessage(
 
 bool MockCryptoClientStream::CryptoConnect() {
   IPEndPoint local_ip;
-  static_cast<QuicChromiumClientSession*>(session())
+  static_cast<QuicMonyharClientSession*>(session())
       ->GetDefaultSocket()
       ->GetLocalAddress(&local_ip);
   session()->connection()->SetSelfAddress(ToQuicSocketAddress(local_ip));
 
   IPEndPoint peer_ip;
-  static_cast<QuicChromiumClientSession*>(session())
+  static_cast<QuicMonyharClientSession*>(session())
       ->GetDefaultSocket()
       ->GetPeerAddress(&peer_ip);
   quic::test::QuicConnectionPeer::SetEffectivePeerAddress(

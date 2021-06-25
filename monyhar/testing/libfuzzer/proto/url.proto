@@ -1,13 +1,13 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // This file contains the definition of the Url protobuf used in the
 // url_parse_proto_fuzzer that is meant to serve as an example for future
-// Chromium fuzzers that use libprotobuf-mutator. We will consider the format of
+// Monyhar fuzzers that use libprotobuf-mutator. We will consider the format of
 // a URL for this fuzzer, to be
 // [scheme:][//[user[:password]@]host[:port]][/path][?query][#value] There may
-// be some URLs Chromium treats as valid that this syntax does not capture.
+// be some URLs Monyhar treats as valid that this syntax does not capture.
 // However, we will ignore them for the sake of simplicity. It is recommended to
 // read this file in conjunction with Convert() in url_proto_converter.cc as
 // logic in this function is sometimes used to ensure that the Url Protocol
@@ -71,7 +71,7 @@ message Url {
 
     // The rules for the path are somewhat complex. A path is not required,
     // however if it follows a port or host, it must start with "/" according
-    // to the RFC, though Chromium accepts "\" as it converts all backslashes to
+    // to the RFC, though Monyhar accepts "\" as it converts all backslashes to
     // slashes. It does not need to start with "/" if there is no host (in data
     // URLs for example). Thus we will define path as a repeated string where
     // each member contains a segment of the path and will be preceded by the

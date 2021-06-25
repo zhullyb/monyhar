@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -470,7 +470,7 @@ component("base") {
   }
 
   if (!is_ios) {
-    # iOS does not use Chromium-specific code for event handling.
+    # iOS does not use Monyhar-specific code for event handling.
     public_deps += [
       "//ui/base/clipboard:file_info",
       "//ui/events:dom_keycode_converter",

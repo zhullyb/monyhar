@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -103,7 +103,7 @@ class BLINK_PLATFORM_EXPORT WebMediaPlayerImpl
       public blink::WebSurfaceLayerBridgeObserver,
       public SmoothnessHelper::Client {
  public:
-  // Constructs a WebMediaPlayer implementation using Chromium's media stack.
+  // Constructs a WebMediaPlayer implementation using Monyhar's media stack.
   // |delegate| and |renderer_factory_selector| must not be null.
   WebMediaPlayerImpl(
       blink::WebLocalFrame* frame,

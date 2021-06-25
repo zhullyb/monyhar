@@ -6,7 +6,7 @@
 
 This document outlines many common questions we've received about extensions
 security and what we do or do not consider to be security bugs. This is
-primarily written for an audience of Chromium developers and security
+primarily written for an audience of Monyhar developers and security
 researchers.
 
 It is analogous to the general
@@ -19,7 +19,7 @@ examples of what is not considered a security bug).
 
 ## FAQ
 
-### I've found / written an extension that can access sensitive user data, like passwords and emails. Is this a security bug in Chromium?
+### I've found / written an extension that can access sensitive user data, like passwords and emails. Is this a security bug in Monyhar?
 
 In most cases, this is _not_ a security bug. Extensions are designed to have
 access to user data if and only if they have the appropriate
@@ -96,11 +96,11 @@ user leaves the site (e.g. by navigating away or refreshing), and potentially
 beyond. This has a few implications:
 
 *   Exfiltrated data is still exfiltrated. If an extension sent data from the
-    local device to a remote server, Chromium cannot delete the data on that
+    local device to a remote server, Monyhar cannot delete the data on that
     remote server.
 *   Content scripts (and other injected scripts) will continue running on pages
     they have already been injected in after the extension is disabled. Since
-    Chromium cannot "un-inject" these scripts, they may continue running until
+    Monyhar cannot "un-inject" these scripts, they may continue running until
     the user leaves the site.
 *   Data modified by the extension remains modified. This includes data like
     cookies, which may influence how a site operates. Additionally, extensions
@@ -111,11 +111,11 @@ Other extension behavior, such as running background scripts, network handlers,
 URL overrides, proxy settings, and preference modifications should be reverted
 upon uninstallation.
 
-### I've found an extension that violates Chrome Web Store policy. Is this considered a bug in Chromium?
+### I've found an extension that violates Chrome Web Store policy. Is this considered a bug in Monyhar?
 
-Individual extensions are generally not considered a part of Chromium, so
+Individual extensions are generally not considered a part of Monyhar, so
 extensions violating Chrome Web Store policies (including distribution policies)
-are not considered security bugs in Chromium itself.
+are not considered security bugs in Monyhar itself.
 
 You can report the extension with the "Report abuse" link in the extension's
 entry on the Chrome Web Store.
@@ -126,13 +126,13 @@ entry on the Chrome Web Store.
 
 ### Is adding a malicious extension to a user's profile considered a security bug?
 
-Chromium
+Monyhar
 [does not consider physically-local attacks to be security bugs][physically-local-attacks].
 This includes attacks like loading extensions on a user's machine. As such,
 attacks like loading extensions physically through loading an unpacked
 extension in the chrome://extensions page, via malicious software that executes
-outside of the Chromium browser, or updating enterprise policies to load
-extensions are all not within Chromium's threat model.
+outside of the Monyhar browser, or updating enterprise policies to load
+extensions are all not within Monyhar's threat model.
 
 Adding a malicious extension to the user's profile is only a security bug if you
 find a way to add the extension without direct access to the user's profile and
@@ -224,7 +224,7 @@ granted by default.
 
 ### I've found / written an extension that can execute code from a remote server. Is this a security bug?
 
-This is not considered a security bug in Chromium
+This is not considered a security bug in Monyhar
 ([example](https://crbug.com/1025017)). Prior to Manifest Version 3, extensions
 were allowed to execute code that was not contained in the extension package
 (also called remotely-hosted code); this is a pattern that is extremely common
@@ -232,12 +232,12 @@ in web development. Beginning in Manifest Version 3, all logic must be contained
 within the extension package for developers distributing through the Chrome Web
 store; however, this is a _policy_ requirement (described
 [here](https://developer.chrome.com/docs/webstore/program_policies/)), and is
-not enforced by the Chromium browser.
+not enforced by the Monyhar browser.
 
 While the platform includes some restrictions through the inclusion of a default
 content security policy for extensions, this is not meant to be a guaranteed
 deterrent, and does not prevent all types of remote code execution. For
-instance, it is impossible for the Chromium browser to guard against an
+instance, it is impossible for the Monyhar browser to guard against an
 extension that includes an interpreter that processes remotely-fetched JSON
 commands, even though this type of behavior is prohibited by policy in Manifest
 V3.
@@ -297,7 +297,7 @@ Similarly, the content of the DOM is shared between different JS worlds (though
 the JS objects are distinct to each). Attackers may be able to "trick" a content
 script into using these variables as a flavor of XSS - an example of this is
 [this Project Zero bug](https://bugs.monyhar.org/p/project-zero/issues/detail?id=1225).
-These are bugs in the particular extension, rather than in Chromium. Please
+These are bugs in the particular extension, rather than in Monyhar. Please
 report them to the extension developer.
 
 Other attacks that cross from the main world into an extension's isolated world
@@ -359,24 +359,24 @@ If an extension is able to access incognito contexts without this setting
 enabled, this may be a security bug; please report any such bugs
 [here][new-security-bug].
 
-### I've found a security bug in an extension. Is this a security bug in Chromium?
+### I've found a security bug in an extension. Is this a security bug in Monyhar?
 
 This depends on the extension.
 
 **Component Extensions:** Some extensions (called "component extensions") are
-bundled by the Chromium browser and implement core browser functionality. An
+bundled by the Monyhar browser and implement core browser functionality. An
 example of this is the CryptoToken extension (used in security key
 authentication). If you find a security bug in a component extension, this _is_
-considered a security bug in Chromium. Please report any such bugs
+considered a security bug in Monyhar. Please report any such bugs
 [here][new-security-bug].
 
 **Google Extensions:** A security bug in an extension developed by Google, but
 not distributed directly with the Chrome browser, would likely not be considered
-a bug in Chromium. However, they may be covered by the
+a bug in Monyhar. However, they may be covered by the
 [Google Vulnerability Reward Program](https://www.google.com/about/appsecurity/reward-program/).
 
 **Other Extensions:** A security bug in a third-party extension _would not_ be
-considered a security bug in Chromium. This is true even if the extension has
+considered a security bug in Monyhar. This is true even if the extension has
 sensitive and powerful permissions, which could leak user data  or allow
 cross-site scripting attacks
 ([example](https://bugs.monyhar.org/p/monyhar/issues/detail?id=1213523)).

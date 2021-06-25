@@ -1,4 +1,4 @@
-# Debugging Chromium Python With The VSCode Debugger
+# Debugging Monyhar Python With The VSCode Debugger
 
 ## Before You Begin
 

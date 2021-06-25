@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -3895,7 +3895,7 @@ TEST_F(NavigationControllerTest, ClearFaviconOnRedirect) {
   EXPECT_TRUE(entry);
   EXPECT_EQ(kPageWithFavicon, entry->GetURL());
 
-  // Simulate Chromium having set the favicon for |kPageWithFavicon|.
+  // Simulate Monyhar having set the favicon for |kPageWithFavicon|.
   content::FaviconStatus& favicon_status = entry->GetFavicon();
   favicon_status.image = CreateImage(SK_ColorWHITE);
   favicon_status.url = kIconURL;
@@ -3930,7 +3930,7 @@ TEST_F(NavigationControllerTest, BackNavigationDoesNotClearFavicon) {
   EXPECT_EQ(1U, navigation_entry_committed_counter_);
   navigation_entry_committed_counter_ = 0;
 
-  // Simulate Chromium having set the favicon for |kUrl1|.
+  // Simulate Monyhar having set the favicon for |kUrl1|.
   gfx::Image favicon_image = CreateImage(SK_ColorWHITE);
   content::NavigationEntry* entry = controller.GetLastCommittedEntry();
   EXPECT_TRUE(entry);

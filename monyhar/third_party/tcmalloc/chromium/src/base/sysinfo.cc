@@ -229,7 +229,7 @@ extern "C" {
 // still get a profile, but one with an unexpected name.
 // TODO(csilvers): set an envvar instead when we can do it reliably.
 //
-// In Chromium this hack is intentionally disabled, because the path is not
+// In Monyhar this hack is intentionally disabled, because the path is not
 // re-initialized upon fork.
 bool GetUniquePathFromEnv(const char* env_name, char* path) {
   char* envval = getenv(env_name);

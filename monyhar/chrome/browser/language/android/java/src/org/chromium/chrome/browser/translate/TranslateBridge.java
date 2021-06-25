@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -111,12 +111,12 @@ public class TranslateBridge {
 
     /**
      * The target language is stored in Translate format, which uses the old deprecated Java codes
-     * for several languages (Hebrew, Indonesian), and uses "tl" while Chromium uses "fil" for
-     * Tagalog/Filipino. This converts the target language into the correct Chromium format.
+     * for several languages (Hebrew, Indonesian), and uses "tl" while Monyhar uses "fil" for
+     * Tagalog/Filipino. This converts the target language into the correct Monyhar format.
      * @return The Chrome version of the users translate target language.
      */
-    public static String getTargetLanguageForChromium() {
-        return LocaleUtils.getUpdatedLanguageForChromium(getTargetLanguage());
+    public static String getTargetLanguageForMonyhar() {
+        return LocaleUtils.getUpdatedLanguageForMonyhar(getTargetLanguage());
     }
 
     /**

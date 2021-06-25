@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -53,14 +53,14 @@ class COMPONENT_EXPORT(UI_BASE_CLIPBOARD) ClipboardUtil {
 
   // Fills a vector of display names of "virtual files" in the data store, but
   // does not actually retrieve the file contents. Display names are assured to
-  // be unique. Method is called on drag enter of the Chromium drop target, when
+  // be unique. Method is called on drag enter of the Monyhar drop target, when
   // only the display names are needed. Method only returns true if |filenames|
   // is not empty.
   static bool GetVirtualFilenames(IDataObject* data_object,
                                   std::vector<base::FilePath>* filenames);
 
   // Retrieves "virtual file" contents via creation of intermediary temp files.
-  // Method is called on dropping on the Chromium drop target. Since creating
+  // Method is called on dropping on the Monyhar drop target. Since creating
   // the temp files involves file I/O, the method is asynchronous and the caller
   // must provide a callback function that receives a vector of pairs of temp
   // file paths and display names. Method immediately returns false if there are

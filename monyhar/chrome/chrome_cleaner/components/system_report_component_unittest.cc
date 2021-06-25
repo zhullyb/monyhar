@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -96,21 +96,21 @@ const ReportTestData extension_policies[] = {
      kTestingExtensionId2WithUpdateUrl},
     {HKEY_CURRENT_USER, kChromePoliciesForcelistKeyPath, L"test4",
      kTestingExtensionId2WithUpdateUrl},
-    {HKEY_LOCAL_MACHINE, kChromiumPoliciesWhitelistKeyPathDeprecated, L"test5",
+    {HKEY_LOCAL_MACHINE, kMonyharPoliciesWhitelistKeyPathDeprecated, L"test5",
      kTestingExtensionId1},
-    {HKEY_CURRENT_USER, kChromiumPoliciesWhitelistKeyPathDeprecated, L"test6",
+    {HKEY_CURRENT_USER, kMonyharPoliciesWhitelistKeyPathDeprecated, L"test6",
      kTestingExtensionId1},
-    {HKEY_LOCAL_MACHINE, kChromiumPoliciesForcelistKeyPath, L"test7",
+    {HKEY_LOCAL_MACHINE, kMonyharPoliciesForcelistKeyPath, L"test7",
      kTestingExtensionId2WithUpdateUrl},
-    {HKEY_CURRENT_USER, kChromiumPoliciesForcelistKeyPath, L"test8",
+    {HKEY_CURRENT_USER, kMonyharPoliciesForcelistKeyPath, L"test8",
      kTestingExtensionId2WithUpdateUrl},
     {HKEY_LOCAL_MACHINE, kChromePoliciesAllowlistKeyPath, L"test9",
      kTestingExtensionId1},
     {HKEY_CURRENT_USER, kChromePoliciesAllowlistKeyPath, L"test10",
      kTestingExtensionId1},
-    {HKEY_LOCAL_MACHINE, kChromiumPoliciesAllowlistKeyPath, L"test11",
+    {HKEY_LOCAL_MACHINE, kMonyharPoliciesAllowlistKeyPath, L"test11",
      kTestingExtensionId1},
-    {HKEY_CURRENT_USER, kChromiumPoliciesAllowlistKeyPath, L"test12",
+    {HKEY_CURRENT_USER, kMonyharPoliciesAllowlistKeyPath, L"test12",
      kTestingExtensionId1},
 };
 

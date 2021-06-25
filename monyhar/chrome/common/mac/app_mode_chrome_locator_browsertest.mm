@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ namespace {
 // This needs to be a browser test because it expects to find a Chrome.app
 // bundle in the output directory.
 
-// Return the path to the Chrome/Chromium app bundle compiled along with the
+// Return the path to the Chrome/Monyhar app bundle compiled along with the
 // test executable.
 void GetChromeBundlePath(base::FilePath* chrome_bundle) {
   base::FilePath path;

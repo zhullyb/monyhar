@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ import org.monyhar.base.CommandLine;
 import org.monyhar.base.ContextUtils;
 import org.monyhar.base.library_loader.LibraryLoader;
 import org.monyhar.base.library_loader.LibraryProcessType;
-import org.monyhar.base.multidex.ChromiumMultiDexInstaller;
+import org.monyhar.base.multidex.MonyharMultiDexInstaller;
 import org.monyhar.build.BuildConfig;
 
 /**
@@ -28,7 +28,7 @@ public abstract class NativeBrowserTestApplication extends Application {
         if (isMainProcess() || isBrowserProcess()) {
             // We need secondary dex in order to run EmbeddedTestServer in a
             // privileged process.
-            if (BuildConfig.IS_MULTIDEX_ENABLED) ChromiumMultiDexInstaller.install(this);
+            if (BuildConfig.IS_MULTIDEX_ENABLED) MonyharMultiDexInstaller.install(this);
         }
         if (isBrowserProcess()) {
             CommandLine.init(new String[] {});

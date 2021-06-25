@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@ import org.monyhar.base.annotations.JNINamespace;
 /**
  * This class implements a factory of Android Video Capture objects for Chrome.
  * Cameras are identified by |id|. Video Capture objects allocated via
- * createVideoCapture() are explicitly owned by the caller. ChromiumCameraInfo
+ * createVideoCapture() are explicitly owned by the caller. MonyharCameraInfo
  * is an internal class with some static methods needed from the rest of the
  * class to manipulate the |id|s of devices.
  **/
@@ -24,7 +24,7 @@ import org.monyhar.base.annotations.JNINamespace;
 @SuppressWarnings("deprecation")
 class VideoCaptureFactory {
     // Internal class to encapsulate camera device id manipulations.
-    static class ChromiumCameraInfo {
+    static class MonyharCameraInfo {
         private static int sNumberOfSystemCameras = -1;
         private static final String TAG = "media";
 
@@ -69,7 +69,7 @@ class VideoCaptureFactory {
 
     @CalledByNative
     static int getNumberOfCameras() {
-        return ChromiumCameraInfo.getNumberOfCameras();
+        return MonyharCameraInfo.getNumberOfCameras();
     }
 
     @CalledByNative

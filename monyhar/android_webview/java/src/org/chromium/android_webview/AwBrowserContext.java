@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -109,7 +109,7 @@ public class AwBrowserContext {
             // Prefs dir will be created if it doesn't exist, so must allow writes
             // for this and so that the actual prefs can be written to the new
             // location if needed.
-            final String oldGlobalPrefsName = "WebViewChromiumPrefs";
+            final String oldGlobalPrefsName = "WebViewMonyharPrefs";
             SharedPreferences oldGlobalPrefs =
                     ContextUtils.getApplicationContext().getSharedPreferences(
                             oldGlobalPrefsName, Context.MODE_PRIVATE);
@@ -148,7 +148,7 @@ public class AwBrowserContext {
         return sInstance;
     }
 
-    // See comments in WebViewChromiumFactoryProvider for details.
+    // See comments in WebViewMonyharFactoryProvider for details.
     public void setWebLayerRunningInSameProcess() {
         AwBrowserContextJni.get().setWebLayerRunningInSameProcess(mNativeAwBrowserContext);
     }

@@ -1,4 +1,4 @@
-This directory contains the implementation of the Chromium UI. Code in the root
+This directory contains the implementation of the Monyhar UI. Code in the root
 of this directory is toolkit- and platform-independent. There are subdirectories
 with implementations for specific toolkits and OSes. Code in the root of this
 directory should *not* be aware of platform-specific implementation details or
@@ -39,7 +39,7 @@ This pattern often looks like this:
 //chrome/browser/ui/android/my_dialog_android.cc:  
     void ShowMyDialog(...) { ... }
 
-Because "Chromium UI" is such a large surface area, do not add new files
+Because "Monyhar UI" is such a large surface area, do not add new files
 directly to this directory; instead, add subdirectories with more specific
 OWNERS and place new features and files in them. Cleanup of existing scattered
 files is also welcome.

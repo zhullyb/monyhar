@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -200,7 +200,7 @@ message ProcessState {
   optional int64 process_id = 3;
   optional Type process_type = 5;
 
-  // Note: likely only a subset of modules of interest (e.g. Chromium's own
+  // Note: likely only a subset of modules of interest (e.g. Monyhar's own
   // modules).
   repeated CodeModule modules = 1;
   repeated ThreadState threads = 2;

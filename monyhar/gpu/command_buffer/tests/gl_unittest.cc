@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -131,10 +131,10 @@ TEST_F(GLTest, FeatureFlagsMatchCapabilities) {
 
 TEST_F(GLTest, GetString) {
   EXPECT_STREQ(
-      "OpenGL ES 2.0 Chromium",
+      "OpenGL ES 2.0 Monyhar",
       reinterpret_cast<const char*>(glGetString(GL_VERSION)));
   EXPECT_STREQ(
-      "OpenGL ES GLSL ES 1.0 Chromium",
+      "OpenGL ES GLSL ES 1.0 Monyhar",
       reinterpret_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION)));
 }
 

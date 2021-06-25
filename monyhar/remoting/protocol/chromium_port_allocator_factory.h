@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,10 +15,10 @@
 namespace remoting {
 namespace protocol {
 
-class ChromiumPortAllocatorFactory : public PortAllocatorFactory {
+class MonyharPortAllocatorFactory : public PortAllocatorFactory {
  public:
-  ChromiumPortAllocatorFactory();
-  ~ChromiumPortAllocatorFactory() override;
+  MonyharPortAllocatorFactory();
+  ~MonyharPortAllocatorFactory() override;
 
    // PortAllocatorFactory interface.
   std::unique_ptr<cricket::PortAllocator> CreatePortAllocator(
@@ -26,7 +26,7 @@ class ChromiumPortAllocatorFactory : public PortAllocatorFactory {
       base::WeakPtr<SessionOptionsProvider> session_options_provider) override;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(ChromiumPortAllocatorFactory);
+  DISALLOW_COPY_AND_ASSIGN(MonyharPortAllocatorFactory);
 };
 
 }  // namespace protocol

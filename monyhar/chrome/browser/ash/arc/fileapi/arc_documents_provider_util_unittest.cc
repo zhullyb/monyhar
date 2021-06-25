@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -210,7 +210,7 @@ TEST(ArcDocumentsProviderUtilTest, BuildDocumentUrl) {
 }
 
 TEST(ArcDocumentsProviderUtilTest, GetExtensionsForArcMimeType) {
-  // MIME types already known to Chromium.
+  // MIME types already known to Monyhar.
   EXPECT_NE(0u, GetExtensionsForArcMimeType("audio/mp3").size());
   EXPECT_NE(0u, GetExtensionsForArcMimeType("image/jpeg").size());
   EXPECT_NE(0u, GetExtensionsForArcMimeType("text/html").size());

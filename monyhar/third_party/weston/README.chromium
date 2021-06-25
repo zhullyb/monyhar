@@ -10,11 +10,11 @@ Source: https://gitlab.freedesktop.org/wayland/weston
 --[ DESCRIPTION ] ------------------
 This contains the source to the reference Wayland compositor called Weston.
 The LICENSE file is copied from src/COPYING
-This code is only for running tests of Chromium for Wayland and is not compiled
+This code is only for running tests of Monyhar for Wayland and is not compiled
 into Chrome
 
 --[ UPDATING ] -----------------
-Chromium infrastructure has a mirror of the Weston's official gitlab
+Monyhar infrastructure has a mirror of the Weston's official gitlab
 repository, but the mirror is set up in such a way that it is possible to
 maintain branches of Weston with additional patches applied (which
 should be submitted into upstream).

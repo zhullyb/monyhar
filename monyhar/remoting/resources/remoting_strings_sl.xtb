@@ -70,7 +70,7 @@
 <translation id="4405930547258349619">Knjižnica jedra</translation>
 <translation id="443560535555262820">Odpri nastavitve dostopnosti</translation>
 <translation id="4450893287417543264">Tega ne prikaži več</translation>
-<translation id="4512952200932940229">Copyright 2021 Ustvarjalci Chromiuma. Vse pravice pridržane.</translation>
+<translation id="4512952200932940229">Copyright 2021 Ustvarjalci Monyhara. Vse pravice pridržane.</translation>
 <translation id="4513946894732546136">Povratne informacije</translation>
 <translation id="4563926062592110512">Povezava z odjemalcem prekinjena: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4703799847237267011">Seja Oddaljenega povezovanja s Chromom je končana.</translation>
@@ -134,7 +134,7 @@
 <translation id="7868137160098754906">Vnesite PIN za oddaljeni računalnik.</translation>
 <translation id="7895403300744144251">Varnostni pravilniki na oddaljenem računalniku ne dovoljujejo povezav iz vašega računa.</translation>
 <translation id="7936528439960309876">Zasidranje desno</translation>
-<translation id="7970576581263377361">Preverjanje pristnosti ni uspelo. Še enkrat se prijavite v Chromium.</translation>
+<translation id="7970576581263377361">Preverjanje pristnosti ni uspelo. Še enkrat se prijavite v Monyhar.</translation>
 <translation id="7981525049612125370">Oddaljena seja je potekla.</translation>
 <translation id="8038111231936746805">(privzeto)</translation>
 <translation id="8041089156583427627">Pošlji povratne informacije</translation>
@@ -166,6 +166,6 @@
 <translation id="9187628920394877737">Odobritev dovoljenja »Snemanje zaslona« izdelku <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Neveljavna konfiguracija gostitelja.</translation>
 <translation id="981121421437150478">Brez povezave</translation>
-<translation id="985602178874221306">Ustvarjalci Chromiuma</translation>
+<translation id="985602178874221306">Ustvarjalci Monyhara</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (nazadnje s povezavo: <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

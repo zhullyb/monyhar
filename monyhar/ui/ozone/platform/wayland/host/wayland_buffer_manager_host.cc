@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,7 +34,7 @@ namespace {
 constexpr uint32_t kInvalidBufferId = 0u;
 
 uint32_t GetPresentationKindFlags(uint32_t flags) {
-  // Wayland spec has different meaning of VSync. In Chromium, VSync means to
+  // Wayland spec has different meaning of VSync. In Monyhar, VSync means to
   // update the begin frame vsync timing based on presentation feedback.
   uint32_t presentation_flags = gfx::PresentationFeedback::kVSync;
 

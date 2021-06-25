@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ export function parse(data) {
   try {
     parsed = ClientVariations.deserializeBinary(bytes);
   } catch (e) {
-    // Deserialization is never expected to fail in Chromium,
+    // Deserialization is never expected to fail in Monyhar,
     // but might fail in downstream repositories such as Edgium or
     // if any website uses the same header name 'x-client-data'
     parsed = ClientVariations.deserializeBinary([]);

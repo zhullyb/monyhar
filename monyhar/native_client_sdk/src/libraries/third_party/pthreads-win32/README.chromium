@@ -10,7 +10,7 @@ This library is included only to allow external users of the Native Client SDK
 to build PPAPI plugins using the pthreads interface. This is convenient during
 the process of developing or porting a Native Client application.
 
-This library is not shipped with Chromium.
+This library is not shipped with Monyhar.
 
 Description:
 From https://www.sourceware.org/pthreads-win32/

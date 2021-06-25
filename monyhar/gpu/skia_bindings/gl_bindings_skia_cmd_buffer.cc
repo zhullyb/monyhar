@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -59,7 +59,7 @@ sk_sp<GrGLInterface> CreateGLES2InterfaceBindings(
   // extensions).
   auto get_string = [impl](GLenum name) {
     if (name == GL_VERSION)
-      return reinterpret_cast<const GLubyte*>("OpenGL ES 2.0 Chromium");
+      return reinterpret_cast<const GLubyte*>("OpenGL ES 2.0 Monyhar");
     return impl->GetString(name);
   };
   auto get_stringi =

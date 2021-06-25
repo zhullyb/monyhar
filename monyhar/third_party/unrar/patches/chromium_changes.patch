@@ -276,7 +276,7 @@ index 52c86c0621af..7dc5b724ca73 100644
  bool File::Create(const wchar *Name,uint Mode)
  {
 +#if defined(CHROMIUM_UNRAR)
-+  // Since the Chromium sandbox does not allow the creation of files, use the
++  // Since the Monyhar sandbox does not allow the creation of files, use the
 +  // provided file.
 +  hFile = hOpenFile;
 +#else
@@ -700,7 +700,7 @@ index 000000000000..63b31f008861
 --- /dev/null
 +++ a/third_party/unrar/src/unrar_wrapper.cc
 @@ -0,0 +1,80 @@
-+// Copyright 2019 The Chromium Authors. All rights reserved.
++// Copyright 2019 The Monyhar Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -786,7 +786,7 @@ index 000000000000..1626af000903
 --- /dev/null
 +++ a/third_party/unrar/src/unrar_wrapper.h
 @@ -0,0 +1,72 @@
-+// Copyright 2018 The Chromium Authors. All rights reserved.
++// Copyright 2018 The Monyhar Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +

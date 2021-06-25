@@ -59,8 +59,8 @@ Due to the reasons mentioned above, users of this script are strongly advised to
 always use the same path such as
 `${root_build_dir}/coverage_instrumentation_input.txt`.
 
-## Want to learn more about code coverage in Chromium?
-For more background information on how code coverage works in Chromium, please
+## Want to learn more about code coverage in Monyhar?
+For more background information on how code coverage works in Monyhar, please
 refer to [code_coverage.md]
 
 ## Contacts

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -508,7 +508,7 @@ int GLES2Util::GLGetNumValuesReturned(int id) const {
     case GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES:
       return 1;
 
-    // Chromium internal bind_generates_resource query
+    // Monyhar internal bind_generates_resource query
     case GL_BIND_GENERATES_RESOURCE_CHROMIUM:
       return 1;
 

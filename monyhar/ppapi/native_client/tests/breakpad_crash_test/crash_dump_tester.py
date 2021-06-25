@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -23,7 +23,7 @@ import browsertester.browserlauncher
 # This reads a file of lines containing 'key:value' pairs.
 # The file contains entries like the following:
 #   plat:Win32
-#   prod:Chromium
+#   prod:Monyhar
 #   ptype:nacl-loader
 #   rept:crash svc
 def ReadDumpTxtFile(filename):
@@ -91,13 +91,13 @@ def Main(cleanup_funcs):
   parser.add_option('--expected_process_type_for_crash',
                     dest='expected_process_type_for_crash',
                     type=str, default='nacl-loader',
-                    help='The type of Chromium process that we expect the '
+                    help='The type of Monyhar process that we expect the '
                     'crash dump to be for')
   # Ideally we would just query the OS here to find out whether we are
   # running x86-32 or x86-64 Windows, but Python's win32api module
   # does not contain a wrapper for GetNativeSystemInfo(), which is
   # what NaCl uses to check this, or for IsWow64Process(), which is
-  # what Chromium uses.  Instead, we just rely on the build system to
+  # what Monyhar uses.  Instead, we just rely on the build system to
   # tell us.
   parser.add_option('--win64', dest='win64', action='store_true',
                     help='Pass this if we are running tests for x86-64 Windows')
@@ -113,11 +113,11 @@ def Main(cleanup_funcs):
   windows_pipe_name = r'\\.\pipe\%s_crash_service' % os.path.basename(temp_dir)
 
   # This environment variable enables Breakpad crash dumping in
-  # non-official builds of Chromium.
+  # non-official builds of Monyhar.
   os.environ['CHROME_HEADLESS'] = '1'
   if sys.platform == 'win32':
     dumps_dir = temp_dir
-    # Override the default (global) Windows pipe name that Chromium will
+    # Override the default (global) Windows pipe name that Monyhar will
     # use for out-of-process crash reporting.
     os.environ['CHROME_BREAKPAD_PIPE_NAME'] = windows_pipe_name
     # Launch the x86-32 crash service so that we can handle crashes in
@@ -144,7 +144,7 @@ def Main(cleanup_funcs):
     os.environ['BREAKPAD_DUMP_LOCATION'] = dumps_dir
   elif sys.platform.startswith('linux'):
     # The "--user-data-dir" option is not effective for the Breakpad
-    # setup in Linux Chromium, because Breakpad is initialized before
+    # setup in Linux Monyhar, because Breakpad is initialized before
     # "--user-data-dir" is read.  So we set HOME to redirect the crash
     # dumps to a temporary directory.
     home_dir = temp_dir

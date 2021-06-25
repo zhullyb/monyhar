@@ -1276,7 +1276,7 @@ EGLAPI EGLuint64NV EGLAPIENTRY eglGetSystemTimeNV (void);
 #define EGL_NATIVE_SURFACE_TIZEN          0x32A1
 #endif /* EGL_TIZEN_image_native_surface */
 
-/* Chromium-specific support for EGL_EXT_image_flush_external extension */
+/* Monyhar-specific support for EGL_EXT_image_flush_external extension */
 #ifndef EGL_EXT_image_flush_external
 #define EGL_EXT_image_flush_external 1
 #ifdef EGL_EGLEXT_PROTOTYPES
@@ -1292,7 +1292,7 @@ typedef EGLBoolean(EGLAPIENTRYP PFNGLEGLIMAGEFLUSHEXTERNALEXT)(
 #endif
 #endif
 
-/* Chromium-specific support for EGL_ANGLE_stream_producer_d3d_texture */
+/* Monyhar-specific support for EGL_ANGLE_stream_producer_d3d_texture */
 #ifndef EGL_ANGLE_stream_producer_d3d_texture
 #define EGL_ANGLE_stream_producer_d3d_texture
 #define EGL_D3D_TEXTURE_SUBRESOURCE_ID_ANGLE 0x33AB

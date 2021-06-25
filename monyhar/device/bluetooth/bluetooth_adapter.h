@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -463,7 +463,7 @@ class DEVICE_BLUETOOTH_EXPORT BluetoothAdapter
   virtual bool IsDiscovering() const = 0;
 
   // Inserts all the devices that are connected by the operating system, and not
-  // being connected by Chromium, into |devices_|. This method is useful since
+  // being connected by Monyhar, into |devices_|. This method is useful since
   // a discovery session cannot find devices that are already connected to the
   // computer.
   // TODO(crbug.com/653032): Needs to be implemented for Android and Windows.

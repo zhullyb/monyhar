@@ -1,8 +1,8 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Top-level presubmit script for Chromium.
+"""Top-level presubmit script for Monyhar.
 
 See http://dev.monyhar.org/developers/how-tos/depottools/presubmit-scripts
 for more details about the presubmit API built into depot_tools.
@@ -83,7 +83,7 @@ _TEST_CODE_EXCLUDED_PATHS = (
     r'ios[\\/].*_app_interface\.mm$',
     # Views Examples code
     r'ui[\\/]views[\\/]examples[\\/].*',
-    # Chromium Codelab
+    # Monyhar Codelab
     r'codelabs[\\/]*'
 )
 
@@ -353,7 +353,7 @@ _BANNED_CPP_FUNCTIONS = (
     (
       'FRIEND_TEST(',
       (
-       'Chromium code should not use gtest\'s FRIEND_TEST() macro. Include',
+       'Monyhar code should not use gtest\'s FRIEND_TEST() macro. Include',
        'base/gtest_prod_util.h and use FRIEND_TEST_ALL_PREFIXES() instead.',
       ),
       False,
@@ -472,7 +472,7 @@ _BANNED_CPP_FUNCTIONS = (
       (
         'base::TimeXXX::FromInternalValue() and ToInternalValue() are',
         'deprecated (http://crbug.com/634507). Please avoid converting away',
-        'from the Time types in Chromium code, especially if any math is',
+        'from the Time types in Monyhar code, especially if any math is',
         'being done on time values. For interfacing with platform/library',
         'APIs, use FromMicroseconds() or InMicroseconds(), or one of the other',
         'type converter methods instead. For faking TimeXXX values (for unit',
@@ -696,7 +696,7 @@ _BANNED_CPP_FUNCTIONS = (
     (
       r'/\b#include <exception>\b',
       (
-        'Exceptions are banned and disabled in Chromium.',
+        'Exceptions are banned and disabled in Monyhar.',
       ),
       True,
       [_THIRD_PARTY_EXCEPT_BLINK],  # Not an error in third_party folders.
@@ -705,7 +705,7 @@ _BANNED_CPP_FUNCTIONS = (
       r'/\bstd::function\b',
       (
         'std::function is banned. Instead use base::OnceCallback or ',
-        'base::RepeatingCallback, which directly support Chromium\'s weak ',
+        'base::RepeatingCallback, which directly support Monyhar\'s weak ',
         'pointers, ref counting and more.',
       ),
       False,  # Only a warning since it is already used.
@@ -2125,7 +2125,7 @@ def CheckAddedDepsHaveTargetApprovals(input_api, output_api):
   introduced. This check verifies that this happens.
   """
   # We rely on Gerrit's code-owners to check approvals.
-  # input_api.gerrit is always set for Chromium, but other projects
+  # input_api.gerrit is always set for Monyhar, but other projects
   # might not use Gerrit.
   if not input_api.gerrit:
     return []
@@ -3085,7 +3085,7 @@ def _CheckAndroidDebuggableBuild(input_api, output_api):
 # TODO: add unit tests
 def _CheckAndroidToastUsage(input_api, output_api):
   """Checks that code uses org.monyhar.ui.widget.Toast instead of
-     android.widget.Toast (Chromium Toast doesn't force hardware
+     android.widget.Toast (Monyhar Toast doesn't force hardware
      acceleration on low-end devices, saving memory).
   """
   toast_import_pattern = input_api.re.compile(
@@ -3133,7 +3133,7 @@ def _CheckAndroidCrLogUsage(input_api, output_api):
     # WebView license viewer code cannot depend on //base; used in stub APK.
     r"^android_webview[\\/]glue[\\/]java[\\/]src[\\/]com[\\/]android[\\/]"
     r"webview[\\/]monyhar[\\/]License.*",
-    # The customtabs_benchmark is a small app that does not depend on Chromium
+    # The customtabs_benchmark is a small app that does not depend on Monyhar
     # java pieces.
     r"tools[\\/]android[\\/]customtabs_benchmark[\\/].*",
   ]
@@ -3688,7 +3688,7 @@ def CheckForCcIncludes(input_api, output_api):
         if _IsCPlusPlusFile(input_api, included_file):
           # The most common naming for external files with C++ code,
           # apart from standard headers, is to call them foo.inc, but
-          # Chromium sometimes uses foo-inc.cc so allow that as well.
+          # Monyhar sometimes uses foo-inc.cc so allow that as well.
           if not included_file.endswith(('.h', '-inc.cc')):
             results.append(output_api.PresubmitError(
               'Only header files or .inc files should be included in other\n'
@@ -3905,7 +3905,7 @@ def CheckNewHeaderWithoutGnChangeOnUpload(input_api, output_api):
 
 
 def CheckCorrectProductNameInMessages(input_api, output_api):
-  """Check that Chromium-branded strings don't include "Chrome" or vice versa.
+  """Check that Monyhar-branded strings don't include "Chrome" or vice versa.
 
   This assumes we won't intentionally reference one product from the other
   product.
@@ -3914,10 +3914,10 @@ def CheckCorrectProductNameInMessages(input_api, output_api):
   test_cases = [{
     "filename_postfix": "google_chrome_strings.grd",
     "correct_name": "Chrome",
-    "incorrect_name": "Chromium",
+    "incorrect_name": "Monyhar",
   }, {
     "filename_postfix": "monyhar_strings.grd",
-    "correct_name": "Chromium",
+    "correct_name": "Monyhar",
     "incorrect_name": "Chrome",
   }]
 
@@ -3951,7 +3951,7 @@ def CheckCorrectProductNameInMessages(input_api, output_api):
 def CheckForTooLargeFiles(input_api, output_api):
   """Avoid large files, especially binary files, in the repository since
   git doesn't scale well for those. They will be in everyone's repo
-  clones forever, forever making Chromium slower to clone and work
+  clones forever, forever making Monyhar slower to clone and work
   with."""
 
   # Uploading files to cloud storage is not trivial so we don't want
@@ -4464,7 +4464,7 @@ def CheckForIncludeGuards(input_api, output_api):
   should include the string "no-include-guard-because-multiply-included".
   """
   def is_monyhar_header_file(f):
-    # We only check header files under the control of the Chromium
+    # We only check header files under the control of the Monyhar
     # project. That is, those outside third_party apart from
     # third_party/blink.
     # We also exclude *_message_generator.h headers as they use
@@ -4789,9 +4789,9 @@ def CheckStrings(input_api, output_api):
 
   # This checks verifies that the ICU syntax of messages this CL touched is
   # valid, and reports any found syntax errors.
-  # Without this presubmit check, ICU syntax errors in Chromium strings can land
+  # Without this presubmit check, ICU syntax errors in Monyhar strings can land
   # without developers being aware of them. Later on, such ICU syntax errors
-  # break message extraction for translation, hence would block Chromium
+  # break message extraction for translation, hence would block Monyhar
   # translations until they are fixed.
   icu_syntax_errors = []
 

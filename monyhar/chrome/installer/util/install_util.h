@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -40,7 +40,7 @@ class InstallUtil {
   // Launches given exe as admin on Vista.
   static bool ExecuteExeAsAdmin(const base::CommandLine& cmd, DWORD* exit_code);
 
-  // Reads the uninstall command for Chromium from the Windows registry and
+  // Reads the uninstall command for Monyhar from the Windows registry and
   // returns it. If |system_install| is true the command is read from HKLM,
   // otherwise from HKCU. Returns an empty CommandLine if Chrome is not
   // installed.
@@ -56,7 +56,7 @@ class InstallUtil {
   // version (by Google Update) that contains an important security fix.
   static base::Version GetCriticalUpdateVersion();
 
-  // This function checks if the current OS is supported for Chromium.
+  // This function checks if the current OS is supported for Monyhar.
   static bool IsOSSupported();
 
   // Adds work items to |install_list| to set installer error information in the

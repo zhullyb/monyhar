@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,7 +9,7 @@
 
 #include "base/time/time.h"
 
-// A class representing the dock icon of the Chromium app. It's its own class
+// A class representing the dock icon of the Monyhar app. It's its own class
 // since several parts of the app want to manipulate the display of the dock
 // icon.
 //

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -537,7 +537,7 @@ void ChromotingSession::Core::ConnectOnNetworkThread() {
 
   scoped_refptr<protocol::TransportContext> transport_context =
       new protocol::TransportContext(
-          std::make_unique<protocol::ChromiumPortAllocatorFactory>(),
+          std::make_unique<protocol::MonyharPortAllocatorFactory>(),
           runtime_->url_loader_factory(),
           protocol::NetworkSettings(
               protocol::NetworkSettings::NAT_TRAVERSAL_FULL),

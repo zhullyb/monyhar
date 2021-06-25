@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -105,7 +105,7 @@ class MojoHostResolverImplTest : public testing::Test {
   const net::IPAddress kExampleComAddress{1, 2, 3, 4};
   const net::IPAddress kExampleComAddressIpv6{1, 2,  3,  4,  5,  6,  7,  8,
                                               9, 10, 11, 12, 13, 14, 15, 16};
-  const net::IPAddress kChromiumOrgAddress{8, 8, 8, 8};
+  const net::IPAddress kMonyharOrgAddress{8, 8, 8, 8};
 
   void SetUp() override {
     mock_host_resolver_.rules()->AddRuleForAddressFamily(
@@ -113,7 +113,7 @@ class MojoHostResolverImplTest : public testing::Test {
     mock_host_resolver_.rules()->AddRule("example.com",
                                          kExampleComAddressIpv6.ToString());
     mock_host_resolver_.rules()->AddRule("monyhar.org",
-                                         kChromiumOrgAddress.ToString());
+                                         kMonyharOrgAddress.ToString());
     mock_host_resolver_.rules()->AddSimulatedFailure("failure.fail");
 
     resolver_service_ = std::make_unique<MojoHostResolverImpl>(
@@ -185,7 +185,7 @@ TEST_F(MojoHostResolverImplTest, ResolveMultiple) {
   EXPECT_THAT(client1.error_, IsOk());
   EXPECT_THAT(client1.results_, testing::ElementsAre(kExampleComAddress));
   EXPECT_THAT(client2.error_, IsOk());
-  EXPECT_THAT(client2.results_, testing::ElementsAre(kChromiumOrgAddress));
+  EXPECT_THAT(client2.results_, testing::ElementsAre(kMonyharOrgAddress));
 }
 
 TEST_F(MojoHostResolverImplTest, ResolveDuplicate) {

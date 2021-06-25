@@ -1,8 +1,8 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// The Chromium build system defines __linux__ even for native client builds,
+// The Monyhar build system defines __linux__ even for native client builds,
 // so guard against __native_client__ being defined as well.
 #if defined(WIN32) || defined(__APPLE__) || (defined(__linux__) && !defined(__native_client__))
 
@@ -89,7 +89,7 @@ int _real_isatty(int fd, int* result) {
 
 #endif
 
-// The Chromium build system defines __linux__ even for native client builds,
+// The Monyhar build system defines __linux__ even for native client builds,
 // so guard against __native_client__ being defined as well.
 #if defined(__APPLE__) || defined(__linux__) && !defined(__native_client__)
 

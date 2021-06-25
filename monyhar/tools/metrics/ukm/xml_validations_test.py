@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -42,7 +42,7 @@ class UkmXmlValidationTest(unittest.TestCase):
     expected_errors = [
         "<owner> tag is required for event 'Event1'.",
         "<owner> tag for event 'Event2' should not be empty.",
-        "<owner> tag for event 'Event3' expects a Chromium or Google email "
+        "<owner> tag for event 'Event3' expects a Monyhar or Google email "
         "address.",
     ]
 

@@ -70,7 +70,7 @@ and may result in the removal of trust of that CA’s certificates.
     Additionally, such certificates will be treated as a critical security
     failure by the CA, and may result in further action taken on the CA that
     may affect how current or future certificates from that CA function.
-    Chromium-based browsers will have this enforcement enabled by default, and
+    Monyhar-based browsers will have this enforcement enabled by default, and
     will need to modify the source to disable this.
 * What are other browsers doing?
   * Apple previously announced this change for versions of iOS, iPadOS, macOS,
@@ -82,4 +82,4 @@ and may result in the removal of trust of that CA’s certificates.
     Microsoft, Mozilla, Opera, and 360 have previously indicated their support
     for these requirements, although have not yet made announcements at the
     time of this post (2020-06-22). Other browsers, including those browsers
-    based on Chromium, may provide additional guidance or clarification.
+    based on Monyhar, may provide additional guidance or clarification.

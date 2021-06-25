@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -33,7 +33,7 @@ bool PasteboardContainsBookmarks(NSPasteboard* pb);
 
 // UTI for dictionary containing bookmark structure consisting of individual
 // bookmark nodes and/or bookmark folders.
-extern NSString* const kUTTypeChromiumBookmarkDictionaryList;
+extern NSString* const kUTTypeMonyharBookmarkDictionaryList;
 
 }  // namespace bookmarks
 

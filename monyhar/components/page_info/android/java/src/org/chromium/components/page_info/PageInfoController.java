@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -324,7 +324,7 @@ public class PageInfoController implements PageInfoMainController, ModalDialogPr
         button.setOnClickListener((View v) -> {
             recordAction(PageInfoAction.PAGE_INFO_FORGET_SITE_OPENED);
             mForgetSiteDialog =
-                    new AlertDialog.Builder(mContext, R.style.Theme_Chromium_AlertDialog)
+                    new AlertDialog.Builder(mContext, R.style.Theme_Monyhar_AlertDialog)
                             .setTitle(R.string.page_info_forget_site_title)
                             .setMessage(R.string.page_info_forget_site_message)
                             .setPositiveButton(R.string.page_info_forget_site_confirmation_button,

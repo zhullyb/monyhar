@@ -249,7 +249,7 @@ messaging. The extension consists of three types of components:
 The component extension is written in JavaScript and includes code for multiple
 media route providers.  Initially Media Route Providers will be implemented for
 Cast and DIAL devices with others to follow. Over time media route providers
-that do not rely on proprietary protocols will be implemented in the Chromium
+that do not rely on proprietary protocols will be implemented in the Monyhar
 repository.
 
 As an external component, the extension is installed on the initial run of the

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -36,7 +36,7 @@ const FilePath::CharType kDefaultOutputFile[] = FILE_PATH_LITERAL(
 
 // Converts the given epoch time in milliseconds to a date string in the ISO
 // 8601 format, without the timezone information.
-// TODO(xyzzyz): Find a good place in Chromium to put it and refactor all uses
+// TODO(xyzzyz): Find a good place in Monyhar to put it and refactor all uses
 // to point to it.
 std::string FormatTimeAsIso8601(Time time) {
   Time::Exploded exploded;

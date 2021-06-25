@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -67,7 +67,7 @@ namespace {
 // global (static) array.
 // We use the single OS-level TLS slot (giving us one pointer per thread) to
 // hold a pointer to a per-thread array (table) of slots that we allocate to
-// Chromium consumers.
+// Monyhar consumers.
 
 // g_native_tls_key is the one native TLS that we use. It stores our table.
 
@@ -198,7 +198,7 @@ TlsVectorState GetTlsVectorStateAndValue(PlatformThreadLocalStorage::TLSKey key,
                                    entry);
 }
 
-// This function is called to initialize our entire Chromium TLS system.
+// This function is called to initialize our entire Monyhar TLS system.
 // It may be called very early, and we need to complete most all of the setup
 // (initialization) before calling *any* memory allocator functions, which may
 // recursively depend on this initialization.

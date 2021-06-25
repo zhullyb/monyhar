@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -2498,9 +2498,9 @@ class GLES2DecoderImpl : public GLES2Decoder,
                                        GLuint* source_texture_service_id,
                                        GLenum* source_texture_target);
 
-  // Whether a texture backed by a Chromium Image needs to emulate GL_RGB format
+  // Whether a texture backed by a Monyhar Image needs to emulate GL_RGB format
   // using GL_RGBA and glColorMask.
-  bool ChromiumImageNeedsRGBEmulation();
+  bool MonyharImageNeedsRGBEmulation();
 
   // The GL_CHROMIUM_schedule_ca_layer extension requires that SwapBuffers and
   // equivalent functions reset shared state.
@@ -2942,7 +2942,7 @@ ScopedResolvedFramebufferBinder::ScopedResolvedFramebufferBinder(
   bool alpha_channel_needs_clear =
       decoder_->should_use_native_gmb_for_backbuffer_ &&
       !decoder_->offscreen_buffer_should_have_alpha_ &&
-      decoder_->ChromiumImageNeedsRGBEmulation() &&
+      decoder_->MonyharImageNeedsRGBEmulation() &&
       decoder_->workarounds()
           .disable_multisampling_color_mask_usage;
   if (alpha_channel_needs_clear) {
@@ -3256,7 +3256,7 @@ bool BackTexture::AllocateNativeGpuMemoryBuffer(const gfx::Size& size,
   // emulation.
   bool needs_clear_for_rgb_emulation =
       !decoder_->offscreen_buffer_should_have_alpha_ &&
-      decoder_->ChromiumImageNeedsRGBEmulation();
+      decoder_->MonyharImageNeedsRGBEmulation();
   if (!is_cleared || zero || needs_clear_for_rgb_emulation) {
     GLuint fbo;
     api()->glGenFramebuffersEXTFn(1, &fbo);
@@ -3793,7 +3793,7 @@ gpu::ContextResult GLES2DecoderImpl::Initialize(
     // not include logic from workarounds.
     bool offscreen_buffer_texture_needs_alpha =
         offscreen_buffer_should_have_alpha_ ||
-        (ChromiumImageNeedsRGBEmulation() &&
+        (MonyharImageNeedsRGBEmulation() &&
          attrib_helper.should_use_native_gmb_for_backbuffer);
 
     if (attrib_helper.samples > 0 && attrib_helper.sample_buffers > 0 &&
@@ -4291,7 +4291,7 @@ Capabilities GLES2DecoderImpl::GetCapabilities() {
       feature_info_->feature_flags().ext_discard_framebuffer;
   caps.sync_query = feature_info_->feature_flags().monyhar_sync_query;
 
-  caps.monyhar_image_rgb_emulation = ChromiumImageNeedsRGBEmulation();
+  caps.monyhar_image_rgb_emulation = MonyharImageNeedsRGBEmulation();
 #if defined(OS_MAC)
   // This is unconditionally true on mac, no need to test for it at runtime.
   caps.iosurface = true;
@@ -5881,7 +5881,7 @@ error::Error GLES2DecoderImpl::HandleResizeCHROMIUM(
                       &color_space)) {
     return error::kOutOfBounds;
   }
-  TRACE_EVENT2("gpu", "glResizeChromium", "width", width, "height", height);
+  TRACE_EVENT2("gpu", "glResizeMonyhar", "width", width, "height", height);
 
   // gfx::Size uses integers, make sure width and height do not overflow
   static_assert(sizeof(GLuint) >= sizeof(int), "Unexpected GLuint size.");
@@ -19946,7 +19946,7 @@ bool GLES2DecoderImpl::NeedsCopyTextureImageWorkaround(
   return true;
 }
 
-bool GLES2DecoderImpl::ChromiumImageNeedsRGBEmulation() {
+bool GLES2DecoderImpl::MonyharImageNeedsRGBEmulation() {
   gpu::ImageFactory* factory = GetContextGroup()->image_factory();
   return factory ? !factory->SupportsFormatRGB() : false;
 }

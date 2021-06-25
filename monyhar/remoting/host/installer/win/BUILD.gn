@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -35,7 +35,7 @@ action("remoting_me2me_host_archive") {
   if (is_chrome_branded) {
     _branding = "Chrome"
   } else {
-    _branding = "Chromium"
+    _branding = "Monyhar"
   }
 
   if (is_official_build) {

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -57,7 +57,7 @@ std::string UiaIdentifierToCondensedString(int32_t id) {
 // The RuntimeId returned from IUIAutomationElement is different than the one
 // we hand out in IRawElementProviderFragment::GetRuntimeId, as UIA modifies it.
 // This function takes an existing IUIAutomationElement and swaps in the
-// Chromium specific bits of the internal runtime id so that the returned
+// Monyhar specific bits of the internal runtime id so that the returned
 // SAFEARRAY can be used in IUIAutomationElement-based search/conditionals.
 void GetUIARuntimeId(IUIAutomationElement* first_child,
                      IRawElementProviderFragment* start_fragment,

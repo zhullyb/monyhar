@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,7 +56,7 @@ std::string GetStringValue(const blink::WebAXObject& object) {
 std::string GetRole(const blink::WebAXObject& object) {
   std::string role_string = RoleToString(object.Role());
 
-  // Special-case canvas with fallback content because Chromium wants to treat
+  // Special-case canvas with fallback content because Monyhar wants to treat
   // this as essentially a separate role that it can map differently depending
   // on the platform.
   if (object.Role() == ax::mojom::Role::kCanvas &&

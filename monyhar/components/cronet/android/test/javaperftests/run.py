@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -199,7 +199,7 @@ def main():
   # CronetPerfTestBenchmark class to run the benchmark.
   top_level_dir = os.path.dirname(os.path.realpath(__file__))
   expectations_files = [os.path.join(top_level_dir, 'expectations.config')]
-  runner_config = monyhar_config.ChromiumConfig(
+  runner_config = monyhar_config.MonyharConfig(
       top_level_dir=top_level_dir,
       benchmark_dirs=[top_level_dir],
       expectations_files=expectations_files)

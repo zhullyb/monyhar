@@ -1,4 +1,4 @@
-# Chromium's Java Toolchain
+# Monyhar's Java Toolchain
 
 This doc aims to describe the Chrome build process that takes a set of `.java`
 files and turns them into a `classes.dex` file.
@@ -71,7 +71,7 @@ This step is the only step that does not apply to prebuilt targets.
 This step can be disabled via GN arg: `use_errorprone_java_compiler = false`
 
 * Concurrently with step 1a: [ErrorProne] compiles java files and checks for bug
-  patterns, including some [custom to Chromium][ep_plugins].
+  patterns, including some [custom to Monyhar][ep_plugins].
 * ErrorProne used to replace step 1a, but was changed to a concurrent step after
   being identified as being slower.
 

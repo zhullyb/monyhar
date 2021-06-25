@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -78,7 +78,7 @@ class AdbClientSocketTest : public InProcessBrowserTest,
     ASSERT_TRUE(chrome_beta.get());
 
     scoped_refptr<DevToolsAndroidBridge::RemoteBrowser> monyhar =
-        FindBrowserByDisplayName(browsers, "Chromium");
+        FindBrowserByDisplayName(browsers, "Monyhar");
     ASSERT_FALSE(monyhar.get());
 
     scoped_refptr<DevToolsAndroidBridge::RemoteBrowser> webview =
@@ -134,7 +134,7 @@ class AdbClientSocketTest : public InProcessBrowserTest,
 
     ASSERT_EQ(GURL("http://www.monyhar.org/"),
                    chrome_target->GetURL());
-    ASSERT_EQ("The Chromium Projects",
+    ASSERT_EQ("The Monyhar Projects",
               chrome_target->GetTitle());
     ASSERT_EQ("node", node_target->GetType());
   }

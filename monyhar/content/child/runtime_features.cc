@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -75,27 +75,27 @@ void SetRuntimeFeatureDefaultsForPlatform(
   const bool enable_canvas_2d_image_monyhar =
       command_line.HasSwitch(
           blink::switches::kEnableGpuMemoryBufferCompositorResources) &&
-      !command_line.HasSwitch(switches::kDisable2dCanvasImageChromium) &&
+      !command_line.HasSwitch(switches::kDisable2dCanvasImageMonyhar) &&
       !command_line.HasSwitch(switches::kDisableGpu) &&
-      base::FeatureList::IsEnabled(features::kCanvas2DImageChromium);
+      base::FeatureList::IsEnabled(features::kCanvas2DImageMonyhar);
 #else
   constexpr bool enable_canvas_2d_image_monyhar = false;
 #endif
-  WebRuntimeFeatures::EnableCanvas2dImageChromium(
+  WebRuntimeFeatures::EnableCanvas2dImageMonyhar(
       enable_canvas_2d_image_monyhar);
 
 #if defined(OS_MAC)
   const bool enable_web_gl_image_monyhar =
       command_line.HasSwitch(
           blink::switches::kEnableGpuMemoryBufferCompositorResources) &&
-      !command_line.HasSwitch(switches::kDisableWebGLImageChromium) &&
+      !command_line.HasSwitch(switches::kDisableWebGLImageMonyhar) &&
       !command_line.HasSwitch(switches::kDisableGpu) &&
-      base::FeatureList::IsEnabled(features::kWebGLImageChromium);
+      base::FeatureList::IsEnabled(features::kWebGLImageMonyhar);
 #else
   const bool enable_web_gl_image_monyhar =
-      command_line.HasSwitch(switches::kEnableWebGLImageChromium);
+      command_line.HasSwitch(switches::kEnableWebGLImageMonyhar);
 #endif
-  WebRuntimeFeatures::EnableWebGLImageChromium(enable_web_gl_image_monyhar);
+  WebRuntimeFeatures::EnableWebGLImageMonyhar(enable_web_gl_image_monyhar);
 
 #if defined(OS_ANDROID)
   if (command_line.HasSwitch(switches::kDisableMediaSessionAPI))
@@ -142,20 +142,20 @@ enum RuntimeFeatureEnableOptions {
   // trial or command line. Otherwise no change. Its difference from kDefault is
   // that the Blink feature isn't affected by the default state of the
   // base::Feature. This is useful for Blink origin trial features especially
-  // those implemented in both Chromium and Blink. As origin trial only controls
+  // those implemented in both Monyhar and Blink. As origin trial only controls
   // the Blink features, for now we require the base::Feature to be enabled by
   // default, but we don't want the default enabled status affect the Blink
   // feature. See also https://crbug.com/1048656#c10.
-  // This can also be used for features that are enabled by default in Chromium
+  // This can also be used for features that are enabled by default in Monyhar
   // but not in Blink on all platforms and we want to use the Blink status.
-  // However, we would prefer consistent Chromium and Blink status to this.
+  // However, we would prefer consistent Monyhar and Blink status to this.
   kSetOnlyIfOverridden,
 };
 
 template <typename T>
 // Helper class that describes the desired actions for the runtime feature
 // depending on a check for monyhar base::Feature.
-struct RuntimeFeatureToChromiumFeatureMap {
+struct RuntimeFeatureToMonyharFeatureMap {
   // This can be either an enabler function defined in web_runtime_features.cc
   // or the string name of the feature in runtime_enabled_features.json5.
   T feature_enabler;
@@ -165,7 +165,7 @@ struct RuntimeFeatureToChromiumFeatureMap {
 };
 
 template <typename Enabler>
-void SetRuntimeFeatureFromChromiumFeature(const base::Feature& monyhar_feature,
+void SetRuntimeFeatureFromMonyharFeature(const base::Feature& monyhar_feature,
                                           RuntimeFeatureEnableOptions option,
                                           const Enabler& enabler) {
   using FeatureList = base::FeatureList;
@@ -187,15 +187,15 @@ void SetRuntimeFeatureFromChromiumFeature(const base::Feature& monyhar_feature,
 }
 
 // Sets blink runtime features that are either directly
-// controlled by Chromium base::Feature or are overridden
+// controlled by Monyhar base::Feature or are overridden
 // by base::Feature states.
-void SetRuntimeFeaturesFromChromiumFeatures() {
+void SetRuntimeFeaturesFromMonyharFeatures() {
   using wf = WebRuntimeFeatures;
   // To add a runtime feature control, add a new
-  // RuntimeFeatureToChromiumFeatureMap entry here if there is a custom
+  // RuntimeFeatureToMonyharFeatureMap entry here if there is a custom
   // enabler function defined. Otherwise add the entry with string name
   // in the next list.
-  const RuntimeFeatureToChromiumFeatureMap<void (*)(bool)>
+  const RuntimeFeatureToMonyharFeatureMap<void (*)(bool)>
       blinkFeatureToBaseFeatureMapping[] =
   { {wf::EnableAccessibilityAriaVirtualContent,
      features::kEnableAccessibilityAriaVirtualContent},
@@ -332,14 +332,14 @@ void SetRuntimeFeaturesFromChromiumFeatures() {
      features::kRemoveMobileViewportDoubleTap},
   };
   for (const auto& mapping : blinkFeatureToBaseFeatureMapping) {
-    SetRuntimeFeatureFromChromiumFeature(
+    SetRuntimeFeatureFromMonyharFeature(
         mapping.monyhar_feature, mapping.option, mapping.feature_enabler);
   }
 
   // TODO(crbug/832393): Cleanup the inconsistency between custom WRF enabler
   // function and using feature string name with EnableFeatureFromString.
-  const RuntimeFeatureToChromiumFeatureMap<const char*>
-      runtimeFeatureNameToChromiumFeatureMapping[] = {
+  const RuntimeFeatureToMonyharFeatureMap<const char*>
+      runtimeFeatureNameToMonyharFeatureMapping[] = {
           {"AllowContentInitiatedDataUrlNavigations",
            features::kAllowContentInitiatedDataUrlNavigations},
           {"AutofillShadowDOM", blink::features::kAutofillShadowDOM},
@@ -403,8 +403,8 @@ void SetRuntimeFeaturesFromChromiumFeatures() {
            features::kWebAppWindowControlsOverlay},
           {"WebAuthenticationConditionalUI", features::kWebAuthConditionalUI},
       };
-  for (const auto& mapping : runtimeFeatureNameToChromiumFeatureMapping) {
-    SetRuntimeFeatureFromChromiumFeature(
+  for (const auto& mapping : runtimeFeatureNameToMonyharFeatureMapping) {
+    SetRuntimeFeatureFromMonyharFeature(
         mapping.monyhar_feature, mapping.option, [&mapping](bool enabled) {
           wf::EnableFeatureFromString(mapping.feature_enabler, enabled);
         });
@@ -674,7 +674,7 @@ void SetRuntimeFeaturesDefaultsAndUpdateFromArgs(
   // TODO(rodneyding): add doc explaining ways to add new runtime features
   // controls in the following functions.
 
-  SetRuntimeFeaturesFromChromiumFeatures();
+  SetRuntimeFeaturesFromMonyharFeatures();
 
   SetRuntimeFeaturesFromCommandLine(command_line);
 

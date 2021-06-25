@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -210,7 +210,7 @@ final class ChromeBluetoothAdapter extends BroadcastReceiver {
     // Implementation details:
 
     /**
-     * @return true if Chromium has permission to scan for Bluetooth devices and location services
+     * @return true if Monyhar has permission to scan for Bluetooth devices and location services
      * are on.
      */
     private boolean canScan() {

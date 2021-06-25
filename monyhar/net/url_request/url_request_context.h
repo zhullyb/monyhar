@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -86,7 +86,7 @@ class NET_EXPORT URLRequestContext
 // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
 // complete.
 #if !defined(OS_WIN) && !(defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-  // This function should not be used in Chromium, please use the version with
+  // This function should not be used in Monyhar, please use the version with
   // NetworkTrafficAnnotationTag in the future.
   //
   // The unannotated method is not available on desktop Linux + Windows. It's

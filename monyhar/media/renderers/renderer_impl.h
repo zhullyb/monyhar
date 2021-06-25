@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -263,7 +263,7 @@ class MEDIA_EXPORT RendererImpl final : public Renderer {
   // Lock used to protect access to the |restarting_audio_| flag and
   // |restarting_audio_time_|.
   // TODO(servolk): Get rid of the lock and replace restarting_audio_ with
-  // std::atomic<bool> when atomics are unbanned in Chromium.
+  // std::atomic<bool> when atomics are unbanned in Monyhar.
   base::Lock restarting_audio_lock_;
   bool pending_audio_track_change_ = false;
   base::TimeDelta restarting_audio_time_ = kNoTimestamp;

@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import org.monyhar.android_webview.AwTracingController;
-import org.monyhar.android_webview.WebViewChromiumRunQueue;
+import org.monyhar.android_webview.WebViewMonyharRunQueue;
 import org.monyhar.base.ThreadUtils;
 import org.monyhar.base.TraceRecordMode;
 
@@ -30,7 +30,7 @@ import java.util.concurrent.Executor;
  * its constants which just need to be available at compile time.
  */
 public class SharedTracingControllerAdapter {
-    private final WebViewChromiumRunQueue mRunQueue;
+    private final WebViewMonyharRunQueue mRunQueue;
     private final AwTracingController mAwTracingController;
 
     public boolean isTracing() {
@@ -41,7 +41,7 @@ public class SharedTracingControllerAdapter {
     }
 
     public SharedTracingControllerAdapter(
-            WebViewChromiumRunQueue runQueue, AwTracingController controller) {
+            WebViewMonyharRunQueue runQueue, AwTracingController controller) {
         mRunQueue = runQueue;
         mAwTracingController = controller;
     }

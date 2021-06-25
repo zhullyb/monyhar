@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -53,10 +53,10 @@ class MockVisitor : public WebTransportClientVisitor {
 class TestWallClock : public quic::QuicClock {
  public:
   quic::QuicTime Now() const override {
-    return quic::QuicChromiumClock::GetInstance()->Now();
+    return quic::QuicMonyharClock::GetInstance()->Now();
   }
   quic::QuicTime ApproximateNow() const override {
-    return quic::QuicChromiumClock::GetInstance()->ApproximateNow();
+    return quic::QuicMonyharClock::GetInstance()->ApproximateNow();
   }
   quic::QuicWallTime WallNow() const override { return wall_now_; }
 
@@ -227,7 +227,7 @@ TEST_F(QuicTransportEndToEndTest, EchoUnidirectionalStream) {
 }
 
 TEST_F(QuicTransportEndToEndTest, CertificateFingerprint) {
-  auto proof_source = std::make_unique<net::ProofSourceChromium>();
+  auto proof_source = std::make_unique<net::ProofSourceMonyhar>();
   base::FilePath certs_dir = net::GetTestCertsDirectory();
   ASSERT_TRUE(proof_source->Initialize(
       certs_dir.AppendASCII("quic-short-lived.pem"),

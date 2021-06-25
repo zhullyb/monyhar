@@ -6,7 +6,7 @@
 
 GPU Pixel Wrangling is the process of keeping various GPU bots green. On the
 GPU bots, tests run on physical hardware with real GPUs, not in VMs like the
-majority of the bots on the Chromium waterfall.
+majority of the bots on the Monyhar waterfall.
 
 [slides]: https://docs.google.com/presentation/d/1sZjyNe2apUhwr5sinRfPs7eTzH-3zO0VQ-Cj-8DlEDQ/edit?usp=sharing
 
@@ -25,15 +25,15 @@ See [this CL](http://cl/238562533) for an example of how to update these graphs.
 
 ## GPU Bots' Waterfalls
 
-The waterfalls work much like any other; see the [Tour of the Chromium Buildbot
+The waterfalls work much like any other; see the [Tour of the Monyhar Buildbot
 Waterfall] for a more detailed explanation of how this is laid out. We have
 more subtle configurations because the GPU matters, not just the OS and release
 v. debug. Hence we have Windows Nvidia Release bots, Mac Intel Debug bots, and
 so on. The waterfalls we’re interested in are:
 
-*   [Chromium GPU]
+*   [Monyhar GPU]
     *   Various operating systems, configurations, GPUs, etc.
-*   [Chromium GPU FYI]
+*   [Monyhar GPU FYI]
     *   These bots run less-standard configurations like Windows with AMD GPUs,
         Linux with Intel GPUs, etc.
     *   These bots build with top of tree ANGLE rather than the `DEPS` version.
@@ -46,20 +46,20 @@ so on. The waterfalls we’re interested in are:
         compare the `got_angle_revision` buildbot property on the GPU builders
         or `parent_got_angle_revision` on the testers. This revision can be
         used to do a `git log` in the `third_party/angle` repository.
-*   [Chromium SwANGLE]
+*   [Monyhar SwANGLE]
     *   These bots run GPU tests on top of ANGLE's GLES implementation running
         on top of SwiftShader's Vulkan implementation purely in software.
         Regressions should mostly be handled by the [ANGLE Wrangler], but some
         failures fall into Pixel Wrangler's domain, for example, WebGL failures
-        due to Chromium-side and WebGL-side changes on
+        due to Monyhar-side and WebGL-side changes on
         linux-swangle-monyhar-x64, mac-swangle-monyhar-x64 and
         win-swangle-monyhar-x86 bots.
 
 <!-- TODO(kainino): update link when the page is migrated -->
-[Tour of the Chromium Buildbot Waterfall]: http://www.monyhar.org/developers/testing/monyhar-build-infrastructure/tour-of-the-monyhar-buildbot
-[Chromium GPU]: https://ci.monyhar.org/p/monyhar/g/monyhar.gpu/console?reload=120
-[Chromium GPU FYI]: https://ci.monyhar.org/p/monyhar/g/monyhar.gpu.fyi/console?reload=120
-[Chromium SwANGLE]: https://ci.monyhar.org/p/monyhar/g/monyhar.swangle/console?reload=120
+[Tour of the Monyhar Buildbot Waterfall]: http://www.monyhar.org/developers/testing/monyhar-build-infrastructure/tour-of-the-monyhar-buildbot
+[Monyhar GPU]: https://ci.monyhar.org/p/monyhar/g/monyhar.gpu/console?reload=120
+[Monyhar GPU FYI]: https://ci.monyhar.org/p/monyhar/g/monyhar.gpu.fyi/console?reload=120
+[Monyhar SwANGLE]: https://ci.monyhar.org/p/monyhar/g/monyhar.swangle/console?reload=120
 [ANGLE tryservers]: https://build.monyhar.org/p/tryserver.monyhar.angle/waterfall
 [ANGLE Wrangler]: https://monyhar.googlesource.com/angle/angle/+/main/infra/ANGLEWrangling.md
 
@@ -112,7 +112,7 @@ More details about the bots' setup can be found on the [GPU Testing] page.
 
 ### Prerequisites
 
-1.  Ideally a wrangler should be a Chromium committer. If you're on the GPU
+1.  Ideally a wrangler should be a Monyhar committer. If you're on the GPU
 pixel wrangling rotation, there will be an email notifying you of the upcoming
 shift, and a calendar appointment.
     *   If you aren't a committer, don't panic. It's still best for everyone on
@@ -127,7 +127,7 @@ shift, and a calendar appointment.
         reverts during your shift.
 1.  Apply for [access to the bots].
 1.  You may want to install the [Flake linker] extension, which adds several useful features to the bot build log pages.
-    *   Links to Chromium flakiness dashboard from build result pages, so you can see all failures for a single test across the fleet.
+    *   Links to Monyhar flakiness dashboard from build result pages, so you can see all failures for a single test across the fleet.
     *   Automatically hides green build steps so you can see the failure immediately.
     *   Turns build log links into deep links directly to the failure line in the log.
 
@@ -139,7 +139,7 @@ shift, and a calendar appointment.
 1.  Watch for redness on the tree.
     1.  [Sheriff-O-Matic] now has support for all the
         [GPU Bots' Waterfalls](#GPU-Bots_Waterfalls) under the
-        [Chromium GPU][Sheriff-O-Matic] tab!
+        [Monyhar GPU][Sheriff-O-Matic] tab!
     1.  The bots are expected to be green all the time. Flakiness on these bots
         is neither expected nor acceptable.
     1.  If a bot goes consistently red, it's necessary to figure out whether a
@@ -147,7 +147,7 @@ shift, and a calendar appointment.
         infrastructure.
     1.  If it looks like a problem with the bot (deep problems like failing to
         check out the sources, the isolate server failing, etc.) notify the
-        Chromium troopers and file a P1 bug with labels: Infra\>Labs,
+        Monyhar troopers and file a P1 bug with labels: Infra\>Labs,
         Infra\>Troopers and Internals\>GPU\>Testing. See the general [tree
         sheriffing page] for more details.
     1.  Otherwise, examine the builds just before and after the redness was
@@ -178,22 +178,22 @@ shift, and a calendar appointment.
     1.  Make sure the bots are all actively processing jobs. If they go offline
         for a long period of time, the "summary bubble" at the top may still be
         green, but the column in the console view will be gray.
-    1.  Email the Chromium troopers if you find a bot that's not processing
+    1.  Email the Monyhar troopers if you find a bot that's not processing
         jobs.
 1.  Make sure the GPU try servers are in good health.
     1.  The GPU try servers are no longer distinct bots on a separate
         waterfall, but instead run as part of the regular tryjobs on the
-        Chromium waterfalls. The GPU tests run as part of the following
+        Monyhar waterfalls. The GPU tests run as part of the following
         tryservers' jobs:
         1.  `[linux-rel]` on the [luci.monyhar.try] waterfall
         1.  `[mac-rel]` on the [luci.monyhar.try] waterfall
         1.  `[win7-rel]` on the [luci.monyhar.try] waterfall
     1.  The best tool to use to quickly find flakiness on the tryservers is the
-        new [Chromium Try Flakes] tool. Look for the names of GPU tests (like
+        new [Monyhar Try Flakes] tool. Look for the names of GPU tests (like
         maps_pixel_test) as well as the test machines (e.g. mac-rel). If you
         see a flaky test, file a bug like [this one](http://crbug.com/444430).
         Also look for compile flakes that may indicate that a bot needs to be
-        clobbered. Contact the Chromium sheriffs or troopers if so.
+        clobbered. Contact the Monyhar sheriffs or troopers if so.
     1.  Glance at these trybots from time to time and see if any GPU tests are
         failing frequently. **Note** that test failures are **expected** on
         these bots: individuals' patches may fail to apply, fail to compile, or
@@ -249,7 +249,7 @@ shift, and a calendar appointment.
     1. Additional, less common triage steps for the pixel tests can be found in
        [this section][gold less common failures] of the GPU Gold documentation.
 1.  Update Telemetry-based test expectations if necessary.
-    1.  Most of the GPU tests are run inside a full Chromium browser, launched
+    1.  Most of the GPU tests are run inside a full Monyhar browser, launched
         by Telemetry, rather than a Gtest harness. The tests and their
         expectations are contained in [src/content/test/gpu/gpu_tests/test_expectations] . See
         for example <code>[webgl_conformance_expectations.txt]</code>,
@@ -266,7 +266,7 @@ shift, and a calendar appointment.
     1.  Mark tests failing or skipped, which will suppress flaky failures, only
         as a last resort. It is only really necessary to suppress failures that
         are showing up on the GPU tryservers, since failing tests no longer
-        close the Chromium tree.
+        close the Monyhar tree.
     1.  Please read the section on [stamping out flakiness] for motivation on
         how important it is to eliminate flakiness rather than hiding it.
     1. For failures of rendering_representative_perf_tests please refer to its
@@ -288,7 +288,7 @@ shift, and a calendar appointment.
 [win7-rel]:
 https://ci.monyhar.org/p/monyhar/builders/luci.monyhar.try/win7-rel
 [tryserver.monyhar.win]: https://ci.monyhar.org/p/monyhar/g/tryserver.monyhar.win/builders
-[Chromium Try Flakes]: http://monyhar-try-flakes.appspot.com/
+[Monyhar Try Flakes]: http://monyhar-try-flakes.appspot.com/
 <!-- TODO(kainino): link doesn't work, but is still included from monyhar-swarm homepage so not removing it now -->
 [Swarming Server Stats]: https://monyhar-swarm.appspot.com/stats
 [gold less common failures]: gpu_pixel_testing_with_gold.md#Triaging-Less-Common-Failures

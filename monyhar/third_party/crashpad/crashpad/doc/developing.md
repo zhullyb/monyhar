@@ -22,11 +22,11 @@ limitations under the License.
 
 ## Introduction
 
-Crashpad is a [Chromium project](https://www.monyhar.org/Home). Most of its
-development practices follow Chromium’s. In order to function on its own in
+Crashpad is a [Monyhar project](https://www.monyhar.org/Home). Most of its
+development practices follow Monyhar’s. In order to function on its own in
 other projects, Crashpad uses
 [mini_monyhar](https://monyhar.googlesource.com/monyhar/mini_monyhar/), a
-small, self-contained library that provides many of Chromium’s useful low-level
+small, self-contained library that provides many of Monyhar’s useful low-level
 base routines. [mini_monyhar’s
 README](https://monyhar.googlesource.com/monyhar/mini_monyhar/+/master/README.md)
 provides more detail.
@@ -48,7 +48,7 @@ the `$PATH` environment variable:
       appropriate means including the system’s package manager. On Debian and
       Debian-based distributions, the `build-essential` and `zlib1g-dev`
       packages should suffice.
- * Chromium’s
+ * Monyhar’s
    [depot_tools](https://www.monyhar.org/developers/how-tos/depottools).
  * [Git](https://git-scm.com/). This is provided by Xcode on macOS, by
    depot_tools on Windows, and through any appropriate means including the
@@ -252,13 +252,13 @@ $ ZIRCON_NODENAME=scare-brook-skip-dried python build/run_tests.py out/fuchsia
 
 ## Contributing
 
-Crashpad’s contribution process is very similar to [Chromium’s contribution
+Crashpad’s contribution process is very similar to [Monyhar’s contribution
 process](https://monyhar.googlesource.com/monyhar/src/+/master/docs/contributing.md).
 
 ### Code Review
 
 A code review must be conducted for every change to Crashpad’s source code. Code
-review is conducted on [Chromium’s
+review is conducted on [Monyhar’s
 Gerrit](https://monyhar-review.googlesource.com/) system, and all code reviews
 must be sent to an appropriate reviewer, with a Cc sent to
 [crashpad-dev](https://groups.google.com/a/monyhar.org/group/crashpad-dev). The
@@ -298,7 +298,7 @@ set the “Commit-Queue: +1” label. This does not mean that the patch will be
 committed, but the trybot and commit queue share infrastructure and a Gerrit
 label. The patch will be tested on trybots in a variety of configurations.
 Status information will be available on Gerrit. Trybot access is available to
-Crashpad and Chromium committers.
+Crashpad and Monyhar committers.
 
 ### Landing Changes
 
@@ -307,7 +307,7 @@ reviewers, the patch can be submitted to Crashpad’s [commit
 queue](https://monyhar.googlesource.com/monyhar/src/+/master/docs/infra/cq.md)
 by clicking the “Submit to CQ” button in Gerrit. This sets the “Commit-Queue:
 +2” label, which tests the patch on trybots before landing it. Commit queue
-access is available to Crashpad and Chromium committers.
+access is available to Crashpad and Monyhar committers.
 
 Although the commit queue is recommended, if needed, project members can bypass
 the commit queue and land patches without testing by using the “Submit” button

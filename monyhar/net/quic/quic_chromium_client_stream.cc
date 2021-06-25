@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -43,7 +43,7 @@ class ScopedBoolSaver {
 };
 }  // namespace
 
-QuicChromiumClientStream::Handle::Handle(QuicChromiumClientStream* stream)
+QuicMonyharClientStream::Handle::Handle(QuicMonyharClientStream* stream)
     : stream_(stream),
       may_invoke_callbacks_(true),
       read_headers_buffer_(nullptr),
@@ -53,7 +53,7 @@ QuicChromiumClientStream::Handle::Handle(QuicChromiumClientStream* stream)
   SaveState();
 }
 
-QuicChromiumClientStream::Handle::~Handle() {
+QuicMonyharClientStream::Handle::~Handle() {
   if (stream_) {
     stream_->ClearHandle();
     // TODO(rch): If stream_ is still valid, it should probably be Reset()
@@ -62,7 +62,7 @@ QuicChromiumClientStream::Handle::~Handle() {
   }
 }
 
-void QuicChromiumClientStream::Handle::OnEarlyHintsAvailable() {
+void QuicMonyharClientStream::Handle::OnEarlyHintsAvailable() {
   if (first_early_hints_time_.is_null())
     first_early_hints_time_ = base::TimeTicks::Now();
 
@@ -76,7 +76,7 @@ void QuicChromiumClientStream::Handle::OnEarlyHintsAvailable() {
   ResetAndRun(std::move(read_headers_callback_), rv);
 }
 
-void QuicChromiumClientStream::Handle::OnInitialHeadersAvailable() {
+void QuicMonyharClientStream::Handle::OnInitialHeadersAvailable() {
   if (!read_headers_callback_)
     return;  // Wait for ReadInitialHeaders to be called.
 
@@ -86,7 +86,7 @@ void QuicChromiumClientStream::Handle::OnInitialHeadersAvailable() {
   ResetAndRun(std::move(read_headers_callback_), rv);
 }
 
-void QuicChromiumClientStream::Handle::OnTrailingHeadersAvailable() {
+void QuicMonyharClientStream::Handle::OnTrailingHeadersAvailable() {
   if (!read_headers_callback_)
     return;  // Wait for ReadInitialHeaders to be called.
 
@@ -95,11 +95,11 @@ void QuicChromiumClientStream::Handle::OnTrailingHeadersAvailable() {
     rv = ERR_QUIC_PROTOCOL_ERROR;
 
   base::UmaHistogramBoolean(
-      "Net.QuicChromiumClientStream.TrailingHeadersProcessSuccess", rv >= 0);
+      "Net.QuicMonyharClientStream.TrailingHeadersProcessSuccess", rv >= 0);
   ResetAndRun(std::move(read_headers_callback_), rv);
 }
 
-void QuicChromiumClientStream::Handle::OnDataAvailable() {
+void QuicMonyharClientStream::Handle::OnDataAvailable() {
   if (!read_body_callback_)
     return;  // Wait for ReadBody to be called.
 
@@ -112,14 +112,14 @@ void QuicChromiumClientStream::Handle::OnDataAvailable() {
   ResetAndRun(std::move(read_body_callback_), rv);
 }
 
-void QuicChromiumClientStream::Handle::OnCanWrite() {
+void QuicMonyharClientStream::Handle::OnCanWrite() {
   if (!write_callback_)
     return;
 
   ResetAndRun(std::move(write_callback_), OK);
 }
 
-void QuicChromiumClientStream::Handle::OnClose() {
+void QuicMonyharClientStream::Handle::OnClose() {
   if (net_error_ == ERR_UNEXPECTED) {
     if (stream_error() == quic::QUIC_STREAM_NO_ERROR &&
         connection_error() == quic::QUIC_NO_ERROR && fin_sent() &&
@@ -129,17 +129,17 @@ void QuicChromiumClientStream::Handle::OnClose() {
       net_error_ = ERR_QUIC_PROTOCOL_ERROR;
     }
   }
-  base::UmaHistogramSparse("Net.QuicChromiumClientStream.HandleOnCloseNetError",
+  base::UmaHistogramSparse("Net.QuicMonyharClientStream.HandleOnCloseNetError",
                            -net_error_);
   base::UmaHistogramSparse(
-      "Net.QuicChromiumClientStream.HandleOnCloseStreamError", stream_error());
+      "Net.QuicMonyharClientStream.HandleOnCloseStreamError", stream_error());
   base::UmaHistogramSparse(
-      "Net.QuicChromiumClientStream.HandleOnCloseConnectionError",
+      "Net.QuicMonyharClientStream.HandleOnCloseConnectionError",
       connection_error());
   OnError(net_error_);
 }
 
-void QuicChromiumClientStream::Handle::OnError(int error) {
+void QuicMonyharClientStream::Handle::OnError(int error) {
   net_error_ = error;
   if (stream_)
     SaveState();
@@ -150,11 +150,11 @@ void QuicChromiumClientStream::Handle::OnError(int error) {
   // the call stack of the owner of the handle.
   base::ThreadTaskRunnerHandle::Get()->PostTask(
       FROM_HERE,
-      base::BindOnce(&QuicChromiumClientStream::Handle::InvokeCallbacksOnClose,
+      base::BindOnce(&QuicMonyharClientStream::Handle::InvokeCallbacksOnClose,
                      weak_factory_.GetWeakPtr(), error));
 }
 
-void QuicChromiumClientStream::Handle::InvokeCallbacksOnClose(int error) {
+void QuicMonyharClientStream::Handle::InvokeCallbacksOnClose(int error) {
   // Invoking a callback may cause |this| to be deleted. If this happens, no
   // more callbacks should be invoked. Guard against this by holding a WeakPtr
   // to |this| and ensuring it's still valid.
@@ -168,7 +168,7 @@ void QuicChromiumClientStream::Handle::InvokeCallbacksOnClose(int error) {
   }
 }
 
-int QuicChromiumClientStream::Handle::ReadInitialHeaders(
+int QuicMonyharClientStream::Handle::ReadInitialHeaders(
     spdy::Http2HeaderBlock* header_block,
     CompletionOnceCallback callback) {
   ScopedBoolSaver saver(&may_invoke_callbacks_, false);
@@ -192,7 +192,7 @@ int QuicChromiumClientStream::Handle::ReadInitialHeaders(
   return ERR_IO_PENDING;
 }
 
-int QuicChromiumClientStream::Handle::ReadBody(
+int QuicMonyharClientStream::Handle::ReadBody(
     IOBuffer* buffer,
     int buffer_len,
     CompletionOnceCallback callback) {
@@ -213,7 +213,7 @@ int QuicChromiumClientStream::Handle::ReadBody(
   return ERR_IO_PENDING;
 }
 
-int QuicChromiumClientStream::Handle::ReadTrailingHeaders(
+int QuicMonyharClientStream::Handle::ReadTrailingHeaders(
     spdy::Http2HeaderBlock* header_block,
     CompletionOnceCallback callback) {
   ScopedBoolSaver saver(&may_invoke_callbacks_, false);
@@ -229,7 +229,7 @@ int QuicChromiumClientStream::Handle::ReadTrailingHeaders(
   return ERR_IO_PENDING;
 }
 
-int QuicChromiumClientStream::Handle::WriteHeaders(
+int QuicMonyharClientStream::Handle::WriteHeaders(
     spdy::Http2HeaderBlock header_block,
     bool fin,
     quic::QuicReferenceCountedPointer<quic::QuicAckListenerInterface>
@@ -240,7 +240,7 @@ int QuicChromiumClientStream::Handle::WriteHeaders(
                                                 ack_notifier_delegate));
 }
 
-int QuicChromiumClientStream::Handle::WriteStreamData(
+int QuicMonyharClientStream::Handle::WriteStreamData(
     base::StringPiece data,
     bool fin,
     CompletionOnceCallback callback) {
@@ -255,7 +255,7 @@ int QuicChromiumClientStream::Handle::WriteStreamData(
   return ERR_IO_PENDING;
 }
 
-int QuicChromiumClientStream::Handle::WritevStreamData(
+int QuicMonyharClientStream::Handle::WritevStreamData(
     const std::vector<scoped_refptr<IOBuffer>>& buffers,
     const std::vector<int>& lengths,
     bool fin,
@@ -271,121 +271,121 @@ int QuicChromiumClientStream::Handle::WritevStreamData(
   return ERR_IO_PENDING;
 }
 
-int QuicChromiumClientStream::Handle::Read(IOBuffer* buf, int buf_len) {
+int QuicMonyharClientStream::Handle::Read(IOBuffer* buf, int buf_len) {
   if (!stream_)
     return net_error_;
   return stream_->Read(buf, buf_len);
 }
 
-void QuicChromiumClientStream::Handle::OnFinRead() {
+void QuicMonyharClientStream::Handle::OnFinRead() {
   read_headers_callback_.Reset();
   if (stream_)
     stream_->OnFinRead();
 }
 
-void QuicChromiumClientStream::Handle::
+void QuicMonyharClientStream::Handle::
     DisableConnectionMigrationToCellularNetwork() {
   if (stream_)
     stream_->DisableConnectionMigrationToCellularNetwork();
 }
 
-void QuicChromiumClientStream::Handle::SetPriority(
+void QuicMonyharClientStream::Handle::SetPriority(
     const spdy::SpdyStreamPrecedence& precedence) {
   if (stream_)
     stream_->SetPriority(precedence);
 }
 
-void QuicChromiumClientStream::Handle::Reset(
+void QuicMonyharClientStream::Handle::Reset(
     quic::QuicRstStreamErrorCode error_code) {
   if (stream_)
     stream_->Reset(error_code);
 }
 
-quic::QuicStreamId QuicChromiumClientStream::Handle::id() const {
+quic::QuicStreamId QuicMonyharClientStream::Handle::id() const {
   if (!stream_)
     return id_;
   return stream_->id();
 }
 
-quic::QuicErrorCode QuicChromiumClientStream::Handle::connection_error() const {
+quic::QuicErrorCode QuicMonyharClientStream::Handle::connection_error() const {
   if (!stream_)
     return connection_error_;
   return stream_->connection_error();
 }
 
-quic::QuicRstStreamErrorCode QuicChromiumClientStream::Handle::stream_error()
+quic::QuicRstStreamErrorCode QuicMonyharClientStream::Handle::stream_error()
     const {
   if (!stream_)
     return stream_error_;
   return stream_->stream_error();
 }
 
-bool QuicChromiumClientStream::Handle::fin_sent() const {
+bool QuicMonyharClientStream::Handle::fin_sent() const {
   if (!stream_)
     return fin_sent_;
   return stream_->fin_sent();
 }
 
-bool QuicChromiumClientStream::Handle::fin_received() const {
+bool QuicMonyharClientStream::Handle::fin_received() const {
   if (!stream_)
     return fin_received_;
   return stream_->fin_received();
 }
 
-uint64_t QuicChromiumClientStream::Handle::stream_bytes_read() const {
+uint64_t QuicMonyharClientStream::Handle::stream_bytes_read() const {
   if (!stream_)
     return stream_bytes_read_;
   return stream_->stream_bytes_read();
 }
 
-uint64_t QuicChromiumClientStream::Handle::stream_bytes_written() const {
+uint64_t QuicMonyharClientStream::Handle::stream_bytes_written() const {
   if (!stream_)
     return stream_bytes_written_;
   return stream_->stream_bytes_written();
 }
 
-size_t QuicChromiumClientStream::Handle::NumBytesConsumed() const {
+size_t QuicMonyharClientStream::Handle::NumBytesConsumed() const {
   if (!stream_)
     return num_bytes_consumed_;
   return stream_->sequencer()->NumBytesConsumed();
 }
 
-bool QuicChromiumClientStream::Handle::HasBytesToRead() const {
+bool QuicMonyharClientStream::Handle::HasBytesToRead() const {
   if (!stream_)
     return false;
   return stream_->HasBytesToRead();
 }
 
-bool QuicChromiumClientStream::Handle::IsDoneReading() const {
+bool QuicMonyharClientStream::Handle::IsDoneReading() const {
   if (!stream_)
     return is_done_reading_;
   return stream_->IsDoneReading();
 }
 
-bool QuicChromiumClientStream::Handle::IsFirstStream() const {
+bool QuicMonyharClientStream::Handle::IsFirstStream() const {
   if (!stream_)
     return is_first_stream_;
   return stream_->IsFirstStream();
 }
 
-void QuicChromiumClientStream::Handle::OnPromiseHeaderList(
+void QuicMonyharClientStream::Handle::OnPromiseHeaderList(
     quic::QuicStreamId promised_id,
     size_t frame_len,
     const quic::QuicHeaderList& header_list) {
   stream_->OnPromiseHeaderList(promised_id, frame_len, header_list);
 }
 
-bool QuicChromiumClientStream::Handle::can_migrate_to_cellular_network() {
+bool QuicMonyharClientStream::Handle::can_migrate_to_cellular_network() {
   if (!stream_)
     return false;
   return stream_->can_migrate_to_cellular_network();
 }
 
-const NetLogWithSource& QuicChromiumClientStream::Handle::net_log() const {
+const NetLogWithSource& QuicMonyharClientStream::Handle::net_log() const {
   return net_log_;
 }
 
-void QuicChromiumClientStream::Handle::SaveState() {
+void QuicMonyharClientStream::Handle::SaveState() {
   DCHECK(stream_);
   fin_sent_ = stream_->fin_sent();
   fin_received_ = stream_->fin_received();
@@ -399,7 +399,7 @@ void QuicChromiumClientStream::Handle::SaveState() {
   stream_bytes_written_ = stream_->stream_bytes_written();
 }
 
-void QuicChromiumClientStream::Handle::SetCallback(
+void QuicMonyharClientStream::Handle::SetCallback(
     CompletionOnceCallback new_callback,
     CompletionOnceCallback* callback) {
   // TODO(rch): Convert this to a DCHECK once we ensure the API is stable and
@@ -408,7 +408,7 @@ void QuicChromiumClientStream::Handle::SetCallback(
   *callback = std::move(new_callback);
 }
 
-void QuicChromiumClientStream::Handle::ResetAndRun(
+void QuicMonyharClientStream::Handle::ResetAndRun(
     CompletionOnceCallback callback,
     int rv) {
   // TODO(rch): Convert this to a DCHECK once we ensure the API is stable and
@@ -417,7 +417,7 @@ void QuicChromiumClientStream::Handle::ResetAndRun(
   std::move(callback).Run(rv);
 }
 
-int QuicChromiumClientStream::Handle::HandleIOComplete(int rv) {
+int QuicMonyharClientStream::Handle::HandleIOComplete(int rv) {
   // If |stream_| is still valid the stream has not been closed. If the stream
   // has not been closed, then just return |rv|.
   if (rv < 0 || stream_)
@@ -431,16 +431,16 @@ int QuicChromiumClientStream::Handle::HandleIOComplete(int rv) {
   return net_error_;
 }
 
-void QuicChromiumClientStream::Handle::SetRequestIdempotency(
+void QuicMonyharClientStream::Handle::SetRequestIdempotency(
     Idempotency idempotency) {
   idempotency_ = idempotency;
 }
 
-Idempotency QuicChromiumClientStream::Handle::GetRequestIdempotency() const {
+Idempotency QuicMonyharClientStream::Handle::GetRequestIdempotency() const {
   return idempotency_;
 }
 
-QuicChromiumClientStream::QuicChromiumClientStream(
+QuicMonyharClientStream::QuicMonyharClientStream(
     quic::QuicStreamId id,
     quic::QuicSpdyClientSessionBase* session,
     quic::StreamType type,
@@ -458,7 +458,7 @@ QuicChromiumClientStream::QuicChromiumClientStream(
       initial_headers_frame_len_(0),
       trailing_headers_frame_len_(0) {}
 
-QuicChromiumClientStream::QuicChromiumClientStream(
+QuicMonyharClientStream::QuicMonyharClientStream(
     quic::PendingStream* pending,
     quic::QuicSpdyClientSessionBase* session,
     quic::StreamType type,
@@ -476,12 +476,12 @@ QuicChromiumClientStream::QuicChromiumClientStream(
       initial_headers_frame_len_(0),
       trailing_headers_frame_len_(0) {}
 
-QuicChromiumClientStream::~QuicChromiumClientStream() {
+QuicMonyharClientStream::~QuicMonyharClientStream() {
   if (handle_)
     handle_->OnClose();
 }
 
-void QuicChromiumClientStream::OnInitialHeadersComplete(
+void QuicMonyharClientStream::OnInitialHeadersComplete(
     bool fin,
     size_t frame_len,
     const quic::QuicHeaderList& header_list) {
@@ -544,7 +544,7 @@ void QuicChromiumClientStream::OnInitialHeadersComplete(
   }
 }
 
-void QuicChromiumClientStream::OnTrailingHeadersComplete(
+void QuicMonyharClientStream::OnTrailingHeadersComplete(
     bool fin,
     size_t frame_len,
     const quic::QuicHeaderList& header_list) {
@@ -556,7 +556,7 @@ void QuicChromiumClientStream::OnTrailingHeadersComplete(
   }
 }
 
-void QuicChromiumClientStream::OnPromiseHeaderList(
+void QuicMonyharClientStream::OnPromiseHeaderList(
     quic::QuicStreamId promised_id,
     size_t frame_len,
     const quic::QuicHeaderList& header_list) {
@@ -574,7 +574,7 @@ void QuicChromiumClientStream::OnPromiseHeaderList(
   session_->HandlePromised(id(), promised_id, promise_headers);
 }
 
-void QuicChromiumClientStream::OnBodyAvailable() {
+void QuicMonyharClientStream::OnBodyAvailable() {
   if (!FinishedReadingHeaders() || !headers_delivered_) {
     // Buffer the data in the sequencer until the headers have been read.
     return;
@@ -592,7 +592,7 @@ void QuicChromiumClientStream::OnBodyAvailable() {
     NotifyHandleOfDataAvailableLater();
 }
 
-void QuicChromiumClientStream::OnClose() {
+void QuicMonyharClientStream::OnClose() {
   if (handle_) {
     handle_->OnClose();
     handle_ = nullptr;
@@ -600,14 +600,14 @@ void QuicChromiumClientStream::OnClose() {
   quic::QuicStream::OnClose();
 }
 
-void QuicChromiumClientStream::OnCanWrite() {
+void QuicMonyharClientStream::OnCanWrite() {
   quic::QuicStream::OnCanWrite();
 
   if (!HasBufferedData() && handle_)
     handle_->OnCanWrite();
 }
 
-size_t QuicChromiumClientStream::WriteHeaders(
+size_t QuicMonyharClientStream::WriteHeaders(
     spdy::Http2HeaderBlock header_block,
     bool fin,
     quic::QuicReferenceCountedPointer<quic::QuicAckListenerInterface>
@@ -631,7 +631,7 @@ size_t QuicChromiumClientStream::WriteHeaders(
   return len;
 }
 
-bool QuicChromiumClientStream::WriteStreamData(absl::string_view data,
+bool QuicMonyharClientStream::WriteStreamData(absl::string_view data,
                                                bool fin) {
   // For gQUIC, this must not be called when data is buffered because headers
   // are sent on the dedicated header stream.
@@ -641,7 +641,7 @@ bool QuicChromiumClientStream::WriteStreamData(absl::string_view data,
   return !HasBufferedData();  // Was all data written?
 }
 
-bool QuicChromiumClientStream::WritevStreamData(
+bool QuicMonyharClientStream::WritevStreamData(
     const std::vector<scoped_refptr<IOBuffer>>& buffers,
     const std::vector<int>& lengths,
     bool fin) {
@@ -657,10 +657,10 @@ bool QuicChromiumClientStream::WritevStreamData(
   return !HasBufferedData();  // Was all data written?
 }
 
-std::unique_ptr<QuicChromiumClientStream::Handle>
-QuicChromiumClientStream::CreateHandle() {
+std::unique_ptr<QuicMonyharClientStream::Handle>
+QuicMonyharClientStream::CreateHandle() {
   DCHECK(!handle_);
-  auto handle = base::WrapUnique(new QuicChromiumClientStream::Handle(this));
+  auto handle = base::WrapUnique(new QuicMonyharClientStream::Handle(this));
   handle_ = handle.get();
 
   // Should this perhaps be via PostTask to make reasoning simpler?
@@ -671,19 +671,19 @@ QuicChromiumClientStream::CreateHandle() {
   return handle;
 }
 
-void QuicChromiumClientStream::ClearHandle() {
+void QuicMonyharClientStream::ClearHandle() {
   handle_ = nullptr;
 }
 
-void QuicChromiumClientStream::OnError(int error) {
+void QuicMonyharClientStream::OnError(int error) {
   if (handle_) {
-    QuicChromiumClientStream::Handle* handle = handle_;
+    QuicMonyharClientStream::Handle* handle = handle_;
     handle_ = nullptr;
     handle->OnError(error);
   }
 }
 
-int QuicChromiumClientStream::Read(IOBuffer* buf, int buf_len) {
+int QuicMonyharClientStream::Read(IOBuffer* buf, int buf_len) {
   if (IsDoneReading())
     return 0;  // EOF
 
@@ -699,16 +699,16 @@ int QuicChromiumClientStream::Read(IOBuffer* buf, int buf_len) {
   return bytes_read;
 }
 
-void QuicChromiumClientStream::NotifyHandleOfInitialHeadersAvailableLater() {
+void QuicMonyharClientStream::NotifyHandleOfInitialHeadersAvailableLater() {
   DCHECK(handle_);
   base::ThreadTaskRunnerHandle::Get()->PostTask(
       FROM_HERE,
       base::BindOnce(
-          &QuicChromiumClientStream::NotifyHandleOfInitialHeadersAvailable,
+          &QuicMonyharClientStream::NotifyHandleOfInitialHeadersAvailable,
           weak_factory_.GetWeakPtr()));
 }
 
-void QuicChromiumClientStream::NotifyHandleOfInitialHeadersAvailable() {
+void QuicMonyharClientStream::NotifyHandleOfInitialHeadersAvailable() {
   if (!handle_)
     return;
 
@@ -716,16 +716,16 @@ void QuicChromiumClientStream::NotifyHandleOfInitialHeadersAvailable() {
     handle_->OnInitialHeadersAvailable();
 }
 
-void QuicChromiumClientStream::NotifyHandleOfTrailingHeadersAvailableLater() {
+void QuicMonyharClientStream::NotifyHandleOfTrailingHeadersAvailableLater() {
   DCHECK(handle_);
   base::ThreadTaskRunnerHandle::Get()->PostTask(
       FROM_HERE,
       base::BindOnce(
-          &QuicChromiumClientStream::NotifyHandleOfTrailingHeadersAvailable,
+          &QuicMonyharClientStream::NotifyHandleOfTrailingHeadersAvailable,
           weak_factory_.GetWeakPtr()));
 }
 
-void QuicChromiumClientStream::NotifyHandleOfTrailingHeadersAvailable() {
+void QuicMonyharClientStream::NotifyHandleOfTrailingHeadersAvailable() {
   if (!handle_)
     return;
 
@@ -742,7 +742,7 @@ void QuicChromiumClientStream::NotifyHandleOfTrailingHeadersAvailable() {
   handle_->OnTrailingHeadersAvailable();
 }
 
-int QuicChromiumClientStream::DeliverEarlyHints(
+int QuicMonyharClientStream::DeliverEarlyHints(
     spdy::Http2HeaderBlock* headers) {
   if (early_hints_.empty()) {
     return ERR_IO_PENDING;
@@ -766,7 +766,7 @@ int QuicChromiumClientStream::DeliverEarlyHints(
   return frame_len;
 }
 
-int QuicChromiumClientStream::DeliverInitialHeaders(
+int QuicMonyharClientStream::DeliverInitialHeaders(
     spdy::Http2HeaderBlock* headers) {
   if (!initial_headers_arrived_) {
     return ERR_IO_PENDING;
@@ -789,7 +789,7 @@ int QuicChromiumClientStream::DeliverInitialHeaders(
   return initial_headers_frame_len_;
 }
 
-bool QuicChromiumClientStream::DeliverTrailingHeaders(
+bool QuicMonyharClientStream::DeliverTrailingHeaders(
     spdy::Http2HeaderBlock* headers,
     int* frame_len) {
   if (received_trailers().empty())
@@ -809,24 +809,24 @@ bool QuicChromiumClientStream::DeliverTrailingHeaders(
   return true;
 }
 
-void QuicChromiumClientStream::NotifyHandleOfDataAvailableLater() {
+void QuicMonyharClientStream::NotifyHandleOfDataAvailableLater() {
   DCHECK(handle_);
   base::ThreadTaskRunnerHandle::Get()->PostTask(
       FROM_HERE,
-      base::BindOnce(&QuicChromiumClientStream::NotifyHandleOfDataAvailable,
+      base::BindOnce(&QuicMonyharClientStream::NotifyHandleOfDataAvailable,
                      weak_factory_.GetWeakPtr()));
 }
 
-void QuicChromiumClientStream::NotifyHandleOfDataAvailable() {
+void QuicMonyharClientStream::NotifyHandleOfDataAvailable() {
   if (handle_)
     handle_->OnDataAvailable();
 }
 
-void QuicChromiumClientStream::DisableConnectionMigrationToCellularNetwork() {
+void QuicMonyharClientStream::DisableConnectionMigrationToCellularNetwork() {
   can_migrate_to_cellular_network_ = false;
 }
 
-bool QuicChromiumClientStream::IsFirstStream() {
+bool QuicMonyharClientStream::IsFirstStream() {
   if (VersionUsesHttp3(quic_version_)) {
     return id() == quic::QuicUtils::GetFirstBidirectionalStreamId(
                        quic_version_, quic::Perspective::IS_CLIENT);

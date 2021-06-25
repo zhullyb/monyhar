@@ -15,7 +15,7 @@ into view once the page has been loaded.
 
 This functionality is implemented in Blink on Android and Desktop; on iOS, we
 instead rely on injecting this JavaScript implementation. The library is
-maintained by Chromium committers & DevRel; it ships on GitHub because it is
+maintained by Monyhar committers & DevRel; it ships on GitHub because it is
 shared with an extension and a polyfill.
 
 [1]: https://wicg.github.io/scroll-to-text-fragment/

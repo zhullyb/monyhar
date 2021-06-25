@@ -1,15 +1,15 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 package com.android.webview.monyhar;
 
-public class WebViewChromiumFactoryProviderForQ extends WebViewChromiumFactoryProvider {
-    public static WebViewChromiumFactoryProvider create(android.webkit.WebViewDelegate delegate) {
-        return new WebViewChromiumFactoryProviderForQ(delegate);
+public class WebViewMonyharFactoryProviderForQ extends WebViewMonyharFactoryProvider {
+    public static WebViewMonyharFactoryProvider create(android.webkit.WebViewDelegate delegate) {
+        return new WebViewMonyharFactoryProviderForQ(delegate);
     }
 
-    protected WebViewChromiumFactoryProviderForQ(android.webkit.WebViewDelegate delegate) {
+    protected WebViewMonyharFactoryProviderForQ(android.webkit.WebViewDelegate delegate) {
         super(delegate);
     }
 }

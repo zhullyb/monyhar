@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -121,7 +121,7 @@ function updateCrashList({
       uploadId.remove();
       uploadTime.remove();
       fileBugButton.remove();
-      // Do not allow crash submission if the Chromium build does not support
+      // Do not allow crash submission if the Monyhar build does not support
       // it, or if the user already requested it.
       if (!manualUploads || crash.state === 'pending_user_requested') {
         sendNowButton.remove();

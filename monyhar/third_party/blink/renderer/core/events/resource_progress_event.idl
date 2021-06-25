@@ -25,7 +25,7 @@
 
 // ResourceProgressEvent is a non-standard class that is simply a ProgressEvent
 // with an additional read-only "url" property containing a string URL. This is
-// used by the Chromium NaCl integration to indicate to which resource the
+// used by the Monyhar NaCl integration to indicate to which resource the
 // event applies. This is useful because the NaCl integration will download
 // (and translate in the case of PNaCl) multiple binary files. It is not
 // constructable by web content at all, and so does not provide the usual

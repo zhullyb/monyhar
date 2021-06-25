@@ -1,6 +1,6 @@
 # Memory
 
-Landing page for all things memory-related in Chromium.
+Landing page for all things memory-related in Monyhar.
 
 ## How is chrome's memory usage doing in the world?
 
@@ -9,7 +9,7 @@ Look at the UMAs **Memory.{Total,Renderer,Browser,Gpu,Extension}.PrivateMemoryFo
 ## How do developers communicate?
 
 Note, these channels are for developer coordination and NOT user support. If
-you are a Chromium user experiencing a memory related problem, file a bug
+you are a Monyhar user experiencing a memory related problem, file a bug
 instead.
 
 | name | description |

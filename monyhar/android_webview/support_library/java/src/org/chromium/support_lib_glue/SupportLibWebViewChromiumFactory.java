@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ import androidx.annotation.IntDef;
 import com.android.webview.monyhar.CallbackConverter;
 import com.android.webview.monyhar.SharedStatics;
 import com.android.webview.monyhar.SharedTracingControllerAdapter;
-import com.android.webview.monyhar.WebViewChromiumAwInit;
+import com.android.webview.monyhar.WebViewMonyharAwInit;
 import com.android.webview.monyhar.WebkitToSharedGlueConverter;
 
 import org.monyhar.android_webview.AwDebug;
@@ -30,12 +30,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Support library glue version of WebViewChromiumFactoryProvider.
+ * Support library glue version of WebViewMonyharFactoryProvider.
  */
-class SupportLibWebViewChromiumFactory implements WebViewProviderFactoryBoundaryInterface {
+class SupportLibWebViewMonyharFactory implements WebViewProviderFactoryBoundaryInterface {
     // SupportLibWebkitToCompatConverterAdapter
     private final InvocationHandler mCompatConverterAdapter;
-    private final WebViewChromiumAwInit mAwInit;
+    private final WebViewMonyharAwInit mAwInit;
     // clang-format off
     private final String[] mWebViewSupportedFeatures =
             new String[] {
@@ -216,7 +216,7 @@ class SupportLibWebViewChromiumFactory implements WebViewProviderFactoryBoundary
     private InvocationHandler mTracingController;
     private InvocationHandler mProxyController;
 
-    public SupportLibWebViewChromiumFactory() {
+    public SupportLibWebViewMonyharFactory() {
         mCompatConverterAdapter = BoundaryInterfaceReflectionUtil.createInvocationHandlerFor(
                 new SupportLibWebkitToCompatConverterAdapter());
         mAwInit = WebkitToSharedGlueConverter.getGlobalAwInit();
@@ -225,7 +225,7 @@ class SupportLibWebViewChromiumFactory implements WebViewProviderFactoryBoundary
     @Override
     public /* WebViewProvider */ InvocationHandler createWebView(WebView webView) {
         return BoundaryInterfaceReflectionUtil.createInvocationHandlerFor(
-                new SupportLibWebViewChromium(webView));
+                new SupportLibWebViewMonyhar(webView));
     }
 
     @Override

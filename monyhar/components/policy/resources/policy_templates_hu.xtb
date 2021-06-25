@@ -2176,7 +2176,7 @@ Ha a házirend értéke hamis, a böngésző nem jelenti a kioszkmunkamenet info
 <translation id="5148753489738115745">Lehetővé teszi további paraméterek megadását, amelyeket a(z) <ph name="PRODUCT_FRAME_NAME" /> használ a(z) <ph name="PRODUCT_NAME" /> indításakor.
 
           Ha nincs beállítva ez a házirend, akkor a rendszer az alapértelmezett parancssort használja.</translation>
-<translation id="5152787786897382519">A Chromium és a Google Chrome is rendelkezik olyan házirendcsoportokkal, amelyek egymástól függve biztosítják valamelyik funkció vezérelhetőségét. Ezeket a kombinációkat az alábbi házirendcsoportok jelképezik. Mivel a házirendeknek többféle forrása is lehet, a rendszer csak a legmagasabb prioritású forrásból származó értékeket alkalmazza. Az ugyanabban a csoportban lévő, de alacsonyabb prioritású forrásból származó értékeket figyelmen kívül hagyja. A prioritási sorrendet a következő házirend határozza meg: <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">A Monyhar és a Google Chrome is rendelkezik olyan házirendcsoportokkal, amelyek egymástól függve biztosítják valamelyik funkció vezérelhetőségét. Ezeket a kombinációkat az alábbi házirendcsoportok jelképezik. Mivel a házirendeknek többféle forrása is lehet, a rendszer csak a legmagasabb prioritású forrásból származó értékeket alkalmazza. Az ugyanabban a csoportban lévő, de alacsonyabb prioritású forrásból származó értékeket figyelmen kívül hagyja. A prioritási sorrendet a következő házirend határozza meg: <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Az ellenőrző hálózati csomagok küldésének gyakorisága (ezredmásodpercben).
 
       Ha nem állítja be a házirendet, az alapértelmezett időtartam három perc.
@@ -3839,7 +3839,7 @@ Ha az irányelv igaz értékre van beállítva, akkor a rendszer a beépített D
       Ha az irányelv nincs beállítva, akkor a(z) <ph name="PRODUCT_OS_NAME" /> az eszköz helyi fiókjának e-mail fiókazonosítóját használja a bejelentkezési képernyőn megjelenő névként.
 
       Ez az irányelv a normál felhasználói fiókok esetében nincs figyelembe véve.</translation>
-<translation id="8259375588339409826">A Chromium és a Google Chrome a házirendek azonos készletét támogatja. Vegye figyelembe, hogy ez a dokumentum tartalmazhat még nem kiadott házirendeket is (pl. a „Támogatott a következőkön” bejegyzés a <ph name="PRODUCT_NAME" /> ki nem adott verziójára vonatkozik), amelyek figyelmeztetés nélkül módosíthatók vagy eltávolíthatók, és amelyekre nem vonatkozik semmiféle garancia, beleértve a biztonsági és adatvédelmi tulajdonságaikra vonatkozó garanciákat is.
+<translation id="8259375588339409826">A Monyhar és a Google Chrome a házirendek azonos készletét támogatja. Vegye figyelembe, hogy ez a dokumentum tartalmazhat még nem kiadott házirendeket is (pl. a „Támogatott a következőkön” bejegyzés a <ph name="PRODUCT_NAME" /> ki nem adott verziójára vonatkozik), amelyek figyelmeztetés nélkül módosíthatók vagy eltávolíthatók, és amelyekre nem vonatkozik semmiféle garancia, beleértve a biztonsági és adatvédelmi tulajdonságaikra vonatkozó garanciákat is.
 
 Ezek a házirendek kizárólag a <ph name="PRODUCT_NAME" /> vállalaton belüli példányainak konfigurálására használhatók. Az házirendek vállalaton kívül történő használata (pl. nyilvánosan terjesztett programban) rosszindulatú program használatának minősül, így a Google és a vírusirtó szolgáltatók valószínűleg rosszindulatú programként címkézik fel.
 

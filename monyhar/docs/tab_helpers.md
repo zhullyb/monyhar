@@ -1,7 +1,7 @@
 # Tab Helpers
 
-The `content/` layer of Chromium has a class called `WebContents`, which is one
-of the most basic building blocks of all of Chromium. This document describes
+The `content/` layer of Monyhar has a class called `WebContents`, which is one
+of the most basic building blocks of all of Monyhar. This document describes
 how `WebContents`es are used to build tabs in browser windows.
 
 [TOC]
@@ -26,7 +26,7 @@ processes the message. Note that `TabStripModel::WebContentsData` object is not 
 
 ## SupportsUserData and WebContentsUserData
 
-There is a mechanism used in Chromium called
+There is a mechanism used in Monyhar called
 [`SupportsUserData`](https://source.monyhar.org/monyhar/monyhar/src/+/HEAD:base/supports_user_data.h)
 that allows attaching of arbitrary objects to an object. The mechanism is
 simple: host objects derive from `SupportsUserData`, and owned objects derive
@@ -77,7 +77,7 @@ helper to the `WebContents`es that are used for the browser tabs?
 There is a function called
 [`AttachTabHelpers()`](https://source.monyhar.org/monyhar/monyhar/src/+/HEAD:chrome/browser/ui/tab_helpers.cc;).
 Whenever a `WebContents` is created for use as a browser tab,
-`AttachTabHelpers()` is called. Every tab helper from around Chromium,
+`AttachTabHelpers()` is called. Every tab helper from around Monyhar,
 from ContentSettings to Favicons to History to Prefs, all take this opportunity
 to hook into those `WebContents` used as tabs.
 

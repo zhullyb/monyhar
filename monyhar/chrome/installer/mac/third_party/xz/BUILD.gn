@@ -1,9 +1,9 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 # Configuration. Ordinarily, all of these features are enabled, and
-# "small" is disabled. For Chromium's purposes, enable "small" and disable
+# "small" is disabled. For Monyhar's purposes, enable "small" and disable
 # nearly everything else to save about 36kB in the lzma_decompress
 # library, which will be distributed with updates. This also translates to
 # a 25kB savings in the compressed disk image that will contain the

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,11 +16,11 @@
 
 namespace leveldb {
 
-class ChromiumLogger : public Logger {
+class MonyharLogger : public Logger {
  public:
-  explicit ChromiumLogger(base::File file) : file_(std::move(file)) {}
+  explicit MonyharLogger(base::File file) : file_(std::move(file)) {}
 
-  ~ChromiumLogger() override = default;
+  ~MonyharLogger() override = default;
 
   void Logv(const char* format, va_list arguments) override {
     // Record the time as close to the Logv() call as possible.

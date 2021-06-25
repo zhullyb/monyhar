@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Builds an app that uses Material Web Components
 
 This script runs the tooling necessary to produce an output script that
-can be run by Chromium for a project using Material Web Components.
+can be run by Monyhar for a project using Material Web Components.
 
 The main steps are:
 - Generate depfiles with all the transitive MWC dependencies for GN to

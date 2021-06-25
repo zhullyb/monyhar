@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -95,7 +95,7 @@ bool ShouldResetNoticeCardOnFeedStart() {
 }
 
 bool IsMemoryDebuggingEnabled() {
-// Always return true for Chromium builds, but check the user default for
+// Always return true for Monyhar builds, but check the user default for
 // official builds because memory debugging should never be enabled on stable.
 #if BUILDFLAG(CHROMIUM_BRANDING)
   return true;

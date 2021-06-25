@@ -1,8 +1,8 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// A render model simulator for the original model used in Chromium.
+// A render model simulator for the original model used in Monyhar.
 
 #ifndef GPU_TOOLS_COMPOSITOR_MODEL_BENCH_FORWARD_RENDER_MODEL_H_
 #define GPU_TOOLS_COMPOSITOR_MODEL_BENCH_FORWARD_RENDER_MODEL_H_

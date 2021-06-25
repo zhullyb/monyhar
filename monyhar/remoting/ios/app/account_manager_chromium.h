@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,13 +10,13 @@
 namespace remoting {
 namespace ios {
 
-class AccountManagerChromium final : public AccountManager {
+class AccountManagerMonyhar final : public AccountManager {
  public:
-  AccountManagerChromium();
-  ~AccountManagerChromium() override;
+  AccountManagerMonyhar();
+  ~AccountManagerMonyhar() override;
 
-  AccountManagerChromium(const AccountManagerChromium&) = delete;
-  AccountManagerChromium& operator=(const AccountManagerChromium&) = delete;
+  AccountManagerMonyhar(const AccountManagerMonyhar&) = delete;
+  AccountManagerMonyhar& operator=(const AccountManagerMonyhar&) = delete;
 
   // AccountManager overrides.
   UIViewController* CreateAccountParticleDiscViewController() override;

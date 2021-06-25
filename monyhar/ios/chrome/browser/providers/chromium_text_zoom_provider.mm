@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,16 +12,16 @@
 #error "This file requires ARC support."
 #endif
 
-ChromiumTextZoomProvider::ChromiumTextZoomProvider() = default;
+MonyharTextZoomProvider::MonyharTextZoomProvider() = default;
 
-ChromiumTextZoomProvider::~ChromiumTextZoomProvider() = default;
+MonyharTextZoomProvider::~MonyharTextZoomProvider() = default;
 
-void ChromiumTextZoomProvider::SetPageFontSize(web::WebState* web_state,
+void MonyharTextZoomProvider::SetPageFontSize(web::WebState* web_state,
                                                int size) {
   FontSizeJavaScriptFeature::GetInstance()->AdjustFontSize(web_state, size);
 }
 
-bool ChromiumTextZoomProvider::IsTextZoomEnabled() {
+bool MonyharTextZoomProvider::IsTextZoomEnabled() {
   return ui::GetDeviceFormFactor() != ui::DEVICE_FORM_FACTOR_TABLET &&
          base::FeatureList::IsEnabled(web::kWebPageTextAccessibility);
 }

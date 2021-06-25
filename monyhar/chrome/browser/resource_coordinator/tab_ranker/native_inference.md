@@ -31,7 +31,7 @@ Approximately the following steps will clean up the generated code:
     from native_inference.h.
  1. Replace `assert()` calls with `CHECK()`, and include `"base/logging.h"`.
  1. Remove unused includes, including `<cassert>`.
- 1. Add Chromium header comments.
+ 1. Add Monyhar header comments.
 
 ## Updating the model
 

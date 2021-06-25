@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -35,9 +35,9 @@ class MediaRouterCPUMemoryCast(perf_benchmark.PerfBenchmark):
 
     options.AppendExtraBrowserArgs([
         '--load-extension=' + ','.join(
-            [os.path.join(path_util.GetChromiumSrcDir(), 'out',
+            [os.path.join(path_util.GetMonyharSrcDir(), 'out',
              'Release', 'mr_extension'),
-             os.path.join(path_util.GetChromiumSrcDir(), 'out',
+             os.path.join(path_util.GetMonyharSrcDir(), 'out',
              'Release', 'media_router', 'telemetry_extension')]),
         '--disable-features=ViewsCastDialog',
         '--whitelisted-extension-id=enhhojjnijigcajfphajepfemndkmdlo',
@@ -73,7 +73,7 @@ class NoMediaRouterCPUMemory(perf_benchmark.PerfBenchmark):
     options.disable_background_networking = False
     options.AppendExtraBrowserArgs([
         '--load-extension=' +
-            os.path.join(path_util.GetChromiumSrcDir(), 'out',
+            os.path.join(path_util.GetMonyharSrcDir(), 'out',
             'Release', 'media_router', 'telemetry_extension'),
         '--disable-features=ViewsCastDialog',
         '--media-router=0',

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,7 +13,7 @@ namespace mojo {
 namespace test {
 
 // An implementation of a hypothetical Rect type specifically for consumers in
-// in Blink. Unlike the Chromium variant (see rect_monyhar.h) this does not
+// in Blink. Unlike the Monyhar variant (see rect_monyhar.h) this does not
 // support negative origin coordinates and is not copyable.
 class RectBlink {
  public:

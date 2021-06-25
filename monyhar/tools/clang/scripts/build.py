@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -784,9 +784,9 @@ def main():
     # pgo_training-1.ii is a preprocessed (on Linux) version of
     # src/third_party/blink/renderer/core/layout/layout_object.cc, selected
     # because it's a large translation unit in Blink, which is normally the
-    # slowest part of Chromium to compile. Using this, we get ~20% shorter
+    # slowest part of Monyhar to compile. Using this, we get ~20% shorter
     # build times for Linux, Android, and Mac, which is also what we got when
-    # training by actually building a target in Chromium. (For comparison, a
+    # training by actually building a target in Monyhar. (For comparison, a
     # C++-y "Hello World" program only resulted in 14% faster builds.)
     # See https://crbug.com/966403#c16 for all numbers.
     #
@@ -933,7 +933,7 @@ def main():
   RunCommand(['ninja'], msvc_arch='x64')
 
   if chrome_tools:
-    # If any Chromium tools were built, install those now.
+    # If any Monyhar tools were built, install those now.
     RunCommand(['ninja', 'cr-install'], msvc_arch='x64')
 
   if not args.build_mac_arm:

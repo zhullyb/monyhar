@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -34,7 +34,7 @@ constexpr std::tuple<const char*, const char*> kFileHandlers[] = {
     {"image/tiff", ".arw,.cr2,.dng,.nef,.nrw,.orf,.raf,.rw2"},
 
     // More video formats; building on the video/* wildcard which doesn't
-    // actually catch very much due to hard-coded maps in Chromium. Again, the
+    // actually catch very much due to hard-coded maps in Monyhar. Again, the
     // MIME type doesn't really matter. "video/mpeg" is used a catchall for
     // unknown mime types.
     {"video/ogg", ".ogv,.ogx,.ogm"},

@@ -46,7 +46,7 @@ bypass the need for a full CrOS checkout by using the `Edit code` button in
 codesearch UI, but this flow is unverified.) This can take time (ie: many hours)
 to land and propagate onto Chrome's builders. So if you need the test disabled
 ASAP, consult the next option.
-- **With only a Chromium checkout**: You can also add the test to the list of
+- **With only a Monyhar checkout**: You can also add the test to the list of
 disabled tests for the step's GN target. For example, to disable a test in the
 `chrome_all_tast_tests` step, add it to [this list]. **Note**: If the test is
 failing consistently, and you only disable it here, it will likely start to fail

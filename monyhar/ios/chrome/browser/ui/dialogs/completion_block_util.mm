@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ using completion_block_util::DecidePolicyCallback;
 // are executed.  The blocks passed on creation will be called before the
 // wrapper is deallocated in order to prevent exceptions from being thrown.
 // TODO(crbug.com/918189): Convert to C++ callback checker object when C++14
-// lambda expressions are allowed by the Chromium style guide.
+// lambda expressions are allowed by the Monyhar style guide.
 @interface WebCompletionWrapper : NSObject
 
 // Whether the completion block has been executed.

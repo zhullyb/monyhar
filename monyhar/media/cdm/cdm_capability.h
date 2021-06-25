@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -31,7 +31,7 @@ struct MEDIA_EXPORT CdmCapability {
 
   // List of audio codecs supported by the CDM (e.g. opus). This is the set of
   // codecs supported by the media pipeline using the CDM. This does not include
-  // codec profiles, as in general Chromium doesn't handle audio codec profiles
+  // codec profiles, as in general Monyhar doesn't handle audio codec profiles
   // separately.
   std::vector<AudioCodec> audio_codecs;
 

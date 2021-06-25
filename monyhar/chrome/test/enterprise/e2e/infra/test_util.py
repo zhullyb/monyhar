@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Contains utility methods that can be used by python tests on Windows."""
@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 
 def _window_enum_handler(hwnd, window_list):
   win_title = win32gui.GetWindowText(hwnd)
-  if 'Google Chrome' in win_title or 'Chromium' in win_title:
+  if 'Google Chrome' in win_title or 'Monyhar' in win_title:
     window_list.append(hwnd)
 
 

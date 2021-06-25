@@ -1,11 +1,11 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 package org.monyhar.components.viz.common;
 
 /**
- * Contains command line switches that are specific to the viz/* portion of Chromium on Android.
+ * Contains command line switches that are specific to the viz/* portion of Monyhar on Android.
  */
 public abstract class VizSwitches {
     // Enables experimental de-jelly effect.

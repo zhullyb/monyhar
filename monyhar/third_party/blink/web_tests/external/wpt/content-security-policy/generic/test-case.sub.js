@@ -53,7 +53,7 @@ function TestCase(scenarios, sanityChecker) {
         // so wait for queued tasks to run using setTimeout().
         await new Promise(resolve => setTimeout(resolve, 0));
 
-        // Workaround for a Chromium bug (https://crbug.com/1179832).
+        // Workaround for a Monyhar bug (https://crbug.com/1179832).
         await new Promise(resolve => setTimeout(resolve, 0));
 
         // Pass violation events to `violationEventPromise` (which will be tested

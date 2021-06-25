@@ -1,10 +1,10 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 import logging
 
-from blinkpy.w3c.monyhar_commit import ChromiumCommit
+from blinkpy.w3c.monyhar_commit import MonyharCommit
 from blinkpy.w3c.monyhar_finder import absolute_monyhar_dir
 from blinkpy.w3c.common import CHROMIUM_WPT_DIR
 
@@ -33,7 +33,7 @@ def exportable_commits_over_last_n_commits(
 
     Args:
         host: A Host object.
-        local_wpt: A LocalWPT instance, used to see whether a Chromium commit
+        local_wpt: A LocalWPT instance, used to see whether a Monyhar commit
             can be applied cleanly in the upstream repo.
         wpt_github: A WPTGitHub instance, used to check whether PRs are closed.
         number: The number of commits back to look. The commits to check will
@@ -42,15 +42,15 @@ def exportable_commits_over_last_n_commits(
         require_clean: Whether to only return exportable commits that can be
             applied cleanly and produce non-empty diff when tested individually.
         verify_merged_pr: Whether to verify merged PRs can be found in the local
-            WPT repo. If this argument is True, for each Chromium commit with a
+            WPT repo. If this argument is True, for each Monyhar commit with a
             corresponding merged PR, we also check the local WPT repo, and still
             consider the commit exportable if it cannot be found in local WPT.
-            (Note: Chromium commits that have closed but not merged PRs are
+            (Note: Monyhar commits that have closed but not merged PRs are
             always considered exported regardless of this argument.)
 
     Returns:
         (exportable_commits, errors) where exportable_commits is a list of
-        ChromiumCommit objects for exportable commits in the given window, and
+        MonyharCommit objects for exportable commits in the given window, and
         errors is a list of error messages when exportable commits fail to apply
         cleanly, both in chronological order.
     """
@@ -68,7 +68,7 @@ def _exportable_commits_since(monyhar_commit_hash,
     """Lists exportable commits after the given commit.
 
     Args:
-        monyhar_commit_hash: The SHA of the Chromium commit from which this
+        monyhar_commit_hash: The SHA of the Monyhar commit from which this
             method will look. This commit is not included in the commits searched.
 
     Return values and remaining arguments are the same as exportable_commits_over_last_n_commits.
@@ -84,7 +84,7 @@ def _exportable_commits_since(monyhar_commit_hash,
                ['--reverse', '--', wpt_path])
     commit_hashes = host.executive.run_command(
         command, cwd=absolute_monyhar_dir(host)).splitlines()
-    monyhar_commits = [ChromiumCommit(host, sha=sha) for sha in commit_hashes]
+    monyhar_commits = [MonyharCommit(host, sha=sha) for sha in commit_hashes]
     exportable_commits = []
     errors = []
     for commit in monyhar_commits:
@@ -110,14 +110,14 @@ def get_commit_export_state(monyhar_commit,
                             local_wpt,
                             wpt_github,
                             verify_merged_pr=False):
-    """Determines the exportability state of a Chromium commit.
+    """Determines the exportability state of a Monyhar commit.
 
     Args:
         verify_merged_pr: Whether to verify merged PRs can be found in the local
-            WPT repo. If this argument is True, for each Chromium commit with a
+            WPT repo. If this argument is True, for each Monyhar commit with a
             corresponding merged PR, we also check the local WPT repo, and still
             consider the commit exportable if it cannot be found in local WPT.
-            (Note: Chromium commits that have closed but not merged PRs are
+            (Note: Monyhar commits that have closed but not merged PRs are
             always considered exported regardless of this argument.)
 
     Returns:
@@ -162,7 +162,7 @@ def _is_commit_exported(monyhar_commit, local_wpt, wpt_github,
     # * Merged PR might not be present in local WPT as the checkout may be
     #   stale. If verify_merged_pr=True, we further search the git log of local
     #   WPT the commit to prevent clobbering during import. (crbug.com/756428)
-    # * Abandoned PRs are expected to be reverted in Chromium by importer, so
+    # * Abandoned PRs are expected to be reverted in Monyhar by importer, so
     #   they are always considered "exported".
     if not verify_merged_pr:
         # If no verification is needed, all closed PRs are deemed exported.
@@ -187,7 +187,7 @@ def _is_commit_exported(monyhar_commit, local_wpt, wpt_github,
 
 
 class CommitExportState(object):
-    """An enum class for exportability states of a Chromium commit."""
+    """An enum class for exportability states of a Monyhar commit."""
     # pylint: disable=pointless-string-statement
     # String literals are used as attribute docstrings (PEP 257).
 

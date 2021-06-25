@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -25,7 +25,7 @@ mv xcbproto_git xcbproto/.git
 pushd xcbproto
 git checkout -b OldRevision
 git apply ../patch.diff
-git commit -am 'Apply Chromium patches'
+git commit -am 'Apply Monyhar patches'
 git branch --set-upstream-to=master
 git pull --rebase
 git rev-parse HEAD~ > ../VERSION

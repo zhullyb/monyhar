@@ -1,7 +1,7 @@
 # The Friend-the-tests Pattern
 
 The Friend-the-tests pattern involves friending test fixture classes from the
-class under test. Chromium has a macro named `FRIEND_TEST_ALL_PREFIXES` that
+class under test. Monyhar has a macro named `FRIEND_TEST_ALL_PREFIXES` that
 makes this convenient to do.
 
 **Note**: Friending test classes is usually not the best way to provide testing

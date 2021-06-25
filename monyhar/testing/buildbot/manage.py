@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -52,8 +52,8 @@ SKIP = {
   'WebKit Mac10.11',
   'WebKit Mac10.12',
   'WebKit Mac10.11 (dbg)',
-  'Chromium Mac10.10 Tests',
-  'Chromium Mac10.11 Tests',
+  'Monyhar Mac10.10 Tests',
+  'Monyhar Mac10.11 Tests',
 
   # One off builders. Note that Swarming does support ARM.
   'Linux ARM Cross-Compile',

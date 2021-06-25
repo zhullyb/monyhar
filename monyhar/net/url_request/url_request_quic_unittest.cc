@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -247,8 +247,8 @@ class URLRequestQuicTest
         {push_info1, push_info2});
     quic::QuicConfig config;
     // Set up server certs.
-    std::unique_ptr<net::ProofSourceChromium> proof_source(
-        new net::ProofSourceChromium());
+    std::unique_ptr<net::ProofSourceMonyhar> proof_source(
+        new net::ProofSourceMonyhar());
     base::FilePath directory = GetTestCertsDirectory();
     CHECK(proof_source->Initialize(
         directory.Append(FILE_PATH_LITERAL("quic-chain.pem")),

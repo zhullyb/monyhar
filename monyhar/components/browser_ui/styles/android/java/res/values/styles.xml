@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2019 The Chromium Authors. All rights reserved.
+<!-- Copyright 2019 The Monyhar Authors. All rights reserved.
      Use of this source code is governed by a BSD-style license that can be
      found in the LICENSE file. -->
 
@@ -81,7 +81,7 @@
     <style name="OverflowMenuThemeOverlay" parent="Base.OverflowMenuThemeOverlay" />
 
     <!-- AlertDialog styles -->
-    <style name="Base.Theme.Chromium.AlertDialog"
+    <style name="Base.Theme.Monyhar.AlertDialog"
         parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
         <item name="android:textColorPrimary">@color/default_text_color</item>
         <item name="android:windowBackground">@drawable/popup_bg_tinted</item>
@@ -98,9 +98,9 @@
         <item name="spinnerStyle">@style/SpinnerStyle</item>
     </style>
 
-    <style name="Theme.Chromium.AlertDialog" parent="Base.Theme.Chromium.AlertDialog" />
+    <style name="Theme.Monyhar.AlertDialog" parent="Base.Theme.Monyhar.AlertDialog" />
 
-    <style name="Theme.Chromium.AlertDialog.NoActionBar">
+    <style name="Theme.Monyhar.AlertDialog.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
     </style>
@@ -164,14 +164,14 @@
     </style>
 
     <!-- Fullscreen -->
-    <style name="Base.Theme.Chromium.Fullscreen" parent="Theme.BrowserUI">
+    <style name="Base.Theme.Monyhar.Fullscreen" parent="Theme.BrowserUI">
         <!-- With ActionBar but not window title -->
         <!-- TODO(huayinz): Check if windowActionBar is actually needed. -->
         <item name="windowActionBar">true</item>
         <item name="colorPrimary">@color/default_control_color_active</item>
         <item name="colorAccent">@color/default_control_color_active</item>
     </style>
-    <style name="Theme.Chromium.Fullscreen" parent="Base.Theme.Chromium.Fullscreen" />
+    <style name="Theme.Monyhar.Fullscreen" parent="Base.Theme.Monyhar.Fullscreen" />
 
     <style name="ModernToolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="titleTextAppearance">@style/TextAppearance.Headline.Primary</item>

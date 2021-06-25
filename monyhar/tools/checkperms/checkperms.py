@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -307,7 +307,7 @@ def check_file(root_path, rel_path):
   try:
     bit = has_executable_bit(full_path)
   except OSError:
-    # It's faster to catch exception than call os.path.islink(). The Chromium
+    # It's faster to catch exception than call os.path.islink(). The Monyhar
     # tree may have invalid symlinks.
     return None
 

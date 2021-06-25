@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ class WebContents;
 
 namespace android_webview {
 
-// Android WebView does not use Chromium downloads, so implement methods here to
+// Android WebView does not use Monyhar downloads, so implement methods here to
 // unconditionally cancel the download.
 class AwDownloadManagerDelegate : public content::DownloadManagerDelegate,
                                   public base::SupportsUserData::Data {

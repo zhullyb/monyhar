@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -31,7 +31,7 @@ public class WebApkOfflineDialog {
      */
     public void show(final Activity activity, String errorMessage) {
         AlertDialog.Builder builder =
-                new AlertDialog.Builder(activity, R.style.Theme_Chromium_AlertDialog);
+                new AlertDialog.Builder(activity, R.style.Theme_Monyhar_AlertDialog);
         builder.setMessage(errorMessage)
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override

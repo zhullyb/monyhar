@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -52,7 +52,7 @@ public class QrCodeDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         initTabs();
         AlertDialog.Builder builder =
-                new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_Fullscreen);
+                new AlertDialog.Builder(getActivity(), R.style.Theme_Monyhar_Fullscreen);
         builder.setView(getDialogView());
         return builder.create();
     }

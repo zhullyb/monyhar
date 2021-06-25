@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -79,7 +79,7 @@ class COMPONENT_EXPORT(SESSION_MANAGER) SessionManagerClient {
   enum class RestartJobReason : uint32_t {
     // Restart browser for Guest session.
     kGuest = 0,
-    // Restart browser without user session for headless Chromium.
+    // Restart browser without user session for headless Monyhar.
     kUserless = 1,
   };
 

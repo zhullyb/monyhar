@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ namespace quic {
 class ProofVerifyContext;
 }  // namespace quic
 namespace net {
-class QuicChromiumClientSession;
+class QuicMonyharClientSession;
 }  // namespace net
 namespace quic {
 class QuicCryptoClientConfig;
@@ -31,7 +31,7 @@ class NET_EXPORT QuicCryptoClientStreamFactory {
 
   virtual quic::QuicCryptoClientStream* CreateQuicCryptoClientStream(
       const quic::QuicServerId& server_id,
-      QuicChromiumClientSession* session,
+      QuicMonyharClientSession* session,
       std::unique_ptr<quic::ProofVerifyContext> proof_verify_context,
       quic::QuicCryptoClientConfig* crypto_config) = 0;
 

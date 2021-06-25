@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -175,9 +175,9 @@ public class MediaDrmBridge {
     }
 
     // Block MediaDrm event for |mSessionId|. MediaDrm may fire event before the
-    // functions return. This may break Chromium CDM API's assumption. For
+    // functions return. This may break Monyhar CDM API's assumption. For
     // example, when loading session, 'restoreKeys' will trigger key status
-    // change event. But the session isn't known to Chromium CDM because the
+    // change event. But the session isn't known to Monyhar CDM because the
     // promise isn't resolved. The class can block and collect these events and
     // fire these events later.
     private static class SessionEventDeferrer {
@@ -1050,7 +1050,7 @@ public class MediaDrmBridge {
     }
 
     private void onPersistentLicenseNoExist(long promiseId) {
-        // Chromium CDM API requires resolve the promise with empty session id for non-exist
+        // Monyhar CDM API requires resolve the promise with empty session id for non-exist
         // license. See media/base/content_decryption_module.h LoadSession for more details.
         onPromiseResolvedWithSession(promiseId, SessionId.createNoExistSessionId());
     }

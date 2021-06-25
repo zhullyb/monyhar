@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,11 +28,11 @@ using ::i18n::addressinput::Storage;
 using ::i18n::addressinput::TestdataSource;
 
 // Used to load region rules for this test.
-class ChromiumTestdataSource : public TestdataSource {
+class MonyharTestdataSource : public TestdataSource {
  public:
-  ChromiumTestdataSource() : TestdataSource(true) {}
+  MonyharTestdataSource() : TestdataSource(true) {}
 
-  ~ChromiumTestdataSource() override {}
+  ~MonyharTestdataSource() override {}
 
   // For this test, only load the rules for the "US".
   void Get(const std::string& key, const Callback& data_ready) const override {
@@ -48,7 +48,7 @@ class ChromiumTestdataSource : public TestdataSource {
   }
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(ChromiumTestdataSource);
+  DISALLOW_COPY_AND_ASSIGN(MonyharTestdataSource);
 };
 
 // A test subclass of the AddressNormalizerImpl. Used to simulate rules not
@@ -88,7 +88,7 @@ class AddressNormalizerTest : public testing::Test {
 
  protected:
   AddressNormalizerTest()
-      : normalizer_(std::unique_ptr<Source>(new ChromiumTestdataSource),
+      : normalizer_(std::unique_ptr<Source>(new MonyharTestdataSource),
                     std::unique_ptr<Storage>(new NullStorage)) {}
 
   ~AddressNormalizerTest() override {}

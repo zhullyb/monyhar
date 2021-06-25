@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@
 namespace switches {
 
 #if !BUILDFLAG(IS_CHROMEOS_ASH)
-// Enables the Chrome Browser Cloud Management integration on Chromium builds.
+// Enables the Chrome Browser Cloud Management integration on Monyhar builds.
 // CBCM is always enabled in branded builds.
 const char kEnableChromeBrowserCloudManagement[] =
     "enable-chrome-browser-cloud-management";

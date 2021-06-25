@@ -1,11 +1,11 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
 ########################################################################
 #
 #   WARNING:
-#   This file should only be used by Chromium/Chrome. Please contact
+#   This file should only be used by Monyhar/Chrome. Please contact
 #   hstspreload@monyhar.org before considering it for anything else.
 #
 ########################################################################

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -6,10 +6,10 @@
 // Instead of using WebRTC's logging implementation, the WebRTC macros are
 // mapped to DIAGNOSTIC_LOGGING. In its implementation (DiagnosticLogMessage in
 // third_party/webrtc_overrides/rtc_base/diagnostic_logging.h), the
-// corresponding base/logging.h macros (e.g. Chromium's VLOG) are used.
+// corresponding base/logging.h macros (e.g. Monyhar's VLOG) are used.
 // If this file is included outside of WebRTC/libjingle it should be included
 // after base/logging.h (if any) or compiler error or unexpected behavior may
-// occur (macros that have the same name in WebRTC as in Chromium will use
+// occur (macros that have the same name in WebRTC as in Monyhar will use
 // the WebRTC definition if this file is included first).
 
 // Setting the LoggingSeverity (and lower) that should be written to file should

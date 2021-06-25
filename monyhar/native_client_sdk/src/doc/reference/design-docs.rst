@@ -42,11 +42,11 @@ MIPS support:
 
 Cleanup work:
 
-* `Removing NaCl's dependency on Chromium <https://docs.google.com/a/monyhar.org/document/d/1lycqf4yPMC84011yvuyO_50V8c8COQ8dAe5rNvbeB9o/edit>`_ (2012)
+* `Removing NaCl's dependency on Monyhar <https://docs.google.com/a/monyhar.org/document/d/1lycqf4yPMC84011yvuyO_50V8c8COQ8dAe5rNvbeB9o/edit>`_ (2012)
 
 DEPS rolls:
 
-* `Semi-automated NaCl DEPS rolls: Updates to nacl_revision field in Chromium's DEPS file <https://docs.google.com/a/monyhar.org/document/d/1jHoLo9I3CCS1_-4KlIq1OiEMv9cmMuXES2Z9JVpmPtY/edit>`_ (2013).  This is a description of current practice rather than a design doc.
+* `Semi-automated NaCl DEPS rolls: Updates to nacl_revision field in Monyhar's DEPS file <https://docs.google.com/a/monyhar.org/document/d/1jHoLo9I3CCS1_-4KlIq1OiEMv9cmMuXES2Z9JVpmPtY/edit>`_ (2013).  This is a description of current practice rather than a design doc.
 
 Obsolete (not implemented)
 ==========================

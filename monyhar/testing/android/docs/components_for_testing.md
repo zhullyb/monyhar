@@ -18,7 +18,7 @@ avoid them.
 > **tl;dr:** test components may not be able to access app code when defined in
 > the test APK.
 
-Chromium's instrumentation test suites are all currently set up in the manner
+Monyhar's instrumentation test suites are all currently set up in the manner
 described above: app code is in one APK (the _APK under test_), test code is
 in another APK (the _test APK_), and auxiliary code, when necessary, is in
 one or more other APKs (_support APKs_). Test APKs build against app code

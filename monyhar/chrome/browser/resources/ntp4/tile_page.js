@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1098,7 +1098,7 @@ TilePage.prototype = {
    * @param {Event} e The mousewheel event.
    */
   handleMouseWheel(e) {
-    // The ctrl-wheel should triggle the zoom in/out actions in Chromium for
+    // The ctrl-wheel should triggle the zoom in/out actions in Monyhar for
     // all pages.
     if (e.wheelDeltaY == 0 || e.ctrlKey) {
       return false;

@@ -47,7 +47,7 @@ can watch for inbound I/O from other processes. This is configured using a
 its lifetime.
 
 Typically an application will create a dedicated background thread and give its
-`TaskRunner` to Mojo. Note that in Chromium, we use the existing "IO thread" in
+`TaskRunner` to Mojo. Note that in Monyhar, we use the existing "IO thread" in
 the browser process and content child processes. In general, any thread used
 for Mojo IPC support must be running a `base::MessagePumpType::IO` loop.
 
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
 
 This process is now fully prepared to use Mojo IPC!
 
-Note that all existing process types in Chromium already perform this setup
+Note that all existing process types in Monyhar already perform this setup
 very early during startup.
 
 ## Connecting Two Processes

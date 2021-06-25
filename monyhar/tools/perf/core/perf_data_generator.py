@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -1603,7 +1603,7 @@ ALL_UPDATERS_AND_FILES = [
 
 
 def _source_filepath(posix_path):
-  return os.path.join(path_util.GetChromiumSrcDir(), *posix_path.split('/'))
+  return os.path.join(path_util.GetMonyharSrcDir(), *posix_path.split('/'))
 
 
 def validate_all_files():

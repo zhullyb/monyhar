@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2011 The Chromium Authors. All rights reserved.
+# Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -270,7 +270,7 @@ with a newline?''',
     expected = self.GetExpectedOutput(original)
     self.failUnless(expected == json.loads(gatherer.Translate('en')))
 
-  def testPlaceholdersChromium(self):
+  def testPlaceholdersMonyhar(self):
     original = """{
         "policy_definitions": [
           {
@@ -286,13 +286,13 @@ with a newline?''',
     gatherer.SetDefines({'_monyhar': True})
     gatherer.Parse()
     self.failUnless(len(gatherer.GetCliques()) == 1)
-    expected = json.loads(re.sub('<ph.*ph>', 'Chromium', original))
+    expected = json.loads(re.sub('<ph.*ph>', 'Monyhar', original))
     self.failUnless(expected == json.loads(gatherer.Translate('en')))
     self.failUnless(gatherer.GetCliques()[0].translateable)
     msg = gatherer.GetCliques()[0].GetMessage()
     self.failUnless(len(msg.GetPlaceholders()) == 1)
     ph = msg.GetPlaceholders()[0]
-    self.failUnless(ph.GetOriginal() == 'Chromium')
+    self.failUnless(ph.GetOriginal() == 'Monyhar')
     self.failUnless(ph.GetPresentation() == 'PRODUCT_NAME')
     self.failUnless(ph.GetExample() == 'Google Chrome')
 

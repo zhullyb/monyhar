@@ -1,12 +1,12 @@
 #!/usr/bin/env vpython
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Helper script used to manage locale-related files in Chromium.
+"""Helper script used to manage locale-related files in Monyhar.
 
 This script is used to check, and potentially fix, many locale-related files
-in your Chromium workspace, such as:
+in your Monyhar workspace, such as:
 
   - GRIT input files (.grd) and the corresponding translations (.xtb).
 
@@ -68,10 +68,10 @@ _CONSOLE_START_LINE = (
 ##########################################################################
 ##########################################################################
 
-def _FixChromiumLangAttribute(lang):
-  """Map XML "lang" attribute values to Chromium locale names."""
+def _FixMonyharLangAttribute(lang):
+  """Map XML "lang" attribute values to Monyhar locale names."""
   _CHROMIUM_LANG_FIXES = {
-      'en': 'en-US',  # For now, Chromium doesn't have an 'en' locale.
+      'en': 'en-US',  # For now, Monyhar doesn't have an 'en' locale.
       'iw': 'he',  # 'iw' is the obsolete form of ISO 639-1 for Hebrew
       'no': 'nb',  # 'no' is used by the Translation Console for Norwegian (nb).
   }
@@ -250,13 +250,13 @@ def _WriteFile(file_path, file_data):
 
 
 def _FindGnExecutable():
-  """Locate the real GN executable used by this Chromium checkout.
+  """Locate the real GN executable used by this Monyhar checkout.
 
   This is needed because the depot_tools 'gn' wrapper script will look
   for .gclient and other things we really don't need here.
 
   Returns:
-    Path of real host GN executable from current Chromium src/ checkout.
+    Path of real host GN executable from current Monyhar src/ checkout.
   """
   # Simply scan buildtools/*/gn and return the first one found so we don't
   # have to guess the platform-specific sub-directory name (e.g. 'linux64'
@@ -348,7 +348,7 @@ def _PrepareTinyGnWorkspace(work_dir, out_subdir_name='out'):
   This allows us to run 'gn gen <out> --root <work_dir>' as fast as possible
   to generate files containing the locales list. This takes about 300ms on
   a decent machine, instead of more than 5 seconds when running the equivalent
-  commands from a real Chromium workspace, which requires regenerating more
+  commands from a real Monyhar workspace, which requires regenerating more
   than 23k targets.
 
   Args:
@@ -522,14 +522,14 @@ def _CheckGrdElementRangeLang(grd_lines, start, end, wanted_locales):
   This really checks the following:
     - Each item has a correct 'lang' attribute.
     - There are no duplicated lines for the same 'lang' attribute.
-    - That there are no extra locales that Chromium doesn't want.
+    - That there are no extra locales that Monyhar doesn't want.
     - That no wanted locale is missing.
 
   Args:
     grd_lines: Input .grd lines.
     start: Sub-range start position in input line list.
     end: Sub-range limit position in input line list.
-    wanted_locales: Set of wanted Chromium locale names.
+    wanted_locales: Set of wanted Monyhar locale names.
   Returns:
     List of error message strings for this input. Empty on success.
   """
@@ -542,7 +542,7 @@ def _CheckGrdElementRangeLang(grd_lines, start, end, wanted_locales):
       errors.append('%d: Missing "lang" attribute in <output> element' % pos +
                     1)
       continue
-    cr_locale = _FixChromiumLangAttribute(lang)
+    cr_locale = _FixMonyharLangAttribute(lang)
     if cr_locale in locales:
       errors.append(
           '%d: Redefinition of <output> for "%s" locale' % (pos + 1, lang))
@@ -593,7 +593,7 @@ def _CheckGrdElementRangeAndroidOutputFilename(grd_lines, start, end,
     grd_lines: Input .grd lines.
     start: Sub-range start position in input line list.
     end: Sub-range limit position in input line list.
-    wanted_locales: Set of wanted Chromium locale names.
+    wanted_locales: Set of wanted Monyhar locale names.
   Returns:
     List of error message strings for this input. Empty on success.
   """
@@ -603,7 +603,7 @@ def _CheckGrdElementRangeAndroidOutputFilename(grd_lines, start, end,
     lang = _GetXmlLangAttribute(line)
     if not lang:
       continue
-    cr_locale = _FixChromiumLangAttribute(lang)
+    cr_locale = _FixMonyharLangAttribute(lang)
 
     m = _RE_FILENAME_ATTRIBUTE.search(line)
     if not m:
@@ -631,7 +631,7 @@ def _CheckGrdAndroidOutputElements(grd_file, grd_lines, wanted_locales):
   Args:
     grd_file: Input .grd file path.
     grd_lines: List of input .grd lines.
-    wanted_locales: set of wanted Chromium locale names.
+    wanted_locales: set of wanted Monyhar locale names.
   Returns:
     List of error message strings. Empty on success.
   """
@@ -650,7 +650,7 @@ def _AddMissingLocalesInGrdAndroidOutputs(grd_file, grd_lines, wanted_locales):
   Args:
     grd_file: Input .grd file path.
     grd_lines: Input .grd line list.
-    wanted_locales: set of Chromium locale names.
+    wanted_locales: set of Monyhar locale names.
   Returns:
     A new list of .grd lines, containing new <output> elements when needed
     for locales from |wanted_locales| that were not part of the input.
@@ -660,7 +660,7 @@ def _AddMissingLocalesInGrdAndroidOutputs(grd_file, grd_lines, wanted_locales):
     locales = set()
     for pos in xrange(start, end):
       lang = _GetXmlLangAttribute(grd_lines[pos])
-      locale = _FixChromiumLangAttribute(lang)
+      locale = _FixMonyharLangAttribute(lang)
       locales.add(locale)
 
     missing_locales = wanted_locales.difference(locales)
@@ -742,7 +742,7 @@ def _CheckGrdTranslationElementRange(grd_lines, start, end,
     grd_lines: Input .grd lines.
     start: Sub-range start position in input line list.
     end: Sub-range limit position in input line list.
-    wanted_locales: Set of wanted Chromium locale names.
+    wanted_locales: Set of wanted Monyhar locale names.
   Returns:
     List of error message strings for this input. Empty on success.
   """
@@ -771,7 +771,7 @@ def _CheckGrdTranslations(grd_file, grd_lines, wanted_locales):
   Args:
     grd_file: Input .grd file path.
     grd_lines: List of input .grd lines.
-    wanted_locales: set of wanted Chromium locale names.
+    wanted_locales: set of wanted Monyhar locale names.
   Returns:
     List of error message strings. Empty on success.
   """
@@ -821,7 +821,7 @@ def _AddMissingLocalesInGrdTranslations(grd_file, grd_lines, wanted_locales):
   Args:
     grd_file: Input .grd file path.
     grd_lines: Input .grd line list.
-    wanted_locales: set of Chromium locale names.
+    wanted_locales: set of Monyhar locale names.
   Returns:
     A new list of .grd lines, containing new <output> elements when needed
     for locales from |wanted_locales| that were not part of the input.
@@ -832,7 +832,7 @@ def _AddMissingLocalesInGrdTranslations(grd_file, grd_lines, wanted_locales):
     locales = set()
     for pos in xrange(start, end):
       lang = _GetXmlLangAttribute(grd_lines[pos])
-      locale = _FixChromiumLangAttribute(lang)
+      locale = _FixMonyharLangAttribute(lang)
       locales.add(locale)
 
     missing_locales = wanted_locales.difference(locales)
@@ -939,7 +939,7 @@ def _CheckGnOutputsRange(gn_lines, start, end, wanted_locales):
     line = gn_lines[pos]
     android_locale = _GetAndroidGnOutputLocale(line)
     assert android_locale != None
-    cr_locale = resource_utils.ToChromiumLocaleName(android_locale)
+    cr_locale = resource_utils.ToMonyharLocaleName(android_locale)
     if cr_locale in locales:
       errors.append('%s: Redefinition of output for "%s" locale' %
                     (pos + 1, android_locale))
@@ -978,7 +978,7 @@ def _AddMissingLocalesInGnAndroidOutputs(gn_file, gn_lines, wanted_locales):
     locales = set()
     for pos in xrange(start, end):
       lang = _GetAndroidGnOutputLocale(gn_lines[pos])
-      locale = resource_utils.ToChromiumLocaleName(lang)
+      locale = resource_utils.ToMonyharLocaleName(lang)
       locales.add(locale)
 
     missing_locales = wanted_locales.difference(locales)
@@ -1373,7 +1373,7 @@ for the following conditions:
 
     - Each item has a correct 'lang' attribute.
     - There are no duplicated lines for the same 'lang' attribute.
-    - That there are no extra locales that Chromium doesn't want.
+    - That there are no extra locales that Monyhar doesn't want.
     - That no wanted locale is missing.
     - Filenames exist for each listed locale.
     - Filenames are well-formed.
@@ -1393,7 +1393,7 @@ for the following conditions:
 
     - Each item has a correct 'lang' attribute.
     - There are no duplicated lines for the same 'lang' attribute.
-    - That there are no extra locales that Chromium doesn't want.
+    - That there are no extra locales that Monyhar doesn't want.
     - That no wanted locale is missing.
     - Each item has a 'path' attribute.
     - Each such path value ends up with '.xtb'.
@@ -1411,8 +1411,8 @@ Check one or more BUILD.gn file, looking for lists of Android resource .xml
 files, and checking that:
 
   - There are no duplicated output files in the list.
-  - Each output file belongs to a wanted Chromium locale.
-  - There are no output files for unwanted Chromium locales.
+  - Each output file belongs to a wanted Monyhar locale.
+  - There are no output files for unwanted Monyhar locales.
 '''
   select_file_func = _IsBuildGnInputFile
   check_func = _CheckGnAndroidOutputs
@@ -1432,7 +1432,7 @@ class _UpdateExpectationsCommand(_Command):
   name = 'update-expectations'
   description = 'Update translation expectations file.'
   long_description = r'''
-Update %s files to match the current list of locales supported by Chromium.
+Update %s files to match the current list of locales supported by Monyhar.
 This is especially useful to add new locales before updating any GRIT or GN
 input file with the --add-locales option.
 ''' % _EXPECTATIONS_FILENAME

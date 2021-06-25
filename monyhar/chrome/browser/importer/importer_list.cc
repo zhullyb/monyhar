@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -141,7 +141,7 @@ void DetectFirefoxProfiles(const std::string locale,
     firefox.services_supported =
         importer::HISTORY | importer::FAVORITES | importer::AUTOFILL_FORM_DATA;
 #if !defined(OS_MAC)
-    // Passwords are imported by loading the NSS DLLs into the Chromium process.
+    // Passwords are imported by loading the NSS DLLs into the Monyhar process.
     // Restrictive code signing prevents that from ever working again in modern
     // macOSes, so don't promise an import service that can't be delivered.
     firefox.services_supported |= importer::PASSWORDS;

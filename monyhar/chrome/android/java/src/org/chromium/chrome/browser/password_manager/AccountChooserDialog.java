@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -191,7 +191,7 @@ public class AccountChooserDialog
         }
         mAdapter = generateAccountsArrayAdapter(mContext, mCredentials);
         final AlertDialog.Builder builder =
-                new AlertDialog.Builder(mContext, R.style.Theme_Chromium_AlertDialog)
+                new AlertDialog.Builder(mContext, R.style.Theme_Monyhar_AlertDialog)
                         .setCustomTitle(titleView)
                         .setNegativeButton(R.string.cancel, this)
                         .setAdapter(mAdapter, new DialogInterface.OnClickListener() {

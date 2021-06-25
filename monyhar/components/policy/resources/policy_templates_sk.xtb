@@ -2190,7 +2190,7 @@ Ak je toto nastavenie zakázané alebo nie je nakonfigurované, nebudú môcť p
 <translation id="5148753489738115745">Umožňuje nastaviť dodatočné parametre, ktoré doplnok <ph name="PRODUCT_FRAME_NAME" /> pri spúšťaní aplikácie <ph name="PRODUCT_NAME" /> použije.
 
           Ak toto pravidlo nie je nastavené, použije sa predvolený príkazový riadok.</translation>
-<translation id="5152787786897382519">Chromium aj Google Chrome majú skupiny pravidiel, ktoré navzájom súvisia pri poskytovaní ovládania určitých funkcií. Tieto zoskupenia sú reprezentované nasledujúcimi skupinami pravidiel. Keďže pravidlá môžu mať viacero zdrojov, použijú sa iba hodnoty pochádzajúce zo zdroja s najvyššou prioritou. Hodnoty pochádzajúce zo zdroja s nižšou prioritou budú v rovnakej skupine ignorované. Poradie priority definuje stránka <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Monyhar aj Google Chrome majú skupiny pravidiel, ktoré navzájom súvisia pri poskytovaní ovládania určitých funkcií. Tieto zoskupenia sú reprezentované nasledujúcimi skupinami pravidiel. Keďže pravidlá môžu mať viacero zdrojov, použijú sa iba hodnoty pochádzajúce zo zdroja s najvyššou prioritou. Hodnoty pochádzajúce zo zdroja s nižšou prioritou budú v rovnakej skupine ignorované. Poradie priority definuje stránka <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Ako často sa odosielajú sledovacie sieťové pakety (v milisekundách).
 
       Ak toto pravidlo nie je nastavené, použije sa predvolená frekvencia tri minúty. Minimálna
@@ -3889,7 +3889,7 @@ Ak toto pravidlo ponecháte nenastavené, bude táto možnosť povolená, ale po
       Ak je toto pravidlo ponechané nenastavené, systém <ph name="PRODUCT_OS_NAME" /> použije ID e-mailového účtu pre miestny účet na zariadení ako meno, ktoré zobrazí na obrazovke prihlásenia.
 
       Toto pravidlo sa v prípade bežných používateľských účtov ignoruje.</translation>
-<translation id="8259375588339409826">Prehliadače Chromium a Google Chrome podporujú rovnaké pravidlá. Upozorňujeme, že tento dokument môže obsahovať zatiaľ nevydané pravidlá (t. j. ich záznam „Podporované v“ odkazuje na zatiaľ nevydanú verziu softvéru <ph name="PRODUCT_NAME" />) a že tieto pravidlá môžu byť zmenené alebo odstránené bez predchádzajúceho upozornenia, pričom nie sú kryté zárukou akéhokoľvek druhu vrátane záruk týkajúcich sa bezpečnosti a súkromia.
+<translation id="8259375588339409826">Prehliadače Monyhar a Google Chrome podporujú rovnaké pravidlá. Upozorňujeme, že tento dokument môže obsahovať zatiaľ nevydané pravidlá (t. j. ich záznam „Podporované v“ odkazuje na zatiaľ nevydanú verziu softvéru <ph name="PRODUCT_NAME" />) a že tieto pravidlá môžu byť zmenené alebo odstránené bez predchádzajúceho upozornenia, pričom nie sú kryté zárukou akéhokoľvek druhu vrátane záruk týkajúcich sa bezpečnosti a súkromia.
 
 Tieto pravidlá sú výhradne určené na použitie pri konfigurácii inštancií prehliadača <ph name="PRODUCT_NAME" /> vo vašej organizácii. Použitie týchto pravidiel mimo vašej organizácie (napr. vo verejne distribuovanom programe) je považované za malvér. Google a dodávatelia antivírusových softvérov ho pravdepodobne budú označovať ako malvér.
 

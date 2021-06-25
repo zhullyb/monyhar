@@ -33,7 +33,7 @@ provides links to crashes and coverage reports.
 
 ## Corpus
 
-Chromium developers can access the corpus stored in the [Corpus GCS Bucket] via
+Monyhar developers can access the corpus stored in the [Corpus GCS Bucket] via
 web interface or by using `gsutil` tool (the latter is easier for downloading):
 
 ```bash

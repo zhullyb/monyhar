@@ -1,6 +1,6 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
-// found in the Chromium LICENSE file.
+// found in the Monyhar LICENSE file.
 
 #include "qcms.h"
 #include "qcms_test_util.h"

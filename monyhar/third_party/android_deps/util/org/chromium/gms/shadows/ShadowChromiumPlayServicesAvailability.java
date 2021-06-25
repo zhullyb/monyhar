@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 package org.monyhar.gms.shadows;
@@ -10,15 +10,15 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 
-import org.monyhar.gms.ChromiumPlayServicesAvailability;
+import org.monyhar.gms.MonyharPlayServicesAvailability;
 
-@Implements(ChromiumPlayServicesAvailability.class)
-public class ShadowChromiumPlayServicesAvailability {
-    private static boolean sChromiumSuccess;
+@Implements(MonyharPlayServicesAvailability.class)
+public class ShadowMonyharPlayServicesAvailability {
+    private static boolean sMonyharSuccess;
     private static int sConnectionResult;
 
     public static void setIsGooglePlayServicesAvailable(boolean value) {
-        sChromiumSuccess = value;
+        sMonyharSuccess = value;
     }
     public static void setGetGooglePlayServicesConnectionResult(int value) {
         sConnectionResult = value;
@@ -31,6 +31,6 @@ public class ShadowChromiumPlayServicesAvailability {
 
     @Implementation
     public static boolean isGooglePlayServicesAvailable(final Context context) {
-        return sChromiumSuccess;
+        return sMonyharSuccess;
     }
 }

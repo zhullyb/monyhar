@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ enum HighEntropyType {
   HIGH_ENTROPY_DIRECT = 3;
 }
 
-// Includes both WebIDL defined extended attributes as well as Chromium specific
+// Includes both WebIDL defined extended attributes as well as Monyhar specific
 // custom extended attributes.
 //
 // The latter are described in:
@@ -107,7 +107,7 @@ message ExtendedAttributes {
 message InterfaceLike {
   // Must be non-empty and must satisfy the requirements outlined in
   // https://heycam.github.io/webidl/#idl-names . This should be trivially
-  // satisfied for all valid WebIDLs in the Chromium tree.
+  // satisfied for all valid WebIDLs in the Monyhar tree.
   string name = 1;
 
   // If this interface is defined to inherit from another interface, the latter
@@ -255,7 +255,7 @@ message Typedef {
 }
 
 message SourceLocation {
-  // Relative to the root of the Chromium source tree. So pretty much all
+  // Relative to the root of the Monyhar source tree. So pretty much all
   // strings start with 'third_party/blink/...'
   string filename = 1;
 

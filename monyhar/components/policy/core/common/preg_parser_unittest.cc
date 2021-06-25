@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ const char kRegistryPolFile[] = "parser_test/registry.pol";
 const char kInvalidEncodingRegistryPolFile[] = "invalid_encoding/registry.pol";
 const char kNonExistingRegistryPolFile[] = "does_not_exist.pol";
 
-const char16_t kRegistryKey[] = u"SOFTWARE\\Policies\\Chromium";
+const char16_t kRegistryKey[] = u"SOFTWARE\\Policies\\Monyhar";
 
 // Check whether two RegistryDicts equal each other.
 testing::AssertionResult RegistryDictEquals(const RegistryDict& a,

@@ -41,10 +41,10 @@ Applied the following patches:
   provided via component updater. The used dictionaries can be found at
   https://github.com/rianhunter/zxcvbn-cpp/tree/cf092c952cd2325ce390b2691231a8f1cb195d59/data
 - Removed the demo/ folder and zxcvbnn_post.js from the checkout. They only
-  contained JavaScript that is irrevelant for the intended usage in Chromium.
+  contained JavaScript that is irrevelant for the intended usage in Monyhar.
 - Removed Python sources, unneeded config files, JavaScript bindings, C wrapper
   and incomplete C++ entrypoints from native-src, since they are unused / not
-  necessary for Chromium, includes applying patches/no-c-api.diff.
+  necessary for Monyhar, includes applying patches/no-c-api.diff.
 - patches/reduce_memory_usage.diff: Reduce browser memory usage by ~2.0 MiB on
   64bit, ~0.65 MiB on 32bit (https://crrev.com/c/2842124).
 

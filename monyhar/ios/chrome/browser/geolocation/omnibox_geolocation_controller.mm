@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ namespace {
 
 // Values for the histograms that record the user's action when prompted to
 // authorize the use of location by Chrome. These match the definition of
-// GeolocationAuthorizationAction in Chromium
+// GeolocationAuthorizationAction in Monyhar
 // src-internal/tools/histograms/histograms.xml.
 typedef enum {
   // The user authorized use of location.

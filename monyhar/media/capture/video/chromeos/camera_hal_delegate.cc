@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -252,7 +252,7 @@ void CameraHalDelegate::GetSupportedFormats(
     // hard-code the usage that all the clients should be using.
     constexpr gfx::BufferUsage kClientBufferUsage =
         gfx::BufferUsage::VEA_READ_CAMERA_AND_CPU_READ_WRITE;
-    const ChromiumPixelFormat cr_format =
+    const MonyharPixelFormat cr_format =
         camera_buffer_factory_->ResolveStreamBufferFormat(hal_format,
                                                           kClientBufferUsage);
     if (cr_format.video_format == PIXEL_FORMAT_UNKNOWN) {

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -886,7 +886,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
 scoped_refptr<base::SingleThreadTaskRunner>
 RenderThreadImpl::CreateVideoFrameCompositorTaskRunner() {
   if (!video_frame_compositor_task_runner_) {
-    // All of Chromium's GPU code must know which thread it's running on, and
+    // All of Monyhar's GPU code must know which thread it's running on, and
     // be the same thread on which the rendering context was initialized. This
     // is why this must be a SingleThreadTaskRunner instead of a
     // SequencedTaskRunner.

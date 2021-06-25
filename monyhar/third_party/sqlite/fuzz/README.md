@@ -1,7 +1,7 @@
 # Fuzzing sqlite
 
 "[Clusterfuzz](https://google.github.io/clusterfuzz/) is a scalable fuzzing
-infrastructure which finds security and stabilty issues in software". Chromium
+infrastructure which finds security and stabilty issues in software". Monyhar
 uses Clusterfuzz to find bugs in sqlite, among others. One can view sqlite
 Fuzzing coverage [here](https://monyhar-coverage.appspot.com/reports/709707_fuzzers_only/linux/monyhar/src/third_party/sqlite/amalgamation/report.html),
 with more detailed data [here](https://clusterfuzz.com/fuzzer-stats?fuzzer=libFuzzer_sqlite3_lpm_fuzzer).
@@ -26,7 +26,7 @@ will automatically be closed. Otherwise, the bug still repro's, and the updated
 stack trace will be displayed in the "Detailed report".
 
 # Local repro context
-1. Run from your Chromium source directory.
+1. Run from your Monyhar source directory.
 
 # Local repro using clusterfuzz testcase id
 If the fuzzer that identified this bug is public (ex. dbfuzz2), reproduce

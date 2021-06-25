@@ -72,7 +72,7 @@ Si ya está marcada la casilla "<ph name="SERVICE_SCRIPT_NAME" />", desmárcala 
 <translation id="4405930547258349619">Biblioteca principal</translation>
 <translation id="443560535555262820">Abrir las preferencias de Accesibilidad</translation>
 <translation id="4450893287417543264">No volver a mostrar</translation>
-<translation id="4512952200932940229">Copyright 2021 The Chromium Authors. Todos los derechos reservados.</translation>
+<translation id="4512952200932940229">Copyright 2021 The Monyhar Authors. Todos los derechos reservados.</translation>
 <translation id="4513946894732546136">Comentario</translation>
 <translation id="4563926062592110512">Cliente desconectado: <ph name="CLIENT_USERNAME" /></translation>
 <translation id="4635770493235256822">Dispositivos remotos</translation>
@@ -147,7 +147,7 @@ Si ya está marcada la casilla "<ph name="SERVICE_SCRIPT_NAME" />", desmárcala 
 <translation id="7868137160098754906">Ingresa tu PIN para la computadora remota.</translation>
 <translation id="7895403300744144251">Las políticas de seguridad en la computadora remota no admiten conexiones de tu cuenta.</translation>
 <translation id="7936528439960309876">Acoplar a la derecha</translation>
-<translation id="7970576581263377361">Se produjo un error de autenticación. Vuelve a acceder a Chromium.</translation>
+<translation id="7970576581263377361">Se produjo un error de autenticación. Vuelve a acceder a Monyhar.</translation>
 <translation id="7981525049612125370">La sesión remota expiró.</translation>
 <translation id="8038111231936746805">(predeterminado)</translation>
 <translation id="8041089156583427627">Enviar comentario</translation>
@@ -181,6 +181,6 @@ Si ya está marcada la casilla "<ph name="SERVICE_SCRIPT_NAME" />", desmárcala 
 <translation id="9187628920394877737">Otorga el permiso de "Grabación de pantalla" a <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Configuración del host no válida</translation>
 <translation id="981121421437150478">Sin conexión</translation>
-<translation id="985602178874221306">Los creadores de Chromium</translation>
+<translation id="985602178874221306">Los creadores de Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (en línea por última vez: <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

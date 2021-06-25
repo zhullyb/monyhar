@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -37,7 +37,7 @@ def blink_class_name(idl_definition):
         # (X or sequence<Y or Z>) and (X or Y or sequence<Z>) have the same
         # name, but it's highly unlikely to cause a conflict in the actual use
         # cases.  Plus, we prefer a simple naming rule conformant to the
-        # Chromium coding style.  So, we go with this way.
+        # Monyhar coding style.  So, we go with this way.
         return "V8Union{}".format("Or".join(idl_definition.member_tokens))
     else:
         return idl_definition.identifier

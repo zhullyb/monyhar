@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -187,7 +187,7 @@ class PerfBenchmarkTest(unittest.TestCase):
     benchmark.CustomizeOptions(options)
     self._ExpectAdTaggingProfileFiles(options.browser_options, True)
 
-  def testAdTaggingRulesetNoExplicitOutDirAndroidChromium(self):
+  def testAdTaggingRulesetNoExplicitOutDirAndroidMonyhar(self):
     self._PopulateGenFiles(os.path.join(self._chrome_root, 'out', 'Default'))
 
     benchmark = perf_benchmark.PerfBenchmark()

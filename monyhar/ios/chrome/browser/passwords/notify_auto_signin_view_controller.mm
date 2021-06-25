@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -35,7 +35,7 @@ const net::NetworkTrafficAnnotationTag kTrafficAnnotation =
         semantics {
           sender: "Chrome Password Manager"
           description:
-            "Every credential saved in Chromium via the Credential Management "
+            "Every credential saved in Monyhar via the Credential Management "
             "API can have an avatar URL. The URL is essentially provided by "
             "the site calling the API. The avatar is used in the account "
             "chooser UI and auto signin toast which appear when a site calls "
@@ -43,7 +43,7 @@ const net::NetworkTrafficAnnotationTag kTrafficAnnotation =
             "showing the UI."
           trigger:
             "User visits a site that calls navigator.credentials.get(). "
-            "Assuming there are matching credentials in the Chromium password "
+            "Assuming there are matching credentials in the Monyhar password "
             "store, the avatars are retrieved."
           data: "Only avatar URL, no user data."
           destination: WEBSITE

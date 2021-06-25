@@ -171,4 +171,4 @@ See https://code.google.com/p/android/issues/detail?id=55863
 Additionally, it is unclear how to automate the creation of a '.aar' file
 outside of Android Studio and Gradle. If the entire workflow were controlled
 by Gradle, it would be one thing; but presently the cronet jars are
-produced as artifacts of the Chromium build which uses Ninja.
+produced as artifacts of the Monyhar build which uses Ninja.

@@ -1,16 +1,16 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // Next min version: 1
 
 // NOTE: This mojom exists in two places and must be kept in sync:
-//       Chromium:  //chromeos/components/sensors/mojom/
+//       Monyhar:  //chromeos/components/sensors/mojom/
 //       Chrome OS: src/platform2/iioservice/mojo/
-//       Note: Other repos downstream of Chromium might also use this mojom.
+//       Note: Other repos downstream of Monyhar might also use this mojom.
 // Example: A backwards-compatible mojom change (and corresponding
 // implementation change) can be made in Chrome OS first, then replicated to the
-// clients (Chromium, other downstream repos) later.
+// clients (Monyhar, other downstream repos) later.
 
 module chromeos.sensors.mojom;
 

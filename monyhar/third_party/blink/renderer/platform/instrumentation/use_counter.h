@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -23,7 +23,7 @@ using WebFeature = mojom::WebFeature;
 // a counting function multiple times for the same UseCounter with the same
 // feature will be ignored.
 //
-// The Chromium Content layer controls what is done with this data.
+// The Monyhar Content layer controls what is done with this data.
 //
 // For instance, in Google Chrome, these counts are submitted anonymously
 // through the UMA histogram recording system in Chrome for users who have the

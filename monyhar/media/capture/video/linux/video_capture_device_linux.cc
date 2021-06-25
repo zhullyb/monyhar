@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,11 +37,11 @@ int TranslatePowerLineFrequencyToV4L2(PowerLineFrequency frequency) {
 
 }  // namespace
 
-// Translates Video4Linux pixel formats to Chromium pixel formats.
+// Translates Video4Linux pixel formats to Monyhar pixel formats.
 // static
-VideoPixelFormat VideoCaptureDeviceLinux::V4l2FourCcToChromiumPixelFormat(
+VideoPixelFormat VideoCaptureDeviceLinux::V4l2FourCcToMonyharPixelFormat(
     uint32_t v4l2_fourcc) {
-  return V4L2CaptureDelegate::V4l2FourCcToChromiumPixelFormat(v4l2_fourcc);
+  return V4L2CaptureDelegate::V4l2FourCcToMonyharPixelFormat(v4l2_fourcc);
 }
 
 // Gets a list of usable Four CC formats prioritized.

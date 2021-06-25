@@ -8,6 +8,6 @@ This is *not* a production quality browser and does not implement suitable
 security UI to be used for anything other than testing WebView. This should not
 be shipped anywhere or used as the basis for implementing a browser.
 
-To build a full-fledged browser for Android, we'd recommend building Chromium
+To build a full-fledged browser for Android, we'd recommend building Monyhar
 for Android instead of using WebView:
 https://www.monyhar.org/developers/how-tos/android-build-instructions

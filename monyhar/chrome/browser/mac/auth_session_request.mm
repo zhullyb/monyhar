@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -192,7 +192,7 @@ Browser* AuthSessionRequest::CreateBrowser(
   //
   // But the critical security concern is that the window *must have* a location
   // indication. This is an OS API for which UI needs to be created to allow the
-  // user to log into a website by providing credentials. Chromium must provide
+  // user to log into a website by providing credentials. Monyhar must provide
   // the user with an indication of where they are using the credentials.
   //
   // Having a location indicator that is present but read-only is satisfied with

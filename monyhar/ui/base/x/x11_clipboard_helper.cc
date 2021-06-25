@@ -1,4 +1,4 @@
-// Copyright (c) 2021 The Chromium Authors. All rights reserved.
+// Copyright (c) 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -141,14 +141,14 @@ XClipboardHelper::XClipboardHelper(
     SelectionChangeCallback selection_change_callback)
     : connection_(x11::Connection::Get()),
       x_root_window_(ui::GetX11RootWindow()),
-      x_window_(x11::CreateDummyWindow("Chromium Clipboard Window")),
+      x_window_(x11::CreateDummyWindow("Monyhar Clipboard Window")),
       selection_requestor_(std::make_unique<SelectionRequestor>(x_window_)),
       clipboard_owner_(connection_, x_window_, x11::GetAtom(kClipboard)),
       primary_owner_(connection_, x_window_, x11::Atom::PRIMARY) {
   DCHECK(selection_requestor_);
 
   x11::SetStringProperty(x_window_, x11::Atom::WM_NAME, x11::Atom::STRING,
-                         "Chromium clipboard");
+                         "Monyhar clipboard");
   x_window_events_ = std::make_unique<x11::XScopedEventSelector>(
       x_window_, x11::EventMask::PropertyChange);
   connection_->AddEventObserver(this);

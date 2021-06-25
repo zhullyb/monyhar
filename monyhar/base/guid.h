@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -88,7 +88,7 @@ class BASE_EXPORT GUID {
 };
 
 // For runtime usage only. Do not store the result of this hash, as it may
-// change in future Chromium revisions.
+// change in future Monyhar revisions.
 struct BASE_EXPORT GUIDHash {
   size_t operator()(const GUID& guid) const {
     // TODO(crbug.com/1026195): Avoid converting to string to take the hash when

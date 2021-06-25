@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1065,7 +1065,7 @@ IN_PROC_BROWSER_TEST_F(FindInPageControllerTest, FindMovesWhenObscuring) {
       browser()->tab_strip_model()->GetActiveWebContents();
 
   int moved_x_coord = FindInPageTillBoxMoves(web_contents, start_position.x(),
-                                             "Chromium", kMoveIterations);
+                                             "Monyhar", kMoveIterations);
   // The find box should have moved.
   EXPECT_TRUE(moved_x_coord != start_position.x());
 
@@ -1081,7 +1081,7 @@ IN_PROC_BROWSER_TEST_F(FindInPageControllerTest, FindMovesWhenObscuring) {
 
   // Move the find box again.
   moved_x_coord = FindInPageTillBoxMoves(web_contents, start_position.x(),
-                                         "Chromium", kMoveIterations);
+                                         "Monyhar", kMoveIterations);
   EXPECT_TRUE(moved_x_coord != start_position.x());
 
   // Search for an invalid string.

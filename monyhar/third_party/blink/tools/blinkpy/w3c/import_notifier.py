@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Sends notifications after automatic imports from web-platform-tests (WPT).
@@ -101,7 +101,7 @@ class ImportNotifier(object):
 
         Returns:
             A dictionary mapping test names to paths of their baselines changed
-            in this import CL (paths relative to the root of Chromium repo).
+            in this import CL (paths relative to the root of Monyhar repo).
         """
         test_baselines = {}
         changed_files = self.git.changed_files()
@@ -317,7 +317,7 @@ class ImportNotifier(object):
 
         Args:
             imported_commits: A list of (SHA, commit subject) pairs.
-            directory: An absolute path of a directory in the Chromium repo, for
+            directory: An absolute path of a directory in the Monyhar repo, for
                 which the list is formatted.
 
         Returns:

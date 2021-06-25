@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -125,7 +125,7 @@ public class AutofillPopupBridge implements AutofillDelegate, DialogInterface.On
 
     @CalledByNative
     private void confirmDeletion(String title, String body) {
-        mDeletionDialog = new AlertDialog.Builder(mContext, R.style.Theme_Chromium_AlertDialog)
+        mDeletionDialog = new AlertDialog.Builder(mContext, R.style.Theme_Monyhar_AlertDialog)
                                   .setTitle(title)
                                   .setMessage(body)
                                   .setNegativeButton(R.string.cancel, null)

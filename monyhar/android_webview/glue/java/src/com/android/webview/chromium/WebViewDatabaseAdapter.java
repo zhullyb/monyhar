@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,16 +14,16 @@ import org.monyhar.base.ThreadUtils;
 import java.util.concurrent.Callable;
 
 /**
- * Chromium implementation of WebViewDatabase -- forwards calls to the
+ * Monyhar implementation of WebViewDatabase -- forwards calls to the
  * monyhar internal implementation.
  */
 @SuppressWarnings("deprecation")
 final class WebViewDatabaseAdapter extends WebViewDatabase {
-    private final WebViewChromiumFactoryProvider mFactory;
+    private final WebViewMonyharFactoryProvider mFactory;
     private final HttpAuthDatabase mHttpAuthDatabase;
 
     public WebViewDatabaseAdapter(
-            WebViewChromiumFactoryProvider factory, HttpAuthDatabase httpAuthDatabase) {
+            WebViewMonyharFactoryProvider factory, HttpAuthDatabase httpAuthDatabase) {
         mFactory = factory;
         mHttpAuthDatabase = httpAuthDatabase;
     }
@@ -131,7 +131,7 @@ final class WebViewDatabaseAdapter extends WebViewDatabase {
 
     private static boolean checkNeedsPost() {
         // Init is guaranteed to have happened if a WebViewDatabaseAdapter is created, so do not
-        // need to check WebViewChromiumFactoryProvider.hasStarted.
+        // need to check WebViewMonyharFactoryProvider.hasStarted.
         return !ThreadUtils.runningOnUiThread();
     }
 }

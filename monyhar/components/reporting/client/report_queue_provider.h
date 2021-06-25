@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -79,12 +79,12 @@ class ReportQueueProvider {
   using CreateReportQueueResponse = StatusOr<std::unique_ptr<ReportQueue>>;
 
   // The response will come back utilizing the ReportQueueProvider's thread. It
-  // is likely that within Chromium you will want to the response to come back
+  // is likely that within Monyhar you will want to the response to come back
   // on your own thread. The simplest way to achieve that is to pass a
   // base::BindPostTask rather than a base::OnceCallback. Another way to achieve
   // the same result is to utilize base::OnceCallback, and capture the response
   // and forward it to your own thread. We maintain base::OnceCallback here for
-  // use in ChromiumOS.
+  // use in MonyharOS.
   using CreateReportQueueCallback =
       base::OnceCallback<void(CreateReportQueueResponse)>;
 

@@ -19,14 +19,14 @@ def _PullAbseil(abseil_dir):
   subprocess.check_call(['git', 'clone', ABSL_URI],
                         cwd=abseil_dir)
 
-def _SyncChromium(monyhar_dir):
+def _SyncMonyhar(monyhar_dir):
   logging.info('Updating monyhar...')
   subprocess.check_call(['git', 'checkout', 'main'], cwd=monyhar_dir)
   subprocess.check_call(['git', 'pull', '--rebase'], cwd=monyhar_dir)
   subprocess.check_call(['gclient', 'sync'], cwd=monyhar_dir)
 
 
-def _UpdateChromiumReadme(readme_filename, abseil_dir):
+def _UpdateMonyharReadme(readme_filename, abseil_dir):
   logging.info('Updating ' + readme_filename)
 
   stdout = subprocess.check_output(['git', 'log', '-n1', '--pretty=short'],
@@ -48,7 +48,7 @@ def _UpdateChromiumReadme(readme_filename, abseil_dir):
   return old_revision[0:10] + '..' + new_revision[0:10]
 
 
-def _UpdateAbseilInChromium(abseil_dir, monyhar_dir):
+def _UpdateAbseilInMonyhar(abseil_dir, monyhar_dir):
  logging.info('Syncing abseil in monyhar/src/third_party...')
  exclude = [
    '*BUILD.gn',
@@ -101,7 +101,7 @@ Bug: None""".format(hash_diff)
 def _Roll():
   monyhar_dir = os.getcwd()
   abseil_in_monyhar_dir = os.path.join(monyhar_dir, 'third_party', 'abseil-cpp')
-  _SyncChromium(monyhar_dir)
+  _SyncMonyhar(monyhar_dir)
 
   branch_name = datetime.today().strftime('rolling-absl-%Y%m%d')
   logging.info('Creating branch ' + branch_name + ' for the roll...')
@@ -110,8 +110,8 @@ def _Roll():
   with tempfile.TemporaryDirectory() as abseil_root:
     _PullAbseil(abseil_root)
     abseil_dir = os.path.join(abseil_root, 'abseil-cpp')
-    _UpdateAbseilInChromium(abseil_dir, monyhar_dir)
-    hash_diff = _UpdateChromiumReadme(os.path.join(abseil_in_monyhar_dir, 'README.monyhar'),
+    _UpdateAbseilInMonyhar(abseil_dir, monyhar_dir)
+    hash_diff = _UpdateMonyharReadme(os.path.join(abseil_in_monyhar_dir, 'README.monyhar'),
                                       abseil_dir)
 
   _PatchAbseil(abseil_in_monyhar_dir)

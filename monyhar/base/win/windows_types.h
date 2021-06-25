@@ -1,4 +1,4 @@
-// Copyright (c) 2014 The Chromium Authors. All rights reserved.
+// Copyright (c) 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -249,7 +249,7 @@ WINBASEAPI HLOCAL WINAPI LocalFree(_In_ HLOCAL hMem);
 #endif
 
 // These macros are all defined by windows.h and are also used as the names of
-// functions in the Chromium code base. Add to this list as needed whenever
+// functions in the Monyhar code base. Add to this list as needed whenever
 // there is a Windows macro which causes a function call to be renamed. This
 // ensures that the same renaming will happen everywhere. Includes of this file
 // can be added wherever needed to ensure this consistent renaming.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """A script to generate build.gradle from template and run fetch_all.py
@@ -183,7 +183,7 @@ def _write_cipd_yaml(libs_dir, version, cipd_yaml_path):
             data_files.append(os.path.join(androidx_rel_lib_dir, lib_file))
 
     contents = [
-        '# Copyright 2021 The Chromium Authors. All rights reserved.',
+        '# Copyright 2021 The Monyhar Authors. All rights reserved.',
         '# Use of this source code is governed by a BSD-style license that can be',
         '# found in the LICENSE file.',
         '# version: ' + version,

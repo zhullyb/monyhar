@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -52,7 +52,7 @@ public class PageLoadMetrics {
         /**
          * Called when Network Quality Estimate is available, once per page load, when the
          * load is started. This is guaranteed to be called before any other metric event
-         * below. If Chromium has just been started, this will likely be determined from
+         * below. If Monyhar has just been started, this will likely be determined from
          * the current connection type rather than actual network measurements and so
          * probably similar to what the ConnectivityManager reports.
          *

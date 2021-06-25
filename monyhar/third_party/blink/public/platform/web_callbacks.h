@@ -34,8 +34,8 @@
 namespace blink {
 
 // A WebCallbacks<S, T> represents a callback object. Typically it is created
-// in Blink and passed to Chromium, and onSuccess or onError will be called
-// from Chromium.
+// in Blink and passed to Monyhar, and onSuccess or onError will be called
+// from Monyhar.
 // When transferring ownership, use |std::unique_ptr<X>| as a type
 // parameter. Otherwise, |const X&| or |X| for a type parameter. It is
 // generally not preferred to use |X*| because the object ownership is not well

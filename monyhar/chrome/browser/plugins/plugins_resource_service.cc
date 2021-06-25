@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,7 +26,7 @@ constexpr net::NetworkTrafficAnnotationTag
         semantics {
           sender: "Plugins Resource Service"
           description:
-            "Fetches updates to the list of plugins known to Chromium. For a "
+            "Fetches updates to the list of plugins known to Monyhar. For a "
             "given plugin, this list contains the minimum version not "
             "containing known security vulnerabilities, and can be used to "
             "inform the user that their plugins need to be updated."

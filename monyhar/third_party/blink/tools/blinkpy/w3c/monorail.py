@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -73,9 +73,9 @@ class MonorailIssue(object):
                            priority='3',
                            type='Bug',
                            labels=None):
-        """Creates a minimal new Chromium issue.
+        """Creates a minimal new Monyhar issue.
 
-        Chromium requires at least summary, priority and type: you must provide
+        Monyhar requires at least summary, priority and type: you must provide
         the summary, whereas priority defaults to 3 and type defaults to Bug.
 
         Args:

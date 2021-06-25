@@ -54,7 +54,7 @@ both `loop.Run()` and `loop.Quit()` have happened. If the `Quit` happens
 before the `Run`, the `Run` will be a no-op; if the `Quit` happens after the
 `Run` has started, the `Run` will exit after the `Quit`.
 
-## How to use this pattern in Chromium:
+## How to use this pattern in Monyhar:
 
 If the asynchronous thing in question takes a completion callback:
 

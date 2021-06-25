@@ -2162,7 +2162,7 @@ Jeśli włączysz tę zasadę, wartości z zasad platformy komputera, zasad chm
 <translation id="5148753489738115745">Pozwala określić dodatkowe parametry używane, gdy <ph name="PRODUCT_FRAME_NAME" /> uruchamia <ph name="PRODUCT_NAME" />.
 
           Jeśli ta zasada nie jest ustawiona, używany jest domyślny wiersz polecenia.</translation>
-<translation id="5152787786897382519">Chromium i Google Chrome mają grupy zależnych od siebie zasad, które umożliwiają sterowanie funkcjami. Te zestawy są reprezentowane przez następujące grupy zasad. Ponieważ zasady mogą mieć wiele źródeł, stosowane są tylko wartości ze źródła o najwyższym priorytecie. Wartości ze źródła o niższych priorytetach są ignorowane. Priorytety są zdefiniowane tutaj: <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Monyhar i Google Chrome mają grupy zależnych od siebie zasad, które umożliwiają sterowanie funkcjami. Te zestawy są reprezentowane przez następujące grupy zasad. Ponieważ zasady mogą mieć wiele źródeł, stosowane są tylko wartości ze źródła o najwyższym priorytecie. Wartości ze źródła o niższych priorytetach są ignorowane. Priorytety są zdefiniowane tutaj: <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Częstotliwość wysyłania pakietów sieciowych monitorowania (w milisekundach).
 
       Jeśli ta zasada nie jest skonfigurowana, domyślny odstęp czasu wynosi trzy minuty.
@@ -3808,7 +3808,7 @@ Zakładki są umieszczane w folderze, którego użytkownik nie może modyfikowa
       Jeśli ta opcja nie zostanie ustawiona, <ph name="PRODUCT_OS_NAME" /> użyje identyfikatora konta e-mail lokalnego konta na urządzeniu jako nazwy wyświetlanej na ekranie logowania.
 
       Ta zasada jest ignorowana w przypadku zwykłych kont użytkownika.</translation>
-<translation id="8259375588339409826">Zarówno Chromium, jak i Google Chrome obsługują jednakowy zestaw zasad. Ten dokument może zawierać nieopublikowane zasady (tzn. wpis „Obsługiwana przez” odnosi się do jeszcze nieopublikowanej wersji <ph name="PRODUCT_NAME" />), które mogą zostać zmienione lub usunięte bez powiadomienia i nie podlegają żadnej gwarancji. Między innymi nie ma żadnych gwarancji dotyczących ich zabezpieczeń i właściwości związanych z prywatnością.
+<translation id="8259375588339409826">Zarówno Monyhar, jak i Google Chrome obsługują jednakowy zestaw zasad. Ten dokument może zawierać nieopublikowane zasady (tzn. wpis „Obsługiwana przez” odnosi się do jeszcze nieopublikowanej wersji <ph name="PRODUCT_NAME" />), które mogą zostać zmienione lub usunięte bez powiadomienia i nie podlegają żadnej gwarancji. Między innymi nie ma żadnych gwarancji dotyczących ich zabezpieczeń i właściwości związanych z prywatnością.
 
 Zasady te są przeznaczone do konfigurowania <ph name="PRODUCT_NAME" /> tylko na wewnętrzny użytek Twojej organizacji. Użycie ich poza nią (np. w programie rozpowszechnianym publicznie) spowoduje uznanie oprogramowania za złośliwe – prawdopodobnie tak zostanie ono oznaczone przez Google i programy antywirusowe.
 

@@ -1,4 +1,4 @@
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -38,7 +38,7 @@ def AddLocalRepoThirdPartyDirToModulePath():
   assuming the script falls somewhere within a 'mojo' directory, and insert the
   top-level 'third_party' directory early in the module search path. Used to
   ensure that third-party dependencies provided within the repository itself
-  (e.g. Chromium sources include snapshots of jinja2 and ply) are preferred over
+  (e.g. Monyhar sources include snapshots of jinja2 and ply) are preferred over
   locally installed system library packages."""
   toplevel_dir = _GetDirAbove('mojo')
   if toplevel_dir:

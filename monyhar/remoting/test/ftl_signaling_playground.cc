@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -251,7 +251,7 @@ void FtlSignalingPlayground::InitializeTransport() {
   protocol::NetworkSettings network_settings(
       protocol::NetworkSettings::NAT_TRAVERSAL_FULL);
   auto transport_context = base::MakeRefCounted<protocol::TransportContext>(
-      std::make_unique<protocol::ChromiumPortAllocatorFactory>(),
+      std::make_unique<protocol::MonyharPortAllocatorFactory>(),
       url_loader_factory_owner_->GetURLLoaderFactory(), network_settings,
       transport_role_);
   auto close_callback =

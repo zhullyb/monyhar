@@ -1,10 +1,10 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 # This file defines performance test scenarios related to playing video and
 # audio files using HTML5 APIs (as opposed to older tech like Flash and
-# Silverlight). These scenarios simply exercise the Chromium code in particular
+# Silverlight). These scenarios simply exercise the Monyhar code in particular
 # ways. The metrics that are produced are calculated in a separate step.
 
 import abc

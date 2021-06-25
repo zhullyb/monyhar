@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1649,7 +1649,7 @@ void FeatureInfo::InitializeFeatures() {
 
   // Only supporting OVR_multiview in passthrough mode - not implemented in
   // validating command decoder. The extension is only available in ANGLE and in
-  // that case Chromium should be using passthrough by default.
+  // that case Monyhar should be using passthrough by default.
   if (is_passthrough_cmd_decoder_ &&
       gfx::HasExtension(extensions, "GL_OVR_multiview2")) {
     AddExtensionString("GL_OVR_multiview2");

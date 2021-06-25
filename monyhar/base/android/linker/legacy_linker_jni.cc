@@ -1,8 +1,8 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This is the version of the Android-specific Chromium linker that uses
+// This is the version of the Android-specific Monyhar linker that uses
 // the crazy linker to load libraries.
 
 // This source code *cannot* depend on anything from base/ or the C++

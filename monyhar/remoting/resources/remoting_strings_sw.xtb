@@ -72,7 +72,7 @@ Ikiwa '<ph name="SERVICE_SCRIPT_NAME" />' tayari imechaguliwa, batilisha uteuzi 
 <translation id="4405930547258349619">Mkataba Kuu</translation>
 <translation id="443560535555262820">Fungua Mapendeleo ya Ufikivu</translation>
 <translation id="4450893287417543264">Usionyeshe tena</translation>
-<translation id="4512952200932940229">Hakimiliki 2021 Waandishi wa Chromium. Haki Zote zimehifadhiwa.</translation>
+<translation id="4512952200932940229">Hakimiliki 2021 Waandishi wa Monyhar. Haki Zote zimehifadhiwa.</translation>
 <translation id="4513946894732546136">Mwitiko</translation>
 <translation id="4563926062592110512">Kiteja kimeondolewa: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Vifaa vya mbali</translation>
@@ -147,7 +147,7 @@ Ikiwa '<ph name="SERVICE_SCRIPT_NAME" />' tayari imechaguliwa, batilisha uteuzi 
 <translation id="7868137160098754906">Tafadhali weka PIN yako ya kompyuta ya mbali.</translation>
 <translation id="7895403300744144251">Sera za faragha kuhusu kompyuta ya mbali haziruhusu miunganisho kutoka akaunti yako.</translation>
 <translation id="7936528439960309876">Isalie Kulia</translation>
-<translation id="7970576581263377361">Uidhinishaji haujafaulu. Tafadhali ingia kwenye Chromium tena.</translation>
+<translation id="7970576581263377361">Uidhinishaji haujafaulu. Tafadhali ingia kwenye Monyhar tena.</translation>
 <translation id="7981525049612125370">Kipindi cha mbali kimekwisha muda.</translation>
 <translation id="8038111231936746805">(chaguomsingi)</translation>
 <translation id="8041089156583427627">Tuma Maoni</translation>
@@ -181,6 +181,6 @@ Ikiwa '<ph name="SERVICE_SCRIPT_NAME" />' tayari imechaguliwa, batilisha uteuzi 
 <translation id="9187628920394877737">Ipe <ph name="PRODUCT_NAME" /> idhinisha ya 'Kurekodi Skrini'</translation>
 <translation id="9213184081240281106">Usanidi wa seva pangishi si sahihi.</translation>
 <translation id="981121421437150478">Nje ya mtandao</translation>
-<translation id="985602178874221306">Waandishi wa Chromium</translation>
+<translation id="985602178874221306">Waandishi wa Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (mara ya mwisho mtandaoni <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

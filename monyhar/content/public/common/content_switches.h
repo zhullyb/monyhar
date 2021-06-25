@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ CONTENT_EXPORT extern const char kBrowserSubprocessPath[];
 CONTENT_EXPORT extern const char kBrowserTest[];
 CONTENT_EXPORT extern const char kConversionsDebugMode[];
 CONTENT_EXPORT extern const char kDisable2dCanvasAntialiasing[];
-CONTENT_EXPORT extern const char kDisable2dCanvasImageChromium[];
+CONTENT_EXPORT extern const char kDisable2dCanvasImageMonyhar[];
 CONTENT_EXPORT extern const char kDisable3DAPIs[];
 CONTENT_EXPORT extern const char kDisableAccelerated2dCanvas[];
 CONTENT_EXPORT extern const char kDisableYUVImageDecoding[];
@@ -70,7 +70,7 @@ CONTENT_EXPORT extern const char kDisableNewContentRenderingTimeout[];
 CONTENT_EXPORT extern const char kDisableNotifications[];
 CONTENT_EXPORT extern const char kDisableOriginTrialControlledBlinkFeatures[];
 extern const char kDisablePepper3d[];
-CONTENT_EXPORT extern const char kDisablePepper3DImageChromium[];
+CONTENT_EXPORT extern const char kDisablePepper3DImageMonyhar[];
 CONTENT_EXPORT extern const char kDisablePermissionsAPI[];
 CONTENT_EXPORT extern const char kDisablePinch[];
 CONTENT_EXPORT extern const char kDisablePresentationAPI[];
@@ -91,7 +91,7 @@ CONTENT_EXPORT extern const char kDisableTargetBlankImpliesNoOpener[];
 CONTENT_EXPORT extern const char kDisableTestCerts[];
 CONTENT_EXPORT extern const char kDisableThreadedCompositing[];
 extern const char kDisableV8IdleTasks[];
-CONTENT_EXPORT extern const char kDisableWebGLImageChromium[];
+CONTENT_EXPORT extern const char kDisableWebGLImageMonyhar[];
 CONTENT_EXPORT extern const char kDisableWebSecurity[];
 CONTENT_EXPORT extern const char kDisableZeroCopyDxgiVideo[];
 CONTENT_EXPORT extern const char kDomAutomationController[];
@@ -131,7 +131,7 @@ CONTENT_EXPORT extern const char kEnableViewport[];
 CONTENT_EXPORT extern const char kEnableVtune[];
 CONTENT_EXPORT extern const char kEnableWebAuthDeprecatedMojoTestingApi[];
 CONTENT_EXPORT extern const char kEnableWebGLDraftExtensions[];
-CONTENT_EXPORT extern const char kEnableWebGLImageChromium[];
+CONTENT_EXPORT extern const char kEnableWebGLImageMonyhar[];
 CONTENT_EXPORT extern const char kEnableWebVR[];
 CONTENT_EXPORT extern const char kFieldTrialHandle[];
 CONTENT_EXPORT extern const char kFileUrlPathAlias[];

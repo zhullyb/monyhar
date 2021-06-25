@@ -556,7 +556,7 @@ This file contains the strings for ash.
         Swipe left with four fingers to switch to the previous desk
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_MESSAGE_LEARN_MORE" desc="The body of the notification to notify that the user should restart to get system updates. This notification body links to the info page on the update.">
-        Learn more about the latest <ph name="SYSTEM_APP_NAME">$1<ex>Chromium OS</ex></ph> update
+        Learn more about the latest <ph name="SYSTEM_APP_NAME">$1<ex>Monyhar OS</ex></ph> update
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_RESTART_BUTTON" meaning="button label" desc="The label used as the button to restart system and update. Displayed as the action button of the notification for system update.">
         Restart to update
@@ -565,13 +565,13 @@ This file contains the strings for ash.
         Restart and reset
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_MESSAGE_POWERWASH" desc="The notification message used in the system notification update when user need to powerwash the device in order to update the system.">
-        This update requires powerwashing your device. Learn more about the latest <ph name="SYSTEM_APP_NAME">$1<ex>Chromium OS</ex></ph> update.
+        This update requires powerwashing your device. Learn more about the latest <ph name="SYSTEM_APP_NAME">$1<ex>Monyhar OS</ex></ph> update.
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_MESSAGE_ROLLBACK" desc="The notification message used in the system notification update when the device is rolled back and data will be deleted.">
         Your administrator is rolling back your device. All data will be deleted when the device is restarted.
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_MESSAGE_SLOW_BOOT" desc="The additional body of the notification to notify the user that the next reboot is slow.">
-        <ph name="UPDATE_TEXT">$1<ex>Learn more about the latest Chromium OS update</ex></ph>. This Chromebook needs to restart to apply an update. This can take up to 1 minute.
+        <ph name="UPDATE_TEXT">$1<ex>Learn more about the latest Monyhar OS update</ex></ph>. This Chromebook needs to restart to apply an update. This can take up to 1 minute.
       </message>
       <message name="IDS_DIALOG_TITLE_SLOW_BOOT" desc="The title of the Slow Boot Shutdown Confirmation Dialog.">
         Restart may take awhile
@@ -2847,7 +2847,7 @@ This file contains the strings for ash.
       </if>
       <if expr="not is_chrome_branded">
         <message name="IDS_ASH_MESSAGE_CENTER_SYSTEM_APP_NAME" desc="The source of a system-generated notification, as displayed to the user.">
-          Chromium OS
+          Monyhar OS
         </message>
       </if>
 

@@ -82,7 +82,7 @@ self.ScreenEnumerationTest = (() => {
     mockScreenEnumeration: null
   }
 
-  class ScreenEnumerationTestChromium {
+  class ScreenEnumerationTestMonyhar {
     constructor() {
       Object.freeze(this); // Makes it immutable.
     }
@@ -112,5 +112,5 @@ self.ScreenEnumerationTest = (() => {
     }
   }
 
-  return ScreenEnumerationTestChromium;
+  return ScreenEnumerationTestMonyhar;
 })();

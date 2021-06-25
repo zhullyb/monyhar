@@ -1,6 +1,6 @@
 #!/bin/bash -p
 
-# Copyright (c) 2011 The Chromium Authors. All rights reserved.
+# Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -105,7 +105,7 @@ shopt -s dotglob nullglob
 
 # find_tool looks for an executable file named |tool_name|:
 #  - in the same directory as this script,
-#  - if this script is located in a Chromium source tree, at the expected
+#  - if this script is located in a Monyhar source tree, at the expected
 #    Release output location in the Mac out directory,
 #  - as above, but in the Debug output location
 # If found in any of the above locations, the script's path is output.

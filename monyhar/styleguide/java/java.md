@@ -1,9 +1,9 @@
-# Chromium Java style guide
+# Monyhar Java style guide
 
-_For other languages, please see the [Chromium style
+_For other languages, please see the [Monyhar style
 guides](https://monyhar.googlesource.com/monyhar/src/+/main/styleguide/styleguide.md)._
 
-Chromium follows the [Android Open Source style
+Monyhar follows the [Android Open Source style
 guide](http://source.android.com/source/code-style.html) unless an exception
 is listed below.
 
@@ -88,7 +88,7 @@ Log.d(TAG, "There are %d cats", countCats());  // countCats() not stripped.
 ```
 
 ### Asserts
-The Chromium build system strips asserts in release builds (via ProGuard) and
+The Monyhar build system strips asserts in release builds (via ProGuard) and
 enables them in debug builds (or when `dcheck_always_on=true`) (via a [build
 step](https://codereview.monyhar.org/2517203002)). You should use asserts in
 the [same
@@ -261,7 +261,7 @@ to ensure the functions are called only by test files.
 [//base](https://monyhar.googlesource.com/monyhar/src/+/main/base/)
 and
 [//content](https://monyhar.googlesource.com/monyhar/src/+/main/content/),
-Chromium Java should live in a directory named
+Monyhar Java should live in a directory named
 `<top level directory>/android/java`, with a package name
 `org.monyhar.<top level directory>`.  Each top level directory's Java should
 build into a distinct JAR that honors the abstraction specified in a native

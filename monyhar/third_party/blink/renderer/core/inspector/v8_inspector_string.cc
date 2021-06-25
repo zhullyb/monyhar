@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -47,7 +47,7 @@ namespace protocol {
 
 // static
 String StringUtil::fromUTF16LE(const uint16_t* data, size_t length) {
-  // Chromium doesn't support big endian architectures, so it's OK to cast here.
+  // Monyhar doesn't support big endian architectures, so it's OK to cast here.
   return String(reinterpret_cast<const UChar*>(data), length);
 }
 

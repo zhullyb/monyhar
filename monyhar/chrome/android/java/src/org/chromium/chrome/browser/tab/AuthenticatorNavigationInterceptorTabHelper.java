@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,7 +11,7 @@ import org.monyhar.components.external_intents.AuthenticatorNavigationIntercepto
  * AuthenticatorNavigationInterceptor instance from a Tab while those API surfaces are being
  * refactored.
  * TODO(blundell): Delete this once InterceptNavigationDelegateTabHelper has landed and
- * InterceptNavigationDelegateImpl has been componentized in Chromium.
+ * InterceptNavigationDelegateImpl has been componentized in Monyhar.
  */
 public class AuthenticatorNavigationInterceptorTabHelper {
     public static AuthenticatorNavigationInterceptor getInterceptorForTab(Tab tab) {

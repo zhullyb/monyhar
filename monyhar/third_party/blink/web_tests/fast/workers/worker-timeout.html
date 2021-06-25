@@ -19,7 +19,7 @@ var worker = new Worker('resources/worker-timeout.js');
 worker.onmessage = function(evt) {
     log(evt.data);
     if (evt.data == "DONE") {
-        // This flag is needed because in Chromium port, the notifyDone() does not immediately snapshots
+        // This flag is needed because in Monyhar port, the notifyDone() does not immediately snapshots
         // the result and the still-firing timer in the worker may cause more messages to be logged before
         // actual termination of the test. However one objective of the test is to keep active interval
         // while the worker gets destroyed, so we freeze log rather then stop the interval from firing.

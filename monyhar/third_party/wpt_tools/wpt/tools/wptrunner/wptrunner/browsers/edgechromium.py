@@ -1,20 +1,20 @@
 from .base import Browser, ExecutorBrowser, require_arg
 from .base import NullBrowser  # noqa: F401
 from .base import get_timeout_multiplier   # noqa: F401
-from ..webdriver_server import EdgeChromiumDriverServer
+from ..webdriver_server import EdgeMonyharDriverServer
 from ..executors import executor_kwargs as base_executor_kwargs
 from ..executors.executorwebdriver import (WebDriverTestharnessExecutor,  # noqa: F401
                                            WebDriverRefTestExecutor)  # noqa: F401
-from ..executors.executoredgemonyhar import EdgeChromiumDriverWdspecExecutor  # noqa: F401
+from ..executors.executoredgemonyhar import EdgeMonyharDriverWdspecExecutor  # noqa: F401
 
 
 __wptrunner__ = {"product": "edgemonyhar",
                  "check_args": "check_args",
-                 "browser": {None: "EdgeChromiumBrowser",
+                 "browser": {None: "EdgeMonyharBrowser",
                              "wdspec": "NullBrowser"},
                  "executor": {"testharness": "WebDriverTestharnessExecutor",
                               "reftest": "WebDriverRefTestExecutor",
-                              "wdspec": "EdgeChromiumDriverWdspecExecutor"},
+                              "wdspec": "EdgeMonyharDriverWdspecExecutor"},
                  "browser_kwargs": "browser_kwargs",
                  "executor_kwargs": "executor_kwargs",
                  "env_extras": "env_extras",
@@ -82,9 +82,9 @@ def env_options():
     return {}
 
 
-class EdgeChromiumBrowser(Browser):
+class EdgeMonyharBrowser(Browser):
     """MicrosoftEdge is backed by MSEdgeDriver, which is supplied through
-    ``wptrunner.webdriver.EdgeChromiumDriverServer``.
+    ``wptrunner.webdriver.EdgeMonyharDriverServer``.
     """
 
     def __init__(self, logger, binary, webdriver_binary="msedgedriver",
@@ -93,7 +93,7 @@ class EdgeChromiumBrowser(Browser):
         the browser binary to use for testing."""
         Browser.__init__(self, logger)
         self.binary = binary
-        self.server = EdgeChromiumDriverServer(self.logger,
+        self.server = EdgeMonyharDriverServer(self.logger,
                                          binary=webdriver_binary,
                                          args=webdriver_args)
 

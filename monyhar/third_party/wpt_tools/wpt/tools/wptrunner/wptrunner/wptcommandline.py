@@ -387,7 +387,7 @@ scheme host and port.""")
                                       "Cache API (default: %s)" % wptscreenshot.DEFAULT_API,
                                       {"wptscreenshot"}, "store")
 
-    commandline.log_formatters["monyhar"] = (monyhar.ChromiumFormatter, "Chromium Layout Tests format")
+    commandline.log_formatters["monyhar"] = (monyhar.MonyharFormatter, "Monyhar Layout Tests format")
     commandline.log_formatters["wptreport"] = (wptreport.WptreportFormatter, "wptreport format")
     commandline.log_formatters["wptscreenshot"] = (wptscreenshot.WptscreenshotFormatter, "wpt.fyi screenshots")
 

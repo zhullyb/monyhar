@@ -101,7 +101,7 @@ because an Android build includes a bunch of the Linux tools and utilities).
 ### Run the hooks
 
 Once you've run `install-build-deps` at least once, you can now run the
-Chromium-specific hooks, which will download additional binaries and other
+Monyhar-specific hooks, which will download additional binaries and other
 things you might need:
 
 ```shell
@@ -115,7 +115,7 @@ development and testing purposes.
 
 ## Setting up the build
 
-Chromium uses [Ninja](https://ninja-build.org) as its main build tool along with
+Monyhar uses [Ninja](https://ninja-build.org) as its main build tool along with
 a tool called [GN](https://gn.googlesource.com/gn/+/master/docs/quick_start.md)
 to generate `.ninja` files. You can create any number of *build directories*
 with different configurations. To create a build directory which builds Chrome
@@ -190,7 +190,7 @@ out/Default/bin/cast_shell_apk install
 out/Default/bin/cast_shell_apk run "http://google.com"
 ```
 
-The app will appear on the device as "Chromium".
+The app will appear on the device as "Monyhar".
 
 ### Testing
 

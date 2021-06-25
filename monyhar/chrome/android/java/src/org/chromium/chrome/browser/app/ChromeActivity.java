@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1388,7 +1388,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
     }
 
-    // TODO(crbug.com/973781): Once Chromium is built against Android Q SDK, replace
+    // TODO(crbug.com/973781): Once Monyhar is built against Android Q SDK, replace
     // @SuppressWarnings with @Override
     @SuppressWarnings("MissingOverride")
     @TargetApi(29)
@@ -1398,7 +1398,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         mRootUiCoordinator.onPerformDirectAction(actionId, arguments, cancellationSignal, callback);
     }
 
-    // TODO(crbug.com/973781): Once Chromium is built against Android Q SDK:
+    // TODO(crbug.com/973781): Once Monyhar is built against Android Q SDK:
     //  - replace @SuppressWarnings with @Override
     //  - replace Consumer with Consumer<List<DirectAction>>
     @SuppressWarnings("MissingOverride")
@@ -2575,8 +2575,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     }
 
     private void setLowEndTheme() {
-        if (ActivityUtils.getThemeId() == R.style.Theme_Chromium_WithWindowAnimation_LowEnd) {
-            setTheme(R.style.Theme_Chromium_WithWindowAnimation_LowEnd);
+        if (ActivityUtils.getThemeId() == R.style.Theme_Monyhar_WithWindowAnimation_LowEnd) {
+            setTheme(R.style.Theme_Monyhar_WithWindowAnimation_LowEnd);
         }
     }
 

@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,8 +15,8 @@ import org.monyhar.net.ExperimentalCronetEngine;
 /**
  * Provides support for tests that depend on QUIC and HTTP2 servers.
  */
-class ChromiumNativeTestSupport extends ChromiumPlatformOnlyTestSupport {
-    private static final String TAG = ChromiumNativeTestSupport.class.getSimpleName();
+class MonyharNativeTestSupport extends MonyharPlatformOnlyTestSupport {
+    private static final String TAG = MonyharNativeTestSupport.class.getSimpleName();
 
     /**
      * Name of the file that contains the test server certificate in PEM format.

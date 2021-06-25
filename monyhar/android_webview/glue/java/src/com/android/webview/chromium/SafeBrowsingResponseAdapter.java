@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -14,7 +14,7 @@ import org.monyhar.android_webview.safe_browsing.AwSafeBrowsingResponse;
 import org.monyhar.base.Callback;
 
 /**
- * Chromium implementation of {@link SafeBrowsingResponse}.
+ * Monyhar implementation of {@link SafeBrowsingResponse}.
  */
 // TODO(ntfschr): remove @SuppressLint once lint uses 27 for targetSdk (this is needed to
 // subclass SafeBrowsingResponse)

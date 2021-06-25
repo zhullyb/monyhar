@@ -11,7 +11,7 @@ See also:
    [slides](https://docs.google.com/presentation/d/1YVqDmbXI0cllpfXD7TuewiexDNZYfwk6fRdmoXJbBlM/edit),
    for an overview from Chrome University.
  * [Navigation Concepts](navigation_concepts.md), for useful notes on
-   navigation-related concepts in Chromium.
+   navigation-related concepts in Monyhar.
 
 [TOC]
 
@@ -51,7 +51,7 @@ active. The other case is when the server responds with a `Content-Disposition`
 response header indicating that the response must be treated as a download
 instead of a navigation.
 
-If the server responds with a redirect, Chromium makes another request based on
+If the server responds with a redirect, Monyhar makes another request based on
 the HTTP response code and the Location header. The browser continues following
 redirects until either an error or a successful response is encountered.
 
@@ -92,9 +92,9 @@ complete.
 
 Even once navigation is complete, the user doesn't actually see the new page
 yet. Most people use the word navigation to describe the act of moving from
-one page to another, but in Chromium we separate that process into two phases.
+one page to another, but in Monyhar we separate that process into two phases.
 So far we have described the _navigation_ phase; once the navigation has been
-committed, Chromium moves into the _loading_ phase. Loading consists of
+committed, Monyhar moves into the _loading_ phase. Loading consists of
 reading the remaining response data from the server, parsing it, rendering the
 document so it is visible to the user, executing any script accompanying it,
 and loading any subresources specified by the document.
@@ -113,7 +113,7 @@ can, without showing an error page.
 
 ## WebContentsObserver
 
-Chromium exposes the various stages of navigation and document loading through
+Monyhar exposes the various stages of navigation and document loading through
 methods on the [WebContentsObserver] interface.
 
 ### Navigation

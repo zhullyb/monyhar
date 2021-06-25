@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@
 This script bisects a snapshot archive using binary search. It starts at
 a bad revision (it will try to guess HEAD) and asks for a last known-good
 revision. It will then binary search across this revision range by downloading,
-unzipping, and opening Chromium for you. After testing the specific revision,
+unzipping, and opening Monyhar for you. After testing the specific revision,
 it will ask you whether it is good or bad before continuing the search.
 """
 
@@ -166,13 +166,13 @@ class PathContext(object):
       elif self.platform == 'linux-arm':
         self._listing_platform_dir = 'Linux_ARM_Cross-Compile/'
       elif self.platform == 'chromeos':
-        self._listing_platform_dir = 'Linux_ChromiumOS_Full/'
+        self._listing_platform_dir = 'Linux_MonyharOS_Full/'
     elif self.platform in ('mac', 'mac64'):
       self._listing_platform_dir = 'Mac/'
-      self._binary_name = 'Chromium.app/Contents/MacOS/Chromium'
+      self._binary_name = 'Monyhar.app/Contents/MacOS/Monyhar'
     elif self.platform in ('mac-arm'):
       self._listing_platform_dir = 'Mac_Arm/'
-      self._binary_name = 'Chromium.app/Contents/MacOS/Chromium'
+      self._binary_name = 'Monyhar.app/Contents/MacOS/Monyhar'
     elif self.platform == 'win':
       self._listing_platform_dir = 'Win/'
     elif self.platform == 'win64':
@@ -327,7 +327,7 @@ class PathContext(object):
       # Optimization: Start paging at the last known revision (local cache).
       next_marker = _GetMarkerForRev(last_known_rev)
       # Optimization: Stop paging at the last known revision (remote).
-      last_change_rev = GetChromiumRevision(self, self.GetLastChangeURL())
+      last_change_rev = GetMonyharRevision(self, self.GetLastChangeURL())
       if last_known_rev == last_change_rev:
         return []
     else:
@@ -506,11 +506,11 @@ class PathContext(object):
       # Fix monyhar rev so that the deps blink revision matches REVISIONS file.
       if self.base_url == WEBKIT_BASE_URL:
         revlist_all.sort()
-        self.good_revision = FixChromiumRevForBlink(revlist,
+        self.good_revision = FixMonyharRevForBlink(revlist,
                                                     revlist_all,
                                                     self,
                                                     self.good_revision)
-        self.bad_revision = FixChromiumRevForBlink(revlist,
+        self.bad_revision = FixMonyharRevForBlink(revlist,
                                                    revlist_all,
                                                    self,
                                                    self.bad_revision)
@@ -563,7 +563,7 @@ def UnzipFilenameToDir(filename, directory):
 def FetchRevision(context, rev, filename, quit_event=None, progress_event=None):
   """Downloads and unzips revision |rev|.
   @param context A PathContext instance.
-  @param rev The Chromium revision number/tag to download.
+  @param rev The Monyhar revision number/tag to download.
   @param filename The destination for the downloaded file.
   @param quit_event A threading.Event which will be set by the master thread to
                     indicate that the download should be aborted.
@@ -725,7 +725,7 @@ def DidCommandSucceed(rev, exit_status, stdout, stderr):
 
 
 class DownloadJob(object):
-  """DownloadJob represents a task to download a given Chromium revision."""
+  """DownloadJob represents a task to download a given Monyhar revision."""
 
   def __init__(self, context, name, rev, zip_file):
     super(DownloadJob, self).__init__()
@@ -811,7 +811,7 @@ def Bisect(context,
   @param verify_range If true, tests the first and last revisions in the range
                       before proceeding with the bisect.
 
-  Threading is used to fetch Chromium revisions in the background, speeding up
+  Threading is used to fetch Monyhar revisions in the background, speeding up
   the user's experience. For example, suppose the bounds of the search are
   good_rev=0, bad_rev=100. The first revision to be checked is 50. Depending on
   whether revision 50 is good or bad, the next revision to check will be either
@@ -998,7 +998,7 @@ def Bisect(context,
   return (revlist[minrev], revlist[maxrev], context)
 
 
-def GetBlinkDEPSRevisionForChromiumRevision(self, rev):
+def GetBlinkDEPSRevisionForMonyharRevision(self, rev):
   """Returns the blink revision that was in REVISIONS file at
   monyhar revision |rev|."""
 
@@ -1013,10 +1013,10 @@ def GetBlinkDEPSRevisionForChromiumRevision(self, rev):
     blink_re = re.compile(r'webkit_revision\D*\d+;\D*\d+;(\w+)')
     blink_git_sha = _GetBlinkRev(url, blink_re)
     return self.GetSVNRevisionFromGitHash(blink_git_sha, 'blink')
-  raise Exception('Could not get Blink revision for Chromium rev %d' % rev)
+  raise Exception('Could not get Blink revision for Monyhar rev %d' % rev)
 
 
-def GetBlinkRevisionForChromiumRevision(context, rev):
+def GetBlinkRevisionForMonyharRevision(context, rev):
   """Returns the blink revision that was in REVISIONS file at
   monyhar revision |rev|."""
   def _IsRevisionNumber(revision):
@@ -1047,15 +1047,15 @@ def GetBlinkRevisionForChromiumRevision(context, rev):
     raise Exception('Could not get blink revision for cr rev %d' % rev)
 
 
-def FixChromiumRevForBlink(revisions_final, revisions, self, rev):
+def FixMonyharRevForBlink(revisions_final, revisions, self, rev):
   """Returns the monyhar revision that has the correct blink revision
   for blink bisect, DEPS and REVISIONS file might not match since
   blink snapshots point to tip of tree blink.
   Note: The revisions_final variable might get modified to include
   additional revisions."""
-  blink_deps_rev = GetBlinkDEPSRevisionForChromiumRevision(self, rev)
+  blink_deps_rev = GetBlinkDEPSRevisionForMonyharRevision(self, rev)
 
-  while (GetBlinkRevisionForChromiumRevision(self, rev) > blink_deps_rev):
+  while (GetBlinkRevisionForMonyharRevision(self, rev) > blink_deps_rev):
     idx = revisions.index(rev)
     if idx > 0:
       rev = revisions[idx-1]
@@ -1066,7 +1066,7 @@ def FixChromiumRevForBlink(revisions_final, revisions, self, rev):
   return rev
 
 
-def GetChromiumRevision(context, url):
+def GetMonyharRevision(context, url):
   """Returns the monyhar revision read from given URL."""
   try:
     # Location of the latest build revision number
@@ -1213,7 +1213,7 @@ def main():
                     '<args-to-pass-to-monyhar>" instead.')
   parser.add_option('-l', '--blink',
                     action='store_true',
-                    help='Use Blink bisect instead of Chromium. ')
+                    help='Use Blink bisect instead of Monyhar. ')
   parser.add_option('', '--not-interactive',
                     action='store_true',
                     default=False,
@@ -1269,7 +1269,7 @@ def main():
   # Pick a starting point, try to get HEAD for this.
   if not opts.bad:
     context.bad_revision = '999.0.0.0'
-    context.bad_revision = GetChromiumRevision(
+    context.bad_revision = GetMonyharRevision(
         context, context.GetLastChangeURL())
 
   # Find out when we were good.
@@ -1310,9 +1310,9 @@ def main():
 
   # Get corresponding blink revisions.
   try:
-    min_blink_rev = GetBlinkRevisionForChromiumRevision(context,
+    min_blink_rev = GetBlinkRevisionForMonyharRevision(context,
                                                         min_monyhar_rev)
-    max_blink_rev = GetBlinkRevisionForChromiumRevision(context,
+    max_blink_rev = GetBlinkRevisionForMonyharRevision(context,
                                                         max_monyhar_rev)
   except Exception:
     # Silently ignore the failure.

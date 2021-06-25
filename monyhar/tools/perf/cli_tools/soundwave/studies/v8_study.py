@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,8 +8,8 @@ from cli_tools.soundwave.tables import timeseries
 
 CLOUD_PATH = 'gs://chrome-health-tvdata/datasets/v8_report.csv'
 
-PIXEL_32_BITS = 'ChromiumPerf:android-pixel2-perf'
-PIXEL_64_BITS = 'ChromiumPerfFyi:android-pixel2-perf-fyi'
+PIXEL_32_BITS = 'MonyharPerf:android-pixel2-perf'
+PIXEL_64_BITS = 'MonyharPerfFyi:android-pixel2-perf-fyi'
 
 BROWSING_TEST_SUITES = {
     'v8.browsing_mobile': ['Total:duration', 'V8-Only:duration']

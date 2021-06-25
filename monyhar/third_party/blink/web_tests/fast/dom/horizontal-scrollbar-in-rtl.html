@@ -61,7 +61,7 @@
                 if (window.eventSender) {
                     // Not using assert equal here since the behavior is different in each port. 
                     // For example, in Mac, HOME/END key reset both x and y scroll position. 
-                    // In Chromium, HOME/END key only reset y scroll position, and x scroll position is preserved.
+                    // In Monyhar, HOME/END key only reset y scroll position, and x scroll position is preserved.
                     window.scrollTo(expectedScrollX, expectedScrollY);
                     eventSender.keyDown("Home");
                     log("KeyDown HOME move x-scroll position to right for RTL page: " + window.scrollX, 0);

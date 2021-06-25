@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">ਕੋਰ ਲਾਇਬ੍ਰੇਰੀ</translation>
 <translation id="443560535555262820">ਪਹੁੰਚਯੋਗਤਾ ਤਰਜੀਹਾਂ ਖੋਲ੍ਹੋ</translation>
 <translation id="4450893287417543264">ਦੁਬਾਰਾ ਨਾ ਦਿਖਾਓ</translation>
-<translation id="4512952200932940229">Copyright 2021 The Chromium Authors. ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ ਹਨ।</translation>
+<translation id="4512952200932940229">Copyright 2021 The Monyhar Authors. ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ ਹਨ।</translation>
 <translation id="4513946894732546136">ਵਿਚਾਰ</translation>
 <translation id="4563926062592110512">ਕਲਾਇੰਟ ਡਿਸਕਨੈਕਟ ਹੋ ਗਿਆ: <ph name="CLIENT_USERNAME" />।</translation>
 <translation id="4635770493235256822">ਰਿਮੋਟ ਡਿਵਾਈਸਾਂ</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">ਕਿਰਪਾ ਕਰਕੇ ਰਿਮੋਟ ਕੰਪਿਊਟਰ ਲਈ ਆਪਣਾ ਪਿੰਨ ਦਾਖਲ ਕਰੋ।</translation>
 <translation id="7895403300744144251">ਰਿਮੋਟ ਕੰਪਿਊਟਰ ਦੀਆਂ ਸੁਰੱਖਿਆ ਨੀਤੀਆਂ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਤੋਂ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੰਦੀਆਂ ਹਨ।</translation>
 <translation id="7936528439960309876">ਸੱਜੇ ਪਾਸੇ ਲਿਜਾਓ</translation>
-<translation id="7970576581263377361">ਪ੍ਰਮਾਣੀਕਰਨ ਅਸਫਲ ਰਿਹਾ। ਕਿਰਪਾ ਕਰਕੇ Chromium 'ਤੇ ਦੁਬਾਰਾ ਸਾਈਨ-ਇਨ ਕਰੋ।</translation>
+<translation id="7970576581263377361">ਪ੍ਰਮਾਣੀਕਰਨ ਅਸਫਲ ਰਿਹਾ। ਕਿਰਪਾ ਕਰਕੇ Monyhar 'ਤੇ ਦੁਬਾਰਾ ਸਾਈਨ-ਇਨ ਕਰੋ।</translation>
 <translation id="7981525049612125370">ਰਿਮੋਟ ਸੈਸ਼ਨ ਦੀ ਮਿਆਦ ਖਤਮ ਹੋ ਗਈ ਹੈ।</translation>
 <translation id="8038111231936746805">(ਪੂਰਵ-ਨਿਰਧਾਰਤ)</translation>
 <translation id="8041089156583427627">ਵਿਚਾਰ ਭੇਜੋ</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737"><ph name="PRODUCT_NAME" /> ਨੂੰ 'ਸਕ੍ਰੀਨ ਰਿਕਾਰਡਿੰਗ' ਇਜਾਜ਼ਤ ਦਿਓ</translation>
 <translation id="9213184081240281106">ਕ੍ਰੀਡੈਂਸ਼ੀਅਲ ਹੋਸਟ ਸੰਰੂਪਣ।</translation>
 <translation id="981121421437150478">ਆਫ਼ਲਾਈਨ</translation>
-<translation id="985602178874221306">The Chromium Authors</translation>
+<translation id="985602178874221306">The Monyhar Authors</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (ਪਿਛਲੀ ਵਾਰ ਆਨਲਾਈਨ <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

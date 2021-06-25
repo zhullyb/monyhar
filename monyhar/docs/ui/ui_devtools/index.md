@@ -9,7 +9,7 @@ and ChromeOS.
 
 There are two ways to enable UI DevTools:
 
-1. Run Chromium with default port 9223 and start Chromium with UI DevTools
+1. Run Monyhar with default port 9223 and start Monyhar with UI DevTools
    command line flag:
 
    ```shell
@@ -81,7 +81,7 @@ To exit inspect mode, either click the inspect icon again or press the Esc key.
 ### Sources Panel
 
 In the properties panel, each section has a source link in the upper right corner. When right-clicked,
-the context menu shows the option to "Open in new tab," which opens the class's header file in Chromium
+the context menu shows the option to "Open in new tab," which opens the class's header file in Monyhar
 code search.
 
 ![properties panel right click link]

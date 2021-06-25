@@ -1,8 +1,8 @@
 /* adler32_simd.h
  *
- * Copyright 2017 The Chromium Authors. All rights reserved.
+ * Copyright 2017 The Monyhar Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
- * found in the Chromium source repository LICENSE file.
+ * found in the Monyhar source repository LICENSE file.
  */
 
 #include <stdint.h>

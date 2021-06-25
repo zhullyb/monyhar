@@ -2,6 +2,6 @@
 ++[paragraph]
 ++++[static] name='This is '
 ++++[static] name='"'
-++++[static] name='Chromium Blink'
+++++[static] name='Monyhar Blink'
 ++++[static] name='"'
 ++++[static] name=' based browser.'

@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -163,24 +163,24 @@ std::string GaiaSource::ToString() {
       source_string = GaiaConstants::kChromeOSSource;
       break;
     case Type::kAccountReconcilorDice:
-      source_string = "ChromiumAccountReconcilorDice";
+      source_string = "MonyharAccountReconcilorDice";
       break;
     case Type::kAccountReconcilorMirror:
-      source_string = "ChromiumAccountReconcilor";
+      source_string = "MonyharAccountReconcilor";
       break;
     case Type::kOAuth2LoginVerifier:
-      source_string = "ChromiumOAuth2LoginVerifier";
+      source_string = "MonyharOAuth2LoginVerifier";
       break;
     case Type::kPrimaryAccountManager:
-      // Even though this string refers to an old name from the Chromium POV, it
+      // Even though this string refers to an old name from the Monyhar POV, it
       // should not be changed as it is passed server-side.
-      source_string = "ChromiumSigninManager";
+      source_string = "MonyharSigninManager";
       break;
   }
 
-  // All sources should start with Chromium or chromeos for better server logs.
+  // All sources should start with Monyhar or chromeos for better server logs.
   DCHECK(source_string == "chromeos" ||
-         base::StartsWith(source_string, "Chromium",
+         base::StartsWith(source_string, "Monyhar",
                           base::CompareCase::SENSITIVE));
   return source_string + suffix_;
 }

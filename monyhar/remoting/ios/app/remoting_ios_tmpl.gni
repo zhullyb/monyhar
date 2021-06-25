@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -27,7 +27,7 @@ _remoting_ios_app_source_dir = get_path_info("./", "abspath")
 #
 #   bundle_id:
 #     (optional) string, the bundle_id. If this is not set, it will come from
-#     either branding_Chromium or branding_Chrome
+#     either branding_Monyhar or branding_Chrome
 template("ios_remoting_app_tmpl") {
   _app_target_name = target_name
   _info_plist_target_name = "${target_name}_tweak_info_plist"

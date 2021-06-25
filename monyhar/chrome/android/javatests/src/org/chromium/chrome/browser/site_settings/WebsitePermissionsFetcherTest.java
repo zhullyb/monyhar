@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -620,7 +620,7 @@ public class WebsitePermissionsFetcherTest {
 
         Website expectedGoogleWebsite =
                 new Website(WebsiteAddress.create(googleOrigin), WebsiteAddress.create(null));
-        Website expectedChromiumWebsite =
+        Website expectedMonyharWebsite =
                 new Website(WebsiteAddress.create(monyharOrigin), WebsiteAddress.create(null));
 
         fetcher.fetchAllPreferences((sites) -> {
@@ -630,19 +630,19 @@ public class WebsitePermissionsFetcherTest {
             // permission for each of the sites.
             ArrayList<Website> siteArray = new ArrayList<>(sites);
             boolean containsGoogleOriginPermission = false;
-            boolean containsChromiumOriginPermission = false;
+            boolean containsMonyharOriginPermission = false;
             for (Website site : siteArray) {
                 if (site.compareByAddressTo(expectedGoogleWebsite) == 0) {
                     containsGoogleOriginPermission = true;
-                } else if (site.compareByAddressTo(expectedChromiumWebsite) == 0) {
-                    containsChromiumOriginPermission = true;
+                } else if (site.compareByAddressTo(expectedMonyharWebsite) == 0) {
+                    containsMonyharOriginPermission = true;
                 }
 
                 Assert.assertNotNull(site.getPermissionInfo(ContentSettingsType.GEOLOCATION));
             }
 
             Assert.assertTrue(containsGoogleOriginPermission);
-            Assert.assertTrue(containsChromiumOriginPermission);
+            Assert.assertTrue(containsMonyharOriginPermission);
         });
 
         websitePreferenceBridge.addPermissionInfo(new PermissionInfo(
@@ -656,13 +656,13 @@ public class WebsitePermissionsFetcherTest {
 
             ArrayList<Website> siteArray = new ArrayList<>(sites);
             boolean containsGoogleOriginPermission = false;
-            boolean containsChromiumOriginPermission = false;
+            boolean containsMonyharOriginPermission = false;
             boolean containsExampleOriginPermission = false;
             for (Website site : siteArray) {
                 if (site.compareByAddressTo(expectedGoogleWebsite) == 0) {
                     containsGoogleOriginPermission = true;
-                } else if (site.compareByAddressTo(expectedChromiumWebsite) == 0) {
-                    containsChromiumOriginPermission = true;
+                } else if (site.compareByAddressTo(expectedMonyharWebsite) == 0) {
+                    containsMonyharOriginPermission = true;
                 } else if (site.compareByAddressTo(expectedExampleWebsite) == 0) {
                     containsExampleOriginPermission = true;
                 }
@@ -671,7 +671,7 @@ public class WebsitePermissionsFetcherTest {
             }
 
             Assert.assertTrue(containsGoogleOriginPermission);
-            Assert.assertTrue(containsChromiumOriginPermission);
+            Assert.assertTrue(containsMonyharOriginPermission);
             Assert.assertTrue(containsExampleOriginPermission);
         });
     }

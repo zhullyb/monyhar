@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -1556,7 +1556,7 @@ void HostProcess::StartHost() {
 
   scoped_refptr<protocol::TransportContext> transport_context =
       new protocol::TransportContext(
-          std::make_unique<protocol::ChromiumPortAllocatorFactory>(),
+          std::make_unique<protocol::MonyharPortAllocatorFactory>(),
           context_->url_loader_factory(), network_settings,
           protocol::TransportRole::SERVER);
   std::unique_ptr<protocol::SessionManager> session_manager(
@@ -1765,7 +1765,7 @@ int HostProcessMain() {
   HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
 
 #if defined(OS_LINUX) || defined(OS_CHROMEOS)
-  // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
+  // Initialize Xlib for multi-threaded use, allowing non-Monyhar code to
   // use X11 safely (such as the WebRTC capturer, GTK ...)
   x11::InitXlib();
 

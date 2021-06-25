@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 r"""Creates Android resources directories and boilerplate files for a module.
@@ -261,7 +261,7 @@ def _touch_values_files(resources_path: pathlib.Path, value_resource_type: str,
 
 
 _RESOURCES_BOILERPLATE_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright {year} The Chromium Authors. All rights reserved.
+<!-- Copyright {year} The Monyhar Authors. All rights reserved.
      Use of this source code is governed by a BSD-style license that can be
      found in the LICENSE file. -->
 

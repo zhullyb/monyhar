@@ -1,4 +1,4 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -95,7 +95,7 @@ class ResultsUploader(object):
       raise Exception('You should not be uploading tests results to the server'
                       'from your local machine.')
 
-    upstream = (tests_type != 'Chromium_Android_Instrumentation')
+    upstream = (tests_type != 'Monyhar_Android_Instrumentation')
     if not upstream:
       self._build_name = 'monyhar-android'
       buildbot_branch = os.environ.get('BUILDBOT_BRANCH')

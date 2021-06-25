@@ -1,9 +1,9 @@
--- Copyright (c) 2010 The Chromium Authors. All rights reserved.
+-- Copyright (c) 2010 The Monyhar Authors. All rights reserved.
 -- Use of this source code is governed by a BSD-style license that can be
 -- found in the LICENSE file.
 
 -- Contains some common tab manipulation commands.
-tell application "Chromium"
+tell application "Monyhar"
   tell window 1 to make new tab with properties {URL:"http://google.com"}
   -- create a new tab and navigate to a particular URL.
   

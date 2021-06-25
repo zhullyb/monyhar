@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,15 +9,15 @@
 namespace mojo {
 namespace test {
 
-PickledStructChromium::PickledStructChromium() {}
+PickledStructMonyhar::PickledStructMonyhar() {}
 
-PickledStructChromium::PickledStructChromium(int foo, int bar)
+PickledStructMonyhar::PickledStructMonyhar(int foo, int bar)
     : foo_(foo), bar_(bar) {}
 
-PickledStructChromium::~PickledStructChromium() {}
+PickledStructMonyhar::~PickledStructMonyhar() {}
 
-bool operator==(const PickledStructChromium& a,
-                const PickledStructChromium& b) {
+bool operator==(const PickledStructMonyhar& a,
+                const PickledStructMonyhar& b) {
   return a.foo() == b.foo() && a.bar() == b.bar() && a.baz() == b.baz();
 }
 
@@ -26,14 +26,14 @@ bool operator==(const PickledStructChromium& a,
 
 namespace IPC {
 
-void ParamTraits<mojo::test::PickledStructChromium>::Write(
+void ParamTraits<mojo::test::PickledStructMonyhar>::Write(
     base::Pickle* m,
     const param_type& p) {
   m->WriteInt(p.foo());
   m->WriteInt(p.bar());
 }
 
-bool ParamTraits<mojo::test::PickledStructChromium>::Read(
+bool ParamTraits<mojo::test::PickledStructMonyhar>::Read(
     const base::Pickle* m,
     base::PickleIterator* iter,
     param_type* p) {
@@ -47,13 +47,13 @@ bool ParamTraits<mojo::test::PickledStructChromium>::Read(
 }
 
 #include "ipc/param_traits_write_macros.h"
-IPC_ENUM_TRAITS_MAX_VALUE(mojo::test::PickledEnumChromium,
-                          mojo::test::PickledEnumChromium::VALUE_2)
+IPC_ENUM_TRAITS_MAX_VALUE(mojo::test::PickledEnumMonyhar,
+                          mojo::test::PickledEnumMonyhar::VALUE_2)
 #include "ipc/param_traits_read_macros.h"
-IPC_ENUM_TRAITS_MAX_VALUE(mojo::test::PickledEnumChromium,
-                          mojo::test::PickledEnumChromium::VALUE_2)
+IPC_ENUM_TRAITS_MAX_VALUE(mojo::test::PickledEnumMonyhar,
+                          mojo::test::PickledEnumMonyhar::VALUE_2)
 #include "ipc/param_traits_log_macros.h"
-IPC_ENUM_TRAITS_MAX_VALUE(mojo::test::PickledEnumChromium,
-                          mojo::test::PickledEnumChromium::VALUE_2)
+IPC_ENUM_TRAITS_MAX_VALUE(mojo::test::PickledEnumMonyhar,
+                          mojo::test::PickledEnumMonyhar::VALUE_2)
 
 }  // namespace IPC

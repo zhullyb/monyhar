@@ -103,7 +103,7 @@ AudioDestination::AudioDestination(AudioIOCallback& callback,
   SendLogMessage(
       String::Format("%s => (FIFO size=%zu bytes)", __func__, fifo_->length()));
   // Create WebAudioDevice. blink::WebAudioDevice is designed to support the
-  // local input (e.g. loopback from OS audio system), but Chromium's media
+  // local input (e.g. loopback from OS audio system), but Monyhar's media
   // renderer does not support it currently. Thus, we use zero for the number
   // of input channels.
   web_audio_device_ = Platform::Current()->CreateAudioDevice(

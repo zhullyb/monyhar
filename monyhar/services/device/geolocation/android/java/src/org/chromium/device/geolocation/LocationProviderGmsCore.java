@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -20,7 +20,7 @@ import com.google.android.gms.location.LocationServices;
 import org.monyhar.base.Log;
 import org.monyhar.base.ThreadUtils;
 import org.monyhar.components.location.LocationUtils;
-import org.monyhar.gms.ChromiumPlayServicesAvailability;
+import org.monyhar.gms.MonyharPlayServicesAvailability;
 
 /**
  * This is a LocationProvider using Google Play Services.
@@ -42,7 +42,7 @@ public class LocationProviderGmsCore implements ConnectionCallbacks, OnConnectio
     private LocationRequest mLocationRequest;
 
     public static boolean isGooglePlayServicesAvailable(Context context) {
-        return ChromiumPlayServicesAvailability.isGooglePlayServicesAvailable(context);
+        return MonyharPlayServicesAvailability.isGooglePlayServicesAvailable(context);
     }
 
     LocationProviderGmsCore(Context context) {

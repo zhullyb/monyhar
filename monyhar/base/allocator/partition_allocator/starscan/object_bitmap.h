@@ -1,4 +1,4 @@
-// Copyright (c) 2020 The Chromium Authors. All rights reserved.
+// Copyright (c) 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -101,7 +101,7 @@ template <size_t PageSize, size_t PageAlignment, size_t ObjectAlignment>
 constexpr size_t
     ObjectBitmap<PageSize, PageAlignment, ObjectAlignment>::kSentinel;
 
-// The constructor can be omitted, but the Chromium's clang plugin wrongly
+// The constructor can be omitted, but the Monyhar's clang plugin wrongly
 // warns that the type is not trivially constructible.
 template <size_t PageSize, size_t PageAlignment, size_t ObjectAlignment>
 inline ObjectBitmap<PageSize, PageAlignment, ObjectAlignment>::ObjectBitmap() =

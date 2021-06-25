@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 '''Unit tests for writers.reg_writer'''
@@ -143,7 +143,7 @@ class RegWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'reg')
     expected_output = self.NEWLINE.join([
         'Windows Registry Editor Version 5.00', '',
-        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Chromium]',
+        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Monyhar]',
         '"StringPolicy"="hello, world! \\\" \\\\"'
     ])
     self.CompareOutputs(output, expected_output)
@@ -169,7 +169,7 @@ class RegWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'reg')
     expected_output = self.NEWLINE.join([
         'Windows Registry Editor Version 5.00', '',
-        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Chromium]',
+        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Monyhar]',
         '"IntPolicy"=dword:0000001a'
     ])
     self.CompareOutputs(output, expected_output)
@@ -255,7 +255,7 @@ class RegWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'reg')
     expected_output = self.NEWLINE.join([
         'Windows Registry Editor Version 5.00', '',
-        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Chromium\\ListPolicy]',
+        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Monyhar\\ListPolicy]',
         '"1"="foo"', '"2"="bar"'
     ])
 
@@ -284,7 +284,7 @@ class RegWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'reg')
     expected_output = self.NEWLINE.join([
         'Windows Registry Editor Version 5.00', '',
-        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Chromium\\ListPolicy]',
+        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Monyhar\\ListPolicy]',
         '"1"="foo"', '"2"="bar"'
     ])
 
@@ -319,7 +319,7 @@ class RegWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'reg')
     expected_output = self.NEWLINE.join([
         'Windows Registry Editor Version 5.00', '',
-        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Chromium]',
+        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Monyhar]',
         '"DictionaryPolicy"="{\\"bool\\": true, '
         '\\"dict\\": {\\"a\\": 1, \\"b\\": 2}, \\"int\\": 10, '
         '\\"list\\": [1, 2, 3], \\"string\\": \\"abc\\"}"'
@@ -351,7 +351,7 @@ class RegWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'reg')
     expected_output = self.NEWLINE.join([
         'Windows Registry Editor Version 5.00', '',
-        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Chromium]',
+        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Monyhar]',
         '"ExternalPolicy"="{\\"hash\\": \\"deadbeef\\", '
         '\\"url\\": \\"https://example.com/avatar.jpg\\"}"'
     ])
@@ -417,8 +417,8 @@ class RegWriterUnittest(writer_unittest_common.WriterUnittestCommon):
     output = self.GetOutput(policy_json, {'_monyhar': '1'}, 'reg')
     expected_output = self.NEWLINE.join([
         'Windows Registry Editor Version 5.00', '',
-        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Chromium]', '"Policy2"="c"',
-        '', '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Chromium\\Policy1]',
+        '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Monyhar]', '"Policy2"="c"',
+        '', '[HKEY_LOCAL_MACHINE\\Software\\Policies\\Monyhar\\Policy1]',
         '"1"="a"', '"2"="b"'
     ])
     self.CompareOutputs(output, expected_output)

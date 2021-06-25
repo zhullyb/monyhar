@@ -6,7 +6,7 @@ License: BSD
 License File: LICENSE
 
 Description:
-Binary diff/patch utility. There are other copies of BSDiff in the Chromium
+Binary diff/patch utility. There are other copies of BSDiff in the Monyhar
 repository, but they're all different. The other copies are based on Mozilla's
 fork of BSDiff, which serves a different set of needs. Relative to upstream
 BSDiff, Mozilla's version removes all compression, adds a CRC-32 check of the
@@ -30,7 +30,7 @@ Local Modifications:
  - Added LICENSE file by copying the license block from bsdiff.c and
    bspatch.c.
  - The following modifications are relative to the original unpatched version,
-   checked in to the Chromium repository at r49280.
+   checked in to the Monyhar repository at r49280.
  - Created goobsdiff.gyp for GYP build system integration.
  - Renamed bsdiff.c to goobsdiff.c and bspatch.c to goobspatch.c.
  - Added #include <sys/types.h> to goobspatch.c so that it compiles. (Oops!)

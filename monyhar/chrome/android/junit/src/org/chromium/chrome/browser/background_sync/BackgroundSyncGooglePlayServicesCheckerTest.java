@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,16 +15,16 @@ import org.robolectric.annotation.Config;
 
 import org.monyhar.base.test.BaseRobolectricTestRunner;
 import org.monyhar.base.test.util.Feature;
-import org.monyhar.gms.shadows.ShadowChromiumPlayServicesAvailability;
+import org.monyhar.gms.shadows.ShadowMonyharPlayServicesAvailability;
 
 /** Unit tests for GooglePlayServicesChecker. */
 @RunWith(BaseRobolectricTestRunner.class)
-@Config(manifest = Config.NONE, shadows = {ShadowChromiumPlayServicesAvailability.class})
+@Config(manifest = Config.NONE, shadows = {ShadowMonyharPlayServicesAvailability.class})
 public class BackgroundSyncGooglePlayServicesCheckerTest {
     @Test
     @Feature("BackgroundSync")
     public void testDisableLogicWhenGooglePlayServicesReturnsSuccess() {
-        ShadowChromiumPlayServicesAvailability.setGetGooglePlayServicesConnectionResult(
+        ShadowMonyharPlayServicesAvailability.setGetGooglePlayServicesConnectionResult(
                 ConnectionResult.SUCCESS);
         assertFalse(GooglePlayServicesChecker.shouldDisableBackgroundSync());
     }
@@ -32,7 +32,7 @@ public class BackgroundSyncGooglePlayServicesCheckerTest {
     @Test
     @Feature("BackgroundSync")
     public void testDisableLogicWhenGooglePlayServicesReturnsError() {
-        ShadowChromiumPlayServicesAvailability.setGetGooglePlayServicesConnectionResult(
+        ShadowMonyharPlayServicesAvailability.setGetGooglePlayServicesConnectionResult(
                 ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED);
         assertTrue(GooglePlayServicesChecker.shouldDisableBackgroundSync());
     }

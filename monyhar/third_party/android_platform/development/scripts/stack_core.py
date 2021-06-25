@@ -579,7 +579,7 @@ def _FindSharedLibraryFromAPKs(output_directory, apks_directory, offset):
     the function prints an error message and fails.
 
   Args:
-    output_directory: Chromium output directory.
+    output_directory: Monyhar output directory.
     apks_directory: A optional directory containing (only) the APK in question,
         or in the case of a bundle, all split APKs. This overrides the default
         apks directory derived from the output directory, and allows for

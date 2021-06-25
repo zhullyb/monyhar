@@ -6,7 +6,7 @@ Included In Release: Yes
 Security Critical: Yes
 License: Public domain
 
-Chromium maintains a mirror of the official SQLite Git repository at
+Monyhar maintains a mirror of the official SQLite Git repository at
 https://monyhar.googlesource.com/monyhar/deps/sqlite. Generally the stock
 upstream release branch is used, but occasionally unreleased upstream bug
 fixes are backported to the release branch.

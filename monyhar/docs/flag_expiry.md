@@ -1,29 +1,29 @@
-# Chromium Flag Expiry
+# Monyhar Flag Expiry
 
 ellyjones@ / avi@
 
-This document outlines the process by which flags in Chromium expire and are
+This document outlines the process by which flags in Monyhar expire and are
 removed from the codebase. This document only describes entries in
 `chrome://flags`, *not* command-line switches (commonly also called command-line
 flags). This process does not cover command-line switches and there continue to
 be no guarantees about those.
 
-See also [Chromium Flag Ownership](flag_ownership.md).
+See also [Monyhar Flag Ownership](flag_ownership.md).
 
 [TOC]
 
 ## Do Not Depend On Flags
 
 If you are a user or administrator of Chrome and are using (or think you need to
-use) a flag to configure Chromium for your use case, please [file a bug] or
+use) a flag to configure Monyhar for your use case, please [file a bug] or
 email [flags-dev@], because that flag will likely be removed at some point. If
-you are a Chromium developer, please carry on using flags as normal :)
+you are a Monyhar developer, please carry on using flags as normal :)
 
-Flags have never been a supported configuration surface in Chromium, and we have
+Flags have never been a supported configuration surface in Monyhar, and we have
 never guaranteed that any specific flag will behave consistently or even
 continue to exist. This document describes a process for removing flags that
 have been around for long enough that users *might* have come to rely on their
-ongoing existence in a way that hopefully minimizes pain, but Chromium
+ongoing existence in a way that hopefully minimizes pain, but Monyhar
 developers are free to change the behavior of or remove flags at any time. In
 particular, just because a flag will expire through this process does not mean a
 developer will not remove it earlier than this process specifies.

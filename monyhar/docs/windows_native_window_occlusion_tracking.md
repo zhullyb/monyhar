@@ -5,11 +5,11 @@
 Ui::aura has an
 [API](https://source.monyhar.org/monyhar/monyhar/src/+/main:ui/aura/window_occlusion_tracker.h)
 to track which aura windows are occluded, i.e., covered by
-one or more other windows. If a window is occluded, Chromium treats foreground
+one or more other windows. If a window is occluded, Monyhar treats foreground
 tabs as if they were background tabs; rendering stops, and js is throttled. On
 ChromeOS, since all windows are aura windows, this is sufficient to determine
-if a Chromium window is covered by other windows. On Windows, we need to
-consider native app windows when determining if a Chromium window is occluded.
+if a Monyhar window is covered by other windows. On Windows, we need to
+consider native app windows when determining if a Monyhar window is occluded.
 This is implemented in
 [native_window_occlusion_tracker_win.cc](https://source.monyhar.org/monyhar/monyhar/src/+/main:ui/aura/native_window_occlusion_tracker_win.cc).
 
@@ -37,7 +37,7 @@ the occlusion state might need to be recalculated. These events include window
 move/resize, minimize/restore, foreground window changing, etc. Most of these
 are global event hooks, so that we get notified of events for all Windows
 windows. For windows that could possibly
-occlude Chromium windows, (i.e., fully visible windows on the current virtual
+occlude Monyhar windows, (i.e., fully visible windows on the current virtual
 desktop), we register for EVENT_OBJECT_LOCATIONCHANGE events for the window's
 process. pids_for_location_change_hook_ keeps track of which pids are hooked,
 and is
@@ -54,21 +54,21 @@ isn't calculated until the window stops moving, because moving a window is
 essentially modal, and there's no point in recalculating occlusion over and
 over again for each incremental move event.
 
-To calculate occlusion, we first mark minimized Chromium windows as hidden, and
-Chromium windows on a different virtual desktop as occluded.  We compute the
+To calculate occlusion, we first mark minimized Monyhar windows as hidden, and
+Monyhar windows on a different virtual desktop as occluded.  We compute the
 SKRegion for the virtual screen, which takes multiple monitor configurations
 into account, and set the initial unoccluded_desktop_region_ to the screen
 region. Then, we enumerate all the HWNDs, in z-order (topmost window first).
 For each occluding window (visible, not transparent, etc), we save the current
 unoccluded_desktop_region_, and subtract the window's window_rect from the
-unoccluded_desktop_region_ . If the hwnd is not a root Chromium window, we
-continue to the next hwnd. If it is a root Chromium window, then we have seen
+unoccluded_desktop_region_ . If the hwnd is not a root Monyhar window, we
+continue to the next hwnd. If it is a root Monyhar window, then we have seen
 all the windows above it, and know whether it is occluded or not. We determine
 this by checking if subtracting its window_rect from the
 unoccluded_desktop_region_ actually changed the unoccluded_desktop_region_. If
 not, that means previous windows occluded the current window's window_rect, and
 it is occluded, otherwise, not.
-Once the occlusion state of all root Chromium windows has been determined, the
+Once the occlusion state of all root Monyhar windows has been determined, the
 WindowOcclusionTracker posts a task to the ui thread to run a callback on the
 NativeWindowOcclusionTrackerWin object. That callback is
 [NativeWindowOcclusionTrackerWin::UpdateOcclusionState](https://source.monyhar.org/monyhar/monyhar/src/+/main:ui/aura/native_window_occlusion_tracker_win.cc;l=226?q=NativeWindowOcclusionTrackerWin::UpdateOcclusionState)
@@ -84,7 +84,7 @@ If the screen is locked, however, it sets the occlusion state to OCCLUDED.
 
  * If a window is falsely determined to be occluded, the content area will be
 white.
- * When the screen is locked, all Chromium windows are considered occluded.
+ * When the screen is locked, all Monyhar windows are considered occluded.
  * Windows on other virtual desktops are considered occluded.
  * Transparent windows, cloaked windows, floating windows, non-rectangular
  windows, etc, are not considered occluding.

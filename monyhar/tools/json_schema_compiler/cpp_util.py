@@ -1,8 +1,8 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-"""Utilies and constants specific to Chromium C++ code.
+"""Utilies and constants specific to Monyhar C++ code.
 """
 
 from code import Code
@@ -13,7 +13,7 @@ import posixpath
 import re
 
 CHROMIUM_LICENSE = (
-"""// Copyright %d The Chromium Authors. All rights reserved.
+"""// Copyright %d The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.""" % datetime.now().year
 )

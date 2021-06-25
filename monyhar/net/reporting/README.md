@@ -8,11 +8,11 @@ The parts of it that are exposed to the web platform are specified in the [draft
 spec](https://w3c.github.io/reporting/). This document assumes that you've read
 that one.
 
-## Reporting in Chromium
+## Reporting in Monyhar
 
-Reporting is implemented as part of the network stack in Chromium, such
+Reporting is implemented as part of the network stack in Monyhar, such
 that it can be used by other parts of the network stack (e.g. HPKP) or
-by non-browser embedders as well as by Chromium.
+by non-browser embedders as well as by Monyhar.
 
 ### Inside `//net`
 

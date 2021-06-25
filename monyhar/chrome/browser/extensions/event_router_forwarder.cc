@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -101,8 +101,8 @@ void EventRouterForwarder::HandleEvent(
     }
   }
 
-  // There should always be at least one profile when running as Chromium.
-  // However, some Chromium embedders are known to run without profiles, in
+  // There should always be at least one profile when running as Monyhar.
+  // However, some Monyhar embedders are known to run without profiles, in
   // which case there's nothing to dispatch to.
   if (profiles_to_dispatch_to.size() == 0u)
     return;

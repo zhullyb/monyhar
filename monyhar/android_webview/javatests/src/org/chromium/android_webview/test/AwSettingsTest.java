@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -3567,7 +3567,7 @@ public class AwSettingsTest {
         mTitleIdx++;
         String expectedTitle = Integer.toString(mTitleIdx);
         // Since selectionchange event is posted on a message loop, we run another message loop
-        // before we get the result. On Chromium both run on the same message loop.
+        // before we get the result. On Monyhar both run on the same message loop.
         JSUtils.executeJavaScriptAndWaitForResult(InstrumentationRegistry.getInstrumentation(),
                 awContents, client.getOnEvaluateJavaScriptResultHelper(),
                 "setTimeout(function() { document.title = '" + expectedTitle + "'; });");

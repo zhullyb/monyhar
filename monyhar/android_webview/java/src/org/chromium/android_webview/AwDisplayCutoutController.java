@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -128,9 +128,9 @@ public class AwDisplayCutoutController {
         // Once we set the listener, we will no longer get View#onApplyWindowInsets(WindowInsets).
         // If the app sets its own listener after WebView's constructor, then the app can override
         // our logic, which seems like a natural behavior.
-        // For Android S, WebViewChromium can get onApplyWindowInsets(WindowInsets) call, so we do
+        // For Android S, WebViewMonyhar can get onApplyWindowInsets(WindowInsets) call, so we do
         // not need to set the listener.
-        // TODO(https://crbug.com/1094366): do not set listener and plumb WebViewChromium to handle
+        // TODO(https://crbug.com/1094366): do not set listener and plumb WebViewMonyhar to handle
         // onApplyWindowInsets in S and above.
         containerView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
             @Override

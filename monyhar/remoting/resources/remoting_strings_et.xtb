@@ -72,7 +72,7 @@ Kui ruut teenuse „<ph name="SERVICE_SCRIPT_NAME" />” juures on juba märgitu
 <translation id="4405930547258349619">Põhikogu</translation>
 <translation id="443560535555262820">Avage juurdepääsufunktsioonide eelistused</translation>
 <translation id="4450893287417543264">Ära kuva uuesti</translation>
-<translation id="4512952200932940229">Autoriõigus 2021 The Chromium Authors. Kõik õigused kaitstud.</translation>
+<translation id="4512952200932940229">Autoriõigus 2021 The Monyhar Authors. Kõik õigused kaitstud.</translation>
 <translation id="4513946894732546136">Tagasiside</translation>
 <translation id="4563926062592110512">Ühenduse katkestanud klient: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Kaugseadmed</translation>
@@ -147,7 +147,7 @@ Kui ruut teenuse „<ph name="SERVICE_SCRIPT_NAME" />” juures on juba märgitu
 <translation id="7868137160098754906">Sisestage kaugarvuti PIN-kood.</translation>
 <translation id="7895403300744144251">Kaugarvuti turvareeglid ei luba teie kontolt pärinevaid ühendusi.</translation>
 <translation id="7936528439960309876">Doki paremale</translation>
-<translation id="7970576581263377361">Autentimine ebaõnnestus. Logige uuesti Chromiumi sisse.</translation>
+<translation id="7970576581263377361">Autentimine ebaõnnestus. Logige uuesti Monyhari sisse.</translation>
 <translation id="7981525049612125370">Kaugseanss on aegunud.</translation>
 <translation id="8038111231936746805">(vaikimisi)</translation>
 <translation id="8041089156583427627">Saada tagasiside</translation>
@@ -181,6 +181,6 @@ Kui ruut teenuse „<ph name="SERVICE_SCRIPT_NAME" />” juures on juba märgitu
 <translation id="9187628920394877737">Andke teenusele <ph name="PRODUCT_NAME" /> luba „Ekraanikuva salvestamine”</translation>
 <translation id="9213184081240281106">Sobimatu hosti seadistus.</translation>
 <translation id="981121421437150478">Võrguühenduseta</translation>
-<translation id="985602178874221306">The Chromium Authors</translation>
+<translation id="985602178874221306">The Monyhar Authors</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (viimati võrgus <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

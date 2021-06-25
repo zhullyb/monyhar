@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -32,9 +32,9 @@ class Origin;
 
 namespace android {
 
-// Chromium Android specific WebContentsDelegate.
+// Monyhar Android specific WebContentsDelegate.
 // Should contain any WebContentsDelegate implementations required by
-// the Chromium Android port but not to be shared with WebView.
+// the Monyhar Android port but not to be shared with WebView.
 class TabWebContentsDelegateAndroid
     : public web_contents_delegate_android::WebContentsDelegateAndroid,
       public find_in_page::FindResultObserver {

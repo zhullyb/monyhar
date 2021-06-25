@@ -24,7 +24,7 @@ Anytime you upload a CL to refactor or add tests, you can use
 previously untested code is now tested by your CL.
 
 Please refer to [code_coverage.md](code_coverage.md) for how code coverage works
-in Chromium in general.
+in Monyhar in general.
 
 ### Contacts
 

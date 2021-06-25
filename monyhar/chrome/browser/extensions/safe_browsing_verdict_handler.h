@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -56,7 +56,7 @@ class SafeBrowsingVerdictHandler {
   ExtensionService* extension_service_ = nullptr;
 
   // Set of greylisted extensions. These extensions are disabled if they are
-  // already installed in Chromium at the time when they are added to
+  // already installed in Monyhar at the time when they are added to
   // the greylist. Unlike blocklisted extensions, greylisted ones are visible
   // to the user and if user re-enables such an extension, they remain enabled.
   //

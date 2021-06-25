@@ -59,7 +59,7 @@ std::unique_ptr<TextCodec> TextCodecICU::Create(const TextEncoding& encoding,
 namespace {
 bool IncludeAlias(const char* alias) {
 #if !defined(USING_SYSTEM_ICU)
-  // Chromium's build of ICU includes *-html aliases to manage the encoding
+  // Monyhar's build of ICU includes *-html aliases to manage the encoding
   // labels defined in the Encoding Standard, but these must not be
   // web-exposed.
   const char* kSuffix = "-html";
@@ -113,7 +113,7 @@ void TextCodecICU::RegisterEncodingNames(EncodingNameRegistrar registrar) {
 #endif
 
 // A number of these aliases are handled in Chrome's copy of ICU, but
-// Chromium can be compiled with the system ICU.
+// Monyhar can be compiled with the system ICU.
 
 // 1. Treat GB2312 encoding as GBK (its more modern superset), to match other
 //    browsers.

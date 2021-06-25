@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -227,7 +227,7 @@ class COMPONENT_EXPORT(CHROMEOS_DBUS_ATTESTATION) AttestationClient {
   static ::attestation::VAType GetVerifiedAccessServerType();
 
   // Attestation daemon D-Bus method calls. See org.monyhar.Attestation.xml and
-  // the corresponding protobuf definitions in Chromium OS code for the
+  // the corresponding protobuf definitions in Monyhar OS code for the
   // documentation of the methods and request/ messages.
 
   virtual void GetKeyInfo(const ::attestation::GetKeyInfoRequest& request,

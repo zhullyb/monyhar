@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@
 //
 // To run the test use tools/clang/rewrite_raw_ptr_fields/tests/run_all_tests.py
 
-// Chromium is built with a warning/error that global and static variables
+// Monyhar is built with a warning/error that global and static variables
 // may only have trivial destructors.  See also:
 // https://google.github.io/styleguide/cppguide.html#Static_and_Global_Variables
 // go/totw/110#destruction

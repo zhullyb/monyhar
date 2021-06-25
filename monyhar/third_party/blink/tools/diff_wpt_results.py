@@ -231,7 +231,7 @@ def main(args):
             baseline_results_getter as baseline_results_content,     \
             open(args.csv_output, 'w') as csv_output:
 
-        # Read JSON results files. They must follow the Chromium
+        # Read JSON results files. They must follow the Monyhar
         # json test results format
         actual_results_json = json.loads(actual_results_content.read())
         baseline_results_json = json.loads(baseline_results_content.read())

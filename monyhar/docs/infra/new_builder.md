@@ -1,7 +1,7 @@
 # Setting up a new builder
 
 This doc describes how to set up a new builder on LUCI. It's focused
-on Chromium builders, but parts may be applicable to other projects.
+on Monyhar builders, but parts may be applicable to other projects.
 
 [TOC]
 
@@ -174,7 +174,7 @@ TRYBOTS = try_spec.TryDatabase.create({
 })
 ```
 
-## Chromium configuration
+## Monyhar configuration
 
 Lastly, you need to configure a variety of things in the monyhar repo.
 It's generally ok to land all of them in a single CL.
@@ -200,8 +200,8 @@ includes things like:
 * Swarming dimensions
 * Recipe name and properties
 
-Chromium's buildbucket Starlark configuration is [here][23].
-Chromium's generated buildbucket configuration is [here][8].
+Monyhar's buildbucket Starlark configuration is [here][23].
+Monyhar's generated buildbucket configuration is [here][8].
 Buildbucket's configuration schema is [here][7].
 
 Each bucket has a corresponding `.star` file where the builders for the bucket
@@ -236,9 +236,9 @@ Milo is responsible for displaying builders and build histories on a
 set of consoles. Its configuration includes the definitions of those
 consoles.
 
-Chromium's milo Starlark configuration is intermixed with the
+Monyhar's milo Starlark configuration is intermixed with the
 [builder definitions][23].
-Chromium's generated milo configuration is [here][10].
+Monyhar's generated milo configuration is [here][10].
 Milo's configuration schema is [here][9].
 
 Each console has a corresponding `.star` file that defines the console.
@@ -301,9 +301,9 @@ luci.list_view(
 
 The scheduler is responsible for triggering CI / waterfall builders.
 
-Chromium's scheduler Starlark configuration is intermixed with the
+Monyhar's scheduler Starlark configuration is intermixed with the
 [builder definitions][23].
-Chromium's generated scheduler configuration is [here][12].
+Monyhar's generated scheduler configuration is [here][12].
 Scheduler's configuration schema is [here][11].
 
 ##### Poller

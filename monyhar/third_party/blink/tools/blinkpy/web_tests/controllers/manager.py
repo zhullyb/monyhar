@@ -636,7 +636,7 @@ class Manager(object):
         full_results_path = self._filesystem.join(self._artifacts_directory,
                                                   'failing_results.json')
         # We write failing_results.json out as jsonp because we need to load it
-        # from a file url for results.html and Chromium doesn't allow that.
+        # from a file url for results.html and Monyhar doesn't allow that.
         json_results_generator.write_json(
             self._filesystem,
             summarized_failing_results,

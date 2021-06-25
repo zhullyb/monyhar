@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -986,7 +986,7 @@ IN_PROC_BROWSER_TEST_F(TabRestoreTest, RestoreWindow) {
 }
 
 // https://crbug.com/825305: Timeout flakiness on Win7 Tests (dbg)(1) bot and
-// Mac10.13 Tests (dbg) and PASS/FAIL flakiness on Linux Chromium OS ASan LSan
+// Mac10.13 Tests (dbg) and PASS/FAIL flakiness on Linux Monyhar OS ASan LSan
 // Tests (1) bot.
 #if defined(ADDRESS_SANITIZER) || defined(MEMORY_SANITIZER) || \
     !defined(NDEBUG)

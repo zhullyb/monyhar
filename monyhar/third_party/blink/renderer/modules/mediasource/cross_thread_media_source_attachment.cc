@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -697,7 +697,7 @@ void CrossThreadMediaSourceAttachment::Close(MediaSourceTracer* /* tracer */) {
   // Verify the rest of the status once we're completing the close in the
   // worker thread. Meanwhile, |have_ever_started_closing_| will prevent usage
   // of the underlying WebMediaSource and WebSourceBuffer (see
-  // RunExclusively()), since the Chromium abstractions underlying those are
+  // RunExclusively()), since the Monyhar abstractions underlying those are
   // owned by the main thread WebMediaPlayer which is shutting down concurrently
   // with the task scheduling to complete the close operation on the worker
   // thread. Using WTF::RetainedRef(this) here to ensure we are still alive

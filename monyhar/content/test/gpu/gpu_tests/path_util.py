@@ -1,4 +1,4 @@
-# Copyright (c) 2015 The Chromium Authors. All rights reserved.
+# Copyright (c) 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -8,7 +8,7 @@ import os
 import sys
 
 
-def GetChromiumSrcDir():
+def GetMonyharSrcDir():
   return os.path.abspath(
       os.path.join(
           os.path.dirname(__file__), os.pardir, os.pardir, os.pardir,
@@ -21,7 +21,7 @@ def GetGpuTestDir():
 
 def GetCatapultDir():
   return os.path.abspath(
-      os.path.join(GetChromiumSrcDir(), 'third_party', 'catapult'))
+      os.path.join(GetMonyharSrcDir(), 'third_party', 'catapult'))
 
 
 def AddDirToPathIfNeeded(*path_parts):
@@ -41,7 +41,7 @@ def SetupTelemetryPaths():
 
 
 def SetupToolsPerfPath():
-  AddDirToPathIfNeeded(GetChromiumSrcDir(), 'tools', 'perf')
+  AddDirToPathIfNeeded(GetMonyharSrcDir(), 'tools', 'perf')
 
 
 def SetupTypPath():

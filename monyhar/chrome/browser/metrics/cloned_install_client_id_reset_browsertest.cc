@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ class ClonedInstallClientIdResetBrowserTest : public InProcessBrowserTest {
 
   void SetUp() override {
     // Make metrics reporting work same as in Chrome branded builds, for test
-    // consistency between Chromium and Chrome builds.
+    // consistency between Monyhar and Chrome builds.
     ChromeMetricsServiceAccessor::SetForceIsMetricsReportingEnabledPrefLookup(
         true);
     ChromeMetricsServiceAccessor::SetMetricsAndCrashReportingForTesting(

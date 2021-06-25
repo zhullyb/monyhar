@@ -1,8 +1,8 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# Autocompletion config for YouCompleteMe in Chromium.
+# Autocompletion config for YouCompleteMe in Monyhar.
 #
 # USAGE:
 #
@@ -10,7 +10,7 @@
 #          (Googlers should check out [go/ycm])
 #
 #   2. Create a symbolic link to this file called .ycm_extra_conf.py in the
-#      directory above your Chromium checkout (i.e. next to your .gclient file).
+#      directory above your Monyhar checkout (i.e. next to your .gclient file).
 #
 #          cd src
 #          ln -rs tools/vim/monyhar.ycm_extra_conf.py ../.ycm_extra_conf.py
@@ -29,9 +29,9 @@
 #
 # Usage notes:
 #
-#   * You must use ninja & clang to build Chromium.
+#   * You must use ninja & clang to build Monyhar.
 #
-#   * You must have built Chromium recently.
+#   * You must have built Monyhar recently.
 #
 #
 # Hacking notes:
@@ -75,7 +75,7 @@ def PathExists(*args):
 
 
 def FindChromeSrcFromFilename(filename):
-  """Searches for the root of the Chromium checkout.
+  """Searches for the root of the Monyhar checkout.
 
   Simply checks parent directories until it finds .gclient and src/.
 
@@ -103,7 +103,7 @@ def GetDefaultSourceFile(chrome_root, filename):
   close-enough approximation for building |filename|.
 
   Args:
-    chrome_root: (String) Absolute path to the root of Chromium checkout.
+    chrome_root: (String) Absolute path to the root of Monyhar checkout.
     filename: (String) Absolute path to the source file.
 
   Returns:
@@ -202,7 +202,7 @@ def GetClangCommandLineFromNinjaForSource(out_dir, filename):
   used by YCM.
 
   Args:
-    out_dir: (String) Absolute path to Chromium checkout.
+    out_dir: (String) Absolute path to Monyhar checkout.
     filename: (String) Absolute path to source file.
 
   Returns:
@@ -278,7 +278,7 @@ def GetClangOptionsFromNinjaForFilename(chrome_root, filename):
   Command line options are based on the command used by ninja for building
   |filename|. If |filename| is a .h file, uses its companion .cc or .cpp file.
   If a suitable companion file can't be located or if ninja doesn't know about
-  |filename|, then uses default source files in Blink and Chromium for
+  |filename|, then uses default source files in Blink and Monyhar for
   determining the commandline.
 
   Args:
@@ -292,11 +292,11 @@ def GetClangOptionsFromNinjaForFilename(chrome_root, filename):
   if not chrome_root:
     return []
 
-  # Generally, everyone benefits from including Chromium's src/, because all of
-  # Chromium's includes are relative to that.
+  # Generally, everyone benefits from including Monyhar's src/, because all of
+  # Monyhar's includes are relative to that.
   additional_flags = ['-I' + os.path.join(chrome_root)]
 
-  # Version of Clang used to compile Chromium can be newer then version of
+  # Version of Clang used to compile Monyhar can be newer then version of
   # libclang that YCM uses for completion. So it's possible that YCM's libclang
   # doesn't know about some used warning options, which causes compilation
   # warnings (and errors, because of '-Werror');

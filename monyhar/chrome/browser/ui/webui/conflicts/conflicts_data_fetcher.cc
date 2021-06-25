@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -490,7 +490,7 @@ void ConflictsDataFetcher::OnModuleDatabaseIdle() {
           OnModuleDataFetched, std::move(on_conflicts_data_fetched_callback_),
           std::move(results), std::move(third_party_conflicts_manager_state_)));
 #else
-  // The third-party features are always disabled on Chromium builds.
+  // The third-party features are always disabled on Monyhar builds.
   content::GetUIThreadTaskRunner({})->PostTask(
       FROM_HERE, base::BindOnce(OnConflictsDataFetched,
                                 std::move(on_conflicts_data_fetched_callback_),

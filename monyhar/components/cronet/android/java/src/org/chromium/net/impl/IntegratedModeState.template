@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@ package org.monyhar.net.impl;
 public class IntegratedModeState {
 
   // A boolean flag indicating whether integrated mode is enabled. In integrated mode, CronetEngine
-  // would use the shared network task runner by other Chromium-based clients like webview, Chrome
+  // would use the shared network task runner by other Monyhar-based clients like webview, Chrome
   // Android, Cronet without self-initialization.
   public static final boolean INTEGRATED_MODE_ENABLED =
 #if defined(INTEGRATED_MODE)

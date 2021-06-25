@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -234,7 +234,7 @@ class Runner():
         # ${ISOLATED_OUTDIR}/output.json. out-dir is set to ${ISOLATED_OUTDIR}
 
         # TODO(crbug.com/1031338) - the content of this output.json will
-        # work with Chromium recipe because we use the noop_merge merge script,
+        # work with Monyhar recipe because we use the noop_merge merge script,
         # but will require structural changes to support the default gtest
         # merge script (ref: //testing/merge_scripts/standard_gtest_merge.py)
         output_json_path = (

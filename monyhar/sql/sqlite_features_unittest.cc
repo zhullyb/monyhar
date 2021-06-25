@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -96,7 +96,7 @@ TEST_F(SQLiteFeaturesTest, FTS3) {
   ASSERT_TRUE(db_.Execute("CREATE VIRTUAL TABLE foo USING fts3(x)"));
 }
 
-// Originally history used fts2, which Chromium patched to treat "foo*" as a
+// Originally history used fts2, which Monyhar patched to treat "foo*" as a
 // prefix search, though the icu tokenizer would return it as two tokens {"foo",
 // "*"}.  Test that fts3 works correctly.
 TEST_F(SQLiteFeaturesTest, FTS3_Prefix) {
@@ -110,7 +110,7 @@ TEST_F(SQLiteFeaturesTest, FTS3_Prefix) {
             ExecuteWithResult(&db_, "SELECT x FROM foo WHERE x MATCH 'te*'"));
 }
 
-// Verify that Chromium's SQLite is compiled with HAVE_USLEEP defined.  With
+// Verify that Monyhar's SQLite is compiled with HAVE_USLEEP defined.  With
 // HAVE_USLEEP, SQLite uses usleep() with millisecond granularity.  Otherwise it
 // uses sleep() with second granularity.
 TEST_F(SQLiteFeaturesTest, UsesUsleep) {
@@ -330,7 +330,7 @@ TEST_F(SQLiteFeaturesTest, TimeMachine) {
 
 #if !defined(OS_FUCHSIA)
 // SQLite WAL mode defaults to checkpointing the WAL on close.  This would push
-// additional work into Chromium shutdown.  Verify that SQLite supports a config
+// additional work into Monyhar shutdown.  Verify that SQLite supports a config
 // option to not checkpoint on close.
 TEST_F(SQLiteFeaturesTest, WALNoClose) {
   base::FilePath wal_path = sql::Database::WriteAheadLogPath(db_path_);

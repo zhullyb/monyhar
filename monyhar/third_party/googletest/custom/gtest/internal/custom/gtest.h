@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -11,7 +11,7 @@
 #if !defined(GTEST_DISABLE_PRINT_STACK_TRACE)
 #include "third_party/googletest/custom/gtest/internal/custom/stack_trace_getter.h"
 
-// Tell Google Test to use a stack trace getter based on Chromium's
+// Tell Google Test to use a stack trace getter based on Monyhar's
 // base::debug::StackTrace.
 #define GTEST_OS_STACK_TRACE_GETTER_ StackTraceGetter
 #endif  // defined(GTEST_DISABLE_PRINT_STACK_TRACE)

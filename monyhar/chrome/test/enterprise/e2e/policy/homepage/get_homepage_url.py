@@ -1,4 +1,4 @@
-# Copyright (c) 2019 The Chromium Authors. All rights reserved.
+# Copyright (c) 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -10,7 +10,7 @@ driver = test_util.create_chrome_webdriver()
 
 try:
   app = Application(backend="uia")
-  app.connect(title_re='.*Chrome|.*Chromium')
+  app.connect(title_re='.*Chrome|.*Monyhar')
 
   # Use shortcut Alt+HOME to go to the home page
   app.top_window().type_keys("%{HOME}")

@@ -28,9 +28,9 @@ At this point you *must  reboot.* If you run into issues to load video at boot t
 ## Building Chrome
 Checkout monyhar as per your usual workflow. See [Get the Code:
 Checkout, Build, & Run
-Chromium](https://www.monyhar.org/developers/how-tos/get-the-code).
+Monyhar](https://www.monyhar.org/developers/how-tos/get-the-code).
 Googlers should checkout monyhar source code as described here:
-[Building Chromium on a corporate Linux
+[Building Monyhar on a corporate Linux
 workstation](https://companydoc.corp.google.com/company/teams/chrome/build_instructions.md?cl=head)
 
 We want to build on linux on top of Ozone with the DRM 

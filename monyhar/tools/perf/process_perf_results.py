@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -45,7 +45,7 @@ RESULTS_URL = 'https://chromeperf.appspot.com'
 # coded master name based on what is passed in in the build properties.
 # See crbug.com/801289 for more details.
 MACHINE_GROUP_JSON_FILE = os.path.join(
-      path_util.GetChromiumSrcDir(), 'tools', 'perf', 'core',
+      path_util.GetMonyharSrcDir(), 'tools', 'perf', 'core',
       'perf_dashboard_machine_group_mapping.json')
 
 JSON_CONTENT_TYPE = 'application/json'

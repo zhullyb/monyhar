@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -177,7 +177,7 @@ class SiteSettingsHandlerTest : public testing::Test {
         std::make_unique<SiteSettingsHandler>(profile_.get(), app_registrar());
     handler()->set_web_ui(web_ui());
     handler()->AllowJavascript();
-    // AllowJavascript() adds a callback to create leveldb_env::ChromiumEnv
+    // AllowJavascript() adds a callback to create leveldb_env::MonyharEnv
     // which reads the FeatureList. Wait for the callback to be finished so that
     // we won't destruct |feature_list_| before the callback is executed.
     // We also want to let the storage system finish setting up, to avoid test
@@ -1961,7 +1961,7 @@ constexpr char kUsbPolicySetting[] = R"(
 class SiteSettingsHandlerChooserExceptionTest : public SiteSettingsHandlerTest {
  protected:
   const GURL kAndroidUrl{"https://android.com"};
-  const GURL kChromiumUrl{"https://monyhar.org"};
+  const GURL kMonyharUrl{"https://monyhar.org"};
   const GURL kGoogleUrl{"https://google.com"};
   const GURL kWebUIUrl{"chrome://test"};
 
@@ -2005,14 +2005,14 @@ class SiteSettingsHandlerChooserExceptionTest : public SiteSettingsHandlerTest {
     base::RunLoop().RunUntilIdle();
 
     const auto kAndroidOrigin = url::Origin::Create(kAndroidUrl);
-    const auto kChromiumOrigin = url::Origin::Create(kChromiumUrl);
+    const auto kMonyharOrigin = url::Origin::Create(kMonyharUrl);
     const auto kGoogleOrigin = url::Origin::Create(kGoogleUrl);
     const auto kWebUIOrigin = url::Origin::Create(kWebUIUrl);
 
     // Add the user granted permissions for testing.
     // These two persistent device permissions should be lumped together with
     // the policy permissions, since they apply to the same device and URL.
-    chooser_context->GrantDevicePermission(kChromiumOrigin,
+    chooser_context->GrantDevicePermission(kMonyharOrigin,
                                            *persistent_device_info_);
     chooser_context->GrantDevicePermission(kGoogleOrigin,
                                            *persistent_device_info_);
@@ -2049,8 +2049,8 @@ class SiteSettingsHandlerChooserExceptionTest : public SiteSettingsHandlerTest {
         base::DoNothing::Once<std::vector<device::mojom::UsbDeviceInfoPtr>>());
     base::RunLoop().RunUntilIdle();
 
-    const auto kChromiumOrigin = url::Origin::Create(kChromiumUrl);
-    chooser_context->GrantDevicePermission(kChromiumOrigin,
+    const auto kMonyharOrigin = url::Origin::Create(kMonyharUrl);
+    chooser_context->GrantDevicePermission(kMonyharOrigin,
                                            *off_the_record_device_);
 
     // Add the observer for permission changes.
@@ -2211,10 +2211,10 @@ TEST_F(SiteSettingsHandlerChooserExceptionTest,
       site_settings::ContentSettingsTypeToGroupName(
           ContentSettingsType::USB_CHOOSER_DATA));
   const auto kAndroidOrigin = url::Origin::Create(kAndroidUrl);
-  const auto kChromiumOrigin = url::Origin::Create(kChromiumUrl);
+  const auto kMonyharOrigin = url::Origin::Create(kMonyharUrl);
   const auto kGoogleOrigin = url::Origin::Create(kGoogleUrl);
   const std::string kAndroidOriginStr = kAndroidUrl.GetOrigin().spec();
-  const std::string kChromiumOriginStr = kChromiumUrl.GetOrigin().spec();
+  const std::string kMonyharOriginStr = kMonyharUrl.GetOrigin().spec();
   const std::string kGoogleOriginStr = kGoogleUrl.GetOrigin().spec();
 
   {
@@ -2262,7 +2262,7 @@ TEST_F(SiteSettingsHandlerChooserExceptionTest,
   args.Clear();
   args.AppendString(kUsbChooserGroupName);
   args.AppendString("https://unused.com");
-  args.AppendString(kChromiumOriginStr);
+  args.AppendString(kMonyharOriginStr);
   args.Append(base::Value::ToUniquePtrValue(
       UsbChooserContext::DeviceInfoToValue(*persistent_device_info_)));
 
@@ -2275,7 +2275,7 @@ TEST_F(SiteSettingsHandlerChooserExceptionTest,
     // displayed through the policy granted site exception, so ensure that the
     // policy exception is present under the "Gizmo" device.
     EXPECT_TRUE(ChooserExceptionContainsSiteException(exceptions, "Gizmo",
-                                                      kChromiumOriginStr));
+                                                      kMonyharOriginStr));
     EXPECT_FALSE(ChooserExceptionContainsSiteException(exceptions, "Gizmo",
                                                        kGoogleOriginStr));
   }
@@ -2284,7 +2284,7 @@ TEST_F(SiteSettingsHandlerChooserExceptionTest,
               OnObjectPermissionChanged(absl::optional<ContentSettingsType>(
                                             ContentSettingsType::USB_GUARD),
                                         ContentSettingsType::USB_CHOOSER_DATA));
-  EXPECT_CALL(observer_, OnPermissionRevoked(kChromiumOrigin));
+  EXPECT_CALL(observer_, OnPermissionRevoked(kMonyharOrigin));
   handler()->HandleResetChooserExceptionForSite(&args);
 
   // The HandleResetChooserExceptionForSite() method should have also caused the
@@ -2303,7 +2303,7 @@ TEST_F(SiteSettingsHandlerChooserExceptionTest,
     // policy is still active by looking for the genericly constructed name.
     EXPECT_TRUE(ChooserExceptionContainsSiteException(
         exceptions, "Unknown product 0x162E from Google Inc.",
-        kChromiumOriginStr));
+        kMonyharOriginStr));
     EXPECT_FALSE(ChooserExceptionContainsSiteException(exceptions, "Gizmo",
                                                        kGoogleOriginStr));
   }

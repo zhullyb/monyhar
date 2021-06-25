@@ -47,7 +47,7 @@ default_args = {
   rtc_include_ilbc = false
 
   # Changes some setup for the Crashpad build to set them to build against
-  # Chromium's zlib, base, etc.
+  # Monyhar's zlib, base, etc.
   crashpad_dependencies = "monyhar"
 
   # Override ANGLE's Vulkan dependencies.
@@ -165,7 +165,7 @@ exec_script_whitelist =
       # Whitelist entries for //build should go into
       # //build/dotfile_settings.gni instead, so that they can be shared
       # with other repos. The entries in this list should be only for files
-      # in the Chromium repo outside of //build.
+      # in the Monyhar repo outside of //build.
       "//build_overrides/build.gni",
 
       "//chrome/android/webapk/shell_apk/prepare_upload_dir/BUILD.gn",

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -22,7 +22,7 @@ class CRDTP_EXPORT FrontendChannel {
   // Sends protocol responses and notifications. The |call_id| parameter is
   // seemingly redundant because it's also included in the message, but
   // responses may be sent from an untrusted source to a trusted process (e.g.
-  // from Chromium's renderer (blink) to the browser process), which needs
+  // from Monyhar's renderer (blink) to the browser process), which needs
   // to be able to match the response to an earlier request without parsing the
   // messsage.
   virtual void SendProtocolResponse(int call_id,
@@ -33,7 +33,7 @@ class CRDTP_EXPORT FrontendChannel {
   // FallThrough indicates that |message| should be handled in another layer.
   // Usually this means the layer responding to the message didn't handle it,
   // but in some cases messages are handled by multiple layers (e.g. both
-  // the embedder and the content layer in Chromium).
+  // the embedder and the content layer in Monyhar).
   virtual void FallThrough(int call_id,
                            span<uint8_t> method,
                            span<uint8_t> message) = 0;

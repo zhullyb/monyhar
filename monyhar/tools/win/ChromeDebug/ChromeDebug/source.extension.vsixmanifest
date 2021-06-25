@@ -3,9 +3,9 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="7de8bbab-82c7-4871-b82c-4d5d44a3979d" Version="1.0" Language="en-US"
-              Publisher="The Chromium Authors" />
+              Publisher="The Monyhar Authors" />
     <DisplayName>ChromeDebug</DisplayName>
-    <Description xml:space="preserve">Debugging Features for Chromium</Description>
+    <Description xml:space="preserve">Debugging Features for Monyhar</Description>
     <License>LICENSE</License>
   </Metadata>
   <Installation InstalledByMsi="false">

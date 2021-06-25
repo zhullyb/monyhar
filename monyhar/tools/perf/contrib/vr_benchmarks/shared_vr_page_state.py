@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -91,7 +91,7 @@ class AndroidSharedVrPageState(_SharedVrPageState):
       self._RemoveSystemVrCore()
     if not self._finder_options.disable_vrcore_install:
       self._InstallVrCore()
-    self._ConfigureVrCore(os.path.join(path_util.GetChromiumSrcDir(),
+    self._ConfigureVrCore(os.path.join(path_util.GetMonyharSrcDir(),
                                        self._finder_options.shared_prefs_file))
     self._InstallNfcApk()
     if not self._finder_options.disable_keyboard_install:
@@ -123,7 +123,7 @@ class AndroidSharedVrPageState(_SharedVrPageState):
   def _InstallVrCore(self):
     """Installs the VrCore APK."""
     self.platform.InstallApplication(
-        os.path.join(path_util.GetChromiumSrcDir(), 'third_party',
+        os.path.join(path_util.GetMonyharSrcDir(), 'third_party',
                      'gvr-android-sdk', 'test-apks', 'vr_services',
                      'vr_services_current.apk'))
 
@@ -139,7 +139,7 @@ class AndroidSharedVrPageState(_SharedVrPageState):
 
   def _InstallNfcApk(self):
     """Installs the APK that allows VR tests to simulate a headset NFC scan."""
-    monyhar_root = path_util.GetChromiumSrcDir()
+    monyhar_root = path_util.GetMonyharSrcDir()
     # Find the most recently build APK
     candidate_apks = []
     for build_path in util.GetBuildDirectories(monyhar_root):
@@ -158,7 +158,7 @@ class AndroidSharedVrPageState(_SharedVrPageState):
   def _InstallKeyboardApk(self):
     """Installs the VR Keyboard APK."""
     self.platform.InstallApplication(
-        os.path.join(path_util.GetChromiumSrcDir(), 'third_party',
+        os.path.join(path_util.GetMonyharSrcDir(), 'third_party',
                      'gvr-android-sdk', 'test-apks', 'vr_keyboard',
                      'vr_keyboard_current.apk'))
 
@@ -172,7 +172,7 @@ class AndroidSharedVrPageState(_SharedVrPageState):
     # Re-apply Cardboard as the viewer to leave the device in a consistent
     # state after a benchmark run
     # TODO(bsheedy): Remove this after crbug.com/772969 is fixed
-    self._ConfigureVrCore(os.path.join(path_util.GetChromiumSrcDir(),
+    self._ConfigureVrCore(os.path.join(path_util.GetMonyharSrcDir(),
                                        CARDBOARD_PATH))
 
   def _CycleScreen(self):

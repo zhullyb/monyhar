@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -370,14 +370,14 @@ std::unique_ptr<network::SimpleURLLoader> JsonRequest::Builder::BuildURLLoader(
         semantics {
           sender: "New Tab Page Content Suggestions Fetch"
           description:
-            "Chromium can show content suggestions (e.g. news articles) on the "
+            "Monyhar can show content suggestions (e.g. news articles) on the "
             "New Tab page. For signed-in users, these may be personalized "
             "based on the user's synced browsing history."
           trigger:
             "Triggered periodically in the background, or upon explicit user "
             "request."
           data:
-            "The Chromium UI language, as well as a second language the user "
+            "The Monyhar UI language, as well as a second language the user "
             "understands, based on language::UrlLanguageHistogram. For "
             "signed-in users, the requests is authenticated."
           destination: GOOGLE_OWNED_SERVICE

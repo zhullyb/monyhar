@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -127,7 +127,7 @@ std::wstring GetBaseAppName();
 // directly.
 const wchar_t* GetBaseAppId();
 
-// Returns the browser's ProgID prefix (e.g., ChromeHTML or ChromiumHTM). The
+// Returns the browser's ProgID prefix (e.g., ChromeHTML or MonyharHTM). The
 // full id is of the form |prefix|.|suffix| and is limited to a maximum length
 // of 39 characters including null-terminator; see
 // https://msdn.microsoft.com/library/windows/desktop/dd542719.aspx for details.

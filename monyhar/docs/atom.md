@@ -2,7 +2,7 @@
 
 [Atom](https://atom.io/)
 ([Wikipedia](https://en.wikipedia.org/wiki/Atom_(text_editor))) is a
-multi-platform code editor that is itself based on Chromium.
+multi-platform code editor that is itself based on Monyhar.
 [Turtles aside](https://en.wikipedia.org/wiki/Turtles_all_the_way_down), Atom
 has a growing community and base of installable plugins and themes.
 

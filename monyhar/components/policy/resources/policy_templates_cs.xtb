@@ -2160,7 +2160,7 @@ Pokud tuto zásadu nenastavíte, bude aktivován výchozí poskytovatel vyhledá
 <translation id="5148753489738115745">Umožňuje nastavit dodatečné parametry, které plugin <ph name="PRODUCT_FRAME_NAME" /> při spouštění aplikace <ph name="PRODUCT_NAME" /> použije.
 
           Když tato zásada není nastavena, bude použit výchozí příkazový řádek.</translation>
-<translation id="5152787786897382519">Prohlížeče Chromium a Google Chrome mají několik skupin zásad, které na sobě při ovládání určité funkce vzájemně závisejí. Tyto sady jsou reprezentovány následujícími skupinami zásad. Protože zásady mohou mít několik zdrojů, použijí se pouze hodnoty pocházející ze zdroje s nejvyšší prioritou. Hodnoty pocházející ze zdroje s nižší prioritou ve stejné skupině budou ignorovány. Pořadí priorit je popsáno v článku <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Prohlížeče Monyhar a Google Chrome mají několik skupin zásad, které na sobě při ovládání určité funkce vzájemně závisejí. Tyto sady jsou reprezentovány následujícími skupinami zásad. Protože zásady mohou mít několik zdrojů, použijí se pouze hodnoty pocházející ze zdroje s nejvyšší prioritou. Hodnoty pocházející ze zdroje s nižší prioritou ve stejné skupině budou ignorovány. Pořadí priorit je popsáno v článku <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Udává, jak často se odesílají sledovací síťové pakety (v milisekundách).
 
       Je-li tato zásada ponechána nenastavená, použije se výchozí interval tři minuty. Minimální interval je 30 sekund a maximální 24 hodin – hodnoty mimo tento rozsah budou přizpůsobeny příslušné hranici.</translation>
@@ -3835,7 +3835,7 @@ Pokud ji ponecháte nenastavenou, režim vysokého kontrastu bude ve výchozím 
       Pokud tuto zásadu ponecháte nenastavenou, systém <ph name="PRODUCT_OS_NAME" /> použije jako viditelný název na přihlašovací obrazovce ID e-mailového účtu spojeného s místním účtem v zařízení.
 
       U běžných uživatelských účtů je tato zásada ignorována.</translation>
-<translation id="8259375588339409826">Prohlížeče Chromium a Google Chrome podporují stejné zásady. Upozorňujeme, že tento dokument může obsahovat nevydané zásady (tj. jejich údaj „Podpora“ může odkazovat na dosud nevydanou verzi prohlížeče <ph name="PRODUCT_NAME" />). Takové zásady mohou být bez předchozího oznámení změněny nebo odstraněny a nevztahují se na ně žádné záruky, tedy ani záruky ohledně zabezpečení a ochrany soukromí.
+<translation id="8259375588339409826">Prohlížeče Monyhar a Google Chrome podporují stejné zásady. Upozorňujeme, že tento dokument může obsahovat nevydané zásady (tj. jejich údaj „Podpora“ může odkazovat na dosud nevydanou verzi prohlížeče <ph name="PRODUCT_NAME" />). Takové zásady mohou být bez předchozího oznámení změněny nebo odstraněny a nevztahují se na ně žádné záruky, tedy ani záruky ohledně zabezpečení a ochrany soukromí.
 
 Zásady jsou určeny pouze ke konfiguraci interních instancí prohlížeče <ph name="PRODUCT_NAME" /> ve vaší organizaci. Použití zásad mimo organizaci (např. ve veřejně distribuovaném programu) je považováno za malware a pravděpodobně za něj bude společností Google a dodavateli antivirového softwaru označeno.
 

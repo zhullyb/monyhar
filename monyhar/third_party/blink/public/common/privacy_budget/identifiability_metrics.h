@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -21,7 +21,7 @@ namespace blink {
 // The returned digest ...:
 //
 // * Is Stable: The returned digest will be consistent across different versions
-//   of Chromium. Thus it can be persisted and meaningfully aggregated across
+//   of Monyhar. Thus it can be persisted and meaningfully aggregated across
 //   browser versions.
 //
 // * Is approximately uniformly distributed when the input is uniformly

@@ -1,5 +1,5 @@
 #!/usr/bin/env vpython3
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Unit test for branch.py"""
@@ -60,7 +60,7 @@ class BranchUnitTest(unittest.TestCase):
         textwrap.dedent("""\
             {
                 "project": "monyhar-mMM",
-                "project_title": "Chromium MMM",
+                "project_title": "Monyhar MMM",
                 "is_main": false,
                 "is_lts_branch": false,
                 "ref": "refs/branch-heads/BBBB",
@@ -88,7 +88,7 @@ class BranchUnitTest(unittest.TestCase):
     input = textwrap.dedent("""\
         {
             "project": "monyhar-mMM",
-            "project_title": "Chromium MMM",
+            "project_title": "Monyhar MMM",
             "is_main": true,
             "is_lts_branch": true,
             "ref": "refs/branch-heads/AAAA"
@@ -99,7 +99,7 @@ class BranchUnitTest(unittest.TestCase):
         textwrap.dedent("""\
             {
                 "project": "monyhar-mMM",
-                "project_title": "Chromium MMM",
+                "project_title": "Monyhar MMM",
                 "is_main": false,
                 "is_lts_branch": false,
                 "ref": "refs/branch-heads/AAAA"
@@ -110,7 +110,7 @@ class BranchUnitTest(unittest.TestCase):
     input = textwrap.dedent("""\
         {
             "project": "monyhar-mMM",
-            "project_title": "Chromium MMM",
+            "project_title": "Monyhar MMM",
             "is_main": true,
             "is_lts_branch": false,
             "ref": "refs/branch-heads/AAAA"
@@ -121,7 +121,7 @@ class BranchUnitTest(unittest.TestCase):
         textwrap.dedent("""\
             {
                 "project": "monyhar-mMM",
-                "project_title": "Chromium MMM",
+                "project_title": "Monyhar MMM",
                 "is_main": false,
                 "is_lts_branch": true,
                 "ref": "refs/branch-heads/AAAA"

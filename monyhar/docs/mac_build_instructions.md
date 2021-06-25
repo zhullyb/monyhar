@@ -1,4 +1,4 @@
-# Checking out and building Chromium for Mac
+# Checking out and building Monyhar for Mac
 
 There are instructions for other platforms linked from the
 [get the code](get_the_code.md) page.
@@ -94,7 +94,7 @@ development and testing purposes.
 
 ## Setting up the build
 
-Chromium uses [Ninja](https://ninja-build.org) as its main build tool along with
+Monyhar uses [Ninja](https://ninja-build.org) as its main build tool along with
 a tool called [GN](https://gn.googlesource.com/gn/+/master/docs/quick_start.md)
 to generate `.ninja` files. You can create any number of *build directories*
 with different configurations. To create a build directory:
@@ -113,7 +113,7 @@ $ gn gen out/Default
   operating system and CPU.
 * For more info on GN, run `gn help` on the command line or read the
   [quick start guide](https://gn.googlesource.com/gn/+/master/docs/quick_start.md).
-* Building Chromium for arm Macs requires [additional setup](mac_arm64.md).
+* Building Monyhar for arm Macs requires [additional setup](mac_arm64.md).
 
 
 ### Faster builds
@@ -154,9 +154,9 @@ in gdb).
 
 You might also want to [install ccache](ccache_mac.md) to speed up the build.
 
-## Build Chromium
+## Build Monyhar
 
-Build Chromium (the "chrome" target) with Ninja using the command:
+Build Monyhar (the "chrome" target) with Ninja using the command:
 
 ```shell
 $ autoninja -C out/Default chrome
@@ -170,18 +170,18 @@ out/Default` from the command line. To compile one, pass the GN label to Ninja
 with no preceding "//" (so, for `//chrome/test:unit_tests` use `autoninja -C
 out/Default chrome/test:unit_tests`).
 
-## Run Chromium
+## Run Monyhar
 
 Once it is built, you can simply run the browser:
 
 ```shell
-$ out/Default/Chromium.app/Contents/MacOS/Chromium
+$ out/Default/Monyhar.app/Contents/MacOS/Monyhar
 ```
 
 ## Avoiding the "incoming network connections" dialog
 
 Every time you start a new developer build of Chrome you get a system dialog
-asking "Do you want the application Chromium.app to accept incoming
+asking "Do you want the application Monyhar.app to accept incoming
 network connections?" - to avoid this, run with this command-line flag:
 
 --disable-features="MediaRouter"
@@ -211,7 +211,7 @@ $ git rebase-update
 $ gclient sync
 ```
 
-The first command updates the primary Chromium source repository and rebases
+The first command updates the primary Monyhar source repository and rebases
 any of your local branches on top of tip-of-tree (aka the Git branch
 `origin/master`). If you don't want to use this script, you can also just use
 `git pull` or other common Git commands to update the repo.
@@ -261,7 +261,7 @@ tree is open before checking out. This will increase your chances of success.
 #### Increase the vnode cache size
 
 `git status` is used frequently to determine the status of your checkout.  Due
-to the large number of files in Chromium's checkout, `git status` performance
+to the large number of files in Monyhar's checkout, `git status` performance
 can be quite variable.  Increasing the system's vnode cache appears to help. By
 default, this command:
 
@@ -277,7 +277,7 @@ $ sudo sysctl kern.maxvnodes=$((512*1024))
 ```
 
 Higher values may be appropriate if you routinely move between different
-Chromium checkouts.  This setting will reset on reboot, the startup setting can
+Monyhar checkouts.  This setting will reset on reboot, the startup setting can
 be set in `/etc/sysctl.conf`:
 
 ```shell

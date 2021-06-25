@@ -31,7 +31,7 @@
  */
 
 /**
- * @fileoverview Definitions for the Chromium extensions API.
+ * @fileoverview Definitions for the Monyhar extensions API.
  *
  * This is the externs file for the Chrome Extensions API.
  * See http://developer.chrome.com/extensions/

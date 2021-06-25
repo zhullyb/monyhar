@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -61,9 +61,9 @@ public final class ResourceBundle {
     /**
      * Return the location of a locale-specific .pak file asset.
      *
-     * @param locale Chromium locale name.
+     * @param locale Monyhar locale name.
      * @param inBundle If true, return the path of the uncompressed .pak file
-     *                 containing Chromium UI strings within app bundles. If
+     *                 containing Monyhar UI strings within app bundles. If
      *                 false, return the path of the WebView UI strings instead.
      * @param logError Logs if the file is not found.
      * @return Asset path to .pak file, or null if the locale is not supported.
@@ -76,7 +76,7 @@ public final class ResourceBundle {
             return null;
         }
         if (Arrays.binarySearch(sAvailableLocales, locale) < 0) {
-            // This locale is not supported by Chromium.
+            // This locale is not supported by Monyhar.
             return null;
         }
         String pathPrefix = "assets/stored-locales/";

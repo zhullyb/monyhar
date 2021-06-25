@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -16,19 +16,19 @@ exec("./swangle.try.star")
 # the header)
 # luci.external_console_view(
 #     name = "main-m86",
-#     title = "Chromium M86 Main Console",
+#     title = "Monyhar M86 Main Console",
 #     source = "monyhar-m86:main",
 # )
 
 # luci.external_console_view(
 #     name = "mirrors-m86",
-#     title = "Chromium M86 CQ Mirrors Console",
+#     title = "Monyhar M86 CQ Mirrors Console",
 #     source = "monyhar-m86:mirrors",
 # )
 
 # luci.external_console_view(
 #     name = "try-m86",
-#     title = "Chromium M86 CQ Console",
+#     title = "Monyhar M86 CQ Console",
 #     source = "monyhar-m86:try",
 # )
 

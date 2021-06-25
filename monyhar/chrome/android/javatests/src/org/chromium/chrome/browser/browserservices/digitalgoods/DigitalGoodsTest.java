@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -213,7 +213,7 @@ public class DigitalGoodsTest {
     }
 
     private void setTwaServiceResponse(String name, Bundle args) throws TimeoutException {
-        // TestTrustedWebActivityService doesn't currently depend on any Chromium code, so instead
+        // TestTrustedWebActivityService doesn't currently depend on any Monyhar code, so instead
         // of dragging in a lot of dependencies, we use this method to set what its response will
         // be. This also keeps the TestTrustedWebActivityService simpler.
         Bundle response = new Bundle();

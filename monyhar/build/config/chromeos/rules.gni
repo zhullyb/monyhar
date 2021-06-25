@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -305,7 +305,7 @@ template("generate_runner_script") {
       }
     }
 
-    # If we have public Chromium builds, use public Chromium OS images when
+    # If we have public Monyhar builds, use public Monyhar OS images when
     # flashing the test device.
     if (!is_chrome_branded) {
       executable_args += [ "--public-image" ]
@@ -448,7 +448,7 @@ template("lacros_tast_tests") {
     skip_generating_board_args = true
 
     # By default, tast tests download a lacros-chrome from a gcs location and
-    # use it for testing. To support running lacros tast tests from Chromium CI,
+    # use it for testing. To support running lacros tast tests from Monyhar CI,
     # a Var is added to support pointing the tast tests to use a specified
     # pre-deployed lacros-chrome. The location is decided by:
     # https://source.monyhar.org/monyhar/monyhar/src/+/main:third_party/chromite/scripts/deploy_chrome.py;l=80;drc=86f1234a4be8e9574442e076cdc835897f7bea61

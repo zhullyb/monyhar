@@ -39,7 +39,7 @@ e.g.: `./video_decode_accelerator_perf_tests test-25fps.h264`
 
 __Test videos:__ Test videos are present for multiple codecs in the
 [_media/test/data_](https://cs.monyhar.org/monyhar/src/media/test/data/)
-folder in Chromium's source tree (e.g.
+folder in Monyhar's source tree (e.g.
 [_test-25fps.vp8_](https://cs.monyhar.org/monyhar/src/media/test/data/test-25fps.vp8)).
 If no video is specified _test-25fps.h264_ will be used.
 

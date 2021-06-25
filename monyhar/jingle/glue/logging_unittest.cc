@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,7 +7,7 @@
 // Also note that we are only allowed to call InitLogging() twice so the test
 // cases are more dense than normal.
 
-// We must include Chromium headers before including the overrides header
+// We must include Monyhar headers before including the overrides header
 // since webrtc's logging.h file may conflict with monyhar.
 #include "base/command_line.h"
 #include "base/files/file_util.h"

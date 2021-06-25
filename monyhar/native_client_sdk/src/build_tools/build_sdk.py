@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -239,7 +239,7 @@ def BuildStepUntarToolchains(pepperdir, toolchains):
 
 
 # List of toolchain headers to install.
-# Source is relative to top of Chromium tree, destination is relative
+# Source is relative to top of Monyhar tree, destination is relative
 # to the toolchain header directory.
 NACL_HEADER_MAP = {
   'newlib': [

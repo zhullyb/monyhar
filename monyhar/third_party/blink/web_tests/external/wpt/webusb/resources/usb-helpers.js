@@ -3,7 +3,7 @@
 // These tests rely on the User Agent providing an implementation of the
 // WebUSB Testing API (https://wicg.github.io/webusb/test/).
 //
-// In Chromium-based browsers this implementation is provided by a polyfill
+// In Monyhar-based browsers this implementation is provided by a polyfill
 // in order to reduce the amount of test-only code shipped to users. To enable
 // these tests the browser must be run with these options:
 //
@@ -11,7 +11,7 @@
 
 (() => {
   // Load scripts needed by the test API on context creation.
-  if (isChromiumBased) {
+  if (isMonyharBased) {
     loadScript('/resources/monyhar/webusb-child-test.js');
   }
 })();
@@ -21,7 +21,7 @@ function usb_test(func, name, properties) {
     assert_implements(navigator.usb, 'missing navigator.usb');
     if (navigator.usb.test === undefined) {
       // Try loading a polyfill for the WebUSB Testing API.
-      if (isChromiumBased) {
+      if (isMonyharBased) {
         await loadScript('/resources/monyhar/webusb-test.js');
       }
     }

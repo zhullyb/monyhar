@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -44,7 +44,7 @@ TEST(HpackFuzzUtil, GeneratorContextExpansion) {
 // evaluate SampleExponential along fixed points of the [0,1] domain.
 TEST(HpackFuzzUtilTest, SampleExponentialRegression) {
   // TODO(jgraettinger): Upstream uses a seeded random generator here to pin
-  // the behavior of SampleExponential. Chromium's random generation utilities
+  // the behavior of SampleExponential. Monyhar's random generation utilities
   // are strongly secure, but provide no way to seed the generator.
   for (size_t i = 0; i != 100; ++i) {
     EXPECT_GE(30u, HpackFuzzUtil::SampleExponential(10, 30));

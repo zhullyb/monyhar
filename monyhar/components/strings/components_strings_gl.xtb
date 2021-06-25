@@ -8,7 +8,7 @@
 <translation id="1015730422737071372">Proporcionar información adicional</translation>
 <translation id="1019413721762100891">Desactivado</translation>
 <translation id="1021110881106174305">Tarxetas aceptadas</translation>
-<translation id="1021753677514347426">Este problema prodúcese por causa dun certificado instalado por ti ou por outra persoa no teu dispositivo. Sábese que este certificado se utiliza para supervisar e interceptar redes, e Chromium non confía nel. Aínda que existen algunhas situacións lexítimas para a supervisión, como no caso de redes de empresas ou de centros educativos, Chromium quere asegurarse de que sexas consciente do que acontece, inda que non poidas facer nada ao respecto. A supervisión pode levarse a cabo en calquera navegador ou aplicación que acceda á Web.</translation>
+<translation id="1021753677514347426">Este problema prodúcese por causa dun certificado instalado por ti ou por outra persoa no teu dispositivo. Sábese que este certificado se utiliza para supervisar e interceptar redes, e Monyhar non confía nel. Aínda que existen algunhas situacións lexítimas para a supervisión, como no caso de redes de empresas ou de centros educativos, Monyhar quere asegurarse de que sexas consciente do que acontece, inda que non poidas facer nada ao respecto. A supervisión pode levarse a cabo en calquera navegador ou aplicación que acceda á Web.</translation>
 <translation id="1024111578869940408">Ás veces, os atacantes imitan sitios facendo cambios no enderezo web que son difíciles de ver.</translation>
 <translation id="1028781062521375153">Ver detalles</translation>
 <translation id="1030706264415084469">O URL <ph name="URL" /> quere almacenar un gran volume de datos de forma permanente no teu dispositivo</translation>
@@ -286,7 +286,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="1919367280705858090">Obter axuda cando aparece unha mensaxe de erro concreta</translation>
 <translation id="192020519938775529">{COUNT,plural, =0{Ningún}=1{1 sitio}other{# sitios}}</translation>
 <translation id="1924727005275031552">Novo</translation>
-<translation id="1945968466830820669">Poderías perder o acceso á conta da túa organización ou alguén podería roubarche a identidade. Chromium recoméndache que cambies de contrasinal agora.</translation>
+<translation id="1945968466830820669">Poderías perder o acceso á conta da túa organización ou alguén podería roubarche a identidade. Monyhar recoméndache que cambies de contrasinal agora.</translation>
 <translation id="1947454675006758438">Grampa na parte superior dereita</translation>
 <translation id="1958218078413065209">A túa máxima puntuación é <ph name="SCORE" />.</translation>
 <translation id="1959001866257244765">Enviar a Google os <ph name="BEGIN_WHITEPAPER_LINK" />URL dalgunhas páxinas que visitas, información limitada do sistema e parte do contido das páxinas<ph name="END_WHITEPAPER_LINK" /> para axudarlle a mellorar a seguranza da Web para todo o mundo. <ph name="BEGIN_PRIVACY_PAGE_LINK" />Política de privacidade<ph name="END_PRIVACY_PAGE_LINK" /></translation>
@@ -415,7 +415,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="2413528052993050574">Este servidor non puido demostrar que é <ph name="DOMAIN" /> porque quizais se revogase o certificado de seguranza. É posible que isto se deba a un erro de configuración ou a que un atacante interceptase a túa conexión.</translation>
 <translation id="2414886740292270097">Escuro</translation>
 <translation id="2438874542388153331">Catro perforacións na parte dereita</translation>
-<translation id="245044156129055925">Acabas de introducir o teu contrasinal nun sitio enganoso. Chromium recoméndache que cambies o contrasinal agora.</translation>
+<translation id="245044156129055925">Acabas de introducir o teu contrasinal nun sitio enganoso. Monyhar recoméndache que cambies o contrasinal agora.</translation>
 <translation id="2463739503403862330">Completar</translation>
 <translation id="2465402087343596252">Architecture-E</translation>
 <translation id="2465655957518002998">Escoller método de entrega</translation>
@@ -431,7 +431,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="2491414235131909199">Unha extensión bloqueou esta páxina</translation>
 <translation id="2493640343870896922">Letter-Plus</translation>
 <translation id="2495083838625180221">Analizador JSON</translation>
-<translation id="2495093607237746763">Se se marca esta opción, Chromium almacenará unha copia da túa tarxeta neste dispositivo para completar os formularios máis rápido.</translation>
+<translation id="2495093607237746763">Se se marca esta opción, Monyhar almacenará unha copia da túa tarxeta neste dispositivo para completar os formularios máis rápido.</translation>
 <translation id="2498091847651709837">Dixitalizar nova tarxeta</translation>
 <translation id="2501278716633472235">Ir atrás</translation>
 <translation id="2505268675989099013">Protexer conta</translation>
@@ -545,7 +545,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="2969319727213777354">Para establecer unha conexión segura, é necesario que o reloxo estea correctamente axustado. Isto débese a que os certificados utilizados polos sitios web para identificarse só son válidos durante períodos de tempo específicos. Debido a que o reloxo do dispositivo está incorrectamente axustado, Chrome non pode verificar estes certificados.</translation>
 <translation id="2972581237482394796">&amp;Refacer</translation>
 <translation id="2977665033722899841"><ph name="ROW_NAME" />: opción actualmente seleccionada. <ph name="ROW_CONTENT" /></translation>
-<translation id="2985306909656435243">Se se activa esta opción, Chromium almacenará unha copia da túa tarxeta neste dispositivo para completar os formularios máis rápido.</translation>
+<translation id="2985306909656435243">Se se activa esta opción, Monyhar almacenará unha copia da túa tarxeta neste dispositivo para completar os formularios máis rápido.</translation>
 <translation id="2985398929374701810">Introduce un enderezo válido</translation>
 <translation id="2986368408720340940">Este método de recollida non está dispoñible. Proba cun diferente.</translation>
 <translation id="2987034854559945715">Non se atopou ningunha función que coincida coa busca</translation>
@@ -668,7 +668,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="3423742043356668186">Especificado polo sistema</translation>
 <translation id="3427092606871434483">Permitir (predeterminado)</translation>
 <translation id="3427342743765426898">&amp;Refacer modificación</translation>
-<translation id="342781501876943858">Chromium recoméndache que restablezas o contrasinal se o reutilizaches noutros sitios.</translation>
+<translation id="342781501876943858">Monyhar recoméndache que restablezas o contrasinal se o reutilizaches noutros sitios.</translation>
 <translation id="3428151540071562330">Un ou varios URI do modelo do servidor DnsOverHttpsTemplates non son válidos e non se utilizarán.</translation>
 <translation id="3431636764301398940">Gardar esta tarxeta neste dispositivo</translation>
 <translation id="3432601291244612633">Pechar páxina</translation>
@@ -759,7 +759,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="373042150751172459">B4 (sobre)</translation>
 <translation id="3736520371357197498">Se aceptas os riscos para a túa seguranza, podes <ph name="BEGIN_LINK" />visitar este sitio non seguro<ph name="END_LINK" /> antes de que se eliminen os programas perigosos.</translation>
 <translation id="3738166223076830879">O teu administrador xestiona o teu navegador.</translation>
-<translation id="3744899669254331632">Non se pode visitar <ph name="SITE" /> nestes momentos porque o sitio web enviou credenciais codificadas que Chromium non pode procesar. Os erros e ataques da rede normalmente son temporais, polo que é probable que esta páxina funcione máis tarde.</translation>
+<translation id="3744899669254331632">Non se pode visitar <ph name="SITE" /> nestes momentos porque o sitio web enviou credenciais codificadas que Monyhar non pode procesar. Os erros e ataques da rede normalmente son temporais, polo que é probable que esta páxina funcione máis tarde.</translation>
 <translation id="3745099705178523657">Unha vez que confirmes os datos, os detalles da tarxeta da túa Conta de Google compartiranse con este sitio.</translation>
 <translation id="3748148204939282805">Os piratas informáticos de <ph name="BEGIN_BOLD" /><ph name="SITE" /><ph name="END_BOLD" /> poden enganarte para que realices accións perigosas, como instalar un software ou revelar información persoal (por exemplo, contrasinais, números de teléfono ou tarxetas de crédito). <ph name="BEGIN_LEARN_MORE_LINK" />Máis información<ph name="END_LEARN_MORE_LINK" /></translation>
 <translation id="3754210790023674521">Saír do modo de pantalla superposta</translation>
@@ -1012,7 +1012,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="467662567472608290">Este servidor non puido demostrar que é <ph name="DOMAIN" /> porque o seu certificado de seguranza contén erros. É posible que isto se deba a un erro de configuración ou a que un atacante interceptase a túa conexión.</translation>
 <translation id="4677585247300749148">O URL <ph name="URL" /> quere responder a eventos de accesibilidade</translation>
 <translation id="467809019005607715">Presentacións de Google</translation>
-<translation id="4680804919228900307">Acabas de escribir o teu contrasinal nun sitio enganoso. Chromium recomenda comprobar os contrasinais gardados para <ph name="WEBSITE_1" />, <ph name="WEBSITE_2" />, <ph name="WEBSITE_3" /> e outros sitios nos que esteas a utilizar este contrasinal neste momento.</translation>
+<translation id="4680804919228900307">Acabas de escribir o teu contrasinal nun sitio enganoso. Monyhar recomenda comprobar os contrasinais gardados para <ph name="WEBSITE_1" />, <ph name="WEBSITE_2" />, <ph name="WEBSITE_3" /> e outros sitios nos que esteas a utilizar este contrasinal neste momento.</translation>
 <translation id="4690462567478992370">Deter o uso dun certificado non válido</translation>
 <translation id="4691835149146451662">Architecture-A (sobre)</translation>
 <translation id="4701488924964507374"><ph name="SENTENCE1" /> <ph name="SENTENCE2" /></translation>
@@ -1026,7 +1026,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="4731638775147756694">O teu administrador bloqueou esta aplicación</translation>
 <translation id="4731967714531604179">Prc2 (sobre)</translation>
 <translation id="4733082559415072992">O URL <ph name="URL" /> quere utilizar a localización do teu dispositivo</translation>
-<translation id="4736825316280949806">Reinicia Chromium</translation>
+<translation id="4736825316280949806">Reinicia Monyhar</translation>
 <translation id="4736934858538408121">Tarxeta virtual</translation>
 <translation id="473775607612524610">Actualizar</translation>
 <translation id="4738601419177586157">Suxestión de busca de "<ph name="TEXT" />"</translation>
@@ -1133,7 +1133,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="5088142053160410913">Mensaxe para o operador</translation>
 <translation id="5089810972385038852">Estado</translation>
 <translation id="5093232627742069661">Dobrez en Z</translation>
-<translation id="5094747076828555589">Este servidor non puido demostrar que é <ph name="DOMAIN" /> porque Chromium non confía no seu certificado de seguranza. É posible que isto se deba a un erro de configuración ou a que un atacante interceptase a túa conexión.</translation>
+<translation id="5094747076828555589">Este servidor non puido demostrar que é <ph name="DOMAIN" /> porque Monyhar non confía no seu certificado de seguranza. É posible que isto se deba a un erro de configuración ou a que un atacante interceptase a túa conexión.</translation>
 <translation id="5095208057601539847">Provincia</translation>
 <translation id="5097099694988056070">Estatísticas do hardware, como o uso de CPU/RAM</translation>
 <translation id="5097501891273180634">A2</translation>
@@ -1430,7 +1430,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="6180316780098470077">Intervalo de reintentos</translation>
 <translation id="6196640612572343990">Bloquear cookies de terceiros</translation>
 <translation id="6203231073485539293">Comproba a túa conexión a Internet</translation>
-<translation id="6218753634732582820">Queres eliminar o enderezo de Chromium?</translation>
+<translation id="6218753634732582820">Queres eliminar o enderezo de Monyhar?</translation>
 <translation id="622039917539443112">Dobrez en paralelo</translation>
 <translation id="6221345481584921695">A navegación segura de Google <ph name="BEGIN_LINK" />detectou software malicioso<ph name="END_LINK" /> en <ph name="SITE" /> recentemente. Ás veces, os sitios web que adoitan ser seguros inféctanse con software malicioso. O contido malicioso procede de <ph name="SUBRESOURCE_HOST" />, un coñecido distribuidor de software malicioso.</translation>
 <translation id="6234122620015464377">Recorte despois de cada documento</translation>
@@ -1484,7 +1484,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="6406765186087300643">C0 (sobre)</translation>
 <translation id="6409754798200046165">Acabas de introducir o teu contrasinal nun sitio enganoso. Chrome recoméndache que cambies o contrasinal agora.</translation>
 <translation id="6410264514553301377">Introduce a data de caducidade e o código CVC da tarxeta <ph name="CREDIT_CARD" /></translation>
-<translation id="6415778972515849510">Chromium pode axudarche a protexer a túa Conta de Google e a cambiar o teu contrasinal.</translation>
+<translation id="6415778972515849510">Monyhar pode axudarche a protexer a túa Conta de Google e a cambiar o teu contrasinal.</translation>
 <translation id="6423385022588644828">A partir de agora, confirma as tarxetas máis rápido con Touch ID</translation>
 <translation id="6425092077175753609">Material</translation>
 <translation id="6427730057873428458">Dobrez en ventá</translation>
@@ -1548,7 +1548,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="6657585470893396449">Contrasinal</translation>
 <translation id="666259744093848177">(x86_64 traducido)</translation>
 <translation id="6665553082534466207">Tres perforacións na parte dereita</translation>
-<translation id="6671697161687535275">Queres eliminar a túa suxestión de formulario de Chromium?</translation>
+<translation id="6671697161687535275">Queres eliminar a túa suxestión de formulario de Monyhar?</translation>
 <translation id="6685834062052613830">Pecha sesión e finaliza o proceso de configuración</translation>
 <translation id="6687335167692595844">Tamaño do tipo de letra solicitado</translation>
 <translation id="6688743156324860098">Actualizar…</translation>
@@ -1616,7 +1616,7 @@ En caso contrario, a configuración de privacidade impedirao. Se o permites, o c
 <translation id="6972629891077993081">Dispositivos de interface humana</translation>
 <translation id="6973656660372572881">Especifícanse tanto servidores proxy fixos como un URL de script .pac.</translation>
 <translation id="6973932557599545801">Síntoo, non podo axudar. Continúa sen asistencia.</translation>
-<translation id="6975012522936652259">Acabas de escribir o teu contrasinal nun sitio enganoso. Chromium recoméndache que vaias a <ph name="WEBSITE_1" />, <ph name="WEBSITE_2" /> e outros sitios nos que utilices este contrasinal para cambialo agora.</translation>
+<translation id="6975012522936652259">Acabas de escribir o teu contrasinal nun sitio enganoso. Monyhar recoméndache que vaias a <ph name="WEBSITE_1" />, <ph name="WEBSITE_2" /> e outros sitios nos que utilices este contrasinal para cambialo agora.</translation>
 <translation id="6979158407327259162">Google Drive</translation>
 <translation id="6979440798594660689">Silenciar (opción predeterminada)</translation>
 <translation id="6979983982287291980">Os ficheiros que descargas envíanse a Google Cloud ou a terceiros para analizalos. Por exemplo, poderíase comprobar se conteñen datos confidenciais ou software malicioso.</translation>
@@ -1703,7 +1703,7 @@ Detalles adicionais:
 <translation id="7320336641823683070">Axuda de conexión</translation>
 <translation id="7323804146520582233">Ocultar a sección <ph name="SECTION" /></translation>
 <translation id="733354035281974745">Anulación da conta local do dispositivo</translation>
-<translation id="7333654844024768166">Acabas de escribir o teu contrasinal nun sitio enganoso. Chromium recoméndache que vaias a <ph name="WEBSITE_1" />, <ph name="WEBSITE_2" />, <ph name="WEBSITE_3" /> e outros sitios nos que utilices este contrasinal para cambialo agora.</translation>
+<translation id="7333654844024768166">Acabas de escribir o teu contrasinal nun sitio enganoso. Monyhar recoméndache que vaias a <ph name="WEBSITE_1" />, <ph name="WEBSITE_2" />, <ph name="WEBSITE_3" /> e outros sitios nos que utilices este contrasinal para cambialo agora.</translation>
 <translation id="7334320624316649418">&amp;Refacer de cambio de orde</translation>
 <translation id="7337248890521463931">Mostrar máis liñas</translation>
 <translation id="7337706099755338005">Non está dispoñible na túa plataforma.</translation>
@@ -1759,7 +1759,7 @@ Detalles adicionais:
 <translation id="7485870689360869515">Non se atoparon datos.</translation>
 <translation id="7495528107193238112">Este contido está bloqueado. Ponte en contacto co propietario do sitio para corrixir o problema.</translation>
 <translation id="7498193950643227031">Se se cambia o tamaño, podería funcionar de forma inesperada. Agora podes limitar o cambio de tamaño das aplicacións en <ph name="SETTINGS" />.</translation>
-<translation id="7503664977220660814">Acabas de escribir o teu contrasinal nun sitio enganoso. Chromium recomenda comprobar os contrasinais gardados para <ph name="WEBSITE_1" />, <ph name="WEBSITE_2" /> e outros sitios nos que esteas a utilizar este contrasinal neste momento.</translation>
+<translation id="7503664977220660814">Acabas de escribir o teu contrasinal nun sitio enganoso. Monyhar recomenda comprobar os contrasinais gardados para <ph name="WEBSITE_1" />, <ph name="WEBSITE_2" /> e outros sitios nos que esteas a utilizar este contrasinal neste momento.</translation>
 <translation id="7508255263130623398">O código de dispositivo da política está baleiro ou non coincide co código do dispositivo actual</translation>
 <translation id="7508870219247277067">Verde aguacate</translation>
 <translation id="7511955381719512146">É posible que a rede wifi que utilizas requira o acceso a <ph name="BEGIN_BOLD" /><ph name="LOGIN_URL" /><ph name="END_BOLD" />.</translation>
@@ -1801,7 +1801,7 @@ Detalles adicionais:
 <translation id="7619838219691048931">Folla final</translation>
 <translation id="762844065391966283">Un de cada vez</translation>
 <translation id="7633909222644580952">Datos de rendemento e informes de fallos</translation>
-<translation id="7637571805876720304">Queres eliminar a túa tarxeta de crédito de Chromium?</translation>
+<translation id="7637571805876720304">Queres eliminar a túa tarxeta de crédito de Monyhar?</translation>
 <translation id="7637586430889951925">{COUNT,plural, =0{Ningún}=1{1 contrasinal na túa conta (para <ph name="DOMAIN_LIST" />)}other{# contrasinais na túa conta (para <ph name="DOMAIN_LIST" />)}}</translation>
 <translation id="7638605456503525968">Portos de serie</translation>
 <translation id="7639968568612851608">Gris escuro</translation>
@@ -1916,7 +1916,7 @@ Detalles adicionais:
 <translation id="8042918947222776840">Escoller método de recollida</translation>
 <translation id="8057711352706143257"><ph name="SOFTWARE_NAME" /> non está configurado correctamente. Ao desinstalar <ph name="SOFTWARE_NAME" /> adoita solucionarse o problema. <ph name="FURTHER_EXPLANATION" /></translation>
 <translation id="8066955247577885446">Produciuse un erro.</translation>
-<translation id="8067872629359326442">Acabas de escribir o teu contrasinal nun sitio enganoso. Chromium pode axudarche. Para cambiar o teu contrasinal e notificarlle a Google que a túa conta pode estar en risco, fai clic en Protexer conta.</translation>
+<translation id="8067872629359326442">Acabas de escribir o teu contrasinal nun sitio enganoso. Monyhar pode axudarche. Para cambiar o teu contrasinal e notificarlle a Google que a túa conta pode estar en risco, fai clic en Protexer conta.</translation>
 <translation id="8074253406171541171">10x13 (sobre)</translation>
 <translation id="8075898834294118863">Xestionar configuración dos sitios</translation>
 <translation id="8078141288243656252">Non se poden realizar anotacións ao xirar o documento</translation>
@@ -1955,7 +1955,7 @@ Detalles adicionais:
 <translation id="8213464188712611711">Recordos</translation>
 <translation id="8218327578424803826">Localización asignada:</translation>
 <translation id="8220146938470311105">C7/C6 (sobre)</translation>
-<translation id="8221250263817408492">Acabas de escribir o teu contrasinal nun sitio enganoso. Chromium recoméndache que vaias a <ph name="WEBSITE_1" /> e outros sitios nos que utilices este contrasinal para cambialo agora.</translation>
+<translation id="8221250263817408492">Acabas de escribir o teu contrasinal nun sitio enganoso. Monyhar recoméndache que vaias a <ph name="WEBSITE_1" /> e outros sitios nos que utilices este contrasinal para cambialo agora.</translation>
 <translation id="8225771182978767009">A persoa que configurou este ordenador optou por bloquear este sitio.</translation>
 <translation id="8228419419708659934">Vista de dúas páxinas</translation>
 <translation id="822964464349305906"><ph name="TYPE_1" />, <ph name="TYPE_2" /></translation>
@@ -2030,7 +2030,7 @@ Detalles adicionais:
 <translation id="8474910779563686872">Mostrar detalles do programador</translation>
 <translation id="8479754468255770962">Grampa na parte inferior esquerda</translation>
 <translation id="8483780878231876732">Para usar tarxetas da túa conta de Google, inicia sesión en Chrome</translation>
-<translation id="8485393050551136813">Acabas de escribir o teu contrasinal nun sitio enganoso. Chromium recomenda comprobar os contrasinais gardados para <ph name="WEBSITE_1" /> e outros sitios nos que esteas a utilizar este contrasinal neste momento.</translation>
+<translation id="8485393050551136813">Acabas de escribir o teu contrasinal nun sitio enganoso. Monyhar recomenda comprobar os contrasinais gardados para <ph name="WEBSITE_1" /> e outros sitios nos que esteas a utilizar este contrasinal neste momento.</translation>
 <translation id="8488350697529856933">Aplícase a</translation>
 <translation id="8490137692873530638">Amontoador 10</translation>
 <translation id="8498891568109133222"><ph name="HOST_NAME" /> tardou demasiado en responder.</translation>
@@ -2049,7 +2049,7 @@ Detalles adicionais:
 <translation id="8558485628462305855">Para ver contido de realidade aumentada, actualiza ARCore</translation>
 <translation id="8559762987265718583">Non se pode establecer unha conexión privada con <ph name="BEGIN_BOLD" /><ph name="DOMAIN" /><ph name="END_BOLD" /> porque a data e a hora do dispositivo (<ph name="DATE_AND_TIME" />) son incorrectas.</translation>
 <translation id="8564182942834072828">Documentos independentes/copias non intercaladas</translation>
-<translation id="8564985650692024650">Chromium recoméndache que restablezas o contrasinal de <ph name="BEGIN_BOLD" /><ph name="ORG_NAME" /><ph name="END_BOLD" /> se o reutilizaches noutros sitios.</translation>
+<translation id="8564985650692024650">Monyhar recoméndache que restablezas o contrasinal de <ph name="BEGIN_BOLD" /><ph name="ORG_NAME" /><ph name="END_BOLD" /> se o reutilizaches noutros sitios.</translation>
 <translation id="856887218454489335"><ph name="BEGIN_BOLD" />
         Actividade que non permanecerá neste dispositivo:
         <ph name="END_BOLD" />
@@ -2096,7 +2096,7 @@ Detalles adicionais:
 <translation id="8731544501227493793">Botón Xestionar contrasinais. Preme Intro para ver e xestionar os teus contrasinais desde a configuración de Chrome</translation>
 <translation id="8734529307927223492"><ph name="MANAGER" /> xestiona o teu dispositivo (<ph name="DEVICE_TYPE" />)</translation>
 <translation id="8737134861345396036"><ph name="LAUNCH_INCOGNITO_FOCUSED_FRIENDLY_MATCH_TEXT" />, preme Tab e, a continuación, Intro para abrir unha ventá do modo de incógnito e navegar de forma privada</translation>
-<translation id="8738058698779197622">Para establecer unha conexión segura, é necesario axustar o reloxo correctamente. Isto débese a que os certificados que utilizan os sitios web para identificarse só son válidos durante períodos de tempo específicos. Debido a que o reloxo do dispositivo non está correctamente axustado, Chromium non pode verificar estes certificados.</translation>
+<translation id="8738058698779197622">Para establecer unha conexión segura, é necesario axustar o reloxo correctamente. Isto débese a que os certificados que utilizan os sitios web para identificarse só son válidos durante períodos de tempo específicos. Debido a que o reloxo do dispositivo non está correctamente axustado, Monyhar non pode verificar estes certificados.</translation>
 <translation id="8740359287975076522">Non se puido atopar o &lt;abbr id="dnsDefinition"&gt;enderezo DNS&lt;/abbr&gt; de <ph name="HOST_NAME" />. Estase diagnosticando o problema.</translation>
 <translation id="8742371904523228557"><ph name="ONE_TIME_CODE" /> é o teu código para <ph name="ORIGIN" /></translation>
 <translation id="874918643257405732">Engadir esta pestana aos marcadores</translation>
@@ -2109,7 +2109,7 @@ Detalles adicionais:
 <translation id="8774457497170244317">Acabas de escribir o teu contrasinal nun sitio enganoso. Chrome recomenda comprobar os contrasinais gardados para <ph name="WEBSITE_1" /> e outros sitios nos que esteas a utilizar este contrasinal neste momento.</translation>
 <translation id="877985182522063539">A4</translation>
 <translation id="8790007591277257123">&amp;Refacer eliminación</translation>
-<translation id="8792621596287649091">Poderías perder o acceso á túa conta de <ph name="ORG_NAME" /> ou alguén podería roubarche a identidade. Chromium recoméndache que cambies de contrasinal agora.</translation>
+<translation id="8792621596287649091">Poderías perder o acceso á túa conta de <ph name="ORG_NAME" /> ou alguén podería roubarche a identidade. Monyhar recoméndache que cambies de contrasinal agora.</translation>
 <translation id="8793655568873652685"><ph name="ENROLLMENT_DOMAIN" /> activou Chrome Enterprise Connectors no teu navegador. Estes conectores teñen acceso a algúns dos teus datos.</translation>
 <translation id="8798099450830957504">Predeterminado</translation>
 <translation id="8805819170075074995">Entrada da lista "<ph name="LANGUAGE_ID" />": ignorouse a entrada debido a que tamén está incluída na política SpellcheckLanguage.</translation>
@@ -2186,7 +2186,7 @@ Detalles adicionais:
 <translation id="9089260154716455634">Política fóra do horario:</translation>
 <translation id="9095388113577226029">Máis idiomas…</translation>
 <translation id="9101630580131696064">Bandexa 1</translation>
-<translation id="9103872766612412690">Normalmente, <ph name="SITE" /> encripta a túa información para protexela. Nesta ocasión, cando Chromium tentou conectar con <ph name="SITE" />, o sitio web devolveu credenciais estrañas e incorrectas. É posible que un atacante tentase facerse pasar por <ph name="SITE" /> ou que a pantalla de inicio de sesión de wifi interrompese a conexión. Non obstante, a túa información segue a salvo porque Chromium detivo a conexión antes de intercambiar datos.</translation>
+<translation id="9103872766612412690">Normalmente, <ph name="SITE" /> encripta a túa información para protexela. Nesta ocasión, cando Monyhar tentou conectar con <ph name="SITE" />, o sitio web devolveu credenciais estrañas e incorrectas. É posible que un atacante tentase facerse pasar por <ph name="SITE" /> ou que a pantalla de inicio de sesión de wifi interrompese a conexión. Non obstante, a túa información segue a salvo porque Monyhar detivo a conexión antes de intercambiar datos.</translation>
 <translation id="9106062320799175032">Engade un enderezo de facturación</translation>
 <translation id="9107467864910557787"><ph name="MANAGER" /> xestiona o teu navegador</translation>
 <translation id="91108059142052966">A política do administrador desactiva a pantalla compartida con <ph name="APPLICATION_TITLE" /> cando hai contido confidencial á vista</translation>
@@ -2228,7 +2228,7 @@ Detalles adicionais:
 <translation id="933712198907837967">Diners Club</translation>
 <translation id="935608979562296692">BORRAR FORMULARIO</translation>
 <translation id="936474030629450166">Super-B</translation>
-<translation id="936602727769022409">Poderías perder o acceso á túa Conta de Google. Chromium recoméndache que cambies de contrasinal agora. Deberás iniciar sesión.</translation>
+<translation id="936602727769022409">Poderías perder o acceso á túa Conta de Google. Monyhar recoméndache que cambies de contrasinal agora. Deberás iniciar sesión.</translation>
 <translation id="939736085109172342">Cartafol novo</translation>
 <translation id="945522503751344254">Enviar comentarios</translation>
 <translation id="945855313015696284">Comproba a información que aparece a continuación e elimina as tarxetas non válidas</translation>

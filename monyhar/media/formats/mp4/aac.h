@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -84,7 +84,7 @@ class MEDIA_EXPORT AAC {
 #endif
 
   // The following variables store audio configuration information that
-  // can be used by Chromium. They are based on the AAC specific
+  // can be used by Monyhar. They are based on the AAC specific
   // configuration but can be overridden by extensions in elementary
   // stream descriptor.
   int frequency_;

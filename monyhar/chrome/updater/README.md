@@ -1,4 +1,4 @@
-An updater for desktop client software using Chromium code and tools.
+An updater for desktop client software using Monyhar code and tools.
 
 * The code lives in //chrome/updater.
 * Design Doc: https://bit.ly/monyhar-updater

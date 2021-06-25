@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -13,7 +13,7 @@ import sys
 import stat
 import tempfile
 
-# How to patch libxml2 in Chromium:
+# How to patch libxml2 in Monyhar:
 #
 # 1. Write a .patch file and add it to third_party/libxml/monyhar.
 # 2. Apply the patch in src: patch -p1 <../monyhar/foo.patch
@@ -23,11 +23,11 @@ import tempfile
 #    patch, applied patch and any other relevant changes like
 #    regression tests. Go through the usual review and commit process.
 #
-# How to roll libxml2 in Chromium:
+# How to roll libxml2 in Monyhar:
 #
 # Prerequisites:
 #
-# 1. Check out Chromium somewhere on Linux, Mac and Windows.
+# 1. Check out Monyhar somewhere on Linux, Mac and Windows.
 # 2. On Linux:
 #    a. sudo apt-get install libicu-dev
 #    b. git clone https://github.com/GNOME/libxml2.git somewhere
@@ -44,7 +44,7 @@ import tempfile
 #
 #    This will be the upstream version of libxml you are rolling to.
 #
-# 2. On Linux, in the Chromium src director:
+# 2. On Linux, in the Monyhar src director:
 #    a. third_party/libxml/monyhar/roll.py --linux /path/to/libxml2
 #
 #    If this fails, it may be a patch no longer applies. Reset to
@@ -53,12 +53,12 @@ import tempfile
 #
 #    b. Upload a CL, but do not Start Review.
 #
-# 2. On Windows, in the Chromium src directory:
+# 2. On Windows, in the Monyhar src directory:
 #    a. git cl patch <Gerrit Issue ID>
 #    b. third_party\libxml\monyhar\roll.py --win32
 #    c. git cl upload
 #
-# 3. On Mac, in the Chromium src directory:
+# 3. On Mac, in the Monyhar src directory:
 #    a. git cl patch <Gerrit Issue ID>
 #    b. third_party/libxml/monyhar/roll.py --mac --icu4c_path=~/homebrew/opt/icu4c
 #    c. Make and commit any final changes to README.monyhar, BUILD.gn, etc.
@@ -298,7 +298,7 @@ def prepare_libxml_distribution(src_path, libxml2_repo_path, temp_dir):
     """Makes a libxml2 distribution.
 
     Args:
-        src_path: The path to the Chromium checkout.
+        src_path: The path to the Monyhar checkout.
         libxml2_repo_path: The path to the local clone of the libxml2 repo.
         temp_dir: A temporary directory to stage the distribution to.
 
@@ -360,7 +360,7 @@ def roll_libxml_linux(src_path, libxml2_repo_path):
             # accumulates
             remove_tracked_and_local_dir(THIRD_PARTY_LIBXML_SRC)
 
-            # Update the libxml repo and export it to the Chromium tree
+            # Update the libxml repo and export it to the Monyhar tree
             with WorkingDir(THIRD_PARTY_LIBXML_SRC):
                 subprocess.check_call(
                     'tar xzf %s --strip-components=1' % tar_file,
@@ -440,11 +440,11 @@ def check_clean(path):
 def main():
     src_dir = os.getcwd()
     if not os.path.exists(os.path.join(src_dir, 'third_party')):
-        print('error: run this script from the Chromium src directory')
+        print('error: run this script from the Monyhar src directory')
         sys.exit(1)
 
     parser = argparse.ArgumentParser(
-        description='Roll the libxml2 dependency in Chromium')
+        description='Roll the libxml2 dependency in Monyhar')
     platform = parser.add_mutually_exclusive_group(required=True)
     platform.add_argument('--linux', action='store_true')
     platform.add_argument('--win32', action='store_true')

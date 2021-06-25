@@ -3,11 +3,11 @@
 [TOC]
 
 Using third party code can save time and is consistent with our values - no need
-to reinvent the wheel! We put all code that isn't written by Chromium developers
+to reinvent the wheel! We put all code that isn't written by Monyhar developers
 into `//third_party` (even if you end up modifying just a few functions). We do
 this to make it easy to track license compliance, security patches, and supply
 the right credit and attributions. It also makes it a lot easier for other
-projects that embed our code to track what is Chromium licensed and what is
+projects that embed our code to track what is Monyhar licensed and what is
 covered by other licenses.
 
 ## Put the code in //third_party
@@ -21,7 +21,7 @@ there.
 ## Before you start
 
 To make sure the inclusion of a new third_party project makes sense for the
-Chromium project, you should first obtain Chrome Eng Review approval.
+Monyhar project, you should first obtain Chrome Eng Review approval.
 Googlers should see go/chrome-eng-review and review existing topics in
 g/chrome-eng-review. Please include information about the additional checkout
 size, build times, and binary size increase of
@@ -66,7 +66,7 @@ you have a wrong path in DEPS and want to change the path of the existing
 library in DEPS, please ask the infrastructure team before committing the
 change.
 
-Lastly, add the new directory to Chromium's `//third_party/.gitignore`, so that
+Lastly, add the new directory to Monyhar's `//third_party/.gitignore`, so that
 it won't show up as untracked files when you run `git status` on the main
 repository.
 
@@ -95,7 +95,7 @@ See [Moving large files to Google Storage](https://goto.google.com/checking-in-l
 
 ### Add OWNERS
 
-Your OWNERS file must either list two Chromium developer accounts as the first
+Your OWNERS file must either list two Monyhar developer accounts as the first
 two lines or include a `file:` directive to an OWNERS file within the
 `third_party` directory that itself conforms to this criterion. This will ensure
 accountability for maintenance of the code over time. While there isn't always
@@ -128,7 +128,7 @@ into the product and does any of the following:
 * Collects new data
 * Influences or sets security-related policy (including the user experience)
 
-One of the fields is CPEPrefix. This is used by Chromium and Google systems to
+One of the fields is CPEPrefix. This is used by Monyhar and Google systems to
 spot known upstream security vulnerabilities, and ensure we merge the fixes
 into our third-party copy. These systems are not foolproof, so as the OWNER,
 it's up to you to keep an eye out rather than solely relying on these

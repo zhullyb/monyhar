@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -53,14 +53,14 @@ void CommonNameMismatchHandler::CheckSuggestedUrl(const GURL& url,
         semantics {
           sender: "SSL Name Mismatch Handler"
           description:
-            "If Chromium cannot make a secure connection to a site, this can "
+            "If Monyhar cannot make a secure connection to a site, this can "
             "be because the site is misconfigured. The site may be serving a "
             "security certificate intended for another site. If the SSL Common "
-            "Name Mismatch Handling feature is enabled, Chromium will try to "
+            "Name Mismatch Handling feature is enabled, Monyhar will try to "
             "detect if one of the domains listed in the site's certificate is "
             "available by issuing requests to those domains. If the response "
             "indicates that an alternative site for which the certificate is "
-            "valid is available, Chromium will automatically redirect the user "
+            "valid is available, Monyhar will automatically redirect the user "
             "to the alternative site."
           trigger: "Resource load."
           data: "An HTTP HEAD request to the alternative site."

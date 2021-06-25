@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1702,7 +1702,7 @@ void WizardController::PerformPostEulaActions() {
           ->EnsureCustomizationAppliedClosure());
 
   // Now that EULA has been accepted (for official builds), enable portal check.
-  // ChromiumOS builds would go though this code path too.
+  // MonyharOS builds would go though this code path too.
   NetworkHandler::Get()->network_state_handler()->SetCheckPortalList(
       NetworkStateHandler::kDefaultCheckPortalList);
   GetAutoEnrollmentController()->Start();

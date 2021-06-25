@@ -1,6 +1,6 @@
 ECHO OFF
 
-REM Copyright (c) 2012 The Chromium Authors. All rights reserved.
+REM Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 REM Use of this source code is governed by a BSD-style license that can be
 REM found in the LICENSE file.
 

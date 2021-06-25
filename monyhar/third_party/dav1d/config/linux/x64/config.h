@@ -21,7 +21,7 @@
 
 #define CONFIG_8BPC 1
 
-// #define CONFIG_LOG 1 -- Logging is controlled by Chromium
+// #define CONFIG_LOG 1 -- Logging is controlled by Monyhar
 
 #define ENDIANNESS_BIG 0
 
@@ -37,4 +37,4 @@
 
 #define HAVE_UNISTD_H 1
 
-// #define STACK_ALIGNMENT 32 -- Stack alignment is controlled by Chromium
+// #define STACK_ALIGNMENT 32 -- Stack alignment is controlled by Monyhar

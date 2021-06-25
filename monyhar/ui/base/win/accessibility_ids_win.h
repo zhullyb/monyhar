@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 #ifndef UI_BASE_WIN_ACCESSIBILITY_IDS_WIN_H_
@@ -12,10 +12,10 @@ namespace win {
 // Windows accessibility (MSAA) notifications are posted on an
 // accessible object using its owning HWND and a long integer child id.
 // Positive child ids can be used to enumerate the children of an object,
-// so in Chromium we use only negative values to represent ids of specific
+// so in Monyhar we use only negative values to represent ids of specific
 // accessible objects.
 //
-// Chromium currently has two separate systems that use accessibility ids:
+// Monyhar currently has two separate systems that use accessibility ids:
 // * views (ui/views/accessibility), and
 // * web (content/browser/accessibility)
 //

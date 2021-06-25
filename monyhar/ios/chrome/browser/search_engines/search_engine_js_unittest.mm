@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -93,10 +93,10 @@ class SearchEngineJsTest : public web::WebJsTest<web::WebTestWithWebState> {
 TEST_F(SearchEngineJsTest, TestGetOpenSearchDescriptionDocumentUrlSucceed) {
   LoadHtmlAndInject(
       @"<html><link rel='search' type='application/opensearchdescription+xml' "
-      @"title='Chromium Code Search' "
+      @"title='Monyhar Code Search' "
       @"href='//cs.monyhar.org/codesearch/first_opensearch.xml' />"
       @"<link rel='search' type='application/opensearchdescription+xml' "
-      @"title='Chromium Code Search 2' "
+      @"title='Monyhar Code Search 2' "
       @"href='//cs.monyhar.org/codesearch/second_opensearch.xml' />"
       @"<link href='/favicon.ico' rel='shortcut icon' "
       @"type='image/x-icon'></html>",

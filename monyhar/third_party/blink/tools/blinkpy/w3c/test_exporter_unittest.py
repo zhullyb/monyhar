@@ -1,4 +1,4 @@
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -6,7 +6,7 @@ import json
 
 from blinkpy.common.host_mock import MockHost
 from blinkpy.common.system.log_testing import LoggingTestCase
-from blinkpy.w3c.monyhar_commit_mock import MockChromiumCommit
+from blinkpy.w3c.monyhar_commit_mock import MockMonyharCommit
 from blinkpy.w3c.gerrit import GerritError
 from blinkpy.w3c.gerrit_mock import MockGerritAPI, MockGerritCL
 from blinkpy.w3c.test_exporter import TestExporter
@@ -53,16 +53,16 @@ class TestExporterTest(LoggingTestCase):
                     },
                 },
                 api=test_exporter.gerrit,
-                monyhar_commit=MockChromiumCommit(
+                monyhar_commit=MockMonyharCommit(
                     self.host,
                     subject='subject',
                     body='fake body',
                     change_id='I001'))
         ]
         test_exporter.get_exportable_commits = lambda: ([
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#458475}'),
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#458476}'),
         ], [])
         success = test_exporter.main(
@@ -82,11 +82,11 @@ class TestExporterTest(LoggingTestCase):
             pull_requests=[], create_pr_fail_index=1)
         test_exporter.gerrit = MockGerritAPI()
         test_exporter.get_exportable_commits = lambda: ([
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#1}', change_id='I001', subject='subject 1', body='body 1'),
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#2}', change_id='I002', subject='subject 2', body='body 2'),
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#3}', change_id='I003', subject='subject 3', body='body 3'),
         ], [])
         success = test_exporter.main(
@@ -160,15 +160,15 @@ class TestExporterTest(LoggingTestCase):
             unsuccessful_merge_index=3)  # Mark the last PR as unmergable.
         test_exporter.gerrit = MockGerritAPI()
         test_exporter.get_exportable_commits = lambda: ([
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#458475}', change_id='I0005'),
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#458476}', change_id='I0476'),
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#458477}', change_id='Idead'),
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#458478}', change_id='I0118'),
-            MockChromiumCommit(
+            MockMonyharCommit(
                 self.host, position='refs/heads/main@{#458479}', change_id='I0147'),
         ], [])
         success = test_exporter.main(
@@ -230,7 +230,7 @@ class TestExporterTest(LoggingTestCase):
                     },
                 },
                 api=test_exporter.gerrit,
-                monyhar_commit=MockChromiumCommit(
+                monyhar_commit=MockMonyharCommit(
                     self.host,
                     subject='subject',
                     body='fake body <html>',
@@ -252,7 +252,7 @@ class TestExporterTest(LoggingTestCase):
                     },
                 },
                 api=test_exporter.gerrit,
-                monyhar_commit=MockChromiumCommit(
+                monyhar_commit=MockMonyharCommit(
                     self.host, subject='subject', body='body',
                     change_id=None)),
         ]
@@ -310,7 +310,7 @@ class TestExporterTest(LoggingTestCase):
                     },
                 },
                 api=test_exporter.gerrit,
-                monyhar_commit=MockChromiumCommit(self.host))
+                monyhar_commit=MockMonyharCommit(self.host))
         ]
         success = test_exporter.main(
             ['--credentials-json', '/tmp/credentials.json'])
@@ -357,7 +357,7 @@ class TestExporterTest(LoggingTestCase):
                     },
                 },
                 api=test_exporter.gerrit,
-                monyhar_commit=MockChromiumCommit(self.host))
+                monyhar_commit=MockMonyharCommit(self.host))
         ]
         test_exporter.main(['--credentials-json', '/tmp/credentials.json'])
 
@@ -380,7 +380,7 @@ class TestExporterTest(LoggingTestCase):
                 labels=['do not merge yet']),
         ])
         test_exporter.get_exportable_commits = lambda: ([
-            MockChromiumCommit(self.host, change_id='decafbad'), ], [])
+            MockMonyharCommit(self.host, change_id='decafbad'), ], [])
         test_exporter.gerrit = MockGerritAPI()
         success = test_exporter.main(
             ['--credentials-json', '/tmp/credentials.json'])
@@ -406,7 +406,7 @@ class TestExporterTest(LoggingTestCase):
                 labels=['']),
         ])
         test_exporter.get_exportable_commits = lambda: ([
-            MockChromiumCommit(self.host, change_id='decafbad'), ], [])
+            MockMonyharCommit(self.host, change_id='decafbad'), ], [])
         test_exporter.gerrit = MockGerritAPI()
         success = test_exporter.main(
             ['--credentials-json', '/tmp/credentials.json'])
@@ -448,7 +448,7 @@ class TestExporterTest(LoggingTestCase):
                     },
                 },
                 api=test_exporter.gerrit,
-                monyhar_commit=MockChromiumCommit(self.host))
+                monyhar_commit=MockMonyharCommit(self.host))
         ]
         success = test_exporter.main(
             ['--credentials-json', '/tmp/credentials.json'])
@@ -477,7 +477,7 @@ class TestExporterTest(LoggingTestCase):
             'INFO: Searching for exportable in-flight CLs.\n',
             'INFO: In-flight CLs cannot be exported due to the following error:\n',
             'ERROR: Gerrit API fails.\n',
-            'INFO: Searching for exportable Chromium commits.\n'
+            'INFO: Searching for exportable Monyhar commits.\n'
         ])
 
     def test_run_returns_false_on_patch_failure(self):
@@ -494,7 +494,7 @@ class TestExporterTest(LoggingTestCase):
             'INFO: Cloning GitHub web-platform-tests/wpt into /tmp/wpt\n',
             'INFO: Setting git user name & email in /tmp/wpt\n',
             'INFO: Searching for exportable in-flight CLs.\n',
-            'INFO: Searching for exportable Chromium commits.\n',
+            'INFO: Searching for exportable Monyhar commits.\n',
             'INFO: Attention: The following errors have prevented some commits from being exported:\n',
             'ERROR: There was an error with the rutabaga.\n'
         ])

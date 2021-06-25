@@ -1,4 +1,4 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -149,7 +149,7 @@ class JavaChecker(object):
       return False, None  # Not a match
     clazz = found_item.group(1)
     if clazz not in self._classmap:
-      # Importing a class from outside the Chromium tree. That's fine --
+      # Importing a class from outside the Monyhar tree. That's fine --
       # it's probably a Java or Android system class.
       return True, None
     import_path = os.path.relpath(

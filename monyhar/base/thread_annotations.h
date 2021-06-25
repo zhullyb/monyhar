@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The Chromium Authors. All rights reserved.
+// Copyright (c) 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -238,8 +238,8 @@ inline T& ts_unchecked_read(T& v) NO_THREAD_SAFETY_ANALYSIS {
 
 }  // namespace thread_safety_analysis
 
-// The above is imported as-is from abseil-cpp. The following Chromium-specific
-// synonyms are added for Chromium concepts (SequenceChecker/ThreadChecker).
+// The above is imported as-is from abseil-cpp. The following Monyhar-specific
+// synonyms are added for Monyhar concepts (SequenceChecker/ThreadChecker).
 #if DCHECK_IS_ON()
 
 // Equivalent to GUARDED_BY for SequenceChecker/ThreadChecker. Currently,

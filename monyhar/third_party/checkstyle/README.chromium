@@ -9,7 +9,7 @@ License File: NOT_SHIPPED
 Security Critical: no
 
 Description:
-Checkstyle is used to validate Java code style on Chromium PRESUBMIT step.
+Checkstyle is used to validate Java code style on Monyhar PRESUBMIT step.
 
 Local Modifications:
 None

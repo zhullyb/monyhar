@@ -51,7 +51,7 @@ graph. This can be very slow when used with `--all` by default.
 ### Excluded Files
 
 Gradle supports source directories but not source files. However, files in
-Chromium are used amongst multiple targets. To accommodate this, the script
+Monyhar are used amongst multiple targets. To accommodate this, the script
 detects such targets and creates exclude patterns to exclude files not in the
 current target. The editor does not respect these exclude patterns, so the
 `_all` pseudo module is added which includes directories from all targets. This
@@ -107,13 +107,13 @@ build/android/gradle/generate_gradle.py --native-target //chrome/android:libchro
     * Launch it with more RAM:
       `STUDIO_VM_OPTIONS=-Xmx2048m /opt/android-studio-stable/bin/studio-launcher.sh`
 * If you ever need to reset it: `rm -r ~/.AndroidStudio*/`
-* Import Chromium-specific style and inspections settings:
+* Import Monyhar-specific style and inspections settings:
     * Help -&gt; Find Action -&gt; "Code Style" (settings) -&gt; Java -&gt;
       Scheme -&gt; Import Scheme
-        * Select `tools/android/android_studio/ChromiumStyle.xml` -&gt; OK
+        * Select `tools/android/android_studio/MonyharStyle.xml` -&gt; OK
     * Help -&gt; Find Action -&gt; "Inspections" (settings) -&gt;
       Profile -&gt; Import profile
-        * Select `tools/android/android_studio/ChromiumInspections.xml` -&gt; OK
+        * Select `tools/android/android_studio/MonyharInspections.xml` -&gt; OK
 * Turn on automatic import:
     * Help -&gt; Find Action -&gt; "Auto Import"
         * Tick all the boxes under "Java" and change the dropdown to "All".

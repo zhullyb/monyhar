@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -500,7 +500,7 @@ bool AwContentBrowserClient::CanCreateWindow(
 }
 
 base::FilePath AwContentBrowserClient::GetDefaultDownloadDirectory() {
-  // Android WebView does not currently use the Chromium downloads system.
+  // Android WebView does not currently use the Monyhar downloads system.
   // Download requests are cancelled immedately when recognized; see
   // AwResourceDispatcherHost::CreateResourceHandlerForDownload. However the
   // download system still tries to start up and calls this before recognizing

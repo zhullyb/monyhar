@@ -36,7 +36,7 @@ namespace crashpad {
 //!
 //! \note This is similar to the base::mac::IsOS*() family of functions, but
 //!     is provided for situations where the caller needs to obtain version
-//!     information beyond what is provided by Chromium’s base, or for when the
+//!     information beyond what is provided by Monyhar’s base, or for when the
 //!     caller needs the actual minor version value.
 int MacOSVersionNumber();
 

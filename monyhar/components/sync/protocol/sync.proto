@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //
@@ -233,7 +233,7 @@ message SyncEntity {
   //   Before then, server implementations would maintain a unique-within-parent
   //   value separate from its base, "non-unique" value.  Clients had not
   //   depended on the uniqueness of the property since November 2009; it was
-  //   removed from Chromium by http://codereview.monyhar.org/371029 .
+  //   removed from Monyhar by http://codereview.monyhar.org/371029 .
   // Present in both GetUpdatesResponse and CommitMessage.
   // WARNING: This field used to be required before M60. Any client before this
   // will fail to deserialize if this field is missing.
@@ -421,9 +421,9 @@ message SyncEntity {
 // commit-related traffic with extensions-related mutations to the
 // data models in monyhar.  It plays no functional role in
 // processing this CommitMessage.
-message ChromiumExtensionsActivity {
+message MonyharExtensionsActivity {
   // The human-readable ID identifying the extension responsible
-  // for the traffic reported in this ChromiumExtensionsActivity.
+  // for the traffic reported in this MonyharExtensionsActivity.
   optional string extension_id = 1;
 
   // How many times the extension successfully invoked a write
@@ -474,7 +474,7 @@ message CommitMessage {
   // returned as originator_cache_guid for any new items.
   optional string cache_guid = 2;
 
-  repeated ChromiumExtensionsActivity extensions_activity = 3;
+  repeated MonyharExtensionsActivity extensions_activity = 3;
 
   // The configuration of this client at commit time. Used by the server to
   // make commit-time decisions about how to process datatypes that might

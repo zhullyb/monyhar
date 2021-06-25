@@ -14,7 +14,7 @@ https://pki.goog/faq.html for purposes of embedded devices/software.
 
 Thils file is also available at
 https://monyhar.googlesource.com/monyharos/overlays/monyharos-overlay/+/master/chromeos-base/chromeos-ca-certificates/files/
-for ChromeOS. This has been split out into Chromium to avoid the need to pull
+for ChromeOS. This has been split out into Monyhar to avoid the need to pull
 the entire monyharsos-overlay.
 
 Local Modifications:

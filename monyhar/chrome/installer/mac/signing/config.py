@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -23,7 +23,7 @@ class CodeSignConfig(object):
 
     There is a class hierarchy of CodeSignConfig objects, with the
     build_props_config.BuildPropsConfig containing injected variables from the
-    build process. Configs for Chromium and Google Chrome subclass that to
+    build process. Configs for Monyhar and Google Chrome subclass that to
     control signing options further. And then derived configurations are
     created for internal signing artifacts and when using |model.Distribution|
     objects.

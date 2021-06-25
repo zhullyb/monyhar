@@ -7,14 +7,14 @@ their configuration, and how to both modify their behavior and add new bots.
 
 ## Overview of the GPU bots' setup
 
-Chromium's GPU bots, compared to the majority of the project's test machines,
+Monyhar's GPU bots, compared to the majority of the project's test machines,
 are physical pieces of hardware. When end users run the Chrome browser, they
 are almost surely running it on a physical piece of hardware with a real
 graphics processor. There are some portions of the code base which simply can
 not be exercised by running the browser in a virtual machine, or on a software
 implementation of the underlying graphics libraries. The GPU bots were
 developed and deployed in order to cover these code paths, and avoid
-regressions that are otherwise inevitable in a project the size of the Chromium
+regressions that are otherwise inevitable in a project the size of the Monyhar
 browser.
 
 The GPU bots are utilized on the [monyhar.gpu] and [monyhar.gpu.fyi]
@@ -144,9 +144,9 @@ In the [`tools/build`][tools/build] workspace:
             specified)
         *   Various gclient defines (like compiling in the hardware-accelerated
             video codecs, and enabling compilation of certain tests, like the
-            dEQP tests, that can't be built on all of the Chromium builders)
+            dEQP tests, that can't be built on all of the Monyhar builders)
         *   Note that the GN configuration of the bots is also controlled by
-            [`mb_config.pyl`][mb_config.pyl] in the Chromium workspace; see below.
+            [`mb_config.pyl`][mb_config.pyl] in the Monyhar workspace; see below.
     *   [`trybots.py`][trybots.py] defines how try bots *mirror* one or more
         waterfall bots.
         *   The concept of try bots mirroring waterfall bots ensures there are
@@ -157,17 +157,17 @@ In the [`tools/build`][tools/build] workspace:
             bots:
             *   `linux-rel`, `mac-rel`, `win10_monyhar_x64_rel_ng` and
                 `android-marshmallow-arm64-rel`, which run against every
-                Chromium CL, and which mirror the behavior of bots on the
+                Monyhar CL, and which mirror the behavior of bots on the
                 monyhar.gpu waterfall.
             *   The ANGLE try bots, which run against ANGLE CLs, and mirror the
                 behavior of the monyhar.gpu.fyi waterfall (including using
                 top-of-tree ANGLE, and running additional tests not run by the
-                regular Chromium try bots)
+                regular Monyhar try bots)
             *   The optional GPU try servers `linux_optional_gpu_tests_rel`,
                 `mac_optional_gpu_tests_rel`, `win_optional_gpu_tests_rel` and
                 `android_optional_gpu_tests_rel`, which are added automatically
                 to CLs which modify a selected set of subdirectories and
-                run some tests which can't be run on the regular Chromium try
+                run some tests which can't be run on the regular Monyhar try
                 servers mainly due to lack of hardware capacity.
             *   Manual GPU trybots, starting with `gpu-try-` and `gpu-fyi-try-`
                 prefixes, which can be added manually to CLs targeting a
@@ -232,7 +232,7 @@ sorry):
 
 *   [`gpu.star`][gpu.star]
     *   Defines a `monyhar.tests.gpu` Swarming pool which contains all of the
-        specialized hardware, except some hardware shared with Chromium:
+        specialized hardware, except some hardware shared with Monyhar:
         for example, the Windows and Linux NVIDIA
         bots, the Windows AMD bots, and the MacBook Pros with NVIDIA and AMD
         GPUs. New GPU hardware should be added to this pool.
@@ -385,7 +385,7 @@ Builder].
     new virtual machine
     instances](#How-to-set-up-new-virtual-machine-instances).
 
-1.  Create a CL in the Chromium workspace which does the following. Here's an
+1.  Create a CL in the Monyhar workspace which does the following. Here's an
     [example CL](https://monyhar-review.googlesource.com/c/monyhar/src/+/1752291).
     1.  Adds the new machines to [`waterfalls.pyl`][waterfalls.pyl] directly or
         to [`mixins.pyl`][mixins.pyl], referencing the new mixin in
@@ -430,13 +430,13 @@ Builder].
     1.  If you were adding a new builder, you would need to also add the new
         machine to [`src/tools/mb/mb_config.pyl`][mb_config.pyl].
 
-1. After the Chromium-side CL lands it will take some time for all of
+1. After the Monyhar-side CL lands it will take some time for all of
    the configuration changes to be picked up by the system. The bot
    will probably be in a red or purple state, claiming that it can't
    find its configuration. (It might also be in an "empty" state, not
    running any jobs at all.)
 
-1. *After* the Chromium-side CL lands and the bot is on the console, create a CL
+1. *After* the Monyhar-side CL lands and the bot is on the console, create a CL
    in the [`tools/build`][tools/build] workspace which does the
    following. Here's an [example
    CL](https://monyhar-review.googlesource.com/1041145).
@@ -448,7 +448,7 @@ Builder].
         properties for each. They must match the Release/Debug flavor of the
         builder, like `GPU FYI Win x64 Builder` vs.
         `GPU FYI Win x64 Builder (dbg)`.
-    1.  Get this reviewed and landed. This step tells the Chromium recipe about
+    1.  Get this reviewed and landed. This step tells the Monyhar recipe about
         the newly-deployed waterfall bot, so it knows which JSON file to load
         out of src/testing/buildbot and which entry to look at.
     1.  Sometimes it is necessary to retrain recipe expectations
@@ -471,7 +471,7 @@ be used, a new one can be set up by performing a modified version of the steps:
 
 1. Make a [`tools/build`][tools/build] CL that adds the config for *only* the
    new builder and land it.
-1. Make and land Chromium CL that makes the above changes in addition to the
+1. Make and land Monyhar CL that makes the above changes in addition to the
    following:
     1. Add the new builder to the necessary `//infra/config` files in the same
        way as the tester.
@@ -541,7 +541,7 @@ trybot for the Win7 NVIDIA GPUs in Release mode. We will call the new bot
     [How to set up new virtual machine instances](#How-to-set-up-new-virtual-machine-instances),
     following the "Manually-triggered GPU trybots" instructions.
 
-1.  Create a CL in the Chromium workspace which does the following. Here's a
+1.  Create a CL in the Monyhar workspace which does the following. Here's a
     [reference CL](https://monyhar-review.googlesource.com/c/monyhar/src/+/2191276)
     exemplifying the new "GCE pool per GPU hardware pool" way.
     1.  Updates [`gpu.try.star`][gpu.try.star] and its related generated file
@@ -570,7 +570,7 @@ trybot for the Win7 NVIDIA GPUs in Release mode. We will call the new bot
         mirror the appropriate waterfall bot; in this case, the buildername to
         mirror is `GPU FYI Win x64 Builder` and the tester is
         `Win7 FYI x64 Release (NVIDIA)`.
-    1.  Get this reviewed and landed. This step tells the Chromium recipe about
+    1.  Get this reviewed and landed. This step tells the Monyhar recipe about
         the newly-deployed trybot, so it knows which JSON file to load out of
         `src/testing/buildbot` and which entry to look at to understand which
         tests to run and on what physical hardware.
@@ -596,8 +596,8 @@ chrome-infra team if this doesn't work as expected.)
 
 ### How to add a new try bot that runs a subset of tests or extra tests
 
-Several projects (ANGLE, Dawn) run custom tests using the Chromium recipes. They
-use try bot bot configs that run subsets of Chromium or additional slower tests
+Several projects (ANGLE, Dawn) run custom tests using the Monyhar recipes. They
+use try bot bot configs that run subsets of Monyhar or additional slower tests
 that can't be run on the main CQ.
 
 These try bots are a little different because they mirror waterfall bots that
@@ -614,7 +614,7 @@ Win10 Release (CoolNewGPUType)".
     [How to set up new virtual machine instances](#How-to-set-up-new-virtual-machine-instances).
 1.  Make sure there is enough hardware capacity using the available tools to
     report utilization of the Swarming pool.
-1.  Create a CL in the Chromium workspace the does the following. Here's an
+1.  Create a CL in the Monyhar workspace the does the following. Here's an
     outdated [example CL](https://crrev.com/c/1554296).
     1.  Add your new bot (for example, "MyProject GPU Win10 Release
         (CoolNewGPUType)") to the monyhar.gpu.fyi waterfall in
@@ -636,7 +636,7 @@ Win10 Release (CoolNewGPUType)".
         there.
     1.  Update [`src/tools/mb/mb_config.pyl`][mb_config.pyl]
         to include `win-myproject-rel`.
-1. *After* the Chromium-side CL lands and the bot is on the console, create a CL
+1. *After* the Monyhar-side CL lands and the bot is on the console, create a CL
     in the [`tools/build`][tools/build] workspace which does the
     following. Here's an [example CL](https://crrev.com/c/1554272).
     1.  Adds "MyProject GPU Win10 Release
@@ -646,7 +646,7 @@ Win10 Release (CoolNewGPUType)".
     1.  Adds `win-myproject-rel` to [`trybots.py`][trybots.py] in the same folder.
         This is where you associate "MyProject GPU Win10 Release
         (CoolNewGPUType)" with `win-myproject-rel`. See the sample CL for an example.
-    1.  Get this reviewed and landed. This step tells the Chromium recipe about
+    1.  Get this reviewed and landed. This step tells the Monyhar recipe about
         the newly-deployed waterfall bot, so it knows which JSON file to load
         out of `src/testing/buildbot` and which entry to look at.
 1.  After your CLs land you should be able to find and run `win-myproject-rel` on CLs
@@ -660,7 +660,7 @@ Win10 Release (CoolNewGPUType)".
 
 Let's say that you want to roll out an update to the graphics drivers or the OS
 on one of the configurations like the Linux NVIDIA bots. In order to verify
-that the new driver or OS won't destabilize Chromium's commit queue,
+that the new driver or OS won't destabilize Monyhar's commit queue,
 it's necessary to run the new driver or OS on one of the waterfalls for a day
 or two to make sure the tests are reliably green before rolling out the driver
 or OS update. To do this:
@@ -727,7 +727,7 @@ server, the swarming server, and cloud storage.
 ### Isolate server credentials
 
 To upload and download isolates you must first authenticate to the isolate
-server. From a Chromium checkout, run:
+server. From a Monyhar checkout, run:
 
 *   `./src/tools/luci-go/isolate login`
 

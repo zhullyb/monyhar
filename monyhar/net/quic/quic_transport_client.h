@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -29,15 +29,15 @@
 namespace net {
 
 class ProxyResolutionRequest;
-class QuicChromiumAlarmFactory;
+class QuicMonyharAlarmFactory;
 class URLRequestContext;
 
 // QuicTransportClient is the top-level API for QuicTransport in //net.
 class NET_EXPORT QuicTransportClient
     : public WebTransportClient,
       public quic::WebTransportVisitor,
-      public QuicChromiumPacketReader::Visitor,
-      public QuicChromiumPacketWriter::Delegate,
+      public QuicMonyharPacketReader::Visitor,
+      public QuicMonyharPacketWriter::Delegate,
       public quic::QuicSession::Visitor {
  public:
   // QUIC protocol versions that are used in the origin trial.
@@ -75,15 +75,15 @@ class NET_EXPORT QuicTransportClient
   void OnCanCreateNewOutgoingBidirectionalStream() override;
   void OnCanCreateNewOutgoingUnidirectionalStream() override;
 
-  // QuicChromiumPacketReader::Visitor methods.
+  // QuicMonyharPacketReader::Visitor methods.
   bool OnReadError(int result, const DatagramClientSocket* socket) override;
   bool OnPacket(const quic::QuicReceivedPacket& packet,
                 const quic::QuicSocketAddress& local_address,
                 const quic::QuicSocketAddress& peer_address) override;
 
-  // QuicChromiumPacketWriter::Delegate methods.
+  // QuicMonyharPacketWriter::Delegate methods.
   int HandleWriteError(int error_code,
-                       scoped_refptr<QuicChromiumPacketWriter::ReusableIOBuffer>
+                       scoped_refptr<QuicMonyharPacketWriter::ReusableIOBuffer>
                            last_packet) override;
   void OnWriteError(int error_code) override;
   void OnWriteUnblocked() override;
@@ -167,7 +167,7 @@ class NET_EXPORT QuicTransportClient
 
   quic::ParsedQuicVersionVector supported_versions_;
   // TODO(vasilvv): move some of those into QuicContext.
-  std::unique_ptr<QuicChromiumAlarmFactory> alarm_factory_;
+  std::unique_ptr<QuicMonyharAlarmFactory> alarm_factory_;
   quic::QuicCryptoClientConfig crypto_config_;
 
   WebTransportState state_ = NEW;
@@ -182,7 +182,7 @@ class NET_EXPORT QuicTransportClient
   std::unique_ptr<DatagramClientSocket> socket_;
   std::unique_ptr<quic::QuicConnection> connection_;
   std::unique_ptr<quic::QuicTransportClientSession> session_;
-  std::unique_ptr<QuicChromiumPacketReader> packet_reader_;
+  std::unique_ptr<QuicMonyharPacketReader> packet_reader_;
   std::unique_ptr<QuicEventLogger> event_logger_;
 
   base::WeakPtrFactory<QuicTransportClient> weak_factory_{this};

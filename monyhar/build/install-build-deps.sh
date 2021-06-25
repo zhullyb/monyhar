@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -371,7 +371,7 @@ esac
 # arm cross toolchain packages needed to build chrome on armhf
 EM_REPO="deb http://emdebian.org/tools/debian/ jessie main"
 EM_SOURCE=$(cat <<EOF
-# Repo added by Chromium $0
+# Repo added by Monyhar $0
 ${EM_REPO}
 # deb-src http://emdebian.org/tools/debian/ jessie main
 EOF
@@ -397,7 +397,7 @@ case $distro_codename in
           arm_list+=" ${GPP_ARM_PACKAGE}"
         else
           echo "The Debian Cross-toolchains repository is necessary to"
-          echo "cross-compile Chromium for arm."
+          echo "cross-compile Monyhar for arm."
           echo "Rerun with --add-deb-cross-tool-repo to have it added for you."
         fi
       fi

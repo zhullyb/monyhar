@@ -134,10 +134,10 @@ used to create (or for singletons, retrieve) instances of all the other required
 classes.
 
 * On L - N, the class loaded by reflection is called
-`com.android.webview.monyhar.WebViewChromiumFactoryProvider`.
+`com.android.webview.monyhar.WebViewMonyharFactoryProvider`.
 
 * On O+, the class is called
-`com.android.webview.monyhar.WebViewChromiumFactoryProviderForO` (or `ForP`,
+`com.android.webview.monyhar.WebViewMonyharFactoryProviderForO` (or `ForP`,
 `ForQ`, etc). This was made version-specific to avoid cases where using an
 outdated version of WebView on a newer version of Android would crash in
 unpredictable ways when new APIs were called - instead, loading will always fail
@@ -237,7 +237,7 @@ have been extracted to disk by `PackageManager` at install time to the normal
 location where apps' shared libraries are extracted. Loading the library
 directly from the APK is not supported: the system linker only gained the
 ability to do this in M, and unlike Chrome, WebView can't (at least practically)
-use the Chromium linker to work around it.
+use the Monyhar linker to work around it.
 
 * Android M - P: The native library filename is specified by a metadata tag in
 the APK's manifest, and can be extracted to disk or loaded directly from the
@@ -275,7 +275,7 @@ which means this step can be changed without changing the framework.
 
 ## Loading assets and resources
 
-The WebView APK contains a number of asset files such as Chromium .pak files,
+The WebView APK contains a number of asset files such as Monyhar .pak files,
 V8 startup snapshots, ICU data, etc. We also have a bunch of Android resources
 such as the strings and layouts for the UI surfaces that WebView exposes (e.g.
 the date and color pickers used for HTML5 input elements).
@@ -315,7 +315,7 @@ One complication here is that because the asset path in use contains both the
 WebView APK and the app APK, it's possible for asset filenames to collide. It
 appears that in this case, WebView's assets take priority, which mean that our
 assets work as expected, but the app will get the wrong files and may break.
-This is a particular problem for any app that includes Chromium code while also
+This is a particular problem for any app that includes Monyhar code while also
 using the system WebView, since filename collisions are highly likely.
 
 ### Resources

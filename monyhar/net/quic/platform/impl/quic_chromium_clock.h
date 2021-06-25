@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,12 +13,12 @@ namespace quic {
 
 // Clock to efficiently retrieve an approximately accurate time from an
 // net::EpollServer.
-class QUIC_EXPORT_PRIVATE QuicChromiumClock : public QuicClock {
+class QUIC_EXPORT_PRIVATE QuicMonyharClock : public QuicClock {
  public:
-  static QuicChromiumClock* GetInstance();
+  static QuicMonyharClock* GetInstance();
 
-  QuicChromiumClock();
-  ~QuicChromiumClock() override;
+  QuicMonyharClock();
+  ~QuicMonyharClock() override;
 
   // QuicClock implementation:
   QuicTime ApproximateNow() const override;
@@ -26,7 +26,7 @@ class QUIC_EXPORT_PRIVATE QuicChromiumClock : public QuicClock {
   QuicWallTime WallNow() const override;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(QuicChromiumClock);
+  DISALLOW_COPY_AND_ASSIGN(QuicMonyharClock);
 };
 
 }  // namespace quic

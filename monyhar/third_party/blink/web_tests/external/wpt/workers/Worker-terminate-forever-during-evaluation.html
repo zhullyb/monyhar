@@ -56,7 +56,7 @@ for (const test of [
     worker.onmessage = t.step_func((e) => {
       if (e.data === 'start') {
         worker.terminate();
-        // To make the worker forcibly terminated, because in Chromium worker is
+        // To make the worker forcibly terminated, because in Monyhar worker is
         // forcibly terminated after 2 seconds.
         t.step_timeout(function() { t.done(); }, 4000);
       }

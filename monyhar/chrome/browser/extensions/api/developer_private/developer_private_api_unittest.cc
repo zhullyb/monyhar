@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1575,7 +1575,7 @@ TEST_F(DeveloperPrivateApiUnitTest,
   modifier.SetWithholdHostPermissions(true);
 
   const GURL kGoogleCom("https://google.com/");
-  const GURL kChromiumCom("https://monyhar.com");
+  const GURL kMonyharCom("https://monyhar.com");
 
   // Request <all_urls> and google.com so they are both in the runtime granted
   // list. We use the util function to specifically add the <all_urls> pattern
@@ -1595,14 +1595,14 @@ TEST_F(DeveloperPrivateApiUnitTest,
   // permissions.
   EXPECT_TRUE(modifier.HasWithheldHostPermissions());
   EXPECT_TRUE(modifier.HasGrantedHostPermission(kGoogleCom));
-  EXPECT_TRUE(modifier.HasGrantedHostPermission(kChromiumCom));
+  EXPECT_TRUE(modifier.HasGrantedHostPermission(kMonyharCom));
 
   // Changing to specific sites should now remove the broad pattern, leaving
   // only the google match pattern.
   RunUpdateHostAccess(*extension, "ON_SPECIFIC_SITES");
   EXPECT_TRUE(modifier.HasWithheldHostPermissions());
   EXPECT_TRUE(modifier.HasGrantedHostPermission(kGoogleCom));
-  EXPECT_FALSE(modifier.HasGrantedHostPermission(kChromiumCom));
+  EXPECT_FALSE(modifier.HasGrantedHostPermission(kMonyharCom));
 }
 
 TEST_F(DeveloperPrivateApiUnitTest,

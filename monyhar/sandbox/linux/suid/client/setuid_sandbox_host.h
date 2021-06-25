@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@ namespace sandbox {
 // Helper class to use the setuid sandbox. This class is to be used
 // before launching the setuid helper.
 // This class is difficult to use. It has been created by refactoring very old
-// code scathered through the Chromium code base.
+// code scathered through the Monyhar code base.
 //
 // A typical use for "A" launching a sandboxed process "B" would be:
 // 1. A calls SetupLaunchEnvironment()

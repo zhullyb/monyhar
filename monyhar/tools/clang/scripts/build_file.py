@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2016 The Chromium Authors. All rights reserved.
+# Copyright 2016 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -23,7 +23,7 @@ _PROBABLY_CLANG_RE = re.compile(r'clang(?:\+\+)?$')
 
 def ParseArgs():
   parser = argparse.ArgumentParser(
-      description='Utility to build one Chromium file for debugging clang')
+      description='Utility to build one Monyhar file for debugging clang')
   parser.add_argument('-p', required=True, help='path to the compile database')
   parser.add_argument('--generate-compdb',
                       action='store_true',

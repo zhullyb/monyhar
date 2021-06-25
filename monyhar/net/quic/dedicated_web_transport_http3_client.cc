@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -40,7 +40,7 @@ std::unique_ptr<quic::ProofVerifier> CreateProofVerifier(
     URLRequestContext* context,
     const WebTransportParameters& parameters) {
   if (parameters.server_certificate_fingerprints.empty()) {
-    return std::make_unique<ProofVerifierChromium>(
+    return std::make_unique<ProofVerifierMonyhar>(
         context->cert_verifier(), context->ct_policy_enforcer(),
         context->transport_security_state(), context->sct_auditing_delegate(),
         HostsFromOrigins(
@@ -196,7 +196,7 @@ DedicatedWebTransportHttp3Client::DedicatedWebTransportHttp3Client(
                                       NetLogSourceType::QUIC_TRANSPORT_CLIENT)),
       task_runner_(base::ThreadTaskRunnerHandle::Get().get()),
       alarm_factory_(
-          std::make_unique<QuicChromiumAlarmFactory>(task_runner_,
+          std::make_unique<QuicMonyharAlarmFactory>(task_runner_,
                                                      quic_context_->clock())),
       // TODO(vasilvv): proof verifier should have proper error reporting
       // (currently, all certificate verification errors result in "TLS
@@ -354,7 +354,7 @@ int DedicatedWebTransportHttp3Client::DoConnect() {
   int rv = OK;
 
   // TODO(vasilvv): consider unifying parts of this code with QuicSocketFactory
-  // (which currently has a lot of code specific to QuicChromiumClientSession).
+  // (which currently has a lot of code specific to QuicMonyharClientSession).
   socket_ = client_socket_factory_->CreateDatagramClientSocket(
       DatagramSocket::DEFAULT_BIND, net_log_.net_log(), net_log_.source());
   if (quic_context_->params()->enable_socket_recv_optimization)
@@ -401,7 +401,7 @@ void DedicatedWebTransportHttp3Client::CreateConnection() {
       connection_id, quic::QuicSocketAddress(),
       ToQuicSocketAddress(server_address), quic_context_->helper(),
       alarm_factory_.get(),
-      new QuicChromiumPacketWriter(socket_.get(), task_runner_),
+      new QuicMonyharPacketWriter(socket_.get(), task_runner_),
       /* owns_writer */ true, quic::Perspective::IS_CLIENT,
       supported_versions_);
   connection_ = connection.get();
@@ -413,7 +413,7 @@ void DedicatedWebTransportHttp3Client::CreateConnection() {
       quic::QuicServerId(url_.host(), url_.EffectiveIntPort()), &crypto_config_,
       &push_promise_index_, this);
 
-  packet_reader_ = std::make_unique<QuicChromiumPacketReader>(
+  packet_reader_ = std::make_unique<QuicMonyharPacketReader>(
       socket_.get(), quic_context_->clock(), this, kQuicYieldAfterPacketsRead,
       quic::QuicTime::Delta::FromMilliseconds(
           kQuicYieldAfterDurationMilliseconds),
@@ -591,7 +591,7 @@ bool DedicatedWebTransportHttp3Client::OnPacket(
 
 int DedicatedWebTransportHttp3Client::HandleWriteError(
     int error_code,
-    scoped_refptr<QuicChromiumPacketWriter::ReusableIOBuffer> /*last_packet*/) {
+    scoped_refptr<QuicMonyharPacketWriter::ReusableIOBuffer> /*last_packet*/) {
   return error_code;
 }
 

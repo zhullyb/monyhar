@@ -1,11 +1,11 @@
-# **Chromium Documentation Guidelines**
+# **Monyhar Documentation Guidelines**
 
-Chromium's code base is large. Very large. Like most large places, it can be hard to find your way around if you don't already know the way. It also changes a lot. Lots of people work on Chromium and refactoring, componentization, addition
+Monyhar's code base is large. Very large. Like most large places, it can be hard to find your way around if you don't already know the way. It also changes a lot. Lots of people work on Monyhar and refactoring, componentization, addition
 or removal of layers, etc. means that knowledge one does have can quickly get out of date.
 
 As a result, it can be hard to figure out how things are supposed to fit together. Documentation on [dev.monyhar.org](http://dev.monyhar.org/developers) can be hard to navigate and harder to keep up to date. The [starter guide](https://sites.google.com/a/monyhar.org/dev/developers/how-tos/getting-around-the-chrome-source-code) is helpful, but stops at a very high-level overview. Ultimately [codesearch.monyhar.org](http://codesearch.monyhar.org) is the way most people explore.
 
-This guide attempts to lay out some practices that will make it easier for newcomers to find their way around Chromium's code and for old hands to keep up with a constantly evolving code base. It works from the principle that all documentation is wrong and out of date, but in-code documentation is less so and valuable.
+This guide attempts to lay out some practices that will make it easier for newcomers to find their way around Monyhar's code and for old hands to keep up with a constantly evolving code base. It works from the principle that all documentation is wrong and out of date, but in-code documentation is less so and valuable.
 
 ## Guidelines
 
@@ -15,7 +15,7 @@ In-code documentation can be categorized into three tiers:
 *   **Interface / class documentation**: This is documentation most often found in header files near class definitions. This may describe what a class or small set of classes are for and *how* they are intended to be used. It may also provide examples of usage of the class where this isn't obvious.
 *   **Implementation documentation**: This type of documentation is found next to implementations. In C++, this will tend to be embedded in .cc files. It is meant to help a reader understand *how the code works* or explain an implementation path that might not be obvious from the code itself.
 
-Let's dig in a bit to how to use these types of documentation in Chromium.
+Let's dig in a bit to how to use these types of documentation in Monyhar.
 
 ### Module / component documentation
 
@@ -63,7 +63,7 @@ Don't assume that readers know everything you currently know.
 
 ## Working with existing code
 
-If you got this far and have some experience with Chromium's code, you'll have figured out that these guidelines are aspirational more than what the world looks like today. So what do we do when working with existing code.
+If you got this far and have some experience with Monyhar's code, you'll have figured out that these guidelines are aspirational more than what the world looks like today. So what do we do when working with existing code.
 
 First off: ***[Documentation changes can be TBRed](https://monyhar.googlesource.com/monyhar/src/+/main/docs/code_reviews.md#documentation-updates)***. Even in-code changes. If you have discovered something that isn't documented, have figured out how it works and would like to pay it forward, feel free to write something down and check it in.
 
@@ -87,4 +87,4 @@ Yes! Partial documentation is much better than no documentation.
 
 #### I hate writing documentation, it will slow me down!
 
-Chromium is big enough and complicated enough that a newcomer has to read a lot of code to figure out how things fit together. Documentation provides breadcrumbs to speed up understanding, which over time will make the whole team work more quickly. Short term execution speed is far less important than long term team velocity.
+Monyhar is big enough and complicated enough that a newcomer has to read a lot of code to figure out how things fit together. Documentation provides breadcrumbs to speed up understanding, which over time will make the whole team work more quickly. Short term execution speed is far less important than long term team velocity.

@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Presubmit tests for android_webview/support_library/
@@ -60,7 +60,7 @@ represent using a comment, e.g.:
 
 def _CheckFeatureDevSuffix(input_api, output_api):
   """Checks that Features.DEV_SUFFIX is not used in boundary_interfaces. The
-  right place to use it is SupportLibWebViewChromiumFactory.
+  right place to use it is SupportLibWebViewMonyharFactory.
   """
 
   pattern = input_api.re.compile(r'\bDEV_SUFFIX\b')

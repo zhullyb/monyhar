@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Chromium Authors. All rights reserved.
+// Copyright (c) 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -285,21 +285,21 @@ bool CheckUniqueAndNonNullIds(GLsizei n, const GLuint* client_ids) {
 
 const char* GetServiceVersionString(const FeatureInfo* feature_info) {
   if (feature_info->IsWebGL2OrES3Context())
-    return "OpenGL ES 3.0 Chromium";
+    return "OpenGL ES 3.0 Monyhar";
   else if (feature_info->IsES31ForTestingContext()) {
-    return "OpenGL ES 3.1 Chromium";
+    return "OpenGL ES 3.1 Monyhar";
   } else
-    return "OpenGL ES 2.0 Chromium";
+    return "OpenGL ES 2.0 Monyhar";
 }
 
 const char* GetServiceShadingLanguageVersionString(
     const FeatureInfo* feature_info) {
   if (feature_info->IsWebGL2OrES3Context())
-    return "OpenGL ES GLSL ES 3.0 Chromium";
+    return "OpenGL ES GLSL ES 3.0 Monyhar";
   else if (feature_info->IsES31ForTestingContext()) {
-    return "OpenGL ES GLSL ES 3.1 Chromium";
+    return "OpenGL ES GLSL ES 3.1 Monyhar";
   } else
-    return "OpenGL ES GLSL ES 1.0 Chromium";
+    return "OpenGL ES GLSL ES 1.0 Monyhar";
 }
 
 void LogGLDebugMessage(GLenum source,

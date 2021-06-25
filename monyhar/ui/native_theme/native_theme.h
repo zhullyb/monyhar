@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -166,7 +166,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
     // Distinguishes between active (foreground) and inactive
     // (background) window frame styles.
     bool is_active;
-    // True when Chromium renders the titlebar.  False when the window
+    // True when Monyhar renders the titlebar.  False when the window
     // manager renders the titlebar.
     bool use_custom_frame;
     // If the NativeTheme will paint a solid color, it should use

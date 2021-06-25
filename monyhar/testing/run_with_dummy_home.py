@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -18,7 +18,7 @@ import tempfile
 
 
 def _set_up_dummy_home(original_home, dummy_home):
-  """Sets up a dummy $HOME that Chromium tests can run in.
+  """Sets up a dummy $HOME that Monyhar tests can run in.
 
   Files are copied, while directories are symlinked.
   """

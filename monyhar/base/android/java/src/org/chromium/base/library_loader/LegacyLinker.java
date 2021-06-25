@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ import org.monyhar.base.annotations.JniIgnoreNatives;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
- * Provides a concrete implementation of the Chromium Linker.
+ * Provides a concrete implementation of the Monyhar Linker.
  *
  * This Linker implementation uses the crazy linker to map and then run Chrome for Android.
  *

@@ -1,6 +1,6 @@
 # Parsing Test Results
 
-Chromium runs over 500,000 tests for each CL. There are many layers of UI for
+Monyhar runs over 500,000 tests for each CL. There are many layers of UI for
 parsing and interpreting these test results. This doc provides a brief guide
 for navigating these UI layers.
 
@@ -15,11 +15,11 @@ refers to a *build*.
 The name of each build usually contains enough information to get a rough idea
 of the configuration. Some examples:
 
-* *android_compile_dbg* is a compile-only [no tests] build of Chromium for
+* *android_compile_dbg* is a compile-only [no tests] build of Monyhar for
   Android, using the *debug* configuration.
-* *android-lollipop-arm-rel* builds and runs tests for Chromium for Android,
+* *android-lollipop-arm-rel* builds and runs tests for Monyhar for Android,
   using the *release* configuration on a lollipop device.
-* *win7-rel* builds and runs tests for Chromium on Windows, using
+* *win7-rel* builds and runs tests for Monyhar on Windows, using
   the release configuration on a Windows 7 device. *ng* stands for next
   generation, but this has no meaning as the previous generation was already
   phased out.

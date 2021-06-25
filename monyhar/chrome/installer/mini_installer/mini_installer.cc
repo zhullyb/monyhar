@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -463,7 +463,7 @@ ProcessExitResult UnpackBinaryResources(const Configuration& configuration,
   ProcessExitResult exit_code = ProcessExitResult(SUCCESS_EXIT_CODE);
 
   // If we found setup 'B7' resource (used for differential updates), handle
-  // it.  Note that this is only for Chrome; Chromium installs are always
+  // it.  Note that this is only for Chrome; Monyhar installs are always
   // "full" installs.
   if (!setup_path->empty()) {
     CommandString cmd_line;

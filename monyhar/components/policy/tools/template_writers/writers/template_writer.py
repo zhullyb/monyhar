@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -17,7 +17,7 @@ class TemplateWriter(object):
       config: A dictionary of information required to generate the template.
         It contains some key-value pairs, including the following examples:
           'build': 'chrome' or 'monyhar'
-          'branding': 'Google Chrome' or 'Chromium'
+          'branding': 'Google Chrome' or 'Monyhar'
           'mac_bundle_id': The Mac bundle id of Chrome. (Only set when building
             for Mac.)
     '''
@@ -199,7 +199,7 @@ class TemplateWriter(object):
 
   def IsVersionSupported(self, policy, supported_on):
     '''Checks whether the policy is supported on current version'''
-    major_version = self._GetChromiumMajorVersion()
+    major_version = self._GetMonyharMajorVersion()
     if not major_version:
       return True
 
@@ -209,16 +209,16 @@ class TemplateWriter(object):
     return ((not since_version or int(since_version) <= major_version) and
             (not until_version or int(until_version) >= major_version))
 
-  def _GetChromiumVersionString(self):
-    '''Returns the Chromium version string stored in the environment variable
+  def _GetMonyharVersionString(self):
+    '''Returns the Monyhar version string stored in the environment variable
     version (if it is set).
 
-    Returns: The Chromium version string or None if it has not been set.'''
+    Returns: The Monyhar version string or None if it has not been set.'''
 
     return self.config.get('version', None)
 
-  def _GetChromiumMajorVersion(self):
-    ''' Returns the major version of Chromium if it exists
+  def _GetMonyharMajorVersion(self):
+    ''' Returns the major version of Monyhar if it exists
     in config.
     '''
     return self.config.get('major_version', None)

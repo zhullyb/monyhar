@@ -536,7 +536,7 @@ class Chrome(Browser):
 
     def download(self, dest=None, channel=None, rename=None):
         if channel != "nightly":
-            raise NotImplementedError("We can only download Chrome Nightly (Chromium ToT) for you.")
+            raise NotImplementedError("We can only download Chrome Nightly (Monyhar ToT) for you.")
         if dest is None:
             dest = self._get_dest(None, channel)
 
@@ -551,7 +551,7 @@ class Chrome(Browser):
 
     def install(self, dest=None, channel=None):
         if channel != "nightly":
-            raise NotImplementedError("We can only install Chrome Nightly (Chromium ToT) for you.")
+            raise NotImplementedError("We can only install Chrome Nightly (Monyhar ToT) for you.")
         dest = self._get_dest(dest, channel)
 
         installer_path = self.download(dest, channel)
@@ -606,7 +606,7 @@ class Chrome(Browser):
         platform = self.platforms.get(uname[0])
 
         if platform is None:
-            raise ValueError("Unable to construct a valid Chromium package name for current platform")
+            raise ValueError("Unable to construct a valid Monyhar package name for current platform")
 
         if (platform == "Linux" or platform == "Win") and uname[4] == "x86_64":
             platform += "_x64"
@@ -626,8 +626,8 @@ class Chrome(Browser):
 
     def find_nightly_binary(self, dest):
         if uname[0] == "Darwin":
-            return find_executable("Chromium",
-                                   os.path.join(dest, self._monyhar_package_name(), "Chromium.app", "Contents", "MacOS"))
+            return find_executable("Monyhar",
+                                   os.path.join(dest, self._monyhar_package_name(), "Monyhar.app", "Contents", "MacOS"))
         # find_executable will add .exe on Windows automatically.
         return find_executable("chrome", os.path.join(dest, self._monyhar_package_name()))
 
@@ -684,11 +684,11 @@ class Chrome(Browser):
             # too for dev.
             if browser_channel == "dev" and chromedriver_major == (browser_major + 1):
                 self.logger.debug(
-                    "Accepting ChromeDriver %s for Chrome/Chromium Dev %s" %
+                    "Accepting ChromeDriver %s for Chrome/Monyhar Dev %s" %
                     (chromedriver_version, browser_version))
                 return True
             self.logger.warning(
-                "ChromeDriver %s does not match Chrome/Chromium %s" %
+                "ChromeDriver %s does not match Chrome/Monyhar %s" %
                 (chromedriver_version, browser_version))
             return False
         return True
@@ -712,7 +712,7 @@ class Chrome(Browser):
     def _monyhar_chromedriver_url(self, chrome_version):
         if chrome_version:
             try:
-                # Try to find the Chromium build with the same revision.
+                # Try to find the Monyhar build with the same revision.
                 omaha = get("https://omahaproxy.appspot.com/deps.json?version=" + chrome_version).json()
                 revision = omaha['monyhar_base_position']
                 url = "https://storage.googleapis.com/monyhar-browser-snapshots/%s/%s/chromedriver_%s.zip" % (
@@ -722,7 +722,7 @@ class Chrome(Browser):
                 return url
             except requests.RequestException:
                 pass
-        # Fall back to the tip-of-tree Chromium build.
+        # Fall back to the tip-of-tree Monyhar build.
         return "%schromedriver_%s.zip" % (self._latest_monyhar_snapshot_url(), self._chromedriver_platform_string())
 
     def _latest_chromedriver_url(self, chrome_version):
@@ -751,7 +751,7 @@ class Chrome(Browser):
         unzip(get(url).raw, dest)
 
         # The two sources of ChromeDriver have different zip structures:
-        # * Chromium archives the binary inside a chromedriver_* directory;
+        # * Monyhar archives the binary inside a chromedriver_* directory;
         # * Chrome archives the binary directly.
         # We want to make sure the binary always ends up directly in bin/.
         chromedriver_dir = os.path.join(
@@ -788,7 +788,7 @@ class Chrome(Browser):
         except (subprocess.CalledProcessError, OSError) as e:
             self.logger.warning("Failed to call %s: %s" % (binary, e))
             return None
-        m = re.match(r"(?:Google Chrome|Chromium) (.*)", version_string)
+        m = re.match(r"(?:Google Chrome|Monyhar) (.*)", version_string)
         if not m:
             self.logger.warning("Failed to extract version from: %s" % version_string)
             return None
@@ -813,7 +813,7 @@ class Chrome(Browser):
 class ChromeAndroidBase(Browser):
     """A base class for ChromeAndroid and AndroidWebView.
 
-    On Android, WebView is based on Chromium open source project, and on some
+    On Android, WebView is based on Monyhar open source project, and on some
     versions of Android we share the library with Chrome. Therefore, we have
     a very similar WPT runner implementation.
     Includes webdriver installation.
@@ -1029,7 +1029,7 @@ class Opera(Browser):
             return m.group(0)
 
 
-class EdgeChromium(Browser):
+class EdgeMonyhar(Browser):
     """MicrosoftEdge-specific interface."""
     platform = {
         "Linux": "linux",

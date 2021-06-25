@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -28,7 +28,7 @@ namespace {
 base::LazyInstance<BackgroundSyncLauncherAndroid>::DestructorAtExit
     g_background_sync_launcher = LAZY_INSTANCE_INITIALIZER;
 
-// Disables the Play Services version check for testing on Chromium build bots.
+// Disables the Play Services version check for testing on Monyhar build bots.
 // TODO(iclelland): Remove this once the bots have their play services package
 // updated before every test run. (https://crbug.com/514449)
 bool disable_play_services_version_check_for_tests = false;

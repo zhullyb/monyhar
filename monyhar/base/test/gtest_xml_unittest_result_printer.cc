@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -66,7 +66,7 @@ void XmlUnitTestResultPrinter::AddLink(const std::string& name,
   const testing::TestInfo* info =
       testing::UnitTest::GetInstance()->current_test_info();
   // When this function is not called from a gtest test body, it will
-  // return null. E.g. call from Chromium itself or from test launcher.
+  // return null. E.g. call from Monyhar itself or from test launcher.
   // But when that happens, the previous two DCHECK won't pass. So in
   // theory it should not be possible to reach here and the info is null.
   DCHECK(info);

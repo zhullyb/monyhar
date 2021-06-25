@@ -22,7 +22,7 @@ async_test(function(t) {
         eventSender.gestureTap(coords[0], coords[1]);
         assert_false(video.paused);
 
-        // In the real world Chromium hides the cursor after a tap,
+        // In the real world Monyhar hides the cursor after a tap,
         // so hide it manually here. This is required to hit the
         // early out from EventHandler::fakeMouseMoveEventTimerFired when
         // isCursorVisible is false.

@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@ namespace {
 
 // The key to which a random subkey will be appended. This key itself will never
 // be deleted.
-const wchar_t kTestHKCUOverrideKeyPrefix[] = L"SOFTWARE\\Chromium Unit Tests\\";
+const wchar_t kTestHKCUOverrideKeyPrefix[] = L"SOFTWARE\\Monyhar Unit Tests\\";
 const char kTestHKCUOverrideEnvironmentVariable[] =
     "IE_IMPORTER_TEST_OVERRIDE_HKCU";
 

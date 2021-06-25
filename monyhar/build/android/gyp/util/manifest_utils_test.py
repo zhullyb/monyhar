@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -31,7 +31,7 @@ _TEST_MANIFEST = """\
         android:icon="@drawable/ic_devices_48dp"
         android:label="label with spaces"
         android:name="to be hashed"
-        android:theme="@style/Theme.Chromium.Activity.TranslucentNoAnimations">
+        android:theme="@style/Theme.Monyhar.Activity.TranslucentNoAnimations">
       <intent-filter>
         {extra_intent_filter_elem}
         <action android:name="android.intent.action.SEND"/>
@@ -61,7 +61,7 @@ android:required="false" android:version="1"/>
         android:name="to be hashed"
         {extra_activity_attr}android:icon="@drawable/ic_devices_48dp"
         android:label="label with spaces"
-        android:theme="@style/Theme.Chromium.Activity.TranslucentNoAnimations">
+        android:theme="@style/Theme.Monyhar.Activity.TranslucentNoAnimations">
       <intent-filter>  # DIFF-ANCHOR: {intent_filter_diff_anchor}
         {extra_intent_filter_elem}\
 <action android:name="android.intent.action.SEND"/>

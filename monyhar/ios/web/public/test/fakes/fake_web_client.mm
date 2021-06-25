@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -41,8 +41,8 @@ std::u16string FakeWebClient::GetPluginNotSupportedText() const {
 
 std::string FakeWebClient::GetUserAgent(UserAgentType type) const {
   if (type == UserAgentType::DESKTOP)
-    return "Chromium/66.0.3333.0 CFNetwork/893.14 Darwin/16.7.0 Desktop";
-  return "Chromium/66.0.3333.0 CFNetwork/893.14 Darwin/16.7.0 Mobile";
+    return "Monyhar/66.0.3333.0 CFNetwork/893.14 Darwin/16.7.0 Desktop";
+  return "Monyhar/66.0.3333.0 CFNetwork/893.14 Darwin/16.7.0 Mobile";
 }
 
 base::RefCountedMemory* FakeWebClient::GetDataResourceBytes(

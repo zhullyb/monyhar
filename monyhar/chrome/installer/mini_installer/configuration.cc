@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -128,7 +128,7 @@ void Configuration::ReadResources(HMODULE module) {
 void Configuration::ReadRegistry() {
   // Extracted files should not be deleted iff the user has manually created a
   // ChromeInstallerCleanup string value in the registry under
-  // HKCU\Software\[Google|Chromium] and set its value to "0".
+  // HKCU\Software\[Google|Monyhar] and set its value to "0".
   wchar_t value[2] = {};
   should_delete_extracted_files_ =
       !RegKey::ReadSZValue(HKEY_CURRENT_USER, kCleanupRegistryKey,

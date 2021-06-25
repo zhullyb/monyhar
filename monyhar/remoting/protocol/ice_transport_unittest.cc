@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -117,7 +117,7 @@ class IceTransportTest : public testing::Test {
     jingle_glue::JingleThreadWrapper::EnsureForCurrentMessageLoop();
 
     host_transport_ = std::make_unique<IceTransport>(
-        new TransportContext(std::make_unique<ChromiumPortAllocatorFactory>(),
+        new TransportContext(std::make_unique<MonyharPortAllocatorFactory>(),
                              nullptr, network_settings_, TransportRole::SERVER),
         &host_event_handler_);
     if (!host_authenticator_) {
@@ -126,7 +126,7 @@ class IceTransportTest : public testing::Test {
     }
 
     client_transport_ = std::make_unique<IceTransport>(
-        new TransportContext(std::make_unique<ChromiumPortAllocatorFactory>(),
+        new TransportContext(std::make_unique<MonyharPortAllocatorFactory>(),
                              nullptr, network_settings_, TransportRole::CLIENT),
         &client_event_handler_);
     if (!client_authenticator_) {

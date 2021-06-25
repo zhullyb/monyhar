@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -107,7 +107,7 @@ public class ModalDialogViewRenderTest extends DummyUiActivityTestCase {
     @MediumTest
     @Feature({"ModalDialog", "RenderTest"})
     public void testRender_TitleAndTitleIcon() throws IOException {
-        setUpViews(R.style.Theme_Chromium_ModalDialog_TextPrimaryButton);
+        setUpViews(R.style.Theme_Monyhar_ModalDialog_TextPrimaryButton);
         final Drawable icon = UiUtils.getTintedDrawable(
                 getActivity(), org.monyhar.chrome.R.drawable.ic_add, R.color.default_icon_color);
         createModel(mModelBuilder.with(ModalDialogProperties.TITLE, mResources, R.string.title)
@@ -119,7 +119,7 @@ public class ModalDialogViewRenderTest extends DummyUiActivityTestCase {
     @MediumTest
     @Feature({"ModalDialog", "RenderTest"})
     public void testRender_TitleAndMessage() throws IOException {
-        setUpViews(R.style.Theme_Chromium_ModalDialog_TextPrimaryButton);
+        setUpViews(R.style.Theme_Monyhar_ModalDialog_TextPrimaryButton);
         createModel(
                 mModelBuilder.with(ModalDialogProperties.TITLE, mResources, R.string.title)
                         .with(ModalDialogProperties.MESSAGE,
@@ -135,7 +135,7 @@ public class ModalDialogViewRenderTest extends DummyUiActivityTestCase {
     @MediumTest
     @Feature({"ModalDialog", "RenderTest"})
     public void testRender_FilledPrimaryButton() throws IOException {
-        setUpViews(R.style.Theme_Chromium_ModalDialog_FilledPrimaryButton);
+        setUpViews(R.style.Theme_Monyhar_ModalDialog_FilledPrimaryButton);
         createModel(
                 mModelBuilder.with(ModalDialogProperties.TITLE, mResources, R.string.title)
                         .with(ModalDialogProperties.MESSAGE,
@@ -151,7 +151,7 @@ public class ModalDialogViewRenderTest extends DummyUiActivityTestCase {
     @MediumTest
     @Feature({"ModalDialog", "RenderTest"})
     public void testRender_ScrollableTitle() throws IOException {
-        setUpViews(R.style.Theme_Chromium_ModalDialog_TextPrimaryButton);
+        setUpViews(R.style.Theme_Monyhar_ModalDialog_TextPrimaryButton);
         createModel(
                 mModelBuilder.with(ModalDialogProperties.TITLE, mResources, R.string.title)
                         .with(ModalDialogProperties.TITLE_SCROLLABLE, true)
@@ -165,7 +165,7 @@ public class ModalDialogViewRenderTest extends DummyUiActivityTestCase {
     @MediumTest
     @Feature({"ModalDialog", "RenderTest"})
     public void testRender_CustomView() throws IOException {
-        setUpViews(R.style.Theme_Chromium_ModalDialog_TextPrimaryButton);
+        setUpViews(R.style.Theme_Monyhar_ModalDialog_TextPrimaryButton);
         TestThreadUtils.runOnUiThreadBlocking(() -> {
             mCustomTextView1.setText(
                     TextUtils.join("\n", Collections.nCopies(100, "Custom Message")));

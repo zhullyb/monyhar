@@ -1,4 +1,4 @@
-# Copyright (c) 2018 The Chromium Authors. All rights reserved.
+# Copyright (c) 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -50,7 +50,7 @@ if (is_win && use_libfuzzer) {
     deps = [ "//skia" ]
   }
 
-  # TODO(metzman): Enable the other fuzzers that cannot yet build in Chromium.
+  # TODO(metzman): Enable the other fuzzers that cannot yet build in Monyhar.
   fuzzer_test("skia_region_deserialize_fuzzer") {
     sources = [ "//third_party/skia/fuzz/oss_fuzz/FuzzRegionDeserialize.cpp" ]
     defines = [ "IS_FUZZING_WITH_LIBFUZZER" ]

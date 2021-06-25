@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,7 +16,7 @@ class MediaAuthorizationWrapper {
   virtual ~MediaAuthorizationWrapper() {}
 
   // NB: NSInteger is used rather than AVAuthorizationStatus; when macOS 10.14
-  // is the minimum requirement for Chromium, switch types.
+  // is the minimum requirement for Monyhar, switch types.
   virtual NSInteger AuthorizationStatusForMediaType(NSString* media_type) = 0;
   virtual void RequestAccessForMediaType(NSString* media_type,
                                          base::OnceClosure callback,

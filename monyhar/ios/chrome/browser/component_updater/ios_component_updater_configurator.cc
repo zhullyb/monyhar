@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -152,7 +152,7 @@ scoped_refptr<update_client::NetworkFetcherFactory>
 IOSConfigurator::GetNetworkFetcherFactory() {
   if (!network_fetcher_factory_) {
     network_fetcher_factory_ =
-        base::MakeRefCounted<update_client::NetworkFetcherChromiumFactory>(
+        base::MakeRefCounted<update_client::NetworkFetcherMonyharFactory>(
             GetApplicationContext()->GetSharedURLLoaderFactory(),
             // Never send cookies for component update downloads.
             base::BindRepeating([](const GURL& url) { return false; }));
@@ -172,7 +172,7 @@ IOSConfigurator::GetCrxDownloaderFactory() {
 scoped_refptr<update_client::UnzipperFactory>
 IOSConfigurator::GetUnzipperFactory() {
   if (!unzip_factory_) {
-    unzip_factory_ = base::MakeRefCounted<update_client::UnzipChromiumFactory>(
+    unzip_factory_ = base::MakeRefCounted<update_client::UnzipMonyharFactory>(
         base::BindRepeating(&unzip::LaunchInProcessUnzipper));
   }
   return unzip_factory_;
@@ -181,7 +181,7 @@ IOSConfigurator::GetUnzipperFactory() {
 scoped_refptr<update_client::PatcherFactory>
 IOSConfigurator::GetPatcherFactory() {
   if (!patch_factory_) {
-    patch_factory_ = base::MakeRefCounted<update_client::PatchChromiumFactory>(
+    patch_factory_ = base::MakeRefCounted<update_client::PatchMonyharFactory>(
         base::BindRepeating(&patch::LaunchInProcessFilePatcher));
   }
   return patch_factory_;

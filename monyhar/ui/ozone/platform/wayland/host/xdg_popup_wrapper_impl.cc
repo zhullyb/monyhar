@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -226,7 +226,7 @@ void XDGPopupWrapperImpl::Configure(void* data,
                                     int32_t height) {
   // As long as the Wayland compositor repositions/requires to position windows
   // relative to their parents, do not propagate final bounds information to
-  // Chromium. The browser places windows in respect to screen origin, but
+  // Monyhar. The browser places windows in respect to screen origin, but
   // Wayland requires doing so in respect to parent window's origin. To properly
   // place windows, the bounds are translated and adjusted according to the
   // Wayland compositor needs during WaylandWindow::CreateXdgPopup call.

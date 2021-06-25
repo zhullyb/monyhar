@@ -1,4 +1,4 @@
-/* Copyright 2014 The Chromium Authors. All rights reserved.
+/* Copyright 2014 The Monyhar Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
 
@@ -30,12 +30,12 @@
     PPB_OPENGLES2_FRAMEBUFFERMULTISAMPLE_INTERFACE_1_0
 
 #define PPB_OPENGLES2_CHROMIUMENABLEFEATURE_INTERFACE_1_0 \
-    "PPB_OpenGLES2ChromiumEnableFeature;1.0"
+    "PPB_OpenGLES2MonyharEnableFeature;1.0"
 #define PPB_OPENGLES2_CHROMIUMENABLEFEATURE_INTERFACE \
     PPB_OPENGLES2_CHROMIUMENABLEFEATURE_INTERFACE_1_0
 
 #define PPB_OPENGLES2_CHROMIUMMAPSUB_INTERFACE_1_0 \
-    "PPB_OpenGLES2ChromiumMapSub;1.0"
+    "PPB_OpenGLES2MonyharMapSub;1.0"
 #define PPB_OPENGLES2_CHROMIUMMAPSUB_INTERFACE \
     PPB_OPENGLES2_CHROMIUMMAPSUB_INTERFACE_1_0
 
@@ -1086,15 +1086,15 @@ struct PPB_OpenGLES2FramebufferMultisample {
                                             GLsizei height);
 };
 
-struct PPB_OpenGLES2ChromiumEnableFeature_1_0 {
+struct PPB_OpenGLES2MonyharEnableFeature_1_0 {
   GLboolean (*EnableFeatureCHROMIUM)(PP_Resource context, const char* feature);
 };
 
-struct PPB_OpenGLES2ChromiumEnableFeature {
+struct PPB_OpenGLES2MonyharEnableFeature {
   GLboolean (*EnableFeatureCHROMIUM)(PP_Resource context, const char* feature);
 };
 
-struct PPB_OpenGLES2ChromiumMapSub_1_0 {
+struct PPB_OpenGLES2MonyharMapSub_1_0 {
   void* (*MapBufferSubDataCHROMIUM)(PP_Resource context,
                                     GLuint target,
                                     GLintptr offset,
@@ -1114,7 +1114,7 @@ struct PPB_OpenGLES2ChromiumMapSub_1_0 {
   void (*UnmapTexSubImage2DCHROMIUM)(PP_Resource context, const void* mem);
 };
 
-struct PPB_OpenGLES2ChromiumMapSub {
+struct PPB_OpenGLES2MonyharMapSub {
   void* (*MapBufferSubDataCHROMIUM)(PP_Resource context,
                                     GLuint target,
                                     GLintptr offset,

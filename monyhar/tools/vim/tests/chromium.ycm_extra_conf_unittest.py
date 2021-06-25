@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Tests for monyhar.ycm_extra_conf.
@@ -70,10 +70,10 @@ def TestLanguage(test_file, language):
   return test
 
 
-class Chromium_ycmExtraConfTest(unittest.TestCase):
+class Monyhar_ycmExtraConfTest(unittest.TestCase):
 
   def SetUpFakeChromeTreeBelowPath(self):
-    """Create fake Chromium source tree under self.test_root.
+    """Create fake Monyhar source tree under self.test_root.
 
     The fake source tree has the following contents:
 

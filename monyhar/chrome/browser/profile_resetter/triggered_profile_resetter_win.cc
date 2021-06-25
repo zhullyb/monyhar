@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,7 +18,7 @@
 #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 #define PRODUCT_NAME L"Google\\Chrome"
 #elif BUILDFLAG(CHROMIUM_BRANDING)
-#define PRODUCT_NAME L"Chromium"
+#define PRODUCT_NAME L"Monyhar"
 #else
 #error Unknown branding
 #endif

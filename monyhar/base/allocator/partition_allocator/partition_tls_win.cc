@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -57,7 +57,7 @@ void PartitionTlsSetOnDllProcessDetach(void (*callback)()) {
 // The callback has to be in any section between .CRT$XLA and .CRT$XLZ, as these
 // are sentinels used by the TLS code to find the callback array bounds. As we
 // don't particularly care about where we are called but would prefer to be
-// deinitialized towards the end (in particular after Chromium's TLS), we locate
+// deinitialized towards the end (in particular after Monyhar's TLS), we locate
 // ourselves in .CRT$XLY.
 
 // Force a reference to _tls_used to make the linker create the TLS directory if

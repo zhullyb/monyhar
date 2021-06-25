@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ package optimization_guide.proto;
 
 import "components/optimization_guide/proto/common_types.proto";
 
-// Enumerates the different request priorities that the Chromium experiment will
+// Enumerates the different request priorities that the Monyhar experiment will
 // consider "important". For example, low priority requests will be queued
 // behind in-flight medium priority requests, when the PriorityThreshold is
 // PRIORITY_THRESHOLD_MEDIUM, etc.

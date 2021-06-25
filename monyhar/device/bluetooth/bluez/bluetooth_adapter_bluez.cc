@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -70,7 +70,7 @@ using device::UMABluetoothDiscoverySessionOutcome;
 namespace {
 
 // The agent path is relatively meaningless since BlueZ only permits one to
-// exist per D-Bus connection, it just has to be unique within Chromium.
+// exist per D-Bus connection, it just has to be unique within Monyhar.
 const char kAgentPath[] = "/org/monyhar/bluetooth_agent";
 const char kGattApplicationObjectPath[] = "/gatt_application";
 

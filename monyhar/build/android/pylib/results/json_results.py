@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -198,7 +198,7 @@ def GenerateJsonTestResultFormatFile(test_run_result, interrupted, file_path,
                                      **kwargs):
   """Write |test_run_result| to JSON.
 
-  This uses the official Chromium Test Results Format.
+  This uses the official Monyhar Test Results Format.
 
   Args:
     test_run_result: a base_test_result.TestRunResults object.

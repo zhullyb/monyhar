@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -74,7 +74,7 @@ PRUNE_PATHS = set([
     os.path.join('third_party','pywebsocket'),
     os.path.join('third_party','syzygy'),
 
-    # Chromium code.
+    # Monyhar code.
     os.path.join('tools', 'swarming_client'),
 
     # Stuff pulled in from chrome-internal for official builds/tools.
@@ -163,7 +163,7 @@ SPECIAL_CASES = {
         "License": "BSD",
     },
     os.path.join('third_party', 'cros_system_api'): {
-        "Name": "Chromium OS system API",
+        "Name": "Monyhar OS system API",
         "URL": "http://www.monyhar.org/monyhar-os",
         "License": "BSD",
         # Absolute path here is resolved as relative to the source root.
@@ -265,7 +265,7 @@ SPECIAL_CASES = {
     },
     os.path.join('third_party', 'blink'): {
         # about:credits doesn't show "Blink" but "WebKit".
-        # Blink is a fork of WebKit, and Chromium project has maintained it
+        # Blink is a fork of WebKit, and Monyhar project has maintained it
         # since the fork.  about:credits needs to mention the code before
         # the fork.
         "Name": "WebKit",
@@ -704,9 +704,9 @@ def GenerateCredits(file_template_file,
 
   entry_template = codecs.open(entry_template_file, encoding='utf-8').read()
   entries = []
-  # Start from Chromium's LICENSE file
+  # Start from Monyhar's LICENSE file
   monyhar_license_metadata = {
-      'Name': 'The Chromium Project',
+      'Name': 'The Monyhar Project',
       'URL': 'http://www.monyhar.org',
       'License File': os.path.join(_REPOSITORY_ROOT, 'LICENSE')
   }
@@ -794,15 +794,15 @@ def _ReadFile(path):
 
 def GenerateLicenseFile(output_file, gn_out_dir, gn_target, target_os):
   """Generate a plain-text LICENSE file which can be used when you ship a part
-    of Chromium code (specified by gn_target) as a stand-alone library
+    of Monyhar code (specified by gn_target) as a stand-alone library
     (e.g., //ios/web_view).
 
-    The LICENSE file contains licenses of both Chromium and third-party
+    The LICENSE file contains licenses of both Monyhar and third-party
     libraries which gn_target depends on. """
 
   third_party_dirs = FindThirdPartyDeps(gn_out_dir, gn_target, target_os)
 
-  # Start with Chromium's LICENSE file.
+  # Start with Monyhar's LICENSE file.
   content = [_ReadFile('LICENSE')]
 
   # Add necessary third_party.

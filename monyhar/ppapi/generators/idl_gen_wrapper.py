@@ -1,4 +1,4 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -85,7 +85,7 @@ class WrapperGen(Generator):
 
   def WriteCopyright(self, out):
     now = datetime.now()
-    c = """/* Copyright (c) %s The Chromium Authors. All rights reserved.
+    c = """/* Copyright (c) %s The Monyhar Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file.
  */

@@ -1,16 +1,16 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 package org.monyhar.support_lib_glue;
 
-import static org.monyhar.support_lib_glue.SupportLibWebViewChromiumFactory.recordApiCall;
+import static org.monyhar.support_lib_glue.SupportLibWebViewMonyharFactory.recordApiCall;
 
 import org.monyhar.android_webview.AwProxyController;
-import org.monyhar.android_webview.WebViewChromiumRunQueue;
+import org.monyhar.android_webview.WebViewMonyharRunQueue;
 import org.monyhar.base.ThreadUtils;
 import org.monyhar.support_lib_boundary.ProxyControllerBoundaryInterface;
-import org.monyhar.support_lib_glue.SupportLibWebViewChromiumFactory.ApiCall;
+import org.monyhar.support_lib_glue.SupportLibWebViewMonyharFactory.ApiCall;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
@@ -19,11 +19,11 @@ import java.util.concurrent.Executor;
  * Adapter between AwProxyController and ProxyControllerBoundaryInterface.
  */
 public class SupportLibProxyControllerAdapter implements ProxyControllerBoundaryInterface {
-    private final WebViewChromiumRunQueue mRunQueue;
+    private final WebViewMonyharRunQueue mRunQueue;
     private final AwProxyController mProxyController;
 
     public SupportLibProxyControllerAdapter(
-            WebViewChromiumRunQueue runQueue, AwProxyController proxyController) {
+            WebViewMonyharRunQueue runQueue, AwProxyController proxyController) {
         mRunQueue = runQueue;
         mProxyController = proxyController;
     }

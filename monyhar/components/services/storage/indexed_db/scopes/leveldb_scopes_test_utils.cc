@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -25,7 +25,7 @@ namespace {
 constexpr size_t kWriteBufferSize = 4 * 1024 * 1024;
 
 leveldb_env::Options GetLevelDBOptions() {
-  static base::NoDestructor<leveldb_env::ChromiumEnv> gTestEnv;
+  static base::NoDestructor<leveldb_env::MonyharEnv> gTestEnv;
   static const leveldb::FilterPolicy* kFilterPolicy =
       leveldb::NewBloomFilterPolicy(10);
   leveldb_env::Options options;

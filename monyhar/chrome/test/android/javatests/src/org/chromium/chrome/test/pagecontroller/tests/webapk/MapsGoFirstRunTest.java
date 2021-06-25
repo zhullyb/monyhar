@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -162,7 +162,7 @@ public class MapsGoFirstRunTest {
     /**
      * Launch a WebAPK (which launches Chrome).
      * @param webapkPackageName Package name of the WebAPK.
-     * @param chromePackageName Package name of Chromium that the WebAPK points to.
+     * @param chromePackageName Package name of Monyhar that the WebAPK points to.
      */
     private void launchWebapk(String webapkPackageName, String chromePackageName) {
         Log.d(TAG, "Launching %s in Chrome (%s)", webapkPackageName, chromePackageName);

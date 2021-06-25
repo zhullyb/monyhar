@@ -1,12 +1,12 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // This provides a way to access the application's current preferences.
 
-// Chromium settings and storage represent user-selected preferences and
+// Monyhar settings and storage represent user-selected preferences and
 // information and MUST not be extracted, overwritten or modified except
-// through Chromium defined APIs.
+// through Monyhar defined APIs.
 
 #ifndef COMPONENTS_PREFS_PREF_SERVICE_H_
 #define COMPONENTS_PREFS_PREF_SERVICE_H_

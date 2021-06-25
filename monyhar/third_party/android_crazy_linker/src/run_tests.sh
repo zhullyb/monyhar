@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -106,14 +106,14 @@ Then call this script with:
 
   \$OUT_DIR/bin/$PROGNAME
 
-Where \$OUT_DIR is your Chromium output directory, which can be set either
+Where \$OUT_DIR is your Monyhar output directory, which can be set either
 through the CHROMIUM_OUTPUT_DIR environment variable or with the --output-dir
 option.
 
 Possible options:
 
    --help|-?           Print this message.
-   --output-dir=<dir>  Manually set the Chromium output directory.
+   --output-dir=<dir>  Manually set the Monyhar output directory.
    --unit-tests        Also run the unit-tests suite (for convenience).
    --verbose           Increment verbosity.
 

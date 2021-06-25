@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -389,7 +389,7 @@ void X11Window::Initialize(PlatformWindowInitProperties properties) {
                      x11::Atom::CARDINAL, counters);
   }
 
-  // Always composite Chromium windows if a compositing WM is used.  Sometimes,
+  // Always composite Monyhar windows if a compositing WM is used.  Sometimes,
   // WMs will not composite fullscreen windows as an optimization, but this can
   // lead to tearing of fullscreen videos.
   x11::SetProperty<uint32_t>(xwindow_,
@@ -1371,7 +1371,7 @@ int X11Window::UpdateDrag(const gfx::Point& screen_point) {
           target_current_context->fetched_targets()));
   int suggested_operations = target_current_context->GetDragOperation();
   // KDE-based file browsers such as Dolphin change the drag operation depending
-  // on whether alt/ctrl/shift was pressed. However once Chromium gets control
+  // on whether alt/ctrl/shift was pressed. However once Monyhar gets control
   // over the X11 events, the source application does no longer receive X11
   // events for key modifier changes, so the dnd operation gets stuck in an
   // incorrect state. Blink can only dnd-open files of type DRAG_COPY, so the
@@ -2117,7 +2117,7 @@ void X11Window::SetWMSpecState(bool enabled,
 
 void X11Window::OnWMStateUpdated() {
   // The EWMH spec requires window managers to remove the _NET_WM_STATE property
-  // when a window is unmapped.  However, Chromium code wants the state to
+  // when a window is unmapped.  However, Monyhar code wants the state to
   // persist across a Hide() and Show().  So if the window is currently
   // unmapped, leave the state unchanged so it will be restored when the window
   // is remapped.

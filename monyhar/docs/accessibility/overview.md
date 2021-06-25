@@ -5,8 +5,8 @@ have equal access to software. One piece of this involves basic design
 principles such as using appropriate font sizes and color contrast,
 avoiding using color to convey important information, and providing keyboard
 alternatives for anything that is normally accomplished with a pointing device.
-However, when you see the word "accessibility" in a directory name in Chromium,
-that code's purpose is to provide full access to Chromium's UI via external
+However, when you see the word "accessibility" in a directory name in Monyhar,
+that code's purpose is to provide full access to Monyhar's UI via external
 accessibility APIs that are utilized by assistive technology.
 
 **Assistive technology** here refers to software or hardware which
@@ -40,10 +40,10 @@ vendor-specific APIs in order to fully function, especially with web
 browsers, because the standard APIs are insufficient to handle the
 complexity of the web.
 
-Chromium needs to support all of these operating system and
+Monyhar needs to support all of these operating system and
 vendor-specific accessibility APIs in order to be usable with the full
-ecosystem of assistive technology on all platforms. Just like Chromium
-sometimes mimics the quirks and bugs of older browsers, Chromium often
+ecosystem of assistive technology on all platforms. Just like Monyhar
+sometimes mimics the quirks and bugs of older browsers, Monyhar often
 needs to mimic the quirks and bugs of other browsers' implementation
 of accessibility APIs, too.
 
@@ -79,7 +79,7 @@ Consider the following small HTML file:
 
 ### The Accessibility Tree and Accessibility Attributes
 
-Internally, Chromium represents the accessibility tree for that web page
+Internally, Monyhar represents the accessibility tree for that web page
 using a data structure something like this:
 
 ```
@@ -134,23 +134,23 @@ calls it a "content description".
 
 **Historical note:** The internal names of roles and attributes in
 Chrome often tend to most closely match the macOS accessibility API
-because Chromium was originally based on WebKit, where most of the
+because Monyhar was originally based on WebKit, where most of the
 accessibility code was written by Apple. Over time we're slowly
 migrating internal names to match what those roles and attributes are
 called in web accessibility standards, like ARIA.
 
 ### Accessibility Events
 
-In Chromium's internal terminology, an Accessibility Event always represents
+In Monyhar's internal terminology, an Accessibility Event always represents
 communication from the app to the assistive technology, indicating that the
 accessibility tree changed in some way.
 
 As an example, if the user were to press the Tab key and the text
-field from the example above became focused, Chromium would fire a
+field from the example above became focused, Monyhar would fire a
 "focus" accessibility event that assistive technology could listen
 to. A screen reader might then announce the name and current value of
 the text field. A magnifier might zoom the screen to its bounding
-box. If the user types some text into the text field, Chromium would
+box. If the user types some text into the text field, Monyhar would
 fire a "value changed" accessibility event.
 
 As with nodes in the accessibility tree, each platform has a slightly different
@@ -172,13 +172,13 @@ vary quite a bit.
 Each native object that implements a platform's native accessibility API
 supports a number of actions, which are requests from the assistive
 technology to control or change the UI. This is the opposite of events,
-which are messages from Chromium to the assistive technology.
+which are messages from Monyhar to the assistive technology.
 
 For example, if the user had a voice control application running, such as
 Voice Access on Android, the user could just speak the name of one of the
 buttons on the page, like "Next". Upon recognizing that text and finding
 that it matches one of the UI elements on the page, the voice control
-app executes the action to click the button id=6 in Chromium's accessibility
+app executes the action to click the button id=6 in Monyhar's accessibility
 tree. Internally we call that action "do default" rather than click, since
 it represents the default action for any type of control.
 
@@ -195,7 +195,7 @@ function to retrieve the text properties (font family, font size,
 weight, etc.) at a specific character position.
 
 Parameterized attributes are particularly tricky to implement because
-of Chromium's multi-process architecture. More on this below.
+of Monyhar's multi-process architecture. More on this below.
 
 ### Tools for inspecting the Accessibility tree
 
@@ -216,10 +216,10 @@ Automation Inspector Chrome extension).
   - Windows: Inspect, AViewer, accProbe (and many others)
 
 
-## Chromium's multi-process architecture
+## Monyhar's multi-process architecture
 
 Native accessibility APIs tend to have a *functional* interface, where
-Chromium implements an interface for a canonical accessible object that
+Monyhar implements an interface for a canonical accessible object that
 includes methods to return various attributes, walk the tree, or perform
 an action like click(), focus(), or setValue(...).
 
@@ -229,9 +229,9 @@ influenced by CSS), and the accessible semantics of a DOM element can
 be modified by adding ARIA attributes.
 
 One important complication is that all of these native accessibility APIs
-are *synchronous*, while Chromium is multi-process, with the contents of
+are *synchronous*, while Monyhar is multi-process, with the contents of
 each web page living in a different process than the process that
-implements Chromium's UI and the native accessibility APIs. Furthermore,
+implements Monyhar's UI and the native accessibility APIs. Furthermore,
 the renderer processes are *sandboxed*, so they can't implement
 operating system APIs directly.
 
@@ -242,7 +242,7 @@ https://blog.monyhar.org/2008/09/multi-process-architecture.html) or
 https://www.monyhar.org/developers/design-documents/multi-process-architecture)
 for an intro.
 
-Chromium's multi-process architecture means that we can't implement
+Monyhar's multi-process architecture means that we can't implement
 accessibility APIs the same way that a single-process browser can -
 namely, by calling directly into the DOM to compute the result of each
 API call. For example, on some operating systems there might be an API
@@ -250,16 +250,16 @@ to get the bounding box for a particular range of characters on the
 page.  In other browsers, this might be implemented by creating a DOM
 selection object and asking for its bounding box.
 
-That implementation would be impossible in Chromium because it'd require
+That implementation would be impossible in Monyhar because it'd require
 blocking the main thread while waiting for a response from the renderer
 process that implements that web page's DOM. (Not only is blocking the
 main thread strictly disallowed, but the latency of doing this for every
-API call makes it prohibitively slow anyway.) Instead, Chromium takes an
+API call makes it prohibitively slow anyway.) Instead, Monyhar takes an
 approach where a representation of the entire accessibility tree is
 cached in the main process. Great care needs to be taken to ensure that
 this representation is as concise as possible.
 
-In Chromium, we build a data structure representing all of the
+In Monyhar, we build a data structure representing all of the
 information for a web page's accessibility tree, send the data
 structure from the renderer process to the main browser process, cache
 it in the main browser process, and implement native accessibility
@@ -314,7 +314,7 @@ However, the accessibility tree can change shape in complicated ways -
 for example, whole subtrees can be reparented dynamically.
 
 Rather than writing code to deal with every possible way the
-accessibility tree could be modified, Chromium has a general-purpose
+accessibility tree could be modified, Monyhar has a general-purpose
 tree serializer class that's designed to send small incremental
 updates of a tree from one process to another. The tree serializer has
 just a few requirements:
@@ -336,10 +336,10 @@ tree update atomically.
 
 ### Text bounding boxes
 
-One challenge faced by Chromium is that accessibility clients want to be
+One challenge faced by Monyhar is that accessibility clients want to be
 able to query the bounding box of an arbitrary range of text - not necessarily
 just the current cursor position or selection. As discussed above, it's
-not possible to block Chromium's main browser process while waiting for this
+not possible to block Monyhar's main browser process while waiting for this
 information from Blink, so instead we cache enough information to satisfy these
 queries in the accessibility tree.
 
@@ -355,13 +355,13 @@ x-coordinate of each character in its text (assuming left-to-right).
 From that it's possible to compute the bounding box
 of any individual character.
 
-The inline text boxes are part of Chromium's internal accessibility tree.
+The inline text boxes are part of Monyhar's internal accessibility tree.
 They're used purely internally and aren't ever exposed directly via any
 native accessibility APIs.
 
 For example, suppose that a document contains a text field with the text
 "Hello world", but the field is narrow, so "Hello" is on the first line and
-"World" is on the second line. Internally Chromium's accessibility tree
+"World" is on the second line. Internally Monyhar's accessibility tree
 might look like this:
 
 ```
@@ -404,26 +404,26 @@ At one point in time, all of the content of a single Tab or other web view
 was contained in the same Blink process, and it was possible to serialize
 the accessibility tree for a whole frame tree in a single pass.
 
-Today the situation is a bit more complicated, as Chromium supports
+Today the situation is a bit more complicated, as Monyhar supports
 out-of-process iframes. (It also supports "browser plugins" such as
 the `<webview>` tag in Chrome packaged apps, which embeds a whole
 browser inside a browser, but for the purposes of accessibility this
 is handled the same as frames.)
 
 Rather than a mix of in-process and out-of-process frames that are handled
-differently, Chromium builds a separate independent accessibility tree
+differently, Monyhar builds a separate independent accessibility tree
 for each frame. Each frame gets its own tree ID, and it keeps track of
 the tree ID of its parent frame (if any) and any child frames.
 
 In Chrome's main browser process, the accessibility trees for each frame
 are cached separately, and when an accessibility client (assistive
-technology) walks the accessibility tree, Chromium dynamically composes
+technology) walks the accessibility tree, Monyhar dynamically composes
 all of the frames into a single virtual accessibility tree on the fly,
 using those aforementioned tree IDs.
 
 The node IDs for accessibility trees only need to be unique within a
 single frame. Where necessary, separate unique IDs are used within
-Chrome's main browser process. In Chromium accessibility, a "node ID"
+Chrome's main browser process. In Monyhar accessibility, a "node ID"
 always means that ID that's only unique within a frame, and a "unique ID"
 means an ID that's globally unique.
 
@@ -455,7 +455,7 @@ events from Blink to the embedding content layer.
 
 The content layer lives on both sides of the renderer/browser split. The content
 layer translates WebAXObjects into [AXContentNodeData], which is a subclass of
-[ui::AXNodeData]. The ui::AXNodeData class and related classes are Chromium's
+[ui::AXNodeData]. The ui::AXNodeData class and related classes are Monyhar's
 cross-platform accessibility tree. The translation is implemented in
 [BlinkAXTreeSource]. This translation happens on the renderer side, so the
 ui::AXNodeData tree now needs to be sent to the browser, which is done by
@@ -468,7 +468,7 @@ usually forwarded to [BrowserAccessibilityManager] which is responsible for:
 
 1. Merging AXNodeData trees into one tree of [BrowserAccessibility] objects,
    by linking to other BrowserAccessibilityManagers. This is important because
-   each page has its own accessibility tree, but each Chromium *window* must
+   each page has its own accessibility tree, but each Monyhar *window* must
    have only one accessibility tree, so trees from multiple pages need to be
    combined (possibly also with trees from Views UI).
 2. Dispatching outgoing accessibility events to the platform's accessibility
@@ -485,7 +485,7 @@ usually forwarded to [BrowserAccessibilityManager] which is responsible for:
 
 On Chrome OS, RenderFrameHostImpl does not route events to
 BrowserAccessibilityManager at all, since there is no platform screenreader
-outside Chromium to integrate with.
+outside Monyhar to integrate with.
 
 ## Views
 

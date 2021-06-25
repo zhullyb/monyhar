@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -111,7 +111,7 @@ TEST_P(NGBoxFragmentPainterTest, AddUrlRects) {
     <!DOCTYPE html>
     <div>
       <p>
-        <a href="https://www.monyhar.org">Chromium</a>
+        <a href="https://www.monyhar.org">Monyhar</a>
       </p>
       <p>
         <a href="https://www.wikipedia.org">Wikipedia</a>

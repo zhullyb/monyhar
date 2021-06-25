@@ -26,7 +26,7 @@ with CSS icons.
 
 ### webgpu_videos_mxn.html
   PLEASE RUN http-server TO SERVE THIS DEMO, OTHERWISE THIS DEMO WILL NOT START.
-Chromium command line switch to enable WEBGPU:
+Monyhar command line switch to enable WEBGPU:
   "--enable-unsafe-webgpu --enable-experimental-web-platform-features"
 The image of each video frame is uploaded and rendered by WebGPU. The UI is also
 rendered by WebGPU. The demo uses the experimental Import Texture API to copy

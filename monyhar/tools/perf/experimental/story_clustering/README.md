@@ -21,7 +21,7 @@ Examples of creating clusters:
 python ./tools/perf/experimental/story_clustering/gather_historical_records_and_cluster_stories.py \
 rendering.desktop \
 --metrics frame_times thread_total_all_cpu_time_per_frame \
---platforms ChromiumPerf:mac-10_13_laptop_high_end-perf ChromiumPerf:mac-10_12_laptop_low_end-perf \
+--platforms MonyharPerf:mac-10_13_laptop_high_end-perf MonyharPerf:mac-10_12_laptop_low_end-perf \
 --testcases-path //tmp/story_clustering/rendering.desktop/test_cases.txt \
 --days=100 \
 --normalize \
@@ -32,7 +32,7 @@ rendering.desktop \
 python ./tools/perf/experimental/story_clustering/gather_historical_records_and_cluster_stories.py \
 rendering.desktop \
 --metrics frame_times thread_total_all_cpu_time_per_frame \
---platforms 'ChromiumPerf:Win 7 Nvidia GPU Perf' 'ChromiumPerf:Win 7 Perf' ChromiumPerf:win-10-perf \
+--platforms 'MonyharPerf:Win 7 Nvidia GPU Perf' 'MonyharPerf:Win 7 Perf' MonyharPerf:win-10-perf \
 --testcases-path //tmp/story_clustering/rendering.desktop/test_cases.txt \
 --days=100 \
 --normalize
@@ -42,8 +42,8 @@ rendering.desktop \
 python ./tools/perf/experimental/story_clustering/gather_historical_records_and_cluster_stories.py \
 rendering.mobile \
 --metrics frame_times thread_total_all_cpu_time_per_frame \
---platforms 'ChromiumPerf:Android Nexus5 Perf' 'ChromiumPerf:Android Nexus5X WebView Perf' \
-'ChromiumPerf:Android Nexus6 WebView Perf' \
+--platforms 'MonyharPerf:Android Nexus5 Perf' 'MonyharPerf:Android Nexus5X WebView Perf' \
+'MonyharPerf:Android Nexus6 WebView Perf' \
 --testcases-path //tmp/story_clustering/rendering.mobile/test_cases.txt \
 --days=100 \
 --normalize

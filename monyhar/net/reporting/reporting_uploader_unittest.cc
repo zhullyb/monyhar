@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -509,7 +509,7 @@ std::unique_ptr<test_server::HttpResponse> ReturnCacheableResponse(
 }
 
 // TODO(juliatuttle): This passes even if the uploader doesn't set
-// LOAD_DISABLE_CACHE. Maybe that's okay -- Chromium might not cache POST
+// LOAD_DISABLE_CACHE. Maybe that's okay -- Monyhar might not cache POST
 // responses ever -- but this test should either not exist or be sure that it is
 // testing actual functionality, not a default.
 TEST_F(ReportingUploaderTest, DontCacheResponse) {

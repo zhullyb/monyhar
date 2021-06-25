@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium Authors. All rights reserved.
+# Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -840,7 +840,7 @@ component("base") {
     "vlog.h",
   ]
 
-  # Various files that are unused in the Chromium build, but presumably here to
+  # Various files that are unused in the Monyhar build, but presumably here to
   # make downstream's life easier. They are not included in the main sources
   # list to avoid breaking GN formatting's auto-sorting.
   sources += [
@@ -3876,7 +3876,7 @@ if (is_android) {
       "android/java/src/org/monyhar/base/metrics/StatisticsRecorderAndroid.java",
       "android/java/src/org/monyhar/base/metrics/UmaRecorder.java",
       "android/java/src/org/monyhar/base/metrics/UmaRecorderHolder.java",
-      "android/java/src/org/monyhar/base/multidex/ChromiumMultiDexInstaller.java",
+      "android/java/src/org/monyhar/base/multidex/MonyharMultiDexInstaller.java",
       "android/java/src/org/monyhar/base/process_launcher/BindService.java",
       "android/java/src/org/monyhar/base/process_launcher/ChildConnectionAllocator.java",
       "android/java/src/org/monyhar/base/process_launcher/ChildProcessConnection.java",
@@ -4005,8 +4005,8 @@ if (is_android) {
 
     sources = [
       "test/android/javatests/src/org/monyhar/base/test/BaseActivityTestRule.java",
-      "test/android/javatests/src/org/monyhar/base/test/BaseChromiumAndroidJUnitRunner.java",
-      "test/android/javatests/src/org/monyhar/base/test/BaseChromiumRunnerCommon.java",
+      "test/android/javatests/src/org/monyhar/base/test/BaseMonyharAndroidJUnitRunner.java",
+      "test/android/javatests/src/org/monyhar/base/test/BaseMonyharRunnerCommon.java",
       "test/android/javatests/src/org/monyhar/base/test/BaseJUnit4ClassRunner.java",
       "test/android/javatests/src/org/monyhar/base/test/BaseJUnit4TestRule.java",
       "test/android/javatests/src/org/monyhar/base/test/BundleTestRule.java",

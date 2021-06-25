@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ base::FilePath GetPlatformSpecificDirectory(const std::string& cdm_base_path);
 // `user_data_dir` is typically the LPAC specific path, e.g.
 // C:\Users\<user>\AppData\Local\Packages\
 // cr.sb.cdm4b414ceb52402c4e188a185dd531c100416d8daf\AC\Google\Chrome\User Data
-// TODO(xhwang): Separate by Chromium user profile as well.
+// TODO(xhwang): Separate by Monyhar user profile as well.
 base::FilePath GetCdmStorePath(const base::FilePath& user_data_dir,
                                const base::UnguessableToken& cdm_origin_id,
                                const std::string& key_system);

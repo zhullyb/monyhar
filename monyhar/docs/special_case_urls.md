@@ -1,6 +1,6 @@
 # Special Case URLs
 
-Several types of URLs lead to special case behavior in Chromium and are worth
+Several types of URLs lead to special case behavior in Monyhar and are worth
 considering as new features are built.
 
 [TOC]
@@ -16,7 +16,7 @@ actually a huge source of corner cases and confusion:
    `document.body.innerHTML`.
  * **It may inherit an origin.** Navigating to `about:blank` in the address bar
    has a unique, opaque origin, but an `about:blank` iframe or popup created by
-   another document will inherit that document's origin. (Caveat: Chromium's
+   another document will inherit that document's origin. (Caveat: Monyhar's
    process model uses the initiator of the navigation to determine which process
    it belongs in, but Blink currently uses the parent's origin even if the
    initiator is not the parent, which we would like to fix in
@@ -75,7 +75,7 @@ important for most security checks to look at the origin rather than the URL
 
 ## chrome: URLs
 
-`chrome:` URLs are used for privileged pages that are part of Chromium, such as
+`chrome:` URLs are used for privileged pages that are part of Monyhar, such as
 `chrome://settings`. Web pages are not allowed to navigate to them, to reduce
 the risk of privilege escalation attacks. Note that there are a subset of
 `chrome:` URLs that are used for debug commands, described under
@@ -84,7 +84,7 @@ the risk of privilege escalation attacks. Note that there are a subset of
 
 ## Debug URLs
 
-Chromium supports a series of "debug URLs" listed at the bottom of
+Monyhar supports a series of "debug URLs" listed at the bottom of
 `chrome://chrome-urls`, such as `chrome://crash`. These are used to crash, hang,
 exit, or perform other debug actions. Like `javascript:` URLs, these URLs
 represent a command rather than a destination, and they do not go through the
@@ -107,7 +107,7 @@ though, while document.write does not.)
 
 ## `chrome-error://chromewebdata`
 
-When Chromium navigates to an error page, it commits as
+When Monyhar navigates to an error page, it commits as
 `chrome-error://chromewebdata`. This URL is not displayed to the user (in favor
 of the URL that failed or was blocked). Note that this error URL is not stored
 in the NavigationEntry, but error pages can also be detected using the

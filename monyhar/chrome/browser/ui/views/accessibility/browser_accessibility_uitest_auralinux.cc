@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -69,7 +69,7 @@ IN_PROC_BROWSER_TEST_F(AuraLinuxAccessibilityInProcessBrowserTest,
       browser_view->GetWidget()->GetRootView()->GetNativeViewAccessible();
   EXPECT_NE(nullptr, native_view_accessible);
 
-  // The root view has a child that is a client role for Chromium.
+  // The root view has a child that is a client role for Monyhar.
   int n_children = atk_object_get_n_accessible_children(native_view_accessible);
   ASSERT_EQ(1, n_children);
   AtkObject* client =

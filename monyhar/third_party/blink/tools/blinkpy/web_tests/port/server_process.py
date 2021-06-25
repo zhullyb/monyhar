@@ -289,7 +289,7 @@ class ServerProcess(object):
                                                        deadline,
                                                        stopping=False):
         if self._proc.stdout.closed or self._proc.stderr.closed:
-            # If the process crashed and is using FIFOs, like Chromium Android, the
+            # If the process crashed and is using FIFOs, like Monyhar Android, the
             # stdout and stderr pipes will be closed.
             return
 

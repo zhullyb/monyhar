@@ -288,7 +288,7 @@ bool ThemePainterDefault::PaintMenuList(const Element& element,
                                         const PaintInfo& i,
                                         const IntRect& rect) {
   WebThemeEngine::ExtraParams extra_params;
-  // Match Chromium Win behaviour of showing all borders if any are shown.
+  // Match Monyhar Win behaviour of showing all borders if any are shown.
   extra_params.menu_list.has_border = style.HasBorder();
   extra_params.menu_list.has_border_radius = style.HasBorderRadius();
   extra_params.menu_list.zoom = style.EffectiveZoom();

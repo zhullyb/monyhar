@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -39,9 +39,9 @@ public class ClipboardTest {
 
     private static final String TEST_PAGE_DATA_URL = UrlUtils.encodeHtmlDataUri(
             "<html><body>Hello, <a href=\"http://www.example.com/\">world</a>, how <b> "
-                    + "Chromium</b> doing today?</body></html>");
+                    + "Monyhar</b> doing today?</body></html>");
 
-    private static final String EXPECTED_TEXT_RESULT = "Hello, world, how Chromium doing today?";
+    private static final String EXPECTED_TEXT_RESULT = "Hello, world, how Monyhar doing today?";
 
     // String to search for in the HTML representation on the clipboard.
     private static final String EXPECTED_HTML_NEEDLE = "http://www.example.com/";

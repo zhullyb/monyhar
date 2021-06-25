@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10,7 +10,7 @@
 
 namespace net {
 
-// Map winsock and system errors to Chromium errors.
+// Map winsock and system errors to Monyhar errors.
 Error MapSystemError(logging::SystemErrorCode os_error) {
   if (os_error != 0)
     DVLOG(2) << "Error " << os_error;

@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -21,7 +21,7 @@ namespace crdtp {
 // Given a vector of pairs sorted by the first element of each pair, find
 // the corresponding value given a key to be compared to the first element.
 // Together with std::inplace_merge and pre-sorting or std::sort, this can
-// be used to implement a minimalistic equivalent of Chromium's flat_map.
+// be used to implement a minimalistic equivalent of Monyhar's flat_map.
 
 // In this variant, the template parameter |T| is a value type and a
 // |default_value| is provided.

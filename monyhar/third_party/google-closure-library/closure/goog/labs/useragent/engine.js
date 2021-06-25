@@ -54,7 +54,7 @@ goog.labs.userAgent.engine.isEdge = function() {
 
 /**
  * @return {boolean} Whether the rendering engine is WebKit. This will return
- * true for Chrome, Blink-based Opera (15+), Edge Chromium and Safari.
+ * true for Chrome, Blink-based Opera (15+), Edge Monyhar and Safari.
  */
 goog.labs.userAgent.engine.isWebKit = function() {
   return goog.labs.userAgent.util.matchUserAgentIgnoreCase('WebKit') &&

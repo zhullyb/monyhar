@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -7,8 +7,8 @@ import unittest
 from blinkpy.common.host_mock import MockHost
 from blinkpy.common.path_finder import RELATIVE_WEB_TESTS
 from blinkpy.common.system.executive_mock import mock_git_commands
-from blinkpy.w3c.monyhar_commit import ChromiumCommit
-from blinkpy.w3c.monyhar_commit_mock import MockChromiumCommit
+from blinkpy.w3c.monyhar_commit import MonyharCommit
+from blinkpy.w3c.monyhar_commit_mock import MockMonyharCommit
 from blinkpy.w3c.monyhar_exportable_commits import (
     _exportable_commits_since, get_commit_export_state, CommitExportState)
 from blinkpy.w3c.local_wpt_mock import MockLocalWPT
@@ -16,7 +16,7 @@ from blinkpy.w3c.wpt_github import PullRequest
 from blinkpy.w3c.wpt_github_mock import MockWPTGitHub
 
 
-class ChromiumExportableCommitsTest(unittest.TestCase):
+class MonyharExportableCommitsTest(unittest.TestCase):
 
     # TODO(qyearsley): Add a test for exportable_commits_over_last_n_commits.
 
@@ -46,7 +46,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
             'beefcafe', host, MockLocalWPT(test_patch=[(True, '')]),
             MockWPTGitHub(pull_requests=[]))
         self.assertEqual(len(commits), 1)
-        self.assertIsInstance(commits[0], ChromiumCommit)
+        self.assertIsInstance(commits[0], MonyharCommit)
         self.assertEqual(host.executive.calls, [
             ['git', 'rev-parse', '--show-toplevel'],
             [
@@ -128,7 +128,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
         self.assertEqual(len(commits), 3)
 
     def test_get_commit_export_state(self):
-        commit = MockChromiumCommit(MockHost())
+        commit = MockMonyharCommit(MockHost())
         github = MockWPTGitHub(pull_requests=[])
         self.assertEqual(
             get_commit_export_state(commit,
@@ -139,7 +139,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
     def test_commit_with_noexport_is_not_exportable(self):
         # Patch is not tested if the commit is ignored based on the message, hence empty MockLocalWPT.
 
-        commit = MockChromiumCommit(
+        commit = MockMonyharCommit(
             MockHost(), body='Message\nNo-Export: true')
         github = MockWPTGitHub(pull_requests=[])
         self.assertEqual(
@@ -147,19 +147,19 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
             (CommitExportState.IGNORED, ''))
 
         # The older NOEXPORT tag also makes it non-exportable.
-        old_commit = MockChromiumCommit(
+        old_commit = MockMonyharCommit(
             MockHost(), body='Message\nNOEXPORT=true')
         self.assertEqual(
             get_commit_export_state(old_commit, MockLocalWPT(), github),
             (CommitExportState.IGNORED, ''))
 
         # No-Export/NOEXPORT in a revert CL also makes it non-exportable.
-        revert = MockChromiumCommit(
+        revert = MockMonyharCommit(
             MockHost(), body='Revert of Message\n> No-Export: true')
         self.assertEqual(
             get_commit_export_state(revert, MockLocalWPT(), github),
             (CommitExportState.IGNORED, ''))
-        old_revert = MockChromiumCommit(
+        old_revert = MockMonyharCommit(
             MockHost(), body='Revert of Message\n> NOEXPORT=true')
         self.assertEqual(
             get_commit_export_state(old_revert, MockLocalWPT(), github),
@@ -169,20 +169,20 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
         # Patch is not tested if the commit is ignored based on the message, hence empty MockLocalWPT.
         # Make sure that the casing of the "No export" message isn't considered.
 
-        commit = MockChromiumCommit(
+        commit = MockMonyharCommit(
             MockHost(), body='Message\nno-EXPORT: true')
         github = MockWPTGitHub(pull_requests=[])
         self.assertEqual(
             get_commit_export_state(commit, MockLocalWPT(), github),
             (CommitExportState.IGNORED, ''))
 
-        commit = MockChromiumCommit(MockHost(), body='Message\nnoexport=TRUE')
+        commit = MockMonyharCommit(MockHost(), body='Message\nnoexport=TRUE')
         github = MockWPTGitHub(pull_requests=[])
         self.assertEqual(
             get_commit_export_state(commit, MockLocalWPT(), github),
             (CommitExportState.IGNORED, ''))
 
-        commit = MockChromiumCommit(
+        commit = MockMonyharCommit(
             MockHost(), body='Message\nNO-exPORT: trUE')
         github = MockWPTGitHub(pull_requests=[])
         self.assertEqual(
@@ -192,7 +192,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
     # "Import" in commit message doesn't by itself make a commit exportable,
     # see https://crbug.com/879128.
     def test_commit_that_starts_with_import_is_exportable(self):
-        commit = MockChromiumCommit(MockHost(), subject='Import message')
+        commit = MockMonyharCommit(MockHost(), subject='Import message')
         github = MockWPTGitHub(pull_requests=[])
         self.assertEqual(
             get_commit_export_state(commit,
@@ -201,7 +201,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
             (CommitExportState.EXPORTABLE_CLEAN, ''))
 
     def test_commit_that_has_open_pr_is_exportable(self):
-        commit = MockChromiumCommit(MockHost(), change_id='I00decade')
+        commit = MockMonyharCommit(MockHost(), change_id='I00decade')
         github = MockWPTGitHub(pull_requests=[
             PullRequest('PR2', 2, 'body\nChange-Id: I00decade', 'open', []),
         ])
@@ -212,7 +212,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
             (CommitExportState.EXPORTABLE_CLEAN, ''))
 
     def test_commit_that_has_closed_but_not_merged_pr(self):
-        commit = MockChromiumCommit(MockHost(), change_id='I00decade')
+        commit = MockMonyharCommit(MockHost(), change_id='I00decade')
         github = MockWPTGitHub(pull_requests=[
             PullRequest('PR2', 2, 'body\nChange-Id: I00decade', 'closed', []),
         ])
@@ -227,7 +227,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
             (CommitExportState.EXPORTED, ''))
 
     def test_commit_that_has_merged_pr_and_found_locally(self):
-        commit = MockChromiumCommit(MockHost(), change_id='I00decade')
+        commit = MockMonyharCommit(MockHost(), change_id='I00decade')
         github = MockWPTGitHub(
             pull_requests=[
                 PullRequest('PR2', 2, 'body\nChange-Id: I00decade', 'closed',
@@ -248,7 +248,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
                 verify_merged_pr=True), (CommitExportState.EXPORTED, ''))
 
     def test_commit_that_has_merged_pr_but_not_found_locally(self):
-        commit = MockChromiumCommit(MockHost(), change_id='I00decade')
+        commit = MockMonyharCommit(MockHost(), change_id='I00decade')
         github = MockWPTGitHub(
             pull_requests=[
                 PullRequest('PR2', 2, 'body\nChange-Id: I00decade', 'closed',
@@ -268,7 +268,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
             (CommitExportState.EXPORTABLE_CLEAN, ''))
 
     def test_commit_that_produces_errors(self):
-        commit = MockChromiumCommit(MockHost())
+        commit = MockMonyharCommit(MockHost())
         github = MockWPTGitHub(pull_requests=[])
         self.assertEqual(
             get_commit_export_state(
@@ -276,7 +276,7 @@ class ChromiumExportableCommitsTest(unittest.TestCase):
             (CommitExportState.EXPORTABLE_DIRTY, 'error'))
 
     def test_commit_that_produces_empty_diff(self):
-        commit = MockChromiumCommit(MockHost())
+        commit = MockMonyharCommit(MockHost())
         github = MockWPTGitHub(pull_requests=[])
         self.assertEqual(
             get_commit_export_state(commit,

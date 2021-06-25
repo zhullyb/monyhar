@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -44,7 +44,7 @@ constexpr int kResponseCodeInvalid = -1;
 
 }  // namespace
 
-ChromiumHttpConnection::ChromiumHttpConnection(
+MonyharHttpConnection::MonyharHttpConnection(
     std::unique_ptr<PendingSharedURLLoaderFactory> pending_url_loader_factory,
     Delegate* delegate)
     : delegate_(delegate),
@@ -57,22 +57,22 @@ ChromiumHttpConnection::ChromiumHttpConnection(
   AddRef();
 }
 
-ChromiumHttpConnection::~ChromiumHttpConnection() {
+MonyharHttpConnection::~MonyharHttpConnection() {
   // The destructor may be called on another sequence when the connection
   // is cancelled early, for example due to a reconfigure event.
   DCHECK_EQ(state_, State::DESTROYED);
 }
 
-void ChromiumHttpConnection::SetRequest(const std::string& url, Method method) {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::SetRequest, url, method);
+void MonyharHttpConnection::SetRequest(const std::string& url, Method method) {
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::SetRequest, url, method);
   DCHECK_EQ(state_, State::NEW);
   url_ = GURL(url);
   method_ = method;
 }
 
-void ChromiumHttpConnection::AddHeader(const std::string& name,
+void MonyharHttpConnection::AddHeader(const std::string& name,
                                        const std::string& value) {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::AddHeader, name, value);
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::AddHeader, name, value);
   DCHECK_EQ(state_, State::NEW);
 
   if (!network::IsRequestHeaderSafe(name, value)) {
@@ -95,9 +95,9 @@ void ChromiumHttpConnection::AddHeader(const std::string& name,
   }
 }
 
-void ChromiumHttpConnection::SetUploadContent(const std::string& content,
+void MonyharHttpConnection::SetUploadContent(const std::string& content,
                                               const std::string& content_type) {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::SetUploadContent, content,
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::SetUploadContent, content,
                      content_type);
   DCHECK_EQ(state_, State::NEW);
   upload_content_ = content;
@@ -105,9 +105,9 @@ void ChromiumHttpConnection::SetUploadContent(const std::string& content,
   chunked_upload_content_type_ = "";
 }
 
-void ChromiumHttpConnection::SetChunkedUploadContentType(
+void MonyharHttpConnection::SetChunkedUploadContentType(
     const std::string& content_type) {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::SetChunkedUploadContentType,
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::SetChunkedUploadContentType,
                      content_type);
   DCHECK_EQ(state_, State::NEW);
   upload_content_ = "";
@@ -116,19 +116,19 @@ void ChromiumHttpConnection::SetChunkedUploadContentType(
   AddHeader(::net::HttpRequestHeaders::kContentType, content_type);
 }
 
-void ChromiumHttpConnection::EnableHeaderResponse() {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::EnableHeaderResponse)
+void MonyharHttpConnection::EnableHeaderResponse() {
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::EnableHeaderResponse)
   enable_header_response_ = true;
 }
 
-void ChromiumHttpConnection::EnablePartialResults() {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::EnablePartialResults);
+void MonyharHttpConnection::EnablePartialResults() {
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::EnablePartialResults);
   DCHECK_EQ(state_, State::NEW);
   handle_partial_response_ = true;
 }
 
-void ChromiumHttpConnection::Start() {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::Start);
+void MonyharHttpConnection::Start() {
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::Start);
   DCHECK_EQ(state_, State::NEW);
   state_ = State::STARTED;
 
@@ -190,22 +190,22 @@ void ChromiumHttpConnection::Start() {
 
   if (handle_partial_response_) {
     url_loader_->SetOnResponseStartedCallback(
-        base::BindOnce(&ChromiumHttpConnection::OnResponseStarted, this));
+        base::BindOnce(&MonyharHttpConnection::OnResponseStarted, this));
     url_loader_->DownloadAsStream(factory.get(), this);
   } else {
     url_loader_->DownloadToStringOfUnboundedSizeUntilCrashAndDie(
         factory.get(),
-        base::BindOnce(&ChromiumHttpConnection::OnURLLoadComplete, this));
+        base::BindOnce(&MonyharHttpConnection::OnURLLoadComplete, this));
   }
 }
 
-void ChromiumHttpConnection::Pause() {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::Pause);
+void MonyharHttpConnection::Pause() {
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::Pause);
   is_paused_ = true;
 }
 
-void ChromiumHttpConnection::Resume() {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::Resume);
+void MonyharHttpConnection::Resume() {
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::Resume);
   is_paused_ = false;
 
   if (!partial_response_cache_.empty()) {
@@ -217,8 +217,8 @@ void ChromiumHttpConnection::Resume() {
     std::move(on_resume_callback_).Run();
 }
 
-void ChromiumHttpConnection::Close() {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::Close);
+void MonyharHttpConnection::Close() {
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::Close);
   if (state_ == State::DESTROYED)
     return;
 
@@ -230,9 +230,9 @@ void ChromiumHttpConnection::Close() {
   Release();
 }
 
-void ChromiumHttpConnection::UploadData(const std::string& data,
+void MonyharHttpConnection::UploadData(const std::string& data,
                                         bool is_last_chunk) {
-  ENSURE_IN_SEQUENCE(&ChromiumHttpConnection::UploadData, data, is_last_chunk);
+  ENSURE_IN_SEQUENCE(&MonyharHttpConnection::UploadData, data, is_last_chunk);
   if (state_ != State::STARTED)
     return;
 
@@ -252,14 +252,14 @@ void ChromiumHttpConnection::UploadData(const std::string& data,
   SendData();
 }
 
-void ChromiumHttpConnection::GetSize(GetSizeCallback get_size_callback) {
+void MonyharHttpConnection::GetSize(GetSizeCallback get_size_callback) {
   if (has_last_chunk_)
     std::move(get_size_callback).Run(net::OK, upload_body_size_);
   else
     get_size_callback_ = std::move(get_size_callback);
 }
 
-void ChromiumHttpConnection::StartReading(
+void MonyharHttpConnection::StartReading(
     mojo::ScopedDataPipeProducerHandle pipe) {
   // Delete any existing pipe, if any.
   upload_pipe_watcher_.reset();
@@ -268,14 +268,14 @@ void ChromiumHttpConnection::StartReading(
       FROM_HERE, mojo::SimpleWatcher::ArmingPolicy::MANUAL);
   upload_pipe_watcher_->Watch(
       upload_pipe_.get(), MOJO_HANDLE_SIGNAL_WRITABLE,
-      base::BindRepeating(&ChromiumHttpConnection::OnUploadPipeWriteable,
+      base::BindRepeating(&MonyharHttpConnection::OnUploadPipeWriteable,
                           base::Unretained(this)));
 
   // Will attempt to start sending the request body, if any data is available.
   SendData();
 }
 
-void ChromiumHttpConnection::OnDataReceived(base::StringPiece string_piece,
+void MonyharHttpConnection::OnDataReceived(base::StringPiece string_piece,
                                             base::OnceClosure resume) {
   DCHECK(handle_partial_response_);
 
@@ -292,7 +292,7 @@ void ChromiumHttpConnection::OnDataReceived(base::StringPiece string_piece,
   }
 }
 
-void ChromiumHttpConnection::OnComplete(bool success) {
+void MonyharHttpConnection::OnComplete(bool success) {
   DCHECK(handle_partial_response_);
 
   if (state_ != State::STARTED)
@@ -313,12 +313,12 @@ void ChromiumHttpConnection::OnComplete(bool success) {
   }
 
   const std::string message = net::ErrorToString(url_loader_->NetError());
-  VLOG(3) << "ChromiumHttpConnection completed with network error="
+  VLOG(3) << "MonyharHttpConnection completed with network error="
           << url_loader_->NetError() << ": " << message;
   delegate_->OnNetworkError(url_loader_->NetError(), message);
 }
 
-void ChromiumHttpConnection::OnRetry(base::OnceClosure start_retry) {
+void MonyharHttpConnection::OnRetry(base::OnceClosure start_retry) {
   DCHECK(handle_partial_response_);
   // Retries are not enabled for these requests.
   NOTREACHED();
@@ -326,7 +326,7 @@ void ChromiumHttpConnection::OnRetry(base::OnceClosure start_retry) {
 
 // Attempts to send more of the upload body, if more data is available, and
 // |upload_pipe_| is valid.
-void ChromiumHttpConnection::SendData() {
+void MonyharHttpConnection::SendData() {
   if (!upload_pipe_.is_valid() || upload_body_.empty())
     return;
 
@@ -353,11 +353,11 @@ void ChromiumHttpConnection::SendData() {
     upload_pipe_watcher_->ArmOrNotify();
 }
 
-void ChromiumHttpConnection::OnUploadPipeWriteable(MojoResult unused) {
+void MonyharHttpConnection::OnUploadPipeWriteable(MojoResult unused) {
   SendData();
 }
 
-void ChromiumHttpConnection::OnURLLoadComplete(
+void MonyharHttpConnection::OnURLLoadComplete(
     std::unique_ptr<std::string> response_body) {
   DCHECK(!handle_partial_response_);
 
@@ -382,19 +382,19 @@ void ChromiumHttpConnection::OnURLLoadComplete(
   if (response_code == kResponseCodeInvalid) {
     std::string message = net::ErrorToString(url_loader_->NetError());
 
-    VLOG(3) << "ChromiumHttpConnection completed with network error="
+    VLOG(3) << "MonyharHttpConnection completed with network error="
             << response_code << ": " << message;
     delegate_->OnNetworkError(response_code, message);
     return;
   }
 
-  VLOG(3) << "ChromiumHttpConnection completed with response_code="
+  VLOG(3) << "MonyharHttpConnection completed with response_code="
           << response_code;
 
   delegate_->OnCompleteResponse(response_code, raw_headers, *response_body);
 }
 
-void ChromiumHttpConnection::OnResponseStarted(
+void MonyharHttpConnection::OnResponseStarted(
     const GURL& final_url,
     const network::mojom::URLResponseHead& response_header) {
   if (enable_header_response_ && response_header.headers) {
@@ -404,16 +404,16 @@ void ChromiumHttpConnection::OnResponseStarted(
   }
 }
 
-ChromiumHttpConnectionFactory::ChromiumHttpConnectionFactory(
+MonyharHttpConnectionFactory::MonyharHttpConnectionFactory(
     std::unique_ptr<PendingSharedURLLoaderFactory> pending_url_loader_factory)
     : url_loader_factory_(SharedURLLoaderFactory::Create(
           std::move(pending_url_loader_factory))) {}
 
-ChromiumHttpConnectionFactory::~ChromiumHttpConnectionFactory() = default;
+MonyharHttpConnectionFactory::~MonyharHttpConnectionFactory() = default;
 
-HttpConnection* ChromiumHttpConnectionFactory::Create(
+HttpConnection* MonyharHttpConnectionFactory::Create(
     HttpConnection::Delegate* delegate) {
-  return new ChromiumHttpConnection(url_loader_factory_->Clone(), delegate);
+  return new MonyharHttpConnection(url_loader_factory_->Clone(), delegate);
 }
 
 }  // namespace libassistant

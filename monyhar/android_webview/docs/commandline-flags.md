@@ -106,7 +106,7 @@ adb logcat | grep -iE 'Active field trial|WebViewCommandLine'
 
 ## Applying Features with flags
 
-[`base::Feature`s](/base/feature_list.h) (or, "Features") are Chromium's
+[`base::Feature`s](/base/feature_list.h) (or, "Features") are Monyhar's
 mechanism for toggling off-by-default code paths. While debugging flags are also
 off-by-default, Features typically guard soon-to-launch product enhancements
 until they're tested enough for field trials or public launch, at which point
@@ -123,7 +123,7 @@ WebView supports the same syntax for toggling Features as the rest of monyhar:
 ## Finding Features and flags
 
 WebView supports toggling any flags/Features supported in any layer we
-depend on (ex. content). For more details on Chromium's layer architecture, see
+depend on (ex. content). For more details on Monyhar's layer architecture, see
 [this diagram](https://www.monyhar.org/developers/content-module) (replace
 "chrome" with "android\_webview"). Although we support toggling these flags, not
 all flags will have an effect when toggled, nor do we guarantee WebView

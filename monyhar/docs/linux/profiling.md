@@ -1,9 +1,9 @@
 # Linux Profiling
 
-How to profile Chromium on Linux.
+How to profile Monyhar on Linux.
 
 See
-[Profiling Chromium and WebKit](https://sites.google.com/a/monyhar.org/dev/developers/profiling-monyhar-and-webkit)
+[Profiling Monyhar and WebKit](https://sites.google.com/a/monyhar.org/dev/developers/profiling-monyhar-and-webkit)
 for alternative discussion.
 
 ## CPU Profiling
@@ -36,9 +36,9 @@ perf record -f -g -a  # captures the whole system
 ```
 
 Some versions of the perf command can be confused by process renames. Affected
-versions will be unable to resolve Chromium's symbols if it was started through
+versions will be unable to resolve Monyhar's symbols if it was started through
 perf, as in the first example above. It should work correctly if you attach to
-an existing Chromium process as shown in the second example. (This is known to
+an existing Monyhar process as shown in the second example. (This is known to
 be broken as late as 3.2.5 and fixed as early as 3.11.rc3.g36f571. The actual
 affected range is likely much smaller. You can download and build your own perf
 from source.)
@@ -57,11 +57,11 @@ This will use the previously captured data (`perf.data`).
 
 google-perftools code is enabled when the `use_allocator` gn variable is set
 to `tcmalloc` (currently the default). That will build the tcmalloc library,
-including the cpu profiling and heap profiling code into Chromium. In order to
+including the cpu profiling and heap profiling code into Monyhar. In order to
 get stacktraces in release builds on 64 bit, you will need to build with some
 extra flags enabled by setting `enable_profiling = true` in args.gn
 
-In order to enable cpu profiling, run Chromium with the environment variable
+In order to enable cpu profiling, run Monyhar with the environment variable
 `CPUPROFILE` set to a filename.  For example:
 
     CPUPROFILE=/tmp/cpuprofile out/Release/chrome
@@ -95,7 +95,7 @@ http://google-perftools.googlecode.com/svn/trunk/doc/cpuprofile.html.
 Follow the instructions for enabling profiling as described above in the
 google-perftools section under CPU Profiling.
 
-To turn on the heap profiler on a Chromium build with tcmalloc, use the
+To turn on the heap profiler on a Monyhar build with tcmalloc, use the
 `HEAPPROFILE` environment variable to specify a filename for the heap profile.
 For example:
 

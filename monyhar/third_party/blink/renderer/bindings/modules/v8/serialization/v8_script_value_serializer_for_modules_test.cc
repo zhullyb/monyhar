@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -198,7 +198,7 @@ TEST(V8ScriptValueSerializerForModulesTest, DecodeRTCCertificate) {
 
   V8TestingScope scope;
 
-  // This is encoded data generated from Chromium (around M55).
+  // This is encoded data generated from Monyhar (around M55).
   ScriptState* script_state = scope.GetScriptState();
   Vector<uint8_t> encoded_data;
   encoded_data.Append(kEcdsaCertificateEncoded,
@@ -945,7 +945,7 @@ TEST(V8ScriptValueSerializerForModulesTest, RoundTripDOMFileSystemNotClonable) {
 TEST(V8ScriptValueSerializerForModulesTest, DecodeDOMFileSystem) {
   V8TestingScope scope;
 
-  // This is encoded data generated from Chromium (around M56).
+  // This is encoded data generated from Monyhar (around M56).
   ScriptState* script_state = scope.GetScriptState();
   scoped_refptr<SerializedScriptValue> input = SerializedValue(
       {0xff, 0x09, 0x3f, 0x00, 0x64, 0x01, 0x1d, 0x68, 0x74, 0x74, 0x70, 0x5f,

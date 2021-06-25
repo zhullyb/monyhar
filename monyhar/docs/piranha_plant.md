@@ -1,7 +1,7 @@
 # Piranha Plant
 
 Piranha Plant is the name of a project, started in November 2013, that aims to
-deliver the future architecture of MediaStreams in Chromium.
+deliver the future architecture of MediaStreams in Monyhar.
 
 Project members are listed in the
 [group for the project](https://groups.google.com/a/monyhar.org/forum/#!members/piranha-plant).
@@ -18,11 +18,11 @@ thus an apt name for the project as we are fighting "monsters in the plumbing."
 
 When the MediaStream spec initially came to be, it was tightly coupled with
 PeerConnection. The infrastructure for both of these was initially implemented
-primarily in libjingle, and then used by Chromium. For this reason, the
-MediaStream implementation in Chromium is still somewhat coupled with the
+primarily in libjingle, and then used by Monyhar. For this reason, the
+MediaStream implementation in Monyhar is still somewhat coupled with the
 PeerConnection implementation, it still uses some libjingle interfaces on the
-Chromium side, and progress is sometimes more difficult as changes need to land
-in libjingle before changes can be made in Chromium.
+Monyhar side, and progress is sometimes more difficult as changes need to land
+in libjingle before changes can be made in Monyhar.
 
 Since the early days, the MediaStream spec has evolved so that PeerConnection is
 just one destination for a MediaStream, multiple teams are or will be consuming
@@ -31,16 +31,16 @@ architecture should look like now that the spec is relatively stable.
 
 ## Goals
 
-1.  Document the idealized future design for MediaStreams in Chromium (MS) as
+1.  Document the idealized future design for MediaStreams in Monyhar (MS) as
     well as the current state.
 1.  Create and execute on a plan to incrementally implement the future design.
 1.  Improve quality, maintainability and readability/understandability of the MS
     code.
-1.  Make life easier for Chromium developers using MS.
+1.  Make life easier for Monyhar developers using MS.
 1.  Balance concerns and priorities of the different teams that are or will be
-    using MS in Chromium.
+    using MS in Monyhar.
 1.  Do the above without hurting our ability to produce the WebRTC.org
-    deliverables, and without hurting interoperability between Chromium and
+    deliverables, and without hurting interoperability between Monyhar and
     other software built on the WebRTC.org deliverables.
 
 ## Deliverables

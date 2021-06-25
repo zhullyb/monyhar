@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ import org.monyhar.content_public.browser.UiThreadTaskTraits;
  */
 public class PaymentDetailsUpdateService extends Service {
     // AIDL calls can happen on multiple threads in parallel. The binder uses PostTask for
-    // synchronization since locks are discouraged in Chromium. The UI thread task runner is used
+    // synchronization since locks are discouraged in Monyhar. The UI thread task runner is used
     // rather than a SequencedTaskRunner since the state of the helper class is also changed by
     // ChromePaymentRequestService.java, which runs on the UI thread.
     private final IPaymentDetailsUpdateService.Stub mBinder =

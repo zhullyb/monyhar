@@ -1,6 +1,6 @@
 # Codes of Conduct
 
-Chromium contributors participate in many organizations that standardize Web
+Monyhar contributors participate in many organizations that standardize Web
 APIs. These organizations have rules that govern participants' behavior. We need
 to follow these rules, and we can expect that others in these bodies will also
 follow the rules.

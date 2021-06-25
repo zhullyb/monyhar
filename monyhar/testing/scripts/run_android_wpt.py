@@ -1,17 +1,17 @@
 #!/usr/bin/env vpython3
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 """Runs Web Platform Tests (WPT) on Android browsers.
 
-This script supports running tests on the Chromium Waterfall by mapping isolated
+This script supports running tests on the Monyhar Waterfall by mapping isolated
 script flags to WPT flags.
 
 It is also useful for local reproduction by performing APK installation and
 configuring the browser to resolve test hosts.  Be sure to invoke this
 executable directly rather than using python run_android_wpt.py so that
-WPT dependencies in Chromium vpython are found.
+WPT dependencies in Monyhar vpython are found.
 
 If you need more advanced test control, please use the runner located at
 //third_party/wpt_tools/wpt/wpt.
@@ -123,7 +123,7 @@ class WPTAndroidAdapter(wpt_common.BaseWptScriptAdapter):
     rest_args.extend([self.options.wpt_path])
 
     # By default, WPT will treat unexpected passes as errors, so we disable
-    # that to be consistent with Chromium CI.
+    # that to be consistent with Monyhar CI.
     rest_args.extend(['--no-fail-on-unexpected-pass'])
     if self.options.default_exclude:
       rest_args.extend(['--default-exclude'])
@@ -243,7 +243,7 @@ class WPTAndroidAdapter(wpt_common.BaseWptScriptAdapter):
     parser.add_argument('--wpt-path', default=DEFAULT_WPT,
                         help='Controls the path of the WPT runner to use'
                         ' (therefore tests).  Defaults the revision rolled into'
-                        ' Chromium.')
+                        ' Monyhar.')
     parser.add_argument('--additional-expectations',
                         action='append', default=[],
                         help='Paths to additional test expectations files.')
@@ -289,17 +289,17 @@ class WPTAndroidAdapter(wpt_common.BaseWptScriptAdapter):
                         action=WPTPassThroughArgs,
                         help="Log xunit report.")
     parser.add_argument('--enable-features', action=BinaryPassThroughArgs,
-                        help='Chromium features to enable during testing.')
+                        help='Monyhar features to enable during testing.')
     parser.add_argument('--disable-features', action=BinaryPassThroughArgs,
-                        help='Chromium features to disable during testing.')
+                        help='Monyhar features to disable during testing.')
     parser.add_argument('--disable-field-trial-config',
                         action=BinaryPassThroughArgs,
-                        help='Disable test trials for Chromium features.')
+                        help='Disable test trials for Monyhar features.')
     parser.add_argument('--force-fieldtrials', action=BinaryPassThroughArgs,
-                        help='Force trials for Chromium features.')
+                        help='Force trials for Monyhar features.')
     parser.add_argument('--force-fieldtrial-params',
                         action=BinaryPassThroughArgs,
-                        help='Force trial params for Chromium features.')
+                        help='Force trial params for Monyhar features.')
     add_emulator_args(parser)
 
 

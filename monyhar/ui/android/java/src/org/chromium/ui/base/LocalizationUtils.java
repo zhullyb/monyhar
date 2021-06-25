@@ -1,4 +1,4 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -87,13 +87,13 @@ public class LocalizationUtils {
     }
 
     /**
-     * Return the asset split language associated with a given Chromium language.
+     * Return the asset split language associated with a given Monyhar language.
      *
      * This matches the directory used to store language-based assets in bundle APK splits.
-     * E.g. for Hebrew, known as 'he' by Chromium, this method should return 'iw' because
+     * E.g. for Hebrew, known as 'he' by Monyhar, this method should return 'iw' because
      * the .pak file will be stored as /assets/locales#lang_iw/he.pak within the split.
      *
-     * @param language Chromium specific language name.
+     * @param language Monyhar specific language name.
      * @return Matching Android specific language name.
      */
     public static String getSplitLanguageForAndroid(String language) {
@@ -116,8 +116,8 @@ public class LocalizationUtils {
     /**
      * Return true iff a locale string matches a specific language string.
      *
-     * @param locale Chromium locale name (e.g. "fil", or "en-US").
-     * @param lang Chromium language name (e.g. "fi", or "en").
+     * @param locale Monyhar locale name (e.g. "fil", or "en-US").
+     * @param lang Monyhar language name (e.g. "fi", or "en").
      * @return true iff the locale name matches the languages. E.g. should
      *         be false for ("fil", "fi") (Filipino locale + Finish language)
      *         but true for ("en-US", "en") (USA locale + English language).

@@ -72,7 +72,7 @@ Se la casella "<ph name="SERVICE_SCRIPT_NAME" />" è già selezionata, deselezio
 <translation id="4405930547258349619">Core Library</translation>
 <translation id="443560535555262820">Apri preferenze Accessibilità</translation>
 <translation id="4450893287417543264">Non mostrare più</translation>
-<translation id="4512952200932940229">Copyright 2021 The Chromium Authors. Tutti i diritti riservati.</translation>
+<translation id="4512952200932940229">Copyright 2021 The Monyhar Authors. Tutti i diritti riservati.</translation>
 <translation id="4513946894732546136">Feedback</translation>
 <translation id="4563926062592110512">Client scollegato: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Dispositivi remoti</translation>
@@ -147,7 +147,7 @@ Se la casella "<ph name="SERVICE_SCRIPT_NAME" />" è già selezionata, deselezio
 <translation id="7868137160098754906">Inserisci il codice PIN per il computer remoto.</translation>
 <translation id="7895403300744144251">Le norme di sicurezza del computer remoto non consentono connessioni dal tuo account.</translation>
 <translation id="7936528439960309876">Aggancia a destra</translation>
-<translation id="7970576581263377361">Autenticazione non riuscita. Accedi di nuovo a Chromium.</translation>
+<translation id="7970576581263377361">Autenticazione non riuscita. Accedi di nuovo a Monyhar.</translation>
 <translation id="7981525049612125370">La sessione remota è scaduta.</translation>
 <translation id="8038111231936746805">(predefinita)</translation>
 <translation id="8041089156583427627">Invia feedback</translation>
@@ -181,6 +181,6 @@ Se la casella "<ph name="SERVICE_SCRIPT_NAME" />" è già selezionata, deselezio
 <translation id="9187628920394877737">Concedi l'autorizzazione "Registrazione dello schermo" a <ph name="PRODUCT_NAME" /></translation>
 <translation id="9213184081240281106">Configurazione host non valida.</translation>
 <translation id="981121421437150478">Offline</translation>
-<translation id="985602178874221306">The Chromium Authors</translation>
+<translation id="985602178874221306">The Monyhar Authors</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (ultima connessione: <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

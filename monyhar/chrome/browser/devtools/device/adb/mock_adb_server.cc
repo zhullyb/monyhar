@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -137,7 +137,7 @@ char kSampleChromePages[] = "[ {\n"
     "   \"devtoolsFrontendUrl\": \"/devtools/devtools.html?"
     "ws=/devtools/page/0\",\n"
     "   \"id\": \"0\",\n"
-    "   \"title\": \"The Chromium Projects\",\n"
+    "   \"title\": \"The Monyhar Projects\",\n"
     "   \"type\": \"page\",\n"
     "   \"url\": \"http://www.monyhar.org/\",\n"
     "   \"webSocketDebuggerUrl\": \""
@@ -149,7 +149,7 @@ char kSampleChromeBetaPages[] = "[ {\n"
     "   \"devtoolsFrontendUrl\": \"/devtools/devtools.html?"
     "ws=/devtools/page/0\",\n"
     "   \"id\": \"0\",\n"
-    "   \"title\": \"The Chromium Projects\",\n"
+    "   \"title\": \"The Monyhar Projects\",\n"
     "   \"type\": \"page\",\n"
     "   \"url\": \"http://www.monyhar.org/\",\n"
     "   \"webSocketDebuggerUrl\": \""
@@ -165,7 +165,7 @@ char kSampleWebViewPages[] = "[ {\n"
     "/devtools/page/3E962D4D-B676-182D-3BE8-FAE7CE224DE7\",\n"
     "   \"faviconUrl\": \"http://monyhar.org/favicon.ico\",\n"
     "   \"id\": \"3E962D4D-B676-182D-3BE8-FAE7CE224DE7\",\n"
-    "   \"title\": \"Blink - The Chromium Projects\",\n"
+    "   \"title\": \"Blink - The Monyhar Projects\",\n"
     "   \"type\": \"page\",\n"
     "   \"url\": \"http://www.monyhar.org/blink\",\n"
     "   \"webSocketDebuggerUrl\": \"ws:///devtools/"

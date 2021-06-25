@@ -1,10 +1,10 @@
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 import("//build/config/android/config.gni")
 
-# This provides a list of suffixes for all Android Chromium Telemetry targets
+# This provides a list of suffixes for all Android Monyhar Telemetry targets
 # for use in auto-generating binary-specific targets.
 # All the suffixes should be kept in sync with android_browser_types.py.
 

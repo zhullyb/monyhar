@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -16,21 +16,21 @@
 
 namespace update_client {
 
-class UnzipChromiumFactory : public UnzipperFactory {
+class UnzipMonyharFactory : public UnzipperFactory {
  public:
   using Callback =
       base::RepeatingCallback<mojo::PendingRemote<unzip::mojom::Unzipper>()>;
-  explicit UnzipChromiumFactory(Callback callback);
+  explicit UnzipMonyharFactory(Callback callback);
 
   std::unique_ptr<Unzipper> Create() const override;
 
  protected:
-  ~UnzipChromiumFactory() override;
+  ~UnzipMonyharFactory() override;
 
  private:
   const Callback callback_;
 
-  DISALLOW_COPY_AND_ASSIGN(UnzipChromiumFactory);
+  DISALLOW_COPY_AND_ASSIGN(UnzipMonyharFactory);
 };
 
 }  // namespace update_client

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -726,7 +726,7 @@ std::unique_ptr<PrivetURLLoader> PrivetHTTPClientImpl::CreateURLLoader(
           setting:
             "Users can enable or disable background requests by 'Show "
             "notifications when new printers are detected on the network' in "
-            "Chromium's settings under Advanced Settings, Google Cloud Print. "
+            "Monyhar's settings under Advanced Settings, Google Cloud Print. "
             "User triggered requests, like from print preview or "
             "chrome://devices/ cannot be disabled."
           policy_exception_justification:

@@ -1,6 +1,6 @@
 # Cross-compiling Chrome/win
 
-As many Chromium developers are on Linux/Mac, cross-compiling Chromium for
+As many Monyhar developers are on Linux/Mac, cross-compiling Monyhar for
 Windows targets facilitates development for Windows targets on non-Windows
 machines.
 

@@ -100,7 +100,7 @@ function getConfigurationForFile(mediaFile)
     }
 
     // NOTE: Supporting other mediaFormats is not currently implemented as
-    // Chromium only tests with WebM files.
+    // Monyhar only tests with WebM files.
     throw 'mediaFile ' + mediaFile + ' not supported.';
 }
 

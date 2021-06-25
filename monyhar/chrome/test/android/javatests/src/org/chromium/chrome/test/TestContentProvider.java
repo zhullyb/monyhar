@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -32,8 +32,8 @@ import java.util.Map;
  * Important note about including monyhar classes in this content provider:
  * TestContentProvider is part of ChromePublicTest APK. However the instrumentation tests
  * run in the process of the package under test, which is Chrome apk. Normally this is not
- * a problem, however when debug is set to true, Chromium build files enable multidex. In
- * multidex mode, the Chromium files main dex file is in Chrome apk, which are not accessible
+ * a problem, however when debug is set to true, Monyhar build files enable multidex. In
+ * multidex mode, the Monyhar files main dex file is in Chrome apk, which are not accessible
  * from the process that runs this ContentProvider.
  *
  * One of the possible workarounds is running this ContentProvider in the same process with

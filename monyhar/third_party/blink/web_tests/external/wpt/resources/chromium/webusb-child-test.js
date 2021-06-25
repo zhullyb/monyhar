@@ -7,7 +7,7 @@
   if (this.constructor.name === 'DedicatedWorkerGlobalScope' ||
       this !== window.top) {
 
-    // Run Chromium specific set up code.
+    // Run Monyhar specific set up code.
     if (typeof MojoInterfaceInterceptor !== 'undefined') {
       let messageChannel = new MessageChannel();
       messageChannel.port1.onmessage = async (messageEvent) => {

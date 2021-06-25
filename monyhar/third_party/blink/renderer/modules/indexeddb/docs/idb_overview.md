@@ -49,12 +49,12 @@ The two caveats are:
 
 * IDB values can contain
   [Blobs](https://developer.mozilla.org/en-US/docs/Web/API/Blob), which are
-  serialized separately (at least by Chromium). The IDB backend must track the
+  serialized separately (at least by Monyhar). The IDB backend must track the
   Blobs associated with a value.
 * IDB primary keys can be extracted from IDB values. IDB index keys are always
   extracted from IDB values. This means that an IDB backend that only logs
   object store operations must be able to extract keys from IDB values when the
-  log is replayed. (we don't do that in Chromium) The key extraction algorithm
+  log is replayed. (we don't do that in Monyhar) The key extraction algorithm
   is non-trivial, see *keyPath* and *multiEntry* indexes.
 
 IDB has transactions. Each transaction operates on a fixed set of object stores

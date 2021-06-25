@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -267,7 +267,7 @@ TEST(MachineHWIDCheckerTest, InvalidHWIDInVMNotTrue) {
 
 #else  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
 
-// Test non-Google Chromium builds.
+// Test non-Google Monyhar builds.
 TEST(MachineHWIDCheckerTest, NonGoogleBuild) {
   // GIVEN this is not a Google build.
   // THEN IsMachineHWIDCorrect() is always true.

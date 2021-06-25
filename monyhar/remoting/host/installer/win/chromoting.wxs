@@ -16,7 +16,7 @@
     <?define Manufacturer = "Google LLC" ?>
   <?else?>
     <?define ChromotingHost = "Chromoting Host" ?>
-    <?define Manufacturer = "The Chromium Authors" ?>
+    <?define Manufacturer = "The Monyhar Authors" ?>
   <?endif?>
 
   <?if $(sys.BUILDARCH) = "x64" ?>

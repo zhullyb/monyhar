@@ -36,7 +36,7 @@ group("base_test_support") {
 
 group("build") {
   if (crashpad_is_in_monyhar) {
-    # Chromium has no build target.
+    # Monyhar has no build target.
   } else if (crashpad_is_standalone || crashpad_is_in_fuchsia) {
     public_deps = [ "mini_monyhar/build" ]
   } else if (crashpad_is_external) {

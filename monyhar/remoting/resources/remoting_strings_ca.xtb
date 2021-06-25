@@ -72,7 +72,7 @@ Si la casella <ph name="SERVICE_SCRIPT_NAME" /> ja està marcada, desmarca-la i 
 <translation id="4405930547258349619">Biblioteca principal</translation>
 <translation id="443560535555262820">Obre el tauler de preferències Accessibilitat</translation>
 <translation id="4450893287417543264">No ho tornis a mostrar</translation>
-<translation id="4512952200932940229">Copyright 2021. Els autors de Chromium. Tots els drets reservats.</translation>
+<translation id="4512952200932940229">Copyright 2021. Els autors de Monyhar. Tots els drets reservats.</translation>
 <translation id="4513946894732546136">Comentaris</translation>
 <translation id="4563926062592110512">Client desconnectat: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">Dispositius remots</translation>
@@ -147,7 +147,7 @@ Si la casella <ph name="SERVICE_SCRIPT_NAME" /> ja està marcada, desmarca-la i 
 <translation id="7868137160098754906">Introduïu el vostre PIN de l'ordinador remot.</translation>
 <translation id="7895403300744144251">Les polítiques de seguretat de l'ordinador remot no permeten les connexions des del teu compte.</translation>
 <translation id="7936528439960309876">Fixa a la dreta</translation>
-<translation id="7970576581263377361">L'autenticació ha fallat. Torneu a iniciar la sessió a Chromium.</translation>
+<translation id="7970576581263377361">L'autenticació ha fallat. Torneu a iniciar la sessió a Monyhar.</translation>
 <translation id="7981525049612125370">La sessió remota ha caducat.</translation>
 <translation id="8038111231936746805">(predeterminada)</translation>
 <translation id="8041089156583427627">Envia suggeriments</translation>
@@ -181,6 +181,6 @@ Si la casella <ph name="SERVICE_SCRIPT_NAME" /> ja està marcada, desmarca-la i 
 <translation id="9187628920394877737">Concedeix a <ph name="PRODUCT_NAME" /> el permís Gravació de la pantalla</translation>
 <translation id="9213184081240281106">La configuració de l'amfitrió no és vàlida.</translation>
 <translation id="981121421437150478">Sense connexió</translation>
-<translation id="985602178874221306">Els autors de Chromium</translation>
+<translation id="985602178874221306">Els autors de Monyhar</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (última connexió: <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

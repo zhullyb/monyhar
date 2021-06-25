@@ -1,8 +1,8 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This file contains Chromium-specific EGL extensions declarations.
+// This file contains Monyhar-specific EGL extensions declarations.
 
 #ifndef GPU_EGL_EGLEXTCHROMIUM_H_
 #define GPU_EGL_EGLEXTCHROMIUM_H_

@@ -4,13 +4,13 @@
 
 ## Introduction
 
-Clang tools can help with global refactorings of Chromium code. Clang tools can
+Clang tools can help with global refactorings of Monyhar code. Clang tools can
 take advantage of clang's AST to perform refactorings that would be impossible
 with a traditional find-and-replace regexp:
 
 *   Constructing `scoped_ptr<T>` from `NULL`: <https://crbug.com/173286>
 *   Implicit conversions of `scoped_refptr<T>` to `T*`: <https://crbug.com/110610>
-*   Rename everything in Blink to follow Chromium style: <https://crbug.com/563793>
+*   Rename everything in Blink to follow Monyhar style: <https://crbug.com/563793>
 *   Clean up of deprecated `base::Value` APIs: <https://crbug.com/581865>
 
 ## Caveats
@@ -22,17 +22,17 @@ require running the tool once for each build config.
 
 ## Prerequisites
 
-A Chromium checkout created with `fetch` should have everything needed.
+A Monyhar checkout created with `fetch` should have everything needed.
 
 For convenience, add `third_party/llvm-build/Release+Asserts/bin` to `$PATH`.
 
 ## Writing the tool
 
-LLVM uses C++11 and CMake. Source code for Chromium clang tools lives in
+LLVM uses C++11 and CMake. Source code for Monyhar clang tools lives in
 [//tools/clang]. It is generally easiest to use one of the already-written tools
 as the base for writing a new tool.
 
-Chromium clang tools generally follow this pattern:
+Monyhar clang tools generally follow this pattern:
 
 1.  Instantiate a
     [`clang::ast_matchers::MatchFinder`][clang-docs-match-finder].
@@ -85,7 +85,7 @@ expansion loc, etc.
 ### Why not RefactoringTool?
 While clang has a [`clang::tooling::RefactoringTool`](http://clang.llvm.org/doxygen/classclang_1_1tooling_1_1RefactoringTool.html)
 to automatically apply the generated replacements and save the results, it
-doesn't work well for Chromium:
+doesn't work well for Monyhar:
 
 *   Clang tools run actions serially, so run time scales poorly to tens of
     thousands of files.
@@ -115,7 +115,7 @@ recompiling solely the tool you are writing can be accomplished by executing
 tool's name).
 
 ## Running
-First, build all Chromium targets to avoid failures due to missing dependencies
+First, build all Monyhar targets to avoid failures due to missing dependencies
 that are generated as part of the build:
 
 ```shell

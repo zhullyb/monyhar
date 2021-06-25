@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The Chromium Authors. All rights reserved.
+// Copyright (c) 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -63,7 +63,7 @@ void* TrimMappingInternal(void* base,
     // address within the freed range.
     ret = reinterpret_cast<char*>(base) + pre_slack;
     FreePages(base, base_length);
-    ret = SystemAllocPages(ret, trim_length, accessibility, PageTag::kChromium);
+    ret = SystemAllocPages(ret, trim_length, accessibility, PageTag::kMonyhar);
   }
   return ret;
 }

@@ -1,6 +1,6 @@
 # Code Reviews
 
-Code reviews are a central part of developing high-quality code for Chromium.
+Code reviews are a central part of developing high-quality code for Monyhar.
 All change lists (CLs) must be reviewed.
 
 The general patch, upload, and land process is covered in more detail in the
@@ -81,7 +81,7 @@ owners rather than large directories with many owners. Owners should:
   * Be already acting as an owner, providing high-quality reviews and design
     feedback.
 
-  * Be a Chromium project member with full commit access of at least three
+  * Be a Monyhar project member with full commit access of at least three
     months tenure.
 
   * Have submitted a substantial number of non-trivial changes to the affected

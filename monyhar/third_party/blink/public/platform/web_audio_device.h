@@ -34,7 +34,7 @@
 
 namespace blink {
 
-// Abstract interface to the Chromium audio system.
+// Abstract interface to the Monyhar audio system.
 class WebAudioDevice {
  public:
   class BLINK_PLATFORM_EXPORT RenderCallback {

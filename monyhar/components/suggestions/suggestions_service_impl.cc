@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -396,8 +396,8 @@ SuggestionsServiceImpl::CreateSuggestionsRequest(
         policy {
           cookies_allowed: NO
           setting:
-            "Users can disable this feature by signing out of Chromium, or "
-            "disabling Sync or History Sync in Chromium settings under "
+            "Users can disable this feature by signing out of Monyhar, or "
+            "disabling Sync or History Sync in Monyhar settings under "
             "Advanced sync settings. The feature is enabled by default."
           chrome_policy {
             SyncDisabled {

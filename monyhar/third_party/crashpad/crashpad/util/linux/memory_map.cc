@@ -338,7 +338,7 @@ std::unique_ptr<MemoryMap::Iterator> MemoryMap::FindFilePossibleMmapStarts(
   }
 
 #if defined(OS_ANDROID)
-  // The Android Chromium linker uses ashmem to share RELRO segments between
+  // The Android Monyhar linker uses ashmem to share RELRO segments between
   // processes. The original RELRO segment has been unmapped and replaced with a
   // mapping named "/dev/ashmem/RELRO:<libname>" where <libname> is the base
   // library name (e.g. libchrome.so) sans any preceding path that may be

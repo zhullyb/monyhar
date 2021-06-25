@@ -11,7 +11,7 @@ Started Guide].
 
 The most direct way to gauge the effectiveness of your fuzz target is to collect
 metrics. You can get them manually, or take them from a [ClusterFuzz status]
-page after your fuzz target is checked into the Chromium repository.
+page after your fuzz target is checked into the Monyhar repository.
 
 [TOC]
 
@@ -31,7 +31,7 @@ printed while a fuzz target is running:
 ```
 
 You should aim for at least 1,000 exec/s from your fuzz target locally before
-submitting it to the Chromium repository. If you’re under 1,000, consider the
+submitting it to the Monyhar repository. If you’re under 1,000, consider the
 following improvements:
 
 * [Simplifying initialization/cleanup](#Simplifying-initialization-cleanup)
@@ -61,7 +61,7 @@ works faster for stack-based and static objects than for heap-allocated ones.
 
 *** note
 **Note:** It’s always a good idea to try different variants for your fuzz target
-locally, then submit only the fastest implementation to the Chromium repository.
+locally, then submit only the fastest implementation to the Monyhar repository.
 ***
 
 ### Code coverage
@@ -73,7 +73,7 @@ fuzzing effectiveness:
   coverage] report. This report can provide insight on how to improve code
   coverage.
 * Generate a source-level coverage report for your fuzzer by running the
-  [coverage script] stored in the Chromium repository. The script provides
+  [coverage script] stored in the Monyhar repository. The script provides
   detailed instructions and a usage example.
 
 *** note
@@ -139,10 +139,10 @@ passing a directory as an argument:
 
 The fuzzer stores all the interesting inputs it finds in the directory.
 
-#### Creating a Chromium repository seed corpus
+#### Creating a Monyhar repository seed corpus
 
 When running fuzz targets at scale, ClusterFuzz looks for a seed corpus defined
-in the Chromium source repository. You can define one in your `BUILD.gn` file by
+in the Monyhar source repository. You can define one in your `BUILD.gn` file by
 adding a `seed_corpus` attribute to your `fuzzer_test` target definition:
 
 ```
@@ -169,7 +169,7 @@ All files found in these directories and their subdirectories are stored in a
 
 #### Uploading corpus files to GCS
 
-If you can't store your seed corpus in the Chromium repository (e.g., it’s too
+If you can't store your seed corpus in the Monyhar repository (e.g., it’s too
 large, can’t be open-sourced, etc.), you can upload the corpus to the Google
 Cloud Storage (GCS) bucket used by ClusterFuzz.
 
@@ -181,7 +181,7 @@ Cloud Storage (GCS) bucket used by ClusterFuzz.
 *** note
 **Note:** If you upload your corpus to GCS, you don’t need to add the
 `seed_corpus` attribute to your `fuzzer_test` target definition. However, adding
-seed corpus to the Chromium repository is the preferred way.
+seed corpus to the Monyhar repository is the preferred way.
 ***
 
 You can do the same thing by using the [gsutil] command line tool:
@@ -270,7 +270,7 @@ Add a fuzzer dictionary:
    }
    ```
 
-   The dictionary is submitted to the Chromium repository. Once ClusterFuzz
+   The dictionary is submitted to the Monyhar repository. Once ClusterFuzz
    picks up a new revision build, the dictionary is used automatically.
 
 ### Custom build

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
@@ -68,7 +68,7 @@ register_hosts_for_all_channels() {
     register_hosts "${build_dir}" \
         "${HOME}/Library/Application Support/Google/Chrome/NativeMessagingHosts"
     register_hosts "${build_dir}" \
-        "${HOME}/Library/Application Support/Chromium/NativeMessagingHosts"
+        "${HOME}/Library/Application Support/Monyhar/NativeMessagingHosts"
   else
     register_hosts "${build_dir}" \
         "${HOME}/.config/google-chrome/NativeMessagingHosts"
@@ -96,7 +96,7 @@ unregister_hosts_for_all_channels() {
     unregister_hosts \
         "${HOME}/Library/Application Support/Google/Chrome/NativeMessagingHosts"
     unregister_hosts \
-        "${HOME}/Library/Application Support/Chromium/NativeMessagingHosts"
+        "${HOME}/Library/Application Support/Monyhar/NativeMessagingHosts"
   else
     unregister_hosts "${HOME}/.config/google-chrome/NativeMessagingHosts"
     unregister_hosts "${HOME}/.config/google-chrome-beta/NativeMessagingHosts"

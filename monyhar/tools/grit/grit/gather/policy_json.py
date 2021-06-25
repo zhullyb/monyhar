@@ -1,4 +1,4 @@
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -317,9 +317,9 @@ class PolicyJson(skeleton_gatherer.SkeletonGatherer):
     if '_monyhar' in defines:
       self._config = {
         'build': 'monyhar',
-        'app_name': 'Chromium',
-        'frame_name': 'Chromium Frame',
-        'os_name': 'Chromium OS',
+        'app_name': 'Monyhar',
+        'frame_name': 'Monyhar Frame',
+        'os_name': 'Monyhar OS',
       }
     elif '_google_chrome' in defines:
       self._config = {

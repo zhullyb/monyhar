@@ -34,11 +34,11 @@ the Crisper tool (https://github.com/PolymerLabs/crisper).
 - Removed executable bit from some files.
 - Resolved encoding issues.
 - Replaced CRLF line endings with LF line endings in text files.
-- Removed files that are not needed by Chromium, see v1_0/rsync_exclude.txt.
+- Removed files that are not needed by Monyhar, see v1_0/rsync_exclude.txt.
 - Re-implemented <paper-ripple> using Web Animations API (which, as of
   2/21/2017 does not work in Safari or IE). This is a complete fork from
   Polymer's <paper-ripple>.
-- Removed CSS properties that are not needed in Chromium using
+- Removed CSS properties that are not needed in Monyhar using
   css_strip_prefixes.py script.
 - Bundled and minified Polymer 2 with minify_polymer.py, since Polymer 2 repo
   does not distribute minified files (unlike Polymer 1).

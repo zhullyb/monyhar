@@ -2223,7 +2223,7 @@ Apabila |IdleAction| tidak ditetapkan, tindakan lalai akan diambil, iaitu gantun
 <translation id="5148753489738115745">Membolehkan anda menentukan parameter tambahan yang digunakan apabila  <ph name="PRODUCT_FRAME_NAME" /> melancarkan <ph name="PRODUCT_NAME" />.
 
           Jika dasar ini tidak ditetapkan, baris perintah lalai akan digunakan.</translation>
-<translation id="5152787786897382519">Chromium dan Google Chrome mempunyai beberapa kumpulan dasar yang bergantung pada satu sama lain untuk memberikan kawalan terhadap ciri. Set ini diwakili oleh kumpulan dasar berikut. Memandangkan dasar boleh mempunyai pelbagai sumber, hanya nilai yang berasal daripada sumber berkeutamaan tertinggi akan digunakan. Nilai yang berasal daripada sumber berkeutamaan lebih rendah dalam kumpulan yang sama akan diabaikan. Urutan keutamaan ditakrifkan dalam <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Monyhar dan Google Chrome mempunyai beberapa kumpulan dasar yang bergantung pada satu sama lain untuk memberikan kawalan terhadap ciri. Set ini diwakili oleh kumpulan dasar berikut. Memandangkan dasar boleh mempunyai pelbagai sumber, hanya nilai yang berasal daripada sumber berkeutamaan tertinggi akan digunakan. Nilai yang berasal daripada sumber berkeutamaan lebih rendah dalam kumpulan yang sama akan diabaikan. Urutan keutamaan ditakrifkan dalam <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Kekerapan bingkisan rangkaian pemantauan dihantar dalam milisaat.
 
       Jika dasar ini tidak ditetapkan, selang masa lalai ialah 3 minit.. Selang masa      minimum ialah 30 saat dan selang masa maksimum ialah 24 jam - nilai
@@ -3940,7 +3940,7 @@ Jika dasar ini dibiarkan tidak ditetapkan, papan kekunci pada skrin dilumpuhkan 
       Jika dasar ini dibiarkan tanpa ditetapkan, <ph name="PRODUCT_OS_NAME" /> akan menggunakan ID akaun e-mel akaun setempat peranti sebagai nama paparan pada skrin log masuk.
 
       Dasar ini diabaikan untuk akaun pengguna biasa.</translation>
-<translation id="8259375588339409826">Chromium dan Google Chrome menyokong set dasar yang sama. Harap maklum bahawa dokumen ini mungkin menyertakan dasar yang belum dikeluarkan (contohnya masukan 'Disokong pada' ciri ini merujuk pada versi <ph name="PRODUCT_NAME" /> yang belum dikeluarkan) yang tertakluk pada perubahan atau pengalihan keluar tanpa notis dan tidak memberikan sebarang jenis jaminan, termasuk tiada jaminan berhubung sifat keselamatan dan privasi ciri ini.
+<translation id="8259375588339409826">Monyhar dan Google Chrome menyokong set dasar yang sama. Harap maklum bahawa dokumen ini mungkin menyertakan dasar yang belum dikeluarkan (contohnya masukan 'Disokong pada' ciri ini merujuk pada versi <ph name="PRODUCT_NAME" /> yang belum dikeluarkan) yang tertakluk pada perubahan atau pengalihan keluar tanpa notis dan tidak memberikan sebarang jenis jaminan, termasuk tiada jaminan berhubung sifat keselamatan dan privasi ciri ini.
 
 Tujuan dasar ini adalah semata-mata untuk digunakan dalam mengkonfigurasi tika <ph name="PRODUCT_NAME" /> dalaman untuk organisasi anda. Penggunaan dasar ini di luar organisasi anda (contohnya, dalam atur cara yang diedarkan secara terbuka) dianggap perisian hasad dan akan dilabelkan sebagai perisian hasad oleh Google dan vendor antivirus.
 

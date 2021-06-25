@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ module chrome_cleaner.mojom;
 // IMPORTANT NOTE: Avoid adding dependencies to typemapped .mojom files outside
 // the chrome/chrome_cleaner directory.  Enabling typemaps currently (as of
 // July 2017) requires indirectly depending on all existing typemap
-// definitions. The Chrome Cleaner is built independently from Chromium and
+// definitions. The Chrome Cleaner is built independently from Monyhar and
 // would like to avoid these dependencies.
 
 // Once it's possible to specify a limited subset of typemaps to use, be

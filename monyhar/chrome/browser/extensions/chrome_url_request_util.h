@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -48,7 +48,7 @@ bool AllowCrossRendererResourceLoad(
     const ProcessMap& process_map,
     bool* allowed);
 
-// Return the |request|'s resource path relative to the Chromium resources path
+// Return the |request|'s resource path relative to the Monyhar resources path
 // (chrome::DIR_RESOURCES) *if* the request refers to a resource within the
 // Chrome resource bundle. If not then the returned file path will be empty.
 // |resource_id| is used to check whether the requested resource is registered

@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -230,7 +230,7 @@ class NET_EXPORT_PRIVATE HttpProxyConnectJob : public ConnectJob,
   std::unique_ptr<SpdyStreamRequest> spdy_stream_request_;
 
   std::unique_ptr<QuicStreamRequest> quic_stream_request_;
-  std::unique_ptr<QuicChromiumClientSession::Handle> quic_session_;
+  std::unique_ptr<QuicMonyharClientSession::Handle> quic_session_;
 
   scoped_refptr<HttpAuthController> http_auth_controller_;
 

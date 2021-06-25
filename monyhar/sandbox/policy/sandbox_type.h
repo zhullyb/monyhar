@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -49,7 +49,7 @@ enum class SandboxType {
   kRenderer,
 
   // Utility processes. Used by most isolated services.  Consider using
-  // kService for Chromium-code that makes limited use of OS APIs.
+  // kService for Monyhar-code that makes limited use of OS APIs.
   kUtility,
 
 #if defined(OS_MAC)

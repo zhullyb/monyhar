@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
+// Copyright (c) 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,7 +26,7 @@ class MockCryptoClientStreamFactory : public QuicCryptoClientStreamFactory {
 
   quic::QuicCryptoClientStream* CreateQuicCryptoClientStream(
       const quic::QuicServerId& server_id,
-      QuicChromiumClientSession* session,
+      QuicMonyharClientSession* session,
       std::unique_ptr<quic::ProofVerifyContext> proof_verify_context,
       quic::QuicCryptoClientConfig* crypto_config) override;
 
@@ -41,7 +41,7 @@ class MockCryptoClientStreamFactory : public QuicCryptoClientStreamFactory {
 
   // The caller keeps ownership of |proof_verify_details|.
   void AddProofVerifyDetails(
-      const ProofVerifyDetailsChromium* proof_verify_details) {
+      const ProofVerifyDetailsMonyhar* proof_verify_details) {
     proof_verify_details_queue_.push(proof_verify_details);
   }
 
@@ -53,7 +53,7 @@ class MockCryptoClientStreamFactory : public QuicCryptoClientStreamFactory {
  private:
   MockCryptoClientStream::HandshakeMode handshake_mode_;
   MockCryptoClientStream* last_stream_;
-  base::queue<const ProofVerifyDetailsChromium*> proof_verify_details_queue_;
+  base::queue<const ProofVerifyDetailsMonyhar*> proof_verify_details_queue_;
   std::unique_ptr<quic::QuicConfig> config_;
   bool use_mock_crypter_;
 

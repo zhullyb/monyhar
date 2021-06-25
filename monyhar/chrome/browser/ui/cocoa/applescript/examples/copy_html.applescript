@@ -1,9 +1,9 @@
--- Copyright (c) 2010 The Chromium Authors. All rights reserved.
+-- Copyright (c) 2010 The Monyhar Authors. All rights reserved.
 -- Use of this source code is governed by a BSD-style license that can be
 -- found in the LICENSE file.
 
 -- This script copies the HTML of a tab to a TextEdit document.
-tell application "Chromium"
+tell application "Monyhar"
 	tell tab 1 of window 1 to view source
 	repeat while (loading of tab 2 of window 1)
 	end repeat

@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -49,7 +49,7 @@ class ExtensionHost;
 class ExtensionRegistry;
 class ProcessManagerObserver;
 
-// Manages dynamic state of running Chromium extensions. There is one instance
+// Manages dynamic state of running Monyhar extensions. There is one instance
 // of this class per Profile. OTR Profiles have a separate instance that keeps
 // track of split-mode extensions only.
 class ProcessManager : public KeyedService,

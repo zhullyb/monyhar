@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -156,7 +156,7 @@ const char kForceMediaResolutionWidth[] = "force-media-resolution-width";
 // Enables input event handling by the window manager.
 const char kEnableInput[] = "enable-input";
 
-// Background color used when Chromium hasn't rendered anything yet.
+// Background color used when Monyhar hasn't rendered anything yet.
 const char kCastAppBackgroundColor[] = "cast-app-background-color";
 
 // The number of pixels from the very left or right of the screen to consider as

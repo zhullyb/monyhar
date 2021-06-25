@@ -34,7 +34,7 @@ disable=abstract-class-little-used,
 
 # invalid-name
 # The default regular expressions for name validation don't like the conventions
-# many Chromium Python files use, namely the use of upper camel case for method
+# many Monyhar Python files use, namely the use of upper camel case for method
 # names. The regular expressions could be updated to handle this properly, but
 # that would likely be part of a repo-wide linter update.
 

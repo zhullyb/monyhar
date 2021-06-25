@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@
 #define YIELD_PROCESSOR __asm__ __volatile__(".word 0x00000140")
 #elif defined(ARCH_CPU_MIPS64EL) && __mips_isa_rev >= 2
 // Don't bother doing using .word here since r2 is the lowest supported mips64
-// that Chromium supports.
+// that Monyhar supports.
 #define YIELD_PROCESSOR __asm__ __volatile__("pause")
 #elif defined(ARCH_CPU_PPC64_FAMILY)
 #define YIELD_PROCESSOR __asm__ __volatile__("or 31,31,31")

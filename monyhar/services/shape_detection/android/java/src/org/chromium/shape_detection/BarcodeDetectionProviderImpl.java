@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@ import com.google.android.gms.common.GoogleApiAvailability;
 
 import org.monyhar.base.ContextUtils;
 import org.monyhar.base.Log;
-import org.monyhar.gms.ChromiumPlayServicesAvailability;
+import org.monyhar.gms.MonyharPlayServicesAvailability;
 import org.monyhar.mojo.bindings.InterfaceRequest;
 import org.monyhar.mojo.system.MojoException;
 import org.monyhar.shape_detection.mojom.BarcodeDetection;
@@ -55,7 +55,7 @@ public class BarcodeDetectionProviderImpl implements BarcodeDetectionProvider {
 
     public static BarcodeDetectionProvider create() {
         Context ctx = ContextUtils.getApplicationContext();
-        if (!ChromiumPlayServicesAvailability.isGooglePlayServicesAvailable(ctx)) {
+        if (!MonyharPlayServicesAvailability.isGooglePlayServicesAvailable(ctx)) {
             Log.w(TAG, "Google Play Services not available");
             return null;
         }

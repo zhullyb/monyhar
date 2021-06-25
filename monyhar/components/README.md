@@ -1,7 +1,7 @@
 # About //components
 
 This directory is meant to house features or subsystems that are used in more
-than one part of the Chromium codebase.
+than one part of the Monyhar codebase.
 
 ## Example use cases:
 
@@ -33,7 +33,7 @@ than one part of the Chromium codebase.
 
 ## Dependencies of a component
 
-Components **cannot** depend on the higher layers of the Chromium codebase:
+Components **cannot** depend on the higher layers of the Monyhar codebase:
 
   * `//android_webview`
   * `//chrome`
@@ -42,7 +42,7 @@ Components **cannot** depend on the higher layers of the Chromium codebase:
   * `//ios/chrome`
   * `//content/shell`
 
-Components **can** depend on the lower layers of the Chromium codebase:
+Components **can** depend on the lower layers of the Monyhar codebase:
 
   * `//base`
   * `//gpu`

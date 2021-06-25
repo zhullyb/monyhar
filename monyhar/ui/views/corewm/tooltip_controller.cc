@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -375,7 +375,7 @@ void TooltipController::SetObservedWindow(aura::Window* target) {
     return;
 
   // When we are setting the |observed_window_| to nullptr, it is generally
-  // because the cursor is over a window not owned by Chromium. To prevent a
+  // because the cursor is over a window not owned by Monyhar. To prevent a
   // tooltip from being shown after the cursor goes to another window not
   // managed by us, hide the the tooltip and cancel all timers that would show
   // the tooltip.

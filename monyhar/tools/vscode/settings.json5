@@ -50,7 +50,7 @@
   // https://marketplace.visualstudio.com/items?itemName=ryu1kn.annotator
   "annotator.annotationColumnWidth": "24em",
 
-  // C++ clang format settings. |workspaceFolder| is assumed to be Chromium's
+  // C++ clang format settings. |workspaceFolder| is assumed to be Monyhar's
   // src/ directory.
   "C_Cpp.clang_format_path": "${workspaceFolder}/third_party/depot_tools/clang-format",
   "C_Cpp.clang_format_sortIncludes": true,

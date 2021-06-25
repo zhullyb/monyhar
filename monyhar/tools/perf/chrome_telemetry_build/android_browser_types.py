@@ -1,4 +1,4 @@
-# Copyright 2021 The Chromium Authors. All rights reserved.
+# Copyright 2021 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -7,7 +7,7 @@ import os
 import sys
 
 # This file should be kept in sync with android_browser_types.gni. It provides
-# a list of Android Chromium Telemetry targets for use in Python scripts.
+# a list of Android Monyhar Telemetry targets for use in Python scripts.
 
 _CHROMIUM_SRC_DIR = os.path.realpath(
     os.path.join(os.path.dirname(__file__), '..', '..', '..'))

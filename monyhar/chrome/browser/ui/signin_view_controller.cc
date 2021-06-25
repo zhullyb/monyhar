@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -278,13 +278,13 @@ void SigninViewController::ShowDiceSigninTab(
   if (!AccountConsistencyModeManager::IsDiceEnabledForProfile(
           browser_->profile())) {
     // Developers often fall into the trap of not configuring the OAuth client
-    // ID and client secret and then attempt to sign in to Chromium, which
+    // ID and client secret and then attempt to sign in to Monyhar, which
     // fail as the account consistency is disabled. Explicitly check that the
     // OAuth client ID are configured when developers attempt to sign in to
-    // Chromium.
+    // Monyhar.
     DCHECK(google_apis::HasOAuthClientConfigured())
         << "You must configure the OAuth client ID and client secret in order "
-           "to sign in to Chromium. See instruction at "
+           "to sign in to Monyhar. See instruction at "
            "https://www.monyhar.org/developers/how-tos/api-keys";
 
     // Account consistency mode does not support signing in to Chrome due to
@@ -292,7 +292,7 @@ void SigninViewController::ShowDiceSigninTab(
     NOTREACHED()
         << "OAuth client ID and client secret is configured, but "
            "the account consistency mode does not support signing in to "
-           "Chromium.";
+           "Monyhar.";
   }
 #endif
 

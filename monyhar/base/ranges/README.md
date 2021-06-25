@@ -115,7 +115,7 @@ they call underlying `std::` algorithms that are themselves `constexpr`.  Before
 C++20, only `std::min`, `std::max` and `std::minmax` are annotated
 appropriately, so code like `constexpr bool foo = base::ranges::any_of(...);`
 will fail because the compiler will not find a `constexpr std::any_of`.  This
-could be addressed by either upgrading Chromium's STL to C++20, or implementing
+could be addressed by either upgrading Monyhar's STL to C++20, or implementing
 `constexpr` versions of some of these algorithms ourselves.
 
 ### Lack of post C++14 algorithms

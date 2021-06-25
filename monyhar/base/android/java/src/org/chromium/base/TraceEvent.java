@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -610,7 +610,7 @@ public class TraceEvent implements AutoCloseable {
     @CalledByNative
     public static void setEnabled(boolean enabled) {
         if (enabled) EarlyTraceEvent.disable();
-        // Only disable logging if Chromium enabled it originally, so as to not disrupt logging done
+        // Only disable logging if Monyhar enabled it originally, so as to not disrupt logging done
         // by other applications
         if (sEnabled != enabled) {
             sEnabled = enabled;

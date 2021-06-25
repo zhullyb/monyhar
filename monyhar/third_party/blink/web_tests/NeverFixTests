@@ -343,7 +343,7 @@ external/wpt/encrypted-media/drm-mp4-waiting-for-a-key.https.html [ Skip ]
 external/wpt/encrypted-media/drm-not-callable-after-createsession.https.html [ Skip ]
 external/wpt/encrypted-media/drm-temporary-license-type.https.html [ Skip ]
 
-# Chromium's implementation of ClearKey doesn't support persistent licenses.
+# Monyhar's implementation of ClearKey doesn't support persistent licenses.
 external/wpt/encrypted-media/clearkey-mp4-playback-destroy-persistent-license.https.html [ Skip ]
 external/wpt/encrypted-media/clearkey-mp4-playback-persistent-license-events.https.html [ Skip ]
 external/wpt/encrypted-media/clearkey-mp4-playback-persistent-license.https.html [ Skip ]

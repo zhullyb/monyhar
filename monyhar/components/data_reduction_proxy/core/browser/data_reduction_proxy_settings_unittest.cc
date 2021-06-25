@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -271,7 +271,7 @@ TEST_F(DataReductionProxySettingsTest, TestDaysSinceEnabledWithTestClock) {
   }
 
   {
-    // Simulate turning off and on of data reduction proxy while Chromium is
+    // Simulate turning off and on of data reduction proxy while Monyhar is
     // running.
     test_context_->SetDataReductionProxyEnabled(false);
     settings_->MaybeActivateDataReductionProxy(false);
@@ -294,7 +294,7 @@ TEST_F(DataReductionProxySettingsTest, TestDaysSinceEnabledWithTestClock) {
     int advance_clock_days = 42;
     clock.Advance(base::TimeDelta::FromDays(advance_clock_days));
     base::HistogramTester histogram_tester;
-    // Simulate Chromium start up. Data reduction proxy was enabled
+    // Simulate Monyhar start up. Data reduction proxy was enabled
     // |advance_clock_days| ago.
     settings_->MaybeActivateDataReductionProxy(true /* at_startup */);
     test_context_->RunUntilIdle();
@@ -324,7 +324,7 @@ TEST(DataReductionProxySettingsStandaloneTest,
 
   base::HistogramTester histogram_tester;
 
-  // Simulate Chromium startup with data reduction proxy already enabled.
+  // Simulate Monyhar startup with data reduction proxy already enabled.
   drp_test_context->settings()->MaybeActivateDataReductionProxy(
       true /* at_startup */);
   drp_test_context->RunUntilIdle();

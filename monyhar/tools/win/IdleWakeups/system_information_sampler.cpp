@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -241,7 +241,7 @@ ProcessData GetProcessData(const SYSTEM_PROCESS_INFORMATION* const pi) {
   process_data.cpu_time = pi->KernelTime + pi->UserTime;
   // The PagefileUsage member measures Private Commit. Presumably the name was
   // chosen because all private commit has to be backed by either memory or the
-  // page file. Private Commit is the standard measure for memory in Chromium,
+  // page file. Private Commit is the standard measure for memory in Monyhar,
   // including in the Memory footprint column in Chrome's task manager.
   // Private Commit is a much more stable and meaningful number than private
   // working set which can be affected by memory pressure or other factors that

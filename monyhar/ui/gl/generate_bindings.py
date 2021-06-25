@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
+# Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -2917,7 +2917,7 @@ FUNCTION_SETS = [
       'GLES3/gl3.h',
       'GLES3/gl31.h',
       'GLES3/gl32.h',
-      # Files below are Chromium-specific and shipped with Chromium sources.
+      # Files below are Monyhar-specific and shipped with Monyhar sources.
       'GL/glextmonyhar.h',
       'GLES2/gl2monyhar.h',
       'GLES2/gl2extmonyhar.h'
@@ -2932,7 +2932,7 @@ FUNCTION_SETS = [
   ],
   [EGL_FUNCTIONS, 'egl', [
       'EGL/eglext.h',
-      # Files below are Chromium-specific and shipped with Chromium sources.
+      # Files below are Monyhar-specific and shipped with Monyhar sources.
       'EGL/eglextmonyhar.h',
     ],
     [
@@ -2955,7 +2955,7 @@ GLES2_HEADERS_WITH_ENUMS = [
 SELF_LOCATION = os.path.dirname(os.path.abspath(__file__))
 
 LICENSE_AND_HEADER = """\
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 //

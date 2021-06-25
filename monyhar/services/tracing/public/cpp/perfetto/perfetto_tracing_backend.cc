@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -136,7 +136,7 @@ class ProducerEndpoint : public perfetto::ProducerEndpoint,
       perfetto::BufferID target_buffer,
       perfetto::BufferExhaustedPolicy) override {
     // Can be called from any thread.
-    // Chromium uses BufferExhaustedPolicy::kDrop to avoid stalling trace
+    // Monyhar uses BufferExhaustedPolicy::kDrop to avoid stalling trace
     // writers when the chunks in the SMB are exhausted. Stalling could
     // otherwise lead to deadlocks in monyhar, because a stalled mojo IPC
     // thread could prevent CommitRequest messages from reaching the perfetto

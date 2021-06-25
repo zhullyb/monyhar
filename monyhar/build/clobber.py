@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2015 The Chromium Authors. All rights reserved.
+# Copyright 2015 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -39,7 +39,7 @@ def extract_gn_build_commands(build_ninja_file):
 def delete_dir(build_dir):
   if os.path.islink(build_dir):
     return
-  # For unknown reasons (anti-virus?) rmtree of Chromium build directories
+  # For unknown reasons (anti-virus?) rmtree of Monyhar build directories
   # often fails on Windows.
   if sys.platform.startswith('win'):
     subprocess.check_call(['rmdir', '/s', '/q', build_dir], shell=True)

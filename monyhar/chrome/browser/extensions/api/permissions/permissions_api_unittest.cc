@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -268,14 +268,14 @@ TEST_F(PermissionsAPIUnitTest, ContainsAndGetAllWithRuntimeHostPermissions) {
   EXPECT_FALSE(contains_origin(kContentScriptCom));
   EXPECT_THAT(get_all(), testing::IsEmpty());
 
-  constexpr char kChromiumOrg[] = "https://monyhar.org/";
-  modifier.GrantHostPermission(GURL(kChromiumOrg));
+  constexpr char kMonyharOrg[] = "https://monyhar.org/";
+  modifier.GrantHostPermission(GURL(kMonyharOrg));
 
   // The permissions API only reports active permissions, rather than granted
   // permissions. This means it will not report values for permissions that
   // aren't requested. This is probably good, because the extension wouldn't be
   // able to use them anyway (since they aren't active).
-  EXPECT_FALSE(contains_origin(kChromiumOrg));
+  EXPECT_FALSE(contains_origin(kMonyharOrg));
   EXPECT_THAT(get_all(), testing::IsEmpty());
 
   // Fun edge case: example.com is requested as both a scriptable and an
@@ -427,7 +427,7 @@ TEST_F(PermissionsAPIUnitTest, ReRequestingWithheldOptionalPermissions) {
           .Build();
   AddExtensionAndGrantPermissions(*extension);
 
-  const GURL kChromiumOrg("https://monyhar.org");
+  const GURL kMonyharOrg("https://monyhar.org");
   const PermissionsData* permissions_data = extension->permissions_data();
   EXPECT_TRUE(
       permissions_data->active_permissions().effective_hosts().is_empty());
@@ -443,7 +443,7 @@ TEST_F(PermissionsAPIUnitTest, ReRequestingWithheldOptionalPermissions) {
 
   EXPECT_TRUE(
       permissions_data->active_permissions().effective_hosts().MatchesURL(
-          kChromiumOrg));
+          kMonyharOrg));
 
   {
     URLPattern monyhar_org_pattern(Extension::kValidHostPermissionSchemes,
@@ -488,7 +488,7 @@ TEST_F(PermissionsAPIUnitTest, RequestingWithheldAndOptionalPermissions) {
 
   const GURL kExampleCom("https://example.com");
   const GURL kGoogleCom("https://google.com");
-  const GURL kChromiumOrg("https://monyhar.org");
+  const GURL kMonyharOrg("https://monyhar.org");
   const PermissionsData* permissions_data = extension->permissions_data();
   EXPECT_TRUE(
       permissions_data->active_permissions().effective_hosts().is_empty());
@@ -514,7 +514,7 @@ TEST_F(PermissionsAPIUnitTest, RequestingWithheldAndOptionalPermissions) {
           kGoogleCom));
   EXPECT_TRUE(
       permissions_data->active_permissions().effective_hosts().MatchesURL(
-          kChromiumOrg));
+          kMonyharOrg));
 }
 
 // Tests requesting permissions that weren't specified in the manifest (either
@@ -536,7 +536,7 @@ TEST_F(PermissionsAPIUnitTest, RequestingPermissionsNotSpecifiedInManifest) {
 
   const GURL kExampleCom("https://example.com");
   const GURL kGoogleCom("https://google.com");
-  const GURL kChromiumOrg("https://monyhar.org");
+  const GURL kMonyharOrg("https://monyhar.org");
 
   // Request permission for an optional and required permission, as well as a
   // permission that wasn't specified in the manifest. The call should fail.

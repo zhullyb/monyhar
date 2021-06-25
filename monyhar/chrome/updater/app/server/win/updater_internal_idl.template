@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -6,7 +6,7 @@ import "oaidl.idl";
 import "ocidl.idl";
 
 
-// Private interfaces for the Chromium Updater.
+// Private interfaces for the Monyhar Updater.
 // For documentation, see the similar types defined in updater::UpdateServiceInternal.
 
 [
@@ -35,7 +35,7 @@ interface IUpdaterInternal : IUnknown {
 [
   uuid(PLACEHOLDER-GUID-C6CE92DB-72CA-42EF-8C98-6EE92481B3C9),
   version(1.0),
-  helpstring("Chromium Updater internal type library.")
+  helpstring("Monyhar Updater internal type library.")
 ]
 library UpdaterInternalLib {
   importlib("stdole2.tlb");

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -82,7 +82,7 @@ class BASE_EXPORT TraceEventETWExport {
   // The keywords that were enabled last time the callback was made.
   uint64_t etw_match_any_keyword_ = 0;
 
-  // The provider is set based on channel for MSEdge, in other Chromium
+  // The provider is set based on channel for MSEdge, in other Monyhar
   // based browsers all channels use the same GUID/provider.
   std::unique_ptr<TlmProvider> etw_provider_;
 

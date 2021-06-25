@@ -455,7 +455,7 @@ bool WebAXObject::AriaOwns(WebVector<WebAXObject>& owns_elements) const {
   // exposing an attribute.
 
   // FIXME(dmazzoni): remove this function after we stop calling it
-  // from Chromium.  http://crbug.com/489590
+  // from Monyhar.  http://crbug.com/489590
 
   return false;
 }

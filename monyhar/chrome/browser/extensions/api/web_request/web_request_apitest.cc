@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -616,7 +616,7 @@ INSTANTIATE_TEST_SUITE_P(Incognito,
                          ::testing::Values(ProfileMode::kIncognito));
 
 // This test times out regularly on win_rel trybots. See http://crbug.com/122178
-// Also on Linux/ChromiumOS debug, ASAN and MSAN builds.
+// Also on Linux/MonyharOS debug, ASAN and MSAN builds.
 // https://crbug.com/670415
 #if defined(OS_WIN) || !defined(NDEBUG) || defined(ADDRESS_SANITIZER) || \
     defined(MEMORY_SANITIZER)

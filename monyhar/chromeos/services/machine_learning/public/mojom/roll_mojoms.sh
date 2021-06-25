@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -9,9 +9,9 @@ usage() {
   echo ""
   echo "Rolls (copies) ML Service *.mojom files from Chrome OS to current"
   echo "directory, with appropriate boilerplate modifications for use in"
-  echo "Chromium."
+  echo "Monyhar."
   echo ""
-  echo "CROS_SRC_DIR: Path to Chromium OS source, e.g. ~/monyharos/src."
+  echo "CROS_SRC_DIR: Path to Monyhar OS source, e.g. ~/monyharos/src."
 }
 
 CROS_SRC_DIR="$1"

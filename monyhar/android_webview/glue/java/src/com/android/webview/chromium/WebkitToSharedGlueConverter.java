@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,9 +26,9 @@ import org.monyhar.content_public.browser.MessagePort;
  * This class is used to minimize dependencies from the support-library-glue on the webkit-glue.
  */
 public class WebkitToSharedGlueConverter {
-    public static SharedWebViewChromium getSharedWebViewChromium(WebView webview) {
-        WebViewChromium webviewChromium = (WebViewChromium) webview.getWebViewProvider();
-        return webviewChromium.getSharedWebViewChromium();
+    public static SharedWebViewMonyhar getSharedWebViewMonyhar(WebView webview) {
+        WebViewMonyhar webviewMonyhar = (WebViewMonyhar) webview.getWebViewProvider();
+        return webviewMonyhar.getSharedWebViewMonyhar();
     }
 
     public static AwSettings getSettings(WebSettings webSettings) {
@@ -36,8 +36,8 @@ public class WebkitToSharedGlueConverter {
         return contentSettingsAdapter.getAwSettings();
     }
 
-    public static WebViewChromiumAwInit getGlobalAwInit() {
-        return WebViewChromiumFactoryProvider.getSingleton().getAwInit();
+    public static WebViewMonyharAwInit getGlobalAwInit() {
+        return WebViewMonyharFactoryProvider.getSingleton().getAwInit();
     }
 
     public static AwServiceWorkerSettings getServiceWorkerSettings(

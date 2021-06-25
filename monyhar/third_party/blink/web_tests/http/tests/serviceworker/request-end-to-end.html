@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This test cannot be upstreamed to WPT because the equivalent version
-  available in Web Platform Tests contains additional assertions which Chromium
+  available in Web Platform Tests contains additional assertions which Monyhar
   currently fails. This test should be persisted only to preserve test coverage
   until such time as the upstream version can be made to pass. See
   https://crbug.com/595993 -->
@@ -30,10 +30,10 @@ promise_test(t => {
           assert_equals(result.mode, 'navigate', 'request.mode');
           assert_equals(result.credentials, 'include', 'request.credentials');
           assert_equals(result.redirect, 'manual', 'request.redirect');
-          // TODO(falken): Chromium should fail this assertion but currently
+          // TODO(falken): Monyhar should fail this assertion but currently
           // passes it. The equivalent WPT test instead asserts:
           //   assert_equals(result.headers['user-agent'], undefined);
-          // Once Chromium passes the WPT test assertion, this test file can be
+          // Once Monyhar passes the WPT test assertion, this test file can be
           // removed.
           assert_equals(result.headers['user-agent'], navigator.userAgent,
                         'User-Agent header');

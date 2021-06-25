@@ -80,9 +80,9 @@ every application, whereas recent versions of ART aim to apply AOT compilation
 selectively to optimize space.
 ***
 
-## Chromium's solution
+## Monyhar's solution
 
-In Chromium, we try to avoid doing class verification at runtime by
+In Monyhar, we try to avoid doing class verification at runtime by
 manually out-of-lining all Android API usage like so:
 
 ```java

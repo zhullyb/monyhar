@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2014 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -66,7 +66,7 @@ def SmokeTestGenerator(benchmark_class, num_pages=1):
           output_dir=temp_dir,
           benchmark_cls=benchmark_class,
           overrides={'story_shard_end_index': num_pages},
-          environment=monyhar_config.GetDefaultChromiumConfig())
+          environment=monyhar_config.GetDefaultMonyharConfig())
       options.pageset_repeat = 1  # For smoke testing only run the page once.
       options.output_formats = ['histograms']
       options.max_values_per_test_case = MAX_VALUES_PER_TEST_CASE

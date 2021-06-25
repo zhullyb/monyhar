@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -199,7 +199,7 @@ void WebTestWithWebState::WaitForBackgroundTasks() {
         kCFRunLoopRunHandledSource)
       activitySeen = true;
 
-    // Yield to the Chromium message queue, e.g. WebThread::PostTask()
+    // Yield to the Monyhar message queue, e.g. WebThread::PostTask()
     // events.
     processed_a_task_ = false;
     base::RunLoop().RunUntilIdle();

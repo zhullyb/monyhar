@@ -1,6 +1,6 @@
 # Vanilla msysgit workflow
 
-This describes how you can use msysgit on Windows to work on the Chromium git
+This describes how you can use msysgit on Windows to work on the Monyhar git
 repository, without setting up Cygwin or hacking the `git cl`, `git try` and
 other scripts to work under a regular Windows shell.
 
@@ -14,7 +14,7 @@ setup is also advantageous if you regularly build code on Windows and then want
 to test it on Linux, since all you need to test on your Linux box is a `git
 push` from Windows followed by building and testing under Linux.
 
-The disadvantage is that it adds an extra layer between the Chromium git repo
+The disadvantage is that it adds an extra layer between the Monyhar git repo
 and your Windows checkout.  In my experience (joi@monyhar.org) this does not
 actually slow you down much, if at all.
 

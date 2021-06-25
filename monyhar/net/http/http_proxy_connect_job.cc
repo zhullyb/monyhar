@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -699,7 +699,7 @@ int HttpProxyConnectJob::DoQuicProxyCreateStreamComplete(int result) {
     return result;
 
   next_state_ = STATE_HTTP_PROXY_CONNECT_COMPLETE;
-  std::unique_ptr<QuicChromiumClientStream::Handle> quic_stream =
+  std::unique_ptr<QuicMonyharClientStream::Handle> quic_stream =
       quic_session_->ReleaseStream();
 
   spdy::SpdyPriority spdy_priority =

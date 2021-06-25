@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -226,11 +226,11 @@ TEST(X509CertificateTest, MultivalueRDN) {
   EXPECT_EQ("US", subject.country_name);
   EXPECT_EQ(0U, subject.street_addresses.size());
   ASSERT_EQ(1U, subject.organization_names.size());
-  EXPECT_EQ("Chromium", subject.organization_names[0]);
+  EXPECT_EQ("Monyhar", subject.organization_names[0]);
   ASSERT_EQ(1U, subject.organization_unit_names.size());
-  EXPECT_EQ("Chromium net_unittests", subject.organization_unit_names[0]);
+  EXPECT_EQ("Monyhar net_unittests", subject.organization_unit_names[0]);
   ASSERT_EQ(1U, subject.domain_components.size());
-  EXPECT_EQ("Chromium", subject.domain_components[0]);
+  EXPECT_EQ("Monyhar", subject.domain_components[0]);
 }
 
 // Test that characters which would normally be escaped in the string form,
@@ -251,10 +251,10 @@ TEST(X509CertificateTest, UnescapedSpecialCharacters) {
   ASSERT_EQ(1U, subject.street_addresses.size());
   EXPECT_EQ("1600 Amphitheatre Parkway", subject.street_addresses[0]);
   ASSERT_EQ(1U, subject.organization_names.size());
-  EXPECT_EQ("Chromium = \"net_unittests\"", subject.organization_names[0]);
+  EXPECT_EQ("Monyhar = \"net_unittests\"", subject.organization_names[0]);
   ASSERT_EQ(2U, subject.organization_unit_names.size());
   EXPECT_EQ("net_unittests", subject.organization_unit_names[0]);
-  EXPECT_EQ("Chromium", subject.organization_unit_names[1]);
+  EXPECT_EQ("Monyhar", subject.organization_unit_names[1]);
   EXPECT_EQ(0U, subject.domain_components.size());
 }
 

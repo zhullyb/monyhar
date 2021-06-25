@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -26,14 +26,14 @@ class CertVerifier;
 class SCTAuditingDelegate;
 class TransportSecurityState;
 
-// ProofVerifyDetailsChromium is the implementation-specific information that a
-// ProofVerifierChromium returns about a certificate verification.
-class NET_EXPORT_PRIVATE ProofVerifyDetailsChromium
+// ProofVerifyDetailsMonyhar is the implementation-specific information that a
+// ProofVerifierMonyhar returns about a certificate verification.
+class NET_EXPORT_PRIVATE ProofVerifyDetailsMonyhar
     : public quic::ProofVerifyDetails {
  public:
-  ProofVerifyDetailsChromium();
-  ProofVerifyDetailsChromium(const ProofVerifyDetailsChromium&);
-  ~ProofVerifyDetailsChromium() override;
+  ProofVerifyDetailsMonyhar();
+  ProofVerifyDetailsMonyhar(const ProofVerifyDetailsMonyhar&);
+  ~ProofVerifyDetailsMonyhar() override;
 
   // quic::ProofVerifyDetails implementation
   quic::ProofVerifyDetails* Clone() const override;
@@ -53,11 +53,11 @@ class NET_EXPORT_PRIVATE ProofVerifyDetailsChromium
   bool is_fatal_cert_error;
 };
 
-// ProofVerifyContextChromium is the implementation-specific information that a
-// ProofVerifierChromium needs in order to log correctly.
-struct ProofVerifyContextChromium : public quic::ProofVerifyContext {
+// ProofVerifyContextMonyhar is the implementation-specific information that a
+// ProofVerifierMonyhar needs in order to log correctly.
+struct ProofVerifyContextMonyhar : public quic::ProofVerifyContext {
  public:
-  ProofVerifyContextChromium(int cert_verify_flags,
+  ProofVerifyContextMonyhar(int cert_verify_flags,
                              const NetLogWithSource& net_log)
       : cert_verify_flags(cert_verify_flags), net_log(net_log) {}
 
@@ -65,17 +65,17 @@ struct ProofVerifyContextChromium : public quic::ProofVerifyContext {
   NetLogWithSource net_log;
 };
 
-// ProofVerifierChromium implements the QUIC quic::ProofVerifier interface.  It
+// ProofVerifierMonyhar implements the QUIC quic::ProofVerifier interface.  It
 // is capable of handling multiple simultaneous requests.
-class NET_EXPORT_PRIVATE ProofVerifierChromium : public quic::ProofVerifier {
+class NET_EXPORT_PRIVATE ProofVerifierMonyhar : public quic::ProofVerifier {
  public:
-  ProofVerifierChromium(CertVerifier* cert_verifier,
+  ProofVerifierMonyhar(CertVerifier* cert_verifier,
                         CTPolicyEnforcer* ct_policy_enforcer,
                         TransportSecurityState* transport_security_state,
                         SCTAuditingDelegate* sct_auditing_delegate,
                         std::set<std::string> hostnames_to_allow_unknown_roots,
                         const NetworkIsolationKey& network_isolation_key);
-  ~ProofVerifierChromium() override;
+  ~ProofVerifierMonyhar() override;
 
   // quic::ProofVerifier interface
   quic::QuicAsyncStatus VerifyProof(
@@ -124,7 +124,7 @@ class NET_EXPORT_PRIVATE ProofVerifierChromium : public quic::ProofVerifier {
 
   const NetworkIsolationKey network_isolation_key_;
 
-  DISALLOW_COPY_AND_ASSIGN(ProofVerifierChromium);
+  DISALLOW_COPY_AND_ASSIGN(ProofVerifierMonyhar);
 };
 
 }  // namespace net

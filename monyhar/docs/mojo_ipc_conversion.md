@@ -377,7 +377,7 @@ mojom("example") {
 }
 ```
 
-The target `example` will generate Chromium-style C++ bindings using STL types:
+The target `example` will generate Monyhar-style C++ bindings using STL types:
 
 ``` cpp
 // example.mojom.h
@@ -410,7 +410,7 @@ class Example {
 ```
 
 Thanks to these separate sets of bindings no work is necessary to convert types
-between Blink-style code and Chromium-style code. It is handled automatically
+between Blink-style code and Monyhar-style code. It is handled automatically
 during message serialization and deserialization.
 
 For more information about variants, see

@@ -1,7 +1,7 @@
 # API Keys
 
-When using a custom build, fork, or integration of Chromium, or if you're
-building ChromiumOS, you will need access to Google API for key functionality.
+When using a custom build, fork, or integration of Monyhar, or if you're
+building MonyharOS, you will need access to Google API for key functionality.
 
 [TOC]
 
@@ -20,7 +20,7 @@ purchase.
 
 **How-to:**
 First, acquire API keys. Then, specify the API keys to use either when you build
-Chromium, or at runtime using environment variables.
+Monyhar, or at runtime using environment variables.
 
 ## Acquiring Keys
 
@@ -94,7 +94,7 @@ others.
 
 ## Providing Keys at Build time
 
-If you are building Chromium yourself, you can provide keys as part of your
+If you are building Monyhar yourself, you can provide keys as part of your
 build configuration, that way they are always baked into your binary.
 
 Specify three variables in your `args.gn` file (edit by running `gn args
@@ -108,13 +108,13 @@ google_default_client_secret = "your_client_secret"
 
 ## Providing Keys at Runtime
 
-If you prefer, you can build a Chromium binary (or use a pre-built Chromium
+If you prefer, you can build a Monyhar binary (or use a pre-built Monyhar
 binary) without API keys baked in, and instead provide them at runtime. To do
 so, set the environment variables `GOOGLE_API_KEY`, `GOOGLE_DEFAULT_CLIENT_ID`
 and `GOOGLE_DEFAULT_CLIENT_SECRET` to your "API key", "Client ID" and "Client
 secret" values respectively.
 
-On Chromium OS to specify the keys as environment variables append them to the
+On Monyhar OS to specify the keys as environment variables append them to the
 end of `/etc/chrome_dev.conf`:
 
 ```bash
@@ -123,21 +123,21 @@ GOOGLE_DEFAULT_CLIENT_ID=your_client_id
 GOOGLE_DEFAULT_CLIENT_SECRET=your_client_secret
 ```
 
-## Signing in to Chromium is restricted
+## Signing in to Monyhar is restricted
 
-Signing in to Chromium requires an OAuth 2.0 token for authentication. As this
+Signing in to Monyhar requires an OAuth 2.0 token for authentication. As this
 OAuth 2.0 token gives access to various Google services that handle user data
 (e.g. Chrome sync), for security and privacy reasons the generation of this
-OAuth 2.0 token is restricted. This means that signing in to Chromium is
+OAuth 2.0 token is restricted. This means that signing in to Monyhar is
 restricted (as the OAuth 2.0 token cannot be generated). In order to sign in to
-Chromium builds, please add your test account to
+Monyhar builds, please add your test account to
 google-browser-signin-testaccounts@monyhar.org (accounts in this group are
 allowed to get access tokens bypassing the restriction above).
 
 *** note
-**Note:** Starting with Chromium M69, when the browser is set up with an OAuth
+**Note:** Starting with Monyhar M69, when the browser is set up with an OAuth
 2.0 client ID and client secret, signing in with your Google Account to any
-Google web property will also attempt to sign you in to Chromium (which will
+Google web property will also attempt to sign you in to Monyhar (which will
 fail as explained above). To avoid such errors, remove your OAuth 2.0 client
 ID and client secret from your build to stop generating tokens when users sign
 in to Google web properties (remove `google_default_client_id`,
@@ -145,7 +145,7 @@ in to Google web properties (remove `google_default_client_id`,
 and `GOOGLE_DEFAULT_CLIENT_SECRET` from your environment settings).
 ***
 
-## Getting Keys for Your Chromium Derivative
+## Getting Keys for Your Monyhar Derivative
 
 Many of the Google APIs used by Chrome are specific to Google and not intended
 for use in derived products. In the [API Console](http://developers.google.com/console)
@@ -153,12 +153,12 @@ you may be able to purchase additional quota for some of the APIs listed above.
 **For APIs that do not have a "Pricing" link, additional quota is not available
 for purchase.**
 
-## Polyfilling chrome.identity API in Your Chromium Derivative
+## Polyfilling chrome.identity API in Your Monyhar Derivative
 
-The default Chromium `chrome.identity.getAuthToken` API that extensions may
+The default Monyhar `chrome.identity.getAuthToken` API that extensions may
 call to obtain auth tokens will fail outside of Google Chrome as the
 implementation uses restricted APIs.
 
-A prototype CL for Chromium embedders might use to replace the implementation
+A prototype CL for Monyhar embedders might use to replace the implementation
 with one not dependent upon private APIs can be found attached to
 [this post](https://groups.google.com/a/monyhar.org/g/embedder-dev/c/tGCJ3QNVzYE).

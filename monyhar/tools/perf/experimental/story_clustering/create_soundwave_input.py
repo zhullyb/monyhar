@@ -1,4 +1,4 @@
-# Copyright 2019 The Chromium Authors. All rights reserved.
+# Copyright 2019 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -32,7 +32,7 @@ def Main(argv):
   parser.add_argument('test_suite', help=('Name of test_suite (example: "'
             'rendering.desktop")'))
   parser.add_argument('--platforms', help='Name of platform (example: '
-            '"ChromiumPerf:Win 7 Nvidia GPU Perf")', nargs='*')
+            '"MonyharPerf:Win 7 Nvidia GPU Perf")', nargs='*')
   parser.add_argument('--metrics', help='Name of measurement (example: '
             '"frame_times")', nargs='*')
   parser.add_argument('--test-cases-path', type=str,

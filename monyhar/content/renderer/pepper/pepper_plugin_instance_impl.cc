@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1033,7 +1033,7 @@ gfx::Rect PepperPluginInstanceImpl::GetCaretBounds() const {
   // some platforms, an "exclude rectangle" where candidate window must avoid
   // the region can be passed to IME. Currently, we pass only the caret
   // rectangle because it is the only information supported uniformly in
-  // Chromium.
+  // Monyhar.
   gfx::Rect caret = text_input_caret_info_->caret;
   caret.Offset(view_data_.rect.point.x, view_data_.rect.point.y);
   ConvertDIPToViewport(&caret);

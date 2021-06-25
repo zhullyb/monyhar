@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -32,16 +32,16 @@ using std::string;
 
 namespace net {
 
-ProofVerifyDetailsChromium::ProofVerifyDetailsChromium()
+ProofVerifyDetailsMonyhar::ProofVerifyDetailsMonyhar()
     : pkp_bypassed(false), is_fatal_cert_error(false) {}
 
-ProofVerifyDetailsChromium::~ProofVerifyDetailsChromium() {}
+ProofVerifyDetailsMonyhar::~ProofVerifyDetailsMonyhar() {}
 
-ProofVerifyDetailsChromium::ProofVerifyDetailsChromium(
-    const ProofVerifyDetailsChromium&) = default;
+ProofVerifyDetailsMonyhar::ProofVerifyDetailsMonyhar(
+    const ProofVerifyDetailsMonyhar&) = default;
 
-quic::ProofVerifyDetails* ProofVerifyDetailsChromium::Clone() const {
-  ProofVerifyDetailsChromium* other = new ProofVerifyDetailsChromium;
+quic::ProofVerifyDetails* ProofVerifyDetailsMonyhar::Clone() const {
+  ProofVerifyDetailsMonyhar* other = new ProofVerifyDetailsMonyhar;
   other->cert_verify_result = cert_verify_result;
   return other;
 }
@@ -49,9 +49,9 @@ quic::ProofVerifyDetails* ProofVerifyDetailsChromium::Clone() const {
 // A Job handles the verification of a single proof.  It is owned by the
 // quic::ProofVerifier. If the verification can not complete synchronously, it
 // will notify the quic::ProofVerifier upon completion.
-class ProofVerifierChromium::Job {
+class ProofVerifierMonyhar::Job {
  public:
-  Job(ProofVerifierChromium* proof_verifier,
+  Job(ProofVerifierMonyhar* proof_verifier,
       CertVerifier* cert_verifier,
       CTPolicyEnforcer* ct_policy_enforcer,
       TransportSecurityState* transport_security_state,
@@ -127,7 +127,7 @@ class ProofVerifierChromium::Job {
   int CheckCTCompliance();
 
   // Proof verifier to notify when this jobs completes.
-  ProofVerifierChromium* proof_verifier_;
+  ProofVerifierMonyhar* proof_verifier_;
 
   // The underlying verifier used for verifying certificates.
   CertVerifier* verifier_;
@@ -149,7 +149,7 @@ class ProofVerifierChromium::Job {
   std::string cert_sct_;
 
   std::unique_ptr<quic::ProofVerifierCallback> callback_;
-  std::unique_ptr<ProofVerifyDetailsChromium> verify_details_;
+  std::unique_ptr<ProofVerifyDetailsMonyhar> verify_details_;
   std::string error_details_;
 
   // X509Certificate from a chain of DER encoded certificates.
@@ -168,8 +168,8 @@ class ProofVerifierChromium::Job {
   DISALLOW_COPY_AND_ASSIGN(Job);
 };
 
-ProofVerifierChromium::Job::Job(
-    ProofVerifierChromium* proof_verifier,
+ProofVerifierMonyhar::Job::Job(
+    ProofVerifierMonyhar* proof_verifier,
     CertVerifier* cert_verifier,
     CTPolicyEnforcer* ct_policy_enforcer,
     TransportSecurityState* transport_security_state,
@@ -191,7 +191,7 @@ ProofVerifierChromium::Job::Job(
   CHECK(transport_security_state_);
 }
 
-ProofVerifierChromium::Job::~Job() {
+ProofVerifierMonyhar::Job::~Job() {
   base::TimeTicks end_time = base::TimeTicks::Now();
   UMA_HISTOGRAM_TIMES("Net.QuicSession.VerifyProofTime",
                       end_time - start_time_);
@@ -202,7 +202,7 @@ ProofVerifierChromium::Job::~Job() {
   }
 }
 
-quic::QuicAsyncStatus ProofVerifierChromium::Job::VerifyProof(
+quic::QuicAsyncStatus ProofVerifierMonyhar::Job::VerifyProof(
     const string& hostname,
     const uint16_t port,
     const string& server_config,
@@ -226,7 +226,7 @@ quic::QuicAsyncStatus ProofVerifierChromium::Job::VerifyProof(
     return quic::QUIC_FAILURE;
   }
 
-  verify_details_ = std::make_unique<ProofVerifyDetailsChromium>();
+  verify_details_ = std::make_unique<ProofVerifyDetailsMonyhar>();
 
   // Converts |certs| to |cert_|.
   if (!GetX509Certificate(certs, error_details, verify_details))
@@ -247,7 +247,7 @@ quic::QuicAsyncStatus ProofVerifierChromium::Job::VerifyProof(
                     error_details, verify_details, std::move(callback));
 }
 
-quic::QuicAsyncStatus ProofVerifierChromium::Job::VerifyCertChain(
+quic::QuicAsyncStatus ProofVerifierMonyhar::Job::VerifyCertChain(
     const string& hostname,
     const uint16_t port,
     const std::vector<string>& certs,
@@ -268,7 +268,7 @@ quic::QuicAsyncStatus ProofVerifierChromium::Job::VerifyCertChain(
     return quic::QUIC_FAILURE;
   }
 
-  verify_details_ = std::make_unique<ProofVerifyDetailsChromium>();
+  verify_details_ = std::make_unique<ProofVerifyDetailsMonyhar>();
 
   // Converts |certs| to |cert_|.
   if (!GetX509Certificate(certs, error_details, verify_details))
@@ -278,7 +278,7 @@ quic::QuicAsyncStatus ProofVerifierChromium::Job::VerifyCertChain(
                     verify_details, std::move(callback));
 }
 
-bool ProofVerifierChromium::Job::GetX509Certificate(
+bool ProofVerifierMonyhar::Job::GetX509Certificate(
     const std::vector<string>& certs,
     std::string* error_details,
     std::unique_ptr<quic::ProofVerifyDetails>* verify_details) {
@@ -306,7 +306,7 @@ bool ProofVerifierChromium::Job::GetX509Certificate(
   return true;
 }
 
-quic::QuicAsyncStatus ProofVerifierChromium::Job::VerifyCert(
+quic::QuicAsyncStatus ProofVerifierMonyhar::Job::VerifyCert(
     const string& hostname,
     const uint16_t port,
     const std::string& ocsp_response,
@@ -334,7 +334,7 @@ quic::QuicAsyncStatus ProofVerifierChromium::Job::VerifyCert(
   }
 }
 
-int ProofVerifierChromium::Job::DoLoop(int last_result) {
+int ProofVerifierMonyhar::Job::DoLoop(int last_result) {
   int rv = last_result;
   do {
     State state = next_state_;
@@ -357,11 +357,11 @@ int ProofVerifierChromium::Job::DoLoop(int last_result) {
   return rv;
 }
 
-void ProofVerifierChromium::Job::OnIOComplete(int result) {
+void ProofVerifierMonyhar::Job::OnIOComplete(int result) {
   int rv = DoLoop(result);
   if (rv != ERR_IO_PENDING) {
     std::unique_ptr<quic::ProofVerifierCallback> callback(std::move(callback_));
-    // Callback expects quic::ProofVerifyDetails not ProofVerifyDetailsChromium.
+    // Callback expects quic::ProofVerifyDetails not ProofVerifyDetailsMonyhar.
     std::unique_ptr<quic::ProofVerifyDetails> verify_details(
         std::move(verify_details_));
     callback->Run(rv == OK, error_details_, &verify_details);
@@ -370,19 +370,19 @@ void ProofVerifierChromium::Job::OnIOComplete(int result) {
   }
 }
 
-int ProofVerifierChromium::Job::DoVerifyCert(int result) {
+int ProofVerifierMonyhar::Job::DoVerifyCert(int result) {
   next_state_ = STATE_VERIFY_CERT_COMPLETE;
 
   return verifier_->Verify(
       CertVerifier::RequestParams(cert_, hostname_, cert_verify_flags_,
                                   ocsp_response_, cert_sct_),
       &verify_details_->cert_verify_result,
-      base::BindOnce(&ProofVerifierChromium::Job::OnIOComplete,
+      base::BindOnce(&ProofVerifierMonyhar::Job::OnIOComplete,
                      base::Unretained(this)),
       &cert_verifier_request_, net_log_);
 }
 
-bool ProofVerifierChromium::Job::ShouldAllowUnknownRootForHost(
+bool ProofVerifierMonyhar::Job::ShouldAllowUnknownRootForHost(
     const std::string& hostname) {
   if (base::Contains(proof_verifier_->hostnames_to_allow_unknown_roots_, "")) {
     return true;
@@ -391,7 +391,7 @@ bool ProofVerifierChromium::Job::ShouldAllowUnknownRootForHost(
                         hostname);
 }
 
-int ProofVerifierChromium::Job::DoVerifyCertComplete(int result) {
+int ProofVerifierMonyhar::Job::DoVerifyCertComplete(int result) {
   base::UmaHistogramSparse("Net.QuicSession.CertVerificationResult", -result);
   cert_verifier_request_.reset();
 
@@ -452,7 +452,7 @@ int ProofVerifierChromium::Job::DoVerifyCertComplete(int result) {
   return result;
 }
 
-bool ProofVerifierChromium::Job::VerifySignature(
+bool ProofVerifierMonyhar::Job::VerifySignature(
     const string& signed_data,
     quic::QuicTransportVersion quic_version,
     absl::string_view chlo_hash,
@@ -503,7 +503,7 @@ bool ProofVerifierChromium::Job::VerifySignature(
   return true;
 }
 
-int ProofVerifierChromium::Job::CheckCTCompliance() {
+int ProofVerifierMonyhar::Job::CheckCTCompliance() {
   const CertVerifyResult& cert_verify_result =
       verify_details_->cert_verify_result;
 
@@ -587,7 +587,7 @@ int ProofVerifierChromium::Job::CheckCTCompliance() {
   }
 }
 
-ProofVerifierChromium::ProofVerifierChromium(
+ProofVerifierMonyhar::ProofVerifierMonyhar(
     CertVerifier* cert_verifier,
     CTPolicyEnforcer* ct_policy_enforcer,
     TransportSecurityState* transport_security_state,
@@ -605,9 +605,9 @@ ProofVerifierChromium::ProofVerifierChromium(
   DCHECK(transport_security_state_);
 }
 
-ProofVerifierChromium::~ProofVerifierChromium() {}
+ProofVerifierMonyhar::~ProofVerifierMonyhar() {}
 
-quic::QuicAsyncStatus ProofVerifierChromium::VerifyProof(
+quic::QuicAsyncStatus ProofVerifierMonyhar::VerifyProof(
     const std::string& hostname,
     const uint16_t port,
     const std::string& server_config,
@@ -625,8 +625,8 @@ quic::QuicAsyncStatus ProofVerifierChromium::VerifyProof(
     *error_details = "Missing context";
     return quic::QUIC_FAILURE;
   }
-  const ProofVerifyContextChromium* monyhar_context =
-      reinterpret_cast<const ProofVerifyContextChromium*>(verify_context);
+  const ProofVerifyContextMonyhar* monyhar_context =
+      reinterpret_cast<const ProofVerifyContextMonyhar*>(verify_context);
   std::unique_ptr<Job> job = std::make_unique<Job>(
       this, cert_verifier_, ct_policy_enforcer_, transport_security_state_,
       sct_auditing_delegate_, monyhar_context->cert_verify_flags,
@@ -641,7 +641,7 @@ quic::QuicAsyncStatus ProofVerifierChromium::VerifyProof(
   return status;
 }
 
-quic::QuicAsyncStatus ProofVerifierChromium::VerifyCertChain(
+quic::QuicAsyncStatus ProofVerifierMonyhar::VerifyCertChain(
     const std::string& hostname,
     const uint16_t port,
     const std::vector<std::string>& certs,
@@ -656,8 +656,8 @@ quic::QuicAsyncStatus ProofVerifierChromium::VerifyCertChain(
     *error_details = "Missing context";
     return quic::QUIC_FAILURE;
   }
-  const ProofVerifyContextChromium* monyhar_context =
-      reinterpret_cast<const ProofVerifyContextChromium*>(verify_context);
+  const ProofVerifyContextMonyhar* monyhar_context =
+      reinterpret_cast<const ProofVerifyContextMonyhar*>(verify_context);
   std::unique_ptr<Job> job = std::make_unique<Job>(
       this, cert_verifier_, ct_policy_enforcer_, transport_security_state_,
       sct_auditing_delegate_, monyhar_context->cert_verify_flags,
@@ -673,12 +673,12 @@ quic::QuicAsyncStatus ProofVerifierChromium::VerifyCertChain(
 }
 
 std::unique_ptr<quic::ProofVerifyContext>
-ProofVerifierChromium::CreateDefaultContext() {
-  return std::make_unique<ProofVerifyContextChromium>(0,
+ProofVerifierMonyhar::CreateDefaultContext() {
+  return std::make_unique<ProofVerifyContextMonyhar>(0,
                                                       net::NetLogWithSource());
 }
 
-void ProofVerifierChromium::OnJobComplete(Job* job) {
+void ProofVerifierMonyhar::OnJobComplete(Job* job) {
   active_jobs_.erase(job);
 }
 

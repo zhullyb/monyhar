@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
  * dump files, attempting to upload all crash dumps to the crash server.
  *
  * <p>Uploading is intended to happen in a background thread, and this method will likely be called
- * on startup, looking for crash dumps from previous runs, since Chromium's crash code explicitly
+ * on startup, looking for crash dumps from previous runs, since Monyhar's crash code explicitly
  * blocks any post-dump hooks or uploading for Android builds.
  */
 public final class CastCrashUploader {

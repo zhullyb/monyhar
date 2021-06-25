@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1758,15 +1758,15 @@ PPB_OpenGLES2_Shared::GetFramebufferMultisampleInterface() {
       &RenderbufferStorageMultisampleEXT};
   return &ppb_opengles2;
 }
-const PPB_OpenGLES2ChromiumEnableFeature*
-PPB_OpenGLES2_Shared::GetChromiumEnableFeatureInterface() {
-  static const struct PPB_OpenGLES2ChromiumEnableFeature ppb_opengles2 = {
+const PPB_OpenGLES2MonyharEnableFeature*
+PPB_OpenGLES2_Shared::GetMonyharEnableFeatureInterface() {
+  static const struct PPB_OpenGLES2MonyharEnableFeature ppb_opengles2 = {
       &EnableFeatureCHROMIUM};
   return &ppb_opengles2;
 }
-const PPB_OpenGLES2ChromiumMapSub*
-PPB_OpenGLES2_Shared::GetChromiumMapSubInterface() {
-  static const struct PPB_OpenGLES2ChromiumMapSub ppb_opengles2 = {
+const PPB_OpenGLES2MonyharMapSub*
+PPB_OpenGLES2_Shared::GetMonyharMapSubInterface() {
+  static const struct PPB_OpenGLES2MonyharMapSub ppb_opengles2 = {
       &MapBufferSubDataCHROMIUM, &UnmapBufferSubDataCHROMIUM,
       &MapTexSubImage2DCHROMIUM, &UnmapTexSubImage2DCHROMIUM};
   return &ppb_opengles2;

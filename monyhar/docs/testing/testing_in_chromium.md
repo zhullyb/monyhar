@@ -1,39 +1,39 @@
-Testing is an essential component of software development in Chromium,
+Testing is an essential component of software development in Monyhar,
 it ensures Chrome is behaving as we expect, and is critical to find bugs and
 regressions at early stage.
 
-This document covers the high level overview of testing in Chromium,
+This document covers the high level overview of testing in Monyhar,
 including what type of tests we have, what's the purpose for each test type,
 what tests are needed for new features etc.
 
 ## Test Types
 
-There are several different types of tests in Chromium to serve different purposes,
+There are several different types of tests in Monyhar to serve different purposes,
 some types of test are running on multiple platforms, others are specific
 for one platform.
 
 *   **[gtest]** is Google's C++ test framework,
-    which helps you write better C++ tests in Chromium.
-    gtest is test framework for unit tests in Chromium and browser tests are built on top of it.
+    which helps you write better C++ tests in Monyhar.
+    gtest is test framework for unit tests in Monyhar and browser tests are built on top of it.
 *   **[Junit]** is a unit testing framework
     for the Java programming language, and it is used to write
-    unit tests on Android for Java code in Chromium.
+    unit tests on Android for Java code in Monyhar.
 *   **Browser Tests** is built on top of gtest, and it is used to write integration tests
-    and e2e tests in Chromium.
+    and e2e tests in Monyhar.
     <!-- TODO(leilei) Add link to browser tests --->
 *   **[Web Tests] (formerly known as "Layout Tests" or "LayoutTests")**
     is used by Blink to test many components, including but not
     limited to layout and rendering. In general, web tests involve loading pages
     in a test renderer (`content_shell`) and comparing the rendered output or
     JavaScript output against an expected output file.
-    Web Tests are required to launch new W3C API support in Chromium.
+    Web Tests are required to launch new W3C API support in Monyhar.
 *   **[Instrumentation Tests]** is a test framework specific for Android platform,
-    it is used to write integration tests or e2e tests for Chromium on Android.
-*   **[EarlGrey]** is the integration testing framework used by Chromium for iOS.
-*   **[Telemetry]** is the performance testing framework used by Chromium.
+    it is used to write integration tests or e2e tests for Monyhar on Android.
+*   **[EarlGrey]** is the integration testing framework used by Monyhar for iOS.
+*   **[Telemetry]** is the performance testing framework used by Monyhar.
     It allows you to perform arbitrary actions on a set of web pages and
     report metrics about it.
-*   **[Fuzzer Tests]** is used to uncover potential security & stability problems in Chromium.
+*   **[Fuzzer Tests]** is used to uncover potential security & stability problems in Monyhar.
 *   **[Tast]** is a test framework for system integration tests on Chrome OS.
 
 
@@ -71,7 +71,7 @@ see [this thread](https://groups.google.com/a/monyhar.org/forum/#!topic/blink-de
 
 ## General Principles
 
-*   All the tests in Chromium running on CQ and main waterfall should be hermetic and stable.
+*   All the tests in Monyhar running on CQ and main waterfall should be hermetic and stable.
 *   Add unit tests along with the code in same changelist instead of adding tests in future,
     it is most likely no one will add tests later.
 *   Write enough unit tests to have good [code coverage](./code_coverage.md),
@@ -103,7 +103,7 @@ see [this thread](https://groups.google.com/a/monyhar.org/forum/#!topic/blink-de
   add new benchmarks for your feature. Talk to benchmarking team first
   before start to add Telemetry benchmarks or stories.
 * **[Fuzzer Tests]** are recommended if your feature adds user facing APIs
-  in Chromium, it is recommended to write fuzzer tests to detect the security issue.
+  in Monyhar, it is recommended to write fuzzer tests to detect the security issue.
 
 Right now, code coverage is the only way we have to measure test coverage.
 The following is the recommended thresholds for different code coverage levels:

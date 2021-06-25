@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# When building in Chromium, these configs is used to set #defines that indicate
-# whether code is being built standalone, or in Chromium, or potentially in some
+# When building in Monyhar, these configs is used to set #defines that indicate
+# whether code is being built standalone, or in Monyhar, or potentially in some
 # other configutation.
 
 import("crashpad_buildconfig.gni")

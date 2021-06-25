@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -18,19 +18,19 @@ import java.util.concurrent.TimeUnit;
  * Queue used for running tasks, initiated through WebView APIs, on the UI thread.
  * The queue won't start running tasks until WebView has been initialized properly.
  */
-public class WebViewChromiumRunQueue {
+public class WebViewMonyharRunQueue {
     private final Queue<Runnable> mQueue;
-    private final ChromiumHasStartedCallable mChromiumHasStartedCallable;
+    private final MonyharHasStartedCallable mMonyharHasStartedCallable;
 
     /**
      * Callable representing whether WebView has been initialized, and we should start running
      * tasks.
      */
-    public static interface ChromiumHasStartedCallable { public boolean hasStarted(); }
+    public static interface MonyharHasStartedCallable { public boolean hasStarted(); }
 
-    public WebViewChromiumRunQueue(ChromiumHasStartedCallable monyharHasStartedCallable) {
+    public WebViewMonyharRunQueue(MonyharHasStartedCallable monyharHasStartedCallable) {
         mQueue = new ConcurrentLinkedQueue<Runnable>();
-        mChromiumHasStartedCallable = monyharHasStartedCallable;
+        mMonyharHasStartedCallable = monyharHasStartedCallable;
     }
 
     /**
@@ -39,7 +39,7 @@ public class WebViewChromiumRunQueue {
      */
     public void addTask(Runnable task) {
         mQueue.add(task);
-        if (mChromiumHasStartedCallable.hasStarted()) {
+        if (mMonyharHasStartedCallable.hasStarted()) {
             PostTask.runOrPostTask(UiThreadTaskTraits.DEFAULT, () -> { drainQueue(); });
         }
     }
@@ -60,7 +60,7 @@ public class WebViewChromiumRunQueue {
     }
 
     public boolean monyharHasStarted() {
-        return mChromiumHasStartedCallable.hasStarted();
+        return mMonyharHasStartedCallable.hasStarted();
     }
 
     public <T> T runBlockingFuture(FutureTask<T> task) {

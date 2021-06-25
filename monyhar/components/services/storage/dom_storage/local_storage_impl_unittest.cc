@@ -1,4 +1,4 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
+// Copyright 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -784,7 +784,7 @@ TEST_F(LocalStorageImplTest, InvalidVersionOnDisk) {
 
   {
     // Mess up version number in database.
-    leveldb_env::ChromiumEnv env;
+    leveldb_env::MonyharEnv env;
     std::unique_ptr<leveldb::DB> db;
     leveldb_env::Options options;
     options.env = &env;

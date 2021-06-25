@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -64,7 +64,7 @@ IOSProfileSessionDurationsServiceFactory::GetBrowserStateToUse(
   // Session time in incognito is counted towards the session time in the
   // regular profile. That means that for a user that is signed in and syncing
   // in their regular profile and that is browsing in incognito profile,
-  // Chromium will record the session time as being signed in and syncing.
+  // Monyhar will record the session time as being signed in and syncing.
   return GetBrowserStateRedirectedInIncognito(context);
 }
 

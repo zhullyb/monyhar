@@ -21,7 +21,7 @@ To add a network diagnostics routine:
 2. Add the implementation and unit tests [here].
 
 Note: Any changes made to network_diagnostics.mojom must be kept in sync with
-the copy in the Chromium OS repo:
+the copy in the Monyhar OS repo:
 [src/platform2/diagnostics/mojo/network_diagnostics.mojom].
 
 ## Understanding a routine's results

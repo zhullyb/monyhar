@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -10452,11 +10452,11 @@ static bool SystemSupportsHardFailRevocationChecking() {
 #endif
 }
 
-// SystemUsesChromiumEVMetadata returns true iff the current operating system
-// uses Chromium's EV metadata (i.e. EVRootCAMetadata). If it does not, then
+// SystemUsesMonyharEVMetadata returns true iff the current operating system
+// uses Monyhar's EV metadata (i.e. EVRootCAMetadata). If it does not, then
 // several tests are effected because our testing EV certificate won't be
 // recognised as EV.
-static bool SystemUsesChromiumEVMetadata() {
+static bool SystemUsesMonyharEVMetadata() {
   if (UsingBuiltinCertVerifier())
     return true;
 #if defined(PLATFORM_USES_CHROMIUM_EV_METADATA)
@@ -10518,7 +10518,7 @@ TEST_F(HTTPSOCSPTest, Valid) {
 
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
 
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_IS_EV));
 
   EXPECT_TRUE(cert_status & CERT_STATUS_REV_CHECKING_ENABLED);
@@ -10586,7 +10586,7 @@ TEST_F(HTTPSOCSPTest, IntermediateValid) {
 
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
 
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_IS_EV));
 
   EXPECT_TRUE(cert_status & CERT_STATUS_REV_CHECKING_ENABLED);
@@ -10615,7 +10615,7 @@ TEST_F(HTTPSOCSPTest, IntermediateResponseOldButStillValid) {
 
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
 
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_IS_EV));
 
   EXPECT_TRUE(cert_status & CERT_STATUS_REV_CHECKING_ENABLED);
@@ -10648,7 +10648,7 @@ TEST_F(HTTPSOCSPTest, IntermediateResponseTooOld) {
   } else {
     // The platform verifiers are more lenient.
     EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
-    EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+    EXPECT_EQ(SystemUsesMonyharEVMetadata(),
               static_cast<bool>(cert_status & CERT_STATUS_IS_EV));
   }
   EXPECT_TRUE(cert_status & CERT_STATUS_REV_CHECKING_ENABLED);
@@ -10709,7 +10709,7 @@ TEST_F(HTTPSOCSPTest, ValidStapled) {
 
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
 
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_IS_EV));
 
   EXPECT_TRUE(cert_status & CERT_STATUS_REV_CHECKING_ENABLED);
@@ -10792,7 +10792,7 @@ TEST_F(HTTPSOCSPTest, OldStapledButValidAIA) {
   DoConnection(cert_config, &cert_status);
 
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_IS_EV));
   EXPECT_TRUE(cert_status & CERT_STATUS_REV_CHECKING_ENABLED);
 }
@@ -11126,7 +11126,7 @@ TEST_F(HTTPSEVCRLSetTest, MissingCRLSetAndInvalidOCSP) {
 
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
   EXPECT_FALSE(cert_status & CERT_STATUS_IS_EV);
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_REV_CHECKING_ENABLED));
 }
 
@@ -11174,7 +11174,7 @@ TEST_F(HTTPSEVCRLSetTest, MissingCRLSetAndRevokedOCSP) {
   }
 
   EXPECT_FALSE(cert_status & CERT_STATUS_IS_EV);
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_REV_CHECKING_ENABLED));
 }
 
@@ -11195,9 +11195,9 @@ TEST_F(HTTPSEVCRLSetTest, MissingCRLSetAndGoodOCSP) {
 
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
 
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_IS_EV));
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_REV_CHECKING_ENABLED));
 }
 
@@ -11221,7 +11221,7 @@ TEST_F(HTTPSEVCRLSetTest, ExpiredCRLSet) {
 
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
   EXPECT_FALSE(cert_status & CERT_STATUS_IS_EV);
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_REV_CHECKING_ENABLED));
 }
 
@@ -11247,7 +11247,7 @@ TEST_F(HTTPSEVCRLSetTest, FreshCRLSetCovered) {
   // With a fresh CRLSet that covers the issuing certificate, we shouldn't do a
   // revocation check for EV.
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_IS_EV));
   EXPECT_FALSE(
       static_cast<bool>(cert_status & CERT_STATUS_REV_CHECKING_ENABLED));
@@ -11278,7 +11278,7 @@ TEST_F(HTTPSEVCRLSetTest, FreshCRLSetNotCovered) {
   // indicate online revocation checking was attempted.
   EXPECT_EQ(0u, cert_status & CERT_STATUS_ALL_ERRORS);
   EXPECT_FALSE(cert_status & CERT_STATUS_IS_EV);
-  EXPECT_EQ(SystemUsesChromiumEVMetadata(),
+  EXPECT_EQ(SystemUsesMonyharEVMetadata(),
             static_cast<bool>(cert_status & CERT_STATUS_REV_CHECKING_ENABLED));
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -30,7 +30,7 @@ enum ResultCodeValues : ResultCode {
   // DEPRECATED. Cleanup succeeded and a reboot is about to happen to complete
   // it.
   // This value should not be used in new code, but is still defined for use in
-  // Chromium code that reads results from older versions of the cleaner.
+  // Monyhar code that reads results from older versions of the cleaner.
   DEPRECATED_RESULT_CODE_ABOUT_TO_REBOOT = 4,
 
   // Could not register the application to be automatically rerun after a

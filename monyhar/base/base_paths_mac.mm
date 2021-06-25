@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -96,9 +96,9 @@ bool PathProviderMac(int key, base::FilePath* result) {
       *result = result->DirName();
 
       if (base::mac::AmIBundled()) {
-        // The bundled app executables (Chromium, TestShell, etc) live five
+        // The bundled app executables (Monyhar, TestShell, etc) live five
         // levels down, eg:
-        // src/xcodebuild/{Debug|Release}/Chromium.app/Contents/MacOS/Chromium
+        // src/xcodebuild/{Debug|Release}/Monyhar.app/Contents/MacOS/Monyhar
         *result = result->DirName().DirName().DirName().DirName().DirName();
       } else {
         // Unit tests execute two levels deep from the source root, eg:

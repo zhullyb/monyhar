@@ -200,7 +200,7 @@ authorization from the authors.
             <list type="STR" name="names">
                 <fieldref>devices_len</fieldref>
             </list>
-            <!-- Chromium patch: xcbproto had this as 4 bytes of padding, but
+            <!-- Monyhar patch: xcbproto had this as 4 bytes of padding, but
                  replies are always padded to 4 bytes.  At least on x.org,
                  the padding is always at least one byte, so we add a byte of
                  padding and (implicitly) align to 4 bytes.
@@ -1352,7 +1352,7 @@ authorization from the authors.
 
     <!-- XIQueryPointer -->
 
-    <!-- Chromium patch: Rename so that this will get merged with DeviceId -->
+    <!-- Monyhar patch: Rename so that this will get merged with DeviceId -->
     <enum name="DEVICE_ID">
         <item name="All">       <value>0</value> </item>
         <item name="AllMaster"> <value>1</value> </item>

@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -427,10 +427,10 @@ blink::WebMouseEvent WebMouseEventBuilder::Build(
     // Pointer Events specification states that tiltY is positive when the
     // pen is tilted towards the user.
     // By default, in MacOS, the Y coordinate increases going up,
-    // while in Chromium the Y coordinate increases going down.
+    // while in Monyhar the Y coordinate increases going down.
     // https://developer.apple.com/library/archive/documentation/General/Conceptual/Devpedia-CocoaApp/CoordinateSystem.html
     // In this case (if the coordinate system is not flipped) tiltY needs to
-    // be reversed to match Chromium's expectation that tiltY is positive
+    // be reversed to match Monyhar's expectation that tiltY is positive
     // towards the user
     result.tilt_y = ([view isFlipped] ? 1 : (-1)) * lround(tilt.y * 90);
     result.tangential_pressure = [event tangentialPressure];

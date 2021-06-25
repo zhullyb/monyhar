@@ -1092,11 +1092,11 @@ scoped_refptr<DrawingBuffer> WebGLRenderingContextBase::CreateDrawingBuffer(
   // IOSurfaces are only compatible with the GL_TEXTURE_RECTANGLE_ARB binding
   // target. So to avoid the knowledge of GL_TEXTURE_RECTANGLE_ARB type textures
   // being introduced into more areas of the code, we use the code path of
-  // non-WebGLImageChromium for OffscreenCanvas.
+  // non-WebGLImageMonyhar for OffscreenCanvas.
   // See detailed discussion in crbug.com/649668.
-  DrawingBuffer::ChromiumImageUsage monyhar_image_usage =
-      Host()->IsOffscreenCanvas() ? DrawingBuffer::kDisallowChromiumImage
-                                  : DrawingBuffer::kAllowChromiumImage;
+  DrawingBuffer::MonyharImageUsage monyhar_image_usage =
+      Host()->IsOffscreenCanvas() ? DrawingBuffer::kDisallowMonyharImage
+                                  : DrawingBuffer::kAllowMonyharImage;
 
   bool using_swap_chain =
       base::FeatureList::IsEnabled(features::kLowLatencyWebGLSwapChain) &&

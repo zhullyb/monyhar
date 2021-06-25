@@ -5,14 +5,14 @@
 ## Intro
 
 MB was originally intended to address two major aspects of the GYP -> GN
-transition for Chromium:
+transition for Monyhar:
 
 1. "bot toggling" - make it so that we can easily flip a given bot
    back and forth between GN and GYP.
 
 2. "bot configuration" - provide a single source of truth for all of
    the different configurations (os/arch/`gn_args` combinations) of
-   Chromium that are supported.
+   Monyhar that are supported.
 
 Now that everything is using GN, only the second purpose is really relevant,
 but it's still important. MB must handle at least the `gen` and `analyze`
@@ -82,7 +82,7 @@ We start with the following requirements and observations:
   to get maximum test coverage against the desire to have reasonable cycle
   times, given the number of machines we have.
 
-* Also, since we run most try jobs against tip-of-tree Chromium, by
+* Also, since we run most try jobs against tip-of-tree Monyhar, by
   the time one job completes on the bot, new patches have probably landed,
   rendering the build out of date.
 
@@ -341,7 +341,7 @@ it is ...
 ### in-tree or out-of-tree
 
 The first issue is whether or not this should exist as a script in
-Chromium at all; an alternative would be to simply change the bot
+Monyhar at all; an alternative would be to simply change the bot
 configurations to know which flags to pass.
 
 That would certainly work, but experience over the past two years
@@ -353,12 +353,12 @@ suggests a few things:
     build/ is at best annoying and can lead to weird errors.
   * the infra team would really like to move to providing
     product-independent services (i.e., not have to do one thing for
-    Chromium, another for NaCl, a third for V8, etc.).
+    Monyhar, another for NaCl, a third for V8, etc.).
   * we found that during the SVN->GIT migration the ability to flip bot
     configurations between the two via changes to a file in monyhar
     was very useful.
 
-All of this suggests that the interface between bots and Chromium should
+All of this suggests that the interface between bots and Monyhar should
 be a simple one, hiding as much of the monyhar logic as possible.
 
 ### Why not have MB be smarter about de-duping flags?
@@ -373,7 +373,7 @@ It will not be hard to change this if need be.
 ### Config per flag set or config per (os/arch/flag set)?
 
 Currently, mb_config.pyl does not specify the host_os, target_os, host_cpu, or
-target_cpu values for every config that Chromium runs on, it only specifies
+target_cpu values for every config that Monyhar runs on, it only specifies
 them for when the values need to be explicitly set on the command line.
 
 Instead, we have one config per unique combination of flags only.

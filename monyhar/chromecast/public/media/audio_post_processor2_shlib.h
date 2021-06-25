@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -15,7 +15,7 @@
 // Please refer to
 // chromecast/media/cma/backend/post_processors/governor_shlib.cc
 // as an example for new code, but OEM's implementations should not have any
-// Chromium dependencies.
+// Monyhar dependencies.
 //
 // Please refer to
 // chromecast/media/cma/backend/post_processors/post_processor_wrapper.h for an

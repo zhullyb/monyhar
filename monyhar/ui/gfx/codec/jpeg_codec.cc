@@ -1,4 +1,4 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+// Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -210,7 +210,7 @@ bool JPEGCodec::Decode(const unsigned char* input, size_t input_size,
     case JCS_YCbCr:
       // Choose an output colorspace and return if it is an unsupported one.
       // Same as JPEGCodec::Encode(), libjpeg-turbo supports all input formats
-      // used by Chromium (i.e. RGBA and BGRA) and we just map the input
+      // used by Monyhar (i.e. RGBA and BGRA) and we just map the input
       // parameters to a colorspace.
       if (format == FORMAT_RGBA ||
           (format == FORMAT_SkBitmap && SK_R32_SHIFT == 0)) {

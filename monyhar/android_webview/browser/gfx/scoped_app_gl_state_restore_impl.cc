@@ -1,4 +1,4 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -275,7 +275,7 @@ ScopedAppGLStateRestoreImpl::~ScopedAppGLStateRestoreImpl() {
   RestoreHWUIState(save_restore_);
 
   // Do not leak GLError out of monyhar.
-  ClearGLErrors(true, "Chromium GLError");
+  ClearGLErrors(true, "Monyhar GLError");
 }
 
 void ScopedAppGLStateRestoreImpl::RestoreHWUIState(bool save_restore) {

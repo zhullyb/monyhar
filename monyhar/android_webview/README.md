@@ -8,7 +8,7 @@ the [related Android classes][1]) are implemented by the code in the
 This directory contains the Android WebView implementation, as well as the
 implementation for the [AndroidX Webkit support library][2].
 
-## Overview for Chromium team members and contributors
+## Overview for Monyhar team members and contributors
 
 Please see [WebView Architecture](/android_webview/docs/architecture.md).
 
@@ -22,7 +22,7 @@ Please consult our API documentation and app development guides:
 
 ## Want to build and install WebView on a device?
 
-See our [Chromium developer documentation](docs/README.md).
+See our [Monyhar developer documentation](docs/README.md).
 
 [1]: https://developer.android.com/reference/android/webkit/package-summary
 [2]: https://developer.android.com/reference/androidx/webkit/package-summary

@@ -11,7 +11,7 @@ within cast_shell. This service is automatically started when the
 
 ## external_service_support
 This directory contains utilities to ease development of Mojo services that run
-in processes outside of Chromium/cast_shell.
+in processes outside of Monyhar/cast_shell.
 
 ## common
 This contains code that is shared between cast_shell and external services.

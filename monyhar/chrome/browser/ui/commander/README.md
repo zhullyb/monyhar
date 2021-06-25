@@ -1,7 +1,7 @@
 # Commander overview
 
 This directory contains the bulk of the Commander, a new UI surface that allows
-users to access most Chromium functionality via a keyboard interface.
+users to access most Monyhar functionality via a keyboard interface.
 
 ## Components
 

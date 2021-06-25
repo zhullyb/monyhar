@@ -1,4 +1,4 @@
-// Copyright 2013 The Chromium Authors. All rights reserved.
+// Copyright 2013 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -149,7 +149,7 @@ bool Recovery::Backup() {
   // small number of errors are expected:
   // SQLITE_BUSY - cannot lock the destination database.  This should
   //               only happen if someone has another handle to the
-  //               database, Chromium generally doesn't do that.
+  //               database, Monyhar generally doesn't do that.
   // SQLITE_LOCKED - someone locked the source database.  Should be
   //                 impossible (perhaps anti-virus could?).
   // SQLITE_READONLY - destination is read-only.

@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -66,7 +66,7 @@ PrefetchRequestFetcher::PrefetchRequestFetcher(
         semantics {
           sender: "Offline Prefetch"
           description:
-            "Chromium interacts with Offline Page Service to prefetch "
+            "Monyhar interacts with Offline Page Service to prefetch "
             "suggested website resources."
           trigger:
             "When there are suggested website resources to fetch."

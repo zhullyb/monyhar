@@ -29,7 +29,7 @@ This directory contains all the Java-side infrastructure for running
 instrumentation tests for [WebXR][webxr_spec]
 (VR/Virtual Reality and AR/Augmented Reality) features currently in Chrome.
 
-These tests are integration/end-to-end tests run in the full Chromium browser on
+These tests are integration/end-to-end tests run in the full Monyhar browser on
 actual Android devices.
 
 ## Directories

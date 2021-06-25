@@ -18,7 +18,7 @@ Dependencies
 Overview
 
     This extensions defines a way of importing into GL texture image data
-    produced externally to GL via Chromium's SharedImage system.
+    produced externally to GL via Monyhar's SharedImage system.
 
 New Procedures and Functions
 

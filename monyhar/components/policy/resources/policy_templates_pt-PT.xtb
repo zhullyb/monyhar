@@ -2184,7 +2184,7 @@ Se esta definição estiver desativada, os utilizadores não podem ativar o prox
 <translation id="5148753489738115745">Permite especificar parâmetros adicionais utilizados quando o <ph name="PRODUCT_FRAME_NAME" /> iniciar o <ph name="PRODUCT_NAME" />.
 
           Se esta política não estiver definida, será utilizada a linha de comandos predefinida.</translation>
-<translation id="5152787786897382519">Tanto o Chromium como o Google Chrome têm alguns grupos de políticas que dependem umas das outras para assegurar o controlo de uma funcionalidade. Estes conjuntos são representados pelos seguintes grupos de políticas. Uma vez que as políticas podem ter várias origens, apenas são aplicados os valores provenientes da origem de prioridade mais elevada. Os valores provenientes de uma origem de prioridade mais baixa no mesmo grupo serão ignorados. A ordem de prioridade está definida em <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
+<translation id="5152787786897382519">Tanto o Monyhar como o Google Chrome têm alguns grupos de políticas que dependem umas das outras para assegurar o controlo de uma funcionalidade. Estes conjuntos são representados pelos seguintes grupos de políticas. Uma vez que as políticas podem ter várias origens, apenas são aplicados os valores provenientes da origem de prioridade mais elevada. Os valores provenientes de uma origem de prioridade mais baixa no mesmo grupo serão ignorados. A ordem de prioridade está definida em <ph name="POLICY_PRIORITY_DOC_URL" />.</translation>
 <translation id="5159469559091666409">Frequência, em milissegundos, com que são enviados os pacotes de monitorização de rede.
 
       Se esta política não for definida, o intervalo predefinido é de 3 minutos. O
@@ -3837,7 +3837,7 @@ Se esta definição estiver desativada, os utilizadores não podem ativar o prox
       Se a política ficar por definir, o <ph name="PRODUCT_OS_NAME" /> utilizará o ID da conta de email da conta local do dispositivo como o nome a apresentar no ecrã de início de sessão.
 
       Esta política é ignorada para contas de utilizador normais.</translation>
-<translation id="8259375588339409826">O Chromium e o Google Chrome suportam o mesmo conjunto de políticas. Tenha em atenção que este documento pode incluir políticas não lançadas (ou seja, a entrada "Suportado em" refere-se a uma versão do <ph name="PRODUCT_NAME" /> que ainda não foi lançada). Tais políticas estão sujeitas a alteração ou remoção sem aviso prévio e não são objeto de qualquer tipo de garantia, incluindo garantias quanto às respetivas propriedades de segurança e de privacidade.
+<translation id="8259375588339409826">O Monyhar e o Google Chrome suportam o mesmo conjunto de políticas. Tenha em atenção que este documento pode incluir políticas não lançadas (ou seja, a entrada "Suportado em" refere-se a uma versão do <ph name="PRODUCT_NAME" /> que ainda não foi lançada). Tais políticas estão sujeitas a alteração ou remoção sem aviso prévio e não são objeto de qualquer tipo de garantia, incluindo garantias quanto às respetivas propriedades de segurança e de privacidade.
 
 A utilização destas políticas destina-se unicamente à configuração de instâncias do <ph name="PRODUCT_NAME" /> internas à sua entidade. A utilização destas políticas fora da sua entidade (por exemplo, num programa distribuído publicamente) é considerada software malicioso e será, provavelmente, etiquetada como software malicioso pela Google e por fornecedores de antivírus.
 

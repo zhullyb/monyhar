@@ -86,7 +86,7 @@ void GetSharedBufferMemoryDump(SharedBuffer* buffer,
 }  // namespace
 
 // These response headers are not copied from a revalidated response to the
-// cached response headers. For compatibility, this list is based on Chromium's
+// cached response headers. For compatibility, this list is based on Monyhar's
 // net/http/http_response_headers.cc.
 const char* const kHeadersToIgnoreAfterRevalidation[] = {
     "allow",
@@ -107,7 +107,7 @@ const char* const kHeadersToIgnoreAfterRevalidation[] = {
 
 // Some header prefixes mean "Don't copy this header from a 304 response.".
 // Rather than listing all the relevant headers, we can consolidate them into
-// this list, also grabbed from Chromium's net/http/http_response_headers.cc.
+// this list, also grabbed from Monyhar's net/http/http_response_headers.cc.
 const char* const kHeaderPrefixesToIgnoreAfterRevalidation[] = {
     "content-", "x-content-", "x-webkit-"};
 

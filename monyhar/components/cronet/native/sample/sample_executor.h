@@ -1,11 +1,11 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 #ifndef COMPONENTS_CRONET_NATIVE_SAMPLE_SAMPLE_EXECUTOR_H_
 #define COMPONENTS_CRONET_NATIVE_SAMPLE_SAMPLE_EXECUTOR_H_
 
-// Cronet sample is expected to be used outside of Chromium infrastructure,
+// Cronet sample is expected to be used outside of Monyhar infrastructure,
 // and as such has to rely on STL directly instead of //base alternatives.
 #include <condition_variable>
 #include <mutex>

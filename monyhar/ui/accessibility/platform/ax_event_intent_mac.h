@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ struct AXEventIntent;
 // events: an editing intent or a selection intent.
 //
 // The enumeration values are taken from the WebKit source code, but they are
-// modified slightly to comply with Chromium's C++ Style Guide. Please do not
+// modified slightly to comply with Monyhar's C++ Style Guide. Please do not
 // renumber.
 enum class AXTextStateChangeType {
   kUnknown = 0,
@@ -33,7 +33,7 @@ enum class AXTextStateChangeType {
 // framework.
 //
 // The enumeration values are taken from the WebKit source code, but they are
-// modified slightly to comply with Chromium's C++ Style Guide. Please do not
+// modified slightly to comply with Monyhar's C++ Style Guide. Please do not
 // renumber.
 enum class AXTextEditType {
   kUnknown = 0,
@@ -50,7 +50,7 @@ enum class AXTextEditType {
 // accessibility framework.
 //
 // The enumeration values are taken from the WebKit source code, but they are
-// modified slightly to comply with Chromium's C++ Style Guide. Please do not
+// modified slightly to comply with Monyhar's C++ Style Guide. Please do not
 // renumber.
 enum class AXTextSelectionDirection {
   kUnknown = 0,
@@ -65,7 +65,7 @@ enum class AXTextSelectionDirection {
 // by, as defined by Mac's accessibility framework.
 //
 // The enumeration values are taken from the WebKit source code, but they are
-// modified slightly to comply with Chromium's C++ Style Guide. Please do not
+// modified slightly to comply with Monyhar's C++ Style Guide. Please do not
 // renumber.
 enum class AXTextSelectionGranularity {
   kUnknown = 0,
@@ -87,7 +87,7 @@ enum class AXTextSelectionGranularity {
 // Describes a selection operation in an AXTextStateChangeIntent.
 struct AXTextSelection final {
   // Constructs a description of a selection operation, translating the given
-  // direction and granularity from Chromium's internal representation to what
+  // direction and granularity from Monyhar's internal representation to what
   // the Mac accessibility framework expects.
   static AXTextSelection FromDirectionAndGranularity(
       ax::mojom::TextBoundary text_boundary,
@@ -148,7 +148,7 @@ struct AX_EXPORT AXTextStateChangeIntent final {
   AXTextSelection selection;
 };
 
-// Converts from Chromium's ui::AXEventIntent to Mac's AXTextStateChangeIntent.
+// Converts from Monyhar's ui::AXEventIntent to Mac's AXTextStateChangeIntent.
 AX_EXPORT AXTextStateChangeIntent
 FromEventIntent(const AXEventIntent& event_intent);
 

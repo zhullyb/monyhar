@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -688,7 +688,7 @@ TEST_F(CorsTest, CorsUnsafeNotForbiddenRequestHeaderNames) {
       CorsUnsafeNotForbiddenRequestHeaderNames({}, false /* is_revalidating */),
       List({}));
 
-  // "user-agent" is NOT forbidden per spec, but forbidden in Chromium.
+  // "user-agent" is NOT forbidden per spec, but forbidden in Monyhar.
   EXPECT_EQ(
       CorsUnsafeNotForbiddenRequestHeaderNames({{"content-type", "text/plain"},
                                                 {"dpr", "12345"},

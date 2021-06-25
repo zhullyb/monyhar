@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -44,7 +44,7 @@ class COMPONENT_EXPORT(DEVICE_FIDO) AndroidAccessoryDiscovery
     // in_endpoint and out_endpoint are the endpoint numbers for AOA.
     uint8_t in_endpoint;
     uint8_t out_endpoint;
-    // guid is the identifier assigned by Chromium's USB layer to this specific
+    // guid is the identifier assigned by Monyhar's USB layer to this specific
     // USB connection.
     std::string guid;
   };

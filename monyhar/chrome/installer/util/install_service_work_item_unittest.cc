@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -29,7 +29,7 @@ constexpr base::FilePath::CharType kServiceProgramPath[] =
     FILE_PATH_LITERAL("c:\\windows\\SysWow64\\cmd.exe");
 
 constexpr wchar_t kProductRegPath[] =
-    L"Software\\ChromiumTestInstallServiceWorkItem";
+    L"Software\\MonyharTestInstallServiceWorkItem";
 
 // {76EDE292-9C33-4A09-9B3A-3B880DF64440}
 constexpr GUID kClsid = {0x76ede292,

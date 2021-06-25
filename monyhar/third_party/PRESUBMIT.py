@@ -1,4 +1,4 @@
-# Copyright (c) 2011 The Chromium Authors. All rights reserved.
+# Copyright (c) 2011 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -123,7 +123,7 @@ def _CheckThirdPartyReadmesUpdated(input_api, output_api):
       errors.append(output_api.PresubmitError(
         'Third party README files should contain a \'Security Critical\'\n'
         'field. This field specifies whether the package is built with\n'
-        'Chromium. Check README.monyhar.template for details.',
+        'Monyhar. Check README.monyhar.template for details.',
         [f]))
     license_match = license_pattern.search(contents)
     if not license_match:

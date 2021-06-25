@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -261,8 +261,8 @@ TEST(InputFileParsersTest, ParseCertificatesFile) {
       "+wIDAQAB\n"
       "-----END PUBLIC KEY-----\n"
       "\n"
-      "# The 'Chromium' prefix is required here.\n"
-      "ChromiumTestCertificate3\n"
+      "# The 'Monyhar' prefix is required here.\n"
+      "MonyharTestCertificate3\n"
       "-----BEGIN CERTIFICATE-----\n"
       "MIIDeTCCAmGgAwIBAgIJAMRHXuiAgufAMA0GCSqGSIb3DQEBCwUAMFMxETAPBgNV\n"
       "BAMMCENocm9taXVtMR4wHAYDVQQKDBVUaGUgQ2hyb21pdW0gUHJvamVjdHMxETAP\n"
@@ -292,7 +292,7 @@ TEST(InputFileParsersTest, ParseCertificatesFile) {
   const SPKIHashMap& hashes = pinsets.spki_hashes();
   EXPECT_NE(hashes.cend(), hashes.find("TestPublicKey1"));
   EXPECT_NE(hashes.cend(), hashes.find("TestPublicKey2"));
-  EXPECT_NE(hashes.cend(), hashes.find("ChromiumTestCertificate3"));
+  EXPECT_NE(hashes.cend(), hashes.find("MonyharTestCertificate3"));
 }
 
 TEST(InputFileParsersTest, ParseCertificatesFileInvalid) {
@@ -358,13 +358,13 @@ TEST(InputFileParsersTest, ParseCertificatesFileInvalidCertificateName) {
   std::string missing_prefix = "Class3_G1_Test\n" + certificate;
   EXPECT_FALSE(ParseCertificatesFile(missing_prefix, &pinsets));
 
-  std::string missing_class = "Chromium_G1_Test\n" + certificate;
+  std::string missing_class = "Monyhar_G1_Test\n" + certificate;
   EXPECT_FALSE(ParseCertificatesFile(missing_class, &pinsets));
 
-  std::string missing_number = "Chromium_Class3_Test\n" + certificate;
+  std::string missing_number = "Monyhar_Class3_Test\n" + certificate;
   EXPECT_FALSE(ParseCertificatesFile(missing_number, &pinsets));
 
-  std::string valid = "Chromium_Class3_G1_Test\n" + certificate;
+  std::string valid = "Monyhar_Class3_G1_Test\n" + certificate;
   EXPECT_TRUE(ParseCertificatesFile(valid, &pinsets));
 }
 

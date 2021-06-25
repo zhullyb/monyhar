@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -192,7 +192,7 @@ TEST(VideoCaptureDeviceMacTest, FindBestCaptureFormat) {
       @[ fmt_640_480_2vuy_30_60, fmt_640_480_2vuy_30 ], 640, 480, 30);
   EXPECT_EQ(result, fmt_640_480_2vuy_30.get());
 
-  // Prefer the Chromium format order.
+  // Prefer the Monyhar format order.
   result = FindBestCaptureFormat(@[ fmt_640_480_yuvs_30, fmt_640_480_2vuy_30 ],
                                  640, 480, 30);
   EXPECT_EQ(result, fmt_640_480_2vuy_30.get());

@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -220,7 +220,7 @@ IN_PROC_BROWSER_TEST_F(ImmersiveModeControllerChromeosWebAppBrowserTest,
 // Verify the immersive mode status is as expected in tablet mode (titlebars are
 // autohidden in tablet mode).
 
-// Crashes on Linux Chromium OS ASan LSan Tests.  http://crbug.com/1091606
+// Crashes on Linux Monyhar OS ASan LSan Tests.  http://crbug.com/1091606
 IN_PROC_BROWSER_TEST_F(ImmersiveModeControllerChromeosWebAppBrowserTest,
                        DISABLED_ImmersiveModeStatusTabletMode) {
   LaunchAppBrowser();
@@ -272,7 +272,7 @@ IN_PROC_BROWSER_TEST_F(ImmersiveModeControllerChromeosWebAppBrowserTest,
 
 // Verify that the frame layout is as expected when using immersive mode in
 // tablet mode.
-// Fails on Linux Chromium OS ASan LSan Tests.
+// Fails on Linux Monyhar OS ASan LSan Tests.
 // TODO(crbug.com/1191327): reenable the test.
 #if defined(OS_CHROMEOS) && defined(ADDRESS_SANITIZER)
 #define MAYBE_FrameLayoutToggleTabletMode DISABLED_FrameLayoutToggleTabletMode

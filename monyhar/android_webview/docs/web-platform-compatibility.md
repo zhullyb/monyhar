@@ -1,7 +1,7 @@
 # Web platform compatibility in Android WebView
 
 The Android WebView sometimes needs special consideration and care when making
-changes to web platform APIs and behaviours. Chromium developers who make these
+changes to web platform APIs and behaviours. Monyhar developers who make these
 changes (especially deliberate interventions) may want to consult this
 documentation and/or reach out to the WebView team if they're unsure how a
 change might affect WebView.
@@ -63,7 +63,7 @@ the latest version of WebView. This presents a significant problem for web
 platform changes if they cause an existing CTS test to fail; this means WebView
 is no longer compatible with that Android version's expectations, and the entire
 point of those expectations is that apps may also rely on them. CTS test
-failures introduced by Chromium changes are generally considered P1 and
+failures introduced by Monyhar changes are generally considered P1 and
 `ReleaseBlock-Dev`.
 
 ### WebView is often used to show "first-party" content
@@ -101,7 +101,7 @@ compatibility for several reasons:
 
 This means that WebView's API surface effectively includes not just the Java
 APIs that apps call to control it, but also the entire web platform, and
-therefore changes to Chromium need not touch any code in `//android_webview` to
+therefore changes to Monyhar need not touch any code in `//android_webview` to
 be a risk.
 
 ### WebView's metrics and experiments are less mature and comprehensive than Chrome's
@@ -165,7 +165,7 @@ even if they present _some_ compatibility risk. WebView focuses on:
 ### Unusual WebView behaviours
 
 WebView has a number of behaviours and APIs that aren't shared with Chrome or
-other browsers; these can cause unexpected compatibility issues with Chromium
+other browsers; these can cause unexpected compatibility issues with Monyhar
 changes, even if the change is not intended to change web-exposed behaviour.
 Some of the most important examples:
 
@@ -248,7 +248,7 @@ Some of the most important examples:
 
 WebView's APIs for allowing the app to control web permissions have significant
 limitations at present. The Web Permissions API is not implemented in WebView,
-and in general any code in Chromium that relies on being able to silently check
+and in general any code in Monyhar that relies on being able to silently check
 the status of permissions will not work - only actual permission requests are
 supported. This can cause problems when implementing web platform features that
 are gated behind permissions, or when changing the way that existing features

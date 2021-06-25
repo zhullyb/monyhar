@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -88,7 +88,7 @@ public class PhotoPickerDialog
      */
     public PhotoPickerDialog(WindowAndroid windowAndroid, ContentResolver contentResolver,
             PhotoPickerListener listener, boolean multiSelectionAllowed, List<String> mimeTypes) {
-        super(windowAndroid.getContext().get(), R.style.Theme_Chromium_Fullscreen);
+        super(windowAndroid.getContext().get(), R.style.Theme_Monyhar_Fullscreen);
 
         mWindowAndroid = windowAndroid;
         mListenerWrapper = new PhotoPickerListenerWrapper(listener);

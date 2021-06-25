@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -208,7 +208,7 @@ AutofillMetadata MergeMetadata(WalletMetadataSpecifics::Type type,
   // Special case for local models with a use_count of one. This means the local
   // model was only created, never used. The remote model should always be
   // preferred.
-  // This situation can happen for new Chromium instances where there is no data
+  // This situation can happen for new Monyhar instances where there is no data
   // yet on disk, making the use_date artificially high. Once the metadata sync
   // kicks in, we should use that value.
   if (local.use_count == 1) {

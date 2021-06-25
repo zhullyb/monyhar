@@ -1,4 +1,4 @@
-// Copyright 2020 The Chromium Authors. All rights reserved.
+// Copyright 2020 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,7 @@ class AssistantManagerInternal;
 namespace chromeos {
 namespace libassistant {
 
-class ChromiumApiDelegate;
+class MonyharApiDelegate;
 class LibassistantFactory;
 
 // Component managing the lifecycle of Libassistant,
@@ -73,9 +73,9 @@ class COMPONENT_EXPORT(LIBASSISTANT_SERVICE) ServiceController
   void SetStateAndInformObservers(mojom::ServiceState new_state);
 
   void CreateAndRegisterDeviceStateListener();
-  void CreateAndRegisterChromiumApiDelegate(
+  void CreateAndRegisterMonyharApiDelegate(
       mojo::PendingRemote<network::mojom::URLLoaderFactory> url_loader_factory);
-  void CreateChromiumApiDelegate(
+  void CreateMonyharApiDelegate(
       mojo::PendingRemote<network::mojom::URLLoaderFactory> url_loader_factory);
 
   mojom::ServiceState state_ = mojom::ServiceState::kStopped;
@@ -88,7 +88,7 @@ class COMPONENT_EXPORT(LIBASSISTANT_SERVICE) ServiceController
   std::unique_ptr<assistant_client::AssistantManager> assistant_manager_;
   assistant_client::AssistantManagerInternal* assistant_manager_internal_ =
       nullptr;
-  std::unique_ptr<ChromiumApiDelegate> monyhar_api_delegate_;
+  std::unique_ptr<MonyharApiDelegate> monyhar_api_delegate_;
   std::unique_ptr<DeviceStateListener> device_state_listener_;
 
   mojo::Receiver<mojom::ServiceController> receiver_{this};

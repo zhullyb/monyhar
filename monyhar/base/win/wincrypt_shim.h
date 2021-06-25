@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -7,7 +7,7 @@
 
 // wincrypt.h defines macros which conflict with OpenSSL's types. This header
 // includes wincrypt and undefines the OpenSSL macros which conflict. Any
-// Chromium headers which include wincrypt should instead include this header.
+// Monyhar headers which include wincrypt should instead include this header.
 
 #include <windows.h>
 

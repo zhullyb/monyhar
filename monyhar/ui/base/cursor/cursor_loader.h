@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -61,7 +61,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR) CursorLoader
   scoped_refptr<PlatformCursor> LoadCursorFromAsset(mojom::CursorType type);
 
   // Whether to use cursors provided by the underlying platform (e.g. X11
-  // cursors). If false or in the case of a failure, Chromium assets will be
+  // cursors). If false or in the case of a failure, Monyhar assets will be
   // used instead.
   const bool use_platform_cursors_;
 

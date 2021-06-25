@@ -1,4 +1,4 @@
-# Copyright 2017 The Chromium Authors. All rights reserved.
+# Copyright 2017 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -18,10 +18,10 @@ from gpu_tests import expected_color_test
 from py_utils import cloud_storage
 from telemetry.util import image_util
 
-_MAPS_PERF_TEST_PATH = os.path.join(path_util.GetChromiumSrcDir(), 'tools',
+_MAPS_PERF_TEST_PATH = os.path.join(path_util.GetMonyharSrcDir(), 'tools',
                                     'perf', 'page_sets', 'maps_perf_test')
 
-_DATA_PATH = os.path.join(path_util.GetChromiumSrcDir(), 'content', 'test',
+_DATA_PATH = os.path.join(path_util.GetMonyharSrcDir(), 'content', 'test',
                           'gpu', 'gpu_tests')
 
 _TEST_NAME = 'Maps_maps'

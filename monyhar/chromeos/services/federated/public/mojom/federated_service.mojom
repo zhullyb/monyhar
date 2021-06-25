@@ -1,20 +1,20 @@
-// Copyright 2021 The Chromium Authors. All rights reserved.
+// Copyright 2021 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // Top-level API of the Federated Service: report an example.
 
 // NOTE: This mojom should exist in two places and must be kept in sync:
-//       Chromium: //chromeos/services/federated/public/mojom
+//       Monyhar: //chromeos/services/federated/public/mojom
 //       Chrome OS: src/platform2/federated/mojom/
 
 module chromeos.federated.mojom;
 
 // NOTE: The base directory for 'import' statements is expected to differ
-//       between Chromium and Chrome OS versions of this file.
+//       between Monyhar and Chrome OS versions of this file.
 import "chromeos/services/federated/public/mojom/example.mojom";
 
-// Top-level interface between Chromium and the Federated Service daemon.
+// Top-level interface between Monyhar and the Federated Service daemon.
 // Next ordinal: 2
 interface FederatedService {
   // Binds another pipe to this instance.

@@ -1,6 +1,6 @@
 # Cr
 
-Cr is a tool that tries to hide some of the tools used for working on Chromium
+Cr is a tool that tries to hide some of the tools used for working on Monyhar
 behind an abstraction layer. Nothing that cr does can't be done manually, but cr
 attempts to make things nicer. Its main additional feature is that it allows you
 to build many configurations and run targets within a single checkout (by not

@@ -1,4 +1,4 @@
-# The Chromium Test Executable API
+# The Monyhar Test Executable API
 
 [bit.ly/monyhar-test-runner-api][1] (*)
 
@@ -8,13 +8,13 @@
 ## Introduction
 
 This document defines the API that test executables must implement in order to
-be run on the Chromium continuous integration infrastructure (the
+be run on the Monyhar continuous integration infrastructure (the
 [LUCI][2]
 system using the `monyhar` and `monyhar_trybot` recipes).
 
 *** note
 **NOTE:** This document specifies the existing `isolated_scripts` API in the
-Chromium recipe. Currently we also support other APIs (e.g., for
+Monyhar recipe. Currently we also support other APIs (e.g., for
 GTests), but we should migrate them to use the `isolated_scripts` API.
 That work is not currently scheduled.
 ***
@@ -24,18 +24,18 @@ specify how performance tests should work, though in principle they
 could probably work the same way and possibly just produce different
 output.
 
-This document is specifically targeted at Chromium and assumes you are
+This document is specifically targeted at Monyhar and assumes you are
 using GN and Ninja for your build system. It should be possible to adapt
 these APIs to other projects and build recipes, but this is not an
 immediate goal. Similarly, if a project adapts this API and the related
 specifications it should be able to reuse the functionality and tooling
-we've built out for Chromium's CI system more easily in other LUCI
+we've built out for Monyhar's CI system more easily in other LUCI
 deployments.
 
 ***
 **NOTE:** It bears repeating that this describes the current state of
 affairs, and not the desired end state. A companion doc,
-[Cleaning up the Chromium Testing Environment][3],
+[Cleaning up the Monyhar Testing Environment][3],
 discusses a possible path forward and end state.
 ***
 
@@ -133,7 +133,7 @@ end (to form a glob). The executable must run only the test matching
 those names or globs. "*" is _only_ supported at the end, i.e., 'Foo.*'
 is legal, but '*.bar' is not. If the string has a "-" at the front, the
 test (or glob of tests) must be skipped, not run. This matches how test
-names are specified in the simple form of the [Chromium Test List
+names are specified in the simple form of the [Monyhar Test List
 Format][9]. We use the double
 colon as a separator because most other common punctuation characters
 can occur in test names (some test suites use URLs as test names, for
@@ -147,7 +147,7 @@ multiple occurrences (and how this arg interacts with
 
 If provided, the executable must read the given filename to determine
 which tests to run and what to expect their results to be. The file must
-be in the [Chromium Test List Format][9] (either the simple or
+be in the [Monyhar Test List Format][9] (either the simple or
 tagged formats are fine). This argument may be provided multiple times;
 how to treat multiple occurrences (and how this arg interacts with
 `--isolated-script-test-filter`) is described below.
@@ -273,7 +273,7 @@ times, or together. There are two main sets of reasons:
     multiple sets of test expectations (e.g., the base test expectations and
     then MSAN-specific expectations), or to specify expectations in one file
     and list which tests to run in a separate file.
-*   Second, the way the Chromium recipes work, in order to retry a test step to
+*   Second, the way the Monyhar recipes work, in order to retry a test step to
     confirm test failures, the recipe doesn't want to have to parse the
     existing command line, it just wants to append
     --isolated-script-test-filter and list the
@@ -300,7 +300,7 @@ duration as possible, you will need a more complicated process. For example,
 you could run all of the tests once to determine their individual running
 times, and then build up lists of tests based on that, or do something even
 more complicated based on multiple test runs to smooth over variance in test
-execution times. Chromium does not currently attempt to do this for functional
+execution times. Monyhar does not currently attempt to do this for functional
 tests, but we do something similar for performance tests in order to better
 achieve equal running times and device affinity for consistent results.
 
@@ -394,19 +394,19 @@ This document only partially makes sense in isolation.
 The [JSON Test Results Format](json_test_results_format.md) document
 specifies how the results of the test run should be reported.
 
-The [Chromium Test List Format][14] specifies in more detail how we can specify
+The [Monyhar Test List Format][14] specifies in more detail how we can specify
 which tests to run and which to skip, and whether the tests are expected to
 pass or fail.
 
 Implementing everything in this document plus the preceding three documents
-should fully specify how tests are run in Chromium. And, if we do this,
+should fully specify how tests are run in Monyhar. And, if we do this,
 implementing tools to manage tests should be significantly easier.
 
-[On Naming Chromium Builders and Build Steps][15] is a related proposal that
+[On Naming Monyhar Builders and Build Steps][15] is a related proposal that
 has been partially implemented; it is complementary to this work, but not
 required.
 
-[Cleaning up the Chromium Testing Conventions][3] describes a series of
+[Cleaning up the Monyhar Testing Conventions][3] describes a series of
 changes we might want to make to this API and the related infrastructure to
 simplify things.
 
@@ -416,7 +416,7 @@ Additional documents that may be of interest:
 *   [The MB (Meta-Build wrapper) Design Spec][11]
 *   [Test Activation / Deactivation (TADA)][12] (internal Google document only,
     sorry)
-*   [Standardize Artifacts for Chromium Testing][13] is somewhat dated but goes
+*   [Standardize Artifacts for Monyhar Testing][13] is somewhat dated but goes
     into slightly greater detail on how to store artifacts produced by tests
     than the JSON Test Results Format does.
 
@@ -428,7 +428,7 @@ Additional documents that may be of interest:
 | ---------- | -------- |
 | 2017-12-13 | Initial version. This tried to be a full-featured spec that defined common flags that devs might want with friendly names, as well the flags needed to run tests on the bots. |
 | 2019-05-24 | Second version. The spec was significantly revised to just specify the minimal subset needed to run tests consistently on bots given the current infrastructure. |
-| 2019-05-29 | All TODOs and discussion of future work was stripped out; now the spec only specifies how the `isolated_scripts` currently behave. Future work was moved to a new doc, [Cleaning up the Chromium Testing Environment][3]. |
+| 2019-05-29 | All TODOs and discussion of future work was stripped out; now the spec only specifies how the `isolated_scripts` currently behave. Future work was moved to a new doc, [Cleaning up the Monyhar Testing Environment][3]. |
 | 2019-09-16 | Add comment about ordering of filters and longest match winning for `--isolated-script-test-filter`. |
 | 2020-07-01 | Moved into the src repo and converted to Markdown. No content changes otherwise. |
 

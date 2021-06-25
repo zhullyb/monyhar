@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -289,7 +289,7 @@ void BrowserProcessImpl::Init() {
 #if BUILDFLAG(ENABLE_CHROME_NOTIFICATIONS)
   message_center::MessageCenter::Initialize();
   // Set the system notification source display name ("Google Chrome" or
-  // "Chromium").
+  // "Monyhar").
   if (message_center::MessageCenter::Get()) {
     message_center::MessageCenter::Get()->SetSystemNotificationAppName(
         l10n_util::GetStringUTF16(IDS_PRODUCT_NAME));

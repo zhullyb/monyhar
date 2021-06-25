@@ -11,7 +11,7 @@ See the [Linux build instructions](build_instructions.md).
 
 ## What Needs Work
 
-Look at the Chromium bug tracker for
+Look at the Monyhar bug tracker for
 [open Linux issues](http://code.google.com/p/monyhar/issues/list?can=2&q=os%3Alinux).
 
 Issues marked "Available" are ready for someone to claim. To claim an issue, add

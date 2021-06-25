@@ -52,11 +52,11 @@ typedef interface IElevator IElevator;
 #endif 	/* __IElevator_FWD_DEFINED__ */
 
 
-#ifndef __IElevatorChromium_FWD_DEFINED__
-#define __IElevatorChromium_FWD_DEFINED__
-typedef interface IElevatorChromium IElevatorChromium;
+#ifndef __IElevatorMonyhar_FWD_DEFINED__
+#define __IElevatorMonyhar_FWD_DEFINED__
+typedef interface IElevatorMonyhar IElevatorMonyhar;
 
-#endif 	/* __IElevatorChromium_FWD_DEFINED__ */
+#endif 	/* __IElevatorMonyhar_FWD_DEFINED__ */
 
 
 #ifndef __IElevatorChrome_FWD_DEFINED__
@@ -94,11 +94,11 @@ typedef interface IElevator IElevator;
 #endif 	/* __IElevator_FWD_DEFINED__ */
 
 
-#ifndef __IElevatorChromium_FWD_DEFINED__
-#define __IElevatorChromium_FWD_DEFINED__
-typedef interface IElevatorChromium IElevatorChromium;
+#ifndef __IElevatorMonyhar_FWD_DEFINED__
+#define __IElevatorMonyhar_FWD_DEFINED__
+typedef interface IElevatorMonyhar IElevatorMonyhar;
 
-#endif 	/* __IElevatorChromium_FWD_DEFINED__ */
+#endif 	/* __IElevatorMonyhar_FWD_DEFINED__ */
 
 
 #ifndef __IElevatorChrome_FWD_DEFINED__
@@ -228,19 +228,19 @@ EXTERN_C const IID IID_IElevator;
 #endif 	/* __IElevator_INTERFACE_DEFINED__ */
 
 
-#ifndef __IElevatorChromium_INTERFACE_DEFINED__
-#define __IElevatorChromium_INTERFACE_DEFINED__
+#ifndef __IElevatorMonyhar_INTERFACE_DEFINED__
+#define __IElevatorMonyhar_INTERFACE_DEFINED__
 
-/* interface IElevatorChromium */
+/* interface IElevatorMonyhar */
 /* [unique][helpstring][uuid][oleautomation][object] */ 
 
 
-EXTERN_C const IID IID_IElevatorChromium;
+EXTERN_C const IID IID_IElevatorMonyhar;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
     MIDL_INTERFACE("B88C45B9-8825-4629-B83E-77CC67D9CEED")
-    IElevatorChromium : public IElevator
+    IElevatorMonyhar : public IElevator
     {
     public:
     };
@@ -248,24 +248,24 @@ EXTERN_C const IID IID_IElevatorChromium;
     
 #else 	/* C style interface */
 
-    typedef struct IElevatorChromiumVtbl
+    typedef struct IElevatorMonyharVtbl
     {
         BEGIN_INTERFACE
         
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IElevatorChromium * This,
+            IElevatorMonyhar * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IElevatorChromium * This);
+            IElevatorMonyhar * This);
         
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            IElevatorChromium * This);
+            IElevatorMonyhar * This);
         
         HRESULT ( STDMETHODCALLTYPE *RunRecoveryCRXElevated )( 
-            IElevatorChromium * This,
+            IElevatorMonyhar * This,
             /* [string][in] */ const WCHAR *crx_path,
             /* [string][in] */ const WCHAR *browser_appid,
             /* [string][in] */ const WCHAR *browser_version,
@@ -274,11 +274,11 @@ EXTERN_C const IID IID_IElevatorChromium;
             /* [out] */ ULONG_PTR *proc_handle);
         
         END_INTERFACE
-    } IElevatorChromiumVtbl;
+    } IElevatorMonyharVtbl;
 
-    interface IElevatorChromium
+    interface IElevatorMonyhar
     {
-        CONST_VTBL struct IElevatorChromiumVtbl *lpVtbl;
+        CONST_VTBL struct IElevatorMonyharVtbl *lpVtbl;
     };
 
     
@@ -286,17 +286,17 @@ EXTERN_C const IID IID_IElevatorChromium;
 #ifdef COBJMACROS
 
 
-#define IElevatorChromium_QueryInterface(This,riid,ppvObject)	\
+#define IElevatorMonyhar_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
-#define IElevatorChromium_AddRef(This)	\
+#define IElevatorMonyhar_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
 
-#define IElevatorChromium_Release(This)	\
+#define IElevatorMonyhar_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
 
-#define IElevatorChromium_RunRecoveryCRXElevated(This,crx_path,browser_appid,browser_version,session_id,caller_proc_id,proc_handle)	\
+#define IElevatorMonyhar_RunRecoveryCRXElevated(This,crx_path,browser_appid,browser_version,session_id,caller_proc_id,proc_handle)	\
     ( (This)->lpVtbl -> RunRecoveryCRXElevated(This,crx_path,browser_appid,browser_version,session_id,caller_proc_id,proc_handle) ) 
 
 
@@ -308,7 +308,7 @@ EXTERN_C const IID IID_IElevatorChromium;
 
 
 
-#endif 	/* __IElevatorChromium_INTERFACE_DEFINED__ */
+#endif 	/* __IElevatorMonyhar_INTERFACE_DEFINED__ */
 
 
 #ifndef __IElevatorChrome_INTERFACE_DEFINED__

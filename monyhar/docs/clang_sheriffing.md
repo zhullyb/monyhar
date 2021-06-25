@@ -1,15 +1,15 @@
 # Clang Sheriffing
 
-Chromium bundles its own pre-built version of [Clang](clang.md). This is done so
-that Chromium developers have access to the latest and greatest developer tools
+Monyhar bundles its own pre-built version of [Clang](clang.md). This is done so
+that Monyhar developers have access to the latest and greatest developer tools
 provided by Clang and LLVM (ASan, CFI, coverage, etc). In order to [update the
 compiler](updating_clang.md) (roll clang), it has to be tested so that we can be
-confident that it works in the configurations that Chromium cares about.
+confident that it works in the configurations that Monyhar cares about.
 
 We maintain a [waterfall of
 builders](https://ci.monyhar.org/p/monyhar/g/monyhar.clang/console) that
 continuously build fresh versions of Clang and use them to build and test
-Chromium. "Clang sheriffing" is the process of monitoring that waterfall,
+Monyhar. "Clang sheriffing" is the process of monitoring that waterfall,
 determining if any compile or test failures are due to an upstream compiler
 change, filing bugs upstream, and often reverting bad changes in LLVM. This
 document describes some of the processes and techniques for doing that.
@@ -53,7 +53,7 @@ bug, for example https://crbug.com/1105134.
 
 ## Is it the compiler?
 
-Chromium does not always build and pass tests in all configurations that
+Monyhar does not always build and pass tests in all configurations that
 everyone cares about. Some configurations simply take too long to build
 (ThinLTO) or be tested (dbg) on the CQ before committing. And, some tests are
 flaky. So, our console is often filled with red boxes, and the boxes don't
@@ -100,7 +100,7 @@ things:
 
 1. File a crbug documenting the crash. Include the range, and any other bots
    displaying the same symptoms.
-1. All clang crashes on the Chromium bots are automatically uploaded to
+1. All clang crashes on the Monyhar bots are automatically uploaded to
    Cloud Storage. On the failing build, click the "stdout" link of the
    "process clang crashes" step right after the red compile step. It will
    print something like
@@ -148,9 +148,9 @@ things:
 
 ## Compiler warning change
 
-New Clang versions often find new bad code patterns to warn on. Chromium builds
+New Clang versions often find new bad code patterns to warn on. Monyhar builds
 with `-Werror`, so improvements to warnings often turn into build failures in
-Chromium. Once you understand the code pattern Clang is complaining about, file
+Monyhar. Once you understand the code pattern Clang is complaining about, file
 a bug to do either fix or silence the new warning.
 
 If this is a completely new warning, disable it by adding `-Wno-NEW-WARNING` to
@@ -161,7 +161,7 @@ example](https://monyhar-review.googlesource.com/1251622). This will keep the
 ToT bots green while you decide what to do.
 
 Sometimes, behavior changes and a pre-existing warning changes to warn on new
-code. In this case, fixing Chromium may be the easiest and quickest fix. If
+code. In this case, fixing Monyhar may be the easiest and quickest fix. If
 there are many sites, you may consider changing clang to put the new diagnostic
 into a new warning group so you can handle it as a new warning as described
 above.
@@ -179,7 +179,7 @@ reverting the change upstream and asking for more discussion.
 This rarely happens, but sometimes clang becomes more strict and no longer
 accepts code that it previously did. The standard procedure for a new warning
 may apply, but it's more likely that the upstream Clang change should be
-reverted, if the C++ code in question in Chromium looks valid.
+reverted, if the C++ code in question in Monyhar looks valid.
 
 ## Miscompile
 
@@ -193,11 +193,11 @@ status, this is probably what you want to do.
 
 `ld.lld`'s `--reproduce` flag makes LLD write a tar archive of all its inputs
 and a file `response.txt` that contains the link command. This allows people to
-work on linker bugs without having to have a Chromium build environment.
+work on linker bugs without having to have a Monyhar build environment.
 
 To use `ld.lld`'s `--reproduce` flag, follow these steps:
 
-1. Locally (build Chromium with a locally-built
+1. Locally (build Monyhar with a locally-built
    clang)[https://monyhar.googlesource.com/monyhar/src.git/+/main/docs/clang.md#Using-a-custom-clang-binary]
 
 1. After reproducing the link error, build just the failing target with
@@ -231,7 +231,7 @@ Notes:
 
  - All steps assume they are run from the output directory (the same directory args.gn is in).
 
- - Commands have been shortened for clarity. In particular, Chromium build commands are
+ - Commands have been shortened for clarity. In particular, Monyhar build commands are
    generally long, with many parts that you just copy-paste when debugging. These have
    largely been omitted.
 
@@ -292,7 +292,7 @@ instead produces LLVM bitcode files. A simple example would be:
 $ clang++ -c -flto=thin foo.cpp -o foo.o
 ```
 
-In a Chromium build, these files reside under `obj/`, and you can generate them using ninja.
+In a Monyhar build, these files reside under `obj/`, and you can generate them using ninja.
 For example:
 
 ```sh

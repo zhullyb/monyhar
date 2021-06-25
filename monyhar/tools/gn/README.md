@@ -1,6 +1,6 @@
 GN now lives at https://gn.googlesource.com/.
 
-To roll the latest version of GN into Chromium:
+To roll the latest version of GN into Monyhar:
 
 1. Create a new Git branch.
 2. Run `python tools/gn/roll_gn.py`; this will modify //DEPS and

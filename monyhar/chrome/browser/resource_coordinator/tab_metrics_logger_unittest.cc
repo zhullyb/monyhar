@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -37,8 +37,8 @@ using tab_ranker::WindowFeatures;
 
 namespace {
 
-constexpr char kChromiumUrl[] = "https://www.monyhar.org";
-constexpr char kChromiumDomain[] = "www.monyhar.org";
+constexpr char kMonyharUrl[] = "https://www.monyhar.org";
+constexpr char kMonyharDomain[] = "www.monyhar.org";
 constexpr char kExampleUrl[] = "https://example.com/test.html";
 constexpr char kExampleDomain[] = "example.com";
 
@@ -126,7 +126,7 @@ class TabMetricsLoggerTest : public ChromeRenderViewHostTestHarness {
     // This will not cause any leak, because we'll call
     // tab_strip_model_->CloseAllTabs() in TearDown.
     web_contents_ = tab_activity_simulator_.AddWebContentsAndNavigate(
-        tab_strip_model_, GURL(kChromiumUrl));
+        tab_strip_model_, GURL(kMonyharUrl));
     tab_strip_model_->ActivateTabAt(0);
     // This will not cause any leak because it's just a static_cast.
     web_contents_tester_ = WebContentsTester::For(web_contents_);
@@ -180,7 +180,7 @@ TEST_F(TabMetricsLoggerTest, GetNavigationEntryCount) {
   tab_activity_simulator_.Navigate(web_contents_, GURL(kExampleUrl),
                                    pg_metrics_.page_transition);
   EXPECT_EQ(CurrentTabFeatures().navigation_entry_count, 2);
-  tab_activity_simulator_.Navigate(web_contents_, GURL(kChromiumUrl),
+  tab_activity_simulator_.Navigate(web_contents_, GURL(kMonyharUrl),
                                    pg_metrics_.page_transition);
   EXPECT_EQ(CurrentTabFeatures().navigation_entry_count, 3);
 }
@@ -189,7 +189,7 @@ TEST_F(TabMetricsLoggerTest, GetNavigationEntryCount) {
 TEST_F(TabMetricsLoggerTest, GetSiteEngagementScore) {
   EXPECT_EQ(CurrentTabFeatures().site_engagement_score, 0);
   site_engagement::SiteEngagementService::Get(profile())->ResetBaseScoreForURL(
-      GURL(kChromiumUrl), 91);
+      GURL(kMonyharUrl), 91);
   EXPECT_EQ(CurrentTabFeatures().site_engagement_score, 90);
 }
 
@@ -202,7 +202,7 @@ TEST_F(TabMetricsLoggerTest, GetAudibleState) {
 
 // Tests host.
 TEST_F(TabMetricsLoggerTest, GetHost) {
-  EXPECT_EQ(CurrentTabFeatures().host, kChromiumDomain);
+  EXPECT_EQ(CurrentTabFeatures().host, kMonyharDomain);
 }
 
 // Tests creating a flat TabFeatures structure for logging a tab and its
@@ -252,11 +252,11 @@ TEST_F(TabMetricsLoggerTest, GetTabFeatures) {
   // Update tab features.
   ui::PageTransition page_transition = static_cast<ui::PageTransition>(
       ui::PAGE_TRANSITION_LINK | ui::PAGE_TRANSITION_FROM_ADDRESS_BAR);
-  tab_activity_simulator.Navigate(bg_contents, GURL(kChromiumUrl),
+  tab_activity_simulator.Navigate(bg_contents, GURL(kMonyharUrl),
                                   page_transition);
   tab_strip_model->SetTabPinned(1, true);
   site_engagement::SiteEngagementService::Get(profile())->ResetBaseScoreForURL(
-      GURL(kChromiumUrl), 91);
+      GURL(kMonyharUrl), 91);
 
   {
     TabMetricsLogger::PageMetrics bg_metrics;
@@ -270,7 +270,7 @@ TEST_F(TabMetricsLoggerTest, GetTabFeatures) {
         TabMetricsLogger::GetTabFeatures(bg_metrics, bg_contents).value();
     EXPECT_EQ(bg_features.has_before_unload_handler, false);
     EXPECT_EQ(bg_features.has_form_entry, false);
-    EXPECT_EQ(bg_features.host, kChromiumDomain);
+    EXPECT_EQ(bg_features.host, kMonyharDomain);
     EXPECT_EQ(bg_features.is_pinned, true);
     EXPECT_EQ(bg_features.key_event_count, 3);
     EXPECT_EQ(bg_features.mouse_event_count, 42);
@@ -299,7 +299,7 @@ class TabMetricsLoggerUKMTest : public ::testing::Test {
   // Returns a new source_id associated with the test url.
   ukm::SourceId GetSourceId() {
     const ukm::SourceId source_id = ukm::UkmRecorder::GetNewSourceID();
-    test_ukm_recorder_.UpdateSourceURL(source_id, GURL(kChromiumUrl));
+    test_ukm_recorder_.UpdateSourceURL(source_id, GURL(kMonyharUrl));
     return source_id;
   }
 

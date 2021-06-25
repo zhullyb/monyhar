@@ -1,4 +1,4 @@
-// Copyright 2014 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -1219,15 +1219,15 @@ TEST_F(CanvasRenderingContext2DTestAccelerated, LowLatencyIsNotSingleBuffered) {
   EXPECT_TRUE(CanvasElement().GetCanvas2DLayerBridge()->IsAccelerated());
 }
 
-class CanvasRenderingContext2DTestImageChromium
+class CanvasRenderingContext2DTestImageMonyhar
     : public CanvasRenderingContext2DTestAccelerated {
  protected:
-  CanvasRenderingContext2DTestImageChromium()
+  CanvasRenderingContext2DTestImageMonyhar()
       : CanvasRenderingContext2DTestAccelerated() {
     // This test relies on overlays being supported and enabled for low latency
     // canvas.  The latter is true only on ChromeOS in production.
     feature_list_.InitAndEnableFeature(
-        features::kLowLatencyCanvas2dImageChromium);
+        features::kLowLatencyCanvas2dImageMonyhar);
   }
 
   scoped_refptr<viz::TestContextProvider> CreateContextProvider() override {
@@ -1245,7 +1245,7 @@ class CanvasRenderingContext2DTestImageChromium
   ScopedTestingPlatformSupport<GpuMemoryBufferTestPlatform> platform_;
 };
 
-TEST_F(CanvasRenderingContext2DTestImageChromium, LowLatencyIsSingleBuffered) {
+TEST_F(CanvasRenderingContext2DTestImageMonyhar, LowLatencyIsSingleBuffered) {
   CreateContext(kNonOpaque, kLowLatency);
   // No need to set-up the layer bridge when testing low latency mode.
   DrawSomething();

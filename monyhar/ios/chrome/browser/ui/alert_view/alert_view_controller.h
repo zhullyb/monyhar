@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2019 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -12,7 +12,7 @@
 // This class is a replacement for UIAlertController that supports custom
 // presentation styles, i.e. change modalPresentationStyle,
 // modalTransitionStyle, or transitioningDelegate. The style is more similar to
-// the rest of Chromium. Current limitations:
+// the rest of Monyhar. Current limitations:
 //     Action Sheet Style is not supported.
 @interface AlertViewController : UIViewController <AlertConsumer>
 

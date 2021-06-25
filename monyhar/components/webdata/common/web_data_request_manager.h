@@ -1,10 +1,10 @@
-// Copyright 2012 The Chromium Authors. All rights reserved.
+// Copyright 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Chromium settings and storage represent user-selected preferences and
+// Monyhar settings and storage represent user-selected preferences and
 // information and MUST not be extracted, overwritten or modified except
-// through Chromium defined APIs.
+// through Monyhar defined APIs.
 
 #ifndef COMPONENTS_WEBDATA_COMMON_WEB_DATA_REQUEST_MANAGER_H__
 #define COMPONENTS_WEBDATA_COMMON_WEB_DATA_REQUEST_MANAGER_H__

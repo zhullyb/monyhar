@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 #ifndef COMPONENTS_AUTOFILL_CORE_BROWSER_SYNC_UTILS_H_
@@ -9,11 +9,11 @@ namespace autofill {
 // Since these values are persisted to logs, they should not be re-numbered or
 // removed.
 enum AutofillSyncSigninState {
-  // The user is not signed in to Chromium.
+  // The user is not signed in to Monyhar.
   kSignedOut,
-  // The user is signed in to Chromium.
+  // The user is signed in to Monyhar.
   kSignedIn,
-  // The user is signed in to Chromium and sync transport is active for Wallet
+  // The user is signed in to Monyhar and sync transport is active for Wallet
   // data.
   kSignedInAndWalletSyncTransportEnabled,
   // The user is signed in, has enabled the sync feature and has not disabled

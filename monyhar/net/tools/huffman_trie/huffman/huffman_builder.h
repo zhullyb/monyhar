@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Chromium Authors. All rights reserved.
+// Copyright (c) 2016 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -47,7 +47,7 @@ class HuffmanBuilder {
   HuffmanRepresentationTable ToTable();
 
   // Outputs the Huffman representation as a vector of uint8_t's in a format
-  // Chromium can use to reconstruct the tree.
+  // Monyhar can use to reconstruct the tree.
   //
   // The nodes of the tree are pairs of uint8s. The last node in the array is
   // the root of the tree. Each pair is two uint8_t values, the first is "left"

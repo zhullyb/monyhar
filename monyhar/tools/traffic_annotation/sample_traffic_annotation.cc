@@ -1,4 +1,4 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2017 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -84,7 +84,7 @@ void PrefetchImage1(const GURL& url) {
         semantics {
           sender: "Omnibox"
           description:
-            "Chromium provides answers in the suggestion list for certain "
+            "Monyhar provides answers in the suggestion list for certain "
             "queries that the user types in the omnibox. This request "
             "retrieves a small image (for example, an icon illustrating the "
             "current weather conditions) when this can add information to an "
@@ -103,7 +103,7 @@ void PrefetchImage1(const GURL& url) {
           setting:
             "You can enable or disable this feature via 'Use a prediction "
             "service to help complete searches and URLs typed in the "
-            "address bar.' in Chromium's settings under Advanced. The "
+            "address bar.' in Monyhar's settings under Advanced. The "
             "feature is enabled by default."
           chrome_policy {
             SearchSuggestEnabled {
@@ -122,7 +122,7 @@ void PrefetchImage2(const GURL& url) {
         semantics {
           sender: "Chrome Password Manager"
           description:
-            "Every credential saved in Chromium via the Credential Management "
+            "Every credential saved in Monyhar via the Credential Management "
             "API can have an avatar URL. The URL is essentially provided by "
             "the site calling the API. The avatar is used in the account "
             "chooser UI and auto signin toast which appear when a site calls "
@@ -130,7 +130,7 @@ void PrefetchImage2(const GURL& url) {
             "showing the UI."
           trigger:
             "User visits a site that calls navigator.credentials.get(). "
-            "Assuming there are matching credentials in the Chromium password "
+            "Assuming there are matching credentials in the Monyhar password "
             "store, the avatars are retrieved."
           destination: WEBSITE
         }
@@ -177,7 +177,7 @@ net::NetworkTrafficAnnotationTag GetNetworkTrafficAnnotation(
         semantics {
           sender: "Metrics UMA Log Uploader"
           description:
-            "Report of usage statistics and crash-related data about Chromium. "
+            "Report of usage statistics and crash-related data about Monyhar. "
             "Usage statistics contain information such as preferences, button "
             "clicks, and memory usage and do not include web page URLs or "
             "personal information. See more at "
@@ -192,7 +192,7 @@ net::NetworkTrafficAnnotationTag GetNetworkTrafficAnnotation(
         semantics {
           sender: "Metrics UKM Log Uploader"
           description:
-            "Report of usage statistics that are keyed by URLs to Chromium, "
+            "Report of usage statistics that are keyed by URLs to Monyhar, "
             "sent only if the profile has History Sync. This includes "
             "information about the web pages you visit and your usage of them, "
             "such as page load speed. This will also include URLs and "
@@ -216,7 +216,7 @@ void UploadLog(const bool& uma_service_type) {
         semantics {
           trigger:
             "Reports are automatically generated on startup and at intervals "
-            "while Chromium is running."
+            "while Monyhar is running."
           data:
             "A protocol buffer with usage statistics and crash related data."
           destination: GOOGLE_OWNED_SERVICE
@@ -226,7 +226,7 @@ void UploadLog(const bool& uma_service_type) {
           setting:
             "Users can enable or disable this feature by disabling "
             "'Automatically send usage statistics and crash reports to Google' "
-            "in Chromium's settings under Advanced Settings, Privacy. The "
+            "in Monyhar's settings under Advanced Settings, Privacy. The "
             "feature is enabled by default."
           chrome_policy {
             MetricsReportingEnabled {

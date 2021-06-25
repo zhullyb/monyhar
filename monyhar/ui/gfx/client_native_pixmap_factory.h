@@ -1,4 +1,4 @@
-// Copyright 2015 The Chromium Authors. All rights reserved.
+// Copyright 2015 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -19,7 +19,7 @@ namespace gfx {
 struct NativePixmapHandle;
 class Size;
 
-// The Ozone interface allows external implementations to hook into Chromium to
+// The Ozone interface allows external implementations to hook into Monyhar to
 // provide a client pixmap for non-GPU processes.
 class GFX_EXPORT ClientNativePixmapFactory {
  public:

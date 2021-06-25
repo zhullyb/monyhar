@@ -42,11 +42,11 @@ const Browser = {
 
 /*
  * Map of browser name to checking method.
- * Used by assertChromiumBrowser() to verify that only one is true at a time.
+ * Used by assertMonyharBrowser() to verify that only one is true at a time.
  */
-const NonChromeChromiumBrowser = {
-  EDGE_CHROMIUM: userAgentBrowser.isEdgeChromium,
-  OPERA_CHROMIUM: userAgentBrowser.isOperaChromium
+const NonChromeMonyharBrowser = {
+  EDGE_CHROMIUM: userAgentBrowser.isEdgeMonyhar,
+  OPERA_CHROMIUM: userAgentBrowser.isOperaMonyhar
 };
 
 /*
@@ -70,16 +70,16 @@ function assertBrowser(browser) {
 
 
 /*
- * Assert that a given browser is a Chromium variant.
+ * Assert that a given browser is a Monyhar variant.
  */
-function assertNonChromeChromiumBrowser(browser) {
+function assertNonChromeMonyharBrowser(browser) {
   assertTrue(
-      'Supplied argument "browser" not in ChromiumBrowser object',
-      googObject.containsValue(NonChromeChromiumBrowser, browser));
+      'Supplied argument "browser" not in MonyharBrowser object',
+      googObject.containsValue(NonChromeMonyharBrowser, browser));
 
   // Verify that the method is true for the given browser
   // and false for all others.
-  googObject.forEach(NonChromeChromiumBrowser, (f, name) => {
+  googObject.forEach(NonChromeMonyharBrowser, (f, name) => {
     if (f == browser) {
       assertTrue(`Value for browser ${name}`, f());
     } else {
@@ -124,9 +124,9 @@ testSuite({
 
   testOpera15() {
     util.setUserAgent(testAgents.OPERA_15);
-    // Opera 15 is Chromium 28.  We treat all Chromium variants as Chrome.
+    // Opera 15 is Monyhar 28.  We treat all Monyhar variants as Chrome.
     assertBrowser(Browser.CHROME);
-    assertNonChromeChromiumBrowser(NonChromeChromiumBrowser.OPERA_CHROMIUM);
+    assertNonChromeMonyharBrowser(NonChromeMonyharBrowser.OPERA_CHROMIUM);
     assertVersion('28.0.1500.52');
     assertVersionBetween('28.00', '29.00');
   },
@@ -229,10 +229,10 @@ testSuite({
     assertVersionBetween('11.0', '13.0');
   },
 
-  testEdgeChromium() {
+  testEdgeMonyhar() {
     util.setUserAgent(testAgents.EDGE_CHROMIUM);
     assertBrowser(Browser.CHROME);
-    assertNonChromeChromiumBrowser(NonChromeChromiumBrowser.EDGE_CHROMIUM);
+    assertNonChromeMonyharBrowser(NonChromeMonyharBrowser.EDGE_CHROMIUM);
     assertVersion('74.1.96.24');
     assertVersionBetween('74.1', '74.2');
   },

@@ -193,7 +193,7 @@ bool File::WOpen(const wchar *Name)
 bool File::Create(const wchar *Name,uint Mode)
 {
 #if defined(CHROMIUM_UNRAR)
-  // Since the Chromium sandbox does not allow the creation of files, use the
+  // Since the Monyhar sandbox does not allow the creation of files, use the
   // provided file.
   hFile = hOpenFile;
 #else

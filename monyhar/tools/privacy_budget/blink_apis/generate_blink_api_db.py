@@ -1,6 +1,6 @@
 #!/usr/bin/env vpython
 
-# Copyright 2020 The Chromium Authors. All rights reserved.
+# Copyright 2020 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -37,7 +37,7 @@ The schema is described in proto/blink_apis.proto. It has the following goals:
 
   * Be a method for looking up the APIs that are affected by a runtime feature.
 
-To generate this API DB, run the following in a Chromium build directory:
+To generate this API DB, run the following in a Monyhar build directory:
 
     ninja blink_apis
 
@@ -62,7 +62,7 @@ def parse_options():
     parser.add_argument(
         "--monyhar_revision",
         type=str,
-        help="Chromium revision (git hash) for the source of Blink WebIDL DB")
+        help="Monyhar revision (git hash) for the source of Blink WebIDL DB")
     args = parser.parse_args()
 
     required_option_names = ("web_idl_database", "output", "web_feature_mojom")

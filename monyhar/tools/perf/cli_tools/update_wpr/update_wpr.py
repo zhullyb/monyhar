@@ -1,4 +1,4 @@
-# Copyright 2018 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Monyhar Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -643,7 +643,7 @@ def Main(argv):
       help='Number of times to repeat the entire pageset.')
   parser.add_argument(
       '--binary', default=None,
-      help='Path to the Chromium/Chrome binary relative to output directory. '
+      help='Path to the Monyhar/Chrome binary relative to output directory. '
            'Defaults to default Chrome browser installed if not specified.')
 
   subparsers = parser.add_subparsers(

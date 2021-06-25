@@ -72,7 +72,7 @@
 <translation id="4405930547258349619">મુખ્ય લાઇબ્રેરી</translation>
 <translation id="443560535555262820">ઍક્સેસિબિલિટીની પસંદગીઓ ખોલો</translation>
 <translation id="4450893287417543264">ફરી બતાવશો નહીં</translation>
-<translation id="4512952200932940229">કોપિરાઇટ 2021 The Chromium Authors. સર્વાધિકાર સુરક્ષિત.</translation>
+<translation id="4512952200932940229">કોપિરાઇટ 2021 The Monyhar Authors. સર્વાધિકાર સુરક્ષિત.</translation>
 <translation id="4513946894732546136">Feedback</translation>
 <translation id="4563926062592110512">ક્લાઇન્ટ ડિસ્કનેક્ટ થયાં: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="4635770493235256822">રિમોટ ઉપકરણો</translation>
@@ -147,7 +147,7 @@
 <translation id="7868137160098754906">રિમોટ કમ્પ્યુટર માટે કૃપા કરીને તમારો PIN દાખલ કરો.</translation>
 <translation id="7895403300744144251">રિમોટ કમ્પ્યુટર પરની સુરક્ષા પૉલિસીઓ તમારા એકાઉન્ટથી કનેક્શનની પરવાનગી આપતી નથી.</translation>
 <translation id="7936528439960309876">જમણે ડૉક કરો</translation>
-<translation id="7970576581263377361">પ્રમાણીકરણ નિષ્ફળ થયું. કૃપા કરીને Chromium પર ફરીથી સાઇન ઇન કરો.</translation>
+<translation id="7970576581263377361">પ્રમાણીકરણ નિષ્ફળ થયું. કૃપા કરીને Monyhar પર ફરીથી સાઇન ઇન કરો.</translation>
 <translation id="7981525049612125370">રિમોટ સત્ર સમાપ્ત થયું.</translation>
 <translation id="8038111231936746805">(ડિફૉલ્ટ)</translation>
 <translation id="8041089156583427627">પ્રતિસાદ મોકલો</translation>
@@ -181,6 +181,6 @@
 <translation id="9187628920394877737"><ph name="PRODUCT_NAME" />ને 'સ્ક્રીન રેકોર્ડિંગ'ની પરવાનગી આપો</translation>
 <translation id="9213184081240281106">અમાન્ય હોસ્ટ ગોઠવણી.</translation>
 <translation id="981121421437150478">ઑફલાઇન</translation>
-<translation id="985602178874221306">Chromium લેખકો</translation>
+<translation id="985602178874221306">Monyhar લેખકો</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (છેલ્લે ઓનલાઇન <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

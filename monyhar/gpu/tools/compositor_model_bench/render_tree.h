@@ -1,8 +1,8 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Copyright (c) 2012 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Data structures for representing parts of Chromium's composited layer tree
+// Data structures for representing parts of Monyhar's composited layer tree
 // and a function to load it from the JSON configuration file
 
 #ifndef GPU_TOOLS_COMPOSITOR_MODEL_BENCH_RENDER_TREE_H_

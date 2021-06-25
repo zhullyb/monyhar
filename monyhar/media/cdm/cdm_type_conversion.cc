@@ -1,4 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2018 The Monyhar Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,8 +13,8 @@
 
 // Note: Unexpected values must be handled explicitly since some of these
 // functions may be used at either side of the CDM interface, and it's possible
-// invalid values are passed in. For example, Chromium loading an older CDM, or
-// the CDM is loaded by a non-Chromium browser.
+// invalid values are passed in. For example, Monyhar loading an older CDM, or
+// the CDM is loaded by a non-Monyhar browser.
 
 namespace media {
 
